@@ -4,16 +4,14 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 18:24:28
+ * @Last Modified time: 2020-03-25 21:54:13
  * @package minimalistmadness
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  */
 
 namespace Air_Light;
 
-get_header();
-
-get_template_part( 'template-parts/hero', get_post_type() ); ?>
+get_header(); ?>
 
 <div id="content" class="content-area">
 	<main role="main" id="main" class="site-main">

@@ -9,7 +9,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 18:24:56
+ * @Last Modified time: 2020-03-25 21:54:28
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -18,9 +18,7 @@ namespace Air_Light;
 
 the_post();
 
-get_header();
-
-get_template_part( 'template-parts/hero', get_post_type() ); ?>
+get_header(); ?>
 
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">

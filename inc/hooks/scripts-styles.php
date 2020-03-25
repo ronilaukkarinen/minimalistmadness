@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 18:34:09
+ * @Last Modified time: 2020-03-25 22:00:38
  */
 
 namespace Air_Light;
@@ -49,8 +49,3 @@ function enqueue_theme_scripts() {
     'collapse' => esc_html__( 'Close child menu', 'minimalistmadness' ),
   ) );
 } // end minimalistmadness_scripts
-
-function add_data_attribute($tag, $handle) {
-   return str_replace( ' src', ' data-swup-ignore-script src', $tag );
-}
-add_filter('script_loader_tag', __NAMESPACE__ . '\add_data_attribute', 10, 2);
