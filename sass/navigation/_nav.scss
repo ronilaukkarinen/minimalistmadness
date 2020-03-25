@@ -44,9 +44,9 @@
   opacity: .4;
 }
 
-.home .menu-item-home a,
 .current-menu-item a,
-.site-head a:hover {
+.site-head a:hover,
+.active a {
   text-decoration: none;
   opacity: 1;
 }

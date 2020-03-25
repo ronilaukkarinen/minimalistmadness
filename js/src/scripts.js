@@ -27,26 +27,8 @@ lazyload(images, {
  threshold: 0
 });
 
-// Initiate Swup transitions
-const swup = new Swup({
-  plugins: [new SwupHeadPlugin(), new SwupScriptsPlugin()],
-});
-
-document.addEventListener('swup:contentReplaced', event => {
-  initInfiniteScroll(window, document);
-  $('body').removeClass('site-head-open');
-});
-
 // jQuery start
 ( function( $ ) {
-
-  // Swup
-  $(document).ready(function () {
-    // Mobile Menu Trigger
-    $('.nav-burger').click(function () {
-      $('body').toggleClass('site-head-open');
-    });
-  });
 
 	// Hide or show the "back to top" link
 	$(window).scroll(function() {

@@ -1,0 +1,20 @@
+.transition-fade {
+  transition: .25s;
+  opacity: 1;
+  animation: slideUp .9s cubic-bezier(.075, .82, .165, 1) forwards;
+  transform: translate3d(0, 4vh, 0);
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translate3d(0, 4vh, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

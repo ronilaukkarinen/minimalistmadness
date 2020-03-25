@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-17 10:17:21
+ * @Last Modified time: 2020-03-25 18:25:04
  * @package minimalistmadness
  */
 
@@ -18,6 +18,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 <div id="content" class="content-area">
 	<main role="main" id="main" class="site-main">
+    <div id="swup" class="transition-fade">
     <div class="container">
 
       <?php if ( have_posts() ) : ?>
@@ -43,6 +44,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
     <?php endif; ?>
 
     </div><!-- .container -->
+    </div>
   </main><!-- #main -->
 </div><!-- #primary -->
 

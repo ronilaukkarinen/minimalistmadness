@@ -5,7 +5,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-01-16 09:41:41
+ * @Last Modified time: 2020-03-25 18:25:12
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  */
@@ -20,6 +20,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 <div id="content" class="content-area">
 	<main role="main" id="main" class="site-main">
+    <div id="swup" class="transition-fade">
     <div class="container container-article">
 
       <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
@@ -53,6 +54,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 			} ?>
 
     </div><!-- .container -->
+    </div>
 	</main><!-- #main -->
 </div><!-- #primary -->
 

@@ -1583,9 +1583,9 @@ form.search-form .search-submit {
   opacity: .4;
 }
 
-.home .menu-item-home a,
 .current-menu-item a,
-.site-head a:hover {
+.site-head a:hover,
+.active a {
   text-decoration: none;
   opacity: 1;
 }
@@ -3053,6 +3053,38 @@ body.splat-toggle .splat {
   100% {
     opacity: 0;
     transform: scale(1.5);
+  }
+}
+
+.transition-fade {
+  transition: .25s;
+  opacity: 1;
+  -webkit-animation: slideUp .9s cubic-bezier(.075, .82, .165, 1) forwards;
+  animation: slideUp .9s cubic-bezier(.075, .82, .165, 1) forwards;
+  transform: translate3d(0, 4vh, 0);
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    transform: translate3d(0, 4vh, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translate3d(0, 4vh, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 

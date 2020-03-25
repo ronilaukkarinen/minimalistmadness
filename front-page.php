@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 17:19:09
+ * @Last Modified time: 2020-03-25 18:24:36
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -21,11 +21,13 @@ get_header(); ?>
 
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
+    <div id="swup" class="transition-fade">
 
     <?php
       get_theme_file_path( 'template-parts/hero.php' );
     ?>
 
+    </div>
   </main><!-- #main -->
 </div><!-- #primary -->
 
