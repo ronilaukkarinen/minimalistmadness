@@ -51,7 +51,7 @@ if ( $loop->have_posts() ) : ?>
 
           <h2 class="post-card-title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
 
-          <div class="post-card-image <?php echo $duotones[$key]; ?>"><div class="img" style="background-image: url('<?php if ( has_post_thumbnail() ) : echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; else : echo khonsu_get_random_image_url(); endif; ?>')"></div></div>
+          <div class="post-card-image <?php echo $duotones[$key]; ?>"><div class="img" style="background-image: url('<?php if ( has_post_thumbnail() ) : echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; else : echo khonsu_get_random_image_url(); endif; ?>')"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo khonsu_estimated_reading_time(); ?></p></div></div>
         </div>
       </article>
 

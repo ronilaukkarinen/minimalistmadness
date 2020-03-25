@@ -6,6 +6,18 @@
   display: flex;
   overflow: visible;
 
+  .post-card-details {
+    margin: 0;
+    font-size: 13px;
+    color: #ccc;
+    opacity: 0;
+    padding: 15px;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    transition: all $transition-duration;
+  }
+
   .post-card-title {
     font-size: 17px;
     font-weight: 500;
@@ -28,6 +40,10 @@
     margin-left: 5px;
     position: relative;
     border-radius: 4px;
+
+    &:hover .post-card-details {
+      opacity: 1;
+    }
   }
 
   .post-card-content {
