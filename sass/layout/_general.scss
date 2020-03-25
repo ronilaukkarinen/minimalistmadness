@@ -9,7 +9,7 @@
 // Default structural element
 .block {
   @include background-cover();
-  background-color: #fff;
+  background-color: transparent;
   position: relative;
   min-height: 100px;
   max-width: $layout-max-width;

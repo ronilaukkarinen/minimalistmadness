@@ -18,6 +18,7 @@
 
   // Easier flex way to align logo and navigation
   display: flex;
+  /* autoprefixer: off */
   align-items: center;
   justify-content: space-between;
 }

@@ -440,7 +440,7 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #fff;
+  background-color: transparent;
   position: relative;
   min-height: 100px;
   max-width: 100%;
@@ -678,13 +678,13 @@ body {
 }
 
 a {
-  color: #3962c9;
+  color: #141414;
   text-decoration: none;
   transition: .4s ease;
 }
 
 a:hover {
-  color: #159d94;
+  color: #141414;
 }
 
 .container.container-article article a:not(.button) {
@@ -747,7 +747,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #3962c9;
+  color: #141414;
   font-family: 'Muli', 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 700;
 }
@@ -1013,6 +1013,7 @@ pre {
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  /* autoprefixer: off */
   align-items: center;
   justify-content: space-between;
 }
@@ -1023,7 +1024,7 @@ pre {
 }
 
 .site-title a {
-  color: #3962c9;
+  color: #141414;
 }
 
 .content-area button,
@@ -1038,7 +1039,7 @@ pre {
 .site-footer input[type="button"] {
   font-size: 16px;
   font-size: 1.6rem;
-  background: #3962c9;
+  background: #141414;
   color: #fff;
   border: 0;
   width: auto;
@@ -1091,7 +1092,7 @@ pre {
 .site-footer input[type="button"]:hover,
 .site-footer input[type="button"]:focus {
   color: #fff;
-  background: #27448f;
+  background: black;
 }
 
 .content-area button.button-ghost,
@@ -1105,8 +1106,8 @@ pre {
 .site-footer input[type="submit"].button-ghost,
 .site-footer input[type="button"].button-ghost {
   background-color: transparent;
-  border: 1px solid #3962c9;
-  color: #3962c9;
+  border: 1px solid #141414;
+  color: #141414;
 }
 
 .content-area button.button-ghost:hover,
@@ -1119,7 +1120,7 @@ pre {
 .site-footer input[type="reset"].button-ghost:hover,
 .site-footer input[type="submit"].button-ghost:hover,
 .site-footer input[type="button"].button-ghost:hover {
-  background-color: #3962c9;
+  background-color: #141414;
   color: #fff;
 }
 
@@ -1534,6 +1535,13 @@ form.search-form .search-submit {
   width: 100%;
 }
 
+.block.block-hero h1 {
+  margin: 0;
+  font-size: 42px;
+  font-size: 4.2rem;
+  color: #141414;
+}
+
 .site-head {
   position: relative;
   z-index: 300;
@@ -1543,10 +1551,9 @@ form.search-form .search-submit {
 }
 
 .site-head-container {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr auto 1fr;
   grid-template-columns: 1fr auto 1fr;
+  /* autoprefixer: off */
   align-items: center;
 }
 
@@ -1554,6 +1561,7 @@ form.search-form .search-submit {
   position: relative;
   z-index: 100;
   display: flex;
+  /* autoprefixer: off */
   align-items: center;
   margin-right: 10px;
   white-space: nowrap;
@@ -1631,6 +1639,7 @@ form.search-form .search-submit {
   z-index: 100;
   flex-shrink: 0;
   display: flex;
+  /* autoprefixer: off */
   align-items: center;
   justify-content: flex-end;
 }
@@ -1638,6 +1647,7 @@ form.search-form .search-submit {
 .social-links {
   flex-shrink: 0;
   display: flex;
+  /* autoprefixer: off */
   align-items: center;
 }
 
@@ -1735,6 +1745,7 @@ form.search-form .search-submit {
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;
+    /* autoprefixer: off */
     align-items: flex-start;
     margin: 3vw 0 0;
   }
@@ -1761,6 +1772,7 @@ form.search-form .search-submit {
 
   .social-links {
     flex-direction: column;
+    /* autoprefixer: off */
     align-items: flex-start;
   }
 
@@ -1921,6 +1933,7 @@ form.search-form .search-submit {
   transition: opacity .3s 0s, visibility 0s .3s;
   z-index: 9999;
   display: flex;
+  /* autoprefixer: off */
   align-items: center;
   justify-content: center;
 }
@@ -1974,7 +1987,7 @@ form.search-form .search-submit {
 .top:hover,
 .top:focus,
 .top:active {
-  background: #3962c9;
+  background: #141414;
 }
 
 .top:hover svg,
@@ -3238,7 +3251,7 @@ del {
 
 .container.container-article article a:not(.button) {
   position: relative;
-  color: #3962c9;
+  color: #141414;
   transition: all .55s;
   text-decoration: none;
 }
@@ -3764,11 +3777,11 @@ pre code {
 }
 
 .entry-header .entry-title a {
-  color: #3962c9;
+  color: #141414;
 }
 
 .entry-header .entry-title a:hover {
-  color: #159d94;
+  color: #141414;
 }
 
 .entry-meta {
@@ -3862,7 +3875,7 @@ ul.tags li a:hover {
 }
 
 .entry-footer a:hover {
-  color: #3962c9;
+  color: #141414;
   text-decoration: none;
 }
 

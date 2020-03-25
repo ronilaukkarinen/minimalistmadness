@@ -5,13 +5,6 @@
 // This is the core file where most of the theme magic happens.
 // --------------------------------------------------------------
 
-// Demo theme colors (you can remove these)
-$color-blue: #3962c9;
-$color-cyan: #159d94;
-$color-cyan-bright: #60f4ea;
-$color-blue-bright: #81a9ff;
-$color-blue-dark: darken($color-blue, 40%);
-
 // Base colors
 $color-white: #fff;
 $color-black: #141414;
@@ -22,15 +15,15 @@ $color-primary: $color-black;
 $color-border: #ddd;
 
 // Text and background colors
-$color-links: $color-blue;
-$color-hover: $color-cyan;
+$color-links: $color-black;
+$color-hover: $color-black;
 $color-body: $color-black;
 $color-base: $color-black;
-$color-headings: $color-blue;
+$color-headings: $color-black;
 $color-success: #30dd44;
 $color-warning: #ed7e29;
 $color-error: #dd3030;
-$color-default-background: $color-blue-dark;
+$color-default-background: $color-lightgrey;
 
 // Font settings
 // You can use these font stacks normally with `font-family: $font-sans;` for instance.`

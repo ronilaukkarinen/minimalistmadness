@@ -17,6 +17,7 @@
   transition: opacity .3s 0s, visibility 0s .3s;
   z-index: 9999;
   display: flex;
+  /* autoprefixer: off */
   align-items: center;
   justify-content: center;
 
