@@ -1542,6 +1542,17 @@ form.search-form .search-submit {
   color: #141414;
 }
 
+.block.block-hero .page-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 13vw 0;
+  max-width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
 .site-head {
   position: relative;
   z-index: 300;
@@ -2898,13 +2909,16 @@ html,
   height: 500px;
   position: absolute;
   top: 0;
-  z-index: 22;
   opacity: 0;
   transition: all .55s;
+  z-index: -1;
+  visibility: hidden;
 }
 
 .splat-toggle .rain-wrapper {
   opacity: 1;
+  z-index: 22;
+  visibility: visible;
 }
 
 .rain {

@@ -4,4 +4,15 @@
     font-size: 4.2rem;
     color: $color-headings;
   }
+
+  .page-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 13vw 0;
+    max-width: 70%;
+    margin: auto;
+    text-align: center;
+  }
 }
