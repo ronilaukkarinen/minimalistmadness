@@ -6,12 +6,13 @@
   }
 
   .page-head {
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 13vw 0;
-    max-width: 70%;
+    width: 70%;
     margin: auto;
     text-align: center;
     position: relative;

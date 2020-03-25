@@ -3481,12 +3481,13 @@ form.search-form .search-submit {
 }
 
 .block.block-hero .page-head {
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 13vw 0;
-  max-width: 70%;
+  width: 70%;
   margin: auto;
   text-align: center;
   position: relative;
@@ -3496,9 +3497,27 @@ form.search-form .search-submit {
   overflow: visible;
 }
 
+.block.block-four-posts .container .post-head {
+  padding-bottom: 20px;
+  margin-bottom: 80px;
+  border-bottom: 1px solid #ddd;
+}
+
+.block.block-four-posts .container .post-head h2 {
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.block.block-four-posts .container .post-head p {
+  margin: 0;
+  opacity: .8;
+}
+
 .post-feed {
   display: flex;
   overflow: visible;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .post-feed .post-card-details {
@@ -3542,7 +3561,7 @@ form.search-form .search-submit {
 }
 
 .post-feed .post-card-content {
-  padding: 12px 17px 17px;
+  padding: 12px 15px 15px;
 }
 
 .post-feed .post-card-image {
