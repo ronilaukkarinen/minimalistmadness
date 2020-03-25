@@ -1,0 +1,74 @@
+$navheight-expanded: 92px;
+$navheight-mobile: 54px;
+$navheight-collapsed: 54px;
+
+.site-header {
+  transition: all .55s ease;
+}
+
+.nav-container {
+  position: fixed;
+  transition: all .55s ease;
+  height: $navheight-mobile;
+  width: 100%;
+  z-index: 9999;
+  overflow: visible;
+
+  .site-header {
+    height: auto;
+  }
+
+  @media (min-width: $responsivenav) {
+    height: $navheight-expanded;
+  }
+
+  &.nav-container-sticky {
+    background: #222;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .site-header {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .site-title svg {
+      position: relative;
+      top: 5px;
+      width: 32px;
+      height: 32px;
+    }
+
+    @media (max-width: $responsivenav - 1px) {
+      .site-title {
+        margin-top: 0;
+      }
+    }
+
+    nav {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .nav-toggle {
+      top: 5px;
+      right: 5px;
+    }
+
+    @media (min-width: $responsivenav) {
+      height: $navheight-collapsed;
+    }
+
+    // Hide when scrolling down, show again when scrolling up
+    &.scrolling-down {
+      @media (min-width: $responsivenav) {
+        margin-top: -$navheight-expanded;
+      }
+    }
+
+    &.scrolling-up {
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,249 @@
+// ------------------------------------------------------------
+// Forms and input fields
+//
+// All the forms on the site. General styles. Supports most of
+// the Gravity Forms styles out of the box.
+// ------------------------------------------------------------
+
+// Buttons
+.content-area,
+.site-footer {
+  button,
+  .button,
+  input[type="reset"],
+  input[type="submit"],
+  input[type="button"] {
+    font-size: 1.6rem;
+    background: $color-links;
+    color: $color-white;
+    border: 0;
+    width: auto;
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    transition: 150ms linear background;
+    font-family: $font-base;
+
+    @media (max-width: $container-mobile) {
+      // Wrap long buttons on mobile
+      display: block;
+      text-align: center;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+      background: darken($color-links, 15%);
+    }
+
+    &.button-ghost {
+      background-color: transparent;
+      border: 1px solid $color-links;
+      color: $color-links;
+    }
+
+    &.button-ghost:hover {
+      background-color: $color-links;
+      color: $color-white;
+    }
+  }
+}
+
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Gravity Forms clean ups
+.gform_wrapper,
+.gform_header,
+.gform_footer {
+  margin: 0;
+  padding: 0;
+}
+
+.gform_body {
+  li,
+  div {
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+textarea,
+select,
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="search"] {
+  @extend %default;
+  font-family: $font-base;
+  background: #f0f0f0;
+  border: 0;
+  padding: 15px 20px;
+  line-height: 24px;
+  transition: background .55s;
+  text-decoration: none;
+  position: relative;
+  appearance: none;
+  margin-bottom: 0;
+
+  &::placeholder {
+    color: #434343;
+    opacity: .4;
+  }
+
+  &:focus {
+    background: #dfdfdf;
+    border-color: rgba(#222, 1);
+    outline: 0;
+
+    &::placeholder {
+      color: #222;
+      opacity: .8;
+    }
+  }
+}
+
+select {
+  border: 0;
+  border-radius: 0;
+  background-image: url('../svg/select.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 40px;
+  transition: none;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: #222;
+  }
+}
+
+// General
+form {
+  p {
+    margin-bottom: 20px;
+
+    &.form-submit {
+      margin-bottom: 0;
+    }
+  }
+
+  // Search form
+  &.search-form {
+    .search-field {
+      float: left;
+      margin-right: 5px;
+    }
+
+    .search-submit {
+      padding: 19px 1.75em;
+      line-height: 1;
+    }
+  }
+}
+
+// Comment form
+.comment-respond {
+  margin-bottom: 0;
+  overflow: visible;
+
+  .comment-form-author {
+    @include column(1/3);
+    margin-bottom: 20px;
+    margin-top: 0;
+
+    @media (max-width: $container-mobile) {
+      @include stack();
+    }
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .comment-form-email {
+    @include column(2/3);
+    margin-right: 0;
+    clear: right;
+    margin-bottom: 20px;
+    margin-top: 0;
+
+    @media (max-width: $container-mobile) {
+      @include stack();
+    }
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .comment-form-url {
+    @include stack();
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .form-submit {
+    display: block;
+    clear: both;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .comment-form-comment {
+    margin-bottom: 20px;
+  }
+
+  input {
+    @media (max-width: $container-mobile) {
+      width: 100%;
+    }
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
