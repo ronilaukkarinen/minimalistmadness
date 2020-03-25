@@ -22,9 +22,28 @@ if ( $loop->have_posts() ) : ?>
   <div class="container">
 
     <div class="post-feed">
-    <?php while ( $loop->have_posts() ) :
-      $loop->the_post();
-      ?>
+      <?php while ( $loop->have_posts() ) :
+        $loop->the_post();
+
+        $duotones = array(
+          'duotone-1',
+          'duotone-2',
+          'duotone-3',
+          'duotone-4',
+          // 'duotone-5',
+          'duotone-6',
+          // 'duotone-7',
+          'duotone-8',
+          // 'duotone-9',
+          'duotone-10',
+          // 'duotone-11',
+          'duotone-12',
+          'duotone-13',
+          'duotone-14',
+          'duotone-15',
+        );
+        $key = array_rand($duotones);
+        ?>
 
       <article class="entry post-card post">
         <div class="post-card-content">
@@ -32,7 +51,7 @@ if ( $loop->have_posts() ) : ?>
 
           <h2 class="post-card-title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
 
-          <div class="post-card-image duotone-<?php echo rand(1, 15);; ?>"><div class="img" style="background-image: url('<?php if ( has_post_thumbnail() ) : echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; else : echo khonsu_get_random_image_url(); endif; ?>')"></div></div>
+          <div class="post-card-image <?php echo $duotones[$key]; ?>"><div class="img" style="background-image: url('<?php if ( has_post_thumbnail() ) : echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; else : echo khonsu_get_random_image_url(); endif; ?>')"></div></div>
         </div>
       </article>
 
