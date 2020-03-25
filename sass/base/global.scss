@@ -14,14 +14,6 @@
 @import '../helpers/typography';
 @import 'accessibility';
 
-// Structure
-@import '../layout/general';
-@import '../layout/typography';
-@import '../layout/site-header';
-@import '../layout/site-footer';
-@import '../layout/forms';
-@import '../layout/hero';
-
 // Navigation
 @import '../navigation/nav';
 
@@ -31,6 +23,16 @@
 @import '../features/lazyload';
 @import '../features/rain';
 @import '../features/animations';
+@import '../features/duotones';
+
+// Structure
+@import '../layout/general';
+@import '../layout/typography';
+@import '../layout/site-header';
+@import '../layout/site-footer';
+@import '../layout/forms';
+@import '../layout/hero';
+@import '../layout/four-posts';
 
 // Views
 @import '../views/front-page';

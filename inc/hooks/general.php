@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 18:46:36
+ * @Last Modified time: 2020-03-25 19:50:56
  */
 
 namespace Air_Light;
@@ -56,5 +56,56 @@ function post_word_count_by_author( $author = false ) {
     $totalcount = 0;
   }
 
-  return number_format( $totalcount );
+  return str_replace(',', ' ', number_format( $totalcount ) );
+}
+
+/**
+ * Random image url function
+ */
+function khonsu_get_random_image_url() {
+  $query = get_posts(
+    array(
+      'post_status'     => 'inherit',
+      'post_type'       => 'attachment',
+      'post_mime_type'  => 'image/jpeg,image/gif,image/jpg,image/png',
+      'posts_per_page'  => 1,
+      'category_name'   => 'kuvituskuva',
+      'no_found_rows'   => true,
+      'orderby'         => 'rand',
+    )
+  );
+
+  if ( ! empty( $query ) ) {
+    $return = '';
+
+    foreach ( $query as $attachment ) {
+      $return = wp_get_attachment_url( $attachment->ID );
+    }
+  }
+  return $return;
+}
+
+/**
+ * Estimate time required to read the article
+ *
+ * @return string
+ */
+function khonsu_estimated_reading_time() {
+
+  $post = get_post();
+  $words = str_word_count( strip_tags( $post->post_content ) );
+  $minutes = floor( $words / 120 );
+  $seconds = floor( $words % 120 / ( 120 / 60 ) );
+
+  if ( 1 <= $minutes ) :
+    if ( 1 === $minutes ) :
+      $estimated_time = $minutes . ' min';
+    else :
+      $estimated_time = $minutes . ' min';
+    endif;
+  else :
+    $estimated_time = 'Alle 1 min';
+  endif;
+
+  return '<span class="time-to-read">' . $estimated_time . ' lukukokemus</span>';
 }

@@ -1,0 +1,59 @@
+.block.block-four-posts .container {
+  overflow: visible;
+}
+
+.post-feed {
+  display: flex;
+  overflow: visible;
+
+  .post-card-title {
+    font-size: 17px;
+    font-weight: 500;
+    font-family: $font-alt;
+    margin: 0 0 12px;
+    height: 70px;
+    overflow: hidden;
+  }
+
+  .post-card-title a {
+    text-decoration: none;
+    font-family: $font-alt;
+  }
+
+  .post-card {
+    background-color: transparent;
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-right: 5px;
+    margin-left: 5px;
+    position: relative;
+    border-radius: 4px;
+  }
+
+  .post-card-content {
+    padding: 12px 17px 17px;
+  }
+
+  .post-card-image {
+    position: relative;
+    border-radius: 4px;
+
+    &::after,
+    img::after {
+      border-radius: 4px;
+    }
+  }
+
+  .post-card-image .img {
+    @include background-cover();
+    border-radius: 4px;
+    min-height: 300px;
+    height: auto;
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 130%;
+    }
+  }
+}

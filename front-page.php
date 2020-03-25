@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 18:41:14
+ * @Last Modified time: 2020-03-25 19:50:42
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -22,6 +22,7 @@ get_header(); ?>
 
     <?php
       include get_theme_file_path( 'template-parts/hero.php' );
+      include get_theme_file_path( 'template-parts/four-posts.php' );
     ?>
 
     </div>
