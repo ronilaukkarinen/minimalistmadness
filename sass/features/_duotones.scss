@@ -4,6 +4,9 @@
   object-fit: cover;
   display: block;
   transition: all ease-in-out .5s;
+
+  // Hack to fix webkit bug
+  transform: translateZ(0);
 }
 
 .post-card-image {
@@ -20,13 +23,16 @@
 }
 
 @keyframes floating {
-  from {    transform: translate(0, 0px);
+  from {
+    transform: translate(0, 0px);
   }
 
-  65% {    transform: translate(0, -10px);
+  65% {
+    transform: translate(0, -10px);
   }
 
-  to {    transform: translate(0, -0px);
+  to {
+    transform: translate(0, -0px);
   }
 }
 

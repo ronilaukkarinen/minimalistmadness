@@ -2005,6 +2005,7 @@ html.is-animating .transition-fade {
   object-fit: cover;
   display: block;
   transition: all ease-in-out .5s;
+  transform: translateZ(0);
 }
 
 .post-card-image {
@@ -3494,6 +3495,7 @@ form.search-form .search-submit {
 }
 
 .block.block-four-posts .container {
+  max-width: 1600px;
   overflow: visible;
   display: flex;
   flex-wrap: wrap;
@@ -3615,6 +3617,7 @@ form.search-form .search-submit {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  overflow: hidden;
   border-radius: 4px;
   min-height: 300px;
   height: auto;
