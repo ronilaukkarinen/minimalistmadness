@@ -51,7 +51,7 @@ if ( function_exists( 'get_most_popular_posts' ) ) :
               <a href="<?php echo get_the_permalink(); ?>" class="global-link"><span class="screen-reader-text"><?php echo get_the_title(); ?></span></a>
 
             <h2 class="post-card-title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
-            <div class="post-card-image <?php echo $duotones[$key]; ?>"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo khonsu_estimated_reading_time(); ?></p><?php image_lazyload_div( get_post_thumbnail_id( $post->ID ) ); ?></div></div>
+            <div class="post-card-image <?php echo $duotones[$key]; ?>"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo khonsu_estimated_reading_time(); ?></p><?php if ( has_post_thumbnail() ) { image_lazyload_div( get_post_thumbnail_id( $post->ID ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
             </div>
           </article>
 

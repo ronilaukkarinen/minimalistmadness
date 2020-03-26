@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-26 18:11:34
+ * @Last Modified time: 2020-03-26 19:06:45
  */
 
 namespace Air_Light;
@@ -80,6 +80,29 @@ function khonsu_get_random_image_url() {
 
     foreach ( $query as $attachment ) {
       $return = wp_get_attachment_url( $attachment->ID );
+    }
+  }
+  return $return;
+}
+
+function khonsu_get_random_image_id() {
+  $query = get_posts(
+    array(
+      'post_status'     => 'inherit',
+      'post_type'       => 'attachment',
+      'post_mime_type'  => 'image/jpeg,image/gif,image/jpg,image/png',
+      'posts_per_page'  => 1,
+      'category_name'   => 'kuvituskuva',
+      'no_found_rows'   => true,
+      'orderby'         => 'rand',
+    )
+  );
+
+  if ( ! empty( $query ) ) {
+    $return = '';
+
+    foreach ( $query as $attachment ) {
+      $return = $attachment->ID;
     }
   }
   return $return;
