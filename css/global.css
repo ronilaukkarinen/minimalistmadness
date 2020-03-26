@@ -2010,6 +2010,8 @@ html.is-animating .transition-fade {
 
 .post-card-image {
   transition: all .88s;
+  transform: translate3d(0, 0, 0);
+  isolation: isolate;
 }
 
 .post-card:hover .post-card-image {
@@ -2023,33 +2025,34 @@ html.is-animating .transition-fade {
   animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
+  transform: translate3d(0, 0, 0);
 }
 
 @-webkit-keyframes floating {
   from {
-    transform: translate(0, 0px);
+    transform: translate(0, 0px) translate3d(0, 0, 0);
   }
 
   65% {
-    transform: translate(0, -10px);
+    transform: translate(0, -10px) translate3d(0, 0, 0);
   }
 
   to {
-    transform: translate(0, 0px);
+    transform: translate(0, 0px) translate3d(0, 0, 0);
   }
 }
 
 @keyframes floating {
   from {
-    transform: translate(0, 0px);
+    transform: translate(0, 0px) translate3d(0, 0, 0);
   }
 
   65% {
-    transform: translate(0, -10px);
+    transform: translate(0, -10px) translate3d(0, 0, 0);
   }
 
   to {
-    transform: translate(0, 0px);
+    transform: translate(0, 0px) translate3d(0, 0, 0);
   }
 }
 
