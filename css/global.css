@@ -3495,7 +3495,7 @@ form.search-form .search-submit {
 }
 
 .block.block-four-posts .container {
-  max-width: 1600px;
+  max-width: 1400px;
   overflow: visible;
   display: flex;
   flex-wrap: wrap;
@@ -3510,7 +3510,7 @@ form.search-form .search-submit {
   opacity: .3;
   order: 2;
   position: relative;
-  margin: 0 10px;
+  margin: 0 20px;
   transition: all .6s;
 }
 
@@ -3552,11 +3552,67 @@ form.search-form .search-submit {
 }
 
 .post-feed {
-  display: flex;
-  overflow: visible;
-  margin-left: -15px;
-  margin-right: -15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* autoprefixer: off */
+  grid-auto-rows: minmax(100px, auto);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   order: 1;
+}
+
+@supports not (display: grid) {
+  .post-feed {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .post-feed > div {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .post-feed > div:nth-child(2n+2) {
+    margin-right: 0;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .post-feed {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .post-feed > div {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .post-feed > div:nth-child(2n+2) {
+    margin-right: 0;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  .post-feed {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .post-feed > div {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .post-feed > div:nth-child(2n+2) {
+    margin-right: 0;
+  }
 }
 
 .post-feed .post-card-details {
@@ -3576,7 +3632,7 @@ form.search-form .search-submit {
   font-weight: 500;
   font-family: 'ColfaxAI', 'Helvetica Neue', Helvetica, sans-serif;
   margin: 0 0 12px;
-  height: 70px;
+  height: 29px;
   overflow: hidden;
 }
 
@@ -3587,10 +3643,6 @@ form.search-form .search-submit {
 
 .post-feed .post-card {
   background-color: transparent;
-  flex: 0 0 25%;
-  max-width: 25%;
-  margin-right: 5px;
-  margin-left: 5px;
   position: relative;
   border-radius: 4px;
 }
@@ -3626,7 +3678,80 @@ form.search-form .search-submit {
 .post-feed .post-card-image .img:after {
   content: '';
   display: block;
+  padding-bottom: 80%;
+}
+
+.block.block-four-posts.block-most-popular .container .post-feed {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* autoprefixer: off */
+  grid-auto-rows: minmax(100px, auto);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+@supports not (display: grid) {
+  .block.block-four-posts.block-most-popular .container .post-feed {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .block.block-four-posts.block-most-popular .container .post-feed > div {
+    width: calc(25% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .block.block-four-posts.block-most-popular .container .post-feed > div:nth-child(4n+4) {
+    margin-right: 0;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .block.block-four-posts.block-most-popular .container .post-feed {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .block.block-four-posts.block-most-popular .container .post-feed > div {
+    width: calc(25% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .block.block-four-posts.block-most-popular .container .post-feed > div:nth-child(4n+4) {
+    margin-right: 0;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  .block.block-four-posts.block-most-popular .container .post-feed {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .block.block-four-posts.block-most-popular .container .post-feed > div {
+    width: calc(25% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .block.block-four-posts.block-most-popular .container .post-feed > div:nth-child(4n+4) {
+    margin-right: 0;
+  }
+}
+
+.block.block-four-posts.block-most-popular .container .post-feed .post-card-image .img:after {
+  content: '';
+  display: block;
   padding-bottom: 130%;
+}
+
+.block.block-four-posts.block-most-popular .container .post-card-title {
+  height: 52px;
 }
 
 @media (min-width: 480px) {

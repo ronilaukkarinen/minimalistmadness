@@ -1,0 +1,15 @@
+.block.block-four-posts.block-most-popular .container {
+  .post-feed {
+    @include grid(4, $gutter_x: 10px, $gutter_y: 10px);
+  }
+
+  .post-feed .post-card-image .img:after {
+    content: '';
+    display: block;
+    padding-bottom: 130%;
+  }
+
+  .post-card-title {
+    height: 52px;
+  }
+}

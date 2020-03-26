@@ -30,7 +30,7 @@ if ( function_exists( 'get_most_popular_posts' ) ) :
             'duotone-1',
             'duotone-2',
             'duotone-3',
-            'duotone-4',
+            // 'duotone-4',
             // 'duotone-5',
             'duotone-6',
             // 'duotone-7',

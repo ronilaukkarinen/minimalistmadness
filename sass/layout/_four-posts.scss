@@ -1,5 +1,5 @@
 .block.block-four-posts .container {
-  max-width: 1600px;
+  max-width: 1400px;
   overflow: visible;
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +13,7 @@
     opacity: .3;
     order: 2;
     position: relative;
-    margin: 0 10px;
+    margin: 0 20px;
     transition: all $transition-duration;
 
     &:hover {
@@ -54,10 +54,7 @@
 }
 
 .post-feed {
-  display: flex;
-  overflow: visible;
-  margin-left: -15px;
-  margin-right: -15px;
+  @include grid(2, $gutter_x: 10px, $gutter_y: 10px);
   order: 1;
 
   .post-card-details {
@@ -77,7 +74,7 @@
     font-weight: 500;
     font-family: $font-alt;
     margin: 0 0 12px;
-    height: 70px;
+    height: 29px;
     overflow: hidden;
   }
 
@@ -88,10 +85,6 @@
 
   .post-card {
     background-color: transparent;
-    flex: 0 0 25%;
-    max-width: 25%;
-    margin-right: 5px;
-    margin-left: 5px;
     position: relative;
     border-radius: 4px;
 
@@ -124,7 +117,7 @@
     &:after {
       content: '';
       display: block;
-      padding-bottom: 130%;
+      padding-bottom: 80%;
     }
   }
 }
