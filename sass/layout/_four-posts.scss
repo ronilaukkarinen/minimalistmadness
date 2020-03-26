@@ -13,6 +13,11 @@
     order: 2;
     position: relative;
     margin: 0 10px;
+    transition: all $transition-duration;
+
+    &:hover {
+      opacity: .5;
+    }
 
     &:before {
       content: '';
@@ -20,8 +25,8 @@
       position: absolute;
       top: 0;
       left: 4px;
-      background: rgba($color-black, .5);
-      width: 40%;
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 58%);
+      width: 30%;
     }
 
     svg {
@@ -33,7 +38,7 @@
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 500;
       margin: 0;
       padding-top: 1rem;

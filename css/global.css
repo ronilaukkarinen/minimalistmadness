@@ -3509,6 +3509,11 @@ form.search-form .search-submit {
   order: 2;
   position: relative;
   margin: 0 10px;
+  transition: all .6s;
+}
+
+.block.block-four-posts .container .post-head:hover {
+  opacity: .5;
 }
 
 .block.block-four-posts .container .post-head:before {
@@ -3517,8 +3522,8 @@ form.search-form .search-submit {
   position: absolute;
   top: 0;
   left: 4px;
-  background: rgba(20, 20, 20, .5);
-  width: 40%;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, black 58%);
+  width: 30%;
 }
 
 .block.block-four-posts .container .post-head svg {
@@ -3530,7 +3535,7 @@ form.search-form .search-submit {
 }
 
 .block.block-four-posts .container .post-head h2 {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
   margin: 0;
   padding-top: 10px;
