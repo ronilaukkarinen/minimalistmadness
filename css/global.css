@@ -2397,7 +2397,7 @@ html.is-animating .transition-fade {
   padding-left: 2rem;
   padding-right: 20px;
   padding-right: 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -2406,7 +2406,7 @@ html.is-animating .transition-fade {
   padding-right: 2rem;
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1550px) {
   .container {
     padding-left: 8rem;
     padding-right: 8rem;
@@ -2553,7 +2553,8 @@ input[type="number"],
 input[type="month"],
 input[type="week"],
 input[type="email"],
-input[type="search"] {
+input[type="search"],
+.block.block-recent-posts .container h3 {
   font-size: 17px;
   letter-spacing: -.003em;
   line-height: 1.4;
@@ -2571,7 +2572,8 @@ input[type="search"] {
   input[type="month"],
   input[type="week"],
   input[type="email"],
-  input[type="search"] {
+  input[type="search"],
+  .block.block-recent-posts .container h3 {
     font-size: calc(17px + 3 * ((100vw - 320px) / 1600));
   }
 }
@@ -2588,7 +2590,8 @@ input[type="search"] {
   input[type="month"],
   input[type="week"],
   input[type="email"],
-  input[type="search"] {
+  input[type="search"],
+  .block.block-recent-posts .container h3 {
     font-size: 20px;
   }
 }
@@ -3498,7 +3501,6 @@ form.search-form .search-submit {
 }
 
 .block.block-four-posts .container {
-  max-width: 1400px;
   overflow: visible;
   display: flex;
   flex-wrap: wrap;
@@ -3509,52 +3511,7 @@ form.search-form .search-submit {
   width: 100%;
 }
 
-.block.block-four-posts .container .post-head {
-  opacity: .3;
-  order: 2;
-  position: relative;
-  margin: 0 20px;
-  transition: all .6s;
-}
-
-.block.block-four-posts .container .post-head:hover {
-  opacity: .5;
-}
-
-.block.block-four-posts .container .post-head:before {
-  content: '';
-  height: 1px;
-  position: absolute;
-  top: 0;
-  left: 4px;
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, black 58%);
-  width: 30%;
-}
-
-.block.block-four-posts .container .post-head svg {
-  position: absolute;
-  top: -17px;
-  left: -4px;
-  width: 18px;
-  height: 18px;
-}
-
-.block.block-four-posts .container .post-head h2 {
-  font-size: 15px;
-  font-weight: 500;
-  margin: 0;
-  padding-top: 10px;
-  padding-top: 1rem;
-  padding-left: 10px;
-  padding-left: 1rem;
-}
-
-.block.block-four-posts .container .post-head p {
-  margin: 0;
-  opacity: .8;
-}
-
-.post-feed {
+.block.block-four-posts .container .post-feed {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   /* autoprefixer: off */
@@ -3566,60 +3523,60 @@ form.search-form .search-submit {
 }
 
 @supports not (display: grid) {
-  .post-feed {
+  .block.block-four-posts .container .post-feed {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
   }
 
-  .post-feed > div {
+  .block.block-four-posts .container .post-feed > div {
     width: calc(50% - 10px);
     margin-right: 10px;
     margin-bottom: 0;
   }
 
-  .post-feed > div:nth-child(2n+2) {
+  .block.block-four-posts .container .post-feed > div:nth-child(2n+2) {
     margin-right: 0;
   }
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .post-feed {
+  .block.block-four-posts .container .post-feed {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
   }
 
-  .post-feed > div {
+  .block.block-four-posts .container .post-feed > div {
     width: calc(50% - 10px);
     margin-right: 10px;
     margin-bottom: 0;
   }
 
-  .post-feed > div:nth-child(2n+2) {
+  .block.block-four-posts .container .post-feed > div:nth-child(2n+2) {
     margin-right: 0;
   }
 }
 
 @supports (-ms-ime-align: auto) {
-  .post-feed {
+  .block.block-four-posts .container .post-feed {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
   }
 
-  .post-feed > div {
+  .block.block-four-posts .container .post-feed > div {
     width: calc(50% - 10px);
     margin-right: 10px;
     margin-bottom: 0;
   }
 
-  .post-feed > div:nth-child(2n+2) {
+  .block.block-four-posts .container .post-feed > div:nth-child(2n+2) {
     margin-right: 0;
   }
 }
 
-.post-feed .post-card-details {
+.block.block-four-posts .container .post-feed .post-card-details {
   margin: 0;
   font-size: 13px;
   color: #ccc;
@@ -3631,7 +3588,7 @@ form.search-form .search-submit {
   transition: all .6s;
 }
 
-.post-feed .post-card-title {
+.block.block-four-posts .container .post-feed .post-card-title {
   font-size: 17px;
   font-weight: 500;
   font-family: 'ColfaxAI', 'Helvetica Neue', Helvetica, sans-serif;
@@ -3643,36 +3600,36 @@ form.search-form .search-submit {
   overflow: hidden;
 }
 
-.post-feed .post-card-title a {
+.block.block-four-posts .container .post-feed .post-card-title a {
   text-decoration: none;
   font-family: 'ColfaxAI', 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-.post-feed .post-card {
+.block.block-four-posts .container .post-feed .post-card {
   background-color: transparent;
   position: relative;
   border-radius: 4px;
 }
 
-.post-feed .post-card:hover .post-card-details {
+.block.block-four-posts .container .post-feed .post-card:hover .post-card-details {
   opacity: 1;
 }
 
-.post-feed .post-card-content {
+.block.block-four-posts .container .post-feed .post-card-content {
   padding: 12px 15px 15px;
 }
 
-.post-feed .post-card-image {
+.block.block-four-posts .container .post-feed .post-card-image {
   position: relative;
   border-radius: 4px;
 }
 
-.post-feed .post-card-image::after,
-.post-feed .post-card-image img::after {
+.block.block-four-posts .container .post-feed .post-card-image::after,
+.block.block-four-posts .container .post-feed .post-card-image img::after {
   border-radius: 4px;
 }
 
-.post-feed .post-card-image .img {
+.block.block-four-posts .container .post-feed .post-card-image .img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -3682,10 +3639,55 @@ form.search-form .search-submit {
   height: auto;
 }
 
-.post-feed .post-card-image .img:after {
+.block.block-four-posts .container .post-feed .post-card-image .img:after {
   content: '';
   display: block;
   padding-bottom: 80%;
+}
+
+.post-head {
+  opacity: .3;
+  order: 2;
+  position: relative;
+  margin: 0 20px;
+  transition: all .6s;
+}
+
+.post-head:hover {
+  opacity: .5;
+}
+
+.post-head:before {
+  content: '';
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 4px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, black 58%);
+  width: 30%;
+}
+
+.post-head svg {
+  position: absolute;
+  top: -17px;
+  left: -4px;
+  width: 18px;
+  height: 18px;
+}
+
+.post-head h2 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding-top: 10px;
+  padding-top: 1rem;
+  padding-left: 10px;
+  padding-left: 1rem;
+}
+
+.post-head p {
+  margin: 0;
+  opacity: .8;
 }
 
 .block.block-four-posts.block-most-popular .container .post-feed {
@@ -3833,6 +3835,66 @@ form.search-form .search-submit {
 
 .block.block-four-posts.block-upsells .container .post-card-title {
   height: 80px;
+}
+
+.block.block-recent-posts .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block.block-recent-posts .container > .post-head,
+.block.block-recent-posts .container > .post-feed-simplified {
+  width: 100%;
+}
+
+.block.block-recent-posts .container ul,
+.block.block-recent-posts .container li {
+  margin: 0;
+  list-style: none;
+}
+
+.block.block-recent-posts .container li {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #e9e9ec;
+  position: relative;
+}
+
+.block.block-recent-posts .container li:first-child {
+  border-top: 1px solid #e9e9ec;
+}
+
+.block.block-recent-posts .container li:hover p {
+  opacity: .3;
+}
+
+.block.block-recent-posts .container li:hover h3 a {
+  opacity: .6;
+}
+
+.block.block-recent-posts .container p {
+  font-family: 'ColfaxAI', 'Helvetica Neue', Helvetica, sans-serif;
+  flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667%;
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: .5;
+}
+
+.block.block-recent-posts .container h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  flex: 0 0 83.3333333333%;
+  max-width: 83.3333333333%;
+}
+
+.block.block-recent-posts .container a {
+  text-decoration: none;
 }
 
 @media (min-width: 480px) {
