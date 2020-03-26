@@ -28,25 +28,6 @@ if ( $loop->have_posts() ) : ?>
     <div class="post-feed">
       <?php while ( $loop->have_posts() ) :
         $loop->the_post();
-
-        $duotones = array(
-          'duotone-1',
-          'duotone-2',
-          'duotone-3',
-          // 'duotone-4',
-          // 'duotone-5',
-          'duotone-6',
-          // 'duotone-7',
-          'duotone-8',
-          // 'duotone-9',
-          'duotone-10',
-          // 'duotone-11',
-          'duotone-12',
-          'duotone-13',
-          'duotone-14',
-          'duotone-15',
-        );
-        $key = array_rand($duotones);
         ?>
 
       <article class="entry post-card post">

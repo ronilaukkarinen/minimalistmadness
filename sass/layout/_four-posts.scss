@@ -54,7 +54,8 @@
 }
 
 .post-feed {
-  @include grid(2, $gutter_x: 10px, $gutter_y: 10px);
+  @include grid(2, $gutter_x: 10px, $gutter_y: 0px);
+  margin-bottom: 30px;
   order: 1;
 
   .post-card-details {
@@ -73,8 +74,11 @@
     font-size: 17px;
     font-weight: 500;
     font-family: $font-alt;
-    margin: 0 0 12px;
-    height: 29px;
+    margin: 0 0 20px;
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
     overflow: hidden;
   }
 

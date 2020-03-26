@@ -1,4 +1,4 @@
-.block.block-four-posts.block-most-popular .container {
+.block.block-four-posts.block-upsells .container {
   .post-feed {
     @include grid(4, $gutter_x: 10px, $gutter_y: 0px);
   }
@@ -10,7 +10,6 @@
   }
 
   .post-card-title {
-    height: 45px;
-    align-items: flex-start;
+    height: 80px;
   }
 }

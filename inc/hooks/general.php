@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-26 19:06:45
+ * @Last Modified time: 2020-03-26 21:42:59
  */
 
 namespace Air_Light;
@@ -377,3 +377,42 @@ function air_helper_get_image_lazyload_dimensions( $image_id = 0, $sizes = [] ) 
     'height'  => $dimensions[2],
   ];
 } // end air_helper_get_image_lazyload_dimensions
+
+/**
+ * Custom pagination
+ */
+function khonsu_pagination() {
+  global $wp_query;
+
+  $big = 999999999; // Need an unlikely integer
+
+  $paginate_links = paginate_links(
+    array(
+      'base'        => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+      'format'      => '?paged=%#%',
+      'current'     => max( 1, get_query_var( 'paged' ) ),
+      'total'       => $wp_query->max_num_pages,
+      'prev_text'   => __( '&larr; uudempia' ),
+      'next_text'   => __( 'vanhempia &rarr;' ),
+    )
+  );
+
+  echo '<p class="custom-pagination">' . $paginate_links . '</p>';
+}
+
+/**
+ * Enable theme support for essential features.
+ */
+if ( function_exists( 'acf_add_options_page' ) ) {
+  acf_add_options_page(
+    array(
+      'page_title'  => 'Khonsu',
+      'menu_title'  => 'Khonsu',
+      'menu_slug'   => 'khonsu-settings',
+      'capability'  => 'edit_posts',
+      'redirect'    => false,
+      'icon_url'    => 'data:image/svg+xml;base64,' . base64_encode( '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 24 24" fill="#9ea4aa"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z"/></svg>' ),
+      'position' => 5,
+    )
+  );
+}

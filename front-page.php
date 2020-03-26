@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-26 17:42:07
+ * @Last Modified time: 2020-03-26 21:44:51
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -20,12 +20,27 @@ get_header(); ?>
   <main role="main" id="main" class="site-main">
     <div id="swup" class="transition-fade">
 
-    <?php
-      include get_theme_file_path( 'template-parts/hero.php' );
-      // include get_theme_file_path( 'template-parts/upsell-carousel.php' );
-      include get_theme_file_path( 'template-parts/four-posts.php' );
-      include get_theme_file_path( 'template-parts/most-popular.php' );
-    ?>
+      <?php
+        if ( is_paged() ) {
+          if ( have_posts() ) {
+            while ( have_posts() ) {
+              the_post();
+              get_template_part( 'template-parts/content' );
+            }
+
+            khonsu_pagination();
+
+          } else {
+            get_template_part( 'template-parts/content', 'none' );
+          }
+        } else {
+          include get_theme_file_path( 'template-parts/hero.php' );
+          include get_theme_file_path( 'template-parts/four-posts.php' );
+          // include get_theme_file_path( 'template-parts/upsells.php' );
+          include get_theme_file_path( 'template-parts/most-popular.php' );
+          // include get_theme_file_path( 'template-parts/recent-archive.php' );
+        }
+      ?>
 
     </div>
   </main><!-- #main -->
