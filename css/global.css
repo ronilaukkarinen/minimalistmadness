@@ -3513,6 +3513,18 @@ form.search-form .search-submit {
   opacity: .8;
 }
 
+.block.block-four-posts .container .post-head-rotated {
+  position: absolute;
+  left: -50%;
+  transform: rotate(-90deg);
+  top: -68%;
+  overflow: visible;
+  margin: 0;
+  padding-bottom: 0;
+  width: 100%;
+  z-index: 5;
+}
+
 .post-feed {
   display: flex;
   overflow: visible;
