@@ -21,7 +21,7 @@ if ( $loop->have_posts() ) : ?>
 
   <div class="container">
 
-    <header class="post-head">
+    <header class="post-head" style="display: none;">
       <h2>Viimeisimmät</h2>
       <p>Uusimmat tekstit. Tahti ei päätä huimaa vuonna <?php echo date('Y'); ?>, tiedän.</p>
     </header>
