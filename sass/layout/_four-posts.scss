@@ -3,15 +3,28 @@
   display: flex;
   flex-wrap: wrap;
 
+  @media (max-width: 450px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
   > .post-head,
   > .post-feed {
     width: 100%;
   }
 
   .post-feed {
-    @include grid(2, $gutter_x: 40px, $gutter_y: 0px);
+    @include grid(2, $gutter_x: 40px, $gutter_y: 40px);
     margin-bottom: 30px;
     order: 1;
+
+    @media (max-width: 500px) {
+      @include grid(2, $gutter_x: 20px, $gutter_y: 20px);
+    }
+
+    @media (max-width: 450px) {
+      display: block;
+    }
 
     .post-card-details {
       margin: 0;
@@ -35,6 +48,18 @@
       align-items: flex-end;
       width: 100%;
       overflow: hidden;
+
+      @media (max-width: 600px) {
+        height: 80px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 450px) {
+        height: auto;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
     }
 
     .post-card-title a {
@@ -73,6 +98,14 @@
         content: '';
         display: block;
         padding-bottom: 80%;
+
+        @media (max-width: 1000px) {
+          padding-bottom: 130%;
+        }
+
+        @media (max-width: 600px) {
+          padding-bottom: 120%;
+        }
       }
     }
   }
@@ -82,7 +115,7 @@
   opacity: .3;
   order: 2;
   position: relative;
-  margin: 0 20px;
+  margin: 20px 10px;
   transition: all $transition-duration;
 
   &:hover {

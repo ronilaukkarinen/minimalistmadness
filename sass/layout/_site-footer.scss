@@ -10,6 +10,10 @@
     padding-bottom: 0;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 890px) {
+      display: block;
+    }
   }
 
   a,
@@ -25,6 +29,14 @@
 
   p {
     text-align: right;
+
+    @media (max-width: 950px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 890px) {
+      text-align: center;
+    }
   }
 
   a:hover {
@@ -40,10 +52,29 @@
 
   ul {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
+
+    @media (max-width: 450px) {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 890px) {
+      margin-bottom: 1.5rem;
+      font-size: 15px;
+      text-align: center;
+      justify-content: center;
+    }
 
     li {
       margin-right: 15px;
+
+      @media (max-width: 450px) {
+        margin-bottom: 5px;
+        margin-right: 7.5px;
+        margin-left: 7.5px;
+      }
     }
 
     svg {

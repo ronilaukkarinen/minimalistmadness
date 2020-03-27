@@ -1,16 +1,39 @@
 .block.block-four-posts.block-most-popular .container {
   .post-feed {
     @include grid(4, $gutter_x: 40px, $gutter_y: 0px);
+
+    @media (max-width: 1000px) {
+      @include grid(2, $gutter_x: 40px, $gutter_y: 40px);
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 500px) {
+      @include grid(2, $gutter_x: 20px, $gutter_y: 20px);
+    }
+
+    @media (max-width: 450px) {
+      display: block;
+    }
   }
 
   .post-feed .post-card-image .img:after {
     content: '';
     display: block;
     padding-bottom: 130%;
+
+    @media (max-width: 600px) {
+      padding-bottom: 120%;
+    }
   }
 
   .post-card-title {
     height: 45px;
     align-items: flex-start;
+
+    @media (max-width: 600px) {
+      height: 70px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 }
