@@ -17,12 +17,12 @@
     display: flex;
     align-items: center;
     padding: 15px 0;
-    border-bottom: 1px solid #e9e9ec;
+    border-bottom: 1px solid $color-border-light;
     position: relative;
   }
 
   li:first-child {
-    border-top: 1px solid #e9e9ec;
+    border-top: 1px solid $color-border-light;
   }
 
   li:hover {

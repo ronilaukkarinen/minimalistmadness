@@ -1,0 +1,54 @@
+.site-footer .container {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 8rem;
+  margin-top: 8rem;
+
+  .footer-space {
+    border-top: 1px solid $color-border-light;
+    padding-top: 5rem;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a,
+  p {
+    color: #9b9ba8;
+    margin: 0;
+  }
+
+  ul,
+  p {
+    flex: 1;
+  }
+
+  p {
+    text-align: right;
+  }
+
+  a:hover {
+    opacity: .6;
+  }
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul {
+    display: flex;
+    width: 100%;
+
+    li {
+      margin-right: 15px;
+    }
+
+    svg {
+      width: 19px;
+      height: 19px;
+    }
+  }
+}

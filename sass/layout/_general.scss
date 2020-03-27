@@ -30,16 +30,12 @@
 
 // Site wrapper
 .site {
-  padding: 3vw;
+  padding: 0;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   overflow: hidden;
-
-  @media (max-width: $responsivenav) {
-    padding: 6vw;
-  }
 }
 
 // Containers

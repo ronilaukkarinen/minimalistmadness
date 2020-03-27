@@ -3,6 +3,15 @@
   z-index: 300;
   margin-top: -10px;
   font-size: 1.35rem;
+  padding: 6rem;
+
+  @media (max-width: $responsivenav) {
+    padding: 4rem;
+  }
+
+  @media (max-width: $container-mobile) {
+    padding: 3rem 2rem;
+  }
 }
 
 .site-head-container {
@@ -148,10 +157,6 @@
 }
 
 @media (max-width: $responsivenav) {
-  .site-head {
-    padding: 0;
-  }
-
   .nav-burger {
     display: block;
   }
@@ -282,7 +287,7 @@
   display: flex;
   overflow: visible;
   margin: 0;
-  padding: 2px 0;
+  padding: 2px 4rem;
   border: 0;
   color: inherit;
   font: inherit;
@@ -290,6 +295,10 @@
   background-color: transparent;
   cursor: pointer;
   transition: opacity .15s linear, filter .15s linear;
+
+  @media (max-width: $container-mobile) {
+    padding: 2px 2rem;
+  }
 }
 
 .hamburger-box {

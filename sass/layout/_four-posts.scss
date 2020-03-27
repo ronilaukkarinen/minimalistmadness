@@ -9,7 +9,7 @@
   }
 
   .post-feed {
-    @include grid(2, $gutter_x: 10px, $gutter_y: 0px);
+    @include grid(2, $gutter_x: 40px, $gutter_y: 0px);
     margin-bottom: 30px;
     order: 1;
 
@@ -50,10 +50,6 @@
       &:hover .post-card-details {
         opacity: 1;
       }
-    }
-
-    .post-card-content {
-      padding: 12px 15px 15px;
     }
 
     .post-card-image {

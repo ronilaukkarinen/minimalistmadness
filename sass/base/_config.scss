@@ -13,6 +13,7 @@ $color-darkgrey: #4f5964;
 $color-lightgrey: #f5f5f5;
 $color-primary: $color-black;
 $color-border: #ddd;
+$color-border-light: #e9e9ec;
 
 // Text and background colors
 $color-links: $color-black;
@@ -47,7 +48,7 @@ $layout-max-width: 100%;
 // Container settings
 $container-default-pad-x: 2rem; // Default padding between containers horizontally. Tweak _general.scss if needed.
 $container-default-pad-y: 6.4rem; // Default vertical padding for containers
-$grid-base-size: 1400px; // Layout container max width on desktop. This is default .container size
+$grid-base-size: 1470px; // Layout container max width on desktop. This is default .container size
 $article-max-width: 800px; // Max width for articles (see also $content_width in functions.php!)
 $container-mobile: 480px;
 $container-ipad: 770px;

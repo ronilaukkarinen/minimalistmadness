@@ -1,6 +1,6 @@
 .block.block-four-posts.block-upsells .container {
   .post-feed {
-    @include grid(4, $gutter_x: 10px, $gutter_y: 0px);
+    @include grid(4, $gutter_x: 40px, $gutter_y: 0px);
   }
 
   .post-feed .post-card-image .img:after {
