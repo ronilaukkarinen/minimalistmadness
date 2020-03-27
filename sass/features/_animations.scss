@@ -18,3 +18,62 @@ html.is-animating .transition-fade {
     transform: translate3d(0, 0, 0);
   }
 }
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes fadeOutUpShort {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes mousePointer {
+  0% {
+    opacity: 0;
+    top: 20%;
+  }
+
+  20% {
+    opacity: 1;
+    top: 20%;
+  }
+
+  40% {
+    opacity: 1;
+    top: 20%;
+  }
+
+  60% {
+    opacity: 1;
+    top: 70%;
+  }
+
+  61% {
+    opacity: 1;
+    top: 70%;
+  }
+
+  67% {
+    opacity: 0;
+    top: 70%;
+  }
+
+  100% {
+    opacity: 0;
+    top: 70%;
+  }
+}

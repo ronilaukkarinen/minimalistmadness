@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-26 21:42:59
+ * @Last Modified time: 2020-03-27 18:02:23
  */
 
 namespace Air_Light;
@@ -415,4 +415,20 @@ if ( function_exists( 'acf_add_options_page' ) ) {
       'position' => 5,
     )
   );
+}
+
+/**
+ * Calculate age function
+ *
+ * @param birthdate $birthdate Birthdate.
+ */
+function khonsu_calculate_age( $birthdate ) {
+  list( $year, $month, $day ) = explode( '/', $birthdate );
+  $yeardiff = date( 'Y' ) - $year;
+
+  if ( date( 'm' ) < $month || (date( 'm' ) === $month && date( 'd' ) < $day ) ) {
+    $yeardiff--;
+  }
+
+  return $yeardiff;
 }

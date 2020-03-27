@@ -4,7 +4,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 21:54:17
+ * @Last Modified time: 2020-03-27 18:11:22
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -15,14 +15,13 @@ get_header(); ?>
 
 <div id="content" class="content-area">
 	<main role="main" id="main" class="site-main">
-  <div id="swup" class="transition-fade">
     <div class="container">
 
       <?php if ( have_posts() ) : ?>
         <header class="entry-header">
           <?php
-            the_archive_title( '<h1 class="entry-title">', '</h1>' );
-            the_archive_description( '<div class="taxonomy-description">', '</div>' );
+          the_archive_title( '<h1 class="entry-title">', '</h1>' );
+          the_archive_description( '<div class="taxonomy-description">', '</div>' );
           ?>
         </header><!-- .entry-header -->
 
@@ -38,8 +37,7 @@ get_header(); ?>
 
     </div><!-- .container -->
 
-  </div>
-	</main><!-- #main -->
+  </main><!-- #main -->
 </div><!-- #primary -->
 
 <?php get_footer();

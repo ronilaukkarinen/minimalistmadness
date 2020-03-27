@@ -9,7 +9,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 21:54:23
+ * @Last Modified time: 2020-03-27 18:11:42
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -20,28 +20,28 @@ get_header(); ?>
 
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
-    <div id="swup" class="transition-fade">
+
     <div class="container">
 
       <?php if ( have_posts() ) : ?>
 
         <?php if ( is_home() && ! is_front_page() ) : ?>
 
-          <header>
-            <h1 class="entry-title screen-reader-text">
-              <?php single_post_title(); ?>
-            </h1>
-          </header>
+        <header>
+          <h1 class="entry-title screen-reader-text">
+            <?php single_post_title(); ?>
+          </h1>
+        </header>
 
-        <?php endif; ?>
+      <?php endif; ?>
 
-        <?php while ( have_posts() ) : the_post(); ?>
+      <?php while ( have_posts() ) : the_post(); ?>
 
-          <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+        <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 
-          <?php endwhile; ?>
+      <?php endwhile; ?>
 
-        <?php the_posts_navigation(); ?>
+      <?php the_posts_navigation(); ?>
 
       <?php else : ?>
 
@@ -49,7 +49,6 @@ get_header(); ?>
 
       <?php endif; ?>
 
-    </div>
     </div><!-- .container -->
   </main><!-- #main -->
 </div><!-- #primary -->

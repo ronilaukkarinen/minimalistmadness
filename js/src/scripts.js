@@ -5,7 +5,6 @@
 // Import modules (comment to disable)
 import './skip-link-focus-fix';
 import 'what-input';
-import './navigation.js';
 import './lazyload.js';
 import Swup from 'swup';
 
@@ -24,7 +23,7 @@ window.onload = function() {
     // Define Javascript is active by changing the body class
     document.body.classList.remove('no-js');
     document.body.classList.add('js');
- });
+  });
 }
 
 // Define Javascript is active by changing the body class
@@ -44,34 +43,34 @@ lazyload(images, {
 // jQuery start
 ( function( $ ) {
 
-	// Hide or show the "back to top" link
-	$(window).scroll(function() {
-
-    // Back to top
-  	var offset = 300; // Browser window scroll (in pixels) after which the "back to top" link is shown
-  	var offset_opacity = 1200; // Browser window scroll (in pixels) after which the link opacity is reduced
-  	var scroll_top_duration = 700; // Duration of the top scrolling animation (in ms)
-    var link_class = '.top';
-
-    if( $(this).scrollTop() > offset ) {
-      $( link_class ).addClass('is-visible');
-    } else {
-      $( link_class ).removeClass('is-visible');
-    }
-
-    if( $(this).scrollTop() > offset_opacity ) {
-     $( link_class ).addClass('fade-out');
-   } else {
-    $( link_class ).removeClass('fade-out');
-  }
-
-});
-
   // Document ready start
   $(function() {
 
+  // Window scroll
+  $(window).scroll(function() {
+
+    // Hide scroll indicator after certain amount
+    if ( '.scroll-indicator' != undefined) {
+      var scroll = $(window).scrollTop();
+        if (scroll >= 200) {
+          $('.scroll-indicator').addClass('fadeout');
+
+          setTimeout( function(){
+            $('.scroll-indicator').hide();
+          }, 500 );
+
+        } else {
+          $('.scroll-indicator').removeClass('fadeout');
+
+          setTimeout( function(){
+            $('.scroll-indicator').show();
+          }, 500 );
+        }
+      }
+    });
+
     // Add class to old images without class
-    $( window ).ready(function() {
+    $(window).ready(function() {
       $('.container-article img').each(function() {
         console.log( $(this).width() );
         if ( $(this).width() > 350 ) {
@@ -108,17 +107,17 @@ lazyload(images, {
     backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
   }
 
-    $('.rain.front-row').append(drops);
-    $('.rain.back-row').append(backDrops);
-  }
+  $('.rain.front-row').append(drops);
+  $('.rain.back-row').append(backDrops);
+}
 
-    $('.site-head-logo').hover(function(){
-      $('body').addClass('splat-toggle');
-    }, function() {
-      $('body').removeClass('splat-toggle');
-    });
+$('.site-head-logo').hover(function(){
+  $('body').addClass('splat-toggle');
+}, function() {
+  $('body').removeClass('splat-toggle');
+});
 
-    makeItRain();
+makeItRain();
 
 });
 

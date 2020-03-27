@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 21:54:32
+ * @Last Modified time: 2020-03-27 18:11:58
  * @package minimalistmadness
  */
 
@@ -16,7 +16,6 @@ get_header(); ?>
 
 <div id="content" class="content-area">
 	<main role="main" id="main" class="site-main">
-    <div id="swup" class="transition-fade">
     <div class="container">
 
       <?php if ( have_posts() ) : ?>
@@ -27,23 +26,22 @@ get_header(); ?>
           </h1>
         </header><!-- .entry-header -->
 
-      <?php while ( have_posts() ) : the_post(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/content', 'search' ); ?>
+          <?php get_template_part( 'template-parts/content', 'search' ); ?>
 
-      <?php endwhile; ?>
+        <?php endwhile; ?>
 
-      <?php the_posts_navigation(); ?>
+        <?php the_posts_navigation(); ?>
 
-		<?php else : ?>
+        <?php else : ?>
 
-      <?php get_template_part( 'template-parts/content', 'none' ); ?>
+          <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-    <?php endif; ?>
+        <?php endif; ?>
 
-    </div><!-- .container -->
-    </div>
-  </main><!-- #main -->
-</div><!-- #primary -->
+      </div><!-- .container -->
+    </main><!-- #main -->
+  </div><!-- #primary -->
 
-<?php get_footer();
+  <?php get_footer();
