@@ -529,10 +529,17 @@ img {
   position: relative;
   top: 3px;
   margin-right: 3px;
+  transition: all .33s;
 }
 
 .site-head-logo:hover {
   text-decoration: none;
+}
+
+.site-head-logo:hover svg {
+  transform-origin: left;
+  transform: rotate(-8deg);
+  color: #4d5ca1;
 }
 
 .site-head-logo img {

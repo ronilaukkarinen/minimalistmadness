@@ -83,11 +83,18 @@
     position: relative;
     top: 3px;
     margin-right: 3px;
+    transition: all .33s;
   }
 }
 
 .site-head-logo:hover {
   text-decoration: none;
+
+  svg {
+    transform-origin: left;
+    transform: rotate(-8deg);
+    color: $color-rain;
+  }
 }
 
 .site-head-logo img {
