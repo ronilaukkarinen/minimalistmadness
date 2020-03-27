@@ -4,7 +4,6 @@
 
 // Import modules (comment to disable)
 import './skip-link-focus-fix';
-import MoveTo from 'moveto';
 import 'what-input';
 import './navigation.js';
 import './lazyload.js';
@@ -75,15 +74,6 @@ lazyload(images, {
     $('.nav-burger').click(function () {
       $('body').toggleClass('site-head-open');
     });
-
-    // Set up back to top link
-    var moveTo = new MoveTo();
-    var target = document.getElementById('target');
-    moveTo.move(target);
-
-    // Register a back to top trigger
-    var trigger = document.getElementsByClassName('js-trigger')[0];
-    moveTo.registerTrigger(trigger);
 
     // Rain
     var makeItRain = function() {
