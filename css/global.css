@@ -5197,3 +5197,10 @@ ul.tags li a:hover {
 .post-navigation .nav-next a:after {
   content: ' →';
 }
+
+.photoblog,
+.size-large {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+}

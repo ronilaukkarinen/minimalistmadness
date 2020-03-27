@@ -654,3 +654,11 @@ ul.tags {
 .post-navigation .nav-next a:after {
   content: ' →';
 }
+
+// Legacy
+.photoblog,
+.size-large {
+  width: 100%;
+  height: auto;
+  max-width: $article-max-width;
+}

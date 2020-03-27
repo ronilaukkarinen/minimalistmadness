@@ -70,6 +70,16 @@ lazyload(images, {
   // Document ready start
   $(function() {
 
+    // Add class to old images without class
+    $( window ).ready(function() {
+      $('.container-article img').each(function() {
+        console.log( $(this).width() );
+        if ( $(this).width() > 350 ) {
+          $(this).addClass('size-large');
+        }
+      });
+    });
+
     // Mobile Menu Trigger
     $('.nav-burger').click(function () {
       $('body').toggleClass('site-head-open');
