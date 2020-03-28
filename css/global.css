@@ -3045,7 +3045,11 @@ a:hover {
 .search-results ul a,
 .search-results li a,
 .container.container-article article a:not(.button):not(.post-edit-link),
-.container-article.advertisement article a:not(.button):not(.post-edit-link) {
+.container-article.advertisement article a:not(.button):not(.post-edit-link),
+.container.container-article .article a:not(.button):not(.post-edit-link),
+.container-article.advertisement .article a:not(.button):not(.post-edit-link),
+.entry-stack .entry-stack-details p a,
+.entry-stack .entry-stack-details-read-more p a {
   color: #414663;
   text-decoration: none;
   border-bottom: .1px solid #4d5787;
@@ -3058,7 +3062,11 @@ a:hover {
 .search-results ul a:hover,
 .search-results li a:hover,
 .container.container-article article a:hover:not(.button):not(.post-edit-link),
-.container-article.advertisement article a:hover:not(.button):not(.post-edit-link) {
+.container-article.advertisement article a:hover:not(.button):not(.post-edit-link),
+.container.container-article .article a:hover:not(.button):not(.post-edit-link),
+.container-article.advertisement .article a:hover:not(.button):not(.post-edit-link),
+.entry-stack .entry-stack-details p a:hover,
+.entry-stack .entry-stack-details-read-more p a:hover {
   background: #4d5787;
   color: #fff;
   border-color: #4d5787;
@@ -6437,6 +6445,11 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
+.block.block-page .container.container-archive.container-article,
+.block.block-page .container-archive.container-article.advertisement {
+  max-width: 700px;
+}
+
 .block.block-page ul,
 .block.block-page ol {
   margin-left: 12px;
@@ -6591,7 +6604,9 @@ del {
 }
 
 .container.container-article article,
-.container-article.advertisement article {
+.container-article.advertisement article,
+.container.container-article .article,
+.container-article.advertisement .article {
   max-width: 100%;
   padding-right: 0;
   padding-left: 0;
@@ -6600,12 +6615,16 @@ del {
 }
 
 .container.container-article article img,
-.container-article.advertisement article img {
+.container-article.advertisement article img,
+.container.container-article .article img,
+.container-article.advertisement .article img {
   border-radius: 4px;
 }
 
 .container.container-article article a:not(.button):not(.post-edit-link),
-.container-article.advertisement article a:not(.button):not(.post-edit-link) {
+.container-article.advertisement article a:not(.button):not(.post-edit-link),
+.container.container-article .article a:not(.button):not(.post-edit-link),
+.container-article.advertisement .article a:not(.button):not(.post-edit-link) {
   position: relative;
   text-decoration: none;
 }
@@ -6615,7 +6634,13 @@ del {
 .container.container-article article cite,
 .container-article.advertisement article cite,
 .container.container-article article small,
-.container-article.advertisement article small {
+.container-article.advertisement article small,
+.container.container-article .article figcaption,
+.container-article.advertisement .article figcaption,
+.container.container-article .article cite,
+.container-article.advertisement .article cite,
+.container.container-article .article small,
+.container-article.advertisement .article small {
   font-size: 14px;
   font-style: normal;
   color: rgba(75, 75, 90, .9);
@@ -6637,18 +6662,28 @@ del {
   .container.container-article article cite,
   .container-article.advertisement article cite,
   .container.container-article article small,
-  .container-article.advertisement article small {
+  .container-article.advertisement article small,
+  .container.container-article .article figcaption,
+  .container-article.advertisement .article figcaption,
+  .container.container-article .article cite,
+  .container-article.advertisement .article cite,
+  .container.container-article .article small,
+  .container-article.advertisement .article small {
     margin-top: 2rem;
   }
 }
 
 .container.container-article article a:hover,
-.container-article.advertisement article a:hover {
+.container-article.advertisement article a:hover,
+.container.container-article .article a:hover,
+.container-article.advertisement .article a:hover {
   text-decoration: none;
 }
 
 .container.container-article article p,
-.container-article.advertisement article p {
+.container-article.advertisement article p,
+.container.container-article .article p,
+.container-article.advertisement .article p {
   color: #141414;
   font-weight: 400;
 }
@@ -6664,7 +6699,19 @@ del {
 .container.container-article article h5,
 .container-article.advertisement article h5,
 .container.container-article article .is-style-ingress,
-.container-article.advertisement article .is-style-ingress {
+.container-article.advertisement article .is-style-ingress,
+.container.container-article .article h1,
+.container-article.advertisement .article h1,
+.container.container-article .article h2,
+.container-article.advertisement .article h2,
+.container.container-article .article h3,
+.container-article.advertisement .article h3,
+.container.container-article .article h4,
+.container-article.advertisement .article h4,
+.container.container-article .article h5,
+.container-article.advertisement .article h5,
+.container.container-article .article .is-style-ingress,
+.container-article.advertisement .article .is-style-ingress {
   line-height: 1.22;
 }
 
@@ -6673,32 +6720,48 @@ del {
 .container.container-article article .fb-post,
 .container-article.advertisement article .fb-post,
 .container.container-article article small,
-.container-article.advertisement article small {
+.container-article.advertisement article small,
+.container.container-article .article iframe,
+.container-article.advertisement .article iframe,
+.container.container-article .article .fb-post,
+.container-article.advertisement .article .fb-post,
+.container.container-article .article small,
+.container-article.advertisement .article small {
   display: block;
 }
 
 .container.container-article article ul,
 .container-article.advertisement article ul,
 .container.container-article article li,
-.container-article.advertisement article li {
+.container-article.advertisement article li,
+.container.container-article .article ul,
+.container-article.advertisement .article ul,
+.container.container-article .article li,
+.container-article.advertisement .article li {
   line-height: 1.77;
 }
 
 .container.container-article article .featured-image-single,
-.container-article.advertisement article .featured-image-single {
+.container-article.advertisement article .featured-image-single,
+.container.container-article .article .featured-image-single,
+.container-article.advertisement .article .featured-image-single {
   max-width: 920px;
   margin-bottom: 80px;
   margin-bottom: 8rem;
 }
 
 .container.container-article article .featured-image-single img,
-.container-article.advertisement article .featured-image-single img {
+.container-article.advertisement article .featured-image-single img,
+.container.container-article .article .featured-image-single img,
+.container-article.advertisement .article .featured-image-single img {
   width: 100%;
   height: auto;
 }
 
 .container.container-article article blockquote,
-.container-article.advertisement article blockquote {
+.container-article.advertisement article blockquote,
+.container.container-article .article blockquote,
+.container-article.advertisement .article blockquote {
   margin-left: auto;
   margin-right: auto;
   border-left: 2px solid #141414;
@@ -6713,43 +6776,57 @@ del {
 }
 
 .container.container-article article blockquote cite,
-.container-article.advertisement article blockquote cite {
+.container-article.advertisement article blockquote cite,
+.container.container-article .article blockquote cite,
+.container-article.advertisement .article blockquote cite {
   text-align: left;
 }
 
 .container.container-article article blockquote *,
-.container-article.advertisement article blockquote * {
+.container-article.advertisement article blockquote *,
+.container.container-article .article blockquote *,
+.container-article.advertisement .article blockquote * {
   line-height: 1.77;
 }
 
 @media (max-width: 480px) {
   .container.container-article article blockquote,
-  .container-article.advertisement article blockquote {
+  .container-article.advertisement article blockquote,
+  .container.container-article .article blockquote,
+  .container-article.advertisement .article blockquote {
     padding: 4rem 2rem;
   }
 }
 
 .container.container-article article blockquote p,
-.container-article.advertisement article blockquote p {
+.container-article.advertisement article blockquote p,
+.container.container-article .article blockquote p,
+.container-article.advertisement .article blockquote p {
   font-size: 16px;
 }
 
 @media screen and (min-width: 320px) {
   .container.container-article article blockquote p,
-  .container-article.advertisement article blockquote p {
+  .container-article.advertisement article blockquote p,
+  .container.container-article .article blockquote p,
+  .container-article.advertisement .article blockquote p {
     font-size: calc(16px + 6 * ((100vw - 320px) / 1600));
   }
 }
 
 @media screen and (min-width: 1920px) {
   .container.container-article article blockquote p,
-  .container-article.advertisement article blockquote p {
+  .container-article.advertisement article blockquote p,
+  .container.container-article .article blockquote p,
+  .container-article.advertisement .article blockquote p {
     font-size: 22px;
   }
 }
 
 .container.container-article article cite,
-.container-article.advertisement article cite {
+.container-article.advertisement article cite,
+.container.container-article .article cite,
+.container-article.advertisement .article cite {
   margin-bottom: 80px;
   margin-bottom: 8rem;
 }
@@ -6757,7 +6834,11 @@ del {
 .container.container-article article ul,
 .container-article.advertisement article ul,
 .container.container-article article ol,
-.container-article.advertisement article ol {
+.container-article.advertisement article ol,
+.container.container-article .article ul,
+.container-article.advertisement .article ul,
+.container.container-article .article ol,
+.container-article.advertisement .article ol {
   padding-left: 22px;
   padding-left: 2.2rem;
 }
@@ -6766,7 +6847,11 @@ del {
   .container.container-article article ul,
   .container-article.advertisement article ul,
   .container.container-article article ol,
-  .container-article.advertisement article ol {
+  .container-article.advertisement article ol,
+  .container.container-article .article ul,
+  .container-article.advertisement .article ul,
+  .container.container-article .article ol,
+  .container-article.advertisement .article ol {
     padding-left: 4.2rem;
   }
 }
@@ -6774,7 +6859,11 @@ del {
 .container.container-article article div[style="width: 640px;"],
 .container-article.advertisement article div[style="width: 640px;"],
 .container.container-article article .wp-video,
-.container-article.advertisement article .wp-video {
+.container-article.advertisement article .wp-video,
+.container.container-article .article div[style="width: 640px;"],
+.container-article.advertisement .article div[style="width: 640px;"],
+.container.container-article .article .wp-video,
+.container-article.advertisement .article .wp-video {
   width: 100% !important;
   max-width: 800px !important;
   margin-left: auto !important;
@@ -6782,7 +6871,9 @@ del {
 }
 
 .container.container-article article > *,
-.container-article.advertisement article > * {
+.container-article.advertisement article > *,
+.container.container-article .article > *,
+.container-article.advertisement .article > * {
   max-width: 800px;
   width: 100%;
   margin-left: auto;
@@ -6792,14 +6883,18 @@ del {
 
 @media (max-width: 840px) {
   .container.container-article article > *,
-  .container-article.advertisement article > * {
+  .container-article.advertisement article > *,
+  .container.container-article .article > *,
+  .container-article.advertisement .article > * {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
 .container.container-article article > *.wp-block-image,
-.container-article.advertisement article > *.wp-block-image {
+.container-article.advertisement article > *.wp-block-image,
+.container.container-article .article > *.wp-block-image,
+.container-article.advertisement .article > *.wp-block-image {
   margin-top: 40px;
   margin-top: 4rem;
   margin-bottom: 40px;
@@ -6807,12 +6902,16 @@ del {
 }
 
 .container.container-article article > *.wp-block-image .entry-photo,
-.container-article.advertisement article > *.wp-block-image .entry-photo {
+.container-article.advertisement article > *.wp-block-image .entry-photo,
+.container.container-article .article > *.wp-block-image .entry-photo,
+.container-article.advertisement .article > *.wp-block-image .entry-photo {
   margin: 0;
 }
 
 .container.container-article article > *.wp-block-image .entry-photo img,
-.container-article.advertisement article > *.wp-block-image .entry-photo img {
+.container-article.advertisement article > *.wp-block-image .entry-photo img,
+.container.container-article .article > *.wp-block-image .entry-photo img,
+.container-article.advertisement .article > *.wp-block-image .entry-photo img {
   max-width: 100%;
   width: 100%;
   height: auto;
@@ -6823,7 +6922,13 @@ del {
 .container.container-article article > *.instagram-media,
 .container-article.advertisement article > *.instagram-media,
 .container.container-article article > *.wp-video,
-.container-article.advertisement article > *.wp-video {
+.container-article.advertisement article > *.wp-video,
+.container.container-article .article > *.twitter-tweet,
+.container-article.advertisement .article > *.twitter-tweet,
+.container.container-article .article > *.instagram-media,
+.container-article.advertisement .article > *.instagram-media,
+.container.container-article .article > *.wp-video,
+.container-article.advertisement .article > *.wp-video {
   width: 100% !important;
   max-width: 800px !important;
   margin-left: auto !important;
@@ -6836,7 +6941,13 @@ del {
   .container.container-article article > *.instagram-media,
   .container-article.advertisement article > *.instagram-media,
   .container.container-article article > *.wp-video,
-  .container-article.advertisement article > *.wp-video {
+  .container-article.advertisement article > *.wp-video,
+  .container.container-article .article > *.twitter-tweet,
+  .container-article.advertisement .article > *.twitter-tweet,
+  .container.container-article .article > *.instagram-media,
+  .container-article.advertisement .article > *.instagram-media,
+  .container.container-article .article > *.wp-video,
+  .container-article.advertisement .article > *.wp-video {
     padding-left: 4rem !important;
     padding-right: 4rem !important;
   }
@@ -6848,14 +6959,22 @@ del {
   .container.container-article article > *.instagram-media,
   .container-article.advertisement article > *.instagram-media,
   .container.container-article article > *.wp-video,
-  .container-article.advertisement article > *.wp-video {
+  .container-article.advertisement article > *.wp-video,
+  .container.container-article .article > *.twitter-tweet,
+  .container-article.advertisement .article > *.twitter-tweet,
+  .container.container-article .article > *.instagram-media,
+  .container-article.advertisement .article > *.instagram-media,
+  .container.container-article .article > *.wp-video,
+  .container-article.advertisement .article > *.wp-video {
     padding-left: 2rem !important;
     padding-right: 2rem !important;
   }
 }
 
 .container.container-article article > *.entry-title,
-.container-article.advertisement article > *.entry-title {
+.container-article.advertisement article > *.entry-title,
+.container.container-article .article > *.entry-title,
+.container-article.advertisement .article > *.entry-title {
   font-size: 42px;
   max-width: 1000px;
   line-height: 1;
@@ -6867,32 +6986,42 @@ del {
 
 @media screen and (min-width: 320px) {
   .container.container-article article > *.entry-title,
-  .container-article.advertisement article > *.entry-title {
+  .container-article.advertisement article > *.entry-title,
+  .container.container-article .article > *.entry-title,
+  .container-article.advertisement .article > *.entry-title {
     font-size: calc(42px + 48 * ((100vw - 320px) / 1600));
   }
 }
 
 @media screen and (min-width: 1920px) {
   .container.container-article article > *.entry-title,
-  .container-article.advertisement article > *.entry-title {
+  .container-article.advertisement article > *.entry-title,
+  .container.container-article .article > *.entry-title,
+  .container-article.advertisement .article > *.entry-title {
     font-size: 90px;
   }
 }
 
 @media (max-width: 600px) {
   .container.container-article article > *.entry-title,
-  .container-article.advertisement article > *.entry-title {
+  .container-article.advertisement article > *.entry-title,
+  .container.container-article .article > *.entry-title,
+  .container-article.advertisement .article > *.entry-title {
     margin-top: 0;
   }
 }
 
 .container.container-article article > *.entry-title svg,
-.container-article.advertisement article > *.entry-title svg {
+.container-article.advertisement article > *.entry-title svg,
+.container.container-article .article > *.entry-title svg,
+.container-article.advertisement .article > *.entry-title svg {
   margin-left: 5px;
 }
 
 .container.container-article article > *.entry-meta,
-.container-article.advertisement article > *.entry-meta {
+.container-article.advertisement article > *.entry-meta,
+.container.container-article .article > *.entry-meta,
+.container-article.advertisement .article > *.entry-meta {
   text-align: center;
   margin-bottom: 90px;
   margin-bottom: 9rem;
@@ -6901,13 +7030,17 @@ del {
 
 @media (max-width: 480px) {
   .container.container-article article > *.entry-meta,
-  .container-article.advertisement article > *.entry-meta {
+  .container-article.advertisement article > *.entry-meta,
+  .container.container-article .article > *.entry-meta,
+  .container-article.advertisement .article > *.entry-meta {
     margin-bottom: 8rem;
   }
 }
 
 .container.container-article article > *.entry-meta p,
-.container-article.advertisement article > *.entry-meta p {
+.container-article.advertisement article > *.entry-meta p,
+.container.container-article .article > *.entry-meta p,
+.container-article.advertisement .article > *.entry-meta p {
   font-size: 16px;
   margin-top: 20px;
   margin-top: 2rem;
@@ -6916,45 +7049,59 @@ del {
 
 @media screen and (min-width: 320px) {
   .container.container-article article > *.entry-meta p,
-  .container-article.advertisement article > *.entry-meta p {
+  .container-article.advertisement article > *.entry-meta p,
+  .container.container-article .article > *.entry-meta p,
+  .container-article.advertisement .article > *.entry-meta p {
     font-size: calc(16px + 3 * ((100vw - 320px) / 1600));
   }
 }
 
 @media screen and (min-width: 1920px) {
   .container.container-article article > *.entry-meta p,
-  .container-article.advertisement article > *.entry-meta p {
+  .container-article.advertisement article > *.entry-meta p,
+  .container.container-article .article > *.entry-meta p,
+  .container-article.advertisement .article > *.entry-meta p {
     font-size: 19px;
   }
 }
 
 @media (max-width: 480px) {
   .container.container-article article > *.entry-meta p,
-  .container-article.advertisement article > *.entry-meta p {
+  .container-article.advertisement article > *.entry-meta p,
+  .container.container-article .article > *.entry-meta p,
+  .container-article.advertisement .article > *.entry-meta p {
     font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .container.container-article article > *.entry-meta .reading-time,
-  .container-article.advertisement article > *.entry-meta .reading-time {
+  .container-article.advertisement article > *.entry-meta .reading-time,
+  .container.container-article .article > *.entry-meta .reading-time,
+  .container-article.advertisement .article > *.entry-meta .reading-time {
     display: block;
   }
 
   .container.container-article article > *.entry-meta .reading-time .dot-divider,
-  .container-article.advertisement article > *.entry-meta .reading-time .dot-divider {
+  .container-article.advertisement article > *.entry-meta .reading-time .dot-divider,
+  .container.container-article .article > *.entry-meta .reading-time .dot-divider,
+  .container-article.advertisement .article > *.entry-meta .reading-time .dot-divider {
     display: none;
   }
 }
 
 .container.container-article article > *.wp-block-gallery,
-.container-article.advertisement article > *.wp-block-gallery {
+.container-article.advertisement article > *.wp-block-gallery,
+.container.container-article .article > *.wp-block-gallery,
+.container-article.advertisement .article > *.wp-block-gallery {
   overflow: hidden;
   color: #fff;
 }
 
 .container.container-article article > *.wp-block-gallery figcaption,
-.container-article.advertisement article > *.wp-block-gallery figcaption {
+.container-article.advertisement article > *.wp-block-gallery figcaption,
+.container.container-article .article > *.wp-block-gallery figcaption,
+.container-article.advertisement .article > *.wp-block-gallery figcaption {
   width: 100%;
   color: #fff;
   font-size: 14px;
@@ -6964,12 +7111,16 @@ del {
 }
 
 .container.container-article article > *.wp-block-gallery img,
-.container-article.advertisement article > *.wp-block-gallery img {
+.container-article.advertisement article > *.wp-block-gallery img,
+.container.container-article .article > *.wp-block-gallery img,
+.container-article.advertisement .article > *.wp-block-gallery img {
   margin-bottom: 0;
 }
 
 .container.container-article article > *.alignwide,
-.container-article.advertisement article > *.alignwide {
+.container-article.advertisement article > *.alignwide,
+.container.container-article .article > *.alignwide,
+.container-article.advertisement .article > *.alignwide {
   width: 100%;
   margin-top: 40px;
   margin-top: 4rem;
@@ -6983,7 +7134,9 @@ del {
 
 @media (min-width: 870px) {
   .container.container-article article > *.alignwide,
-  .container-article.advertisement article > *.alignwide {
+  .container-article.advertisement article > *.alignwide,
+  .container.container-article .article > *.alignwide,
+  .container-article.advertisement .article > *.alignwide {
     max-width: 85vw;
     padding-left: 0;
     padding-right: 0;
@@ -6992,14 +7145,18 @@ del {
 
 @media (max-width: 480px) {
   .container.container-article article > *.alignwide,
-  .container-article.advertisement article > *.alignwide {
+  .container-article.advertisement article > *.alignwide,
+  .container.container-article .article > *.alignwide,
+  .container-article.advertisement .article > *.alignwide {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
 .container.container-article article > *.alignfull,
-.container-article.advertisement article > *.alignfull {
+.container-article.advertisement article > *.alignfull,
+.container.container-article .article > *.alignfull,
+.container-article.advertisement .article > *.alignfull {
   max-width: 100%;
   width: 100%;
   margin-top: 80px;
@@ -7009,13 +7166,17 @@ del {
 }
 
 .container.container-article article > *.alignfull img,
-.container-article.advertisement article > *.alignfull img {
+.container-article.advertisement article > *.alignfull img,
+.container.container-article .article > *.alignfull img,
+.container-article.advertisement .article > *.alignfull img {
   border-radius: 0;
 }
 
 @media (min-width: 1170px) {
   .container.container-article article .entry-photo,
-  .container-article.advertisement article .entry-photo {
+  .container-article.advertisement article .entry-photo,
+  .container.container-article .article .entry-photo,
+  .container-article.advertisement .article .entry-photo {
     max-width: 100%;
     text-align: center;
     margin-top: 8rem;
@@ -7023,13 +7184,17 @@ del {
   }
 
   .container.container-article article .entry-photo img,
-  .container-article.advertisement article .entry-photo img {
+  .container-article.advertisement article .entry-photo img,
+  .container.container-article .article .entry-photo img,
+  .container-article.advertisement .article .entry-photo img {
     max-width: 70%;
     margin: 0 auto;
   }
 
   .container.container-article article small[style="text-align: center;"],
-  .container-article.advertisement article small[style="text-align: center;"] {
+  .container-article.advertisement article small[style="text-align: center;"],
+  .container.container-article .article small[style="text-align: center;"],
+  .container-article.advertisement .article small[style="text-align: center;"] {
     width: 100%;
     max-width: 100%;
     display: block;
@@ -8032,4 +8197,135 @@ body.logged-in .hidden-by-default.show {
 
 .comments-area .comment-list li .comment-time:hover {
   opacity: 1;
+}
+
+body .site-content .custom-pagination {
+  opacity: .4;
+  transition: all .55s;
+}
+
+body .site-content .custom-pagination a:not(.button):not(.post-edit-link) {
+  color: #444;
+  transition: all .22s;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+body .site-content .custom-pagination a:not(.button):not(.post-edit-link).current {
+  color: #333;
+}
+
+body .site-content .custom-pagination a:not(.button):not(.post-edit-link):hover {
+  color: #3a3a3a;
+}
+
+body .site-content .custom-pagination:hover {
+  opacity: 1;
+}
+
+.mini-avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.mini-avatar img {
+  border-radius: 50%;
+}
+
+.entry-stack {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.entry-stack:last-of-type {
+  border: 0;
+}
+
+.entry-stack h2 {
+  font-size: 24px;
+  color: #141414;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.entry-stack h2 a {
+  color: #141414;
+}
+
+.entry-stack p {
+  margin: 0;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.entry-stack .entry-stack-header p,
+.entry-stack .entry-stack-header .dot-divider {
+  font-size: 13px;
+  color: #888;
+}
+
+.entry-stack .entry-stack-header p {
+  margin-bottom: 6px;
+}
+
+.entry-stack .entry-stack-details p a {
+  color: #757575;
+}
+
+.entry-stack .entry-stack-details-read-more {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.entry-stack .entry-stack-details-read-more p {
+  padding: 7px 0;
+  margin: 0;
+  font-size: 14px;
+  color: #757575;
+}
+
+@media (max-width: 480px) {
+  .entry-stack .entry-stack-details-read-more p {
+    padding: 3px 0;
+  }
+}
+
+.entry-stack .entry-stack-details-read-more p a {
+  color: #757575;
+}
+
+.notification-box {
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 60px;
+}
+
+.notification-box.old {
+  border-color: #93461f;
+}
+
+.notification-box.old h3,
+.notification-box.old p {
+  color: #93461f;
+}
+
+.notification-box h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 0;
+  color: #444;
+}
+
+.notification-box p {
+  margin: 0;
+  color: #444;
+  font-size: 16px;
 }

@@ -2,56 +2,69 @@
 /**
  * Template part for displaying posts.
  *
- * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-25 21:59:30
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
  * @package minimalistmadness
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
 namespace Air_Light;
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <header class="entry-header">
-    <?php if ( is_single() ) {
-      the_title( '<h1 id="entry-title" class="entry-title">', '</h1>' );
-    } else {
-      the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-    }
 
-    if ( 'post' === get_post_type() ) : ?>
-      <div class="entry-meta">
-        <p class="entry-time">
-          <time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time>
-        </p>
-      </div><!-- .entry-meta -->
-    <?php endif; ?>
-  </header><!-- .entry-header -->
+  <div class="content">
+    <div class="entry-stack">
 
-  <div class="entry-content">
-    <?php the_content( sprintf(
-      wp_kses(
-        /* translators: %s: Name of current post. Only visible to screen readers */
-        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'minimalistmadness' ),
-        array(
-          'span' => array(
-            'class' => array(),
-          ),
-        )
-      ),
-      get_the_title()
-    ) );
+      <div class="entry-stack-header">
+        <p><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time> <span class="dot-divider"></span> <?php echo khonsu_estimated_reading_time(); ?></p>
+      </div><!-- .entry-footer -->
 
-    wp_link_pages( array(
-      'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'minimalistmadness' ),
-      'after'  => '</div>',
-    ) ); ?>
-  </div><!-- .entry-content -->
+      <div class="entry-stack-details">
+        <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_attr( get_the_title() ); ?></a></h2>
+        <?php if ( has_excerpt() ) : ?>
+          <p><?php echo get_the_excerpt(); ?></p>
+        <?php else : ?>
+          <p>
+            <?php
+            $sentence = preg_match( '/^([^.!?]*[\.!?]+){0,2}/', strip_tags( get_the_content() ), $summary );
+            echo strip_shortcodes( $summary[0] );
+            ?>
+          </p>
+        <?php endif; ?>
 
-  <footer class="entry-footer">
-    <?php entry_footer(); ?>
-  </footer><!-- .entry-footer -->
+        <div class="entry-stack-details-read-more">
+
+          <?php if ( 0 === get_comments_number() || empty( get_comments_number() ) ) : ?>
+            <p><?php _e( 'Teksti jatkuu vielä.', 'minimalistmadness' ); ?> <a href="<?php the_permalink(); ?>"><?php _e( 'Lue loppuun.', 'minimalistmadness' ); ?></a></p>
+          <?php else :
+
+          $args_comments = array(
+            'number' => '1',
+            'post_id' => $post->ID,
+          );
+
+          $comments = get_comments( $args_comments );
+
+          foreach ( $comments as $comment ) : ?>
+
+          <?php if ( ! empty( $comment->comment_author_email ) ) : ?>
+            <div class="mini-avatar"><?php echo( get_avatar( $comment->comment_author_email, 42 ) ); ?></div>
+
+            <p><?php echo $comment->comment_author; ?> <?php _e( 'kommentoi viimeksi ', 'minimalistmadness' ); echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' sitten'; if ( get_comments_number() > 1 ) : ?> <?php echo get_comments_number() - 1; _e( ' muun lisäksi', 'minimalistmadness' ); endif; ?>. <a href="<?php the_permalink(); ?>"><?php _e( 'Katso mistä puhutaan.', 'minimalistmadness' ); ?></a></p>
+
+          <?php else : ?>
+
+            <p><?php _e( 'Tekstiä on linkitetty, mutta ei vielä kommentoitu.', 'minimalistmadness' ); ?> <a href="<?php the_permalink(); ?>"><?php _e( 'Lue loppuun.', 'minimalistmadness' ); ?></a></p>
+
+          <?php endif; ?>
+
+        <?php endforeach;
+        ?>
+      <?php endif; ?>
+    </div>
+
+  </div><!-- .entry-stack -->
+</div><!-- .entry -->
+</div><!-- .content -->
 
 </article><!-- #post-## -->

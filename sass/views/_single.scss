@@ -51,7 +51,8 @@ del {
   }
 }
 
-.container.container-article article {
+.container.container-article article,
+.container.container-article .article {
   max-width: 100%;
   padding-right: 0;
   padding-left: 0;
