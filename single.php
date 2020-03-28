@@ -25,25 +25,25 @@ get_header();
         <div class="entry-content">
 
           <?php
-          $post_year = get_the_time('Y');
-          $now_year = date('Y');
+          $post_year = get_the_time( 'Y' );
+          $now_year = date( 'Y' );
           ?>
 
           <?php if ( $post_year <= $now_year - 2 ) : ?>
             <div class="notification-box old">
               <h3>Arkistomatskua</h3>
-              <p>Otathan huomioon, että tämä on yli <b><?php echo $now_year-$post_year; ?> vuotta vanha</b> artikkeli, joten sisältö ei ole välttämättä ihan ajan tasalla. Olin artikkelin kirjoittamishetkellä <?php $post_year = get_the_time('Y'); $age = $post_year - 1988; echo $age; ?>-vuotias.</p>
+              <p>Otathan huomioon, että tämä on yli <b><?php echo esc_attr( $now_year ) - esc_attr( $post_year ); ?> vuotta vanha</b> artikkeli, joten sisältö ei ole välttämättä ihan ajan tasalla. Olin artikkelin kirjoittamishetkellä <?php $post_year = get_the_time( 'Y' ); $age = $post_year - 1988; echo esc_attr( $age ); ?>-vuotias.</p>
             </div>
           <?php endif; ?>
 
           <?php
           the_content( sprintf(
-            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'khonsu' ), array( 'span' => array( 'class' => array() ) ) ),
+            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'minimalistmadness' ), array( 'span' => array( 'class' => array() ) ) ),
             the_title( '<span class="screen-reader-text">"', '"</span>', false )
           ) );
 
           wp_link_pages( array(
-            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'khonsu' ),
+            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'minimalistmadness' ),
             'after'  => '</div>',
           ) );
           ?>
@@ -54,7 +54,7 @@ get_header();
                 sprintf(
                   /* translators: %s: Name of current post. Only visible to screen readers */
                   wp_kses(
-                    __( 'Muokkaa <span class="screen-reader-text">%s</span>', 'brand' ),
+                    __( 'Muokkaa <span class="screen-reader-text">%s</span>', 'minimalistmadness' ),
                     array(
                       'span' => array(
                         'class' => array(),
@@ -71,14 +71,14 @@ get_header();
 
           <div class="author-info">
             <div class="author-col author-col-avatar">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/author-info.jpg" alt="Kuva Roni Laukkarisesta" />
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/author-info.jpg" alt="Kuva Roni Laukkarisesta" />
             </div>
 
             <div class="author-col author-col-info">
               <h3>Roni Laukkarinen</h3>
-              <p class="description"><?php _e( 'Kirjoittaja on ' . khonsu_calculate_age ( '1988/11/01' ) .'-vuotias elämäntapanörtti, ammatiltaan yrittäjä ja teknologiajohtaja perustamassaan <a href="https://www.dude.fi">digitoimistossa</a>, verkkosivujen tekijä, koukussa kirjoittamiseen 5-vuotiaasta. Päivät kuluu <a href="https://twitter.com/streetlazer">monipuolisen</a> <a href="https://www.last.fm/user/rolle-">musiikkiharrastuksen</a>, retropelien ja koodaamisen parissa, mutta arkea piristyttää myös vaimo ja kaksi lasta. <a href="http://twitter.com/rolle" target="_blank">Twitter</a>, <a href="http://www.rollemaa.fi/leffat">leffat</a> ja <a href="http://www.huurteinen.fi" target="_blank">erikoisoluet</a> lähellä sydäntä.', 'brand' ); ?></p>
+              <p class="description">Kirjoittaja on <?php echo esc_attr( khonsu_calculate_age( '1988/11/01' ) ); ?>-vuotias elämäntapanörtti, ammatiltaan yrittäjä ja teknologiajohtaja perustamassaan <a href="https://www.dude.fi">digitoimistossa</a>, verkkosivujen tekijä, koukussa kirjoittamiseen 5-vuotiaasta. Päivät kuluu <a href="https://twitter.com/streetlazer">monipuolisen</a> <a href="https://www.last.fm/user/rolle-">musiikkiharrastuksen</a>, retropelien ja koodaamisen parissa, mutta arkea piristyttää myös vaimo ja kaksi lasta. <a href="http://twitter.com/rolle" target="_blank">Twitter</a>, <a href="http://www.rollemaa.fi/leffat">leffat</a> ja <a href="http://www.huurteinen.fi" target="_blank">erikoisoluet</a> lähellä sydäntä.</p>
 
-              <p class="button-paragraph"><a class="button" href="<?php echo get_page_link(2768); ?>"><?php _e('Lue Rollesta lisää', 'khonsu'); ?></a></p>
+              <p class="button-paragraph"><a class="button" href="<?php echo esc_url( get_page_link( 2768 ) ); ?>">Lue Rollesta lisää</a></p>
             </div>
           </div>
 

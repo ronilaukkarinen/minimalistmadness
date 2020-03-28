@@ -85,6 +85,9 @@
 
         <!-- Many times when developing a customer case we have placeholders for SVG includes, so unnecessary error reports happen with this rule -->
         <exclude name="Squiz.PHP.EmbeddedPhp.Empty" />
+
+        <!-- Project based -->
+        <exclude name="WordPress.DateTime.RestrictedFunctions" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.

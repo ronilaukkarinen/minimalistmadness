@@ -7,6 +7,7 @@ import './skip-link-focus-fix';
 import 'what-input';
 import './lazyload.js';
 import Swup from 'swup';
+import MoveTo from 'moveto';
 
 // Initiate Swup transitions
 const swup = new Swup({
@@ -35,6 +36,15 @@ lazyload(images, {
 
   // Document ready start
   $(function() {
+
+   // Set scroll to -link
+    var moveTo = new MoveTo();
+    var target = document.getElementById('target');
+    moveTo.move(target);
+
+    // Register a back to top trigger
+    var trigger = document.getElementsByClassName('js-trigger')[0];
+    moveTo.registerTrigger(trigger);
 
     swup.on('contentReplaced', function() {
 
