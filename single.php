@@ -22,7 +22,7 @@ get_header();
       <?php get_template_part( 'template-parts/hero-single' ); ?>
 
       <div class="container container-article" id="article-text-content">
-        <div class="entry-content">
+        <article class="entry-content">
 
           <?php
           $post_year = get_the_time( 'Y' );
@@ -82,7 +82,7 @@ get_header();
             </div>
           </div>
 
-        </div><!-- .entry-content -->
+        </article><!-- .entry-content -->
 
       </div><!-- .container-article -->
 
