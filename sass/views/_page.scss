@@ -9,4 +9,86 @@
   @media (min-width: $container-mobile) {
     min-height: 300px;
   }
+
+  ul,
+  ol {
+    margin-left: 1.2rem;
+  }
+
+  .post-head.inverted.archive-all {
+    max-width: 730px;
+
+    @media (max-width: $article-max-width + 40px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
+body #page .template-arkisto {
+  h2 {
+    @include responsive-font(20px, 24px);
+    margin-bottom: 20px;
+    color: #222;
+
+    &.title-grouped {
+      margin-bottom: 10px;
+    }
+  }
+
+  h4 {
+    font-size: 19px;
+    font-weight: 400;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .container.container-article article .tag-cloud {
+    margin-bottom: 60px;
+    max-width: 100%;
+    padding-left: 8rem;
+    padding-right: 8rem;
+
+    @media (max-width: $article-max-width + 40px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+
+    li {
+      display: inline;
+      margin: 0;
+      padding: 0;
+      line-height: 1.22;
+    }
+
+    a:not(.button):not(.post-edit-link):not(.global-link) {
+      box-shadow: none;
+      text-shadow: none;
+      opacity: .9;
+      transition: .33s all;
+      font-weight: 400;
+      text-transform: lowercase;
+      background: transparent;
+      border: 0;
+
+      &:hover {
+        color: #000;
+        opacity: 1;
+        box-shadow: none;
+        text-shadow: none;
+      }
+    }
+  }
 }

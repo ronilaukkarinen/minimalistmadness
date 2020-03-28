@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 18:01:24
+ * @Last Modified time: 2020-03-28 18:41:19
  *
  * @package minimalistmadness
  */
@@ -85,7 +85,7 @@ $theme_settings = [
    */
 
   // If you want to use classic editor somewhere, define it here
-  'use_classic_editor' => [ 'page' ],
+  'use_classic_editor' => [ '' ],
 
   // Don't restrict blocks
   // 'allowed_blocks' => 'all',

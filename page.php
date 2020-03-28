@@ -9,7 +9,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 18:37:10
+ * @Last Modified time: 2020-03-28 18:52:48
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -24,15 +24,14 @@ get_header(); ?>
   <main role="main" id="main" class="site-main">
 
     <section class="block block-page">
-    <div class="container transition-fade" id="swup">
+    <div class="container container-article" id="swup">
+      <div class="transition-fade">
 
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <header class="entry-header">
           <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         </header><!-- .entry-header -->
-
-        <div class="entry-content">
 
           <?php the_content(); ?>
 
@@ -41,15 +40,13 @@ get_header(); ?>
             'after'  => '</div>',
           ] ); ?>
 
-        </div><!-- .entry-content -->
-
         <?php if ( get_edit_post_link() ) : ?>
           <footer class="entry-footer">
             <?php edit_post_link(
               sprintf(
                 /* translators: %s: Name of current post. Only visible to screen readers */
                 wp_kses(
-                  __( 'Edit <span class="screen-reader-text">%s</span>', 'minimalistmadness' ),
+                  __( 'Muokkaa <span class="screen-reader-text">%s</span>', 'minimalistmadness' ),
                   [
                     'span' => [
                       'class' => [],
@@ -64,13 +61,8 @@ get_header(); ?>
           </footer><!-- .entry-footer -->
         <?php endif; ?>
 
+      </div>
       </article><!-- #post-## -->
-
-      <?php // If comments are open or we have at least one comment, load up the comment template.
-      if ( comments_open() || get_comments_number() ) {
-        comments_template();
-      } ?>
-
     </div><!-- .container -->
     </section>
 
