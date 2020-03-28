@@ -1,0 +1,280 @@
+// --------------------------------------------------------
+// Comments
+//
+// WordPress built-in comments with comment_form().
+// Custom comment template can be found in inc/comments.php
+// --------------------------------------------------------
+
+.comment-reply-title,
+.comment-reply-title > small {
+  display: none !important;
+}
+
+.comments-wrap {
+  background: #fafafa;
+  overflow: hidden;
+
+  label {
+    &.cnns-label,
+    &#cnns-label {
+      font-size: 16px;
+      margin: 0;
+      color: #a0a0a0;
+
+      @media (max-width: $container-mobile) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  p,
+  form#commentform p,
+  #comments div#respond p,
+  #comments div.comment-respond p {
+    &.comment-form-comment {
+      margin-bottom: 0;
+
+      textarea {
+        padding-left: 0;
+        padding-right: 0;
+
+        @media (max-width: 600px) {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+      }
+    }
+
+    &.form-submit input {
+      border-color: #7a7a7a;
+      color: #7a7a7a;
+
+      &:hover {
+        background: #7a7a7a;
+        border-color: #7a7a7a;
+        color: $color-white;
+      }
+    }
+
+    &#lstc-comment-subscription,
+    &.cnns-comment-subscription {
+      margin-top: 0;
+      margin-bottom: 20px;
+
+      &:hover {
+        color: darken(#a0a0a0, 15%);
+
+        label {
+          color: darken(#a0a0a0, 15%);
+        }
+
+        input[type="checkbox"] {
+          + label:before {
+            border: 2px solid darken(#a0a0a0, 15%);
+          }
+
+          &:checked + label:before {
+            background: darken(#a0a0a0, 15%);
+          }
+        }
+      }
+
+      input[type="checkbox"] {
+        position: absolute; // Take it out of document flow
+        opacity: 0; // Hide it
+        max-width: 2rem;
+
+        + label {
+          position: relative;
+          cursor: pointer;
+          padding: 0;
+        }
+
+        // Box.
+        + label:before {
+          content: '';
+          margin-right: .6rem;
+          margin-bottom: 1rem;
+          display: inline-block;
+          vertical-align: text-top;
+          width: 1.5rem;
+          height: 1.5rem;
+          background: #fff;
+          border: 2px solid #a0a0a0;
+          border-radius: 3px;
+          position: relative;
+          top: 2px;
+
+          @media (max-width: $container-ipad) {
+            top: 0;
+          }
+        }
+
+        // Box hover
+        &:hover + label:before {
+          background: #a0a0a0;
+        }
+
+        // Box focus
+        &:focus + label:before {
+          box-shadow: 0 0 0 3px rgba(#000, .12);
+        }
+
+        // Box checked
+        &:checked + label:before {
+          background: #a0a0a0;
+        }
+
+        // Disabled state label.
+        &:disabled + label {
+          color: #b8b8b8;
+          cursor: auto;
+        }
+
+        // Disabled box.
+        &:disabled + label:before {
+          box-shadow: none;
+          background: #ddd;
+        }
+
+        // Checkmark. Could be replaced with an image
+        &:checked + label:after {
+          content: '';
+          position: absolute;
+          left: 3px;
+          top: 9px;
+          background: #fff;
+          width: 2px;
+          height: 2px;
+          box-shadow: 2px 0 0 #fff, 4px 0 0 #fff, 4px -2px 0 #fff, 4px -4px 0 #fff, 4px -6px 0 #fff, 4px -8px 0 #fff;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    padding-left: $container-default-pad-x / 2;
+    padding-right: $container-default-pad-x / 2;
+  }
+
+  .comment-reply-title {
+    margin-top: 65px;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 15px;
+    font-weight: 500;
+    display: block;
+  }
+
+  .comment-form {
+    margin-top: 0;
+    margin-bottom: 50px;
+    display: block;
+  }
+
+  .hidden-by-default {
+    transition: 1s all;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+
+    &.show {
+      height: 158px;
+      opacity: 1;
+    }
+  }
+}
+
+// Logged in -specified commenting
+body {
+  &.logged-in {
+    .logged-in-as {
+      display: none;
+    }
+
+    .hidden-by-default.show {
+      height: 47px;
+    }
+  }
+}
+
+.comments-area {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  overflow: hidden;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .comment-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      padding: 30px;
+      margin-top: 0;
+      margin-bottom: 30px;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+
+      p {
+        font-size: 17px;
+        line-height: 1.65;
+        color: $color-body;
+        opacity: .8;
+        margin-top: 0;
+
+        a.comment-edit-link {
+          font-size: 13px;
+          opacity: .5;
+          color: #222;
+        }
+      }
+
+      .avatar {
+        float: right;
+        border-radius: 50%;
+      }
+
+      .comment-author {
+        font-size: 16px;
+        color: $color-body;
+        margin-top: 0;
+        margin-bottom: 3px;
+        padding: 0;
+        font-weight: 500;
+
+        a {
+          color: $color-body;
+        }
+      }
+
+      .comment-time {
+        font-size: 14px;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 20px;
+        opacity: .5;
+
+        svg {
+          width: 12px;
+          height: 12px;
+          fill: $color-darkgrey;
+          position: relative;
+          top: 2px;
+          margin-right: 3px;
+        }
+
+        a {
+          color: $color-darkgrey;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -56,26 +56,7 @@ del {
     border-radius: 4px;
   }
 
-  .entry-meta .notification-box {
-    border-top: 1px solid $color-border-light;
-    border-bottom: 1px solid rgba($color-darkgrey, .3);
-    padding: 4rem 2rem;
-    margin-top: 8rem;
-
-    @media (max-width: 600px) {
-      padding: 2rem;
-    }
-
-    h2,
-    p,
-    b {
-      @include responsive-font(16px, 21px);
-      color: $color-darkgrey;
-      margin: 0;
-    }
-  }
-
-  a:not(.button) {
+  a:not(.button):not(.post-edit-link) {
     @extend %link;
     position: relative;
     text-decoration: none;
@@ -362,7 +343,8 @@ del {
 
 // Required post author comment
 .comments-area .comment-list li.bypostauthor {
-  background-color: #fff6e8;
+  background-color: rgba(#fff6e8, .4);
+  border-color: #e3dac5;
   padding: 3rem;
 }
 
@@ -633,7 +615,8 @@ ul.tags {
 
 // Legacy
 .photoblog,
-.size-large {
+.size-large,
+.kuva2 {
   width: 100%;
   height: auto;
   max-width: $article-max-width;
@@ -739,5 +722,46 @@ ul.tags {
     &:last-of-type {
       margin-bottom: 0;
     }
+  }
+}
+
+.notification-box.old,
+.container.container-article article .notification-box.old {
+  background: $color-white;
+  font-family: $font-old;
+  color: darken($color-blog-links, 5%);
+  padding: 3rem;
+  margin-bottom: 6rem;
+  text-align: center;
+  border: 1px dashed darken($color-blog-links, 5%);
+  box-shadow: 0 0 0 3px #f8f8f8, 0 0 0 5px darken($color-blog-links, 5%), 0 0 0 10px #f8f8f8, 0 0 2px 10px #eee;
+
+  @media (max-width: $article-max-width + 40px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: calc(100% - 4rem);
+  }
+
+  svg {
+    width: 70px;
+    height: auto;
+    margin-bottom: -2rem;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin: 0 0 2rem;
+  }
+
+  p {
+    font-size: 17px;
+    margin: 0;
+    line-height: 1.44;
+  }
+
+  h2,
+  p {
+    font-family: $font-old;
+    color: darken($color-blog-links, 5%);
   }
 }

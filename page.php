@@ -9,7 +9,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-27 18:17:24
+ * @Last Modified time: 2020-03-28 18:37:10
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -22,6 +22,8 @@ get_header(); ?>
 
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
+
+    <section class="block block-page">
     <div class="container transition-fade" id="swup">
 
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -70,6 +72,8 @@ get_header(); ?>
       } ?>
 
     </div><!-- .container -->
+    </section>
+
   </main><!-- #main -->
 </div><!-- #primary -->
 

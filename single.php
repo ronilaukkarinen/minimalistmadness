@@ -31,7 +31,8 @@ get_header();
 
           <?php if ( $post_year <= $now_year - 2 ) : ?>
             <div class="notification-box old">
-              <h3>Arkistomatskua</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="100" fill="currentColor" viewBox="0 0 64 80"><path d="M33 9.021V8a1 1 0 0 0-2 0v1.022C17.677 9.464 7 18.702 7 30a1 1 0 0 0 1 1h.349c.423 0 .801-.267.943-.666A5.006 5.006 0 0 1 14 27c1.678 0 3.235.837 4.167 2.24.371.559 1.295.559 1.666 0A4.996 4.996 0 0 1 24 27a5.005 5.005 0 0 1 4.708 3.333c.142.4.52.667.943.667H31v21c0 1.654-1.346 3-3 3s-3-1.346-3-3a1 1 0 1 0-2 0c0 2.757 2.243 5 5 5s5-2.243 5-5V31h1.349a.999.999 0 0 0 .942-.666A5.009 5.009 0 0 1 40 27c1.678 0 3.236.837 4.167 2.24.371.558 1.295.558 1.666 0A4.994 4.994 0 0 1 50 27c2.11 0 4.002 1.34 4.709 3.333a1 1 0 0 0 .942.667H56a1 1 0 0 0 1-1C57 18.702 46.322 9.464 33 9.021z"/></svg>
+              <h2>Arkistomatskua</h2>
               <p>Otathan huomioon, että tämä on yli <b><?php echo esc_attr( $now_year ) - esc_attr( $post_year ); ?> vuotta vanha</b> artikkeli, joten sisältö ei ole välttämättä ihan ajan tasalla. Olin artikkelin kirjoittamishetkellä <?php $post_year = get_the_time( 'Y' ); $age = $post_year - 1988; echo esc_attr( $age ); ?>-vuotias.</p>
             </div>
           <?php endif; ?>
@@ -89,6 +90,12 @@ get_header();
       <?php if ( function_exists( 'relevanssi_the_related_posts' ) ) {
         relevanssi_the_related_posts();
       } ?>
+
+      <?php
+      // If comments are open or we have at least one comment, load up the comment template.
+      if ( comments_open() || get_comments_number() ) :
+        comments_template();
+      endif; ?>
 
       </article><!-- #post-## -->
 

@@ -7,13 +7,36 @@
 
 if ( ! empty( $related_posts ) ) :
 
+function khonsu_get_random_image_id() {
+  $query = get_posts(
+    array(
+      'post_status'     => 'inherit',
+      'post_type'       => 'attachment',
+      'post_mime_type'  => 'image/jpeg,image/gif,image/jpg,image/png',
+      'posts_per_page'  => 1,
+      'category_name'   => 'kuvituskuva',
+      'no_found_rows'   => true,
+      'orderby'         => 'rand',
+    )
+  );
+
+  if ( ! empty( $query ) ) {
+    $return = '';
+
+    foreach ( $query as $attachment ) {
+      $return = $attachment->ID;
+    }
+  }
+  return $return;
+}
+
 /**
  * Image lazyload helpers.
  *
  * @Author:             Timi Wahalahti, Digitoimisto Dude Oy (https://dude.fi)
  * @Date:               2019-08-07 14:38:34
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 17:52:21
+ * @Last Modified time: 2020-03-28 18:20:06
  *
  * @package air-helper
  */

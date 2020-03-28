@@ -14,18 +14,21 @@
   input[type="submit"],
   input[type="button"] {
     font-size: 1.6rem;
-    background: $color-links;
-    color: $color-white;
-    border: 0;
+    background: none;
+    color: $color-body;
     width: auto;
     display: inline-block;
-    padding: 1.2rem 3rem;
+    padding: 5px 25px;
     margin-bottom: 1rem;
+    opacity: .7;
+    border-radius: 50px;
     text-decoration: none;
     position: relative;
     cursor: pointer;
     transition: 150ms linear background;
     font-family: $font-base;
+    border: 1px solid $color-body;
+    line-height: 1.77;
 
     @media (max-width: $container-mobile) {
       // Wrap long buttons on mobile
@@ -35,8 +38,9 @@
 
     &:hover,
     &:focus {
+      background: $color-body;
+      border-color: $color-body;
       color: $color-white;
-      background: darken($color-links, 15%);
     }
 
     &.button-ghost {
@@ -97,7 +101,7 @@ input[type="email"],
 input[type="search"] {
   @extend %default;
   font-family: $font-base;
-  background: #f0f0f0;
+  background: #fafafa;
   border: 0;
   padding: 15px 20px;
   line-height: 24px;
@@ -113,8 +117,7 @@ input[type="search"] {
   }
 
   &:focus {
-    background: #dfdfdf;
-    border-color: rgba(#222, 1);
+    background: #fafafa;
     outline: 0;
 
     &::placeholder {

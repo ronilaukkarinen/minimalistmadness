@@ -399,8 +399,7 @@ img {
 
 [data-whatinput="keyboard"] input:focus,
 [data-whatinput="keyboard"] button:focus,
-[data-whatinput="keyboard"] select:focus,
-[data-whatinput="keyboard"] textarea:focus {
+[data-whatinput="keyboard"] select:focus {
   outline: 4px solid #f9bf47;
   opacity: 1;
 }
@@ -2845,6 +2844,24 @@ a.global-link {
   font-weight: 500;
 }
 
+@font-face {
+  font-family: "Charter";
+  font-display: auto;
+  src: url("../fonts/Charter.eot");
+  src: url("../fonts/Charter.eot?#iefix") format("embedded-opentype"), url("../fonts/Charter.woff") format("woff"), url("../fonts/Charter.woff2") format("woff2"), url("../fonts/Charter.ttf") format("truetype"), url("../fonts/Charter.svg#Charter") format("svg");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Charter";
+  font-display: auto;
+  src: url("../fonts/Charter-Bold.eot");
+  src: url("../fonts/Charter-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Charter-Bold.woff") format("woff"), url("../fonts/Charter-Bold.woff2") format("woff2"), url("../fonts/Charter-Bold.ttf") format("truetype"), url("../fonts/Charter-Bold.svg#Charter") format("svg");
+  font-style: normal;
+  font-weight: 700;
+}
+
 :root {
   font-size: 62.5%;
 }
@@ -2925,7 +2942,7 @@ a:hover {
   color: #141414;
 }
 
-.container.container-article article a:not(.button) {
+.container.container-article article a:not(.button):not(.post-edit-link) {
   color: #414663;
   text-decoration: none;
   border-bottom: .1px solid #4d5787;
@@ -2933,7 +2950,7 @@ a:hover {
   transition: background .22s cubic-bezier(.33, .66, .66, 1);
 }
 
-.container.container-article article a:hover:not(.button) {
+.container.container-article article a:hover:not(.button):not(.post-edit-link) {
   background: #4d5787;
   color: #fff;
   border-color: #4d5787;
@@ -3341,20 +3358,22 @@ pre {
 .site-footer input[type="button"] {
   font-size: 16px;
   font-size: 1.6rem;
-  background: #141414;
-  color: #fff;
-  border: 0;
+  background: none;
+  color: #141414;
   width: auto;
   display: inline-block;
-  padding: 12px 30px;
-  padding: 1.2rem 3rem;
+  padding: 5px 25px;
   margin-bottom: 10px;
   margin-bottom: 1rem;
+  opacity: .7;
+  border-radius: 50px;
   text-decoration: none;
   position: relative;
   cursor: pointer;
   transition: 150ms linear background;
   font-family: 'Muli', 'Helvetica Neue', Helvetica, sans-serif;
+  border: 1px solid #141414;
+  line-height: 1.77;
 }
 
 @media (max-width: 480px) {
@@ -3393,8 +3412,9 @@ pre {
 .site-footer input[type="submit"]:focus,
 .site-footer input[type="button"]:hover,
 .site-footer input[type="button"]:focus {
+  background: #141414;
+  border-color: #141414;
   color: #fff;
-  background: black;
 }
 
 .content-area button.button-ghost,
@@ -3468,7 +3488,7 @@ input[type="week"],
 input[type="email"],
 input[type="search"] {
   font-family: 'Muli', 'Helvetica Neue', Helvetica, sans-serif;
-  background: #f0f0f0;
+  background: #fafafa;
   border: 0;
   padding: 15px 20px;
   line-height: 24px;
@@ -3567,8 +3587,7 @@ input[type="month"]:focus,
 input[type="week"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus {
-  background: #dfdfdf;
-  border-color: #222;
+  background: #fafafa;
   outline: 0;
 }
 
@@ -5553,46 +5572,7 @@ del {
   border-radius: 4px;
 }
 
-.container.container-article article .entry-meta .notification-box {
-  border-top: 1px solid #e9e9ec;
-  border-bottom: 1px solid rgba(79, 89, 100, .3);
-  padding: 40px 20px;
-  padding: 4rem 2rem;
-  margin-top: 80px;
-  margin-top: 8rem;
-}
-
-@media (max-width: 600px) {
-  .container.container-article article .entry-meta .notification-box {
-    padding: 2rem;
-  }
-}
-
-.container.container-article article .entry-meta .notification-box h2,
-.container.container-article article .entry-meta .notification-box p,
-.container.container-article article .entry-meta .notification-box b {
-  font-size: 16px;
-  color: #4f5964;
-  margin: 0;
-}
-
-@media screen and (min-width: 320px) {
-  .container.container-article article .entry-meta .notification-box h2,
-  .container.container-article article .entry-meta .notification-box p,
-  .container.container-article article .entry-meta .notification-box b {
-    font-size: calc(16px + 5 * ((100vw - 320px) / 1600));
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  .container.container-article article .entry-meta .notification-box h2,
-  .container.container-article article .entry-meta .notification-box p,
-  .container.container-article article .entry-meta .notification-box b {
-    font-size: 21px;
-  }
-}
-
-.container.container-article article a:not(.button) {
+.container.container-article article a:not(.button):not(.post-edit-link) {
   position: relative;
   text-decoration: none;
 }
@@ -5960,7 +5940,8 @@ del {
 }
 
 .comments-area .comment-list li.bypostauthor {
-  background-color: #fff6e8;
+  background-color: rgba(255, 246, 232, .4);
+  border-color: #e3dac5;
   padding: 30px;
   padding: 3rem;
 }
@@ -6256,7 +6237,8 @@ ul.tags li a:hover {
 }
 
 .photoblog,
-.size-large {
+.size-large,
+.kuva2 {
   width: 100%;
   height: auto;
   max-width: 800px;
@@ -6467,4 +6449,443 @@ ul.tags li a:hover {
 
 .single .container.container-article article .author-info p:last-of-type {
   margin-bottom: 0;
+}
+
+.notification-box.old,
+.container.container-article article .notification-box.old {
+  background: #fff;
+  font-family: 'Charter', 'Helvetica Neue', Helvetica, sans-serif;
+  color: #373b54;
+  padding: 30px;
+  padding: 3rem;
+  margin-bottom: 60px;
+  margin-bottom: 6rem;
+  text-align: center;
+  border: 1px dashed #373b54;
+  box-shadow: 0 0 0 3px #f8f8f8, 0 0 0 5px #373b54, 0 0 0 10px #f8f8f8, 0 0 2px 10px #eee;
+}
+
+@media (max-width: 840px) {
+  .notification-box.old,
+  .container.container-article article .notification-box.old {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: calc(100% - 4rem);
+  }
+}
+
+.notification-box.old svg,
+.container.container-article article .notification-box.old svg {
+  width: 70px;
+  height: auto;
+  margin-bottom: -20px;
+  margin-bottom: -2rem;
+}
+
+.notification-box.old h2,
+.container.container-article article .notification-box.old h2 {
+  font-size: 24px;
+  margin: 0 0 20px;
+  margin: 0 0 2rem;
+}
+
+.notification-box.old p,
+.container.container-article article .notification-box.old p {
+  font-size: 17px;
+  margin: 0;
+  line-height: 1.44;
+}
+
+.notification-box.old h2,
+.notification-box.old p,
+.container.container-article article .notification-box.old h2,
+.container.container-article article .notification-box.old p {
+  font-family: 'Charter', 'Helvetica Neue', Helvetica, sans-serif;
+  color: #373b54;
+}
+
+.comment-reply-title,
+.comment-reply-title > small {
+  display: none !important;
+}
+
+.comments-wrap {
+  background: #fafafa;
+  overflow: hidden;
+}
+
+.comments-wrap label.cnns-label,
+.comments-wrap label#cnns-label {
+  font-size: 16px;
+  margin: 0;
+  color: #a0a0a0;
+}
+
+@media (max-width: 480px) {
+  .comments-wrap label.cnns-label,
+  .comments-wrap label#cnns-label {
+    font-size: 13px;
+  }
+}
+
+.comments-wrap p.comment-form-comment,
+.comments-wrap form#commentform p.comment-form-comment,
+.comments-wrap #comments div#respond p.comment-form-comment,
+.comments-wrap #comments div.comment-respond p.comment-form-comment {
+  margin-bottom: 0;
+}
+
+.comments-wrap p.comment-form-comment textarea,
+.comments-wrap form#commentform p.comment-form-comment textarea,
+.comments-wrap #comments div#respond p.comment-form-comment textarea,
+.comments-wrap #comments div.comment-respond p.comment-form-comment textarea {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 600px) {
+  .comments-wrap p.comment-form-comment textarea,
+  .comments-wrap form#commentform p.comment-form-comment textarea,
+  .comments-wrap #comments div#respond p.comment-form-comment textarea,
+  .comments-wrap #comments div.comment-respond p.comment-form-comment textarea {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.comments-wrap p.form-submit input,
+.comments-wrap form#commentform p.form-submit input,
+.comments-wrap #comments div#respond p.form-submit input,
+.comments-wrap #comments div.comment-respond p.form-submit input {
+  border-color: #7a7a7a;
+  color: #7a7a7a;
+}
+
+.comments-wrap p.form-submit input:hover,
+.comments-wrap form#commentform p.form-submit input:hover,
+.comments-wrap #comments div#respond p.form-submit input:hover,
+.comments-wrap #comments div.comment-respond p.form-submit input:hover {
+  background: #7a7a7a;
+  border-color: #7a7a7a;
+  color: #fff;
+}
+
+.comments-wrap p#lstc-comment-subscription,
+.comments-wrap p.cnns-comment-subscription,
+.comments-wrap form#commentform p#lstc-comment-subscription,
+.comments-wrap form#commentform p.cnns-comment-subscription,
+.comments-wrap #comments div#respond p#lstc-comment-subscription,
+.comments-wrap #comments div#respond p.cnns-comment-subscription,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.comments-wrap p#lstc-comment-subscription:hover,
+.comments-wrap p.cnns-comment-subscription:hover,
+.comments-wrap form#commentform p#lstc-comment-subscription:hover,
+.comments-wrap form#commentform p.cnns-comment-subscription:hover,
+.comments-wrap #comments div#respond p#lstc-comment-subscription:hover,
+.comments-wrap #comments div#respond p.cnns-comment-subscription:hover,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription:hover,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription:hover {
+  color: #7a7a7a;
+}
+
+.comments-wrap p#lstc-comment-subscription:hover label,
+.comments-wrap p.cnns-comment-subscription:hover label,
+.comments-wrap form#commentform p#lstc-comment-subscription:hover label,
+.comments-wrap form#commentform p.cnns-comment-subscription:hover label,
+.comments-wrap #comments div#respond p#lstc-comment-subscription:hover label,
+.comments-wrap #comments div#respond p.cnns-comment-subscription:hover label,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription:hover label,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription:hover label {
+  color: #7a7a7a;
+}
+
+.comments-wrap p#lstc-comment-subscription:hover input[type="checkbox"] + label:before,
+.comments-wrap p.cnns-comment-subscription:hover input[type="checkbox"] + label:before,
+.comments-wrap form#commentform p#lstc-comment-subscription:hover input[type="checkbox"] + label:before,
+.comments-wrap form#commentform p.cnns-comment-subscription:hover input[type="checkbox"] + label:before,
+.comments-wrap #comments div#respond p#lstc-comment-subscription:hover input[type="checkbox"] + label:before,
+.comments-wrap #comments div#respond p.cnns-comment-subscription:hover input[type="checkbox"] + label:before,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription:hover input[type="checkbox"] + label:before,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription:hover input[type="checkbox"] + label:before {
+  border: 2px solid #7a7a7a;
+}
+
+.comments-wrap p#lstc-comment-subscription:hover input[type="checkbox"]:checked + label:before,
+.comments-wrap p.cnns-comment-subscription:hover input[type="checkbox"]:checked + label:before,
+.comments-wrap form#commentform p#lstc-comment-subscription:hover input[type="checkbox"]:checked + label:before,
+.comments-wrap form#commentform p.cnns-comment-subscription:hover input[type="checkbox"]:checked + label:before,
+.comments-wrap #comments div#respond p#lstc-comment-subscription:hover input[type="checkbox"]:checked + label:before,
+.comments-wrap #comments div#respond p.cnns-comment-subscription:hover input[type="checkbox"]:checked + label:before,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription:hover input[type="checkbox"]:checked + label:before,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription:hover input[type="checkbox"]:checked + label:before {
+  background: #7a7a7a;
+}
+
+.comments-wrap p#lstc-comment-subscription input[type="checkbox"],
+.comments-wrap p.cnns-comment-subscription input[type="checkbox"],
+.comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"],
+.comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"],
+.comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"],
+.comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"],
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"],
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  max-width: 20px;
+  max-width: 2rem;
+}
+
+.comments-wrap p#lstc-comment-subscription input[type="checkbox"] + label,
+.comments-wrap p.cnns-comment-subscription input[type="checkbox"] + label,
+.comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"] + label,
+.comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"] + label,
+.comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"] + label,
+.comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"] + label,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"] + label,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"] + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+.comments-wrap p#lstc-comment-subscription input[type="checkbox"] + label:before,
+.comments-wrap p.cnns-comment-subscription input[type="checkbox"] + label:before,
+.comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"] + label:before,
+.comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"] + label:before,
+.comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"] + label:before,
+.comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"] + label:before,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"] + label:before,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"] + label:before {
+  content: '';
+  margin-right: 6px;
+  margin-right: .6rem;
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 15px;
+  width: 1.5rem;
+  height: 15px;
+  height: 1.5rem;
+  background: #fff;
+  border: 2px solid #a0a0a0;
+  border-radius: 3px;
+  position: relative;
+  top: 2px;
+}
+
+@media (max-width: 770px) {
+  .comments-wrap p#lstc-comment-subscription input[type="checkbox"] + label:before,
+  .comments-wrap p.cnns-comment-subscription input[type="checkbox"] + label:before,
+  .comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"] + label:before,
+  .comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"] + label:before,
+  .comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"] + label:before,
+  .comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"] + label:before,
+  .comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"] + label:before,
+  .comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"] + label:before {
+    top: 0;
+  }
+}
+
+.comments-wrap p#lstc-comment-subscription input[type="checkbox"]:hover + label:before,
+.comments-wrap p.cnns-comment-subscription input[type="checkbox"]:hover + label:before,
+.comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"]:hover + label:before,
+.comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"]:hover + label:before,
+.comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"]:hover + label:before,
+.comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"]:hover + label:before,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"]:hover + label:before,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"]:hover + label:before {
+  background: #a0a0a0;
+}
+
+.comments-wrap p#lstc-comment-subscription input[type="checkbox"]:focus + label:before,
+.comments-wrap p.cnns-comment-subscription input[type="checkbox"]:focus + label:before,
+.comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"]:focus + label:before,
+.comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"]:focus + label:before,
+.comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"]:focus + label:before,
+.comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"]:focus + label:before,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"]:focus + label:before,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"]:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, .12);
+}
+
+.comments-wrap p#lstc-comment-subscription input[type="checkbox"]:checked + label:before,
+.comments-wrap p.cnns-comment-subscription input[type="checkbox"]:checked + label:before,
+.comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"]:checked + label:before,
+.comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"]:checked + label:before,
+.comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"]:checked + label:before,
+.comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"]:checked + label:before,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"]:checked + label:before,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"]:checked + label:before {
+  background: #a0a0a0;
+}
+
+.comments-wrap p#lstc-comment-subscription input[type="checkbox"]:disabled + label,
+.comments-wrap p.cnns-comment-subscription input[type="checkbox"]:disabled + label,
+.comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"]:disabled + label,
+.comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"]:disabled + label,
+.comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"]:disabled + label,
+.comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"]:disabled + label,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"]:disabled + label,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"]:disabled + label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+
+.comments-wrap p#lstc-comment-subscription input[type="checkbox"]:disabled + label:before,
+.comments-wrap p.cnns-comment-subscription input[type="checkbox"]:disabled + label:before,
+.comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"]:disabled + label:before,
+.comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"]:disabled + label:before,
+.comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"]:disabled + label:before,
+.comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"]:disabled + label:before,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"]:disabled + label:before,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"]:disabled + label:before {
+  box-shadow: none;
+  background: #ddd;
+}
+
+.comments-wrap p#lstc-comment-subscription input[type="checkbox"]:checked + label:after,
+.comments-wrap p.cnns-comment-subscription input[type="checkbox"]:checked + label:after,
+.comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"]:checked + label:after,
+.comments-wrap form#commentform p.cnns-comment-subscription input[type="checkbox"]:checked + label:after,
+.comments-wrap #comments div#respond p#lstc-comment-subscription input[type="checkbox"]:checked + label:after,
+.comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"]:checked + label:after,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"]:checked + label:after,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"]:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 9px;
+  background: #fff;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 #fff, 4px 0 0 #fff, 4px -2px 0 #fff, 4px -4px 0 #fff, 4px -6px 0 #fff, 4px -8px 0 #fff;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 700px) {
+  .comments-wrap {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.comments-wrap .comment-reply-title {
+  margin-top: 65px;
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 15px;
+  font-weight: 500;
+  display: block;
+}
+
+.comments-wrap .comment-form {
+  margin-top: 0;
+  margin-bottom: 50px;
+  display: block;
+}
+
+.comments-wrap .hidden-by-default {
+  transition: 1s all;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.comments-wrap .hidden-by-default.show {
+  height: 158px;
+  opacity: 1;
+}
+
+body.logged-in .logged-in-as {
+  display: none;
+}
+
+body.logged-in .hidden-by-default.show {
+  height: 47px;
+}
+
+.comments-area {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  overflow: hidden;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comments-area .comment-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.comments-area .comment-list li {
+  padding: 30px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+}
+
+.comments-area .comment-list li p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #141414;
+  opacity: .8;
+  margin-top: 0;
+}
+
+.comments-area .comment-list li p a.comment-edit-link {
+  font-size: 13px;
+  opacity: .5;
+  color: #222;
+}
+
+.comments-area .comment-list li .avatar {
+  float: right;
+  border-radius: 50%;
+}
+
+.comments-area .comment-list li .comment-author {
+  font-size: 16px;
+  color: #141414;
+  margin-top: 0;
+  margin-bottom: 3px;
+  padding: 0;
+  font-weight: 500;
+}
+
+.comments-area .comment-list li .comment-author a {
+  color: #141414;
+}
+
+.comments-area .comment-list li .comment-time {
+  font-size: 14px;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
+  opacity: .5;
+}
+
+.comments-area .comment-list li .comment-time svg {
+  width: 12px;
+  height: 12px;
+  fill: #4f5964;
+  position: relative;
+  top: 2px;
+  margin-right: 3px;
+}
+
+.comments-area .comment-list li .comment-time a {
+  color: #4f5964;
+}
+
+.comments-area .comment-list li .comment-time:hover {
+  opacity: 1;
 }

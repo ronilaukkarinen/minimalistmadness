@@ -14,6 +14,8 @@
 @include fontFace('Muli', '../fonts/muli-v20-latin-700', 700);
 @include fontFace('ColfaxAI', '../fonts/92bb7bd0146566b09c54412871582ebf', 400);
 @include fontFace('ColfaxAI', '../fonts/9424443aac1c01fb1e08e022d614620e', 500);
+@include fontFace('Charter', '../fonts/Charter', 400);
+@include fontFace('Charter', '../fonts/Charter-Bold', 700);
 
 // Set root size for rems
 :root {

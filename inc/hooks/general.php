@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-27 18:02:23
+ * @Last Modified time: 2020-03-28 18:03:26
  */
 
 namespace Air_Light;
@@ -56,7 +56,7 @@ function post_word_count_by_author( $author = false ) {
     $totalcount = 0;
   }
 
-  return str_replace(',', ' ', number_format( $totalcount ) );
+  return str_replace( ',', ' ', number_format( $totalcount ) );
 }
 
 /**
@@ -397,7 +397,7 @@ function khonsu_pagination() {
     )
   );
 
-  echo '<p class="custom-pagination">' . $paginate_links . '</p>';
+  echo '<p class="custom-pagination">' . $paginate_links . '</p>'; // WPCS: XSS OK.
 }
 
 /**
@@ -426,7 +426,7 @@ function khonsu_calculate_age( $birthdate ) {
   list( $year, $month, $day ) = explode( '/', $birthdate );
   $yeardiff = date( 'Y' ) - $year;
 
-  if ( date( 'm' ) < $month || (date( 'm' ) === $month && date( 'd' ) < $day ) ) {
+  if ( date( 'm' ) < $month || ( date( 'm' ) === $month && date( 'd' ) < $day ) ) {
     $yeardiff--;
   }
 

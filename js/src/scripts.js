@@ -36,6 +36,11 @@ lazyload(images, {
   // Document ready start
   $(function() {
 
+    // Show other fields only when starting typing comment
+    $('textarea#comment').keyup(function(){
+      $('.hidden-by-default').addClass('show');
+    });
+
     // Smooth scroll to ID on any anchor link
     $('a[href^="#"]').on('click',function (e) {
       e.preventDefault();
@@ -52,10 +57,14 @@ lazyload(images, {
 
     swup.on('contentReplaced', function() {
 
+      // Show other fields only when starting typing comment
+      $('textarea#comment').keyup(function(){
+        $('.hidden-by-default').addClass('show');
+      });
+
       // Smooth scroll to ID on any anchor link
       $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();
-
 
         var target = this.hash;
         var $target = $(target);
@@ -94,7 +103,7 @@ lazyload(images, {
         // Do query
         jQuery.ajax({
           url: air.baseurl + 'wp_query/args/?' + jQuery.param( query ),
-          }).done(function( response ) {
+        }).done(function( response ) {
 
             // Offset to previous first message minus original offset/scroll
             jQuery(document).scrollTop(firstPost.offset().top-curOffset);
@@ -106,17 +115,17 @@ lazyload(images, {
                 jQuery('.block-loadable .load-more-spinner').hide();
               } );
 
-            if( response.length < air.posts_per_page ) {
-              button_container.hide();
+              if( response.length < air.posts_per_page ) {
+                button_container.hide();
               } else {
-              button_container.show();
+                button_container.show();
+              }
+            } else if( response == false ) {
+              button_container.hide();
+              jQuery('.block-loadable .load-more-spinner').hide();
             }
-          } else if( response == false ) {
-            button_container.hide();
-            jQuery('.block-loadable .load-more-spinner').hide();
-          }
           });
-        }
+      }
 
       // Load more ajax call
       jQuery('.block-loadable button.load-more').on( 'click', function(e) {
@@ -130,12 +139,12 @@ lazyload(images, {
     });
 
     // Vue construct
-  var blog = new Vue({
-    el: '.block-loadable .items-vue',
-    data: {
-      posts: []
-    }
-  });
+    var blog = new Vue({
+      el: '.block-loadable .items-vue',
+      data: {
+        posts: []
+      }
+    });
 
   // Load more ajax call
   jQuery('.block-loadable button.load-more').on( 'click', function(e) {
@@ -192,22 +201,22 @@ lazyload(images, {
     // Hide scroll indicator after certain amount
     if ( '.scroll-indicator' != undefined) {
       var scroll = $(window).scrollTop();
-        if (scroll >= 200) {
-          $('.scroll-indicator').addClass('fadeout');
+      if (scroll >= 200) {
+        $('.scroll-indicator').addClass('fadeout');
 
-          setTimeout( function(){
-            $('.scroll-indicator').hide();
-          }, 500 );
+        setTimeout( function(){
+          $('.scroll-indicator').hide();
+        }, 500 );
 
-        } else {
-          $('.scroll-indicator').removeClass('fadeout');
+      } else {
+        $('.scroll-indicator').removeClass('fadeout');
 
-          setTimeout( function(){
-            $('.scroll-indicator').show();
-          }, 500 );
-        }
+        setTimeout( function(){
+          $('.scroll-indicator').show();
+        }, 500 );
       }
-    });
+    }
+  });
 
     // Add class to old images without class
     $(window).ready(function() {

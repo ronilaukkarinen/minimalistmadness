@@ -62,8 +62,7 @@ $focus-text-color: #000;
 [data-whatinput="keyboard"] {
   input:focus,
   button:focus,
-  select:focus,
-  textarea:focus {
+  select:focus {
     outline: 4px solid $focus-outline-color;
     opacity: 1;
   }

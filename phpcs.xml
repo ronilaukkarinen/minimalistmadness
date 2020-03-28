@@ -89,6 +89,11 @@
         <!-- Project based -->
         <exclude name="WordPress.DateTime.RestrictedFunctions" />
         <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
+        <exclude name="WordPress.DB.PreparedSQL.NotPrepared" />
+        <exclude name="WordPress.WP.I18n.NoEmptyStrings" />
+        <exclude name="WordPress.WP.I18n.MissingArgDomain" />
+        <exclude name="Generic.Strings.UnnecessaryStringConcat.Found" />
+        <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.
