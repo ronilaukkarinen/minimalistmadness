@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 19:43:43
+ * @Last Modified time: 2020-03-28 20:14:04
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -22,6 +22,16 @@ namespace Air_Light;
   <link rel="profile" href="http://gmpg.org/xfn/11">
 
   <?php wp_head(); ?>
+
+  <?php if ( is_singular() && ! has_tag( 'raha' ) ) : ?>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-8523880252818258",
+      enable_page_level_ads: true
+    });
+  </script>
+<?php endif; ?>
 </head>
 
 <body <?php body_class( 'no-js' ); ?>>
