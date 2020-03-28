@@ -39,6 +39,7 @@
     transition: background 80ms linear, opacity 1s linear;
     white-space: nowrap;
     opacity: .4;
+    line-height: 1;
 
     &:hover {
       opacity: .8;

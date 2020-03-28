@@ -2535,6 +2535,7 @@ html.is-animating .transition-fade {
   transition: background 80ms linear, opacity 1s linear;
   white-space: nowrap;
   opacity: .4;
+  line-height: 1;
 }
 
 .load-more-container .button.load-more:hover {
