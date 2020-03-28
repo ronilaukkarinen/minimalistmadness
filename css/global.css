@@ -905,7 +905,7 @@ img {
 .top:hover,
 .top:focus,
 .top:active {
-  background: #141414;
+  background: #414663;
 }
 
 .top:hover svg,
@@ -2626,40 +2626,40 @@ html.is-animating .transition-fade {
 @-webkit-keyframes color {
   100%,
   0% {
-    stroke: #141414;
+    stroke: #414663;
   }
 
   40% {
-    stroke: #141414;
+    stroke: #414663;
   }
 
   66% {
-    stroke: #141414;
+    stroke: #414663;
   }
 
   80%,
   90% {
-    stroke: #141414;
+    stroke: #414663;
   }
 }
 
 @keyframes color {
   100%,
   0% {
-    stroke: #141414;
+    stroke: #414663;
   }
 
   40% {
-    stroke: #141414;
+    stroke: #414663;
   }
 
   66% {
-    stroke: #141414;
+    stroke: #414663;
   }
 
   80%,
   90% {
-    stroke: #141414;
+    stroke: #414663;
   }
 }
 
@@ -2916,7 +2916,7 @@ body {
 }
 
 a {
-  color: #141414;
+  color: #414663;
   text-decoration: none;
   transition: .4s ease;
 }
@@ -2926,16 +2926,17 @@ a:hover {
 }
 
 .container.container-article article a:not(.button) {
-  color: #000;
+  color: #414663;
   text-decoration: none;
-  border-bottom: 1px solid #4d5ca1;
-  box-shadow: inset 0 -1px 0 #4d5ca1;
+  border-bottom: .1px solid #4d5787;
+  box-shadow: inset 0 -1px 0 #4d5787;
   transition: background .22s cubic-bezier(.33, .66, .66, 1);
 }
 
 .container.container-article article a:hover:not(.button) {
-  background: #4d5ca1;
+  background: #4d5787;
   color: #fff;
+  border-color: #4d5787;
 }
 
 .comments-link {
@@ -3340,7 +3341,7 @@ pre {
 .site-footer input[type="button"] {
   font-size: 16px;
   font-size: 1.6rem;
-  background: #141414;
+  background: #414663;
   color: #fff;
   border: 0;
   width: auto;
@@ -3393,7 +3394,7 @@ pre {
 .site-footer input[type="button"]:hover,
 .site-footer input[type="button"]:focus {
   color: #fff;
-  background: black;
+  background: #232535;
 }
 
 .content-area button.button-ghost,
@@ -3407,8 +3408,8 @@ pre {
 .site-footer input[type="submit"].button-ghost,
 .site-footer input[type="button"].button-ghost {
   background-color: transparent;
-  border: 1px solid #141414;
-  color: #141414;
+  border: 1px solid #414663;
+  color: #414663;
 }
 
 .content-area button.button-ghost:hover,
@@ -3421,7 +3422,7 @@ pre {
 .site-footer input[type="reset"].button-ghost:hover,
 .site-footer input[type="submit"].button-ghost:hover,
 .site-footer input[type="button"].button-ghost:hover {
-  background-color: #141414;
+  background-color: #414663;
   color: #fff;
 }
 
@@ -6101,7 +6102,7 @@ pre code {
 }
 
 .entry-header .entry-title a {
-  color: #141414;
+  color: #414663;
 }
 
 .entry-header .entry-title a:hover {
@@ -6199,7 +6200,7 @@ ul.tags li a:hover {
 }
 
 .entry-footer a:hover {
-  color: #141414;
+  color: #414663;
   text-decoration: none;
 }
 
