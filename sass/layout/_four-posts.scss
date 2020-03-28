@@ -54,11 +54,7 @@
     margin-bottom: 30px;
     order: 1;
 
-    @media (max-width: 500px) {
-      @include grid(2, $gutter_x: 20px, $gutter_y: 20px);
-    }
-
-    @media (max-width: 450px) {
+    @media (max-width: 600px) {
       display: block;
     }
 
