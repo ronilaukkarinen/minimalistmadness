@@ -298,7 +298,7 @@ cite {
 
 // Horizontal rule.
 hr {
-  background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
+  background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, rgba(#000, .3) 50%);
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 50%;

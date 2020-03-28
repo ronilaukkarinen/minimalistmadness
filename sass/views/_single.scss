@@ -143,10 +143,10 @@ del {
   blockquote {
     margin-left: auto;
     margin-right: auto;
-    border-left: 3px solid $color-black;
+    border-left: 2px solid $color-black;
     margin-top: 4rem;
     margin-bottom: 4rem;
-    padding: 4rem;
+    padding: 4rem 6rem;
     max-width: 920px;
     line-height: 1.77;
 
@@ -163,7 +163,7 @@ del {
     }
 
     p {
-      @include responsive-font($font-min-size, 24px);
+      @include responsive-font($font-min-size, 22px);
     }
   }
 
@@ -174,6 +174,10 @@ del {
   ul,
   ol {
     padding-left: 2.2rem;
+
+    @media (max-width: $article-max-width + 40px) {
+      padding-left: 4.2rem;
+    }
   }
 
   div[style="width: 640px;"],

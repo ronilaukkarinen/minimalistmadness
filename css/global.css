@@ -3182,7 +3182,7 @@ cite {
 }
 
 hr {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000 50%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .3) 50%);
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 50%;
@@ -3906,10 +3906,10 @@ form.search-form .search-submit {
 .hero-single .site-branding .site-title svg {
   width: 48px;
   height: 60px;
-  fill: rgba(255, 255, 255, .5);
+  fill: rgba(255, 255, 255, .3);
   position: relative;
   bottom: -2px;
-  transition: 1s all;
+  transition: .66s all;
 }
 
 .hero-single .site-branding .site-title a:hover svg {
@@ -5666,13 +5666,13 @@ del {
 .container.container-article article blockquote {
   margin-left: auto;
   margin-right: auto;
-  border-left: 3px solid #141414;
+  border-left: 2px solid #141414;
   margin-top: 40px;
   margin-top: 4rem;
   margin-bottom: 40px;
   margin-bottom: 4rem;
-  padding: 40px;
-  padding: 4rem;
+  padding: 40px 60px;
+  padding: 4rem 6rem;
   max-width: 920px;
   line-height: 1.77;
 }
@@ -5697,13 +5697,13 @@ del {
 
 @media screen and (min-width: 320px) {
   .container.container-article article blockquote p {
-    font-size: calc(16px + 8 * ((100vw - 320px) / 1600));
+    font-size: calc(16px + 6 * ((100vw - 320px) / 1600));
   }
 }
 
 @media screen and (min-width: 1920px) {
   .container.container-article article blockquote p {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -5716,6 +5716,13 @@ del {
 .container.container-article article ol {
   padding-left: 22px;
   padding-left: 2.2rem;
+}
+
+@media (max-width: 840px) {
+  .container.container-article article ul,
+  .container.container-article article ol {
+    padding-left: 4.2rem;
+  }
 }
 
 .container.container-article article div[style="width: 640px;"],
