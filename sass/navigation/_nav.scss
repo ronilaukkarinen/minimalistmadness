@@ -112,6 +112,67 @@
   /* autoprefixer: off */
   align-items: center;
   justify-content: flex-end;
+
+  button {
+    font-size: 1.5rem;
+    color: $color-body;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    opacity: .5;
+    transition: all 1s;
+    position: relative;
+    z-index: 2;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 10px 12px;
+    font-weight: 600;
+
+    svg {
+      position: relative;
+      top: 3px;
+      transition: all 1s;
+
+      @media (min-width: 840px) {
+        left: -10px;
+      }
+    }
+
+    @media (max-width: 840px) {
+      padding: 2rem 1rem;
+
+      span {
+        display: none;
+      }
+
+      svg {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+
+    @media (max-width: 840px) {
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      svg {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+    }
+
+    &.active,
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
 }
 
 .social-links {

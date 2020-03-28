@@ -8,6 +8,22 @@ import 'what-input';
 import './lazyload.js';
 import Swup from 'swup';
 
+// Debounce
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
 // Initiate Swup transitions
 const swup = new Swup({
   doScrollingRightAway: false,
@@ -266,6 +282,65 @@ $('.site-head-logo').hover(function(){
 });
 
 makeItRain();
+
+    // Overlay-search
+    $('.search-trigger').on( 'click', function(e) {
+      e.preventDefault();
+      $('body').removeClass('main-navigation-open');
+      $('body').removeClass('is-scrolling-prevented');
+      $('.main-navigation').fadeOut(600);
+      $('.main-navigation').removeClass('is-open');
+      $('.overlay-search, body').addClass('overlay-open');
+      $('body').addClass('search-open');
+    } );
+
+    $('.button-close').on( 'click', function() {
+      $(this).parent().parent().parent('.overlay').removeClass('overlay-open');
+      $('body').removeClass('overlay-open');
+      $('body').removeClass('search-open');
+
+      // Empty search on close
+      $('.search-results > div').remove();
+      jQuery('.search-mobile input').val(null);
+      jQuery('.overlay-search input').val(null);
+    } );
+
+    // Close search if esc is pressed
+    $('.search-input').keyup(function(e) {
+      if (e.keyCode === 27) {
+        $(this).parent().parent().parent('.overlay').removeClass('overlay-open');
+        $('body').removeClass('overlay-open');
+        $('body').removeClass('search-open');
+
+        // Empty search on close
+        $('.search-results > div').remove();
+        jQuery('.search-mobile input').val(null);
+        jQuery('.overlay-search input').val(null);
+      }
+    });
+
+  // search
+  $('.search-form input').on( 'propertychange change click keyup input paste', debounce(function() {
+    var search = $('.search-form input').val();
+
+    if ( ! search.trim() ) {
+      $('.search-results').empty();
+      return;
+    }
+
+    $.getJSON( air.baseurl + 'rollemaa/v1/search?s=' + search, function(results) {
+      $('.search-results').empty();
+
+      if ( results.length === 0 ) {
+        $('.search-results').append( '<li class="no-results"><h2>Ei hakutuloksia.</h2></li>' );
+
+      } else {
+        $.each( results, function( i, result ) {
+          $('.search-results').append( '<li><h2><a class="article--link" href="' + result.link + '">' + result.post_title + '</a></h2></li>' );
+        } );
+      }
+    } );
+  }, 250) );
 
 });
 

@@ -6,12 +6,12 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 14:29:11
+ * @Last Modified time: 2020-03-28 19:58:57
  */
 
 /**
-  * Vue times
-*/
+ * Vue times
+ */
 register_rest_field( array( 'post' ), 'time_custom', array(
   'get_callback'    => 'air_get_custom_time_for_rest_api',
   'schema'          => null,
@@ -115,4 +115,44 @@ function air_get_featured_image_custom_for_rest_api( $object ) {
   }
 
   return $featured_image_url;
+}
+
+// Search
+function rollemaa_rest_api_init() {
+  register_rest_route( 'rollemaa/v1', '/search', array(
+    'methods'   => 'GET',
+    'callback'  => 'rollemaa_rest_api_search',
+  ) );
+}
+add_action( 'rest_api_init', 'rollemaa_rest_api_init' );
+
+function rollemaa_rest_api_search( $request ) {
+  $data = array();
+
+  if ( ! isset( $_GET['s'] ) ) {
+    return $data;
+  }
+
+  $rest_controller = new WP_REST_Post_Types_Controller();
+
+  $args = array(
+    's'                       => $_GET['s'],
+    'no_found_rows'           => true,
+    'cache_results'           => true,
+    'update_post_term_cache'  => false,
+  );
+
+  $query = new WP_Query( $args );
+
+  if ( $query->have_posts() ) {
+    while ( $query->have_posts() ) {
+      $query->the_post();
+
+      $item = $rest_controller->prepare_response_for_collection( $query->post );
+      $item->link = get_the_permalink( $item->ID );
+      $data[] = $item;
+    }
+  }
+
+  return $data;
 }

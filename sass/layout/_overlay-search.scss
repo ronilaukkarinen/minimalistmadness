@@ -1,0 +1,550 @@
+body.overlay-open {
+  overflow: hidden;
+  top: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: -100vh;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: all $transition-duration;
+
+  &.overlay-open {
+    margin-right: 0;
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    z-index: 10000;
+  }
+}
+
+body .overlay-search {
+  background-color: rgba($color-white, .8);
+
+  ul,
+  li {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .container {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-top: 6.4rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 500px) {
+      justify-content: space-between;
+    }
+
+    .search-icon {
+      width: 40px;
+    }
+
+    input {
+      width: 100%;
+      margin-right: -99px;
+      margin-left: -40px;
+
+      @media (max-width: 500px) {
+        margin-left: -70px;
+      }
+
+      @media (max-width: 322px) {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .search-icon {
+    background: $color-white;
+    border: 0;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .search,
+  .search:focus {
+    @include responsive-font(22px, 42px);
+    background-color: transparent;
+    padding-top: 2rem;
+    padding-left: 5.5rem;
+    padding-bottom: 2rem;
+    padding-right: 2.5rem;
+    color: $color-black;
+    border-bottom: 2px solid $color-black;
+
+    &::placeholder {
+      color: $color-black;
+      opacity: 1;
+    }
+  }
+
+  .search-title svg {
+    position: relative;
+    top: -3px;
+    margin-right: 1rem;
+  }
+}
+
+// Overlay buttons
+.content-area .button.button-close,
+.overlay .button.button-close,
+.footer-navigation-open .button.button-close {
+  @extend %default;
+  background: transparent;
+  color: $color-black;
+  display: flex;
+  align-items: center;
+  border: 0;
+  position: relative;
+  z-index: 99;
+
+  @media (max-width: 500px) {
+    span {
+      display: none;
+    }
+  }
+
+  svg {
+    width: 4rem;
+    height: 4rem;
+    fill: $color-black;
+    margin-right: 1rem;
+  }
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    opacity: .6;
+    color: $color-black;
+    cursor: pointer;
+
+    svg {
+      fill: $color-black;
+    }
+  }
+}
+
+.overlay.overlay-search .button.button-close,
+.overlay.overlay-search .button.button-close:hover,
+.overlay.overlay-search .button.button-close:focus,
+.main-navigation .button.button-close,
+.main-navigation .button.button-close:hover,
+.main-navigation .button.button-close:focus {
+  color: $color-black;
+  width: 99px;
+
+  @media (max-width: 500px) {
+    width: 60px;
+  }
+
+  svg {
+    left: 0;
+    fill: $color-black;
+  }
+}
+
+.main-navigation .button.button-close {
+  z-index: 6;
+}
+
+.overlay.overlay-search.overlay-open {
+  z-index: 10000;
+
+  .logo-text {
+    fill: $color-black;
+  }
+}
+
+.search-open.overlay-open {
+  z-index: 10000;
+
+  .logo-text {
+    fill: $color-black;
+  }
+}
+
+.overlay-search .tcon-search--xcross {
+  // position: absolute;
+  z-index: 4;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  pointer-events: none;
+
+  &.tcon-transform {
+    pointer-events: auto;
+  }
+}
+
+// Morphing search button
+// Source: http://www.transformicons.com/builder.html
+$tcon-size: 6rem !default;
+$tcon-transition: .3s !default;
+$tcon-jstransform: 'tcon-transform' !default;
+$tcon-search-size: ($tcon-size * .75) !default;
+$tcon-search-radius: ($tcon-size / 14) !default;
+$tcon-search-color: $color-black !default;
+$tcon-search-glass-color: $color-black !default;
+$tcon-search-handle-width: ($tcon-size / 10) !default;
+$tcon-search-glass-radius: ($tcon-size / 2.2) !default;
+$tcon-search-glass-border-width: ($tcon-size / 20) !default;
+
+.tcon {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  user-select: none;
+  width: $tcon-size;
+  background: transparent;
+  outline: none;
+  margin-top: -4px;
+
+  > * {
+    display: block;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none; // see issue #36 https://github.com/grayghostvisuals/transformicons/issues/36
+  }
+}
+
+@mixin search-item {
+  display: inline-block;
+  height: $tcon-search-size;
+  width: $tcon-search-size;
+  border-radius: 0;
+  background: transparent;
+}
+
+.tcon-search__item {
+  @include search-item;
+  position: relative;
+  transform: rotate(-45deg);
+  overflow: visible;
+
+  &::before,
+  &::after {
+    @include search-item;
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &::before {
+    height: $tcon-search-handle-width;
+    left: 0;
+    background: $tcon-search-color;
+    border-radius: $tcon-search-radius;
+    content: ' ';
+
+    /* CSS specific to iOS devices */
+    @supports (-webkit-overflow-scrolling: touch) {
+      z-index: 55;
+      left: -27px;
+    }
+  }
+
+  &::after {
+    right: 0;
+    background: #fff;
+    border-radius: 50%;
+    width: $tcon-search-glass-radius;
+    height: $tcon-search-glass-radius;
+    border: $tcon-search-glass-border-width solid $tcon-search-glass-color;
+    transform-origin: 50% 50%;
+  }
+}
+
+.tcon-search--xcross {
+  overflow: visible;
+
+  &.#{$tcon-jstransform} {
+    transform: scale3d(.8, .8, .8);
+
+    .tcon-search__item {
+      &::before,
+      &::after {
+        content: '';
+        border-radius: $tcon-search-radius;
+        background: $tcon-search-color;
+      }
+
+      &::after {
+        content: '';
+        height: $tcon-search-handle-width;
+        width: 100%;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: rotate3d(0, 0, 1, 90deg);
+      }
+
+      &::before {
+        /* CSS specific to iOS devices */
+        @supports (-webkit-overflow-scrolling: touch) {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+// see issue #7 https://github.com/grayghostvisuals/transformicons/issues/7#issuecomment-59813596
+.tcon-visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  &:active,
+  &:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+.search-mobile {
+  position: relative;
+  z-index: 10;
+  background: $color-black;
+}
+
+.search-results-mobile > div,
+.search-mobile.has-results {
+  height: 100vh;
+  overflow: auto;
+}
+
+.search-results .search-results {
+  margin-top: 2rem;
+
+  @media (max-width: $container-ipad) {
+    margin-top: 2rem;
+  }
+}
+
+.search-results {
+  width: 100%;
+
+  .tagline {
+    font-weight: 700;
+    color: $color-white;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    @extend %h4;
+    margin: 0;
+    color: $color-black;
+    display: inline-block;
+
+    a {
+      @extend %link;
+      color: $color-black;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  ul,
+  li {
+    a {
+      @extend %link;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .underlined-hover a {
+    &:after {
+      background-color: $color-white;
+    }
+
+    &:hover:after {
+      width: 8vw;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: $color-white;
+  }
+
+  p,
+  p a {
+    @extend %default;
+    color: $color-white;
+    margin: 0;
+  }
+
+  li {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @media (max-width: $container-ipad) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    animation: fadeIn .2s ease-in both;
+
+    &:nth-child(2) {
+      animation-delay: .2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: .4s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: .6s;
+    }
+
+    &:nth-child(5) {
+      animation-delay: .8s;
+    }
+
+    &:nth-child(6) {
+      animation-delay: 1s;
+    }
+
+    &:nth-child(7) {
+      animation-delay: 1.2s;
+    }
+
+    &:nth-child(8) {
+      animation-delay: 1.4s;
+    }
+
+    &:nth-child(9) {
+      animation-delay: 1.6s;
+    }
+
+    &:nth-child(10) {
+      animation-delay: 1.8s;
+    }
+
+    &:nth-child(11) {
+      animation-delay: 2s;
+    }
+
+    &:nth-child(12) {
+      animation-delay: 2.2s;
+    }
+
+    &:nth-child(13) {
+      animation-delay: 2.4s;
+    }
+
+    &:nth-child(14) {
+      animation-delay: 2.6s;
+    }
+
+    &:nth-child(15) {
+      animation-delay: 2.8s;
+    }
+
+    &:nth-child(16) {
+      animation-delay: 3s;
+    }
+
+    &:nth-child(17) {
+      animation-delay: 3.2s;
+    }
+
+    &:nth-child(18) {
+      animation-delay: 3.4s;
+    }
+
+    &:nth-child(19) {
+      animation-delay: 3.6s;
+    }
+
+    &:nth-child(20) {
+      animation-delay: 3.8s;
+    }
+
+    &:nth-child(21) {
+      animation-delay: 4s;
+    }
+
+    &:nth-child(22) {
+      animation-delay: 4.2s;
+    }
+
+    &:nth-child(23) {
+      animation-delay: 4.4s;
+    }
+
+    &:nth-child(24) {
+      animation-delay: 4.6s;
+    }
+
+    &:nth-child(25) {
+      animation-delay: 4.8s;
+    }
+  }
+}
+
+// Remove default cancel or erase button
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
