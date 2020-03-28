@@ -36,10 +36,12 @@ del {
 
 // Gutenberg magic
 .container.container-article {
-  max-width: $article-max-width;
+  max-width: 100%;
   margin-top: 0;
   padding-bottom: 0;
   margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
   padding-top: 7rem;
 }
 
@@ -49,6 +51,10 @@ del {
   padding-left: 0;
   padding-top: 0;
   padding-bottom: 0;
+
+  img {
+    border-radius: 4px;
+  }
 
   .entry-meta .notification-box {
     border-top: 1px solid rgba($color-darkgrey, .3);
@@ -78,17 +84,17 @@ del {
   figcaption,
   cite,
   small {
-    @include responsive-font(14px, 16px);
+    font-size: 14px;
     font-style: normal;
-    color: $color-darkgrey;
+    color: rgba(#4b4b5a, .9);
     border: 0;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     max-width: $article-max-width;
     padding-bottom: 0;
-    margin-top: 4rem;
-    margin-bottom: 8rem;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
 
     @media (max-width: $container-mobile) {
       margin-top: 2rem;
@@ -184,6 +190,11 @@ del {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.77;
+
+    @media (max-width: $article-max-width + 40px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
 
     &.wp-block-image {
       margin-top: 4rem;
@@ -307,6 +318,10 @@ del {
       width: 100%;
       margin-top: 8rem;
       margin-bottom: 8rem;
+
+      img {
+        border-radius: 0;
+      }
     }
   }
 

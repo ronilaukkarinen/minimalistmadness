@@ -2862,7 +2862,7 @@ input[type="week"],
 input[type="email"],
 input[type="search"],
 .block.block-recent-posts .container h3 {
-  font-size: 17px;
+  font-size: 16px;
   letter-spacing: -.003em;
   line-height: 1.4;
 }
@@ -2881,7 +2881,7 @@ input[type="search"],
   input[type="email"],
   input[type="search"],
   .block.block-recent-posts .container h3 {
-    font-size: calc(17px + 3 * ((100vw - 320px) / 1600));
+    font-size: calc(16px + 4 * ((100vw - 320px) / 1600));
   }
 }
 
@@ -5530,10 +5530,12 @@ del {
 }
 
 .container.container-article {
-  max-width: 800px;
+  max-width: 100%;
   margin-top: 0;
   padding-bottom: 0;
   margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
   padding-top: 70px;
   padding-top: 7rem;
 }
@@ -5544,6 +5546,10 @@ del {
   padding-left: 0;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.container.container-article article img {
+  border-radius: 4px;
 }
 
 .container.container-article article .entry-meta .notification-box {
@@ -5595,33 +5601,17 @@ del {
 .container.container-article article small {
   font-size: 14px;
   font-style: normal;
-  color: #4f5964;
+  color: rgba(75, 75, 90, .9);
   border: 0;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   max-width: 800px;
   padding-bottom: 0;
-  margin-top: 40px;
-  margin-top: 4rem;
-  margin-bottom: 80px;
-  margin-bottom: 8rem;
-}
-
-@media screen and (min-width: 320px) {
-  .container.container-article article figcaption,
-  .container.container-article article cite,
-  .container.container-article article small {
-    font-size: calc(14px + 2 * ((100vw - 320px) / 1600));
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  .container.container-article article figcaption,
-  .container.container-article article cite,
-  .container.container-article article small {
-    font-size: 16px;
-  }
+  margin-top: 30px;
+  margin-top: 3rem;
+  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 @media (max-width: 480px) {
@@ -5701,12 +5691,12 @@ del {
 }
 
 .container.container-article article blockquote p {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 320px) {
   .container.container-article article blockquote p {
-    font-size: calc(17px + 7 * ((100vw - 320px) / 1600));
+    font-size: calc(16px + 8 * ((100vw - 320px) / 1600));
   }
 }
 
@@ -5741,6 +5731,13 @@ del {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.77;
+}
+
+@media (max-width: 840px) {
+  .container.container-article article > * {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .container.container-article article > *.wp-block-image {
@@ -5919,6 +5916,10 @@ del {
   margin-top: 8rem;
   margin-bottom: 80px;
   margin-bottom: 8rem;
+}
+
+.container.container-article article > *.alignfull img {
+  border-radius: 0;
 }
 
 @media (min-width: 1170px) {
