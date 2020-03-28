@@ -9,23 +9,23 @@ namespace Air_Light;
 
 ?>
 
-<header class="hero-single" itemscope itemtype="http://schema.org/WPHeader" style="background-image:url('<?php if ( has_post_thumbnail() ) : echo esc_url(wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) ); else : echo khonsu_get_random_image_url(); endif; ?>');"><div class="shade"></div>
+<header class="hero-single" itemscope itemtype="http://schema.org/WPHeader" style="background-image:url('<?php if ( has_post_thumbnail() ) : echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) ); else : echo esc_url( khonsu_get_random_image_url() ); endif; ?>');"><div class="shade"></div>
 
   <div class="site-branding screen-reader-text">
-    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/logo.svg' ) ) ); ?></a></p>
+    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span></a></p>
   </div><!-- .site-branding -->
 
   <div class="article-title-area transition-fade">
-    <h1 itemprop="headline"><?php echo get_the_title(); ?></h1>
-    <p itemprop="about" class="article-description"><?php _e( 'Kirjoittanut', 'newera' ); ?> <span rel="author"><?php echo get_the_author_meta('first_name'); ?> <?php echo get_the_author_meta('last_name'); ?></span> <time datetime="<?php the_time('c'); ?>"><?php the_time('l') ?>na, <?php the_time('j.') ?> <?php the_time('F') ?>ta <?php the_time('Y') ?></time>. <?php _e( 'Liittyy aiheisiin', 'newera' ); ?> <?php the_tags('',', ','.'); ?></p>
+    <h1 itemprop="headline"><?php echo esc_attr( get_the_title() ); ?></h1>
+    <p itemprop="about" class="article-description">Kirjoittanut <span rel="author"><?php echo esc_attr( get_the_author_meta( 'first_name' ) ); ?> <?php echo esc_attr( get_the_author_meta( 'last_name' ) ); ?></span> <time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'l' ) ?>na, <?php the_time( 'j.' ) ?> <?php the_time( 'F' ) ?>ta <?php the_time( 'Y' ) ?></time>. Liittyy aiheisiin <?php the_tags( '', ', ', '.' ); ?></p>
   </div>
 
 <aside class="scroll-indicator">
-  <a class="animated-mouse" href="#article-text-content" title="<?php echo esc_html_e( 'Hyppää sisältöön', 'khonsu' ); ?>">
-    <div class="animated-mouse-pointer"><p class="screen-reader-text"><?php echo esc_html_e( 'Hyppää sisältöön klikkaamalla tästä tai rullaa alaspäin', 'khonsu' ); ?></p></div>
+  <a class="animated-mouse" href="#article-text-content" title="<?php echo esc_html_e( 'Hyppää sisältöön', 'minimalistmadness' ); ?>">
+    <div class="animated-mouse-pointer"><p class="screen-reader-text"><?php echo esc_html_e( 'Hyppää sisältöön klikkaamalla tästä tai rullaa alaspäin', 'minimalistmadness' ); ?></p></div>
   </a>
-  <a class="swiping-hand" href="#article-text-content" title="<?php echo esc_html_e( 'Hyppää sisältöön', 'khonsu' ); ?>">
-    <div class="hand-icon"><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/swipe.svg' ) ) ); ?><p class="screen-reader-text"><?php echo esc_html_e( 'Hyppää sisältöön pyyhkimällä näyttöä sormella ylöspäin tai klikkaamalla tästä', 'khonsu' ); ?></p></div>
+  <a class="swiping-hand" href="#article-text-content" title="<?php echo esc_html_e( 'Hyppää sisältöön', 'minimalistmadness' ); ?>">
+    <div class="hand-icon"><?php include get_theme_file_path( '/svg/swipe.svg' ); ?><p class="screen-reader-text"><?php echo esc_html_e( 'Hyppää sisältöön pyyhkimällä näyttöä sormella ylöspäin tai klikkaamalla tästä', 'minimalistmadness' ); ?></p></div>
   </a>
 </aside>
 
