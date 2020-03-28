@@ -52,6 +52,16 @@ lazyload(images, {
   // Document ready start
   $(function() {
 
+    // Close search on document ready
+    $('.overlay-search').removeClass('overlay-open');
+    $('body').removeClass('overlay-open');
+    $('body').removeClass('search-open');
+
+    // Empty search on close
+    $('.search-results > div').remove();
+    jQuery('.search-mobile input').val(null);
+    jQuery('.overlay-search input').val(null);
+
     // Show other fields only when starting typing comment
     $('textarea#comment').keyup(function(){
       $('.hidden-by-default').addClass('show');
@@ -72,6 +82,16 @@ lazyload(images, {
     });
 
     swup.on('contentReplaced', function() {
+
+      // Close search on document ready
+      $('.overlay-search').removeClass('overlay-open');
+      $('body').removeClass('overlay-open');
+      $('body').removeClass('search-open');
+
+      // Empty search on close
+      $('.search-results > div').remove();
+      jQuery('.search-mobile input').val(null);
+      jQuery('.overlay-search input').val(null);
 
       // Show other fields only when starting typing comment
       $('textarea#comment').keyup(function(){
@@ -294,7 +314,7 @@ makeItRain();
       $('body').addClass('search-open');
     } );
 
-    $('.button-close').on( 'click', function() {
+    $('.button-close, .article--link').on( 'click', function() {
       $(this).parent().parent().parent('.overlay').removeClass('overlay-open');
       $('body').removeClass('overlay-open');
       $('body').removeClass('search-open');

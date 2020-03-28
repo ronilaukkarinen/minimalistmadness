@@ -5918,7 +5918,7 @@ body .overlay-search .search-form input {
 }
 
 body .overlay-search .search-icon {
-  background: #fff;
+  background: transparent;
   border: 0;
 }
 
