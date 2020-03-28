@@ -4934,7 +4934,7 @@ form.search-form .search-submit {
 
 .block.block-four-posts.block-most-popular .container .post-card-title,
 .block.block-four-posts.block-most-popular .advertisement .post-card-title {
-  height: 45px;
+  height: 70px;
   align-items: flex-start;
 }
 
@@ -7599,10 +7599,16 @@ ul.tags li a:hover {
 
 .photoblog,
 .size-large,
-.kuva2 {
+.kuva2,
+.size-full {
   width: 100%;
   height: auto;
   max-width: 800px;
+}
+
+.oikealle {
+  float: right;
+  padding: 0 22px 8px 19px;
 }
 
 .single .container.container-article article .author-info,

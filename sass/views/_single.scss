@@ -645,10 +645,16 @@ ul.tags {
 // Legacy
 .photoblog,
 .size-large,
-.kuva2 {
+.kuva2,
+.size-full {
   width: 100%;
   height: auto;
   max-width: $article-max-width;
+}
+
+.oikealle {
+  float: right;
+  padding: 0 22px 8px 19px;
 }
 
 .single .container.container-article article .author-info {
