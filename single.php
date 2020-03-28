@@ -86,25 +86,9 @@ get_header();
 
       </div><!-- .container-article -->
 
-      <?php if ( function_exists( 'related_entries' ) ) : ?>
-
-      <div class="related">
-        <div class="container container-related-posts">
-
-          <header class="block-header block-header-smaller">
-            <h2 class="block-title"><span>Lisää aiheeseen liittyvää luettavaa</span></h2>
-          </header>
-
-          <?php related_entries( array( 'use_template' => true, 'template_file' => 'yarpp-template-dude.php' ) ); ?>
-        </div>
-      </div>
-
-      <?php endif;
-
-        // If comments are open or we have at least one comment, load up the comment template.
-      if ( comments_open() || get_comments_number() ) :
-        comments_template();
-        endif; ?>
+      <?php if ( function_exists( 'relevanssi_the_related_posts' ) ) {
+        relevanssi_the_related_posts();
+      } ?>
 
       </article><!-- #post-## -->
 
