@@ -110,7 +110,7 @@
 }
 
 .nav-article-wrapper {
-  border-bottom: 1px solid rgba($color-body, .18);
+  border-bottom: 1px solid $color-border-light;
 
   .container.container-nav-article {
     margin-top: 0;
@@ -119,10 +119,10 @@
     padding-bottom: 0;
     max-width: $article-max-width;
 
-    #nav.nav-article ul li {
-      a {
-        color: $color-body;
-      }
+    #nav.nav-article ul li a {
+      color: $color-body;
+      font-family: $font-alt;
+      font-weight: 400;
     }
 
     #nav.nav-article ul li.current-menu-item a,
@@ -177,8 +177,7 @@
 
       a {
         font-family: $font-headings;
-        font-size: 12px;
-        text-transform: uppercase;
+        font-size: 14px;
         opacity: .7;
         padding: 9px;
         display: block;

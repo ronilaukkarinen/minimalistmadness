@@ -88,6 +88,7 @@
 
         <!-- Project based -->
         <exclude name="WordPress.DateTime.RestrictedFunctions" />
+        <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.

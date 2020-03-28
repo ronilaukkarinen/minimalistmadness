@@ -90,14 +90,14 @@ namespace Air_Light;
 
       <article class="entry post-card post no-animation">
         <div class="post-card-content">
-          <a href="<?php echo $post['permalink']; ?>" class="global-link"><span class="screen-reader-text"><?php echo $post['title']; ?></span></a>
+          <a href="<?php echo esc_url( $post['permalink'] ); ?>" class="global-link"><span class="screen-reader-text"><?php echo esc_attr( $post['title'] ); ?></span></a>
 
-          <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo $post['post_time']; ?><br /><?php echo $post['post_reading_time']; ?></p><?php if ( has_post_thumbnail( $post['id'] ) ) { image_lazyload_div( get_post_thumbnail_id( $post['id'], 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
+          <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo esc_attr( $post['post_time'] ); ?><br /><?php echo esc_attr( $post['post_reading_time'] ); ?></p><?php if ( has_post_thumbnail( $post['id'] ) ) { image_lazyload_div( get_post_thumbnail_id( $post['id'], 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
 
           <div class="post-card-information">
-            <h2 class="post-card-title-large"><a href="<?php echo $post['permalink']; ?>"><?php echo $post['title']; ?></a></h2>
+            <h2 class="post-card-title-large"><a href="<?php echo esc_url( $post['permalink'] ); ?>"><?php echo esc_attr( $post['title'] ); ?></a></h2>
 
-            <?php echo $post['excerpt']; ?>
+            <?php echo esc_attr( $post['excerpt'] ); ?>
           </div>
 
         </div>
@@ -109,7 +109,7 @@ namespace Air_Light;
       <div class="post-card-content">
         <a v-bind:href="post.link" class="global-link" v-bind:aria-label="post.title.rendered"></a>
 
-        <div class="post-card-image"><div class="img"><div class="post-card-details"><div v-html="post.time_custom">{{ post.time_custom }}</div><div v-html="post.reading_time_custom">{{ post.reading_time_custom }}</div></div><div class="background-image full-image" v-bind:style="{ backgroundImage: 'url(' + post.featured_image_custom + ')' }"></div></div></div>
+        <div class="post-card-image no-bottom-radius"><div class="img"><div class="post-card-details"><div v-html="post.time_custom">{{ post.time_custom }}</div><div v-html="post.reading_time_custom">{{ post.reading_time_custom }}</div></div><div class="background-image full-image" v-bind:style="{ backgroundImage: 'url(' + post.featured_image_custom + ')' }"></div></div></div>
 
         <div class="post-card-information">
           <h2 class="post-card-title-large"><a v-html="post.title.rendered" v-bind:href="post.link">{{ post.title.rendered }}</a></h2>
