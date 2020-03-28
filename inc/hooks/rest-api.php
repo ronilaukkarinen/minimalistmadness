@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 13:37:02
+ * @Last Modified time: 2020-03-28 14:29:11
  */
 
 /**
@@ -53,6 +53,27 @@ function air_get_custom_reading_time_for_rest_api( $object ) {
     endif;
 
   return $estimated_time;
+}
+
+/**
+  * Vue excerpt
+*/
+register_rest_field( array( 'post' ), 'excerpt', array(
+  'get_callback'    => 'air_get_excerpt_for_rest_api',
+  'schema'          => null,
+) );
+
+function air_get_excerpt_for_rest_api( $object ) {
+  $post_id = $object['id'];
+
+    if ( has_excerpt( $post_id ) ) :
+      $excerpt = get_the_excerpt( $post_id ); // WPCS: XSS OK.
+    else :
+      $sentence = preg_match( '/^([^.!?]*[\.!?]+){0,2}/', strip_tags( get_the_content( $post_id ) ), $summary );
+      $excerpt = strip_shortcodes( $summary[0] ); // WPCS: XSS OK.
+    endif;
+
+  return $excerpt;
 }
 
 /**

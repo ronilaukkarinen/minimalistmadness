@@ -1,15 +1,10 @@
-.load-more-button,
-.load-more-spinner {
-  text-align: center;
-  padding-top: 6rem;
-}
-
 .load-more-spinner {
   order: 3;
   text-align: center;
   overflow: hidden;
   height: 166px;
   width: 100%;
+  padding-top: 6rem;
 
   // It loads so fast we don't need it
   display: none !important;
@@ -17,6 +12,38 @@
 
 .load-more-container {
   order: 4;
+  background: linear-gradient(hsla(0, 0%, 100%, 0), #f9f8f6);
+  height: 420px;
+  width: 100%;
+  margin-top: -380px;
+  pointer-events: none;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+
+  .button.load-more {
+    bottom: 0;
+    left: 50%;
+    margin-left: -90px;
+    pointer-events: auto;
+    position: absolute;
+    width: 180px;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 52px;
+    background: transparent;
+    color: $color-body;
+    border: 2px solid $color-body;
+    padding: 14px 20px 13px;
+    text-decoration: none;
+    transition: background 80ms linear, opacity 1s linear;
+    white-space: nowrap;
+    opacity: .4;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
 }
 
 // https://codepen.io/jczimm/pen/vEBpoL

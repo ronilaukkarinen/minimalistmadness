@@ -46,6 +46,13 @@ namespace Air_Light;
       $estimated_time = 'Alle 1 min';
     endif;
 
+    if ( has_excerpt() ) :
+      $excerpt = wpautop( get_the_excerpt() ); // WPCS: XSS OK.
+    else :
+      $sentence = preg_match( '/^([^.!?]*[\.!?]+){0,2}/', strip_tags( get_the_content() ), $summary );
+      $excerpt = wpautop( strip_shortcodes( $summary[0] ) ); // WPCS: XSS OK.
+    endif;
+
     $post_reading_time = '<span class="time-to-read">' . $estimated_time . ' lukukokemus</span>';
     $post_time = '<time datetime="' . get_the_time( 'c' ) . '">' . get_the_time( 'j.' ) . ' ' . get_the_time( 'F' ) . 'ta ' . get_the_time( 'Y' ) . '</time>';
     $posts[] = array(
@@ -56,6 +63,7 @@ namespace Air_Light;
       'permalink' => get_the_permalink(),
       'post_time' => $post_time,
       'post_reading_time' => $post_reading_time,
+      'excerpt'   => $excerpt,
     );
   }
 
@@ -73,32 +81,42 @@ namespace Air_Light;
 
   <div class="container">
 
-    <header class="post-head">
+    <header class="post-head inverted">
       <h2><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24"><path fill="currentColor" d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>Viimeisimmät</h2>
     </header>
 
     <div class="post-feed items-vue">
       <?php foreach ( $posts as $post ) : ?>
 
-      <article class="entry post-card post">
+      <article class="entry post-card post no-animation">
         <div class="post-card-content">
           <a href="<?php echo $post['permalink']; ?>" class="global-link"><span class="screen-reader-text"><?php echo $post['title']; ?></span></a>
 
-          <h2 class="post-card-title"><a href="<?php echo $post['permalink']; ?>"><?php echo $post['title']; ?></a></h2>
+          <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo $post['post_time']; ?><br /><?php echo $post['post_reading_time']; ?></p><?php if ( has_post_thumbnail( $post['id'] ) ) { image_lazyload_div( get_post_thumbnail_id( $post['id'], 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
 
-          <div class="post-card-image"><div class="img"><p class="post-card-details"><?php echo $post['post_time']; ?><br /><?php echo $post['post_reading_time']; ?></p><?php if ( has_post_thumbnail( $post['id'] ) ) { image_lazyload_div( get_post_thumbnail_id( $post['id'], 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
+          <div class="post-card-information">
+            <h2 class="post-card-title-large"><a href="<?php echo $post['permalink']; ?>"><?php echo $post['title']; ?></a></h2>
+
+            <?php echo $post['excerpt']; ?>
+          </div>
+
         </div>
       </article>
 
     <?php endforeach; ?>
 
-    <article class="entry post-card post item-vue" v-for="(post, index) in posts" v-bind:id="'post-' + post.id">
+    <article class="entry post-card post no-animation item-vue" v-for="(post, index) in posts" v-bind:id="'post-' + post.id">
       <div class="post-card-content">
         <a v-bind:href="post.link" class="global-link" v-bind:aria-label="post.title.rendered"></a>
 
-        <h2 class="post-card-title"><a v-html="post.title.rendered" v-bind:href="post.link">{{ post.title.rendered }}</a></h2>
-
         <div class="post-card-image"><div class="img"><div class="post-card-details"><div v-html="post.time_custom">{{ post.time_custom }}</div><div v-html="post.reading_time_custom">{{ post.reading_time_custom }}</div></div><div class="background-image full-image" v-bind:style="{ backgroundImage: 'url(' + post.featured_image_custom + ')' }"></div></div></div>
+
+        <div class="post-card-information">
+          <h2 class="post-card-title-large"><a v-html="post.title.rendered" v-bind:href="post.link">{{ post.title.rendered }}</a></h2>
+
+          <p>{{ post.excerpt }}</p>
+        </div>
+
       </div>
     </article>
 
@@ -116,9 +134,7 @@ namespace Air_Light;
       <?php // Check if we should event show load more button in first place and save query to js variable for later use.
         if ( $query->found_posts != $query->post_count ) : ?>
 
-          <p class="load-more-button">
-            <button class="button load-more">Lataa lisää</button>
-          </p>
+        <button class="button load-more">Lataa lisää</button>
 
         <?php endif;
           $query->query['paged'] = 1;
