@@ -68,6 +68,8 @@ lazyload(images, {
     });
 
     // Smooth scroll to ID on any anchor link
+    if ($('a').attr('href^="#"') === undefined) {
+    } else {
     $('a[href^="#"]').on('click',function (e) {
       e.preventDefault();
 
@@ -80,6 +82,7 @@ lazyload(images, {
         window.location.hash = target;
       });
     });
+  }
 
     swup.on('contentReplaced', function() {
 

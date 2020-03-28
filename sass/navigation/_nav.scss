@@ -130,6 +130,11 @@
     padding: 10px 12px;
     font-weight: 600;
 
+    @media (max-width: $responsivenav) {
+      padding: 0;
+      opacity: 1;
+    }
+
     svg {
       position: relative;
       top: 3px;
@@ -141,8 +146,6 @@
     }
 
     @media (max-width: 840px) {
-      padding: 2rem 1rem;
-
       span {
         display: none;
       }
