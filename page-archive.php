@@ -18,7 +18,7 @@ get_header(); ?>
   <main role="main" id="main" class="site-main">
 
     <section class="block block-page">
-    <div class="container container-article" id="swup">
+    <div class="container container-article">
       <div class="transition-fade">
 
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

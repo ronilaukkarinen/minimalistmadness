@@ -95,6 +95,7 @@ import './skip-link-focus-fix';
 import 'what-input';
 import './lazyload.js';
 import Swup from 'swup';
+import MoveTo from 'moveto';
 
 // Debounce
 function debounce(func, wait, immediate) {
@@ -176,6 +177,15 @@ lazyload(images, {
   }
 
     swup.on('contentReplaced', function() {
+
+      var moveTo = new MoveTo({
+        tolerance: 0,
+        duration: 10,
+        easing: 'easeOutQuart',
+        container: window
+      });
+      var target = document.getElementById('swup');
+      moveTo.move(target);
 
       // Close search on document ready
       $('.overlay-search').removeClass('overlay-open');

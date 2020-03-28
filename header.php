@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 20:14:04
+ * @Last Modified time: 2020-03-28 23:17:00
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -36,7 +36,7 @@ namespace Air_Light;
 
 <body <?php body_class( 'no-js' ); ?>>
   <?php wp_body_open(); ?>
-  <div id="page" class="site">
+  <div class="site" id="swup">
 
     <div class="rain-wrapper">
       <div class="rain front-row"></div>
@@ -53,7 +53,7 @@ namespace Air_Light;
           </div>
         </a>
 
-        <nav id="swup" class="site-head-left" role="navigation" data-swup="0">
+        <nav class="site-head-left" role="navigation">
           <?php wp_nav_menu( array(
             'theme_location' => 'primary',
             'container'      => false,
@@ -94,4 +94,4 @@ namespace Air_Light;
     </div>
   </div>
 
-  <div class="site-content" id="swup">
+  <div class="site-content">
