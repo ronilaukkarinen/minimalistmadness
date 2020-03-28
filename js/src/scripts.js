@@ -179,6 +179,28 @@ lazyload(images, {
     // Swup start
     swup.on('contentReplaced', function() {
 
+    // Overlay-search
+    $('.search-trigger').on( 'click', function(e) {
+      e.preventDefault();
+      $('body').removeClass('main-navigation-open');
+      $('body').removeClass('is-scrolling-prevented');
+      $('.main-navigation').fadeOut(600);
+      $('.main-navigation').removeClass('is-open');
+      $('.overlay-search, body').addClass('overlay-open');
+      $('body').addClass('search-open');
+    } );
+
+    $('.button-close, .article--link').on( 'click', function() {
+      $(this).parent().parent().parent('.overlay').removeClass('overlay-open');
+      $('body').removeClass('overlay-open');
+      $('body').removeClass('search-open');
+
+      // Empty search on close
+      $('.search-results > div').remove();
+      jQuery('.search-mobile input').val(null);
+      jQuery('.overlay-search input').val(null);
+    } );
+
     $('.site-head-logo').hover(function(){
       $('body').addClass('splat-toggle');
     }, function() {
@@ -425,28 +447,6 @@ lazyload(images, {
         }
       });
     });
-
-    // Overlay-search
-    $('.search-trigger').on( 'click', function(e) {
-      e.preventDefault();
-      $('body').removeClass('main-navigation-open');
-      $('body').removeClass('is-scrolling-prevented');
-      $('.main-navigation').fadeOut(600);
-      $('.main-navigation').removeClass('is-open');
-      $('.overlay-search, body').addClass('overlay-open');
-      $('body').addClass('search-open');
-    } );
-
-    $('.button-close, .article--link').on( 'click', function() {
-      $(this).parent().parent().parent('.overlay').removeClass('overlay-open');
-      $('body').removeClass('overlay-open');
-      $('body').removeClass('search-open');
-
-      // Empty search on close
-      $('.search-results > div').remove();
-      jQuery('.search-mobile input').val(null);
-      jQuery('.overlay-search input').val(null);
-    } );
 
     // Close search if esc is pressed
     $('.search-input').keyup(function(e) {
