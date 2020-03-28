@@ -1,0 +1,30 @@
+.advertisement {
+  @extend .container;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.ad-top {
+  padding: 0;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 60px;
+
+  p {
+    font-size: 13px;
+    color: #999;
+    font-weight: 400;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  a {
+    @extend %link;
+    color: #999;
+    border-color: #999;
+  }
+}
