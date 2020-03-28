@@ -9,6 +9,10 @@
   text-align: center;
   overflow: hidden;
   height: 166px;
+  width: 100%;
+
+  // It loads so fast we don't need it
+  display: none !important;
 }
 
 .load-more-container {

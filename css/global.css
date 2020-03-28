@@ -2504,6 +2504,8 @@ html.is-animating .transition-fade {
   text-align: center;
   overflow: hidden;
   height: 166px;
+  width: 100%;
+  display: none !important;
 }
 
 .load-more-container {
@@ -2675,7 +2677,7 @@ html.is-animating .transition-fade {
   padding-left: 2rem;
   padding-right: 20px;
   padding-right: 2rem;
-  max-width: 1470px;
+  max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -2684,7 +2686,7 @@ html.is-animating .transition-fade {
   padding-right: 2rem;
 }
 
-@media (max-width: 1620px) {
+@media (max-width: 1450px) {
   .container {
     padding-left: 8rem;
     padding-right: 8rem;

@@ -117,7 +117,7 @@ namespace Air_Light;
         if ( $query->found_posts != $query->post_count ) : ?>
 
           <p class="load-more-button">
-            <button class="button load-more block-slated block-slated-smaller">Lataa lisää</button>
+            <button class="button load-more">Lataa lisää</button>
           </p>
 
         <?php endif;

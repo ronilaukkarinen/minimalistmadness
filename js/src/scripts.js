@@ -54,6 +54,10 @@ lazyload(images, {
         var query_name = jQuery('.block-loadable .load-more-container').attr('data-use-query');
         var query = window[query_name];
 
+        // Where the page is currently:
+        var firstPost = jQuery('.items-vue .post:first');
+        var curOffset = firstPost.offset().top - $(document).scrollTop();
+
         // Alter query
         query.paged = query.paged+1;
         query._embed = true;
@@ -62,6 +66,9 @@ lazyload(images, {
         jQuery.ajax({
           url: air.baseurl + 'wp_query/args/?' + jQuery.param( query ),
           }).done(function( response ) {
+
+            // Offset to previous first message minus original offset/scroll
+            jQuery(document).scrollTop(firstPost.offset().top-curOffset);
 
             if( response.length !== 0 && response !== false ) {
               jQuery.each( response, function() {
@@ -115,6 +122,10 @@ lazyload(images, {
     var query_name = jQuery('.block-loadable .load-more-container').attr('data-use-query');
     var query = window[query_name];
 
+    // Where the page is currently:
+    var firstPost = jQuery('.items-vue .post:first');
+    var curOffset = firstPost.offset().top - $(document).scrollTop();
+
     // Alter query
     query.paged = query.paged+1;
     query._embed = true;
@@ -123,6 +134,10 @@ lazyload(images, {
     jQuery.ajax({
       url: air.baseurl + 'wp_query/args/?' + jQuery.param( query ),
     }).done(function( response ) {
+
+      // Offset to previous first message minus original offset/scroll
+      jQuery(document).scrollTop(firstPost.offset().top-curOffset);
+
       if( response.length !== 0 && response !== false ) {
         jQuery.each( response, function() {
           var self = this;

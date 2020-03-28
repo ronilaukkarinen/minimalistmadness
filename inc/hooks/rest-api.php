@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 12:55:25
+ * @Last Modified time: 2020-03-28 13:37:02
  */
 
 /**
@@ -66,10 +66,31 @@ register_rest_field( array( 'post' ), 'featured_image_custom', array(
 function air_get_featured_image_custom_for_rest_api( $object ) {
   $post_id = $object['id'];
 
+  // Random image
+  $query = get_posts(
+    array(
+      'post_status'     => 'inherit',
+      'post_type'       => 'attachment',
+      'post_mime_type'  => 'image/jpeg,image/gif,image/jpg,image/png',
+      'posts_per_page'  => 1,
+      'category_name'   => 'kuvituskuva',
+      'no_found_rows'   => true,
+      'orderby'         => 'rand',
+    )
+  );
+
+  if ( ! empty( $query ) ) {
+    $random_image = '';
+
+    foreach ( $query as $attachment ) {
+      $random_image = wp_get_attachment_url( $attachment->ID );
+    }
+  }
+
   if ( has_post_thumbnail( $post_id ) ) {
     $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id( $post_id ) );
   } else {
-    $featured_image_url = khonsu_get_random_image();
+    $featured_image_url = $random_image;
   }
 
   return $featured_image_url;
