@@ -16,16 +16,6 @@ const swup = new Swup({
   scrollAcceleration: .04
 });
 
-// Fix scroll position
-window.onload = function() {
-  swup.on('contentReplaced', function() {
-
-    // Define Javascript is active by changing the body class
-    document.body.classList.remove('no-js');
-    document.body.classList.add('js');
-  });
-}
-
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
 document.body.classList.add('js');
@@ -45,6 +35,112 @@ lazyload(images, {
 
   // Document ready start
   $(function() {
+
+    swup.on('contentReplaced', function() {
+
+      // Vue construct
+      var blog = new Vue({
+        el: '.block-loadable .items-vue',
+        data: {
+          posts: []
+        }
+      });
+
+      function air_do_ajax_load() {
+        jQuery('.block-loadable .load-more-spinner').show();
+        jQuery('.block-loadable .no-posts').hide();
+
+        var button_container = jQuery('.block-loadable button.load-more').closest('.load-more-container');
+        var query_name = jQuery('.block-loadable .load-more-container').attr('data-use-query');
+        var query = window[query_name];
+
+        // Alter query
+        query.paged = query.paged+1;
+        query._embed = true;
+
+        // Do query
+        jQuery.ajax({
+          url: air.baseurl + 'wp_query/args/?' + jQuery.param( query ),
+          }).done(function( response ) {
+
+            if( response.length !== 0 && response !== false ) {
+              jQuery.each( response, function() {
+                var self = this;
+                blog.posts.push(this);
+                jQuery('.block-loadable .load-more-spinner').hide();
+              } );
+
+            if( response.length < air.posts_per_page ) {
+              button_container.hide();
+              } else {
+              button_container.show();
+            }
+          } else if( response == false ) {
+            button_container.hide();
+            jQuery('.block-loadable .load-more-spinner').hide();
+          }
+          });
+        }
+
+      // Load more ajax call
+      jQuery('.block-loadable button.load-more').on( 'click', function(e) {
+        e.preventDefault();
+        air_do_ajax_load();
+      } );
+
+      // Define Javascript is active by changing the body class
+      document.body.classList.remove('no-js');
+      document.body.classList.add('js');
+    });
+
+    // Vue construct
+  var blog = new Vue({
+    el: '.block-loadable .items-vue',
+    data: {
+      posts: []
+    }
+  });
+
+  // Load more ajax call
+  jQuery('.block-loadable button.load-more').on( 'click', function(e) {
+    e.preventDefault();
+    air_do_ajax_load();
+  } );
+
+  function air_do_ajax_load() {
+    jQuery('.block-loadable .load-more-spinner').show();
+    jQuery('.block-loadable .no-posts').hide();
+
+    var button_container = jQuery('.block-loadable button.load-more').closest('.load-more-container');
+    var query_name = jQuery('.block-loadable .load-more-container').attr('data-use-query');
+    var query = window[query_name];
+
+    // Alter query
+    query.paged = query.paged+1;
+    query._embed = true;
+
+    // Do query
+    jQuery.ajax({
+      url: air.baseurl + 'wp_query/args/?' + jQuery.param( query ),
+    }).done(function( response ) {
+      if( response.length !== 0 && response !== false ) {
+        jQuery.each( response, function() {
+          var self = this;
+          blog.posts.push(this);
+          jQuery('.block-loadable .load-more-spinner').hide();
+        } );
+
+        if( response.length < air.posts_per_page ) {
+          button_container.hide();
+        } else {
+          button_container.show();
+        }
+      } else if( response == false ) {
+        button_container.hide();
+        jQuery('.block-loadable .load-more-spinner').hide();
+      }
+    });
+  }
 
   // Window scroll
   $(window).scroll(function() {
