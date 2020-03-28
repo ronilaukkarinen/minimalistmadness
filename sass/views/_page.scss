@@ -29,7 +29,7 @@
   }
 }
 
-body #page .template-arkisto {
+.template-arkisto {
   h2 {
     @include responsive-font(20px, 24px);
     margin-bottom: 20px;
@@ -52,7 +52,7 @@ body #page .template-arkisto {
     margin-top: 0;
   }
 
-  .container.container-article article .tag-cloud {
+  .container.container-article .tag-cloud {
     margin-bottom: 60px;
     max-width: 100%;
     padding-left: 8rem;

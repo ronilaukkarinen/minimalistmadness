@@ -6467,29 +6467,29 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-body #page .template-arkisto h2 {
+.template-arkisto h2 {
   font-size: 20px;
   margin-bottom: 20px;
   color: #222;
 }
 
 @media screen and (min-width: 320px) {
-  body #page .template-arkisto h2 {
+  .template-arkisto h2 {
     font-size: calc(20px + 4 * ((100vw - 320px) / 1600));
   }
 }
 
 @media screen and (min-width: 1920px) {
-  body #page .template-arkisto h2 {
+  .template-arkisto h2 {
     font-size: 24px;
   }
 }
 
-body #page .template-arkisto h2.title-grouped {
+.template-arkisto h2.title-grouped {
   margin-bottom: 10px;
 }
 
-body #page .template-arkisto h4 {
+.template-arkisto h4 {
   font-size: 19px;
   font-weight: 400;
   color: #777;
@@ -6497,12 +6497,12 @@ body #page .template-arkisto h4 {
   margin-bottom: 20px;
 }
 
-body #page .template-arkisto p {
+.template-arkisto p {
   margin-top: 0;
 }
 
-body #page .template-arkisto .container.container-article article .tag-cloud,
-body #page .template-arkisto .container-article.advertisement article .tag-cloud {
+.template-arkisto .container.container-article .tag-cloud,
+.template-arkisto .container-article.advertisement .tag-cloud {
   margin-bottom: 60px;
   max-width: 100%;
   padding-left: 80px;
@@ -6512,31 +6512,31 @@ body #page .template-arkisto .container-article.advertisement article .tag-cloud
 }
 
 @media (max-width: 840px) {
-  body #page .template-arkisto .container.container-article article .tag-cloud,
-  body #page .template-arkisto .container-article.advertisement article .tag-cloud {
+  .template-arkisto .container.container-article .tag-cloud,
+  .template-arkisto .container-article.advertisement .tag-cloud {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-body #page .template-arkisto .container.container-article article .tag-cloud ul,
-body #page .template-arkisto .container-article.advertisement article .tag-cloud ul {
+.template-arkisto .container.container-article .tag-cloud ul,
+.template-arkisto .container-article.advertisement .tag-cloud ul {
   list-style: none;
   margin: 0;
   padding: 0;
   line-height: 1;
 }
 
-body #page .template-arkisto .container.container-article article .tag-cloud li,
-body #page .template-arkisto .container-article.advertisement article .tag-cloud li {
+.template-arkisto .container.container-article .tag-cloud li,
+.template-arkisto .container-article.advertisement .tag-cloud li {
   display: inline;
   margin: 0;
   padding: 0;
   line-height: 1.22;
 }
 
-body #page .template-arkisto .container.container-article article .tag-cloud a:not(.button):not(.post-edit-link):not(.global-link),
-body #page .template-arkisto .container-article.advertisement article .tag-cloud a:not(.button):not(.post-edit-link):not(.global-link) {
+.template-arkisto .container.container-article .tag-cloud a:not(.button):not(.post-edit-link):not(.global-link),
+.template-arkisto .container-article.advertisement .tag-cloud a:not(.button):not(.post-edit-link):not(.global-link) {
   box-shadow: none;
   text-shadow: none;
   opacity: .9;
@@ -6547,8 +6547,8 @@ body #page .template-arkisto .container-article.advertisement article .tag-cloud
   border: 0;
 }
 
-body #page .template-arkisto .container.container-article article .tag-cloud a:not(.button):not(.post-edit-link):not(.global-link):hover,
-body #page .template-arkisto .container-article.advertisement article .tag-cloud a:not(.button):not(.post-edit-link):not(.global-link):hover {
+.template-arkisto .container.container-article .tag-cloud a:not(.button):not(.post-edit-link):not(.global-link):hover,
+.template-arkisto .container-article.advertisement .tag-cloud a:not(.button):not(.post-edit-link):not(.global-link):hover {
   color: #000;
   opacity: 1;
   box-shadow: none;
