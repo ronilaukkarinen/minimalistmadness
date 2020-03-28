@@ -183,6 +183,28 @@ del {
     margin-right: auto;
     line-height: 1.77;
 
+    .twitter-tweet,
+    .instagram-media,
+    .wp-video,
+    .is-provider-instagram,
+    .is-provider-twitter,
+    .is-provider-facebook {
+      width: 100% !important;
+      max-width: $article-max-width !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+
+      @media (max-width: 800px) {
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+      }
+
+      @media (max-width: 480px) {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+      }
+    }
+
     @media (max-width: $article-max-width + 40px) {
       padding-left: 2rem;
       padding-right: 2rem;

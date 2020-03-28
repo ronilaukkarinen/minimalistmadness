@@ -6881,6 +6881,96 @@ del {
   line-height: 1.77;
 }
 
+.container.container-article article > * .twitter-tweet,
+.container-article.advertisement article > * .twitter-tweet,
+.container.container-article article > * .instagram-media,
+.container-article.advertisement article > * .instagram-media,
+.container.container-article article > * .wp-video,
+.container-article.advertisement article > * .wp-video,
+.container.container-article article > * .is-provider-instagram,
+.container-article.advertisement article > * .is-provider-instagram,
+.container.container-article article > * .is-provider-twitter,
+.container-article.advertisement article > * .is-provider-twitter,
+.container.container-article article > * .is-provider-facebook,
+.container-article.advertisement article > * .is-provider-facebook,
+.container.container-article .article > * .twitter-tweet,
+.container-article.advertisement .article > * .twitter-tweet,
+.container.container-article .article > * .instagram-media,
+.container-article.advertisement .article > * .instagram-media,
+.container.container-article .article > * .wp-video,
+.container-article.advertisement .article > * .wp-video,
+.container.container-article .article > * .is-provider-instagram,
+.container-article.advertisement .article > * .is-provider-instagram,
+.container.container-article .article > * .is-provider-twitter,
+.container-article.advertisement .article > * .is-provider-twitter,
+.container.container-article .article > * .is-provider-facebook,
+.container-article.advertisement .article > * .is-provider-facebook {
+  width: 100% !important;
+  max-width: 800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 800px) {
+  .container.container-article article > * .twitter-tweet,
+  .container-article.advertisement article > * .twitter-tweet,
+  .container.container-article article > * .instagram-media,
+  .container-article.advertisement article > * .instagram-media,
+  .container.container-article article > * .wp-video,
+  .container-article.advertisement article > * .wp-video,
+  .container.container-article article > * .is-provider-instagram,
+  .container-article.advertisement article > * .is-provider-instagram,
+  .container.container-article article > * .is-provider-twitter,
+  .container-article.advertisement article > * .is-provider-twitter,
+  .container.container-article article > * .is-provider-facebook,
+  .container-article.advertisement article > * .is-provider-facebook,
+  .container.container-article .article > * .twitter-tweet,
+  .container-article.advertisement .article > * .twitter-tweet,
+  .container.container-article .article > * .instagram-media,
+  .container-article.advertisement .article > * .instagram-media,
+  .container.container-article .article > * .wp-video,
+  .container-article.advertisement .article > * .wp-video,
+  .container.container-article .article > * .is-provider-instagram,
+  .container-article.advertisement .article > * .is-provider-instagram,
+  .container.container-article .article > * .is-provider-twitter,
+  .container-article.advertisement .article > * .is-provider-twitter,
+  .container.container-article .article > * .is-provider-facebook,
+  .container-article.advertisement .article > * .is-provider-facebook {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container.container-article article > * .twitter-tweet,
+  .container-article.advertisement article > * .twitter-tweet,
+  .container.container-article article > * .instagram-media,
+  .container-article.advertisement article > * .instagram-media,
+  .container.container-article article > * .wp-video,
+  .container-article.advertisement article > * .wp-video,
+  .container.container-article article > * .is-provider-instagram,
+  .container-article.advertisement article > * .is-provider-instagram,
+  .container.container-article article > * .is-provider-twitter,
+  .container-article.advertisement article > * .is-provider-twitter,
+  .container.container-article article > * .is-provider-facebook,
+  .container-article.advertisement article > * .is-provider-facebook,
+  .container.container-article .article > * .twitter-tweet,
+  .container-article.advertisement .article > * .twitter-tweet,
+  .container.container-article .article > * .instagram-media,
+  .container-article.advertisement .article > * .instagram-media,
+  .container.container-article .article > * .wp-video,
+  .container-article.advertisement .article > * .wp-video,
+  .container.container-article .article > * .is-provider-instagram,
+  .container-article.advertisement .article > * .is-provider-instagram,
+  .container.container-article .article > * .is-provider-twitter,
+  .container-article.advertisement .article > * .is-provider-twitter,
+  .container.container-article .article > * .is-provider-facebook,
+  .container-article.advertisement .article > * .is-provider-facebook {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
 @media (max-width: 840px) {
   .container.container-article article > *,
   .container-article.advertisement article > *,
