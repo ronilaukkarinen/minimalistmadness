@@ -7,7 +7,6 @@ import './skip-link-focus-fix';
 import 'what-input';
 import './lazyload.js';
 import Swup from 'swup';
-import MoveTo from 'moveto';
 
 // Initiate Swup transitions
 const swup = new Swup({
@@ -37,16 +36,36 @@ lazyload(images, {
   // Document ready start
   $(function() {
 
-   // Set scroll to -link
-    var moveTo = new MoveTo();
-    var target = document.getElementById('target');
-    moveTo.move(target);
+    // Smooth scroll to ID on any anchor link
+    $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
 
-    // Register a back to top trigger
-    var trigger = document.getElementsByClassName('js-trigger')[0];
-    moveTo.registerTrigger(trigger);
+      var target = this.hash;
+      var $target = $(target);
+
+      $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+      }, 500, 'swing', function () {
+        window.location.hash = target;
+      });
+    });
 
     swup.on('contentReplaced', function() {
+
+      // Smooth scroll to ID on any anchor link
+      $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
+
+
+        var target = this.hash;
+        var $target = $(target);
+
+        $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+        }, 500, 'swing', function () {
+          window.location.hash = target;
+        });
+      });
 
       // Vue construct
       var blog = new Vue({
@@ -193,7 +212,6 @@ lazyload(images, {
     // Add class to old images without class
     $(window).ready(function() {
       $('.container-article img').each(function() {
-        console.log( $(this).width() );
         if ( $(this).width() > 350 ) {
           $(this).addClass('size-large');
         }

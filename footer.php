@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 13:26:31
+ * @Last Modified time: 2020-03-28 15:52:35
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -35,7 +35,7 @@ namespace Air_Light;
           <li><a href="https://www.linkedin.com/in/rolaukka/"><span class="screen-reader-text">WordPress</span><?php include get_theme_file_path( '/svg/linkedin.svg' ); ?></a></li>
         </ul>
 
-        <p>Oikeudet omistaa Roni Laukkarinen, 1999-<?php echo date( 'Y' ); ?>.</p>
+        <p>Oikeudet omistaa Roni Laukkarinen, 1999-<?php echo esc_attr( date( 'Y' ) ); ?>.</p>
       </div>
     </div>
 
