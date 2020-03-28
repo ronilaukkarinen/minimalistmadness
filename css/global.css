@@ -2506,9 +2506,9 @@ html.is-animating .transition-fade {
 .load-more-container {
   order: 4;
   background: linear-gradient(rgba(255, 255, 255, 0), #f9f8f6);
-  height: 420px;
+  height: 320px;
   width: 100%;
-  margin-top: -380px;
+  margin-top: -280px;
   pointer-events: none;
   position: relative;
   text-align: center;
