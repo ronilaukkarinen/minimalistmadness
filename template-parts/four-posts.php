@@ -92,12 +92,12 @@ namespace Air_Light;
         <div class="post-card-content">
           <a href="<?php echo esc_url( $post['permalink'] ); ?>" class="global-link"><span class="screen-reader-text"><?php echo esc_attr( $post['title'] ); ?></span></a>
 
-          <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo esc_attr( $post['post_time'] ); ?><br /><?php echo esc_attr( $post['post_reading_time'] ); ?></p><?php if ( has_post_thumbnail( $post['id'] ) ) { image_lazyload_div( get_post_thumbnail_id( $post['id'], 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
+          <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo $post['post_time'];  // WPCS: XSS OK. ?><br /><?php echo $post['post_reading_time'];  // WPCS: XSS OK. ?></p><?php if ( has_post_thumbnail( $post['id'] ) ) { image_lazyload_div( get_post_thumbnail_id( $post['id'], 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
 
           <div class="post-card-information">
             <h2 class="post-card-title-large"><a href="<?php echo esc_url( $post['permalink'] ); ?>"><?php echo esc_attr( $post['title'] ); ?></a></h2>
 
-            <?php echo esc_attr( $post['excerpt'] ); ?>
+            <?php echo $post['excerpt']; // WPCS: XSS OK. ?>
           </div>
 
         </div>
