@@ -140,7 +140,7 @@ namespace Air_Light;
           $query->query['paged'] = 1;
         ?>
 
-      <script>
+      <script data-swup-ignore-script>
         var posts_query_original = <?php echo json_encode( $query->query ) ?>;
         var posts_query = <?php echo json_encode( $query->query ) ?>;
       </script>

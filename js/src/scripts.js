@@ -33,12 +33,12 @@
 
     return this.each(function(){
       var selectors = [
-        'iframe[src*="player.vimeo.com"]',
-        'iframe[src*="youtube.com"]',
-        'iframe[src*="youtube-nocookie.com"]',
-        'iframe[src*="kickstarter.com"][src*="video.html"]',
-        'object',
-        'embed'
+      'iframe[src*="player.vimeo.com"]',
+      'iframe[src*="youtube.com"]',
+      'iframe[src*="youtube-nocookie.com"]',
+      'iframe[src*="kickstarter.com"][src*="video.html"]',
+      'object',
+      'embed'
       ];
 
       if (settings.customSelector) {
@@ -67,8 +67,8 @@
           $this.attr('width', 16);
         }
         var height = ( this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10))) ) ? parseInt($this.attr('height'), 10) : $this.height(),
-            width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
-            aspectRatio = height / width;
+        width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
+        aspectRatio = height / width;
         if(!$this.attr('name')){
           var videoName = 'fitvid' + $.fn.fitVids._count;
           $this.attr('name', videoName);
@@ -162,21 +162,78 @@ lazyload(images, {
     // Smooth scroll to ID on any anchor link
     if ($('a').attr('href^="#"') === undefined) {
     } else {
-    $('a[href^="#"]').on('click',function (e) {
-      e.preventDefault();
+      $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
 
-      var target = this.hash;
-      var $target = $(target);
+        var target = this.hash;
+        var $target = $(target);
 
-      $('html, body').stop().animate({
-        'scrollTop': $target.offset().top
-      }, 500, 'swing', function () {
-        window.location.hash = target;
+        $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+        }, 500, 'swing', function () {
+          window.location.hash = target;
+        });
       });
+    }
+
+    // Swup start
+    swup.on('contentReplaced', function() {
+
+    $('.site-head-logo').hover(function(){
+      $('body').addClass('splat-toggle');
+    }, function() {
+      $('body').removeClass('splat-toggle');
     });
+
+    // Rain
+    var makeItRain = function() {
+
+    // Clear out everything
+    $('.rain').empty();
+
+    var increment = 0;
+    var drops = "";
+    var backDrops = "";
+
+    while (increment < 100) {
+    // Couple random numbers to use for various randomizations
+    // Random number between 98 and 1
+    var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
+    // Random number between 5 and 2
+    var randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
+    // Increment
+    increment += randoFiver;
+    // Add in a new raindrop with various randomizations to certain CSS properties
+    drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+    backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
   }
 
-    swup.on('contentReplaced', function() {
+      $('.rain.front-row').append(drops);
+      $('.rain.back-row').append(backDrops);
+    }
+
+    makeItRain();
+
+    // Mobile Menu Trigger
+    $('.nav-burger').click(function () {
+      $('body').toggleClass('site-head-open');
+    });
+
+      // Debounce
+      function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+          var context = this, args = arguments;
+          var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      };
 
       var moveTo = new MoveTo({
         tolerance: 0,
@@ -202,7 +259,9 @@ lazyload(images, {
         $('.hidden-by-default').addClass('show');
       });
 
-      // Smooth scroll to ID on any anchor link
+    // Smooth scroll to ID on any anchor link
+    if ($('a').attr('href^="#"') === undefined) {
+    } else {
       $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();
 
@@ -215,6 +274,7 @@ lazyload(images, {
           window.location.hash = target;
         });
       });
+    }
 
       // Vue construct
       var blog = new Vue({
@@ -333,7 +393,99 @@ lazyload(images, {
         jQuery('.block-loadable .load-more-spinner').hide();
       }
     });
-  }
+
+    // Window scroll
+    $(window).scroll(function() {
+
+    // Hide scroll indicator after certain amount
+    if ( '.scroll-indicator' != undefined) {
+      var scroll = $(window).scrollTop();
+      if (scroll >= 200) {
+        $('.scroll-indicator').addClass('fadeout');
+
+        setTimeout( function(){
+          $('.scroll-indicator').hide();
+        }, 500 );
+
+      } else {
+        $('.scroll-indicator').removeClass('fadeout');
+
+        setTimeout( function(){
+          $('.scroll-indicator').show();
+        }, 500 );
+      }
+    }
+  });
+
+    // Add class to old images without class
+    $(window).ready(function() {
+      $('.container-article img').each(function() {
+        if ( $(this).width() > 350 ) {
+          $(this).addClass('size-large');
+        }
+      });
+    });
+
+    // Overlay-search
+    $('.search-trigger').on( 'click', function(e) {
+      e.preventDefault();
+      $('body').removeClass('main-navigation-open');
+      $('body').removeClass('is-scrolling-prevented');
+      $('.main-navigation').fadeOut(600);
+      $('.main-navigation').removeClass('is-open');
+      $('.overlay-search, body').addClass('overlay-open');
+      $('body').addClass('search-open');
+    } );
+
+    $('.button-close, .article--link').on( 'click', function() {
+      $(this).parent().parent().parent('.overlay').removeClass('overlay-open');
+      $('body').removeClass('overlay-open');
+      $('body').removeClass('search-open');
+
+      // Empty search on close
+      $('.search-results > div').remove();
+      jQuery('.search-mobile input').val(null);
+      jQuery('.overlay-search input').val(null);
+    } );
+
+    // Close search if esc is pressed
+    $('.search-input').keyup(function(e) {
+      if (e.keyCode === 27) {
+        $(this).parent().parent().parent('.overlay').removeClass('overlay-open');
+        $('body').removeClass('overlay-open');
+        $('body').removeClass('search-open');
+
+        // Empty search on close
+        $('.search-results > div').remove();
+        jQuery('.search-mobile input').val(null);
+        jQuery('.overlay-search input').val(null);
+      }
+    });
+
+  // search
+  $('.search-form input').on( 'propertychange change click keyup input paste', debounce(function() {
+    var search = $('.search-form input').val();
+
+    if ( ! search.trim() ) {
+      $('.search-results').empty();
+      return;
+    }
+
+    $.getJSON( air.baseurl + 'rollemaa/v1/search?s=' + search, function(results) {
+      $('.search-results').empty();
+
+      if ( results.length === 0 ) {
+        $('.search-results').append( '<li class="no-results"><h2>Ei hakutuloksia.</h2></li>' );
+
+      } else {
+        $.each( results, function( i, result ) {
+          $('.search-results').append( '<li><h2><a class="article--link" href="' + result.link + '">' + result.post_title + '</a></h2></li>' );
+        } );
+      }
+    } );
+  }, 250) );
+
+  } // Swup ends
 
   // Window scroll
   $(window).scroll(function() {
