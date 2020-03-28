@@ -4,7 +4,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-27 18:11:14
+ * @Last Modified time: 2020-03-28 19:24:42
  * @package minimalistmadness
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  */
@@ -15,17 +15,23 @@ get_header(); ?>
 
 <div id="content" class="content-area">
 	<main role="main" id="main" class="site-main">
-    <div class="container">
 
-     <section class="error-404 not-found">
-      <header class="entry-header">
-       <h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'minimalistmadness' ); ?></h1>
-     </header><!-- .entry-header -->
+    <section class="block block-page">
 
-     <div class="page-content">
-       <p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'minimalistmadness' ); ?></p>
-       <?php get_search_form(); ?>
-     </div><!-- .page-content -->
+      <div class="container container-article" id="swup">
+        <div class="transition-fade">
+
+          <div class="container container-article">
+
+            <article>
+              <h1>Sivua ei löydy</h1>
+              <p>Vaikuttaisi siltä, että sivu on siirretty tai poistettu. <a href="<?php echo esc_url( get_home_url() ); ?>">Tästä takaisin etusivulle</a>.</p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+
    </section><!-- .error-404 -->
 
  </div><!-- .container -->
