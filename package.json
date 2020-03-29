@@ -4,10 +4,11 @@
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
+    "@swup/scripts-plugin": "^1.1.0",
     "@wulechuan/printer-for-errors-of-gulp-plugins": "^1.0.0",
     "access-sniff": "^3.2.0",
-    "autoprefixer": "^9.7.4",
-    "babel-loader": "^8.0.6",
+    "autoprefixer": "^9.7.5",
+    "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "browserslist": [
       "last 2 version",
@@ -16,7 +17,7 @@
     "gulp": "^3.9.1",
     "gulp-accessibility": "^3.1.1",
     "gulp-cached": "^1.1.1",
-    "gulp-clean-css": "4.2.0",
+    "gulp-clean-css": "4.3.0",
     "gulp-concat": "2.6.1",
     "gulp-debug": "^4.0.0",
     "gulp-header": "2.0.9",
@@ -35,14 +36,14 @@
     "gulp-w3c-html-validation": "0.0.1",
     "require-dir": "^1.2.0",
     "stylefmt": "^6.0.3",
-    "stylelint": "^13.2.0",
+    "stylelint": "^13.2.1",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-config-wordpress": "^16.0.0",
     "stylelint-declaration-use-variable": "^1.7.2",
     "stylelint-order": "^4.0.0",
-    "stylelint-scss": "^3.14.2",
-    "swup": "^1.9.0",
+    "stylelint-scss": "^3.16.0",
+    "swup": "^2.0.9",
     "vue": "^2.6.11",
     "webpack-stream": "^5.2.1"
   },
@@ -53,8 +54,8 @@
     "moveto": "^1.8.2",
     "slick-carousel": "^1.8.1",
     "what-input": "^5.2.7",
-    "sass-web-fonts": "^2.0.2",
-    "sassboilerplate": "^0.1.0",
+    "sass-web-fonts": "^2.1.0",
+    "sassboilerplate": "^0.2.1",
     "typographic": "^3.0.0"
   }
 }

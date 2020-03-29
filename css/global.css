@@ -717,6 +717,12 @@ img {
     transform: scale(1.1) translateY(-25px);
   }
 
+  .site-head-right button {
+    opacity: 0;
+    transition: transform .3s cubic-bezier(.4, .01, .165, .99), opacity .2s cubic-bezier(.4, .01, .165, .99);
+    transform: scale(1.1) translateY(-25px);
+  }
+
   .site-head-right a {
     padding: 5px 0;
     margin: 1px 0;
@@ -780,7 +786,9 @@ img {
   }
 
   .site-head-open .site-head-left a,
-  .site-head-open .site-head-right a {
+  .site-head-open .site-head-left button,
+  .site-head-open .site-head-right a,
+  .site-head-open .site-head-right button {
     opacity: 1;
     transition: transform .6s cubic-bezier(.4, .01, .165, .99), opacity .9s cubic-bezier(.4, .01, .165, .99);
     transform: scale(1) translateY(0px);
