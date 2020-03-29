@@ -108,12 +108,12 @@ swup.on('contentReplaced', function() {
     });
 
     // Smooth scroll to ID on any anchor link
-    var scrollink = $('a[href^="#"]');
-    if (typeof scrollink !== "undefined") {
-      $('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
+    $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
 
-        var target = this.hash;
+      var target = this.hash;
+
+      if (target.length) {
         var $target = $(target);
 
         $('html, body').stop().animate({
@@ -121,8 +121,8 @@ swup.on('contentReplaced', function() {
         }, 500, 'swing', function () {
           window.location.hash = target;
         });
-      });
-    }
+      }
+    });
 
     // Vue construct
     var blog = new Vue({
