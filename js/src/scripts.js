@@ -268,6 +268,9 @@ swup.on('contentReplaced', function() {
       $('.main-navigation').removeClass('is-open');
       $('.overlay-search, body').addClass('overlay-open');
       $('body').addClass('search-open');
+
+      // Move focus to search-input
+      $('.search-input').focus();
     } );
 
     $('.button-close, .article--link').on( 'click', function() {

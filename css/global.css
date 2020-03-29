@@ -3399,8 +3399,7 @@ i {
 }
 
 small {
-  line-height: 1;
-  font-size: .875em;
+  font-size: 14px;
 }
 
 img {
@@ -6800,19 +6799,27 @@ del {
   text-decoration: none;
 }
 
+.container.container-article article .kuvateksti,
+.container-article.advertisement article .kuvateksti,
+.container.container-article article .kuvateksti-horizontal,
+.container-article.advertisement article .kuvateksti-horizontal,
 .container.container-article article figcaption,
 .container-article.advertisement article figcaption,
 .container.container-article article cite,
 .container-article.advertisement article cite,
 .container.container-article article small,
 .container-article.advertisement article small,
+.container.container-article .article .kuvateksti,
+.container-article.advertisement .article .kuvateksti,
+.container.container-article .article .kuvateksti-horizontal,
+.container-article.advertisement .article .kuvateksti-horizontal,
 .container.container-article .article figcaption,
 .container-article.advertisement .article figcaption,
 .container.container-article .article cite,
 .container-article.advertisement .article cite,
 .container.container-article .article small,
 .container-article.advertisement .article small {
-  font-size: 14px;
+  font-size: 15px;
   font-style: normal;
   color: rgba(75, 75, 90, .9);
   border: 0;
@@ -6828,12 +6835,20 @@ del {
 }
 
 @media (max-width: 480px) {
+  .container.container-article article .kuvateksti,
+  .container-article.advertisement article .kuvateksti,
+  .container.container-article article .kuvateksti-horizontal,
+  .container-article.advertisement article .kuvateksti-horizontal,
   .container.container-article article figcaption,
   .container-article.advertisement article figcaption,
   .container.container-article article cite,
   .container-article.advertisement article cite,
   .container.container-article article small,
   .container-article.advertisement article small,
+  .container.container-article .article .kuvateksti,
+  .container-article.advertisement .article .kuvateksti,
+  .container.container-article .article .kuvateksti-horizontal,
+  .container-article.advertisement .article .kuvateksti-horizontal,
   .container.container-article .article figcaption,
   .container-article.advertisement .article figcaption,
   .container.container-article .article cite,
@@ -7781,6 +7796,7 @@ ul.tags li a:hover {
 .oikealle {
   float: right;
   padding: 0 22px 8px 19px;
+  border-radius: 4px;
 }
 
 .single .container.container-article article .author-info,

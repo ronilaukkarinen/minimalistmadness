@@ -69,10 +69,12 @@ del {
     text-decoration: none;
   }
 
+  .kuvateksti,
+  .kuvateksti-horizontal,
   figcaption,
   cite,
   small {
-    font-size: 14px;
+    font-size: 15px;
     font-style: normal;
     color: rgba(#4b4b5a, .9);
     border: 0;
@@ -656,6 +658,7 @@ ul.tags {
 .oikealle {
   float: right;
   padding: 0 22px 8px 19px;
+  border-radius: 4px;
 }
 
 .single .container.container-article article .author-info {

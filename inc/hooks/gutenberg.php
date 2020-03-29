@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-29 17:17:10
+ * @Last Modified time: 2020-03-29 17:58:06
  *
  * @package minimalistmadness
  */
@@ -108,15 +108,15 @@ function spotifyplay_func( $atts ) {
     shortcode_atts(
       array(
         'src' => '',
-        'width' => '500px',
+        'width' => '100%',
         'height' => '580px',
         'theme' => 'black',
       ), $atts
     )
   );
-  return '<iframe src="https://embed.spotify.com/?uri=' . $src . '" width="500" height="580" style="width:' . $width . 'px;height:' . $height . ';" frameborder="0" allowtransparency="true"></iframe>';
+  return '<iframe src="https://embed.spotify.com/?uri=' . $src . '" width="100%" height="580" style="width: 100% !important;height:' . $height . ';" frameborder="0" allowtransparency="true"></iframe>';
 }
-add_shortcode( 'spotify-play', 'spotifyplay_func' );
+add_shortcode( 'spotify-play', __NAMESPACE__ . '\spotifyplay_func' );
 
 /**
  * Wrap every image in post with a div
