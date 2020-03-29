@@ -152,7 +152,19 @@ swup.on('contentReplaced', function() {
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
       window.isInstagramIframeAPILoaded = true;
     }
+
     loadInstagramAPI();
+
+    // Always move scroll position to up when clicking a link
+    var moveTo = new MoveTo({
+      tolerance: 0,
+      duration: 0,
+      easing: 'easeOutQuart',
+      container: window
+    });
+
+    var target = document.getElementById('swup');
+    moveTo.move(target);
 
 });
 // Swup ends
