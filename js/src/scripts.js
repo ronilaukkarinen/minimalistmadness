@@ -141,9 +141,21 @@ lazyload(images, {
  threshold: 0
 });
 
-// Swup start
+// Swup starts
 swup.on('contentReplaced', function() {
-}); // Swup ends
+
+    // Load Instagram API script
+    const loadInstagramAPI = () => {
+      const tag = document.createElement('script');
+      tag.src = "http://www.instagram.com/embed.js";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      window.isInstagramIframeAPILoaded = true;
+    }
+    loadInstagramAPI();
+
+});
+// Swup ends
 
 // jQuery start
 ( function( $ ) {
