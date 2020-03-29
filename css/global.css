@@ -7974,6 +7974,10 @@ ul.tags li a:hover {
 .comments-wrap form#commentform p.comment-form-comment textarea,
 .comments-wrap #comments div#respond p.comment-form-comment textarea,
 .comments-wrap #comments div.comment-respond p.comment-form-comment textarea {
+  margin-left: 5px;
+  margin-left: .5rem;
+  margin-right: 5px;
+  margin-right: .5rem;
   padding-left: 0;
   padding-right: 0;
 }
@@ -7996,6 +8000,16 @@ ul.tags li a:hover {
   color: #7a7a7a;
 }
 
+@media (max-width: 840px) {
+  .comments-wrap p.form-submit input,
+  .comments-wrap form#commentform p.form-submit input,
+  .comments-wrap #comments div#respond p.form-submit input,
+  .comments-wrap #comments div.comment-respond p.form-submit input {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
 .comments-wrap p.form-submit input:hover,
 .comments-wrap form#commentform p.form-submit input:hover,
 .comments-wrap #comments div#respond p.form-submit input:hover,
@@ -8013,19 +8027,22 @@ ul.tags li a:hover {
 .comments-wrap #comments div#respond p.cnns-comment-subscription,
 .comments-wrap #comments div.comment-respond p#lstc-comment-subscription,
 .comments-wrap #comments div.comment-respond p.cnns-comment-subscription {
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.comments-wrap p#lstc-comment-subscription:hover,
-.comments-wrap p.cnns-comment-subscription:hover,
-.comments-wrap form#commentform p#lstc-comment-subscription:hover,
-.comments-wrap form#commentform p.cnns-comment-subscription:hover,
-.comments-wrap #comments div#respond p#lstc-comment-subscription:hover,
-.comments-wrap #comments div#respond p.cnns-comment-subscription:hover,
-.comments-wrap #comments div.comment-respond p#lstc-comment-subscription:hover,
-.comments-wrap #comments div.comment-respond p.cnns-comment-subscription:hover {
-  color: #7a7a7a;
+@media (max-width: 840px) {
+  .comments-wrap p#lstc-comment-subscription,
+  .comments-wrap p.cnns-comment-subscription,
+  .comments-wrap form#commentform p#lstc-comment-subscription,
+  .comments-wrap form#commentform p.cnns-comment-subscription,
+  .comments-wrap #comments div#respond p#lstc-comment-subscription,
+  .comments-wrap #comments div#respond p.cnns-comment-subscription,
+  .comments-wrap #comments div.comment-respond p#lstc-comment-subscription,
+  .comments-wrap #comments div.comment-respond p.cnns-comment-subscription {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 }
 
 .comments-wrap p#lstc-comment-subscription:hover label,
@@ -8036,6 +8053,17 @@ ul.tags li a:hover {
 .comments-wrap #comments div#respond p.cnns-comment-subscription:hover label,
 .comments-wrap #comments div.comment-respond p#lstc-comment-subscription:hover label,
 .comments-wrap #comments div.comment-respond p.cnns-comment-subscription:hover label {
+  color: #7a7a7a;
+}
+
+.comments-wrap p#lstc-comment-subscription:hover,
+.comments-wrap p.cnns-comment-subscription:hover,
+.comments-wrap form#commentform p#lstc-comment-subscription:hover,
+.comments-wrap form#commentform p.cnns-comment-subscription:hover,
+.comments-wrap #comments div#respond p#lstc-comment-subscription:hover,
+.comments-wrap #comments div#respond p.cnns-comment-subscription:hover,
+.comments-wrap #comments div.comment-respond p#lstc-comment-subscription:hover,
+.comments-wrap #comments div.comment-respond p.cnns-comment-subscription:hover {
   color: #7a7a7a;
 }
 
@@ -8114,7 +8142,7 @@ ul.tags li a:hover {
   top: 2px;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 840px) {
   .comments-wrap p#lstc-comment-subscription input[type="checkbox"] + label:before,
   .comments-wrap p.cnns-comment-subscription input[type="checkbox"] + label:before,
   .comments-wrap form#commentform p#lstc-comment-subscription input[type="checkbox"] + label:before,
@@ -8123,7 +8151,7 @@ ul.tags li a:hover {
   .comments-wrap #comments div#respond p.cnns-comment-subscription input[type="checkbox"] + label:before,
   .comments-wrap #comments div.comment-respond p#lstc-comment-subscription input[type="checkbox"] + label:before,
   .comments-wrap #comments div.comment-respond p.cnns-comment-subscription input[type="checkbox"] + label:before {
-    top: 0;
+    top: 2px;
   }
 }
 
@@ -8230,6 +8258,18 @@ ul.tags li a:hover {
   opacity: 0;
   height: 0;
   overflow: hidden;
+}
+
+@media (max-width: 840px) {
+  .comments-wrap .hidden-by-default {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .comments-wrap .hidden-by-default input {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .comments-wrap .hidden-by-default.show {
