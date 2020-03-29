@@ -2284,8 +2284,8 @@ html.is-animating .transition-fade {
 .post-card:hover .post-card-image::after,
 .post-card:hover .post-card-image,
 .post-card:hover .post-card-image .img {
-  filter: none;
   -webkit-filter: none;
+  filter: none;
   mix-blend-mode: unset !important;
   background-color: transparent;
   background-image: none;
@@ -2299,7 +2299,7 @@ html.is-animating .transition-fade {
 .green .img,
 .duotone-1 .img {
   mix-blend-mode: multiply;
-  -webkit-filter: grayscale(100%) contrast(1.2);
+  -webkit-filter: grayscale(100%) contrast(1);
   filter: grayscale(100%) contrast(1);
 }
 
@@ -2317,7 +2317,7 @@ html.is-animating .transition-fade {
 .red-purple .img,
 .duotone-2 .img {
   mix-blend-mode: multiply;
-  -webkit-filter: grayscale(100%) contrast(1);
+  -webkit-filter: grayscale(100%) contrast(.8);
   filter: grayscale(100%) contrast(.8);
 }
 
@@ -2553,7 +2553,7 @@ html.is-animating .transition-fade {
 .gold .img,
 .duotone-15 .img {
   mix-blend-mode: lighten;
-  -webkit-filter: grayscale(100%) contrast(1);
+  -webkit-filter: grayscale(100%) contrast(.8);
   filter: grayscale(100%) contrast(.8);
 }
 
@@ -6881,8 +6881,6 @@ del {
   line-height: 1.77;
 }
 
-.container.container-article article > * .EmbeddedTweet,
-.container-article.advertisement article > * .EmbeddedTweet,
 .container.container-article article > * .twitter-tweet,
 .container-article.advertisement article > * .twitter-tweet,
 .container.container-article article > * .instagram-media,
@@ -6895,8 +6893,6 @@ del {
 .container-article.advertisement article > * .is-provider-twitter,
 .container.container-article article > * .is-provider-facebook,
 .container-article.advertisement article > * .is-provider-facebook,
-.container.container-article .article > * .EmbeddedTweet,
-.container-article.advertisement .article > * .EmbeddedTweet,
 .container.container-article .article > * .twitter-tweet,
 .container-article.advertisement .article > * .twitter-tweet,
 .container.container-article .article > * .instagram-media,
@@ -6916,8 +6912,6 @@ del {
 }
 
 @media (max-width: 800px) {
-  .container.container-article article > * .EmbeddedTweet,
-  .container-article.advertisement article > * .EmbeddedTweet,
   .container.container-article article > * .twitter-tweet,
   .container-article.advertisement article > * .twitter-tweet,
   .container.container-article article > * .instagram-media,
@@ -6930,8 +6924,6 @@ del {
   .container-article.advertisement article > * .is-provider-twitter,
   .container.container-article article > * .is-provider-facebook,
   .container-article.advertisement article > * .is-provider-facebook,
-  .container.container-article .article > * .EmbeddedTweet,
-  .container-article.advertisement .article > * .EmbeddedTweet,
   .container.container-article .article > * .twitter-tweet,
   .container-article.advertisement .article > * .twitter-tweet,
   .container.container-article .article > * .instagram-media,
@@ -6950,8 +6942,6 @@ del {
 }
 
 @media (max-width: 480px) {
-  .container.container-article article > * .EmbeddedTweet,
-  .container-article.advertisement article > * .EmbeddedTweet,
   .container.container-article article > * .twitter-tweet,
   .container-article.advertisement article > * .twitter-tweet,
   .container.container-article article > * .instagram-media,
@@ -6964,8 +6954,6 @@ del {
   .container-article.advertisement article > * .is-provider-twitter,
   .container.container-article article > * .is-provider-facebook,
   .container-article.advertisement article > * .is-provider-facebook,
-  .container.container-article .article > * .EmbeddedTweet,
-  .container-article.advertisement .article > * .EmbeddedTweet,
   .container.container-article .article > * .twitter-tweet,
   .container-article.advertisement .article > * .twitter-tweet,
   .container.container-article .article > * .instagram-media,
