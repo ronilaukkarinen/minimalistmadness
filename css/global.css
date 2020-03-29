@@ -7341,6 +7341,12 @@ del {
   max-width: 100%;
 }
 
+@media (max-width: 840px) {
+  .wp-caption {
+    width: 100% !important;
+  }
+}
+
 .wp-caption img[class*="wp-image-"] {
   display: block;
   margin: 0 auto;
