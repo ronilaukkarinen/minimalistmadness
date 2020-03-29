@@ -482,22 +482,25 @@ kbd {
 // Preformatted text.
 // CSS Simple Pre Code
 pre {
-  background: #333;
+  background: #232830;
   white-space: pre;
   word-wrap: break-word;
   overflow: auto;
   border-radius: 4px;
-  border: 1px solid #292929;
+  border: 1px solid #232830;
   position: relative;
   font-family: 'Inconsolata','Monaco','Consolas','Andale Mono','Bitstream Vera Sans Mono','Courier New',Courier,monospace;
   display: block;
   margin: 3rem 0;
   padding: 15px 16px 14px;
-  border-left: 1px solid #555;
   overflow-x: auto;
   font-size: 13px;
   line-height: 19px;
   color: #ddd;
+
+  code {
+    border-radius: 4px;
+  }
 }
 
 .entry-header {

@@ -1,0 +1,142 @@
+code[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(#000, .3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+  border: 0;
+  padding: 0;
+}
+
+pre[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(#000, .3);
+  font-family: 'Inconsolata','Monaco','Consolas','Andale Mono','Bitstream Vera Sans Mono','Courier New',Courier,monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+  padding: 10px 20px;
+  margin: .5em -10rem;
+  overflow: auto;
+  border-radius: 4px;
+  border: 0;
+
+  @media (max-width: 1111px) {
+    margin: .5em 0;
+  }
+
+  code {
+    font-size: 13px;
+    border-radius: 4px;
+  }
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #232830;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: 0;
+  white-space: normal;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token {
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: #708090;
+  }
+
+  &.punctuation {
+    color: #f8f8f2;
+  }
+
+  &.property,
+  &.tag,
+  &.constant,
+  &.symbol,
+  &.deleted {
+    color: #f92672;
+  }
+
+  &.boolean,
+  &.number {
+    color: #ae81ff;
+  }
+
+  &.selector,
+  &.attr-name,
+  &.string,
+  &.char,
+  &.builtin,
+  &.inserted {
+    color: #a6e22e;
+  }
+
+  &.operator,
+  &.entity,
+  &.url {
+    color: #f8f8f2;
+  }
+
+  &.variable {
+    color: #f8f8f2;
+  }
+
+  &.atrule,
+  &.attr-value,
+  &.function {
+    color: #e6db74;
+  }
+
+  &.keyword {
+    color: #66d9ef;
+  }
+
+  &.regex {
+    color: #fd971f;
+  }
+
+  &.important {
+    color: #fd971f;
+    font-weight: bold;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.entity {
+    cursor: help;
+  }
+}
+
+.language-css .token.string,
+.style .token.string {
+  color: #f8f8f2;
+}
+
