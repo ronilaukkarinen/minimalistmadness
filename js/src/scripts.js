@@ -368,9 +368,10 @@ lazyload(images, {
         };
       };
 
+      // Always move scroll position to up when clicking a link
       var moveTo = new MoveTo({
         tolerance: 0,
-        duration: 10,
+        duration: 0,
         easing: 'easeOutQuart',
         container: window
       });
