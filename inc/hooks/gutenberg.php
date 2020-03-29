@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 18:43:44
+ * @Last Modified time: 2020-03-29 17:16:10
  *
  * @package minimalistmadness
  */
@@ -73,13 +73,13 @@ function youtube_audio_func( $atts, $content = null ) {
   return '<iframe width="640" height="35" src="//www.youtube.com/embed/' . $content . '?modestbranding=1&fs=0&iv_load_policy=3&rel=0&showinfo=0&theme=light&color=white&autohide=0&disablekb=1" frameborder="0" allowfullscreen></iframe>';
 }
 
-add_shortcode( 'youtube_audio', 'youtube_audio_func' );
+add_shortcode( 'youtube_audio', __NAMESPACE__ . '\youtube_audio_func' );
 
 function youtube_video_func( $atts, $content = null ) {
-  return '<iframe class="youtube_video" width="853" height="480" src="https://www.youtube.com/embed/' . $content . '?vq=hd720&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0&theme=light&color=white&cc_load_policy=1" frameborder="0"></iframe>';
+  return '<div class="wp-block-embed__wrapper"><figure class="wp-block-embed is-type-video is-provider-youtube"><iframe class="youtube-video" width="500" height="281"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src="https://www.youtube.com/embed/' . $content . '?vq=hd720&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0&theme=light&color=white&cc_load_policy=1" frameborder="0"></iframe></div></figure>';
 }
 
-add_shortcode( 'youtube_video', 'youtube_video_func' );
+add_shortcode( 'youtube_video', __NAMESPACE__ . '\youtube_video_func' );
 
 function facebook_embed_func( $atts ) {
   extract(
