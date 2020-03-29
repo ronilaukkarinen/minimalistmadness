@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-29 16:25:34
+ * @Last Modified time: 2020-03-29 16:37:06
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -38,7 +38,6 @@ namespace Air_Light;
   <?php wp_body_open(); ?>
   <div class="site" id="swup">
 
-    <?php if ( ! is_singular( 'post' ) ) : ?>
     <div class="rain-wrapper">
       <div class="rain front-row"></div>
       <div class="rain back-row"></div>
@@ -94,6 +93,5 @@ namespace Air_Light;
       <ul id="search-results" class="search-results"></ul>
     </div>
   </div>
-  <?php endif; ?>
 
   <div class="site-content">

@@ -94,9 +94,10 @@
 import './skip-link-focus-fix';
 import 'what-input';
 import './lazyload.js';
+import MoveTo from 'moveto';
 import Swup from 'swup';
 import SwupScriptsPlugin from '@swup/scripts-plugin';
-import MoveTo from 'moveto';
+import SwupBodyClassPlugin from '@swup/body-class-plugin';
 
 // Debounce
 function debounce(func, wait, immediate) {
@@ -120,7 +121,10 @@ const swup = new Swup({
   animateScroll: false,
   scrollFriction: .3,
   scrollAcceleration: .04,
-  plugins: [new SwupScriptsPlugin()]
+  plugins: [
+    new SwupScriptsPlugin(),
+    new SwupBodyClassPlugin()
+  ]
 });
 
 // Define Javascript is active by changing the body class
@@ -136,6 +140,10 @@ lazyload(images, {
  rootMargin: "0px",
  threshold: 0
 });
+
+// Swup start
+swup.on('contentReplaced', function() {
+}); // Swup ends
 
 // jQuery start
 ( function( $ ) {
@@ -177,28 +185,28 @@ lazyload(images, {
       });
     }
 
-  // Window scroll
-  $(window).scroll(function() {
+    // Window scroll
+    $(window).scroll(function() {
 
-    // Hide scroll indicator after certain amount
-    if ( '.scroll-indicator' != undefined) {
-      var scroll = $(window).scrollTop();
-      if (scroll >= 200) {
-        $('.scroll-indicator').addClass('fadeout');
+      // Hide scroll indicator after certain amount
+      if ( '.scroll-indicator' != undefined) {
+        var scroll = $(window).scrollTop();
+        if (scroll >= 200) {
+          $('.scroll-indicator').addClass('fadeout');
 
-        setTimeout( function(){
-          $('.scroll-indicator').hide();
-        }, 500 );
+          setTimeout( function(){
+            $('.scroll-indicator').hide();
+          }, 500 );
 
-      } else {
-        $('.scroll-indicator').removeClass('fadeout');
+        } else {
+          $('.scroll-indicator').removeClass('fadeout');
 
-        setTimeout( function(){
-          $('.scroll-indicator').show();
-        }, 500 );
+          setTimeout( function(){
+            $('.scroll-indicator').show();
+          }, 500 );
+        }
       }
-    }
-  });
+    });
 
     // Add class to old images without class
     $(window).ready(function() {
