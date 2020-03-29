@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-29 17:16:10
+ * @Last Modified time: 2020-03-29 17:17:10
  *
  * @package minimalistmadness
  */
@@ -101,7 +101,7 @@ function facebook_embed_func( $atts ) {
 ';
 }
 
-add_shortcode( 'facebook_embedded_post', 'facebook_embed_func' );
+add_shortcode( 'facebook_embedded_post', __NAMESPACE__ . '\facebook_embed_func' );
 
 function spotifyplay_func( $atts ) {
   extract(
