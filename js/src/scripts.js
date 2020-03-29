@@ -194,7 +194,8 @@ swup.on('contentReplaced', function() {
     });
 
     // Smooth scroll to ID on any anchor link
-    if ($('a').attr('href^="#"') !== undefined) {
+    var scrollink = $('a[href^="#"]');
+    if (typeof scrollink !== "undefined") {
       $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();
 
