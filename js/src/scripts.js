@@ -290,6 +290,43 @@ lazyload(images, {
     }
     loadInstagramAPI();
 
+    // Close search if esc is pressed
+    $('.search-input').keyup(function(e) {
+      if (e.keyCode === 27) {
+        $(this).parent().parent().parent('.overlay').removeClass('overlay-open');
+        $('body').removeClass('overlay-open');
+        $('body').removeClass('search-open');
+
+        // Empty search on close
+        $('.search-results > div').remove();
+        jQuery('.search-mobile input').val(null);
+        jQuery('.overlay-search input').val(null);
+      }
+    });
+
+  // Search
+  $('.search-form input').on( 'propertychange change click keyup input paste', debounce(function() {
+    var search = $('.search-form input').val();
+
+    if ( ! search.trim() ) {
+      $('.search-results').empty();
+      return;
+    }
+
+    $.getJSON( air.baseurl + 'rollemaa/v1/search?s=' + search, function(results) {
+      $('.search-results').empty();
+
+      if ( results.length === 0 ) {
+        $('.search-results').append( '<li class="no-results"><h2>Ei hakutuloksia.</h2></li>' );
+
+      } else {
+        $.each( results, function( i, result ) {
+          $('.search-results').append( '<li><h2><a class="article--link" href="' + result.link + '">' + result.post_title + '</a></h2></li>' );
+        } );
+      }
+    } );
+  }, 250) );
+
     // Overlay-search
     $('.search-trigger').on( 'click', function(e) {
       e.preventDefault();
@@ -552,50 +589,11 @@ lazyload(images, {
   });
 
     // Add class to old images without class
-    $(window).ready(function() {
-      $('.container-article img').each(function() {
-        if ( $(this).width() > 350 ) {
-          $(this).addClass('size-large');
-        }
-      });
-    });
-
-    // Close search if esc is pressed
-    $('.search-input').keyup(function(e) {
-      if (e.keyCode === 27) {
-        $(this).parent().parent().parent('.overlay').removeClass('overlay-open');
-        $('body').removeClass('overlay-open');
-        $('body').removeClass('search-open');
-
-        // Empty search on close
-        $('.search-results > div').remove();
-        jQuery('.search-mobile input').val(null);
-        jQuery('.overlay-search input').val(null);
+    $('.container-article img').each(function() {
+      if ( $(this).width() > 350 ) {
+        $(this).addClass('size-large');
       }
     });
-
-  // search
-  $('.search-form input').on( 'propertychange change click keyup input paste', debounce(function() {
-    var search = $('.search-form input').val();
-
-    if ( ! search.trim() ) {
-      $('.search-results').empty();
-      return;
-    }
-
-    $.getJSON( air.baseurl + 'rollemaa/v1/search?s=' + search, function(results) {
-      $('.search-results').empty();
-
-      if ( results.length === 0 ) {
-        $('.search-results').append( '<li class="no-results"><h2>Ei hakutuloksia.</h2></li>' );
-
-      } else {
-        $.each( results, function( i, result ) {
-          $('.search-results').append( '<li><h2><a class="article--link" href="' + result.link + '">' + result.post_title + '</a></h2></li>' );
-        } );
-      }
-    } );
-  }, 250) );
 
   } // Swup ends
 
@@ -707,7 +705,7 @@ makeItRain();
       }
     });
 
-  // search
+  // Search
   $('.search-form input').on( 'propertychange change click keyup input paste', debounce(function() {
     var search = $('.search-form input').val();
 
