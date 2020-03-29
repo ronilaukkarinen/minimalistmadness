@@ -6881,6 +6881,8 @@ del {
   line-height: 1.77;
 }
 
+.container.container-article article > * .EmbeddedTweet,
+.container-article.advertisement article > * .EmbeddedTweet,
 .container.container-article article > * .twitter-tweet,
 .container-article.advertisement article > * .twitter-tweet,
 .container.container-article article > * .instagram-media,
@@ -6893,6 +6895,8 @@ del {
 .container-article.advertisement article > * .is-provider-twitter,
 .container.container-article article > * .is-provider-facebook,
 .container-article.advertisement article > * .is-provider-facebook,
+.container.container-article .article > * .EmbeddedTweet,
+.container-article.advertisement .article > * .EmbeddedTweet,
 .container.container-article .article > * .twitter-tweet,
 .container-article.advertisement .article > * .twitter-tweet,
 .container.container-article .article > * .instagram-media,
@@ -6912,6 +6916,8 @@ del {
 }
 
 @media (max-width: 800px) {
+  .container.container-article article > * .EmbeddedTweet,
+  .container-article.advertisement article > * .EmbeddedTweet,
   .container.container-article article > * .twitter-tweet,
   .container-article.advertisement article > * .twitter-tweet,
   .container.container-article article > * .instagram-media,
@@ -6924,6 +6930,8 @@ del {
   .container-article.advertisement article > * .is-provider-twitter,
   .container.container-article article > * .is-provider-facebook,
   .container-article.advertisement article > * .is-provider-facebook,
+  .container.container-article .article > * .EmbeddedTweet,
+  .container-article.advertisement .article > * .EmbeddedTweet,
   .container.container-article .article > * .twitter-tweet,
   .container-article.advertisement .article > * .twitter-tweet,
   .container.container-article .article > * .instagram-media,
@@ -6942,6 +6950,8 @@ del {
 }
 
 @media (max-width: 480px) {
+  .container.container-article article > * .EmbeddedTweet,
+  .container-article.advertisement article > * .EmbeddedTweet,
   .container.container-article article > * .twitter-tweet,
   .container-article.advertisement article > * .twitter-tweet,
   .container.container-article article > * .instagram-media,
@@ -6954,6 +6964,8 @@ del {
   .container-article.advertisement article > * .is-provider-twitter,
   .container.container-article article > * .is-provider-facebook,
   .container-article.advertisement article > * .is-provider-facebook,
+  .container.container-article .article > * .EmbeddedTweet,
+  .container-article.advertisement .article > * .EmbeddedTweet,
   .container.container-article .article > * .twitter-tweet,
   .container-article.advertisement .article > * .twitter-tweet,
   .container.container-article .article > * .instagram-media,

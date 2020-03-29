@@ -266,8 +266,29 @@ lazyload(images, {
 
 // Works with either jQuery or Zepto
 })( window.jQuery || window.Zepto );
+// fitvids.js end
 
     $('.entry-content, .wp-block-embed__wrapper').fitVids();
+
+    // Load Twitter API script
+    const loadTwitterAPI = () => {
+      const tag = document.createElement('script');
+      tag.src = "https://platform.twitter.com/widgets.js";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      window.isTwitterIframeAPILoaded = true;
+    }
+    loadTwitterAPI();
+
+    // Load Instagram API script
+    const loadInstagramAPI = () => {
+      const tag = document.createElement('script');
+      tag.src = "http://www.instagram.com/embed.js";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      window.isInstagramIframeAPILoaded = true;
+    }
+    loadInstagramAPI();
 
     // Overlay-search
     $('.search-trigger').on( 'click', function(e) {
