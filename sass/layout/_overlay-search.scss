@@ -3,6 +3,10 @@ body.overlay-open {
   top: 0;
 }
 
+button.search-trigger:focus {
+  outline: none;
+}
+
 .overlay {
   position: fixed;
   top: -100vh;
@@ -26,6 +30,10 @@ body.overlay-open {
 
 body .overlay-search {
   background-color: rgba($color-white, .8);
+
+  @media (max-width: $responsivenav) {
+    background-color: rgba($color-white, .95);
+  }
 
   ul,
   li {
@@ -377,6 +385,8 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
     a {
       @extend %link;
       color: $color-black;
+      border: 0;
+      box-shadow: none;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -385,12 +395,14 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
     }
   }
 
-  ul,
-  li {
-    a {
-      @extend %link;
-      padding-left: 0;
-      padding-right: 0;
+  ul a,
+  li a {
+    @extend %link;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (max-width: 600px) {
+      font-size: 16px;
     }
   }
 
@@ -424,12 +436,12 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
   li {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    animation: fadeIn .2s ease-in both;
 
     @media (max-width: $container-ipad) {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
-    animation: fadeIn .2s ease-in both;
 
     &:nth-child(2) {
       animation-delay: .2s;

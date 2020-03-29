@@ -6221,6 +6221,10 @@ body.overlay-open {
   top: 0;
 }
 
+button.search-trigger:focus {
+  outline: none;
+}
+
 .overlay {
   position: fixed;
   top: -100vh;
@@ -6244,6 +6248,12 @@ body.overlay-open {
 
 body .overlay-search {
   background-color: rgba(255, 255, 255, .8);
+}
+
+@media (max-width: 960px) {
+  body .overlay-search {
+    background-color: rgba(255, 255, 255, .95);
+  }
 }
 
 body .overlay-search ul,
@@ -6682,6 +6692,8 @@ body .overlay-search .search-title svg {
 
 .search-results h2 a {
   color: #141414;
+  border: 0;
+  box-shadow: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -6693,6 +6705,13 @@ body .overlay-search .search-title svg {
 .search-results li a {
   padding-left: 0;
   padding-right: 0;
+}
+
+@media (max-width: 600px) {
+  .search-results ul a,
+  .search-results li a {
+    font-size: 16px;
+  }
 }
 
 .search-results .underlined-hover a:after {
@@ -6730,8 +6749,8 @@ body .overlay-search .search-title svg {
 
 @media (max-width: 770px) {
   .search-results li {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
