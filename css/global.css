@@ -5211,6 +5211,13 @@ form.search-form .search-submit {
   width: 100%;
 }
 
+.block.block-recent-posts .container > .post-feed-simplified,
+.block.block-recent-posts .advertisement > .post-feed-simplified,
+.block-archive-all .posts-feed-all > .post-feed-simplified {
+  margin-left: 0;
+  padding-left: 0;
+}
+
 .block.block-recent-posts .container ul,
 .block.block-recent-posts .advertisement ul,
 .block.block-recent-posts .container li,
@@ -5283,6 +5290,15 @@ form.search-form .search-submit {
   opacity: .5;
 }
 
+@media (max-width: 840px) {
+  .block.block-recent-posts .container p,
+  .block.block-recent-posts .advertisement p,
+  .block-archive-all .posts-feed-all p {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+}
+
 .block.block-recent-posts .container h3,
 .block.block-recent-posts .advertisement h3,
 .block-archive-all .posts-feed-all h3 {
@@ -5292,6 +5308,16 @@ form.search-form .search-submit {
   flex: 0 0 75%;
   max-width: 75%;
   line-height: 1.55;
+}
+
+@media (max-width: 840px) {
+  .block.block-recent-posts .container h3,
+  .block.block-recent-posts .advertisement h3,
+  .block-archive-all .posts-feed-all h3 {
+    flex: 0 0 70%;
+    max-width: 70%;
+    margin-left: 2rem;
+  }
 }
 
 .block.block-recent-posts .container a,
@@ -6464,14 +6490,10 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-left: 1.2rem;
 }
 
-.block.block-page .post-head.inverted.archive-all {
-  max-width: 730px;
-}
-
 @media (max-width: 840px) {
   .block.block-page .post-head.inverted.archive-all {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    margin-left: 2rem;
+    padding-left: 0;
   }
 }
 

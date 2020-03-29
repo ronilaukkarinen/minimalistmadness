@@ -8,6 +8,11 @@
     width: 100%;
   }
 
+  > .post-feed-simplified {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
   ul,
   li {
     margin: 0;
@@ -62,6 +67,11 @@
     font-weight: 700;
     text-transform: uppercase;
     opacity: .5;
+
+    @media (max-width: $article-max-width + 40px) {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
   }
 
   h3 {
@@ -72,6 +82,12 @@
     flex: 0 0 75%;
     max-width: 75%;
     line-height: 1.55;
+
+    @media (max-width: $article-max-width + 40px) {
+      flex: 0 0 70%;
+      max-width: 70%;
+      margin-left: 2rem;
+    }
   }
 
   a {
