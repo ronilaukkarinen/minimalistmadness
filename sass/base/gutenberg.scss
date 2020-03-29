@@ -1,0 +1,198 @@
+@charset 'utf-8';
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/muli-v20-latin-700.eot');
+  src: local('Muli'), local('Muli'), url('../fonts/muli-v20-latin-700.eot?#iefix') format('embedded-opentype'), url('../fonts/muli-v20-latin-700.woff2') format('woff2'), url('../fonts/muli-v20-latin-700.woff') format('woff'), url('../fonts/muli-v20-latin-700.ttf') format('truetype'), url('../fonts/muli-v20-latin-700.svg#Muli') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/muli-v20-latin-600.eot');
+  src: local('Muli'), local('Muli'), url('../fonts/muli-v20-latin-600.eot?#iefix') format('embedded-opentype'), url('../fonts/muli-v20-latin-600.woff2') format('woff2'), url('../fonts/muli-v20-latin-600.woff') format('woff'), url('../fonts/muli-v20-latin-600.ttf') format('truetype'), url('../fonts/muli-v20-latin-600.svg#Muli') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/muli-v20-latin-500.eot');
+  src: local('Muli'), local('Muli'), url('../fonts/muli-v20-latin-500.eot?#iefix') format('embedded-opentype'), url('../fonts/muli-v20-latin-500.woff2') format('woff2'), url('../fonts/muli-v20-latin-500.woff') format('woff'), url('../fonts/muli-v20-latin-500.ttf') format('truetype'), url('../fonts/muli-v20-latin-500.svg#Muli') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/muli-v20-latin-regular.eot');
+  src: local('Muli'), local('Muli'), url('../fonts/muli-v20-latin-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/muli-v20-latin-regular.woff2') format('woff2'), url('../fonts/muli-v20-latin-regular.woff') format('woff'), url('../fonts/muli-v20-latin-regular.ttf') format('truetype'), url('../fonts/muli-v20-latin-regular.svg#Muli') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/muli-v20-latin-300.eot');
+  src: local('Muli'), local('Muli'), url('../fonts/muli-v20-latin-300.eot?#iefix') format('embedded-opentype'), url('../fonts/muli-v20-latin-300.woff2') format('woff2'), url('../fonts/muli-v20-latin-300.woff') format('woff'), url('../fonts/muli-v20-latin-300.ttf') format('truetype'), url('../fonts/muli-v20-latin-300.svg#Muli') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+.edit-post-visual-editor {
+  padding-top: 0 !important;
+}
+
+.components-editor-notices__dismissible .components-notice,
+.components-editor-notices__pinned .components-notice {
+  margin-bottom: 0 !important;
+}
+
+.editor-styles-wrapper {
+  // Theme options
+  @import 'config';
+
+  // Helpers
+  @import '../helpers/general';
+  @import '../helpers/background';
+  @import '../helpers/grid';
+  @import '../helpers/typography';
+  @import 'accessibility';
+
+  // Structure
+  @import '../layout/general';
+  @import '../layout/typography';
+
+  // Gutenberg blocks
+  @import '../gutenberg/general';
+
+  // Editor styles
+  color: $color-body;
+
+  figcaption,
+  .minikuvateksti,
+  cite,
+  small {
+    @include responsive-font(14px, 16px);
+    font-style: normal;
+    color: $color-darkgrey;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 750px;
+    text-align: center;
+    padding-bottom: 0;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .wp-block[data-type="core/paragraph"],
+  .wp-block[data-type="core/heading"],
+  .wp-block[data-type="core/video"],
+  .wp-block[data-type="core/embed"],
+  .wp-block[data-type="core/list"],
+  .wp-block[data-type="core/image"]:not([data-align="full"]):not([data-align="wide"]) {
+    max-width: $article-max-width !important;
+    width: 100%;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .block-editor-block-list__block[data-type="core/paragraph"] p,
+  .block-editor-block-list__block p,
+  p {
+    @include responsive-font($font-min-size, 19px);
+    font-family: $font-base !important;
+    color: $color-base;
+
+    > a:not(.button):not(.post-edit-link) {
+      @extend %link;
+      position: relative;
+      text-decoration: none;
+    }
+  }
+
+  b,
+  strong {
+    @include responsive-font($font-min-size, 19px);
+    font-family: $font-base !important;
+  }
+
+  .editor-post-title {
+    @include background-cover();
+    padding: 0 !important;
+    margin: 0 0 70px !important;
+    height: 100vh;
+    position: relative;
+    max-height: 1300px;
+
+    // Shade
+    &::after {
+      opacity: 1;
+      background: linear-gradient(to bottom, rgba(19, 21, 23, .1), rgba(19, 21, 23, .75));
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      content: '';
+    }
+  }
+
+  .editor-post-title,
+  .editor-post-title textarea {
+    @include responsive-font(30px, 70px);
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.1;
+    font-family: $font-base !important;
+
+    .editor-post-permalink,
+    .editor-post-permalink * {
+      font-size: 16px !important;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-base !important;
+  }
+
+  .wp-block.editor-post-title__block {
+    line-height: 1 !important;
+    position: absolute;
+    bottom: 12%;
+    display: block;
+    right: 6%;
+    left: 6%;
+    width: 100%;
+    z-index: 5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: $color-white !important;
+
+    * {
+      line-height: 1 !important;
+      text-align: left;
+    }
+  }
+
+  // No drop cap
+  .has-drop-cap:not(:focus):first-letter {
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: inherit;
+    float: none;
+  }
+}

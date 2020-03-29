@@ -4263,7 +4263,7 @@ form.search-form .search-submit {
 .hero-single .article-title-area h1 {
   font-size: 30px;
   color: #fff;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.1;
 }
 
@@ -6799,6 +6799,8 @@ del {
   text-decoration: none;
 }
 
+.container.container-article article .minikuvateksti,
+.container-article.advertisement article .minikuvateksti,
 .container.container-article article .kuvateksti,
 .container-article.advertisement article .kuvateksti,
 .container.container-article article .kuvateksti-horizontal,
@@ -6809,6 +6811,8 @@ del {
 .container-article.advertisement article cite,
 .container.container-article article small,
 .container-article.advertisement article small,
+.container.container-article .article .minikuvateksti,
+.container-article.advertisement .article .minikuvateksti,
 .container.container-article .article .kuvateksti,
 .container-article.advertisement .article .kuvateksti,
 .container.container-article .article .kuvateksti-horizontal,
@@ -6835,6 +6839,8 @@ del {
 }
 
 @media (max-width: 480px) {
+  .container.container-article article .minikuvateksti,
+  .container-article.advertisement article .minikuvateksti,
   .container.container-article article .kuvateksti,
   .container-article.advertisement article .kuvateksti,
   .container.container-article article .kuvateksti-horizontal,
@@ -6845,6 +6851,8 @@ del {
   .container-article.advertisement article cite,
   .container.container-article article small,
   .container-article.advertisement article small,
+  .container.container-article .article .minikuvateksti,
+  .container-article.advertisement .article .minikuvateksti,
   .container.container-article .article .kuvateksti,
   .container-article.advertisement .article .kuvateksti,
   .container.container-article .article .kuvateksti-horizontal,
