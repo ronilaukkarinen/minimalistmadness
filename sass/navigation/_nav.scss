@@ -224,7 +224,7 @@
   position: absolute;
   left: 0;
   z-index: 9999;
-  padding: 12px 12px 12px 0;
+  padding: 17px 12px 12px 0;
 }
 
 @media (max-width: $responsivenav) {
@@ -389,9 +389,9 @@
 .hamburger-inner::before,
 .hamburger-inner::after {
   position: absolute;
-  width: 20px;
-  height: 1px;
-  background-color: darken($color-border, 20%);
+  width: 22px;
+  height: 2px;
+  background-color: rgba($color-base, .8);
   border-radius: 4px;
   transition: transform .15s ease;
 }

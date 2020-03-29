@@ -676,7 +676,7 @@ img {
   position: absolute;
   left: 0;
   z-index: 9999;
-  padding: 12px 12px 12px 0;
+  padding: 17px 12px 12px 0;
 }
 
 @media (max-width: 960px) {
@@ -845,9 +845,9 @@ img {
 .hamburger-inner::before,
 .hamburger-inner::after {
   position: absolute;
-  width: 20px;
-  height: 1px;
-  background-color: #aaa;
+  width: 22px;
+  height: 2px;
+  background-color: rgba(20, 20, 20, .8);
   border-radius: 4px;
   transition: transform .15s ease;
 }

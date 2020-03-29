@@ -160,8 +160,7 @@ lazyload(images, {
     });
 
     // Smooth scroll to ID on any anchor link
-    if ($('a').attr('href^="#"') === undefined) {
-    } else {
+    if ($('a').attr('href^="#"') !== undefined) {
       $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();
 
@@ -312,6 +311,21 @@ lazyload(images, {
       jQuery('.overlay-search input').val(null);
     } );
 
+    // Close search on document ready
+    $('.overlay-search').removeClass('overlay-open');
+    $('body').removeClass('overlay-open');
+    $('body').removeClass('search-open');
+
+    // Empty search on close
+    $('.search-results > div').remove();
+    $('.search-mobile input').val(null);
+    $('.overlay-search input').val(null);
+
+    // Show other fields only when starting typing comment
+    $('textarea#comment').keyup(function(){
+      $('.hidden-by-default').addClass('show');
+    });
+
     $('.site-head-logo').hover(function(){
       $('body').addClass('splat-toggle');
     }, function() {
@@ -321,25 +335,25 @@ lazyload(images, {
     // Rain
     var makeItRain = function() {
 
-    // Clear out everything
-    $('.rain').empty();
+      // Clear out everything
+      $('.rain').empty();
 
-    var increment = 0;
-    var drops = "";
-    var backDrops = "";
+        var increment = 0;
+        var drops = "";
+        var backDrops = "";
 
-    while (increment < 100) {
-    // Couple random numbers to use for various randomizations
-    // Random number between 98 and 1
-    var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
-    // Random number between 5 and 2
-    var randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
-    // Increment
-    increment += randoFiver;
-    // Add in a new raindrop with various randomizations to certain CSS properties
-    drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
-    backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
-  }
+        while (increment < 100) {
+        // Couple random numbers to use for various randomizations
+        // Random number between 98 and 1
+        var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
+        // Random number between 5 and 2
+        var randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
+        // Increment
+        increment += randoFiver;
+        // Add in a new raindrop with various randomizations to certain CSS properties
+        drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+        backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+      }
 
       $('.rain.front-row').append(drops);
       $('.rain.back-row').append(backDrops);
@@ -378,37 +392,21 @@ lazyload(images, {
       var target = document.getElementById('swup');
       moveTo.move(target);
 
-      // Close search on document ready
-      $('.overlay-search').removeClass('overlay-open');
-      $('body').removeClass('overlay-open');
-      $('body').removeClass('search-open');
+      // Smooth scroll to ID on any anchor link
+      if ($('a').attr('href^="#"') !== undefined) {
+        $('a[href^="#"]').on('click',function (e) {
+          e.preventDefault();
 
-      // Empty search on close
-      $('.search-results > div').remove();
-      jQuery('.search-mobile input').val(null);
-      jQuery('.overlay-search input').val(null);
+          var target = this.hash;
+          var $target = $(target);
 
-      // Show other fields only when starting typing comment
-      $('textarea#comment').keyup(function(){
-        $('.hidden-by-default').addClass('show');
-      });
-
-    // Smooth scroll to ID on any anchor link
-    if ($('a').attr('href^="#"') === undefined) {
-    } else {
-      $('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
-
-        var target = this.hash;
-        var $target = $(target);
-
-        $('html, body').stop().animate({
-          'scrollTop': $target.offset().top
-        }, 500, 'swing', function () {
-          window.location.hash = target;
+          $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+          }, 500, 'swing', function () {
+            window.location.hash = target;
+          });
         });
-      });
-    }
+      }
 
       // Vue construct
       var blog = new Vue({
