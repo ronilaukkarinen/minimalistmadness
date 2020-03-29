@@ -92,6 +92,7 @@
   .wp-block[data-type="core/video"],
   .wp-block[data-type="core/embed"],
   .wp-block[data-type="core/list"],
+  .wp-block[data-type="core/freeform"],
   .wp-block[data-type="core/image"]:not([data-align="full"]):not([data-align="wide"]) {
     max-width: $article-max-width !important;
     width: 100%;

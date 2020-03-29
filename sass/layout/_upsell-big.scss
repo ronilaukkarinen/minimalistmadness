@@ -1,11 +1,33 @@
-.block.block-four-posts .container {
+.block.block-upsell-big .container {
   overflow: visible;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 0;
 
   @media (max-width: 450px) {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .global-tag {
+    font-size: 10px;
+    background: $color-headings;
+    color: $color-white;
+    font-family: $font-alt;
+    display: inline-block;
+    margin: 0 2px 1px 0;
+    padding: 5px 10px;
+    transition: all .15s ease;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 15px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      margin: 0 2px -2px 0;
+    }
   }
 
   > .post-head,
@@ -14,21 +36,35 @@
   }
 
   .post-feed .post-card-image.no-bottom-radius {
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
     * {
-      border-bottom-left-radius: 0 !important;
-      border-bottom-right-radius: 0 !important;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
   }
 
   .post-card-information {
     background: $color-white;
-    margin-top: -3rem;
-    padding: 7rem 4rem 4rem;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    padding: 4rem;
+
+    @media (min-width: 590px) {
+      margin-top: -3rem;
+      padding: 5rem 6rem;
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px;
+      bottom: 60px;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      width: 580px;
+    }
+
+    @media (max-width: 400px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
 
     p {
       font-size: 18px;
@@ -54,13 +90,8 @@
   }
 
   .post-feed {
-    @include grid(2, $gutter_x: 40px, $gutter_y: 40px);
     margin-bottom: 30px;
     order: 1;
-
-    @media (max-width: 600px) {
-      display: block;
-    }
 
     .post-card-details {
       margin: 0;
@@ -133,76 +164,20 @@
       &:after {
         content: '';
         display: block;
-        padding-bottom: 80%;
+        padding-bottom: 60%;
+
+        @media (max-width: 1200px) {
+          padding-bottom: 90%;
+        }
 
         @media (max-width: 1000px) {
           padding-bottom: 130%;
         }
 
-        @media (max-width: 600px) {
-          padding-bottom: 120%;
+        @media (max-width: 590px) {
+          padding-bottom: 80%;
         }
       }
     }
-  }
-}
-
-.post-head {
-  opacity: .3;
-  order: 2;
-  position: relative;
-  margin: 20px 10px;
-  transition: all $transition-duration;
-
-  &.inverted {
-    order: 1;
-    margin-bottom: 6rem;
-
-    svg {
-      transform: rotate(-180deg);
-      top: auto;
-      left: -6px;
-      bottom: -27px;
-    }
-
-    &:before {
-      bottom: -10px;
-      top: auto;
-    }
-  }
-
-  &:hover {
-    opacity: .5;
-  }
-
-  &:before {
-    content: '';
-    height: 1px;
-    position: absolute;
-    top: 0;
-    left: 4px;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 58%);
-    width: 30%;
-  }
-
-  svg {
-    position: absolute;
-    top: -17px;
-    left: -4px;
-    width: 18px;
-    height: 18px;
-  }
-
-  h2 {
-    font-size: 15px;
-    font-weight: 500;
-    margin: 0;
-    padding-top: 1rem;
-    padding-left: 1rem;
-  }
-
-  p {
-    margin: 0;
-    opacity: .8;
   }
 }

@@ -7,6 +7,7 @@
 
 namespace Air_Light;
 
+  $featured_posts = get_field( 'selected_posts', 'option', false, false );
   $args = array(
     'post_type' => 'post',
     'posts_per_page' => 2, // NB! When you change this, change also posts_per_page option
@@ -15,6 +16,7 @@ namespace Air_Light;
     'update_post_meta_cache' => true,
     'no_found_rows' => true,
     'post_status' => 'publish',
+    'post__not_in' => $selected_posts,
   );
 
   $query = new \WP_Query( $args );

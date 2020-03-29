@@ -17,7 +17,7 @@ $selected_posts = get_field( 'selected_posts', 'option' );
     <div class="container">
 
       <header class="post-head">
-        <h2><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24"><path fill="currentColor" d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg><?php _e( 'Valitsemiani juttuja juuri sinulle', 'minimalistmadness' ); ?></h2>
+        <h2><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24"><path fill="currentColor" d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>Valitsemiani juttuja juuri sinulle', 'minimalistmadness</h2>
       </header>
 
       <div class="post-feed">
@@ -42,9 +42,9 @@ $selected_posts = get_field( 'selected_posts', 'option' );
 
           <article class="entry post-card post">
             <div class="post-card-content">
-              <a href="<?php echo get_the_permalink( $selected_post->ID ); ?>" class="global-link"><span class="screen-reader-text"><?php echo get_the_title( $selected_post->ID ); ?></span></a>
+              <a href="<?php echo esc_url( get_the_permalink( $selected_post->ID ) ); ?>" class="global-link"><span class="screen-reader-text"><?php echo esc_attr( get_the_title( $selected_post->ID ) ); ?></span></a>
 
-              <h2 class="post-card-title"><a href="<?php echo get_the_permalink( $selected_post->ID ); ?>"><?php echo get_the_title( $selected_post->ID ); ?></a></h2>
+              <h2 class="post-card-title"><a href="<?php echo esc_url( get_the_permalink( $selected_post->ID ) ); ?>"><?php echo esc_attr( get_the_title( $selected_post->ID ) ); ?></a></h2>
 
               <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo $reading_time; ?></p><?php if ( has_post_thumbnail() ) { image_lazyload_div( get_post_thumbnail_id( $selected_post->ID, 'large' ) ); } ?></div></div>
             </div>
