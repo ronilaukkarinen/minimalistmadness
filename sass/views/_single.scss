@@ -479,31 +479,25 @@ kbd {
   padding: 0 .5rem;
 }
 
+// Preformatted text.
+// CSS Simple Pre Code
 pre {
-  display: block;
-  padding: 9.5px;
-  margin: 0 0 .625rem;
-  color: #333;
-  word-break: break-all;
+  background: #333;
+  white-space: pre;
   word-wrap: break-word;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   overflow: auto;
-
-  &.debug {
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    white-space: pre-wrap;
-    background-color: transparent;
-    border-radius: 0;
-  }
+  border-radius: 4px;
+  border: 1px solid #292929;
+  position: relative;
+  font-family: 'Inconsolata','Monaco','Consolas','Andale Mono','Bitstream Vera Sans Mono','Courier New',Courier,monospace;
+  display: block;
+  margin: 3rem 0;
+  padding: 15px 16px 14px;
+  border-left: 1px solid #555;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 19px;
+  color: #ddd;
 }
 
 .entry-header {
