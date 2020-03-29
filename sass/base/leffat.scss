@@ -71,6 +71,7 @@ $vertical-rhythm: true;
   border-bottom: 3px solid darken(#d6221f, 10%);
   position: relative;
   transition: all .22s;
+  z-index: 0 !important;
 
   &:hover {
     background: darken(#d6221f, 10%);
