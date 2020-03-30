@@ -3019,7 +3019,7 @@ a.global-link {
 
 @font-face {
   font-family: "Muli";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/muli-v20-latin-300.eot");
   src: url("../fonts/muli-v20-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/muli-v20-latin-300.woff") format("woff"), url("../fonts/muli-v20-latin-300.woff2") format("woff2"), url("../fonts/muli-v20-latin-300.ttf") format("truetype"), url("../fonts/muli-v20-latin-300.svg#Muli") format("svg");
   font-style: normal;
@@ -3028,7 +3028,7 @@ a.global-link {
 
 @font-face {
   font-family: "Muli";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/muli-v20-latin-regular.eot");
   src: url("../fonts/muli-v20-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/muli-v20-latin-regular.woff") format("woff"), url("../fonts/muli-v20-latin-regular.woff2") format("woff2"), url("../fonts/muli-v20-latin-regular.ttf") format("truetype"), url("../fonts/muli-v20-latin-regular.svg#Muli") format("svg");
   font-style: normal;
@@ -3037,7 +3037,7 @@ a.global-link {
 
 @font-face {
   font-family: "Muli";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/muli-v20-latin-500.eot");
   src: url("../fonts/muli-v20-latin-500.eot?#iefix") format("embedded-opentype"), url("../fonts/muli-v20-latin-500.woff") format("woff"), url("../fonts/muli-v20-latin-500.woff2") format("woff2"), url("../fonts/muli-v20-latin-500.ttf") format("truetype"), url("../fonts/muli-v20-latin-500.svg#Muli") format("svg");
   font-style: normal;
@@ -3046,7 +3046,7 @@ a.global-link {
 
 @font-face {
   font-family: "Muli";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/muli-v20-latin-600.eot");
   src: url("../fonts/muli-v20-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/muli-v20-latin-600.woff") format("woff"), url("../fonts/muli-v20-latin-600.woff2") format("woff2"), url("../fonts/muli-v20-latin-600.ttf") format("truetype"), url("../fonts/muli-v20-latin-600.svg#Muli") format("svg");
   font-style: normal;
@@ -3055,7 +3055,7 @@ a.global-link {
 
 @font-face {
   font-family: "Muli";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/muli-v20-latin-700.eot");
   src: url("../fonts/muli-v20-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/muli-v20-latin-700.woff") format("woff"), url("../fonts/muli-v20-latin-700.woff2") format("woff2"), url("../fonts/muli-v20-latin-700.ttf") format("truetype"), url("../fonts/muli-v20-latin-700.svg#Muli") format("svg");
   font-style: normal;
@@ -3064,7 +3064,7 @@ a.global-link {
 
 @font-face {
   font-family: "ColfaxAI";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/92bb7bd0146566b09c54412871582ebf.eot");
   src: url("../fonts/92bb7bd0146566b09c54412871582ebf.eot?#iefix") format("embedded-opentype"), url("../fonts/92bb7bd0146566b09c54412871582ebf.woff") format("woff"), url("../fonts/92bb7bd0146566b09c54412871582ebf.woff2") format("woff2"), url("../fonts/92bb7bd0146566b09c54412871582ebf.ttf") format("truetype"), url("../fonts/92bb7bd0146566b09c54412871582ebf.svg#ColfaxAI") format("svg");
   font-style: normal;
@@ -3073,7 +3073,7 @@ a.global-link {
 
 @font-face {
   font-family: "ColfaxAI";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/9424443aac1c01fb1e08e022d614620e.eot");
   src: url("../fonts/9424443aac1c01fb1e08e022d614620e.eot?#iefix") format("embedded-opentype"), url("../fonts/9424443aac1c01fb1e08e022d614620e.woff") format("woff"), url("../fonts/9424443aac1c01fb1e08e022d614620e.woff2") format("woff2"), url("../fonts/9424443aac1c01fb1e08e022d614620e.ttf") format("truetype"), url("../fonts/9424443aac1c01fb1e08e022d614620e.svg#ColfaxAI") format("svg");
   font-style: normal;
@@ -3082,7 +3082,7 @@ a.global-link {
 
 @font-face {
   font-family: "Charter";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/Charter.eot");
   src: url("../fonts/Charter.eot?#iefix") format("embedded-opentype"), url("../fonts/Charter.woff") format("woff"), url("../fonts/Charter.woff2") format("woff2"), url("../fonts/Charter.ttf") format("truetype"), url("../fonts/Charter.svg#Charter") format("svg");
   font-style: normal;
@@ -3091,7 +3091,7 @@ a.global-link {
 
 @font-face {
   font-family: "Charter";
-  font-display: auto;
+  font-display: swap;
   src: url("../fonts/Charter-Bold.eot");
   src: url("../fonts/Charter-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Charter-Bold.woff") format("woff"), url("../fonts/Charter-Bold.woff2") format("woff2"), url("../fonts/Charter-Bold.ttf") format("truetype"), url("../fonts/Charter-Bold.svg#Charter") format("svg");
   font-style: normal;
