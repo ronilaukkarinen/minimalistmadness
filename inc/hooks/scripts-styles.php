@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-29 16:23:25
+ * @Last Modified time: 2020-03-30 08:28:09
  */
 
 namespace Air_Light;
@@ -51,12 +51,7 @@ function enqueue_theme_scripts() {
 
   wp_localize_script( 'scripts', 'air', array(
     'nonce'           => wp_create_nonce( 'wp_rest' ),
-    'posts_per_page'  => get_option( 'posts_per_page' ),
+    'posts_per_page'  => 2,
     'baseurl'         => get_rest_url(),
   ) );
 } // end minimalistmadness_scripts
-
-// function add_data_attribute( $tag, $handle ) {
-//    return str_replace( ' src', ' data-swup-ignore-script src', $tag );
-// }
-// add_filter( 'script_loader_tag', __NAMESPACE__ . '\add_data_attribute', 10, 2 );
