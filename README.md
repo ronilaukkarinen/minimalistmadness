@@ -10,7 +10,7 @@ The theme is completely in Finnish and contains hardcoded strings and some of my
 
 The goal for this theme was to be minimal as possible yet retaining some functionality and wow-effect. Also as OCD as I am I thought many times "this is madness" to code for 20 hours straight. Hence, 'Minimalist Madness'.
 
-![](https://i.imgur.com/Cq0OTIi.jpg "Screenshot")
+![](https://i.imgur.com/60Yahxr.jpg "Screenshot")
 
 ## History
 
