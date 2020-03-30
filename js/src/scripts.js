@@ -37,8 +37,7 @@ const swup = new Swup({
       head: true,
       body: true
     }),
-    new SwupBodyClassPlugin(),
-    new SwupGaPlugin()
+    new SwupBodyClassPlugin()
   ]
 });
 
