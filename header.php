@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-30 08:40:32
+ * @Last Modified time: 2020-03-30 11:43:47
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -24,19 +24,19 @@ namespace Air_Light;
   <?php wp_head(); ?>
 
   <?php if ( is_singular() && ! has_tag( 'raha' ) ) : ?>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
     (adsbygoogle = window.adsbygoogle || []).push({
       google_ad_client: "ca-pub-8523880252818258",
       enable_page_level_ads: true
     });
-  </script>
-<?php endif; ?>
+    </script>
+  <?php endif; ?>
 </head>
 
 <body <?php body_class( 'no-js' ); ?>>
   <?php wp_body_open(); ?>
-  <div class="site" id="swup">
+  <div class="site<?php if ( ! is_singular() || has_tag( 'raha' ) ) : ?> disable-google-ads<?php endif; ?>" id="swup">
 
     <div class="rain-wrapper">
       <div class="rain front-row"></div>

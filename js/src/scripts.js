@@ -12,6 +12,7 @@ import MoveTo from 'moveto';
 import Swup from 'swup';
 import SwupScriptsPlugin from '@swup/scripts-plugin';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
+import SwupGaPlugin from '@swup/ga-plugin';
 
 // Debounce
 function debounce(func, wait, immediate) {
@@ -31,13 +32,13 @@ function debounce(func, wait, immediate) {
 
 // Initiate Swup transitions
 const swup = new Swup({
-  doScrollingRightAway: false,
-  animateScroll: false,
-  scrollFriction: .3,
-  scrollAcceleration: .04,
   plugins: [
-    new SwupScriptsPlugin(),
-    new SwupBodyClassPlugin()
+    new SwupScriptsPlugin({
+      head: true,
+      body: true
+    }),
+    new SwupBodyClassPlugin(),
+    new SwupGaPlugin()
   ]
 });
 
@@ -61,7 +62,7 @@ swup.on('contentReplaced', function() {
     // Load Instagram API script
     const loadInstagramAPI = () => {
       const tag = document.createElement('script');
-      tag.src = "http://www.instagram.com/embed.js";
+      tag.src = "https://www.instagram.com/embed.js";
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
       window.isInstagramIframeAPILoaded = true;
