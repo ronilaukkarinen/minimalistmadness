@@ -8754,8 +8754,8 @@ ul.tags li a:hover {
 
 @media (max-width: 840px) {
   .comments-wrap .hidden-by-default {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .comments-wrap .hidden-by-default input {
