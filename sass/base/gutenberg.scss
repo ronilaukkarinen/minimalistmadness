@@ -49,6 +49,12 @@
   margin-bottom: 0 !important;
 }
 
+@media (max-width: 782px) {
+  body.wp-admin {
+    overflow-x: hidden !important;
+  }
+}
+
 .editor-styles-wrapper {
   // Theme options
   @import 'config';
@@ -93,6 +99,7 @@
   .wp-block[data-type="core/embed"],
   .wp-block[data-type="core/list"],
   .wp-block[data-type="core/freeform"],
+  .wp-block[data-type="core/html"],
   .wp-block[data-type="core/image"]:not([data-align="full"]):not([data-align="wide"]) {
     max-width: $article-max-width !important;
     width: 100%;
@@ -123,7 +130,7 @@
   }
 
   .editor-post-title {
-    @include background-cover();
+    background-size: cover;
     padding: 0 !important;
     margin: 0 0 70px !important;
     height: 100vh;
@@ -182,6 +189,11 @@
     padding-left: 2rem;
     padding-right: 2rem;
     color: $color-white !important;
+
+    @media (max-width: 782px) {
+      left: 0;
+      right: 0;
+    }
 
     * {
       line-height: 1 !important;
