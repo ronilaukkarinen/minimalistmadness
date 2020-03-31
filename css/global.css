@@ -2905,6 +2905,17 @@ pre[class*="language-"] {
   margin: 0 auto;
 }
 
+.dot-divider {
+  font-size: 12px;
+  padding-right: .45em;
+  padding-left: .45em;
+  color: #777;
+}
+
+.dot-divider:after {
+  content: '·';
+}
+
 .shade {
   background: #333;
   position: absolute;

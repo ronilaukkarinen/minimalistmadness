@@ -16,6 +16,18 @@
   margin: 0 auto;
 }
 
+// Dividers
+.dot-divider {
+  font-size: 12px;
+  padding-right: .45em;
+  padding-left: .45em;
+  color: #777;
+
+  &:after {
+    content: '·';
+  }
+}
+
 // Default shade on top of blocks
 .shade {
   background: #333;
