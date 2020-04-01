@@ -8,6 +8,7 @@ import 'what-input';
 import './lazyload.js';
 import './prism.js';
 import './fitvids.js';
+const Vue = require('vue/dist/vue.min');
 import MoveTo from 'moveto';
 import Swup from 'swup';
 import SwupScriptsPlugin from '@swup/scripts-plugin';
