@@ -96,6 +96,7 @@
         <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
         <exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedScript" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
+        <exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.

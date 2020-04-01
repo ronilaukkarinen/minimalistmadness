@@ -2,12 +2,15 @@
  * Air theme JavaScript.
  */
 
+// Regular scripts
+require('./jquery.js');
+require('./fitvids.js');
+require('./lazyload.js');
+require('./prism.js');
+
 // Import modules (comment to disable)
 import './skip-link-focus-fix';
 import 'what-input';
-import './lazyload.js';
-import './prism.js';
-import './fitvids.js';
 import MoveTo from 'moveto';
 import Swup from 'swup';
 import SwupScriptsPlugin from '@swup/scripts-plugin';

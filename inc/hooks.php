@@ -18,7 +18,6 @@ add_action( 'widgets_init', __NAMESPACE__ . '\widgets_init' );
  */
 require get_theme_file_path( 'inc/hooks/scripts-styles.php' );
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_theme_scripts' );
-add_action( 'wp_default_scripts', __NAMESPACE__ . '\move_jquery_into_footer' );
 
 /**
  * Gutenberg associated hooks

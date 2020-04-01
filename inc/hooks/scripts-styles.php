@@ -6,21 +6,10 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-30 08:28:09
+ * @Last Modified time: 2020-04-01 21:17:25
  */
 
 namespace Air_Light;
-
-/**
- * Move jQuery to footer
- */
-function move_jquery_into_footer( $wp_scripts ) {
-  if ( ! is_admin() ) {
-    $wp_scripts->add_data( 'jquery',         'group', 1 );
-    $wp_scripts->add_data( 'jquery-core',    'group', 1 );
-    $wp_scripts->add_data( 'jquery-migrate', 'group', 1 );
-  }
-} // end minimalistmadness_move_jquery_into_footer
 
 /**
  * Enqueue scripts and styles.
@@ -31,6 +20,11 @@ function enqueue_theme_scripts() {
   } else {
     $minimalistmadness_template = 'global.min';
   }
+
+  // Disable jQuery (included in all.js and normally on wp-admin)
+  if ( ! is_admin() ) wp_deregister_script( 'jquery' );
+  if ( ! is_admin() ) wp_deregister_script( 'jquery-core' );
+  if ( ! is_admin() ) wp_deregister_script( 'jquery-migrate' );
 
   // Styles.
   wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$minimalistmadness_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$minimalistmadness_template}.css" ) ) );
