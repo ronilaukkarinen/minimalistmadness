@@ -142,10 +142,6 @@
     position: relative;
     max-height: 1300px;
 
-    @media (max-width: 782px) {
-      height: 680px !important;
-    }
-
     // Shade
     &::after {
       opacity: 1;
@@ -206,11 +202,21 @@
       bottom: 0 !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
+      margin-bottom: 0 !important;
+
+      textarea {
+        min-height: 180px !important;
+        height: auto !important;
+      }
     }
 
     * {
       line-height: 1 !important;
       text-align: left;
+
+      &.editor-post-permalink {
+        overflow: hidden !important;
+      }
     }
   }
 
