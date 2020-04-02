@@ -83,6 +83,8 @@ get_header();
             </div>
           </div>
 
+          <div id="spawn-slot"></div>
+
         </article><!-- .entry-content -->
 
       </div><!-- .container-article -->
