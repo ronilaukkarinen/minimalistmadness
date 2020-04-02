@@ -128,6 +128,12 @@
     }
   }
 
+  * a {
+    @extend %link;
+    position: relative;
+    text-decoration: none;
+  }
+
   b,
   strong {
     @include responsive-font($font-min-size, 19px);
@@ -175,7 +181,10 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  p,
+  li
+  * {
     font-family: $font-base !important;
   }
 
@@ -191,8 +200,8 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 0;
+    padding-right: 0;
     color: $color-white !important;
 
     @media (max-width: 782px) {
