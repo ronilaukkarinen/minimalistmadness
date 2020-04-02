@@ -1,5 +1,8 @@
 @charset 'utf-8';
 
+// Theme options
+@import 'config';
+
 @font-face {
   font-family: 'Muli';
   src: url('../fonts/muli-v20-latin-700.eot');
@@ -54,6 +57,11 @@
   margin-bottom: 0 !important;
 }
 
+.wp-block.block-editor-default-block-appender {
+  width: 100% !important;
+  max-width: $article-max-width !important;
+}
+
 @media (max-width: 782px) {
   body.wp-admin {
     overflow-x: hidden !important;
@@ -61,9 +69,6 @@
 }
 
 .editor-styles-wrapper {
-  // Theme options
-  @import 'config';
-
   // Helpers
   @import '../helpers/general';
   @import '../helpers/background';
@@ -105,8 +110,7 @@
   .wp-block[data-type="core/list"],
   .wp-block[data-type="core/freeform"],
   .wp-block[data-type="core/html"],
-  .wp-block[data-type="core/image"]:not([data-align="full"]):not([data-align="wide"]),
-  .wp-block.block-editor-default-block-appender {
+  .wp-block[data-type="core/image"]:not([data-align="full"]):not([data-align="wide"]) {
     max-width: $article-max-width !important;
     width: 100%;
   }
