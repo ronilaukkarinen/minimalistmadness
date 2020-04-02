@@ -6240,6 +6240,138 @@ form.search-form .search-submit {
   border-color: #999;
 }
 
+.container.container-article .ownad-unblockable,
+.container-article.advertisement .ownad-unblockable {
+  max-width: 1100px;
+  position: relative;
+  padding-left: 40px;
+  padding-left: 4rem;
+  padding-right: 40px;
+  padding-right: 4rem;
+}
+
+@media (max-width: 400px) {
+  .container.container-article .ownad-unblockable,
+  .container-article.advertisement .ownad-unblockable {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container.container-article .ownad-unblockable:hover .spans,
+.container-article.advertisement .ownad-unblockable:hover .spans {
+  box-shadow: 0 4px 80px black;
+}
+
+.container.container-article .ownad-unblockable a.global-link:not(.button):not(.post-edit-link),
+.container-article.advertisement .ownad-unblockable a.global-link:not(.button):not(.post-edit-link) {
+  position: absolute;
+  border: 0;
+  box-shadow: none;
+}
+
+.container.container-article .ownad-unblockable a.global-link:not(.button):not(.post-edit-link):hover,
+.container-article.advertisement .ownad-unblockable a.global-link:not(.button):not(.post-edit-link):hover {
+  background: transparent;
+}
+
+.container.container-article .ownad-unblockable .spans,
+.container-article.advertisement .ownad-unblockable .spans {
+  box-shadow: 0 4px 80px rgba(0, 0, 0, .7);
+  border: 0;
+  margin: 80px 0;
+  margin: 8rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
+  background: #1f1f1f;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all .6s;
+}
+
+@media (max-width: 800px) {
+  .container.container-article .ownad-unblockable .spans,
+  .container-article.advertisement .ownad-unblockable .spans {
+    display: block;
+  }
+}
+
+.container.container-article .ownad-unblockable .span-first,
+.container-article.advertisement .ownad-unblockable .span-first {
+  background: linear-gradient(90deg, #3633b0, #4e4aff);
+  display: -ms-grid;
+  display: grid;
+}
+
+.container.container-article .ownad-unblockable .inner,
+.container-article.advertisement .ownad-unblockable .inner {
+  padding: 40px 15px;
+  padding: 4rem 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.container.container-article .ownad-unblockable svg,
+.container-article.advertisement .ownad-unblockable svg {
+  width: 150px;
+  height: 29.97px;
+}
+
+.container.container-article .ownad-unblockable .span-second,
+.container-article.advertisement .ownad-unblockable .span-second {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: #d8d8d8;
+  padding: 50px 95px;
+}
+
+@media (max-width: 1080px) {
+  .container.container-article .ownad-unblockable .span-second,
+  .container-article.advertisement .ownad-unblockable .span-second {
+    padding: 40px 28px;
+  }
+}
+
+.container.container-article .ownad-unblockable .span-second p,
+.container-article.advertisement .ownad-unblockable .span-second p {
+  font-family: 'ColfaxAI', 'Helvetica Neue', Helvetica, sans-serif;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.44;
+}
+
+.container.container-article .ownad-unblockable .span-second a:not(.button):not(.post-edit-link),
+.container-article.advertisement .ownad-unblockable .span-second a:not(.button):not(.post-edit-link) {
+  color: #7b82a8;
+}
+
+.container.container-article .ownad-unblockable h1,
+.container-article.advertisement .ownad-unblockable h1,
+.container.container-article .ownad-unblockable h2,
+.container-article.advertisement .ownad-unblockable h2,
+.container.container-article .ownad-unblockable h3,
+.container-article.advertisement .ownad-unblockable h3,
+.container.container-article .ownad-unblockable h4,
+.container-article.advertisement .ownad-unblockable h4,
+.container.container-article .ownad-unblockable p,
+.container-article.advertisement .ownad-unblockable p {
+  color: #d8d8d8;
+}
+
+.container.container-article .ownad-unblockable .title,
+.container-article.advertisement .ownad-unblockable .title {
+  font-size: 22px;
+  font-family: 'ColfaxAI', 'Helvetica Neue', Helvetica, sans-serif;
+  margin: 0 0 10px;
+  margin: 0 0 1rem;
+}
+
 body.overlay-open {
   overflow: hidden;
   top: 0;
