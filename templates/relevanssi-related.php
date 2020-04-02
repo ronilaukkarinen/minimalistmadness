@@ -36,7 +36,7 @@ function khonsu_get_random_image_id() {
  * @Author:             Timi Wahalahti, Digitoimisto Dude Oy (https://dude.fi)
  * @Date:               2019-08-07 14:38:34
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 18:20:06
+ * @Last Modified time: 2020-04-02 10:54:59
  *
  * @package air-helper
  */
@@ -294,7 +294,7 @@ function air_helper_get_image_lazyload_dimensions( $image_id = 0, $sizes = [] ) 
               <a href="<?php echo esc_url( get_permalink( $related_post_id ) ); ?>" class="global-link"><span class="screen-reader-text"><?php echo esc_attr( get_the_title( $related_post_id ) ); ?></span></a>
 
             <h2 class="post-card-title"><a href="<?php echo esc_url( get_permalink( $related_post_id ) ); ?>"><?php echo esc_attr( get_the_title( $related_post_id ) ); ?></a></h2>
-            <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.', $related_post_id ); ?> <?php the_time( 'F', $related_post_id ); ?>ta <?php the_time( 'Y', $related_post_id ); ?></time></p><?php if ( has_post_thumbnail( $related_post_id ) ) { image_lazyload_div( get_post_thumbnail_id( $related_post_id, 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
+            <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php echo esc_attr( get_the_time( 'c' ) ); ?>"><?php echo esc_attr( get_the_time( 'j.', $related_post_id ) ); ?> <?php echo esc_attr( get_the_time( 'F', $related_post_id ) ); ?>ta <?php esc_attr( get_the_time( 'Y', $related_post_id ) ); ?></time></p><?php if ( has_post_thumbnail( $related_post_id ) ) { image_lazyload_div( get_post_thumbnail_id( $related_post_id, 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
             </div>
           </article>
 
