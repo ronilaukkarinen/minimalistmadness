@@ -4820,19 +4820,10 @@ form.search-form .search-submit {
   margin: 20px 0 0;
   height: auto;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 100%;
   overflow: hidden;
   order: 2;
-}
-
-@media (max-width: 600px) {
-  .block.block-four-posts .container .post-feed .post-card-title,
-  .block.block-four-posts .advertisement .post-feed .post-card-title {
-    height: 80px;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
 }
 
 @media (max-width: 450px) {
@@ -5767,11 +5758,6 @@ form.search-form .search-submit {
   content: '';
   display: block;
   padding-bottom: 130%;
-}
-
-.block.block-four-posts.block-upsells .container .post-card-title,
-.block.block-four-posts.block-upsells .advertisement .post-card-title {
-  height: 80px;
 }
 
 .block.block-recent-posts .container,
