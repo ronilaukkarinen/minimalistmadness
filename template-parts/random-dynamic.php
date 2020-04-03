@@ -1,0 +1,60 @@
+<?php
+/**
+ * Random.
+ *
+ * Dynamic version that loads up via JS.
+ *
+ * @package khonsu
+ */
+
+namespace Air_Light;
+
+include_once( $_SERVER['DOCUMENT_ROOT'] . '/wp/wp-load.php' ); // phpcs:ignore
+
+$args = array(
+  'post_type' => 'post',
+  'posts_per_page' => 4,
+  'orderby' => 'rand',
+  'post_status' => 'publish',
+  'no_found_rows' => true,
+
+  // Ignore kuulumiset, elämä
+  'tag__not_in' => '79, 7',
+
+  // Don't show too old posts
+  'date_query' => array(
+    'after' => '2007-01-01',
+    'inclusive' => true,
+  ),
+
+  // Show only posts with featured image
+  // 'meta_query' => array(
+    // array(
+      // 'key' => '_thumbnail_id',
+      // 'compare' => 'EXISTS',
+   // ),
+  // ),
+);
+
+$query = new \WP_Query( $args );
+if ( $query->have_posts() ) : ?>
+
+  <?php
+  while ( $query->have_posts() ) :
+    $query->the_post();
+    ?>
+
+    <article class="entry post-card post">
+      <div class="post-card-content">
+        <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="global-link"><span class="screen-reader-text"><?php echo esc_attr( get_the_title() ); ?></span></a>
+
+        <h2 class="post-card-title"><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_attr( get_the_title() ); ?></a></h2>
+        <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo khonsu_estimated_reading_time(); // WPCS: XSS OK. ?></p><?php if ( has_post_thumbnail() ) { image_lazyload_div( get_post_thumbnail_id( $post->ID, 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
+      </div>
+    </article>
+
+  <?php endwhile; ?>
+
+  <?php
+endif;
+wp_reset_postdata();

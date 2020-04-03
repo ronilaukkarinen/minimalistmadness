@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-29 21:45:20
+ * @Last Modified time: 2020-04-02 21:47:12
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -37,7 +37,7 @@ get_header(); ?>
       include get_theme_file_path( 'template-parts/upsell-big.php' );
       include get_theme_file_path( 'template-parts/four-posts.php' );
       include get_theme_file_path( 'template-parts/most-popular.php' );
-          // include get_theme_file_path( 'template-parts/recent-posts.php' );
+      include get_theme_file_path( 'template-parts/random.php' );
       include get_theme_file_path( 'template-parts/ads.php' );
       include get_theme_file_path( 'template-parts/who.php' );
     }

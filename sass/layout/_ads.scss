@@ -53,11 +53,11 @@
     box-shadow: 0 4px 80px rgba($color-black, 1);
 
     p a:not(.button):not(.post-edit-link) {
-      animation-name: shake;
-      animation-duration: .8s;
-      transform-origin: 50% 50%;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
+      // animation-name: shake;
+      // animation-duration: .8s;
+      // transform-origin: 50% 50%;
+      // animation-iteration-count: infinite;
+      // animation-timing-function: linear;
       color: lighten($color-blog-links, 35%);
       border-color: lighten($color-blog-links, 35%);
     }

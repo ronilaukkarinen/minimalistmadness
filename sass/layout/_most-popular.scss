@@ -27,15 +27,6 @@
   }
 
   .post-card-title {
-    height: 70px;
-    align-items: flex-start;
-
-    @media (max-width: 600px) {
-      height: 70px;
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
     @media (max-width: 450px) {
       height: auto;
     }

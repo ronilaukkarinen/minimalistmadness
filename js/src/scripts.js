@@ -98,6 +98,7 @@ swup.on('contentReplaced', function() {
     // My own ads
     const adContent = '<p class="promotion-info">-- Sori häiriö, tämä on härski oman firmani mainos, teksti jatkuu alapuolella --</p><a href="https://www.dude.fi/yhteystiedot" class="global-link"></a><div class="spans"><div class="span span-first"><div class="inner"><span class="screen-reader-text">Digitoimisto Dude Oy</span><svg width="110" height="21.98" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 2267.72 453.54" xml:space="preserve"><path fill="currentColor" d="M950.26 211.64c0 37.66-12.7 111.12-97.79 111.12-85.61 0-98.4-73.47-98.4-111.12V5.23H590.91v217.92c0 138.73 97.78 221.55 261.55 221.55 163.39 0 260.93-82.82 260.93-221.55V5.23H950.26v206.41zM2264.41 127.17V5.23h-505.2v439.48h505.2V322.76h-345.08v-48.71h286.91v-98.17h-286.91v-48.71zM317.21 5.23H3v439.48h314.21c108.81 0 219.87-87.76 219.87-219.74 0-132.83-111.06-219.74-219.87-219.74zm-39.84 317.53H166.14v-195.4h111.23c57.58 0 97.7 45.79 97.7 97.61 0 52.51-40.12 97.79-97.7 97.79zM1485.51 5.23H1171.3v439.48h314.21c108.81 0 219.87-87.76 219.87-219.74 0-132.83-111.06-219.74-219.87-219.74zm-39.84 317.53h-111.23v-195.4h111.23c57.58 0 97.7 45.79 97.7 97.61 0 52.51-40.12 97.79-97.7 97.79z"/></svg></div></div><div class="span span-second"><h3 class="title">Haluatko hyvin tehdyt WordPress-sivut sinulle tai yrityksellesi?</h3><p>Nämäkin sivut joita juuri nyt katselet ovat käsintehtyä, kotimaista laatua. Tekemämme verkkosivut latautuvat supernopeasti ja ovat naurettavan hyvännäköisiä. Yrityksemme on ollut toiminnasta vuodesta 2013 ja meillä on Jyväskylässä kaksi maailmanluokan suunnittelijaa. <a href="https://www.dude.fi/yhteystiedot">Ota yhteyttä!</a></p></div>';
 
+    if ( document.getElementById('article-text-content') ) {
       var ownAd = document.createElement("div");
       ownAd.innerHTML = adContent;
       ownAd.classList.add('ownad-unblockable');
@@ -107,6 +108,7 @@ swup.on('contentReplaced', function() {
         var referenceElement = articleElement.children[parseInt(childCount / 3)];
         referenceElement.parentNode.insertBefore(ownAd, referenceElement.nextSibling);
       }
+    }
 
     if ( document.getElementById('spawn-slot') ) {
       var ownAdSlot = document.createElement("div");
@@ -118,6 +120,13 @@ swup.on('contentReplaced', function() {
 
     // Fitvids
     $('.entry-content, .wp-block-embed__wrapper').fitVids();
+
+    // Load random posts dynamically
+    $('.dynamic-content').load('/content/themes/minimalistmadness/template-parts/random-dynamic.php');
+    $('.load-more-random').on('click', function(event) {
+      event.preventDefault();
+      $('.dynamic-content').load('/content/themes/minimalistmadness/template-parts/random-dynamic.php');
+    });
 
     // Close search on document ready
     $('.overlay-search').removeClass('overlay-open');

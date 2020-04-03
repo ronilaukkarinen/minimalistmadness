@@ -4662,6 +4662,7 @@ form.search-form .search-submit {
 
 .block.block-four-posts .container .post-card-information,
 .block.block-four-posts .advertisement .post-card-information {
+  order: 3;
   background: #fff;
   margin-top: -30px;
   margin-top: -3rem;
@@ -4813,15 +4814,16 @@ form.search-form .search-submit {
 
 .block.block-four-posts .container .post-feed .post-card-title,
 .block.block-four-posts .advertisement .post-feed .post-card-title {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   font-family: 'ColfaxAI', 'Helvetica Neue', Helvetica, sans-serif;
-  margin: 0 0 20px;
-  height: 50px;
+  margin: 20px 0 0;
+  height: auto;
   display: flex;
   align-items: flex-end;
   width: 100%;
   overflow: hidden;
+  order: 2;
 }
 
 @media (max-width: 600px) {
@@ -4864,6 +4866,9 @@ form.search-form .search-submit {
 .block.block-four-posts .advertisement .post-feed .post-card-image {
   position: relative;
   border-radius: 4px;
+  min-height: 300px;
+  width: 100%;
+  order: 1;
 }
 
 .block.block-four-posts .container .post-feed .post-card-image::after,
@@ -4905,12 +4910,21 @@ form.search-form .search-submit {
   }
 }
 
+.post-card-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .post-head {
-  opacity: .3;
-  order: 2;
   position: relative;
   margin: 20px 10px;
   transition: all .6s;
+}
+
+.post-head h2 span,
+.post-head:before {
+  opacity: .3;
+  transition: opacity .6s;
 }
 
 .post-head.inverted {
@@ -4931,7 +4945,8 @@ form.search-form .search-submit {
   top: auto;
 }
 
-.post-head:hover {
+.post-head:hover h2 span,
+.post-head:hover:before {
   opacity: .5;
 }
 
@@ -4961,6 +4976,51 @@ form.search-form .search-submit {
   padding-top: 1rem;
   padding-left: 10px;
   padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-head h2 button.load-more-random,
+.post-head h2 button.load-more-random:focus {
+  padding: 0;
+  margin: 0;
+  color: #777;
+  border: 0;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  height: 31px;
+  opacity: .6;
+  transition: all .6s;
+}
+
+.post-head h2 button.load-more-random:hover {
+  padding: 0;
+  margin: 0;
+  color: #333;
+  opacity: 1;
+  border: 0;
+  background: transparent;
+}
+
+.post-head h2 button.load-more-random:hover svg {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: .8s;
+  animation-duration: .8s;
+  transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.post-head h2 button svg {
+  width: 32px;
+  height: 32px;
+  margin: 0 10px 0 0;
+  position: static;
 }
 
 .post-head p {
@@ -5217,21 +5277,6 @@ form.search-form .search-submit {
   }
 }
 
-.block.block-four-posts.block-most-popular .container .post-card-title,
-.block.block-four-posts.block-most-popular .advertisement .post-card-title {
-  height: 70px;
-  align-items: flex-start;
-}
-
-@media (max-width: 600px) {
-  .block.block-four-posts.block-most-popular .container .post-card-title,
-  .block.block-four-posts.block-most-popular .advertisement .post-card-title {
-    height: 70px;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-}
-
 @media (max-width: 450px) {
   .block.block-four-posts.block-most-popular .container .post-card-title,
   .block.block-four-posts.block-most-popular .advertisement .post-card-title {
@@ -5282,6 +5327,11 @@ form.search-form .search-submit {
 .block.block-upsell-big .advertisement > .post-head,
 .block.block-upsell-big .container > .post-feed,
 .block.block-upsell-big .advertisement > .post-feed {
+  width: 100%;
+}
+
+.block.block-upsell-big .container .post-card-image,
+.block.block-upsell-big .advertisement .post-card-image {
   width: 100%;
 }
 
@@ -6368,15 +6418,6 @@ form.search-form .search-submit {
 
 .container.container-article .ownad-unblockable:hover .spans p a:not(.button):not(.post-edit-link),
 .container-article.advertisement .ownad-unblockable:hover .spans p a:not(.button):not(.post-edit-link) {
-  -webkit-animation-name: shake;
-  animation-name: shake;
-  -webkit-animation-duration: .8s;
-  animation-duration: .8s;
-  transform-origin: 50% 50%;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
   color: #9a9fbd;
   border-color: #9a9fbd;
 }

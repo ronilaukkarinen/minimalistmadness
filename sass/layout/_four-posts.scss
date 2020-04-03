@@ -24,6 +24,7 @@
   }
 
   .post-card-information {
+    order: 3;
     background: $color-white;
     margin-top: -3rem;
     padding: 7rem 4rem 4rem;
@@ -83,15 +84,16 @@
     }
 
     .post-card-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 500;
       font-family: $font-alt;
-      margin: 0 0 20px;
-      height: 50px;
+      margin: 20px 0 0;
+      height: auto;
       display: flex;
       align-items: flex-end;
       width: 100%;
       overflow: hidden;
+      order: 2;
 
       @media (max-width: 600px) {
         height: 80px;
@@ -124,6 +126,9 @@
     .post-card-image {
       position: relative;
       border-radius: 4px;
+      min-height: 300px;
+      width: 100%;
+      order: 1;
 
       &::after,
       img::after {
@@ -155,12 +160,21 @@
   }
 }
 
+.post-card-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .post-head {
-  opacity: .3;
-  order: 2;
   position: relative;
   margin: 20px 10px;
   transition: all $transition-duration;
+
+  h2 span,
+  &:before {
+    opacity: .3;
+    transition: opacity $transition-duration;
+  }
 
   &.inverted {
     order: 1;
@@ -179,7 +193,8 @@
     }
   }
 
-  &:hover {
+  &:hover h2 span,
+  &:hover:before {
     opacity: .5;
   }
 
@@ -207,6 +222,47 @@
     margin: 0;
     padding-top: 1rem;
     padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button.load-more-random,
+    button.load-more-random:focus {
+      padding: 0;
+      margin: 0;
+      color: #777;
+      border: 0;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      height: 31px;
+      opacity: .6;
+      transition: all $transition-duration;
+    }
+
+    button.load-more-random:hover {
+      padding: 0;
+      margin: 0;
+      color: #333;
+      opacity: 1;
+      border: 0;
+      background: transparent;
+    }
+
+    button.load-more-random:hover svg {
+      animation-name: shake;
+      animation-duration: .8s;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    button svg {
+      width: 32px;
+      height: 32px;
+      margin: 0 10px 0 0;
+      position: static;
+    }
   }
 
   p {

@@ -36,7 +36,7 @@ function khonsu_get_random_image_id() {
  * @Author:             Timi Wahalahti, Digitoimisto Dude Oy (https://dude.fi)
  * @Date:               2019-08-07 14:38:34
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-04-02 10:55:54
+ * @Last Modified time: 2020-04-03 08:39:32
  *
  * @package air-helper
  */
@@ -280,7 +280,7 @@ function air_helper_get_image_lazyload_dimensions( $image_id = 0, $sizes = [] ) 
     <div class="container">
 
     <header class="post-head">
-      <h2><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24"><path fill="currentColor" d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>Lisää luettavaa</h2>
+      <h2><span><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24"><path fill="currentColor" d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>Lisää luettavaa</span></h2>
     </header>
 
       <div class="post-feed">
