@@ -12,6 +12,7 @@ if ( function_exists( 'get_most_popular_posts' ) ) :
     'posts_per_page' => 4,
   ) );
 
+if ( ! empty( $query ) ) :
   if ( $query->have_posts() ) : ?>
 
   <section class="block block-four-posts block-most-popular">
@@ -42,6 +43,7 @@ if ( function_exists( 'get_most_popular_posts' ) ) :
     </div>
   </section>
   <?php
+endif;
 endif;
 endif;
 wp_reset_postdata();

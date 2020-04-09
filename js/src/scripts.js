@@ -11,6 +11,7 @@ require('./prism.js');
 // Import modules (comment to disable)
 import './skip-link-focus-fix';
 import 'what-input';
+import slick from 'slick-carousel';
 import MoveTo from 'moveto';
 import Swup from 'swup';
 import SwupScriptsPlugin from '@swup/scripts-plugin';
