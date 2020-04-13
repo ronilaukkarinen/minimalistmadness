@@ -379,7 +379,7 @@ swup.on('contentReplaced', function() {
     });
 
   // Search
-  $('.search-form input').on( 'propertychange change click keyup input paste', debounce(function() {
+  $('.search-form input').on( 'keyup input paste', debounce(function() {
     var search = $('.search-form input').val();
 
     if ( ! search.trim() ) {
