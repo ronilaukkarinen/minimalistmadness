@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 23:43:05
+ * @Last Modified time: 2020-04-21 09:19:36
  */
 
 namespace Air_Light;
@@ -406,8 +406,8 @@ function khonsu_pagination() {
 if ( function_exists( 'acf_add_options_page' ) ) {
   acf_add_options_page(
     array(
-      'page_title'  => 'Khonsu',
-      'menu_title'  => 'Khonsu',
+      'page_title'  => 'Nostot',
+      'menu_title'  => 'Nostot',
       'menu_slug'   => 'khonsu-settings',
       'capability'  => 'edit_posts',
       'redirect'    => false,
