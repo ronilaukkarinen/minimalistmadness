@@ -13,8 +13,8 @@
   margin-bottom: 60px;
 
   p {
-    font-size: 13px;
-    color: #999;
+    font-size: 15px;
+    color: #888;
     font-weight: 400;
   }
 
@@ -24,8 +24,8 @@
 
   a {
     @extend %link;
-    color: #999;
-    border-color: #999;
+    color: #888;
+    border-color: #888;
   }
 }
 

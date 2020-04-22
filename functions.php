@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-28 18:41:19
+ * @Last Modified time: 2020-04-21 09:21:04
  *
  * @package minimalistmadness
  */
@@ -149,6 +149,7 @@ define( 'THEME_SETTINGS', $theme_settings );
  * Required files
  */
 require get_theme_file_path( '/inc/hooks.php' );
+require get_theme_file_path( '/inc/post-types/ads.php' );
 require get_theme_file_path( '/inc/includes.php' );
 require get_theme_file_path( '/inc/template-tags.php' );
 
