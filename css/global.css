@@ -7636,8 +7636,7 @@ del {
 .container-article.advertisement article cite,
 .container.container-article .article cite,
 .container-article.advertisement .article cite {
-  margin-bottom: 80px;
-  margin-bottom: 8rem;
+  margin-bottom: 0;
 }
 
 .container.container-article article ul,
