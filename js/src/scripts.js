@@ -64,6 +64,15 @@ lazyload(images, {
 // Swup starts
 swup.on('contentReplaced', function() {
 
+    // Add class to old images without class
+    $(window).ready(function() {
+      $('.container-article img').each(function() {
+        if ( $(this).width() > 350 ) {
+          $(this).addClass('size-large');
+        }
+      });
+    });
+
     // Most read posts
     jQuery(document).ready(function($) {
       var d = new Date();
@@ -183,7 +192,7 @@ swup.on('contentReplaced', function() {
     jQuery('.overlay-search input').val(null);
 
     // Show other fields only when starting typing comment
-    $('textarea#comment').keyup(function(){
+    $('textarea#comment').keyup(function() {
       $('.hidden-by-default').addClass('show');
     });
 
