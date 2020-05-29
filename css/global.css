@@ -4631,6 +4631,7 @@ form.search-form .search-submit {
   overflow: visible;
   display: flex;
   flex-wrap: wrap;
+  z-index: 88;
 }
 
 @media (max-width: 450px) {
@@ -4860,6 +4861,13 @@ form.search-form .search-submit {
   min-height: 300px;
   width: 100%;
   order: 1;
+}
+
+.block.block-four-posts .container .post-feed .post-card-image .preview,
+.block.block-four-posts .advertisement .post-feed .post-card-image .preview {
+  -webkit-filter: none;
+  filter: none;
+  transform: scale(1);
 }
 
 .block.block-four-posts .container .post-feed .post-card-image::after,

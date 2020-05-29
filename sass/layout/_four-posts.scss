@@ -2,6 +2,7 @@
   overflow: visible;
   display: flex;
   flex-wrap: wrap;
+  z-index: 88;
 
   @media (max-width: 450px) {
     padding-top: 4rem;
@@ -123,6 +124,12 @@
       min-height: 300px;
       width: 100%;
       order: 1;
+
+      // Firefox fix
+      .preview {
+        filter: none;
+        transform: scale(1);
+      }
 
       &::after,
       img::after {
