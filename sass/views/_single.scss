@@ -63,7 +63,7 @@ del {
     border-radius: 4px;
   }
 
-  a:not(.button):not(.post-edit-link) {
+  a:not(.button):not(.post-edit-link):not(.author-link) {
     @extend %link;
     position: relative;
     text-decoration: none;

@@ -3306,10 +3306,10 @@ a:hover {
 .search-results h2 a,
 .search-results ul a,
 .search-results li a,
-.container.container-article article a:not(.button):not(.post-edit-link),
-.container-article.advertisement article a:not(.button):not(.post-edit-link),
-.container.container-article .article a:not(.button):not(.post-edit-link),
-.container-article.advertisement .article a:not(.button):not(.post-edit-link),
+.container.container-article article a:not(.button):not(.post-edit-link):not(.author-link),
+.container-article.advertisement article a:not(.button):not(.post-edit-link):not(.author-link),
+.container.container-article .article a:not(.button):not(.post-edit-link):not(.author-link),
+.container-article.advertisement .article a:not(.button):not(.post-edit-link):not(.author-link),
 .entry-stack .entry-stack-details p a,
 .entry-stack .entry-stack-details-read-more p a {
   color: #414663;
@@ -3323,10 +3323,10 @@ a:hover {
 .search-results h2 a:hover,
 .search-results ul a:hover,
 .search-results li a:hover,
-.container.container-article article a:hover:not(.button):not(.post-edit-link),
-.container-article.advertisement article a:hover:not(.button):not(.post-edit-link),
-.container.container-article .article a:hover:not(.button):not(.post-edit-link),
-.container-article.advertisement .article a:hover:not(.button):not(.post-edit-link),
+.container.container-article article a:hover:not(.button):not(.post-edit-link):not(.author-link),
+.container-article.advertisement article a:hover:not(.button):not(.post-edit-link):not(.author-link),
+.container.container-article .article a:hover:not(.button):not(.post-edit-link):not(.author-link),
+.container-article.advertisement .article a:hover:not(.button):not(.post-edit-link):not(.author-link),
 .entry-stack .entry-stack-details p a:hover,
 .entry-stack .entry-stack-details-read-more p a:hover {
   background: #4d5787;
@@ -7414,10 +7414,10 @@ del {
   border-radius: 4px;
 }
 
-.container.container-article article a:not(.button):not(.post-edit-link),
-.container-article.advertisement article a:not(.button):not(.post-edit-link),
-.container.container-article .article a:not(.button):not(.post-edit-link),
-.container-article.advertisement .article a:not(.button):not(.post-edit-link) {
+.container.container-article article a:not(.button):not(.post-edit-link):not(.author-link),
+.container-article.advertisement article a:not(.button):not(.post-edit-link):not(.author-link),
+.container.container-article .article a:not(.button):not(.post-edit-link):not(.author-link),
+.container-article.advertisement .article a:not(.button):not(.post-edit-link):not(.author-link) {
   position: relative;
   text-decoration: none;
 }
