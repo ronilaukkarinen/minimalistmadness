@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-04-01 10:13:00
+ * @Last Modified time: 2020-07-28 23:12:40
  *
  * @package minimalistmadness
  */
@@ -50,31 +50,31 @@ add_theme_support( 'wp-block-styles' );
 /**
  * Custom WP-Admin CSS
  */
-add_action( 'admin_head', __NAMESPACE__ . '\brand_custom_css_js' );
+// add_action( 'admin_head', __NAMESPACE__ . '\brand_custom_css_js' );
 
-function brand_custom_css_js() {
-  echo '<style>
-    .acf-relationship .list {
-      height: 500px !important;
-      overflow: scroll !important;
-    }
-    </style>';
+// function brand_custom_css_js() {
+//   echo '<style>
+//     .acf-relationship .list {
+//       height: 500px !important;
+//       overflow: scroll !important;
+//     }
+//     </style>';
 
-    $screen = get_current_screen();
-    if ( 'post' == $screen->base ) {
-      $post_id = get_the_ID();
+//     $screen = get_current_screen();
+//     if ( 'post' == $screen->base ) {
+//       $post_id = get_the_ID();
 
-      if ( has_post_thumbnail( $post_id ) ) {
-        echo '<script>const featuredimageUrl = \'' . esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post_id ) ) ) . '\';
-        jQuery( window ).on( \'load\', function() {
-          jQuery(\'.editor-post-title\').css(\'background-image\', \'url(\' + featuredimageUrl + \')\');
-        });
-        </script>';
-      } else {
-        echo '<script>const featuredimageUrl = null</script>';
-      }
-    }
-  }
+//       if ( has_post_thumbnail( $post_id ) ) {
+//         echo '<script>const featuredimageUrl = \'' . esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post_id ) ) ) . '\';
+//         jQuery( window ).on( \'load\', function() {
+//           jQuery(\'.editor-post-title\').css(\'background-image\', \'url(\' + featuredimageUrl + \')\');
+//         });
+//         </script>';
+//       } else {
+//         echo '<script>const featuredimageUrl = null</script>';
+//       }
+//     }
+//   }
 
 /**
  * Register Gutenberg blocks
@@ -88,18 +88,18 @@ function brand_register_block_editor_assets() {
   );
 
   // wp_register_script( 'brand-block-editor', get_theme_file_uri( 'js/src/block.js', __FILE__ ), $dependencies, null );
-  wp_register_style( 'brand-block-editor', get_theme_file_uri( 'css/gutenberg.min.css', __FILE__ ), null, null );
+  // wp_register_style( 'brand-block-editor', get_theme_file_uri( 'css/gutenberg.min.css', __FILE__ ), null, null );
 }
 add_action( 'admin_init',  __NAMESPACE__ . '\brand_register_block_editor_assets' );
 
 // Front end side:
-function brand_register_block_assets() {
-  if ( is_admin() ) {
-    wp_register_script( 'brand-block', get_theme_file_uri( 'js/src/block.js', __FILE__ ), array( 'jquery' ), null, null, null, true );
-    wp_register_style( 'brand-block', get_theme_file_uri( 'css/gutenberg.min.css', __FILE__ ), null, null );
-  }
-}
-add_action( 'init',  __NAMESPACE__ . '\brand_register_block_assets' );
+// function brand_register_block_assets() {
+//   if ( is_admin() ) {
+//     wp_register_script( 'brand-block', get_theme_file_uri( 'js/src/block.js', __FILE__ ), array( 'jquery' ), null, null, null, true );
+//     wp_register_style( 'brand-block', get_theme_file_uri( 'css/gutenberg.min.css', __FILE__ ), null, null );
+//   }
+// }
+// add_action( 'init',  __NAMESPACE__ . '\brand_register_block_assets' );
 
 register_block_type( 'brand-plugin-namespace/brand-block', array(
   'editor_script' => 'brand-block-editor',
