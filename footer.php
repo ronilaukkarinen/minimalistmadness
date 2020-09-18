@@ -28,7 +28,7 @@ namespace Air_Light;
           <li><a href="https://www.last.fm/user/rolle-"><span class="screen-reader-text">Last.fm</span><?php include get_theme_file_path( '/svg/lastfm.svg' ); ?></a></li>
           <li><a href="https://untappd.com/user/rolle"><span class="screen-reader-text">Untappd</span><?php include get_theme_file_path( '/svg/untappd.svg' ); ?></a></li>
           <li><a href="https://retroachievements.org/user/rolle"><span class="screen-reader-text">Retro Achievements</span><?php include get_theme_file_path( '/svg/joystick.svg' ); ?></a></li>
-          <li><a href="https://www.overbuff.com/players/pc/Xantaf-2942"><span class="screen-reader-text">Overwatch</span><?php include get_theme_file_path( '/svg/overwatch.svg' ); ?></a></li>
+          <li><a href="https://www.overbuff.com/players/pc/Qllervo-2545"><span class="screen-reader-text">Overwatch</span><?php include get_theme_file_path( '/svg/overwatch.svg' ); ?></a></li>
           <li><a href="https://rawg.io/@rolle"><span class="screen-reader-text">Rawg.io</span><?php include get_theme_file_path( '/svg/rawg.svg' ); ?></a></li>
           <li><a href="http://trakt.tv/users/rolle"><span class="screen-reader-text">Trakt</span><?php include get_theme_file_path( '/svg/trakt.svg' ); ?></a></li>
           <li><a href="https://keybase.io/ronilaukkarinen"><span class="screen-reader-text">Keybase</span><?php include get_theme_file_path( '/svg/keybase.svg' ); ?></a></li>
