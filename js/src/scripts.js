@@ -65,6 +65,56 @@ lazyload(images, {
 // Swup starts
 swup.on('contentReplaced', function () {
 
+  function air_do_ajax_load() {
+    $('.block-loadable .load-more-spinner').show();
+    $('.block-loadable .no-posts').hide();
+
+    var button_container = $('.block-loadable button.load-more').closest('.load-more-container');
+    var query_name = $('.block-loadable .load-more-container').attr('data-use-query');
+    var query = window[query_name];
+
+    // Where the page is currently:
+    var firstPost = jQuery('.items-vue .post:first');
+    var curOffset = firstPost.offset().top - $(document).scrollTop();
+
+    // Alter query
+    query.paged = query.paged + 1;
+    query._embed = true;
+
+    // Do query
+    jQuery.ajax({
+      url: air.baseurl + 'wp_query/args/?' + jQuery.param(query),
+    }).done(function (response) {
+
+      // Offset to previous first message minus original offset/scroll
+      $(document).scrollTop(firstPost.offset().top - curOffset);
+
+      if (response.length !== 0 && response !== false) {
+        $.each(response, function () {
+          var self = this;
+          blog.posts.push(this);
+          $('.block-loadable .load-more-spinner').hide();
+        });
+
+        if (response.length < air.posts_per_page) {
+          button_container.hide();
+        } else {
+          button_container.show();
+        }
+
+      } else if (response == false) {
+        button_container.hide();
+        $('.block-loadable .load-more-spinner').hide();
+      }
+    });
+  }
+
+  // Load more ajax call
+  $('.block-loadable button.load-more').on('click', function (e) {
+    e.preventDefault();
+    air_do_ajax_load();
+  });
+
   // Add class to old images without class
   $(window).ready(function () {
     $('.container-article img').each(function () {
