@@ -32,10 +32,10 @@ $color-default-background: $color-lightgrey;
 // Font settings
 // You can use these font stacks normally with `font-family: $font-sans;` for instance.`
 // Please set up fonts in sass/layout/_typography.scss
-$font-base: 'Muli', 'Helvetica Neue', Helvetica, sans-serif;
+$font-base: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
 $font-alt: 'ColfaxAI', 'Helvetica Neue', Helvetica, sans-serif;
 $font-old: 'Charter', 'Helvetica Neue', Helvetica, sans-serif;
-$font-headings: 'Muli', 'Helvetica Neue', Helvetica, sans-serif;
+$font-headings: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
 $font-monospace: 'Menlo', 'Courier', monospace;
 
 // Font settings
@@ -74,3 +74,11 @@ $padding-general-content-box-mobile: 2rem;
 $margin-general-offset: -8rem;
 $padding-accordion-content: 2.5rem;
 $padding-accordion-content-mobile: 2rem;
+
+// New
+$width-max-article: $article-max-width;
+$width-grid-base: $responsivenav;
+
+// Gutenberg widths
+$width-wide: 1200px;
+$width-full: 100%;
