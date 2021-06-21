@@ -3,13 +3,13 @@
  */
 
 // Regular scripts
-require('./jquery.js');
-require('./fitvids.js');
-require('./lazyload.js');
-require('./prism.js');
+require('./modules/jquery.js');
+require('./modules/fitvids.js');
+require('./modules/lazyload.js');
+require('./modules/prism.js');
 
 // Import modules (comment to disable)
-import './skip-link-focus-fix';
+import './modules/skip-link-focus-fix';
 import 'what-input';
 import MoveTo from 'moveto';
 import Swup from 'swup';

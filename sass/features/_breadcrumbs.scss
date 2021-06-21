@@ -3,33 +3,33 @@
 // https://github.com/digitoimistodude/air
 
 .breadcrumbs {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
   line-height: 1;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
 
   .trail-items {
     display: block;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
     line-height: 1.22;
+    margin-bottom: 1.5rem;
     margin-top: 0;
+    overflow: hidden;
   }
 
   .trail-items li {
     background: none;
     color: $color-links;
-    font-weight: $body-weight;
-    text-transform: uppercase;
+    font-family: $font-base;
     font-size: 15px;
+    font-weight: $body-weight;
+    line-height: 1;
     margin-bottom: 0;
     margin-top: 0;
-    padding-top: 0;
-    padding-left: 1rem;
-    line-height: 1;
-    position: relative;
-    font-family: $font-base;
     opacity: .8;
+    padding-left: 1rem;
+    padding-top: 0;
+    position: relative;
+    text-transform: uppercase;
   }
 
   .trail-items .trail-item {
@@ -54,37 +54,39 @@
     padding-left: 0;
   }
 
-  li:hover {
+  li:hover,
+  li:focus {
     opacity: 1;
   }
 
   a {
     color: $color-links;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $color-links;
     }
   }
 
   li::after {
     @include hiddentext();
+    background-image: url('../../svg/breadcrumbs-arrow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 9px 9px;
+    color: $color-links;
+    display: inline-block;
+    font-size: 15px;
+    height: 9px;
+    margin-left: .8rem;
+    margin-right: 0;
+    opacity: 1;
+    padding: 0;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     transform-style: preserve-3d;
-    font-size: 15px;
-    opacity: 1;
-    color: $color-links;
-    height: 9px;
     width: 9px;
-    background-image: url('../svg/breadcrumbs-arrow.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 9px 9px;
-    position: absolute;
-    display: inline-block;
-    padding: 0;
-    margin-left: .8rem;
-    margin-right: 0;
 
     // IE10 + IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -93,7 +95,7 @@
   }
 
   li::last-of-type {
-    &:after {
+    &::after {
       display: none;
     }
   }

@@ -12,16 +12,16 @@
 // @include fontFace('Muli', '../fonts/muli-v20-latin-500', 500);
 // @include fontFace('Muli', '../fonts/muli-v20-latin-600', 600);
 // @include fontFace('Muli', '../fonts/muli-v20-latin-700', 700);
-@include fontFace('Inter', '../fonts/Inter-Regular', 400);
-@include fontFace('Inter', '../fonts/Inter-Italic', 400, italic);
-@include fontFace('Inter', '../fonts/Inter-Bold', 700);
-@include fontFace('Inter', '../fonts/Inter-Medium', 500);
-@include fontFace('Inter', '../fonts/Inter-SemiBold', 600);
-@include fontFace('Inter', '../fonts/Inter-Bold', 700);
-@include fontFace('ColfaxAI', '../fonts/92bb7bd0146566b09c54412871582ebf', 400);
-@include fontFace('ColfaxAI', '../fonts/9424443aac1c01fb1e08e022d614620e', 500);
-@include fontFace('Charter', '../fonts/Charter', 400);
-@include fontFace('Charter', '../fonts/Charter-Bold', 700);
+@include fontFace('Inter', '../../fonts/Inter-Regular', 400);
+@include fontFace('Inter', '../../fonts/Inter-Italic', 400, italic);
+@include fontFace('Inter', '../../fonts/Inter-Bold', 700);
+@include fontFace('Inter', '../../fonts/Inter-Medium', 500);
+@include fontFace('Inter', '../../fonts/Inter-SemiBold', 600);
+@include fontFace('Inter', '../../fonts/Inter-Bold', 700);
+@include fontFace('ColfaxAI', '../../fonts/92bb7bd0146566b09c54412871582ebf', 400);
+@include fontFace('ColfaxAI', '../../fonts/9424443aac1c01fb1e08e022d614620e', 500);
+@include fontFace('Charter', '../../fonts/Charter', 400);
+@include fontFace('Charter', '../../fonts/Charter-Bold', 700);
 
 // Set root size for rems
 :root {
@@ -39,13 +39,13 @@
 body {
   @extend %default;
   background: #f8f8f8;
-  font-family: $font-base;
   color: $color-body;
+  font-family: $font-base;
   font-weight: $body-weight;
+  text-rendering: geometricPrecision;
 
   // Font smoothing options
   text-size-adjust: none;
-  text-rendering: geometricPrecision;
 }
 
 // Links
@@ -54,22 +54,24 @@ a {
   text-decoration: none;
   transition: .4s ease;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $color-hover;
   }
 }
 
 @mixin link() {
-  color: $color-blog-links;
-  text-decoration: none;
   border-bottom: .1px solid $color-alt;
   box-shadow: inset 0 -1px 0 $color-alt;
+  color: $color-blog-links;
+  text-decoration: none;
   transition: background .22s cubic-bezier(.33, .66, .66, 1);
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: $color-alt;
-    color: $color-white;
     border-color: $color-alt;
+    color: $color-white;
   }
 }
 
@@ -87,8 +89,8 @@ a {
 }
 
 p {
-  margin-top: 2.9rem;
   margin-bottom: 2.9rem;
+  margin-top: 2.9rem;
 
   &:first-child {
     margin-top: 0;
@@ -109,9 +111,9 @@ h6 {
   color: $color-headings;
   font-family: $font-headings;
   font-weight: $headings-weight;
-  text-rendering: optimizeLegibility;
-  margin-top: 2.7rem;
   margin-bottom: 2.7rem;
+  margin-top: 2.7rem;
+  text-rendering: optimizeLegibility;
 
   &:first-child {
     margin-top: 0;
@@ -244,19 +246,19 @@ small {
 
 // images
 img {
-  -ms-interpolation-mode: bicubic;
   height: auto;
-  vertical-align: middle;
+  interpolation-mode: bicubic;
   max-width: 100%;
+  vertical-align: middle;
 }
 
 // Figures and captions
 figure {
-  position: relative;
   margin-bottom: 1rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
+  position: relative;
 
   > img {
     width: 100%;
@@ -265,26 +267,26 @@ figure {
 
 // Figcaption.
 figcaption {
-  margin-top: 0;
   font-style: normal;
   font-weight: $body-weight;
+  margin-top: 0;
 }
 
 // Quotes.
 blockquote {
-  clear: both;
   border: 0 none;
-  position: relative;
+  clear: both;
+  margin: 0;
   margin-top: 3rem;
   padding-bottom: 3rem;
-  margin: 0;
+  position: relative;
 
   p {
+    color: #666;
     font-style: italic;
     margin-bottom: 0;
-    position: relative;
     overflow: visible;
-    color: #666;
+    position: relative;
   }
 
   @media (min-width: $container-ipad) {
@@ -292,14 +294,14 @@ blockquote {
     padding-bottom: 4rem;
   }
 
-  &:before {
+  &::before {
     content: '';
     display: block;
     height: 4px;
-    position: absolute;
     left: 0;
-    top: 0;
     max-width: 147px;
+    position: absolute;
+    top: 0;
 
     @media (min-width: $container-mobile) {
       width: 30%;
@@ -315,14 +317,14 @@ cite {
 // Horizontal rule.
 hr {
   background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, rgba(#000, .3) 50%);
+  background-position: 0 50%;
   background-repeat: repeat-x;
   background-size: 2px 2px;
-  background-position: 0 50%;
   border: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin: 0;
   height: 0;
+  margin: 0;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 kbd,
@@ -333,17 +335,16 @@ samp {
 
 // Code block.
 code {
-  color: #c7254e;
   background-color: #f9f2f4;
+  border-radius: .3rem;
+  color: #c7254e;
   font-family: $font-monospace;
+  font-size: inherit; // normalize.css sets this as 1em by default
   line-height: 1;
   padding: .375rem .5rem;
-  border-radius: .3rem;
-  font-size: inherit; // normalize.css sets this as 1em by default
 
   pre & {
     display: inline-block;
     padding: 1.15rem 1rem .85rem;
   }
 }
-

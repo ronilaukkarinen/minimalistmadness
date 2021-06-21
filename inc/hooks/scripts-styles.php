@@ -26,12 +26,21 @@ function enqueue_theme_scripts() {
   if ( ! is_admin() ) wp_deregister_script( 'jquery-core' );
   if ( ! is_admin() ) wp_deregister_script( 'jquery-migrate' );
 
-  // Styles.
-  wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$minimalistmadness_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$minimalistmadness_template}.css" ) ) );
+  // Enqueue global.css
+  wp_enqueue_style( 'styles',
+    get_theme_file_uri( get_asset_file( 'global.css' ) ),
+    [],
+    filemtime( get_theme_file_path( get_asset_file( 'global.css' ) ) )
+  );
 
-  // Scripts.
+  // Enqueue jquery and front-end.js
   wp_enqueue_script( 'jquery-core' );
-  wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/all.js' ), array(), filemtime( get_theme_file_path( 'js/all.js' ) ), true );
+  wp_enqueue_script( 'scripts',
+    get_theme_file_uri( get_asset_file( 'front-end.js' ) ),
+    [],
+    filemtime( get_theme_file_path( get_asset_file( 'front-end.js' ) ) ),
+    true
+  );
 
   // Required comment-reply script
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -59,4 +68,20 @@ function enqueue_theme_scripts() {
   // Remove dude-most-read-posts script (included in scripts.js for optimization)
   wp_dequeue_script( 'dmrp' );
 
-} // end minimalistmadness_scripts
+}
+
+/**
+ * Returns the built asset filename and path depending on
+ * current environment.
+ *
+ * @param string $filename File name with the extension
+ * @return string file and path of the asset file
+ */
+function get_asset_file( $filename ) {
+  $env = 'development' === wp_get_environment_type() && ! isset( $_GET['load_production_builds'] ) ? 'dev' : 'prod'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+  $filetype = pathinfo( $filename )['extension'];
+
+  return "${filetype}/${env}/${filename}";
+} // end get_asset_file
+
