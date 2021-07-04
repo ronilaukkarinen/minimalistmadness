@@ -1,32 +1,32 @@
 .block.block-upsell-big .container {
-  overflow: visible;
   display: flex;
   flex-wrap: wrap;
+  overflow: visible;
   padding-bottom: 0;
 
   @media (max-width: 450px) {
-    padding-top: 4rem;
     padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 
   .global-tag {
-    font-size: 10px;
-    background: $color-headings;
-    color: $color-white;
-    font-family: $font-alt;
-    display: inline-block;
-    margin: 0 2px 1px 0;
-    padding: 5px 10px;
-    transition: all .15s ease;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    background-color: $color-headings;
     border-radius: 20px;
+    color: $color-white;
+    display: inline-block;
+    font-family: $font-alt;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin: 0 2px 1px 0;
     margin-bottom: 15px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    transition: all .15s ease;
 
     svg {
-      width: 12px;
       height: 12px;
       margin: 0 2px -2px 0;
+      width: 12px;
     }
   }
 
@@ -54,12 +54,12 @@
     padding: 4rem;
 
     @media (min-width: 590px) {
-      margin-top: -3rem;
-      padding: 5rem 6rem;
       border-bottom-left-radius: 4px;
       border-top-left-radius: 4px;
       bottom: 60px;
       margin: 0;
+      margin-top: -3rem;
+      padding: 5rem 6rem;
       position: absolute;
       right: 0;
       width: 580px;
@@ -101,59 +101,60 @@
     order: 1;
 
     .post-card-details {
-      margin: 0;
-      font-size: 13px;
+      bottom: 0;
       color: #ccc;
+      font-size: 13px;
+      margin: 0;
       opacity: 0;
       padding: 15px;
-      z-index: 3;
       position: absolute;
-      bottom: 0;
       transition: all $transition-duration;
+      z-index: 3;
     }
 
     .post-card-title {
+      align-items: flex-end;
+      display: flex;
+      font-family: $font-alt;
       font-size: 17px;
       font-weight: 500;
-      font-family: $font-alt;
-      margin: 0 0 20px;
       height: 50px;
-      display: flex;
-      align-items: flex-end;
-      width: 100%;
+      margin: 0 0 20px;
       overflow: hidden;
+      width: 100%;
 
       @media (max-width: 600px) {
-        height: 80px;
         font-size: 16px;
+        height: 80px;
         margin-bottom: 10px;
       }
 
       @media (max-width: 450px) {
         height: auto;
-        margin-top: 40px;
         margin-bottom: 20px;
+        margin-top: 40px;
       }
     }
 
     .post-card-title a {
-      text-decoration: none;
       font-family: $font-alt;
+      text-decoration: none;
     }
 
     .post-card {
       background-color: transparent;
-      position: relative;
       border-radius: 4px;
+      position: relative;
 
-      &:hover .post-card-details {
+      &:hover .post-card-details,
+      &:focus .post-card-details {
         opacity: 1;
       }
     }
 
     .post-card-image {
-      position: relative;
       border-radius: 4px;
+      position: relative;
 
       &::after,
       img::after {
@@ -163,12 +164,12 @@
 
     .post-card-image .img {
       @include background-cover();
-      overflow: hidden;
       border-radius: 4px;
-      min-height: 300px;
       height: auto;
+      min-height: 300px;
+      overflow: hidden;
 
-      &:after {
+      &::after {
         content: '';
         display: block;
         padding-bottom: 60%;

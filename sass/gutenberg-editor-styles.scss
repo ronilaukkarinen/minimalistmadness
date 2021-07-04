@@ -12,7 +12,11 @@
 @import 'helpers/grid';
 
 // Variables
-@import 'base/config';
+@import 'variables/colors';
+@import 'variables/breakpoints';
+@import 'variables/font-family';
+@import 'variables/font-sizes';
+@import 'variables/spacings';
 
 // Gutenberg editor specific webfonts
 @import 'gutenberg/variables/font-face';

@@ -21,7 +21,7 @@ $focus-text-color: #000;
   padding: 0;
   position: absolute !important;
   width: 1px;
-  word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
+  word-wrap: normal !important; //Many screen reader and browser combinations announce broken words as they would appear visually.
 
   &.skip-link {
     margin: 5px;
@@ -63,8 +63,8 @@ $focus-text-color: #000;
   input:focus,
   button:focus,
   select:focus {
-    outline: 4px solid $focus-outline-color;
     opacity: 1;
+    outline: 4px solid $focus-outline-color;
   }
 
   nav ul li a:focus {
@@ -73,9 +73,9 @@ $focus-text-color: #000;
   }
 
   a:focus {
-    outline: 2px solid $focus-outline-color;
     background: rgba($focus-background-color, .5);
     opacity: 1;
+    outline: 2px solid $focus-outline-color;
   }
 
   a.global-link:focus {

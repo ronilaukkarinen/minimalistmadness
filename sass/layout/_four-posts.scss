@@ -1,12 +1,12 @@
 .block.block-four-posts .container {
-  overflow: visible;
   display: flex;
   flex-wrap: wrap;
+  overflow: visible;
   z-index: 88;
 
   @media (max-width: 450px) {
-    padding-top: 4rem;
     padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 
   > .post-head,
@@ -25,12 +25,12 @@
   }
 
   .post-card-information {
-    order: 3;
     background: $color-white;
-    margin-top: -3rem;
-    padding: 7rem 4rem 4rem;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
+    margin-top: -3rem;
+    order: 3;
+    padding: 7rem 4rem 4rem;
 
     @media (max-width: 400px) {
       padding: 7rem 3rem;
@@ -73,57 +73,58 @@
     }
 
     .post-card-details {
-      margin: 0;
-      font-size: 13px;
+      bottom: 0;
       color: #ccc;
+      font-size: 13px;
+      margin: 0;
       opacity: 0;
       padding: 15px;
-      z-index: 3;
       position: absolute;
-      bottom: 0;
       transition: all $transition-duration;
+      z-index: 3;
     }
 
     .post-card-title {
+      align-items: flex-start;
+      display: flex;
+      font-family: $font-alt;
       font-size: 16px;
       font-weight: 500;
-      font-family: $font-alt;
-      margin: 20px 0 0;
       height: auto;
-      display: flex;
-      align-items: flex-start;
-      width: 100%;
-      overflow: hidden;
+      margin: 20px 0 0;
       order: 2;
+      overflow: hidden;
+      width: 100%;
 
       @media (max-width: 450px) {
         height: auto;
-        margin-top: 40px;
         margin-bottom: 20px;
+        margin-top: 40px;
       }
     }
 
     .post-card-title a {
-      text-decoration: none;
       font-family: $font-alt;
+      text-decoration: none;
     }
 
     .post-card {
       background-color: transparent;
-      position: relative;
       border-radius: 4px;
+      position: relative;
 
-      &:hover .post-card-details {
+      &:hover .post-card-details,
+      &:focus .post-card-details {
         opacity: 1;
       }
     }
 
     .post-card-image {
-      position: relative;
       border-radius: 4px;
       min-height: 300px;
-      width: 100%;
       order: 1;
+      position: relative;
+      width: 100%;
 
       // Firefox fix
       .preview {
@@ -139,12 +140,12 @@
 
     .post-card-image .img {
       @include background-cover();
-      overflow: hidden;
       border-radius: 4px;
-      min-height: 300px;
       height: auto;
+      min-height: 300px;
+      overflow: hidden;
 
-      &:after {
+      &::after {
         content: '';
         display: block;
         padding-bottom: 80%;
@@ -167,102 +168,105 @@
 }
 
 .post-head {
-  position: relative;
   margin: 20px 10px;
+  position: relative;
   transition: all $transition-duration;
 
   h2 span,
-  &:before {
+  &::before {
     opacity: .3;
     transition: opacity $transition-duration;
   }
 
   &.inverted {
-    order: 1;
     margin-bottom: 6rem;
+    order: 1;
 
     svg {
-      transform: rotate(-180deg);
-      top: auto;
-      left: -6px;
       bottom: -27px;
+      left: -6px;
+      top: auto;
+      transform: rotate(-180deg);
     }
 
-    &:before {
+    &::before {
       bottom: -10px;
       top: auto;
     }
   }
 
   &:hover h2 span,
-  &:hover:before {
+  &:hover::before,
+  &:focus h2 span,
+  &:focus::before {
     opacity: .5;
   }
 
-  &:before {
-    content: '';
-    height: 1px;
-    position: absolute;
-    top: 0;
-    left: 4px;
+  &::before {
     background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 58%);
+    content: '';
+    height: 1.5px;
+    left: 4px;
+    position: absolute;
+    top: 1px;
     width: 30%;
   }
 
   svg {
+    height: 18px;
+    left: -4px;
     position: absolute;
     top: -17px;
-    left: -4px;
     width: 18px;
-    height: 18px;
   }
 
   h2 {
+    align-items: center;
+    display: flex;
     font-size: 15px;
     font-weight: 500;
-    margin: 0;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
+    margin: 0;
+    padding-left: 1rem;
+    padding-top: 1rem;
 
     button.load-more-random,
     button.load-more-random:focus {
-      padding: 0;
-      margin: 0;
-      color: #777;
-      border: 0;
-      display: flex;
       align-items: center;
       background: transparent;
+      border: 0;
+      color: #777;
+      display: flex;
       height: 31px;
+      margin: 0;
       opacity: .6;
+      padding: 0;
       transition: all $transition-duration;
     }
 
     button.load-more-random:hover {
-      padding: 0;
-      margin: 0;
-      color: #333;
-      opacity: 1;
-      border: 0;
       background: transparent;
+      border: 0;
+      color: #333;
+      margin: 0;
+      opacity: 1;
+      padding: 0;
     }
 
-    button.load-more-random:hover svg {
-      animation-name: shake;
+    button.load-more-random:hover svg,
+    button.load-more-random:focus svg {
       animation-duration: .8s;
-      transform-origin: 50% 50%;
       animation-iteration-count: infinite;
+      animation-name: shake;
       animation-timing-function: linear;
+      transform-origin: 50% 50%;
     }
 
     button svg {
-      width: 32px;
       height: 32px;
       margin: 0 10px 0 0;
       position: static;
+      width: 32px;
     }
   }
 

@@ -30,34 +30,34 @@
 }
 
 del {
-  text-decoration: line-through;
   color: #666;
+  text-decoration: line-through;
 }
 
 // Gutenberg magic
 .container.container-article {
-  max-width: 100%;
-  margin-top: 0;
-  padding-bottom: 0;
   margin-bottom: 0;
+  margin-top: 0;
+  max-width: 100%;
+  padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 7rem;
 
   .blocks-gallery-grid {
-    padding-left: 0;
     margin-left: 0;
     margin-top: 2.4rem;
+    padding-left: 0;
   }
 }
 
 .container.container-article article,
 .container.container-article .article {
   max-width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  padding-top: 0;
   padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
 
   img {
     border-radius: 4px;
@@ -75,24 +75,25 @@ del {
   figcaption,
   cite,
   small {
+    border: 0;
+    color: rgba(#4b4b5a, .9);
     font-size: 15px;
     font-style: normal;
-    color: rgba(#4b4b5a, .9);
-    border: 0;
+    margin-bottom: 6rem;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    margin-top: 3rem;
     max-width: $article-max-width;
     padding-bottom: 0;
-    margin-top: 3rem;
-    margin-bottom: 6rem;
+    text-align: center;
 
     @media (max-width: $container-mobile) {
       margin-top: 2rem;
     }
   }
 
-  a:hover {
+  a:hover,
+  a:focus {
     text-decoration: none;
   }
 
@@ -122,24 +123,24 @@ del {
   }
 
   .featured-image-single {
-    max-width: 920px;
     margin-bottom: 8rem;
+    max-width: 920px;
 
     img {
-      width: 100%;
       height: auto;
+      width: 100%;
     }
   }
 
   blockquote {
+    border-left: 2px solid $color-black;
+    line-height: 1.77;
+    margin-bottom: 4rem;
     margin-left: auto;
     margin-right: auto;
-    border-left: 2px solid $color-black;
     margin-top: 4rem;
-    margin-bottom: 4rem;
-    padding: 4rem 6rem;
     max-width: 920px;
-    line-height: 1.77;
+    padding: 4rem 6rem;
 
     cite {
       text-align: left;
@@ -173,18 +174,18 @@ del {
 
   div[style="width: 640px;"],
   .wp-video {
-    width: 100% !important;
-    max-width: $article-max-width !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    max-width: $article-max-width !important;
+    width: 100% !important;
   }
 
   > * {
-    max-width: $article-max-width;
-    width: 100%;
+    line-height: 1.77;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.77;
+    max-width: $article-max-width;
+    width: 100%;
 
     .twitter-tweet,
     .instagram-media,
@@ -192,10 +193,10 @@ del {
     .is-provider-instagram,
     .is-provider-twitter,
     .is-provider-facebook {
-      width: 100% !important;
-      max-width: $article-max-width !important;
       margin-left: auto !important;
       margin-right: auto !important;
+      max-width: $article-max-width !important;
+      width: 100% !important;
 
       @media (max-width: 800px) {
         padding-left: 4rem !important;
@@ -214,27 +215,27 @@ del {
     }
 
     &.wp-block-image {
-      margin-top: 4rem;
       margin-bottom: 4rem;
+      margin-top: 4rem;
 
       .entry-photo {
         margin: 0;
       }
 
       .entry-photo img {
+        height: auto;
         max-width: 100%;
         width: 100%;
-        height: auto;
       }
     }
 
     &.twitter-tweet,
     &.instagram-media,
     &.wp-video {
-      width: 100% !important;
-      max-width: $article-max-width !important;
       margin-left: auto !important;
       margin-right: auto !important;
+      max-width: $article-max-width !important;
+      width: 100% !important;
 
       @media (max-width: 800px) {
         padding-left: 4rem !important;
@@ -249,11 +250,11 @@ del {
 
     &.entry-title {
       @include responsive-font(42px, 90px);
-      max-width: 1000px;
       line-height: 1;
-      text-align: center;
       margin-bottom: 0;
       margin-top: 8rem;
+      max-width: 1000px;
+      text-align: center;
 
       @media (max-width: 600px) {
         margin-top: 0;
@@ -265,9 +266,9 @@ del {
     }
 
     &.entry-meta {
-      text-align: center;
       margin-bottom: 9rem;
       max-width: 800px;
+      text-align: center;
 
       @media (max-width: $container-mobile) {
         margin-bottom: 8rem;
@@ -295,15 +296,15 @@ del {
     }
 
     &.wp-block-gallery {
-      overflow: hidden;
       color: $color-white;
+      overflow: hidden;
 
       figcaption {
-        width: 100%;
         color: $color-white;
         font-size: 14px;
-        padding: 2rem;
         line-height: 1.55;
+        padding: 2rem;
+        width: 100%;
       }
 
       img {
@@ -312,11 +313,11 @@ del {
     }
 
     &.alignwide {
-      width: 100%;
-      margin-top: 4rem;
       margin-bottom: 4rem;
+      margin-top: 4rem;
       padding-left: 4rem;
       padding-right: 4rem;
+      width: 100%;
 
       @media (min-width: 870px) {
         max-width: 85vw;
@@ -331,10 +332,10 @@ del {
     }
 
     &.alignfull {
+      margin-bottom: 8rem;
+      margin-top: 8rem;
       max-width: 100%;
       width: 100%;
-      margin-top: 8rem;
-      margin-bottom: 8rem;
 
       img {
         border-radius: 0;
@@ -345,23 +346,23 @@ del {
   @media (min-width: 1170px) {
     // Big photos
     .entry-photo {
+      margin-bottom: 8rem;
+      margin-top: 8rem;
       max-width: 100%;
       text-align: center;
-      margin-top: 8rem;
-      margin-bottom: 8rem;
 
       img {
-        max-width: 70%;
         margin: 0 auto;
+        max-width: 70%;
       }
     }
 
     small[style="text-align: center;"] {
-      width: 100%;
-      max-width: 100%;
       display: block;
       margin-bottom: 8rem;
       margin-top: -4rem;
+      max-width: 100%;
+      width: 100%;
     }
   }
 }
@@ -394,10 +395,10 @@ del {
   }
 
   .wp-caption-text {
-    text-align: left;
     font-style: italic;
-    padding: 1rem 0;
     margin-bottom: 20px;
+    padding: 1rem 0;
+    text-align: left;
   }
 }
 
@@ -431,8 +432,8 @@ del {
 
 // Tables, codes and pres
 table {
-  border-spacing: 0;
   border-collapse: collapse;
+  border-spacing: 0;
 }
 
 td,
@@ -469,37 +470,37 @@ dfn {
 }
 
 kbd {
-  border: 1px solid #ccc;
-  font-family: Arial, Helvetica, sans-serif;
   background-color: #f7f7f7;
-  color: #333;
-  box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px #fff inset;
+  border: 1px solid #ccc;
   border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px #fff inset;
+  color: #333;
   display: inline-block;
-  text-shadow: 0 1px 0 #fff;
-  line-height: 1.4;
-  white-space: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: var(--line-height);
   padding: 0 .5rem;
+  text-shadow: 0 1px 0 #fff;
+  white-space: nowrap;
 }
 
 // Preformatted text.
 // CSS Simple Pre Code
 pre {
   background: #232830;
-  white-space: pre;
-  word-wrap: break-word;
-  overflow: auto;
-  border-radius: 4px;
   border: 1px solid #232830;
-  position: relative;
-  font-family: 'Inconsolata','Monaco','Consolas','Andale Mono','Bitstream Vera Sans Mono','Courier New',Courier,monospace;
+  border-radius: 4px;
+  color: #ddd;
   display: block;
-  margin: 3rem 0;
-  padding: 15px 16px 14px;
-  overflow-x: auto;
+  font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
   font-size: 13px;
   line-height: 19px;
-  color: #ddd;
+  margin: 3rem 0;
+  overflow: auto;
+  overflow-x: auto;
+  padding: 15px 16px 14px;
+  position: relative;
+  white-space: pre;
+  word-wrap: break-word;
 
   code {
     border-radius: 4px;
@@ -513,7 +514,8 @@ pre {
     a {
       color: $color-links;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $color-hover;
       }
     }
@@ -533,38 +535,39 @@ p.entry-time {
 }
 
 .cat {
-  margin-top: 0;
   margin-bottom: 10px;
+  margin-top: 0;
 }
 
 ul.tags {
-  overflow: hidden;
   margin: 0;
+  overflow: hidden;
   padding: 0;
   padding-left: 0;
 
   li {
-    margin-left: 0;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding-left: 0;
     display: inline-block;
     float: left;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 10px;
     margin-top: 0;
+    padding-left: 0;
 
     a {
-      font-size: 1.2rem;
-      color: #333;
-      padding: .5rem 1rem;
-      display: inline;
-      border-radius: 4px;
       background: #f0f0f0;
+      border-radius: 4px;
+      color: #333;
+      display: inline;
+      font-size: 1.2rem;
       opacity: .8;
+      padding: .5rem 1rem;
     }
 
-    a:hover {
-      color: #fff;
+    a:hover,
+    a:focus {
       background: #aaa;
+      color: #fff;
       opacity: 1;
     }
   }
@@ -572,14 +575,14 @@ ul.tags {
 
 .comments-link {
   @extend %small;
-  text-align: right;
   display: block;
+  text-align: right;
 
   svg {
     fill: #777;
+    margin-right: 2px;
     position: relative;
     top: 1px;
-    margin-right: 2px;
   }
 
   &:hover,
@@ -597,13 +600,14 @@ ul.tags {
 }
 
 .entry-footer {
-  margin-top: 0;
   margin-bottom: 0;
+  margin-top: 0;
 
   a {
     color: $color-darkgrey;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $color-links;
       text-decoration: none;
     }
@@ -626,9 +630,9 @@ ul.tags {
   width: 50%;
 }
 
-.comment-navigation .nav-previous a:before,
-.posts-navigation .nav-previous a:before,
-.post-navigation .nav-previous a:before {
+.comment-navigation .nav-previous a::before,
+.posts-navigation .nav-previous a::before,
+.post-navigation .nav-previous a::before {
   content: '← ';
 }
 
@@ -640,9 +644,9 @@ ul.tags {
   width: 50%;
 }
 
-.comment-navigation .nav-next a:after,
-.posts-navigation .nav-next a:after,
-.post-navigation .nav-next a:after {
+.comment-navigation .nav-next a::after,
+.posts-navigation .nav-next a::after,
+.post-navigation .nav-next a::after {
   content: ' →';
 }
 
@@ -651,37 +655,38 @@ ul.tags {
 .size-large,
 .kuva2,
 .size-full {
-  width: 100%;
   height: auto;
   max-width: $article-max-width;
+  width: 100%;
 }
 
 .oikealle {
+  border-radius: 4px;
   float: right;
   padding: 0 22px 8px 19px;
-  border-radius: 4px;
 }
 
 .single .container.container-article article .author-info {
-  overflow: hidden;
   border-top: 1px solid #f2f2f2;
-  padding-top: 30px;
   margin-top: 60px;
+  overflow: hidden;
+  padding-top: 30px;
 
   @media (max-width: $container-mobile) {
     text-align: center;
   }
 
   a.button {
-    padding: 5px 25px;
-    font-size: 13px;
-    color: $color-body;
+    background: none;
     border: 1px solid $color-body;
     border-radius: 50px;
-    background: none;
+    color: $color-body;
+    font-size: 13px;
     opacity: .7;
+    padding: 5px 25px;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: $color-body;
       border-color: $color-body;
       color: $color-white;
@@ -701,24 +706,24 @@ ul.tags {
     }
 
     img {
-      width: 80px;
+      border-radius: 50%;
       height: 80px;
       max-width: 80px;
       min-width: 80px;
-      border-radius: 50%;
+      width: 80px;
 
       @media (max-width: 600px) {
-        width: 60px;
+        height: 60px;
         max-width: 60px;
         min-width: 60px;
-        height: 60px;
+        width: 60px;
       }
 
       @media (max-width: $container-mobile) {
-        width: 100px;
+        height: 100px;
         max-width: 100px;
         min-width: 100px;
-        height: 100px;
+        width: 100px;
       }
     }
   }
@@ -737,18 +742,18 @@ ul.tags {
 
   h3 {
     font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
     font-weight: 600;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
   }
 
   p {
-    font-size: 14px;
     color: #666;
+    font-size: 14px;
 
     &.description {
-      margin-top: 0;
       margin-bottom: 2rem;
+      margin-top: 0;
 
       @media (max-width: $container-mobile) {
         margin-bottom: 20px;
@@ -768,13 +773,13 @@ ul.tags {
 .notification-box.old,
 .container.container-article article .notification-box.old {
   background: $color-white;
-  font-family: $font-old;
-  color: darken($color-blog-links, 5%);
-  padding: 3rem;
-  margin-bottom: 6rem;
-  text-align: center;
   border: 1px dashed darken($color-blog-links, 5%);
   box-shadow: 0 0 0 3px #f8f8f8, 0 0 0 5px darken($color-blog-links, 5%), 0 0 0 10px #f8f8f8, 0 0 2px 10px #eee;
+  color: darken($color-blog-links, 5%);
+  font-family: $font-old;
+  margin-bottom: 6rem;
+  padding: 3rem;
+  text-align: center;
 
   @media (max-width: $article-max-width + 40px) {
     margin-left: 2rem;
@@ -783,9 +788,9 @@ ul.tags {
   }
 
   svg {
-    width: 70px;
     height: auto;
     margin-bottom: -2rem;
+    width: 70px;
   }
 
   h2 {
@@ -795,13 +800,13 @@ ul.tags {
 
   p {
     font-size: 17px;
-    margin: 0;
     line-height: 1.44;
+    margin: 0;
   }
 
   h2,
   p {
-    font-family: $font-old;
     color: darken($color-blog-links, 5%);
+    font-family: $font-old;
   }
 }

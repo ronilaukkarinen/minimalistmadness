@@ -7,15 +7,21 @@
 // Reset & grid
 @import 'jeet/scss/index';
 
-// Theme options
-@import 'base/config';
-
 // Helpers
+@import 'helpers/animations';
 @import 'helpers/general';
 @import 'helpers/background';
 @import 'helpers/grid';
 @import 'helpers/typography';
 @import 'base/accessibility';
+
+// Variables
+@import 'variables/colors';
+@import 'variables/breakpoints';
+@import 'variables/font-face';
+@import 'variables/font-family';
+@import 'variables/font-sizes';
+@import 'variables/spacings';
 
 // Navigation
 @import 'navigation/nav';
