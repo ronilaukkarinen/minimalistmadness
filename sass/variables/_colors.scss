@@ -21,3 +21,7 @@ $color-success: #30dd44;
 $color-warning: #ed7e29;
 $color-error: #dd3030;
 $color-default-background: $color-lightgrey;
+
+:root {
+  --color-paragraph: #{$color-black};
+}

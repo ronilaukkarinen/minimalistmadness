@@ -7,14 +7,31 @@ blockquote + p > cite {
 
 blockquote,
 blockquote.wp-block-quote {
-  border-left: 2px solid var(--color-blockquote);
-  line-height: var(--line-height-paragraphs-blog);
+  border-left: 2px solid $color-black;
+  line-height: 1.77;
   margin-bottom: 4rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 4rem;
-  padding: 3.5rem 6rem;
+  max-width: 920px;
+  padding: 4rem 6rem;
   width: calc(100% - 12rem);
+
+  cite {
+    text-align: left;
+  }
+
+  * {
+    line-height: 1.77;
+  }
+
+  @media (max-width: $container-mobile) {
+    padding: 4rem 2rem;
+  }
+
+  p {
+    font-size: var(--font-size-21);
+  }
 
   @media (max-width: $width-max-article + 40px) {
     padding: 3.5rem 2rem;

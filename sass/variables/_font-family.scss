@@ -1,8 +1,21 @@
 // Font settings
 // You can use these font stacks normally with `font-family: $font-sans;` for instance.`
 // Please set up fonts in sass/layout/_typography.scss
-$font-base: 'Inter', 'Helvetica Neue', helvetica, sans-serif;
-$font-alt: 'ColfaxAI', 'Helvetica Neue', helvetica, sans-serif;
-$font-old: 'Charter', 'Helvetica Neue', helvetica, sans-serif;
-$font-headings: 'ColfaxAI', 'Helvetica Neue', helvetica, sans-serif;
-$font-monospace: 'Menlo', 'Courier', monospace;
+$font-base: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-alt: 'ColfaxAI', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-old: 'Charter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-headings: 'ColfaxAI', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-monospace: 'Menlo', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+
+// Font family settings
+// You can define your own font families here, like --font-barlow
+// and then attach them to elements: --font-paragraph: var(--font-barlow)
+:root {
+  --font-serif: sans-serif;
+  --font-sans: #{$font-base};
+  --font-monospace: #{$font-monospace};
+
+  // Fonts in use for content
+  --font-paragraph: var(--font-sans);
+  --font-heading: #{$font-alt};
+}
