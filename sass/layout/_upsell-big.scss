@@ -10,13 +10,14 @@
   }
 
   .global-tag {
+    align-items: center;
     background-color: $color-headings;
     border-radius: 20px;
     color: $color-white;
-    display: inline-block;
+    display: inline-flex;
     font-family: $font-alt;
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
     margin: 0 2px 1px 0;
     margin-bottom: 15px;
     padding: 5px 10px;
@@ -25,7 +26,9 @@
 
     svg {
       height: 12px;
-      margin: 0 2px -2px 0;
+      margin: 0 6px 0 0;
+      position: relative;
+      top: -1px;
       width: 12px;
     }
   }

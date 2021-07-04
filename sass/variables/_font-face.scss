@@ -1,4 +1,9 @@
 // Set up self-hosted fonts here
+@include fontFace('Muli', '../../fonts/muli-v20-latin-300', 300);
+@include fontFace('Muli', '../../fonts/muli-v20-latin-regular', 400);
+@include fontFace('Muli', '../../fonts/muli-v20-latin-500', 500);
+@include fontFace('Muli', '../../fonts/muli-v20-latin-600', 600);
+@include fontFace('Muli', '../../fonts/muli-v20-latin-700', 700);
 @include fontFace('Inter', '../../fonts/Inter-Regular', 400);
 @include fontFace('Inter', '../../fonts/Inter-Italic', 400, italic);
 @include fontFace('Inter', '../../fonts/Inter-Bold', 700);

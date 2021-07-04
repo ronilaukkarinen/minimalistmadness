@@ -1,4 +1,9 @@
 // Font family settings for Gutenberg
+@include fontFace('Muli', '../../../../content/themes/minimalistmadness/fonts/muli-v20-latin-300', 300);
+@include fontFace('Muli', '../../../../content/themes/minimalistmadness/fonts/muli-v20-latin-regular', 400);
+@include fontFace('Muli', '../../../../content/themes/minimalistmadness/fonts/muli-v20-latin-500', 500);
+@include fontFace('Muli', '../../../../content/themes/minimalistmadness/fonts/muli-v20-latin-600', 600);
+@include fontFace('Muli', '../../../../content/themes/minimalistmadness/fonts/muli-v20-latin-700', 700);
 @include fontFace('Inter', '../../../../content/themes/minimalistmadness/fonts/Inter-Regular', 400);
 @include fontFace('Inter', '../../../../content/themes/minimalistmadness/fonts/Inter-Italic', 400, italic);
 @include fontFace('Inter', '../../../../content/themes/minimalistmadness/fonts/Inter-Medium', 500);
