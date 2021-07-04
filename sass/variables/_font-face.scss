@@ -1,15 +1,10 @@
 // Set up self-hosted fonts here
-// @include fontFace('Muli', '../fonts/muli-v20-latin-300', 300);
-// @include fontFace('Muli', '../fonts/muli-v20-latin-regular', 400);
-// @include fontFace('Muli', '../fonts/muli-v20-latin-500', 500);
-// @include fontFace('Muli', '../fonts/muli-v20-latin-600', 600);
-// @include fontFace('Muli', '../fonts/muli-v20-latin-700', 700);
-@include fontFace('Manrope', '../../fonts/Manrope-Regular', 400);
-@include fontFace('Manrope', '../../fonts/Manrope-Italic', 400, italic);
-@include fontFace('Manrope', '../../fonts/Manrope-Bold', 700);
-@include fontFace('Manrope', '../../fonts/Manrope-Medium', 500);
-@include fontFace('Manrope', '../../fonts/Manrope-SemiBold', 600);
-@include fontFace('Manrope', '../../fonts/Manrope-Bold', 700);
+@include fontFace('Inter', '../../fonts/Inter-Regular', 400);
+@include fontFace('Inter', '../../fonts/Inter-Italic', 400, italic);
+@include fontFace('Inter', '../../fonts/Inter-Bold', 700);
+@include fontFace('Inter', '../../fonts/Inter-Medium', 500);
+@include fontFace('Inter', '../../fonts/Inter-SemiBold', 600);
+@include fontFace('Inter', '../../fonts/Inter-Bold', 700);
 @include fontFace('ColfaxAI', '../../fonts/92bb7bd0146566b09c54412871582ebf', 400);
 @include fontFace('ColfaxAI', '../../fonts/9424443aac1c01fb1e08e022d614620e', 500);
 @include fontFace('Charter', '../../fonts/Charter', 400);
