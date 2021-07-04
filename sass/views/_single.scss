@@ -774,7 +774,7 @@ ul.tags {
 .container.container-article article .notification-box.old {
   background: $color-white;
   border: 1px dashed darken($color-blog-links, 5%);
-  box-shadow: 0 0 0 3px #f8f8f8, 0 0 0 5px darken($color-blog-links, 5%), 0 0 0 10px #f8f8f8, 0 0 2px 10px #eee;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px darken($color-blog-links, 5%), 0 0 0 10px #fff, 0 0 2px 10px #eee;
   color: darken($color-blog-links, 5%);
   font-family: $font-old;
   margin-bottom: 6rem;

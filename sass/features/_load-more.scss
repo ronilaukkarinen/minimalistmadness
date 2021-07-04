@@ -1,47 +1,48 @@
 .load-more-spinner {
-  order: 3;
-  text-align: center;
-  overflow: hidden;
-  height: 166px;
-  width: 100%;
-  padding-top: 6rem;
 
   // It loads so fast we don't need it
   display: none !important;
+  height: 166px;
+  order: 3;
+  overflow: hidden;
+  padding-top: 6rem;
+  text-align: center;
+  width: 100%;
 }
 
 .load-more-container {
-  order: 4;
-  background: linear-gradient(hsla(0, 0%, 100%, 0), #f9f8f6);
+  background: linear-gradient(hsla(0, 0%, 100%, 0), #fff);
   height: 320px;
-  width: 100%;
   margin-top: -280px;
+  order: 4;
   pointer-events: none;
   position: relative;
   text-align: center;
+  width: 100%;
   z-index: 2;
 
   .button.load-more {
+    background: transparent;
+    border: 2px solid $color-body;
+    border-radius: 52px;
     bottom: 0;
-    left: 50%;
-    margin-left: -90px;
-    pointer-events: auto;
-    position: absolute;
-    width: 180px;
+    color: $color-body;
     font-size: 18px;
     font-weight: 300;
-    border-radius: 52px;
-    background: transparent;
-    color: $color-body;
-    border: 2px solid $color-body;
+    left: 50%;
+    line-height: 1;
+    margin-left: -90px;
+    opacity: .4;
     padding: 14px 20px 13px;
+    pointer-events: auto;
+    position: absolute;
     text-decoration: none;
     transition: background 80ms linear, opacity 1s linear;
     white-space: nowrap;
-    opacity: .4;
-    line-height: 1;
+    width: 180px;
 
-    &:hover {
+    &:hover,
+    &:focus {
       opacity: .8;
     }
   }
@@ -58,14 +59,14 @@ $white: $color-links;
 $width: 50px;
 
 .loader {
-  position: relative;
-  margin-top: 0;
   margin-bottom: 6.4rem;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
+  position: relative;
   width: $width;
 
-  &:before {
+  &::before {
     content: '';
     display: block;
     padding-top: 100%;
@@ -74,21 +75,21 @@ $width: 50px;
 
 .circular {
   animation: rotate 2s linear infinite;
+  bottom: 0;
   height: 100%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
   transform-origin: center center;
   width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
 }
 
 .path {
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
-  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
   stroke-linecap: round;
 }
 
