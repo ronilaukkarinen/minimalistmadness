@@ -11,15 +11,15 @@
 }
 
 .comments-wrap {
-  background: #fafafa;
+  background: transparent;
   overflow: hidden;
 
   label {
     &.cnns-label,
     &#cnns-label {
+      color: #a0a0a0;
       font-size: 16px;
       margin: 0;
-      color: #a0a0a0;
 
       @media (max-width: $container-mobile) {
         font-size: 13px;
@@ -56,7 +56,8 @@
         margin-right: 2rem;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         background: #7a7a7a;
         border-color: #7a7a7a;
         color: $color-white;
@@ -65,55 +66,59 @@
 
     &#lstc-comment-subscription,
     &.cnns-comment-subscription {
-      margin-top: 20px;
       margin-bottom: 20px;
+      margin-top: 20px;
 
       @media (max-width: $article-max-width + 40px) {
         margin-left: 2rem;
         margin-right: 2rem;
       }
 
-      &:hover label {
+      &:hover label,
+      &:focus label {
         color: darken(#a0a0a0, 15%);
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: darken(#a0a0a0, 15%);
       }
 
-      &:hover input[type="checkbox"] + label:before {
+      &:hover input[type="checkbox"] + label::before,
+      &:focus input[type="checkbox"] + label::before {
         border: 2px solid darken(#a0a0a0, 15%);
       }
 
-      &:hover input[type="checkbox"]:checked + label:before {
+      &:hover input[type="checkbox"]:checked + label::before,
+      &:focus input[type="checkbox"]:checked + label::before {
         background: darken(#a0a0a0, 15%);
       }
 
       input[type="checkbox"] {
-        position: absolute; // Take it out of document flow
-        opacity: 0; // Hide it
         max-width: 2rem;
+        opacity: 0; // Hide it
+        position: absolute; // Take it out of document flow
 
         + label {
-          position: relative;
           cursor: pointer;
           padding: 0;
+          position: relative;
         }
 
         // Box.
-        + label:before {
-          content: '';
-          margin-right: .6rem;
-          margin-bottom: 1rem;
-          display: inline-block;
-          vertical-align: text-top;
-          width: 1.5rem;
-          height: 1.5rem;
+        + label::before {
           background: #fff;
           border: 2px solid #a0a0a0;
           border-radius: 3px;
+          content: '';
+          display: inline-block;
+          height: 1.5rem;
+          margin-bottom: 1rem;
+          margin-right: .6rem;
           position: relative;
           top: 2px;
+          vertical-align: text-top;
+          width: 1.5rem;
 
           @media (max-width: $article-max-width + 40px) {
             top: 2px;
@@ -121,17 +126,17 @@
         }
 
         // Box hover
-        &:hover + label:before {
+        &:hover + label::before {
           background: #a0a0a0;
         }
 
         // Box focus
-        &:focus + label:before {
+        &:focus + label::before {
           box-shadow: 0 0 0 3px rgba(#000, .12);
         }
 
         // Box checked
-        &:checked + label:before {
+        &:checked + label::before {
           background: #a0a0a0;
         }
 
@@ -142,22 +147,22 @@
         }
 
         // Disabled box.
-        &:disabled + label:before {
-          box-shadow: none;
+        &:disabled + label::before {
           background: #ddd;
+          box-shadow: none;
         }
 
         // Checkmark. Could be replaced with an image
-        &:checked + label:after {
-          content: '';
-          position: absolute;
-          left: 3px;
-          top: 9px;
+        &:checked + label::after {
           background: #fff;
-          width: 2px;
-          height: 2px;
           box-shadow: 2px 0 0 #fff, 4px 0 0 #fff, 4px -2px 0 #fff, 4px -4px 0 #fff, 4px -6px 0 #fff, 4px -8px 0 #fff;
+          content: '';
+          height: 2px;
+          left: 3px;
+          position: absolute;
+          top: 9px;
           transform: rotate(45deg);
+          width: 2px;
         }
       }
     }
@@ -169,25 +174,25 @@
   }
 
   .comment-reply-title {
-    margin-top: 65px;
-    font-size: 16px;
     color: #777;
-    margin-bottom: 15px;
-    font-weight: 500;
     display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-top: 65px;
   }
 
   .comment-form {
-    margin-top: 0;
-    margin-bottom: 50px;
     display: block;
+    margin-bottom: 50px;
+    margin-top: 0;
   }
 
   .hidden-by-default {
-    transition: 1s all;
-    opacity: 0;
     height: 0;
+    opacity: 0;
     overflow: hidden;
+    transition: 1s all;
 
     @media (max-width: $article-max-width + 40px) {
       margin-left: 0;
@@ -220,51 +225,51 @@ body {
 }
 
 .comments-area {
-  margin-top: 50px;
   margin-bottom: 50px;
-  overflow: hidden;
-  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
+  max-width: 640px;
+  overflow: hidden;
 
   .comment-list {
-    padding: 0;
-    margin: 0;
     list-style: none;
+    margin: 0;
+    padding: 0;
 
     li {
-      padding: 30px;
-      margin-top: 0;
-      margin-bottom: 30px;
       background: #fff;
       border: 1px solid #e8e8e8;
+      margin-bottom: 30px;
+      margin-top: 0;
+      padding: 30px;
 
       p {
+        color: $color-body;
         font-size: 17px;
         line-height: 1.65;
-        color: $color-body;
-        opacity: .8;
         margin-top: 0;
+        opacity: .8;
 
         a.comment-edit-link {
+          color: #222;
           font-size: 13px;
           opacity: .5;
-          color: #222;
         }
       }
 
       .avatar {
-        float: right;
         border-radius: 50%;
+        float: right;
       }
 
       .comment-author {
-        font-size: 16px;
         color: $color-body;
-        margin-top: 0;
-        margin-bottom: 3px;
-        padding: 0;
+        font-size: 16px;
         font-weight: 500;
+        margin-bottom: 3px;
+        margin-top: 0;
+        padding: 0;
       }
 
       .comment-author a {
@@ -273,26 +278,27 @@ body {
 
       .comment-time {
         font-size: 14px;
-        padding: 0;
-        margin-top: 0;
         margin-bottom: 20px;
+        margin-top: 0;
         opacity: .5;
+        padding: 0;
       }
 
       .comment-time svg {
-        width: 12px;
-        height: 12px;
         fill: $color-darkgrey;
+        height: 12px;
+        margin-right: 3px;
         position: relative;
         top: 2px;
-        margin-right: 3px;
+        width: 12px;
       }
 
       .comment-time a {
         color: $color-darkgrey;
       }
 
-      .comment-time:hover {
+      .comment-time:hover,
+      .comment-time:focus {
         opacity: 1;
       }
     }
