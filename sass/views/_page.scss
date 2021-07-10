@@ -46,8 +46,8 @@
 .template-arkisto {
   h2 {
     @include responsive-font(20px, 24px);
-    margin-bottom: 20px;
     color: #222;
+    margin-bottom: 20px;
 
     &.title-grouped {
       margin-bottom: 10px;
@@ -55,11 +55,11 @@
   }
 
   h4 {
+    color: #777;
     font-size: 19px;
     font-weight: 400;
-    color: #777;
-    margin-top: 0;
     margin-bottom: 20px;
+    margin-top: 0;
   }
 
   p {
@@ -78,33 +78,34 @@
     }
 
     ul {
+      line-height: 1;
       list-style: none;
       margin: 0;
       padding: 0;
-      line-height: 1;
     }
 
     li {
       display: inline;
+      line-height: 1.22;
       margin: 0;
       padding: 0;
-      line-height: 1.22;
     }
 
     a:not(.button):not(.post-edit-link):not(.global-link) {
-      box-shadow: none;
-      text-shadow: none;
-      opacity: .9;
-      transition: .33s all;
-      font-weight: 400;
-      text-transform: lowercase;
       background: transparent;
       border: 0;
+      box-shadow: none;
+      font-weight: 400;
+      opacity: .9;
+      text-shadow: none;
+      text-transform: lowercase;
+      transition: .33s all;
 
-      &:hover {
-        color: #000;
-        opacity: 1;
+      &:hover,
+      &:focus {
         box-shadow: none;
+        color: var(--color-white);
+        opacity: 1;
         text-shadow: none;
       }
     }
