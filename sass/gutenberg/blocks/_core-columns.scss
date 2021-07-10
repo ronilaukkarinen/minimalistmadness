@@ -8,6 +8,22 @@
   gap: 5rem;
   justify-content: center;
 
+  a {
+    border-color: var(--color-black) !important;
+    color: var(--color-black) !important;
+
+    &::before {
+      display: none !important;
+    }
+
+    &.is-external-link:hover::after,
+    &.is-external-link::after,
+    &.is-external-link:focus::after,
+    &.is-external-link::after {
+      background-image: url('../../svg/external-link-black.svg') !important;
+    }
+  }
+
   .wp-block-column {
     max-width: 320px;
 
