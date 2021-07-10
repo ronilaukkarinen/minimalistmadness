@@ -4,6 +4,15 @@
   padding-right: var(--padding-container-horizontal);
 }
 
+.wp-block-columns.custom-review-cols {
+  gap: 5rem;
+  justify-content: center;
+
+  .wp-block-column {
+    max-width: 320px;
+  }
+}
+
 // Loops to enumerate the classes for columns.
 @for $i from 1 through 9 {
   .wp-block-columns.columns-#{$i}.alignfull {
