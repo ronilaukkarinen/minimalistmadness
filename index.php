@@ -18,7 +18,7 @@ namespace Air_Light;
 
 get_header(); ?>
 
-<div id="content" class="content-area">
+<div class="content-area">
   <main role="main" id="main" class="site-main">
 
     <div class="container">
@@ -28,7 +28,7 @@ get_header(); ?>
         <?php if ( is_home() && ! is_front_page() ) : ?>
 
         <header>
-          <h1 class="entry-title screen-reader-text">
+          <h1 id="content" class="entry-title screen-reader-text">
             <?php single_post_title(); ?>
           </h1>
         </header>

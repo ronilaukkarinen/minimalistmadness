@@ -14,7 +14,7 @@ the_post();
 
 get_header(); ?>
 
-<div id="content" class="content-area template-arkisto">
+<div class="content-area template-arkisto">
   <main role="main" id="main" class="site-main">
 
     <section class="block block-page">
@@ -26,7 +26,7 @@ get_header(); ?>
             <h1 class="entry-title">Arkisto</h1>
           </header><!-- .entry-header -->
 
-            <h2>Historian lehtien havinaa</h2>
+            <h2 id="content">Historian lehtien havinaa</h2>
             <p>Aika kuluu. Olin joskus nuorempi. Täällä ne kuitenkin ovat, kaikki merkinnät, jotka olen saanut pelastettua, vuodesta 2005 eteenpäin. Vanhempiakin oli jossain vaiheessa näkyvillä, mutta niitä on tuhoutunut ja suurimman osan vedin pois netistä niiden sisällöttömyyden ja naiiviuden vuoksi.</p>
 
             <h2 class="title-grouped">Avainsanapilvi</h2>

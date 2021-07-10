@@ -13,7 +13,7 @@ namespace Air_Light;
 
 get_header(); ?>
 
-<div id="content" class="content-area">
+<div  class="content-area">
 	<main role="main" id="main" class="site-main">
 
     <section class="block block-page">
@@ -24,7 +24,7 @@ get_header(); ?>
           <div class="container container-article">
 
             <article>
-              <h1>Sivua ei löydy</h1>
+              <h1 id="content">Sivua ei löydy</h1>
               <p>Vaikuttaisi siltä, että sivu on siirretty tai poistettu. <a href="<?php echo esc_url( get_home_url() ); ?>">Tästä takaisin etusivulle</a>.</p>
             </article>
           </div>

@@ -5,9 +5,9 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-07-10 13:06:05
+ * @Last Modified time: 2021-07-10 18:39:45
  *
- * @package air-light
+ * @package minimalistmadness
  **/
 
 namespace Air_Light;

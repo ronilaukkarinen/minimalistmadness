@@ -16,9 +16,14 @@ import Swup from 'swup';
 import SwupScriptsPlugin from '@swup/scripts-plugin';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
 import SwupGaPlugin from '@swup/ga-plugin';
+import getLocalization from './modules/localization';
+import styleExternalLinks from './modules/external-link';
 
 // Get Vue.js
 const Vue = require('vue/dist/vue.min');
+
+// Style external links
+styleExternalLinks();
 
 // Debounce
 function debounce(func, wait, immediate) {

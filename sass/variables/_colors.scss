@@ -23,5 +23,9 @@ $color-error: #dd3030;
 $color-default-background: $color-lightgrey;
 
 :root {
+  --color-black: #{$color-black};
+  --color-outline-overlay-items: #ff848a;
   --color-paragraph: #{$color-black};
+  --color-white: #{$color-white};
+  --color-science-blue: #0049d1;
 }

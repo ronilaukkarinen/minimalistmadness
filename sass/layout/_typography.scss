@@ -43,17 +43,45 @@ a {
 }
 
 @mixin link() {
-  border-bottom: .1px solid $color-alt;
-  box-shadow: inset 0 -1px 0 $color-alt;
-  color: $color-blog-links;
+  border-bottom: .1px solid var(--color-science-blue);
+  color: var(--color-science-blue);
+  position: relative;
   text-decoration: none;
-  transition: background .22s cubic-bezier(.33, .66, .66, 1);
+  transition: all .18s cubic-bezier(.33, .66, .66, 1);
+
+  &::before {
+    background-color: $color-white;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(1);
+    transition: all .18s cubic-bezier(.33, .66, .66, 1);
+    width: 100%;
+    z-index: -1;
+  }
+
+  &.global-link::before,
+  &.global-link:hover::before,
+  &.global-link::before,
+  &.global-link:focus::before {
+    display: none !important;
+  }
 
   &:hover,
   &:focus {
-    background: $color-alt;
-    border-color: $color-alt;
-    color: $color-white;
+    color: var(--color-white);
+
+    &::after {
+      background-image: url('../../svg/external-link-white.svg');
+    }
+
+    &::before {
+      background-color: var(--color-science-blue);
+      transform: scaleX(1.08) scaleY(1.5);
+    }
   }
 }
 

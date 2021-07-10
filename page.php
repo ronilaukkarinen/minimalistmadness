@@ -20,7 +20,7 @@ the_post();
 
 get_header(); ?>
 
-<div id="content" class="content-area">
+<div class="content-area">
   <main role="main" id="main" class="site-main">
 
     <section class="block block-page">
@@ -30,7 +30,7 @@ get_header(); ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <header class="entry-header">
-          <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+          <?php the_title( '<h1 class="entry-title" id="content">', '</h1>' ); ?>
         </header><!-- .entry-header -->
 
           <?php the_content(); ?>

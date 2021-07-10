@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-04-09 11:27:26
+ * @Last Modified time: 2021-07-10 18:44:27
  */
 
 namespace Air_Light;
@@ -51,6 +51,27 @@ function enqueue_theme_scripts() {
     'expand'   => esc_html__( 'Open child menu', 'minimalistmadness' ),
     'collapse' => esc_html__( 'Close child menu', 'minimalistmadness' ),
   ) );
+
+  wp_localize_script( 'scripts', 'air_light_screenReaderText', [
+    'expand'          => get_default_localization( 'Open child menu' ),
+    'collapse'        => get_default_localization( 'Close child menu' ),
+    'expand_for'      => get_default_localization( 'Open child menu for' ),
+    'collapse_for'    => get_default_localization( 'Close child menu for' ),
+    'expand_toggle'   => get_default_localization( 'Open main menu' ),
+    'collapse_toggle' => get_default_localization( 'Close main menu' ),
+    'external_link'   => get_default_localization( 'External site:' ),
+    'target_blank'    => get_default_localization( 'opens in a new window' ),
+  ] );
+
+  // Add domains/hosts to disable external link indicators
+    wp_localize_script( 'scripts', 'air_light_externalLinkDomains', [
+      'localhost:3000',
+      'rollemaa.test',
+      'rollemaa.fi',
+      'www.rollemaa.fi',
+      'rollemaa.org',
+      'www.rollemaa.org',
+  ] );
 
   wp_localize_script( 'scripts', 'air', array(
     'nonce'           => wp_create_nonce( 'wp_rest' ),

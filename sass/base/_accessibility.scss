@@ -1,14 +1,7 @@
-// ---------------------------------------------------------
 // Accessibility
 //
 // A hidden screen reader for readers, focus elements for
 // vision impaired and other useful a11y CSS hacks.
-// ---------------------------------------------------------
-
-// Variables
-$focus-background-color: #f9bf47;
-$focus-outline-color: #f9bf47;
-$focus-text-color: #000;
 
 // Text meant only for screen readers.
 .screen-reader-text {
@@ -19,24 +12,30 @@ $focus-text-color: #000;
   margin: -1px;
   overflow: hidden;
   padding: 0;
-  position: absolute !important;
+  position: absolute;
   width: 1px;
-  word-wrap: normal !important; //Many screen reader and browser combinations announce broken words as they would appear visually.
+
+  /* stylelint-disable declaration-no-important */
+  word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
+  /* stylelint-enable declaration-no-important */
 
   &.skip-link {
     margin: 5px;
+
+    &:focus {
+      color: var(--color-black);
+    }
   }
 
   &:focus {
-    background-color: #f1f1f1;
+    background-color: var(--color-white);
     border-radius: 0;
-    box-shadow: 0 0 2px 2px rgba(#000, .6);
-    clip: auto !important;
+    box-shadow: 0 0 2px 2px rgba(22, 22, 22, .6);
+    clip: auto;
     clip-path: none;
-    color: #21759b;
     display: block;
     font-size: 1.7rem;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     height: auto;
     left: 5px;
     line-height: normal;
@@ -48,54 +47,90 @@ $focus-text-color: #000;
   }
 }
 
-// Do not show the outline on the skip link target.
-[tabindex="-1"]:focus {
-  outline: 0;
-}
-
-// Suppress focus ring on for mouse users for visual reasons
-[data-whatinput="mouse"] *:focus {
+// Suppress focus ring on for mouse and touch users for visual reasons
+/* stylelint-disable a11y/no-outline-none */
+[data-whatinput="mouse"] *:focus,
+[data-whatinput="touch"] *:focus {
   outline: none;
 }
+/* stylelint-enable a11y/no-outline-none */
 
 // Visually distinct focus color on keyboard
 [data-whatinput="keyboard"] {
+
+  // Make sure every focusable element has opacity 100%
+  a:focus,
   input:focus,
   button:focus,
-  select:focus {
+  select:focus,
+  textarea:focus,
+  div[tabindex]:focus {
     opacity: 1;
-    outline: 4px solid $focus-outline-color;
   }
 
-  nav ul li a:focus {
-    background: $focus-background-color;
-    color: $focus-text-color;
+  .global-link {
+    transition: none;
   }
 
-  a:focus {
-    background: rgba($focus-background-color, .5);
-    opacity: 1;
-    outline: 2px solid $focus-outline-color;
-  }
-
+  // A bit better focus for large elements
   a.global-link:focus {
-    background: rgba($focus-background-color, .5);
+    outline-color: var(--color-outline-overlay-items);
+    outline-offset: -1px;
+    outline-style: solid;
+    outline-width: 4px;
   }
 }
 
-// Make theme keyboard accessible with no Javascript enabled
-.no-js *:focus {
-  outline: 4px solid $focus-outline-color;
+// Add icon to external links
+a.is-external-link {
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-between;
+
+  &::after {
+    background-image: url('../../svg/external-link.svg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    content: '';
+    display: inline-flex;
+    height: 14px;
+    margin-left: 5px;
+    margin-right: 2px;
+    position: relative;
+    right: 0;
+    top: 0;
+    transition: all .18s ease-in-out;
+    width: 14px;
+  }
 }
 
-// Links within content must be underlined
-// @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
-.container a,
-.entry-content a {
-  text-decoration: underline;
+// Do not use external links indicators in areas that they don't look good or fit
+/* stylelint-disable a11y/no-display-none */
+a.is-external-link.global-link::after,
+a.is-external-link.no-external-link-indicator::after {
+  display: none;
+}
+/* stylelint-enable a11y/no-display-none */
 
-  &:hover,
-  &:focus {
-    text-decoration: none;
+// Define here the upsell blocks that have overlay link areas
+// inside them
+// These should always have overflow visible, because otherwise
+// the outline will not be visible outside the element
+// .block.block-three-upsells .container,
+// body .block .container .col {
+//   overflow: visible;
+// }
+
+// Make focus a little more engaging
+// @source https://twitter.com/argyleink/status/1387072095159406596
+// @link https://codepen.io/argyleink/pen/JjEzeLp
+@media (prefers-reduced-motion: no-preference) {
+  :focus,
+  *:focus,
+  [data-whatinput="keyboard"] :focus,
+  [data-whatinput="keyboard"] a:focus {
+    outline-offset: 5px;
+    transition: outline-offset .25s ease;
   }
 }
