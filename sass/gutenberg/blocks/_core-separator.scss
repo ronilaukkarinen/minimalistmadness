@@ -1,6 +1,7 @@
 // Core/separator block
 hr,
 .wp-block-separator {
+  border: 0;
   margin-bottom: calc(var(--margin-between-paragraphs) * 2);
   margin-top: calc(var(--margin-between-paragraphs) * 2);
 }
