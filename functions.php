@@ -88,55 +88,11 @@ $theme_settings = [
   'use_classic_editor' => [ '' ],
 
   // Don't restrict blocks
-  // 'allowed_blocks' => 'all',
+  'allowed_blocks' => 'all',
 
-  // Restrict to only selected blocks
-  'allowed_blocks' => [
-    // Set default blocks allowed in every post type
-    'default' => [
-      'core/archives',
-      'core/audio',
-      'core/button',
-      'core/categories',
-      'core/code',
-      'core/column',
-      'core/columns',
-      // 'core/coverImage',
-      'core/embed',
-      'core/file',
-      'core/freeform',
-      'core/gallery',
-      'core/heading',
-      'core/html',
-      'core/image',
-      'core/latestComments',
-      'core/latestPosts',
-      'core/list',
-      'core/more',
-      'core/nextpage',
-      'core/paragraph',
-      'core/preformatted',
-      'core/pullquote',
-      'core/quote',
-      'core/reusableBlock',
-      'core/separator',
-      'core/shortcode',
-      'core/spacer',
-      'core/subhead',
-      'core/table',
-      'core/textColumns',
-      'core/verse',
-      'core/video',
-    ],
-    'post' => [
-      'core/coverImage', // This block is now allowed only in posts
-    ],
-  ],
   // Module caching
-  'enable_module_caching' => true,
-  'exclude_module_from_cache' => [
-    'contact-form' => true,
-  ],
+  'enable_module_caching' => false,
+
   // Add your own settings and use them wherever you need, for example THEME_SETTINGS['my_custom_setting']
   'my_custom_setting' => true,
 ];
@@ -154,4 +110,5 @@ require get_theme_file_path( '/inc/includes.php' );
 require get_theme_file_path( '/inc/template-tags.php' );
 
 // Run theme setup
-theme_setup();
+add_action( 'init', __NAMESPACE__ . '\theme_setup' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );

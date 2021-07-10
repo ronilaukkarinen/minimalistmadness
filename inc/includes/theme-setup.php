@@ -2,11 +2,12 @@
 /**
  * Theme setup
  *
- * @package minimalistmadness
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 14:20:18
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-07-10 13:06:05
+ *
+ * @package air-light
  **/
 
 namespace Air_Light;
@@ -32,7 +33,6 @@ function theme_setup() {
   }
 
   // Run the rest of the setup
-  build_theme_support();
   build_taxonomies();
   build_post_types();
 }
@@ -50,12 +50,12 @@ function build_taxonomies() {
     $file_path = get_theme_file_path( '/inc/taxonomies/' . $slug . '.php' );
 
     if ( ! file_exists( $file_path ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'minimalistmadness' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
     }
     require $file_path;
 
     if ( ! class_exists( $classname ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'minimalistmadness' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
     }
 
     $taxonomy_class = new $classname( $slug );
@@ -76,13 +76,13 @@ function build_post_types() {
     $file_path = get_theme_file_path( '/inc/post-types/' . $slug . '.php' );
 
     if ( ! file_exists( $file_path ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'minimalistmadness' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
     }
     // Get the class file
     require $file_path;
 
     if ( ! class_exists( $classname ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'minimalistmadness' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
     }
 
     $post_type_class = new $classname( $slug );
@@ -97,6 +97,8 @@ function build_theme_support() {
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'align-wide' );
+  add_theme_support( 'wp-block-styles' );
   add_theme_support(
     'html5',
     [
@@ -105,6 +107,8 @@ function build_theme_support() {
       'comment-list',
       'gallery',
       'caption',
+      'script',
+      'style',
     ]
   );
 }
