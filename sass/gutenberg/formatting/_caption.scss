@@ -12,14 +12,14 @@
     margin-bottom: 6rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3rem;
+    margin-top: 3rem !important;
     max-width: $width-max-article;
     padding-bottom: 0;
     text-align: center;
     width: 100%;
 
     @media (max-width: $container-mobile) {
-      margin-top: 2rem;
+      margin-top: 2rem !important;
     }
   }
 
