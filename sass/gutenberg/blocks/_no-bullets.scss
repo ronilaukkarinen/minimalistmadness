@@ -1,0 +1,10 @@
+// no-bullets block style
+.wp-block.is-style-no-bullets,
+.is-style-no-bullets {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    padding-left: 0;
+  }
+}

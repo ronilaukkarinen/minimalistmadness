@@ -7,6 +7,12 @@ wp.blocks.registerBlockStyle('core/paragraph', {
   label: 'Laatikko',
 });
 
+// Declare the block you'd like to style.
+wp.blocks.registerBlockStyle('core/list', {
+  name: 'no-bullets',
+  label: 'Ilman listamerkkejä',
+});
+
 // var air_light_LazyLoad = new LazyLoad({
 //  callback_loaded: setLazyLoadedFigureWidth,
 // });

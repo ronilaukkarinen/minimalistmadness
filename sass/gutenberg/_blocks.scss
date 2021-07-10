@@ -23,8 +23,7 @@
 
   // Custom Gutenberg block styles
   @import '../gutenberg/blocks/boxed';
-  // @import '../gutenberg/blocks/button';
-  // @import '../gutenberg/blocks/button-file';
+  @import '../gutenberg/blocks/no-bullets';
 
   // Error block styles
   @import '../gutenberg/blocks/error';
