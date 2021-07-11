@@ -72,6 +72,8 @@ a {
 
   &:hover,
   &:focus {
+    // Fallback
+    background-color: var(--color-science-blue);
     color: var(--color-white);
 
     &::after {
@@ -80,7 +82,7 @@ a {
 
     &::before {
       background-color: var(--color-science-blue);
-      transform: scaleX(1.08) scaleY(1.5);
+      transform: scaleX(1.1) scaleY(1.5);
     }
   }
 }
