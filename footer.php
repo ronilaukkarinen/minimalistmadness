@@ -34,6 +34,7 @@ namespace Air_Light;
           <li><a class="no-external-link-indicator" href="https://keybase.io/ronilaukkarinen"><span class="screen-reader-text">Keybase</span><?php include get_theme_file_path( '/svg/keybase.svg' ); ?></a></li>
           <li><a class="no-external-link-indicator" href="https://profiles.wordpress.org/rolle"><span class="screen-reader-text">WordPress</span><?php include get_theme_file_path( '/svg/wordpress.svg' ); ?></a></li>
           <li><a class="no-external-link-indicator" href="https://www.linkedin.com/in/rolaukka/"><span class="screen-reader-text">WordPress</span><?php include get_theme_file_path( '/svg/linkedin.svg' ); ?></a></li>
+          <li><a class="no-external-link-indicator" href="https://www.strava.com/athletes/16582440"><span class="screen-reader-text">Strava</span><?php include get_theme_file_path( '/svg/strava.svg' ); ?></a></li>
         </ul>
 
         <p>Oikeudet omistaa Roni Laukkarinen, 1999-<?php echo esc_attr( date( 'Y' ) ); ?>.</p>
