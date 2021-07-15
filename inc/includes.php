@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:07:17
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-07-10 18:39:59
+ * @Last Modified time: 2021-07-15 22:56:54
  * @package minimalistmadness
  */
 
@@ -29,3 +29,6 @@ if ( file_exists( get_theme_file_path( '/inc/includes/taxonomy.php' ) ) ) {
 if ( file_exists( get_theme_file_path( '/inc/includes/post-type.php' ) ) ) {
   require get_theme_file_path( '/inc/includes/post-type.php' );
 }
+
+// Shortcodes etc.
+require get_theme_file_path( '/inc/includes/rollemaa-legacy.php' );
