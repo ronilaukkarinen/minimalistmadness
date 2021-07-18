@@ -82,9 +82,6 @@ get_header();
               <p class="button-paragraph"><a class="button" href="<?php echo esc_url( get_page_link( 2768 ) ); ?>">Lue Rollesta lisää</a></p>
             </div>
           </div>
-
-          <div id="spawn-slot"></div>
-
         </article><!-- .entry-content -->
 
       </div><!-- .container-article -->
