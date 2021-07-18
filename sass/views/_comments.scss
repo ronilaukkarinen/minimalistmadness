@@ -315,3 +315,13 @@ body {
     }
   }
 }
+
+.comments-area .comment-list li p.comments-no-comments-text,
+.comments-no-comments-text {
+  background-color: #fff;
+  border: 2px solid #d12e70;
+  color: #d12e70;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 2rem;
+}

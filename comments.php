@@ -31,9 +31,14 @@ function khonsu_comments( $comment, $args, $depth ) {
           </a>
         </p>
 
-        <?php comment_text();
+        <?php
+          comment_text();
+          comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
+        ?>
 
-        comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+        <?php if ( '0' === $comment->comment_approved ) : ?>
+          <p class="comments-no-comments-text">Kiitos kommentoinnista, arvostan! Kommenttisi on moderointijonossa, eikä vielä näy julkisesti. Pidätän oikeuden julkaista kommentin blogissani.</p>
+        <?php endif; ?>
 
       </div>
     </li>
@@ -51,7 +56,7 @@ function khonsu_comments( $comment, $args, $depth ) {
 <div class="comments-wrap">
   <div id="comments" class="comments-area">
 
-    <?php
+  <?php
 
   // Custom comment form
     $commenter = wp_get_current_commenter();
@@ -70,15 +75,15 @@ function khonsu_comments( $comment, $args, $depth ) {
       ) ),
     );
 
-    comment_form( $args );
+    comment_form( $args ); ?>
 
-    if ( have_comments() ) : ?>
+    <?php if ( have_comments() ) : ?>
       <h2 class="comments-title screen-reader-text">
         <?php
-        printf( // WPCS: XSS OK.
+        printf( // phpcs:ignore
           esc_html( _nx( '%1$s kommentti', '%1$s kommenttia', get_comments_number(), 'comments title', 'minimalistmadness' ) ),
-          number_format_i18n( get_comments_number() ),
-          '<span class="screen-reader-text">on article "' . get_the_title() . '"</span>'
+          number_format_i18n( get_comments_number() ), // phpcs:ignore
+          '<span class="screen-reader-text">on article "' . get_the_title() . '"</span>' // phpcs:ignore
         );
         ?>
       </h2>
@@ -100,7 +105,7 @@ function khonsu_comments( $comment, $args, $depth ) {
       wp_list_comments( array(
         'style'      => 'ol',
         'short_ping' => true,
-        'callback' => 'khonsu_comments',
+        'callback'   => 'khonsu_comments',
       ) );
       ?>
     </ol><!-- .comment-list -->
@@ -119,12 +124,12 @@ function khonsu_comments( $comment, $args, $depth ) {
     endif; // Check for comment navigation.
 
   endif; // Check for have_comments().
+  ?>
 
-
+  <?php
   // If comments are closed and there are comments, let's leave a little note, shall we?
   if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-
-    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'minimalistmadness' ); ?></p>
+    <p class="comments-no-comments-text">Kommentointi on suljettu.</p>
   <?php
 endif;
 ?>
