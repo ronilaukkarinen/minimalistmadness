@@ -272,6 +272,16 @@ body {
         padding: 0;
       }
 
+      blockquote {
+        margin: 2rem 0;
+        padding: 0 2rem;
+        width: 100%;
+      }
+
+      > div p:not([class]) a {
+        @include link();
+      }
+
       .comment-author a {
         color: $color-body;
 
