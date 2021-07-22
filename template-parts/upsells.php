@@ -42,11 +42,11 @@ $selected_posts = get_field( 'selected_posts', 'option' );
 
           <article class="entry post-card post">
             <div class="post-card-content">
-              <a href="<?php echo esc_url( get_the_permalink( $selected_post->ID ) ); ?>" class="global-link"><span class="screen-reader-text"><?php echo esc_attr( get_the_title( $selected_post->ID ) ); ?></span></a>
+              <a href="<?php echo esc_url( get_the_permalink( $selected_post->ID ) ); ?>" class="global-link" aria-hidden="true" tabindex="-1"></a>
 
               <h2 class="post-card-title"><a href="<?php echo esc_url( get_the_permalink( $selected_post->ID ) ); ?>"><?php echo esc_attr( get_the_title( $selected_post->ID ) ); ?></a></h2>
 
-              <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo $reading_time; ?></p><?php if ( has_post_thumbnail() ) { image_lazyload_div( get_post_thumbnail_id( $selected_post->ID, 'large' ) ); } ?></div></div>
+              <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo esc_html( $reading_time ); ?></p><?php if ( has_post_thumbnail() ) { image_lazyload_div( get_post_thumbnail_id( $selected_post->ID, 'large' ) ); } ?></div></div>
             </div>
           </article>
         <?php endforeach; ?>
