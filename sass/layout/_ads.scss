@@ -1,20 +1,20 @@
 .advertisement {
   @extend .container;
-  padding-top: 0;
   padding-bottom: 0;
+  padding-top: 0;
 }
 
 .ad-top {
-  padding: 0;
-  border-top: 1px solid #d9d9d9;
   border-bottom: 1px solid #d9d9d9;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  border-top: 1px solid #d9d9d9;
   margin-bottom: 60px;
+  padding: 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
 
   p {
-    font-size: 15px;
     color: #888;
+    font-size: 15px;
     font-weight: 400;
   }
 
@@ -24,64 +24,71 @@
 
   a {
     @extend %link;
-    color: #888;
     border-color: #888;
+    color: #888;
   }
 }
 
 .container.container-article .ownad-unblockable {
   max-width: 1100px;
-  position: relative;
   padding-left: 4rem;
   padding-right: 4rem;
+  position: relative;
 
   @media (max-width: 400px) {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  .promotion-info:first-child {
-    text-align: center;
-    margin-top: 8rem;
-    display: block;
-    color: darken(#d8d8d8, 10%);
-    display: none;
+  a::before {
+    display: none !important;
   }
 
-  &:hover .spans {
-    transform: scale(1.02);
+  .promotion-info:first-child {
+    color: darken(#d8d8d8, 10%);
+    display: block;
+    display: none;
+    margin-top: 8rem;
+    text-align: center;
+  }
+
+  &:hover .spans,
+  &:focus .spans {
     box-shadow: 0 4px 80px rgba($color-black, 1);
+    transform: scale(1.02);
 
     p a:not(.button):not(.post-edit-link) {
-      // animation-name: shake;
-      // animation-duration: .8s;
-      // transform-origin: 50% 50%;
-      // animation-iteration-count: infinite;
-      // animation-timing-function: linear;
-      color: lighten($color-blog-links, 35%);
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-name: shake;
+      animation-timing-function: linear;
+      background-color: transparent;
       border-color: lighten($color-blog-links, 35%);
+      color: lighten($color-blog-links, 35%);
+      transform-origin: 50% 50%;
     }
   }
 
   a.global-link:not(.button):not(.post-edit-link) {
-    position: absolute;
     border: 0;
     box-shadow: none;
+    position: absolute;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: transparent;
     }
   }
 
   .spans {
-    box-shadow: 0 4px 80px rgba(#000, .7);
+    background: #1f1f1f;
     border: 0;
-    margin: 8rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 80px rgba(#000, .7);
+    color: #fff;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    background: #1f1f1f;
-    color: #fff;
-    border-radius: 8px;
+    margin: 8rem 0;
     overflow: hidden;
     transition: all $transition-duration;
 
@@ -96,22 +103,22 @@
   }
 
   .inner {
-    padding: 4rem 1.5rem;
-    display: grid;
     align-items: center;
+    display: grid;
     justify-content: center;
+    padding: 4rem 1.5rem;
   }
 
   svg {
-    width: 150px;
     height: 29.97px;
+    width: 150px;
   }
 
   .span-second {
-    display: grid;
-    place-items: center;
     color: #d8d8d8;
+    display: grid;
     padding: 50px 95px;
+    place-items: center;
 
     @media (max-width: 1080px) {
       padding: 40px 28px;
@@ -119,9 +126,9 @@
 
     p {
       font-family: $font-alt;
-      margin: 0;
       font-size: 16px;
       line-height: 1.44;
+      margin: 0;
     }
 
     a:not(.button):not(.post-edit-link) {
@@ -139,8 +146,8 @@
   }
 
   .title {
-    font-size: 22px;
     font-family: $font-alt;
+    font-size: 22px;
     margin: 0 0 1rem;
   }
 }
