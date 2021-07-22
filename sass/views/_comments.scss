@@ -1,10 +1,4 @@
-// --------------------------------------------------------
-// Comments
-//
-// WordPress built-in comments with comment_form().
-// Custom comment template can be found in inc/comments.php
-// --------------------------------------------------------
-
+/* stylelint-disable no-unknown-animations, property-disallowed-list, a11y/no-display-none */
 .comment-reply-title,
 .comment-reply-title > small {
   display: none !important;
@@ -58,7 +52,7 @@
 
       &:hover,
       &:focus {
-        background: #7a7a7a;
+        background-color: #7a7a7a;
         border-color: #7a7a7a;
         color: $color-white;
       }
@@ -91,7 +85,7 @@
 
       &:hover input[type="checkbox"]:checked + label::before,
       &:focus input[type="checkbox"]:checked + label::before {
-        background: darken(#a0a0a0, 15%);
+        background-color: darken(#a0a0a0, 15%);
       }
 
       input[type="checkbox"] {
@@ -107,7 +101,7 @@
 
         // Box.
         + label::before {
-          background: #fff;
+          background-color: #fff;
           border: 2px solid #a0a0a0;
           border-radius: 3px;
           content: '';
@@ -127,7 +121,7 @@
 
         // Box hover
         &:hover + label::before {
-          background: #a0a0a0;
+          background-color: #a0a0a0;
         }
 
         // Box focus
@@ -137,7 +131,7 @@
 
         // Box checked
         &:checked + label::before {
-          background: #a0a0a0;
+          background-color: #a0a0a0;
         }
 
         // Disabled state label.
@@ -148,13 +142,13 @@
 
         // Disabled box.
         &:disabled + label::before {
-          background: #ddd;
+          background-color: #ddd;
           box-shadow: none;
         }
 
         // Checkmark. Could be replaced with an image
         &:checked + label::after {
-          background: #fff;
+          background-color: #fff;
           box-shadow: 2px 0 0 #fff, 4px 0 0 #fff, 4px -2px 0 #fff, 4px -4px 0 #fff, 4px -6px 0 #fff, 4px -8px 0 #fff;
           content: '';
           height: 2px;
@@ -238,7 +232,7 @@ body {
     padding: 0;
 
     li {
-      background: #fff;
+      background-color: #fff;
       border: 1px solid #e8e8e8;
       margin-bottom: 30px;
       margin-top: 0;
@@ -286,7 +280,6 @@ body {
         color: $color-body;
 
         &.is-external-link:hover::after,
-        &.is-external-link::after,
         &.is-external-link:focus::after,
         &.is-external-link::after {
           background-image: url('../../svg/external-link-black.svg');

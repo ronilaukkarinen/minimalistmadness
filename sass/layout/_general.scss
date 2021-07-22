@@ -30,7 +30,7 @@
 
 // Default shade on top of blocks
 .shade {
-  background: #333;
+  background-color: #333;
   height: 100%;
   left: 0;
   opacity: .15;
@@ -59,9 +59,9 @@
   padding-top: $container-default-pad-y;
 
   @if $grid-type == fluid {
-    max-width: $grid-base-size;
     margin-left: auto;
     margin-right: auto;
+    max-width: $grid-base-size;
     padding-left: $container-default-pad-x;
     padding-right: $container-default-pad-x;
   }
@@ -143,7 +143,7 @@
 
   a:hover,
   a:focus {
-    background: #efefef;
+    background-color: #efefef;
     color: #999;
   }
 }

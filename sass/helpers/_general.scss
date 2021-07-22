@@ -6,20 +6,20 @@
 
 // General
 @mixin hiddentext() {
-  text-indent: -9999px;
-  overflow: hidden;
-  text-decoration: none;
   display: block;
   font-size: 0;
+  overflow: hidden;
   text-align: start;
+  text-decoration: none;
+  text-indent: -9999px;
 }
 
 // Clearfix
 @mixin clearfix() {
   &::after {
-    display: block;
-    content: '';
     clear: both;
+    content: '';
+    display: block;
   }
 }
 
@@ -32,20 +32,19 @@
 }
 
 @mixin horizontal-align {
-  position: relative;
   left: 50%;
+  position: relative;
   transform: translateX(-50%);
   transform-style: preserve-3d;
 }
 
 @mixin centered {
+  left: 50%;
   position: relative;
   top: 50%;
-  left: 50%;
   transform: translateX(-50%) translateY(-50%);
   transform-style: preserve-3d;
 }
-
 
 // Viewport sized typography with minimum and maximum values
 // Based on an example here: https://css-tricks.com/snippets/css/fluid-typography/

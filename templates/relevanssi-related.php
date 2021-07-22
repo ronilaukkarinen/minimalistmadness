@@ -187,7 +187,7 @@ function air_helper_get_image_lazyload_sizes( $image_id = 0, $sizes = [] ) {
   // Loop sizes to get corresponding image url
   foreach ( $sizes as $size_for => $size ) {
     // Check that asked image size exists and fallback to full size
-    if ( ! in_array( $size, $intermediate_sizes ) ) {
+    if ( ! in_array( $size, $intermediate_sizes ) ) { // phpcs:ignore
       $size = 'full';
     }
 

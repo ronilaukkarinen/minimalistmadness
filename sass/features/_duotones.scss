@@ -1,33 +1,34 @@
 .post-card-image .img {
-  width: 100%;
+  display: block;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: all ease-in-out .5s;
 
   // Hack to fix webkit bug
   transform: translateZ(0);
+  transition: all ease-in-out .5s;
+  width: 100%;
 }
 
 .post-card-image {
-  transition: all .88s;
-  transform: translate3d(0, 0, 0);
   isolation: isolate;
+  transform: translate3d(0, 0, 0);
+  transition: all .88s;
 }
 
-.post-card:not(.no-animation):hover .post-card-image {
-  color: rgba(0, 0, 0, .75);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .15), 0 5px 10px rgba(0, 0, 0, .15);
-  animation-name: floating;
+.post-card:not(.no-animation):hover .post-card-image,
+.post-card:not(.no-animation):focus .post-card-image {
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
+  animation-name: floating;
   animation-timing-function: ease-in-out;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .15), 0 5px 10px rgba(0, 0, 0, .15);
+  color: rgba(0, 0, 0, .75);
   transform: translate3d(0, 0, 0);
 }
 
 @keyframes floating {
   from {
-    transform: translate(0, 0px) translate3d(0, 0, 0);
+    transform: translate(0, 0) translate3d(0, 0, 0);
   }
 
   65% {
@@ -35,29 +36,32 @@
   }
 
   to {
-    transform: translate(0, -0px) translate3d(0, 0, 0);
+    transform: translate(0, -0) translate3d(0, 0, 0);
   }
 }
 
 /* Color Overlay position */
 .post-card-image::after {
   content: '';
-  position: absolute;
-  width: 100%;
   height: 100%;
-  top: 0;
   left: 0;
+  position: absolute;
+  top: 0;
   transition: all ease-in-out .5s;
+  width: 100%;
 }
 
 /* Removed effects to show original on hover */
 .post-card:hover .post-card-image::after,
 .post-card:hover .post-card-image,
-.post-card:hover .post-card-image .img {
-  filter: none;
-  mix-blend-mode: unset !important;
+.post-card:hover .post-card-image .img,
+.post-card:focus .post-card-image::after,
+.post-card:focus .post-card-image,
+.post-card:focus .post-card-image .img {
   background-color: transparent;
   background-image: none;
+  filter: none;
+  mix-blend-mode: unset !important;
 }
 
 .green,
@@ -67,8 +71,8 @@
 
 .green .img,
 .duotone-1 .img {
-  mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1);
+  mix-blend-mode: multiply;
 }
 
 .green::after,
@@ -84,8 +88,8 @@
 
 .red-purple .img,
 .duotone-2 .img {
-  mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(.8);
+  mix-blend-mode: multiply;
 }
 
 .red-purple::after,
@@ -101,12 +105,13 @@
 
 .retro .img,
 .duotone-3 .img {
-  mix-blend-mode: darken;
   filter: grayscale(100%) contrast(2);
+  mix-blend-mode: darken;
 }
 
 .retro::after,
 .duotone-3::after {
+  /* stylelint-disable-next-line */
   background: linear-gradient(180deg, #f430a9, #f2e782);
   mix-blend-mode: lighten;
 }
@@ -118,8 +123,8 @@
 
 .vintage .img,
 .duotone-4 .img {
-  mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1.5);
+  mix-blend-mode: multiply;
 }
 
 .vintage::after,
@@ -135,8 +140,8 @@
 
 .blue-light .img,
 .duotone-5 .img {
-  mix-blend-mode: lighten;
   filter: grayscale(100%) contrast(.8);
+  mix-blend-mode: lighten;
 }
 
 .blue-light::after,
@@ -152,8 +157,8 @@
 
 .blue .img,
 .duotone-6 .img {
-  mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1.2);
+  mix-blend-mode: multiply;
 }
 
 .blue::after,
@@ -186,8 +191,8 @@
 
 .flat-retro .img,
 .duotone-8 .img {
-  mix-blend-mode: darken;
   filter: grayscale(100%) contrast(1.5);
+  mix-blend-mode: darken;
 }
 
 .flat-retro::after,
@@ -203,8 +208,8 @@
 
 .teal .img,
 .duotone-9 .img {
-  mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1.2);
+  mix-blend-mode: multiply;
 }
 
 .teal::after,
@@ -226,8 +231,9 @@
 
 .purple::after,
 .duotone-10::after {
-  mix-blend-mode: hard-light;
+  /* stylelint-disable-next-line */
   background: linear-gradient(to top left, #75d775, #321a5b);
+  mix-blend-mode: hard-light;
 }
 
 .pink,
@@ -242,9 +248,9 @@
 
 .pink::after,
 .duotone-11::after {
-  background: #282581;
-  mix-blend-mode: lighten;
+  background-color: #282581;
   filter: contrast(1.1);
+  mix-blend-mode: lighten;
 }
 
 .yellow,
@@ -254,8 +260,8 @@
 
 .yellow .img,
 .duotone-12 .img {
-  mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(.8);
+  mix-blend-mode: multiply;
 }
 
 .yellow::after,
@@ -271,8 +277,8 @@
 
 .orange .img,
 .duotone-13 .img {
-  mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1.2);
+  mix-blend-mode: multiply;
 }
 
 .orange::after,
@@ -294,9 +300,9 @@
 
 .blue-red::after,
 .duotone-14::after {
-  mix-blend-mode: lighten;
-  filter: contrast(1.1);
   background-color: #282581;
+  filter: contrast(1.1);
+  mix-blend-mode: lighten;
 }
 
 .gold,
@@ -306,8 +312,8 @@
 
 .gold .img,
 .duotone-15 .img {
-  mix-blend-mode: lighten;
   filter: grayscale(100%) contrast(.8);
+  mix-blend-mode: lighten;
 }
 
 .gold::after,

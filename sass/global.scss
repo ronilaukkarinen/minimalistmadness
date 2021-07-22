@@ -39,7 +39,6 @@
 // Structure
 @import 'layout/general';
 @import 'layout/typography';
-@import 'layout/site-header';
 @import 'layout/site-footer';
 @import 'layout/forms';
 @import 'layout/hero';
@@ -56,7 +55,7 @@
 // Views
 @import 'views/front-page';
 @import 'views/page';
-@import 'views/single' ;
+@import 'views/single';
 @import 'views/comments';
 @import 'views/archive';
 

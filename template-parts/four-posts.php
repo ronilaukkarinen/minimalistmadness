@@ -34,7 +34,7 @@ namespace Air_Light;
 
     // Reading time
     $post = get_post();
-    $words = str_word_count( strip_tags( $post->post_content ) );
+    $words = str_word_count( strip_tags( $post->post_content ) ); // phpcs:ignore
     $minutes = floor( $words / 120 );
     $seconds = floor( $words % 120 / ( 120 / 60 ) );
 
@@ -51,7 +51,7 @@ namespace Air_Light;
     if ( has_excerpt() ) :
       $excerpt = wpautop( get_the_excerpt() ); // phpcs:ignore
     else :
-      $sentence = preg_match( '/^([^.!?]*[\.!?]+){0,2}/', strip_tags( get_the_content() ), $summary );
+      $sentence = preg_match( '/^([^.!?]*[\.!?]+){0,2}/', strip_tags( get_the_content() ), $summary ); // phpcs:ignore
       $excerpt = wpautop( strip_shortcodes( $summary[0] ) ); // phpcs:ignore
     endif;
 
@@ -70,7 +70,7 @@ namespace Air_Light;
   }
 
   // Reset
-  wp_reset_query();
+  wp_reset_postdata();
 
   // Bail if no posts for some reason
   if ( empty( $posts ) ) {
@@ -134,7 +134,7 @@ namespace Air_Light;
 
     <div class="load-more load-more-container" data-use-query="posts_query">
       <?php // Check if we should event show load more button in first place and save query to js variable for later use.
-        if ( $query->found_posts != $query->post_count ) : ?>
+        if ( $query->found_posts !== $query->post_count ) : ?>
 
         <button class="button load-more">Lataa lisää</button>
 
@@ -143,8 +143,8 @@ namespace Air_Light;
         ?>
 
       <script>
-        var posts_query_original = <?php echo json_encode( $query->query ) ?>;
-        var posts_query = <?php echo json_encode( $query->query ) ?>;
+        var posts_query_original = <?php echo json_encode( $query->query ) // phpcs:ignore ?>;
+        var posts_query = <?php echo json_encode( $query->query ) // phpcs:ignore ?>;
       </script>
     </div>
 

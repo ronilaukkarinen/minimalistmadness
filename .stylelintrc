@@ -2,7 +2,6 @@
   "defaultSeverity": "warning",
   "plugins": [
     "stylelint-value-no-unknown-custom-properties",
-    "stylelint-declaration-use-variable",
     "stylelint-scss",
     "stylelint-a11y",
 		"stylelint-order"
@@ -17,17 +16,6 @@
         "content/themes/minimalistmadness/css/dev/global.css"
       ]
     }],
-    "sh-waqar/declaration-use-variable": [
-      [
-        "/color/",
-        {
-          "ignoreValues": [
-            "transparent",
-            "inherit"
-          ]
-        }
-      ]
-    ],
     "custom-property-empty-line-before": "never",
     "block-closing-brace-empty-line-before": "never",
     "property-case": "lower",
@@ -53,7 +41,7 @@
     "comment-whitespace-inside": "always",
     "indentation": 2,
     "linebreaks": "unix",
-    "selector-max-specificity": "0,4,4",
+    "selector-max-specificity": "5,8,8",
     "block-no-empty": true,
     "declaration-colon-newline-after": null,
     "declaration-empty-line-before": "never",
@@ -81,7 +69,7 @@
     "font-family-name-quotes": "always-where-required",
     "at-rule-empty-line-before": null,
     "at-rule-no-unknown": null,
-    "declaration-no-important": true,
+    "declaration-no-important": null,
     "comment-empty-line-before": null,
     "at-rule-name-newline-after": null,
     "at-rule-semicolon-newline-after": null,
@@ -98,15 +86,15 @@
     "font-weight-notation": "numeric",
     "number-max-precision": 3,
     "selector-class-pattern": null,
-    "selector-max-class": 4,
-    "selector-max-combinators": 3,
-    "selector-max-compound-selectors": 4,
-    "selector-max-pseudo-class": 2,
+    "selector-max-class": 15,
+    "selector-max-combinators": 6,
+    "selector-max-compound-selectors": 6,
+    "selector-max-pseudo-class": 10,
     "selector-max-universal": 1,
     "property-no-vendor-prefix": true,
     "selector-no-vendor-prefix": true,
     "selector-no-qualifying-type": null,
-    "max-nesting-depth": [ 3, { "ignore": ["blockless-at-rules", "pseudo-classes"] } ],
+    "max-nesting-depth": [ 6, { "ignore": ["blockless-at-rules", "pseudo-classes"] } ],
     "declaration-block-no-duplicate-properties": true,
     "no-unknown-animations": true,
     "selector-pseudo-element-colon-notation": "double",

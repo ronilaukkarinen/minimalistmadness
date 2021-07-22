@@ -1,6 +1,6 @@
 .block.block-four-posts.block-most-popular .container {
   .post-feed {
-    @include grid(4, $gutter_x: 40px, $gutter_y: 0px);
+    @include grid(4, $gutter_x: 40px, $gutter_y: 0);
 
     @media (max-width: 1000px) {
       @include grid(2, $gutter_x: 40px, $gutter_y: 40px);
@@ -16,7 +16,7 @@
     }
   }
 
-  .post-feed .post-card-image .img:after {
+  .post-feed .post-card-image .img::after {
     content: '';
     display: block;
     padding-bottom: 130%;

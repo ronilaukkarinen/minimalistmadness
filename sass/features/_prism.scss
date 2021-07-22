@@ -1,57 +1,57 @@
 code[class*="language-"] {
-  color: #f8f8f2;
-  background: none;
-  text-shadow: 0 1px rgba(#000, .3);
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  tab-size: 4;
-  hyphens: none;
+  background-color: transparent;
   border: 0;
+  color: #f8f8f2;
+  font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+  hyphens: none;
+  line-height: 1.5;
   padding: 0;
+  tab-size: 4;
+  text-align: left;
+  text-shadow: 0 1px rgba(#000, .3);
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
 }
 
 pre[class*="language-"] {
+  background-color: transparent;
+  border: 0;
+  border-radius: 4px;
   color: #f8f8f2;
-  background: none;
-  text-shadow: 0 1px rgba(#000, .3);
-  font-family: 'Inconsolata','Monaco','Consolas','Andale Mono','Bitstream Vera Sans Mono','Courier New',Courier,monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  tab-size: 4;
+  font-family: Inconsolata, Monaco, Consolas, Andale Mono, Bitstream Vera Sans Mono, Courier New, Courier, monospace;
   hyphens: none;
-  padding: 10px 20px;
+  line-height: 1.5;
   margin: .5em -10rem;
   overflow: auto;
-  border-radius: 4px;
-  border: 0;
+  padding: 10px 20px;
+  tab-size: 4;
+  text-align: left;
+  text-shadow: 0 1px rgba(#000, .3);
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
 
   @media (max-width: 1111px) {
     margin: .5em 0;
   }
 
   code {
-    font-size: 13px;
     border-radius: 4px;
+    font-size: 13px;
   }
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #232830;
+  background-color: #232830;
 }
 
 :not(pre) > code[class*="language-"] {
-  padding: .1em;
   border-radius: 0;
+  padding: .1em;
   white-space: normal;
 }
 
@@ -119,11 +119,11 @@ pre[class*="language-"] {
 
   &.important {
     color: #fd971f;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   &.bold {
-    font-weight: bold;
+    font-weight: 700;
   }
 
   &.italic {
@@ -139,4 +139,3 @@ pre[class*="language-"] {
 .style .token.string {
   color: #f8f8f2;
 }
-

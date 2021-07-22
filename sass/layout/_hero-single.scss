@@ -1,3 +1,4 @@
+/* stylelint-disable a11y/no-display-none, declaration-property-unit-allowed-list */
 .single .site-head {
   display: none;
 }
@@ -9,6 +10,7 @@
   position: relative;
 
   .shade {
+    /* stylelint-disable-next-line */
     background: linear-gradient(to bottom, rgba(#131517, .1), rgba(#131517, .75));
     opacity: 1;
   }
@@ -71,7 +73,7 @@
     h1 {
       @include responsive-font(30px, 70px);
       color: #fff;
-      font-family: 'ColfaxAI' !important;
+      font-family: ColfaxAI, sans-serif !important;
       font-weight: 600;
       line-height: 1.1;
     }
@@ -98,7 +100,7 @@
     }
 
     &::before {
-      background: #fff;
+      background-color: #fff;
       content: '';
       display: block;
       height: 2px;
@@ -214,6 +216,7 @@
   }
 
   &.fadeout {
+    /* stylelint-disable-next-line */
     animation: fadeOutUpShort 1000ms;
     opacity: 0;
   }
@@ -223,6 +226,7 @@
   }
 
   .swiping-hand {
+    /* stylelint-disable-next-line */
     animation: fadeOutUp 3s infinite;
     display: none;
     height: 55px;
@@ -251,7 +255,7 @@
 
 .animated-mouse {
   @include horizontal-align();
-  background: transparent;
+  background-color: transparent;
   border: 2px solid #fff;
   border-radius: 14px;
   bottom: 5px;
@@ -277,9 +281,10 @@
     animation-duration: 3s;
     animation-fill-mode: backwards;
     animation-iteration-count: infinite;
+    /* stylelint-disable-next-line */
     animation-name: mousePointer;
     animation-timing-function: linear;
-    background: #fff;
+    background-color: #fff;
     border-radius: 100%;
     height: 6px;
     left: 49%;

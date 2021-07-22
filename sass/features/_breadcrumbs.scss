@@ -1,3 +1,4 @@
+/* stylelint-disable no-unknown-animations, property-disallowed-list, a11y/no-display-none, a11y/no-outline-none */
 // Built to work with:
 // https://fi.wordpress.org/plugins/breadcrumb-trail/
 // https://github.com/digitoimistodude/air
@@ -17,7 +18,7 @@
   }
 
   .trail-items li {
-    background: none;
+    background-color: transparent;
     color: $color-links;
     font-family: $font-base;
     font-size: 15px;
@@ -91,12 +92,6 @@
     // IE10 + IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       transform: translateY(-37%);
-    }
-  }
-
-  li::last-of-type {
-    &::after {
-      display: none;
     }
   }
 }

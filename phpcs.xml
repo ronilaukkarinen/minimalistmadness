@@ -97,6 +97,10 @@
         <exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedScript" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
         <exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
+        <exclude name="Squiz.Commenting.InlineComment.SpacingBefore" />
+        <exclude name="Squiz.PHP.CommentedOutCode.Found" />
+        <exclude name="WordPress.Arrays.MultipleStatementAlignment" />
+        <exclude name="Generic.Formatting.MultipleStatementAlignment" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.

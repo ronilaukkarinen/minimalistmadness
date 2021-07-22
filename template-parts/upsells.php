@@ -23,7 +23,7 @@ $selected_posts = get_field( 'selected_posts', 'option' );
       <div class="post-feed">
         <?php foreach ( $selected_posts as $selected_post ) :
 
-          $words = str_word_count( strip_tags( $selected_post->post_content ) );
+          $words = str_word_count( strip_tags( $selected_post->post_content ) ); // phpcs:ignore
           $minutes = floor( $words / 120 );
           $seconds = floor( $words % 120 / ( 120 / 60 ) );
 

@@ -5,16 +5,16 @@
 // Backgrounds
 @mixin background-cover() {
   background: {
-    size: cover;
-    repeat: no-repeat;
     position: center;
+    repeat: no-repeat;
+    size: cover;
   }
 }
 
 @mixin background-auto() {
   background: {
-    size: 100% auto;
-    repeat: no-repeat;
     position: center;
+    repeat: no-repeat;
+    size: 100% auto;
   }
 }

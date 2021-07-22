@@ -34,7 +34,7 @@
     position: relative;
 
     a.global-link:not(.button):not(.post-edit-link) {
-      background: none;
+      background-color: transparent;
       border: 0;
       box-shadow: none;
       height: 100%;
@@ -47,7 +47,7 @@
 
     a.global-link:not(.button):not(.post-edit-link):hover,
     a.global-link:not(.button):not(.post-edit-link):focus {
-      background: none;
+      background-color: transparent;
     }
   }
 

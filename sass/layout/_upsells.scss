@@ -12,7 +12,7 @@
     }
   }
 
-  .post-feed .post-card-image .img:after {
+  .post-feed .post-card-image .img::after {
     content: '';
     display: block;
     padding-bottom: 130%;

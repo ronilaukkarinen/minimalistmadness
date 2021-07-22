@@ -1,11 +1,4 @@
-// ------------------------------------------------
-// WordPress blog & articles view
-//
-// The styles for most of the TinyMCE produced
-// classes and other WordPress editor formatting.
-// ------------------------------------------------
-
-// WordPress alignments
+/* stylelint-disable a11y/no-display-none */
 .cat-links,
 .tags-links {
   display: block;
@@ -462,7 +455,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 dfn {
@@ -486,12 +479,12 @@ kbd {
 // Preformatted text.
 // CSS Simple Pre Code
 pre {
-  background: #232830;
+  background-color: #232830;
   border: 1px solid #232830;
   border-radius: 4px;
   color: #ddd;
   display: block;
-  font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+  font-family: Inconsolata, Monaco, Consolas, Andale Mono, Bitstream Vera Sans Mono, Courier New, Courier, monospace;
   font-size: 13px;
   line-height: 19px;
   margin: 3rem 0;
@@ -547,7 +540,6 @@ ul.tags {
 
   li {
     display: inline-block;
-    float: left;
     margin-bottom: 10px;
     margin-left: 0;
     margin-right: 10px;
@@ -555,7 +547,7 @@ ul.tags {
     padding-left: 0;
 
     a {
-      background: #f0f0f0;
+      background-color: #f0f0f0;
       border-radius: 4px;
       color: #333;
       display: inline;
@@ -566,7 +558,7 @@ ul.tags {
 
     a:hover,
     a:focus {
-      background: #aaa;
+      background-color: #aaa;
       color: #fff;
       opacity: 1;
     }
@@ -677,7 +669,7 @@ ul.tags {
   }
 
   a.button {
-    background: none;
+    background-color: transparent;
     border: 1px solid $color-body;
     border-radius: 50px;
     color: $color-body;
@@ -687,7 +679,7 @@ ul.tags {
 
     &:hover,
     &:focus {
-      background: $color-body;
+      background-color: $color-body;
       border-color: $color-body;
       color: $color-white;
     }
@@ -772,7 +764,7 @@ ul.tags {
 
 .notification-box.old,
 .container.container-article article .notification-box.old {
-  background: $color-white;
+  background-color: $color-white;
   border: 1px dashed darken($color-blog-links, 5%);
   box-shadow: 0 0 0 3px #f8f8f8, 0 0 0 5px darken($color-blog-links, 5%), 0 0 0 10px #f8f8f8, 0 0 2px 10px #eee;
   color: darken($color-blog-links, 5%);

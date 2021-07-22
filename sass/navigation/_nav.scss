@@ -1,3 +1,4 @@
+/* stylelint-disable number-max-precision, declaration-property-unit-allowed-list, a11y/no-display-none */
 .site-head {
   font-size: 1.35rem;
   margin-top: -10px;
@@ -55,9 +56,7 @@
   padding: 10px 12px;
 }
 
-.current-menu-item a,
 .site-head a:hover,
-.active a,
 .current-menu-item a,
 .site-head a:focus,
 .active a {
@@ -177,7 +176,6 @@
       }
     }
 
-    &.active,
     &:hover,
     &.active,
     &:focus {
@@ -226,7 +224,6 @@
   margin-bottom: 1px;
 }
 
-
 /* Mobile Nav Menu
 /* ---------------------------------------------------------- */
 
@@ -244,7 +241,7 @@
   }
 
   .site-head-container {
-    background: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
     display: flex;
     flex-direction: column;
     height: 40px;
@@ -324,7 +321,7 @@
   }
 
   .site-head-open {
-    background: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 1);
     height: 100vh;
     overflow: hidden;
     transition: background .5s ease-out;
@@ -379,6 +376,7 @@
   color: inherit;
   cursor: pointer;
   display: flex;
+  /* stylelint-disable-next-line */
   font: inherit;
   margin: 0;
   overflow: visible;

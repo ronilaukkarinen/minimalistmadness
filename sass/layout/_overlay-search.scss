@@ -1,3 +1,4 @@
+/* stylelint-disable a11y/no-display-none, a11y/no-outline-none */
 body.overlay-open {
   overflow: hidden;
   top: 0;
@@ -8,22 +9,22 @@ button.search-trigger:focus {
 }
 
 .overlay {
+  height: 100%;
+  opacity: 0;
   position: fixed;
   top: -100vh;
-  visibility: hidden;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
   transition: all $transition-duration;
+  visibility: hidden;
+  width: 100%;
 
   &.overlay-open {
+    left: 0;
     margin-right: 0;
     opacity: 1;
-    visibility: visible;
+    overflow-y: auto;
     position: fixed;
     top: 0;
-    left: 0;
-    overflow-y: auto;
+    visibility: visible;
     z-index: 10000;
   }
 }
@@ -37,24 +38,24 @@ body .overlay-search {
 
   ul,
   li {
+    list-style: none;
     margin-left: 0;
     padding-left: 0;
-    list-style: none;
   }
 
   .container {
-    max-width: 85%;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
-    padding-top: 6.4rem;
-    padding-right: 0;
+    max-width: 85%;
     padding-left: 0;
+    padding-right: 0;
+    padding-top: 6.4rem;
+    position: relative;
   }
 
   .search-form {
-    display: flex;
     align-items: center;
+    display: flex;
     flex-wrap: wrap;
 
     @media (max-width: 500px) {
@@ -66,9 +67,9 @@ body .overlay-search {
     }
 
     input {
-      width: 100%;
-      margin-right: -99px;
       margin-left: -40px;
+      margin-right: -99px;
+      width: 100%;
 
       @media (max-width: 500px) {
         margin-left: -70px;
@@ -81,12 +82,12 @@ body .overlay-search {
   }
 
   .search-icon {
-    background: transparent;
+    background-color: transparent;
     border: 0;
 
     svg {
-      width: 30px;
       height: 30px;
+      width: 30px;
     }
   }
 
@@ -94,12 +95,12 @@ body .overlay-search {
   .search:focus {
     @include responsive-font(22px, 42px);
     background-color: transparent;
-    padding-top: 2rem;
-    padding-left: 5.5rem;
-    padding-bottom: 2rem;
-    padding-right: 2.5rem;
-    color: $color-black;
     border-bottom: 2px solid $color-black;
+    color: $color-black;
+    padding-bottom: 2rem;
+    padding-left: 5.5rem;
+    padding-right: 2.5rem;
+    padding-top: 2rem;
 
     &::placeholder {
       color: $color-black;
@@ -108,9 +109,9 @@ body .overlay-search {
   }
 
   .search-title svg {
+    margin-right: 1rem;
     position: relative;
     top: -3px;
-    margin-right: 1rem;
   }
 }
 
@@ -119,11 +120,11 @@ body .overlay-search {
 .overlay .button.button-close,
 .footer-navigation-open .button.button-close {
   @extend %default;
-  background: transparent;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
   color: $color-black;
   display: flex;
-  align-items: center;
-  border: 0;
   position: relative;
   z-index: 99;
 
@@ -134,18 +135,18 @@ body .overlay-search {
   }
 
   svg {
-    width: 4rem;
-    height: 4rem;
     fill: $color-black;
+    height: 4rem;
     margin-right: 1rem;
+    width: 4rem;
   }
 
   &:hover,
   &:focus {
-    background: transparent;
-    opacity: .6;
+    background-color: transparent;
     color: $color-black;
     cursor: pointer;
+    opacity: .6;
 
     svg {
       fill: $color-black;
@@ -167,8 +168,8 @@ body .overlay-search {
   }
 
   svg {
-    left: 0;
     fill: $color-black;
+    left: 0;
   }
 }
 
@@ -193,11 +194,11 @@ body .overlay-search {
 }
 
 .overlay-search .tcon-search--xcross {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  pointer-events: none;
   // position: absolute;
   z-index: 4;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  pointer-events: none;
 
   &.tcon-transform {
     pointer-events: auto;
@@ -218,18 +219,18 @@ $tcon-search-glass-radius: ($tcon-size / 2.2) !default;
 $tcon-search-glass-border-width: ($tcon-size / 20) !default;
 
 .tcon {
+  align-items: center;
   appearance: none;
+  background-color: transparent;
   border: 0;
   cursor: pointer;
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: auto;
+  justify-content: center;
+  margin-top: -4px;
+  outline: none;
   user-select: none;
   width: $tcon-size;
-  background: transparent;
-  outline: none;
-  margin-top: -4px;
 
   > * {
     display: block;
@@ -237,57 +238,58 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
 
   &:hover,
   &:focus {
+    /* stylelint-disable-next-line */
     outline: none; // see issue #36 https://github.com/grayghostvisuals/transformicons/issues/36
   }
 }
 
 @mixin search-item {
+  background-color: transparent;
+  border-radius: 0;
   display: inline-block;
   height: $tcon-search-size;
   width: $tcon-search-size;
-  border-radius: 0;
-  background: transparent;
 }
 
 .tcon-search__item {
   @include search-item;
+  overflow: visible;
   position: relative;
   transform: rotate(-45deg);
-  overflow: visible;
 
   &::before,
   &::after {
     @include search-item;
-    content: '';
-    position: absolute;
-    width: 100%;
-    top: 0;
     bottom: 0;
+    content: '';
     margin: auto;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
   &::before {
-    height: $tcon-search-handle-width;
-    left: 0;
-    background: $tcon-search-color;
+    background-color: $tcon-search-color;
     border-radius: $tcon-search-radius;
     content: ' ';
+    height: $tcon-search-handle-width;
+    left: 0;
 
     /* CSS specific to iOS devices */
     @supports (-webkit-overflow-scrolling: touch) {
-      z-index: 55;
       left: -27px;
+      z-index: 55;
     }
   }
 
   &::after {
-    right: 0;
-    background: #fff;
-    border-radius: 50%;
-    width: $tcon-search-glass-radius;
-    height: $tcon-search-glass-radius;
+    background-color: #fff;
     border: $tcon-search-glass-border-width solid $tcon-search-glass-color;
+    border-radius: 50%;
+    height: $tcon-search-glass-radius;
+    right: 0;
     transform-origin: 50% 50%;
+    width: $tcon-search-glass-radius;
   }
 }
 
@@ -300,19 +302,19 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
     .tcon-search__item {
       &::before,
       &::after {
-        content: '';
+        background-color: $tcon-search-color;
         border-radius: $tcon-search-radius;
-        background: $tcon-search-color;
+        content: '';
       }
 
       &::after {
+        border: 0;
         content: '';
         height: $tcon-search-handle-width;
-        width: 100%;
-        top: 0;
         right: 0;
-        border: 0;
+        top: 0;
         transform: rotate3d(0, 0, 1, 90deg);
+        width: 100%;
       }
 
       &::before {
@@ -348,9 +350,9 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
 }
 
 .search-mobile {
+  background-color: $color-black;
   position: relative;
   z-index: 10;
-  background: $color-black;
 }
 
 .search-results-mobile > div,
@@ -371,25 +373,25 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
   width: 100%;
 
   .tagline {
-    font-weight: 700;
     color: $color-white;
+    font-weight: 700;
     margin-bottom: 1rem;
   }
 
   h2 {
     @extend %h4;
-    margin: 0;
     color: $color-black;
     display: inline-block;
+    margin: 0;
 
     a {
       @extend %link;
-      color: $color-black;
+      align-items: center;
       border: 0;
       box-shadow: none;
+      color: $color-black;
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       margin: 0;
       padding: 0;
     }
@@ -407,11 +409,12 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
   }
 
   .underlined-hover a {
-    &:after {
+    &::after {
       background-color: $color-white;
     }
 
-    &:hover:after {
+    &:hover::after,
+    &:focus::after {
       width: 8vw;
     }
   }
@@ -434,13 +437,14 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
   }
 
   li {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    /* stylelint-disable-next-line */
     animation: fadeIn .2s ease-in both;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 
     @media (max-width: $container-ipad) {
-      padding-top: 1rem;
       padding-bottom: 1rem;
+      padding-top: 1rem;
     }
 
     &:nth-child(2) {

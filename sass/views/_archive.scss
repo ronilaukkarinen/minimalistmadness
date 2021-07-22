@@ -3,24 +3,26 @@ body .site-content .custom-pagination {
   transition: all .55s;
 
   a:not(.button):not(.post-edit-link) {
+    border: 0 !important;
+    box-shadow: none !important;
     color: #444;
-    transition: all .22s;
     margin-left: 5px;
     margin-right: 5px;
     text-decoration: none;
-    border: 0 !important;
-    box-shadow: none !important;
+    transition: all .22s;
 
     &.current {
       color: #333;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: lighten($color-links, 15%);
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 1;
   }
 }
@@ -35,17 +37,17 @@ body .site-content .custom-pagination {
 }
 
 .entry-stack {
+  border-bottom: 1px solid #ebebeb;
   margin-bottom: 40px;
   padding-bottom: 40px;
-  border-bottom: 1px solid #ebebeb;
 
   &:last-of-type {
     border: 0;
   }
 
   h2 {
-    font-size: 24px;
     color: $color-headings;
+    font-size: 24px;
     font-weight: 600;
     margin-bottom: 10px;
 
@@ -55,17 +57,17 @@ body .site-content .custom-pagination {
   }
 
   p {
-    margin: 0;
-    font-size: 16px;
     color: #444;
+    font-size: 16px;
     line-height: 1.5;
+    margin: 0;
   }
 
   .entry-stack-header {
     p,
     .dot-divider {
-      font-size: 13px;
       color: #888;
+      font-size: 13px;
     }
 
     p {
@@ -87,10 +89,10 @@ body .site-content .custom-pagination {
     overflow: hidden;
 
     p {
-      padding: 7px 0;
-      margin: 0;
-      font-size: 14px;
       color: #757575;
+      font-size: 14px;
+      margin: 0;
+      padding: 7px 0;
 
       @media (max-width: $container-mobile) {
         padding: 3px 0;
@@ -105,11 +107,11 @@ body .site-content .custom-pagination {
 }
 
 .notification-box {
-  border-top: 1px solid #d9d9d9;
   border-bottom: 1px solid #d9d9d9;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  border-top: 1px solid #d9d9d9;
   margin-bottom: 60px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 
   &.old {
     border-color: #93461f;
@@ -121,16 +123,16 @@ body .site-content .custom-pagination {
   }
 
   h3 {
+    color: #444;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 10px;
     margin-top: 0;
-    color: #444;
   }
 
   p {
-    margin: 0;
     color: #444;
     font-size: 16px;
+    margin: 0;
   }
 }

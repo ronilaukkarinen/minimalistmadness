@@ -1,10 +1,4 @@
-// ------------------------------------------------------------
-// Forms and input fields
-//
-// All the forms on the site. General styles. Supports most of
-// the Gravity Forms styles out of the box.
-// ------------------------------------------------------------
-
+/* stylelint-disable a11y/no-display-none, declaration-property-unit-allowed-list, a11y/no-outline-none */
 // Buttons
 .content-area,
 .site-footer {
@@ -13,7 +7,7 @@
   input[type="reset"],
   input[type="submit"],
   input[type="button"] {
-    background: none;
+    background-color: transparent;
     border: 1px solid $color-body;
     border-radius: 50px;
     color: $color-body;
@@ -38,7 +32,7 @@
 
     &:hover,
     &:focus {
-      background: $color-body;
+      background-color: $color-body;
       border-color: $color-body;
       color: $color-white;
     }
@@ -119,17 +113,16 @@ input[type="search"] {
 
   &:focus {
     background-color: #fafafa;
+    /* stylelint-disable-next-line */
     outline: 0;
 
     &::placeholder {
-      color: #222;
       opacity: .8;
     }
   }
 }
 
 select {
-  appearance: none;
   appearance: none;
   background-image: url('../../svg/select.svg');
   background-position: right center;

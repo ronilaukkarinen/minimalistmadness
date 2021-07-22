@@ -160,14 +160,14 @@
     }
 
     .gallery-caption {
-      font-size: .85em;
-      margin-top: .7em;
-      font-style: italic;
       display: block;
       font-family: $font-headings;
+      font-size: .85em;
+      font-style: italic;
       line-height: 1.2;
-      text-align: center;
+      margin-top: .7em;
       opacity: .6;
+      text-align: center;
     }
 
     .gallery-icon {

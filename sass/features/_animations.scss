@@ -1,8 +1,9 @@
+/* stylelint-disable */
 .transition-fade {
-  transition: .25s;
-  opacity: 1;
   animation: slideUp .9s cubic-bezier(.075, .82, .165, 1) forwards;
+  opacity: 1;
   transform: translate3d(0, 4vh, 0);
+  transition: .25s;
 }
 
 html.is-animating .transition-fade {
@@ -88,11 +89,11 @@ html.is-animating .transition-fade {
   }
 
   20% {
-    transform: translate(-3px, 0px) rotate(1deg);
+    transform: translate(-3px, 0) rotate(1deg);
   }
 
   30% {
-    transform: translate(0px, 2px) rotate(0deg);
+    transform: translate(0, 2px) rotate(0deg);
   }
 
   40% {

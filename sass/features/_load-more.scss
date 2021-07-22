@@ -1,5 +1,5 @@
+/* stylelint-disable no-unknown-animations, property-disallowed-list, a11y/no-display-none */
 .load-more-spinner {
-
   // It loads so fast we don't need it
   display: none !important;
   height: 166px;
@@ -22,7 +22,7 @@
   z-index: 2;
 
   .button.load-more {
-    background: transparent;
+    background-color: transparent;
     border: 2px solid $color-body;
     border-radius: 52px;
     bottom: 0;

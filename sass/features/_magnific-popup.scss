@@ -1,3 +1,4 @@
+/* stylelint-disable no-unknown-animations, property-disallowed-list, a11y/no-display-none */
 // Built to work with:
 // http://dimsemenov.com/plugins/magnific-popup/
 // https://github.com/digitoimistodude/air
@@ -5,7 +6,7 @@
 // Import this file after magnific-popup/dist/magnific-popup
 
 .mfp-bg {
-  background: rgba(#000, .8);
+  background-color: rgba(#000, .8);
   opacity: 1;
   z-index: 99999 !important;
 }
@@ -109,11 +110,11 @@
   }
 
   .mfp-content {
-    background: transparent;
+    background-color: transparent;
     padding: 0;
 
     .mfp-close {
-      background: #000;
+      background-color: #000;
       border: 2px solid transparent;
       border-radius: 0;
       color: #fff;
