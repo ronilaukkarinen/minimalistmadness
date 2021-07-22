@@ -1,3 +1,19 @@
+@import 'magic.css/assets/scss/math/swashOut';
+
+.closing {
+  // The time needs to be the same than in js: ownAd.classList.add('closing');
+  animation-duration: 400ms;
+  animation-iteration-count: infinite;
+  /* stylelint-disable-next-line */
+  animation-name: swashOut;
+  animation-timing-function: linear;
+}
+
+/* stylelint-disable-next-line */
+.dismissed {
+  display: none;
+}
+
 /* stylelint-disable a11y/no-display-none */
 .advertisement {
   @extend .container;
