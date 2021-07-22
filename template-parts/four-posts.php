@@ -49,10 +49,10 @@ namespace Air_Light;
     endif;
 
     if ( has_excerpt() ) :
-      $excerpt = wpautop( get_the_excerpt() ); // WPCS: XSS OK.
+      $excerpt = wpautop( get_the_excerpt() ); // phpcs:ignore
     else :
       $sentence = preg_match( '/^([^.!?]*[\.!?]+){0,2}/', strip_tags( get_the_content() ), $summary );
-      $excerpt = wpautop( strip_shortcodes( $summary[0] ) ); // WPCS: XSS OK.
+      $excerpt = wpautop( strip_shortcodes( $summary[0] ) ); // phpcs:ignore
     endif;
 
     $post_reading_time = '<span class="time-to-read">' . $estimated_time . ' lukukokemus</span>';
@@ -94,12 +94,12 @@ namespace Air_Light;
         <div class="post-card-content">
           <a href="<?php echo esc_url( $post['permalink'] ); ?>" class="global-link" aria-hidden="true" tabindex="-1"><span class="screen-reader-text"><?php echo esc_attr( $post['title'] ); ?></span></a>
 
-          <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo $post['post_time'];  // WPCS: XSS OK. ?><br /><?php echo $post['post_reading_time'];  // WPCS: XSS OK. ?></p><?php if ( has_post_thumbnail( $post['id'] ) ) { image_lazyload_div( get_post_thumbnail_id( $post['id'], 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
+          <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo $post['post_time'];  // phpcs:ignore ?><br /><?php echo $post['post_reading_time'];  // phpcs:ignore ?></p><?php if ( has_post_thumbnail( $post['id'] ) ) { image_lazyload_div( get_post_thumbnail_id( $post['id'], 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
 
           <div class="post-card-information">
             <h2 class="post-card-title-large"><a href="<?php echo esc_url( $post['permalink'] ); ?>"><?php echo esc_attr( $post['title'] ); ?></a></h2>
 
-            <?php echo $post['excerpt']; // WPCS: XSS OK. ?>
+            <?php echo $post['excerpt']; // phpcs:ignore ?>
           </div>
 
         </div>

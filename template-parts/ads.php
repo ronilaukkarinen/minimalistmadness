@@ -25,7 +25,7 @@ if ( strtotime( get_field( 'eraantymispaiva' ) ) > time() ) : ?>
 
   <div class="advertisement ad advert textad">
     <div class="ad-top ad textad">
-      <?php echo get_field( 'mainoskoodi' ); // WPCS: XSS OK. ?>
+      <?php echo get_field( 'mainoskoodi' ); // phpcs:ignore ?>
     </div><!-- .textad -->
   </div><!-- .ad -->
 

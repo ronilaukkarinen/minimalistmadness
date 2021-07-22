@@ -67,10 +67,10 @@ function air_get_excerpt_for_rest_api( $object ) {
   $post_id = $object['id'];
 
     if ( has_excerpt( $post_id ) ) :
-      $excerpt = get_the_excerpt( $post_id ); // WPCS: XSS OK.
+      $excerpt = get_the_excerpt( $post_id ); // phpcs:ignore
     else :
       $sentence = preg_match( '/^([^.!?]*[\.!?]+){0,2}/', strip_tags( get_the_content( $post_id ) ), $summary );
-      $excerpt = strip_shortcodes( $summary[0] ); // WPCS: XSS OK.
+      $excerpt = strip_shortcodes( $summary[0] ); // phpcs:ignore
     endif;
 
   return $excerpt;

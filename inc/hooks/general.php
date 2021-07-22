@@ -447,7 +447,7 @@ function khonsu_pagination() {
     )
   );
 
-  echo '<p class="custom-pagination">' . $paginate_links . '</p>'; // WPCS: XSS OK.
+  echo '<p class="custom-pagination">' . $paginate_links . '</p>'; // phpcs:ignore
 }
 
 /**

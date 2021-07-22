@@ -32,7 +32,7 @@ $query = new \WP_Query(array(
         $query->the_post();
 
         if ( has_excerpt() ) {
-          $excerpt = wpautop( get_the_excerpt() ); // WPCS: XSS OK.
+          $excerpt = wpautop( get_the_excerpt() ); // phpcs:ignore
         } else {
           $sentence = preg_match( '/^([^.!?]*[\.!?]+){0,2}/', strip_tags( get_the_content() ), $summary ); // phpcs:ignore
           $excerpt = wpautop( strip_shortcodes( $summary[0] ) ); // phpcs:ignore
