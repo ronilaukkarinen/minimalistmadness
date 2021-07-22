@@ -25,17 +25,17 @@ namespace Air_Light;
         </div>
       </div>
       <div class="col col-images">
-        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( esc_url( get_template_directory_uri() ) ); ?>/images/instagram-5.jpg');"><a href="https://www.instagram.com/p/_P_FY3G0Vm" class="global-link"></a></div>
+        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( esc_url( get_template_directory_uri() ) ); ?>/images/instagram-5.jpg');"><a href="https://www.instagram.com/p/_P_FY3G0Vm" class="global-link" aria-label="Kuva kahvikupista, jonka pinnalle heijastuu koodia. Siirry katselemaan ulkoiselle sivustolle Instagramiin"></a></div>
       </div>
 
       <div class="col col-images-multiple">
-        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/instagram-2.jpg');"><a href="https://www.instagram.com/p/BWkzo1YH41w" class="global-link"></a></div>
+        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/instagram-2.jpg');"><a href="https://www.instagram.com/p/BWkzo1YH41w" class="global-link" aria-label="Rolle ja Manu-poika hymyilevät. Siirry katselemaan ulkoiselle sivustolle Instagramiin"></a></div>
 
-        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/instagram-3.jpg');"><a href="https://www.instagram.com/p/BkvleS7HJWF" class="global-link"></a></div>
+        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/instagram-3.jpg');"><a href="https://www.instagram.com/p/BkvleS7HJWF" class="global-link" aria-label="Rolle ja Veera-vaimo hymyilevät. Siirry katselemaan ulkoiselle sivustolle Instagramiin"></a></div>
 
-        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/instagram-4.jpg');"><a href="https://www.instagram.com/p/BD0kbXIm0T3" class="global-link"></a></div>
+        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/instagram-4.jpg');"><a href="https://www.instagram.com/p/BD0kbXIm0T3" class="global-link" aria-label="Rolle koodaa läppärillä puiston penkillä. Siirry katselemaan ulkoiselle sivustolle Instagramiin"></a></div>
 
-        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/instagram-1.jpg');"><a href="https://www.instagram.com/p/BNL6xgrg3iR" class="global-link"></a></div>
+        <div class="instagram instagram-1" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/instagram-1.jpg');"><a href="https://www.instagram.com/p/BNL6xgrg3iR" class="global-link" aria-label="Taiteellinen tummataustainen potrettikuva Rollesta. Siirry katselemaan ulkoiselle sivustolle Instagramiin"></a></div>
 
       </div>
     </div>
