@@ -24,34 +24,72 @@ get_header(); ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <header class="post-head inverted archive-all">
-          <h2 id="content"><svg aria-hidden="true" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24"><path fill="currentColor" d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>Kaikki Rollemaan <?php echo esc_attr( wp_count_posts()->publish ); ?> kirjoitusta</h2>
+          <h1 id="content" class="post-head-title"><svg aria-hidden="true" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24"><path fill="currentColor" d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>Kaikki Rollemaan <?php echo esc_attr( wp_count_posts()->publish ); ?> kirjoitusta</h1>
         </header>
 
-        <div class="posts-feed-all">
-          <ul class="post-feed-simplified">
+      <?php
+      global $wpdb;
+
+      $limit     = 0;
+      $year_prev = null;
+
+      $months = $wpdb->get_results( "SELECT DISTINCT MONTH( post_date ) AS month ,  YEAR( post_date ) AS year, COUNT( id ) as post_count FROM $wpdb->posts WHERE post_status = 'publish' and post_date <= now( ) and post_type = 'post' GROUP BY month , year ORDER BY post_date DESC" ); // phpcs:ignore
+
+      foreach ( $months as $month ) :
+        $year_current = $month->year;
+
+        if ( $year_current !== $year_prev ) {
+          if ( null !== $year_prev ) { ?>
+          <?php } ?>
+            <h2 class="year"><?php echo esc_html( $month->year ); ?></h2>
+          <?php } ?>
+
+          <div class="posts-feed-all">
+          <h3 class="month"><?php echo wp_kses_post( date_i18n( 'F', mktime( 0, 0, 0, $month->month, 1, $month->year ) ) ); ?></h3>
+
           <?php
+          // WP_Query arguments
           $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => -1,
-            'cache_results' => true,
-            'no_found_rows' => true,
-            'post_status' => 'publish',
+            'year'           => $month->year,
+            'monthnum'       => $month->month,
+          	'posts_per_page' => '-1',
           );
 
+          // The Query
           $query = new \WP_Query( $args );
-          while ( $query->have_posts() ) :
-            $query->the_post();
-            ?>
 
-            <li>
-              <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="global-link" aria-hidden="true" tabindex="-1"></a>
-              <p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time></p>
-              <h3 class="post-card-title"><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_attr( get_the_title() ); ?></a></h3>
-            </li>
-
-          <?php endwhile; ?>
+          // The Loop
+          if ( $query->have_posts() ) { ?>
+          <ul class="post-feed-simplified">
+			      <?php while ( $query->have_posts() ) {
+				      $query->the_post(); ?>
+			          <li>
+                  <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="global-link" aria-hidden="true" tabindex="-1"></a>
+                  <p class="post-card-details">
+                    <time datetime="<?php echo esc_html( get_the_time( 'c' ) ); ?>">
+                      <?php echo esc_html( get_the_time( 'm' ) ); ?>/<?php echo esc_html( get_the_time( 'd' ) ); ?>
+                    </time>
+                  </p>
+                  <h4 class="post-card-title">
+                    <a href="<?php echo esc_url( get_the_permalink() ); ?>">
+                      <?php echo esc_html( get_the_title() ); ?>
+                    </a>
+                  </h4>
+                </li>
+					    <?php }
+            } ?>
           </ul>
-        </div>
+          </div>
+
+          <?php wp_reset_postdata(); ?>
+
+        <?php $year_prev = $year_current;
+          // if ( ++$limit >= 18 ) {
+          //   break;
+          // }
+
+          endforeach;
+        ?>
 
         <?php if ( get_edit_post_link() ) : ?>
           <footer class="entry-footer">

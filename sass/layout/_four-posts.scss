@@ -172,6 +172,7 @@
   position: relative;
   transition: all $transition-duration;
 
+  .post-head-title span,
   h2 span,
   &::before {
     opacity: .3;
@@ -195,6 +196,7 @@
     }
   }
 
+  &:hover .post-head-title span,
   &:hover h2 span,
   &:hover::before,
   &:focus h2 span,
@@ -220,6 +222,7 @@
     width: 18px;
   }
 
+  .post-head-title,
   h2 {
     align-items: center;
     display: flex;
