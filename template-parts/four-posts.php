@@ -92,7 +92,7 @@ namespace Air_Light;
 
       <article class="entry post-card post no-animation">
         <div class="post-card-content">
-          <a href="<?php echo esc_url( $post['permalink'] ); ?>" class="global-link"><span class="screen-reader-text"><?php echo esc_attr( $post['title'] ); ?></span></a>
+          <a href="<?php echo esc_url( $post['permalink'] ); ?>" class="global-link" aria-hidden="true" tabindex="-1"><span class="screen-reader-text"><?php echo esc_attr( $post['title'] ); ?></span></a>
 
           <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo $post['post_time'];  // WPCS: XSS OK. ?><br /><?php echo $post['post_reading_time'];  // WPCS: XSS OK. ?></p><?php if ( has_post_thumbnail( $post['id'] ) ) { image_lazyload_div( get_post_thumbnail_id( $post['id'], 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>
 
@@ -109,7 +109,7 @@ namespace Air_Light;
 
     <article class="entry post-card post no-animation item-vue" v-for="(post, index) in posts" v-bind:id="'post-' + post.id">
       <div class="post-card-content">
-        <a v-bind:href="post.link" class="global-link" v-bind:aria-label="post.title.rendered"></a>
+        <a v-bind:href="post.link" class="global-link" v-bind:aria-label="post.title.rendered" aria-hidden="true" tabindex="-1"></a>
 
         <div class="post-card-image no-bottom-radius"><div class="img"><div class="post-card-details"><div v-html="post.time_custom">{{ post.time_custom }}</div><div v-html="post.reading_time_custom">{{ post.reading_time_custom }}</div></div><div class="background-image full-image" v-bind:style="{ backgroundImage: 'url(' + post.featured_image_custom + ')' }"></div></div></div>
 
