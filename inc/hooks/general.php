@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-04-21 09:19:36
+ * @Last Modified time: 2021-07-27 12:29:52
  */
 
 namespace Air_Light;
@@ -43,12 +43,13 @@ function post_word_count_by_author( $author = false ) {
     $query = "SELECT post_content FROM $wpdb->posts WHERE post_status = 'publish' AND post_date < '$now'";
   }
 
-  $words = $wpdb->get_results( $query );
+  $words = $wpdb->get_results( $query ); // phpcs:ignore
   if ( $words ) {
     foreach ( $words as $word ) {
-      $post = strip_tags( $word->post_content );
+      $post = strip_tags( $word->post_content ); // phpcs:ignore
       $post = explode( ' ', $post );
       $count = count( $post );
+      $oldcount = null;
       $totalcount = $count + $oldcount;
       $oldcount = $totalcount;
     }
@@ -116,7 +117,7 @@ function khonsu_get_random_image_id() {
 function khonsu_estimated_reading_time() {
 
   $post = get_post();
-  $words = str_word_count( strip_tags( $post->post_content ) );
+  $words = str_word_count( strip_tags( $post->post_content ) ); // phpcs:ignore
   $minutes = floor( $words / 120 );
   $seconds = floor( $words % 120 / ( 120 / 60 ) );
 
@@ -340,7 +341,7 @@ function air_helper_get_image_lazyload_sizes( $image_id = 0, $sizes = [] ) {
   // Loop sizes to get corresponding image url
   foreach ( $sizes as $size_for => $size ) {
     // Check that asked image size exists and fallback to full size
-    if ( ! in_array( $size, $intermediate_sizes ) ) {
+    if ( ! in_array( $size, $intermediate_sizes ) ) { // phpcs:ignore
       $size = 'full';
     }
 
@@ -461,7 +462,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
       'menu_slug'   => 'khonsu-settings',
       'capability'  => 'edit_posts',
       'redirect'    => false,
-      'icon_url'    => 'data:image/svg+xml;base64,' . base64_encode( '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 24 24" fill="#9ea4aa"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z"/></svg>' ),
+      'icon_url'    => 'data:image/svg+xml;base64,' . base64_encode( '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 24 24" fill="#9ea4aa"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z"/></svg>' ), // phpcs:ignore
       'position' => 5,
     )
   );

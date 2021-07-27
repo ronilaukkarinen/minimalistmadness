@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-07-10 18:39:45
+ * @Last Modified time: 2021-07-27 12:32:51
  *
  * @package minimalistmadness
  **/
@@ -50,12 +50,12 @@ function build_taxonomies() {
     $file_path = get_theme_file_path( '/inc/taxonomies/' . $slug . '.php' );
 
     if ( ! file_exists( $file_path ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'minimalistmadness' ), $classname );
     }
     require $file_path;
 
     if ( ! class_exists( $classname ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'minimalistmadness' ), $classname );
     }
 
     $taxonomy_class = new $classname( $slug );
@@ -76,13 +76,13 @@ function build_post_types() {
     $file_path = get_theme_file_path( '/inc/post-types/' . $slug . '.php' );
 
     if ( ! file_exists( $file_path ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'minimalistmadness' ), $classname );
     }
     // Get the class file
     require $file_path;
 
     if ( ! class_exists( $classname ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'minimalistmadness' ), $classname );
     }
 
     $post_type_class = new $classname( $slug );
