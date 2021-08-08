@@ -23,7 +23,7 @@ namespace Air_Light;
 
   <?php wp_head(); ?>
 
-  <?php if ( ! is_logged_in() ) : ?>
+  <?php if ( ! is_user_logged_in() ) : ?>
     <?php if ( is_singular() && ! has_tag( 'raha' ) ) : ?>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <script>

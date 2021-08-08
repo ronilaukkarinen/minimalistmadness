@@ -5,7 +5,7 @@
  * @package minimalistmadness
  */
 
-if ( ! is_logged_in() ) :
+if ( ! is_user_logged_in() ) :
 if ( 2 === $count || is_page() || is_single() ) : ?>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

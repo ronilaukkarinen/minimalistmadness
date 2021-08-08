@@ -5,7 +5,7 @@
  * @package khonsu
  */
 
-if ( is_home() && ! is_paged() && ! is_logged_in() ) : ?>
+if ( is_home() && ! is_paged() && ! is_user_logged_in() ) : ?>
 
 <div id="placement">
 <?php $args = array(
