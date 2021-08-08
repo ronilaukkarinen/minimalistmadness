@@ -23,14 +23,16 @@ namespace Air_Light;
 
   <?php wp_head(); ?>
 
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <?php if ( is_singular() && ! has_tag( 'raha' ) ) : ?>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-8523880252818258",
-      enable_page_level_ads: true
-    });
-    </script>
+  <?php if ( ! is_logged_in() ) : ?>
+    <?php if ( is_singular() && ! has_tag( 'raha' ) ) : ?>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-8523880252818258",
+        enable_page_level_ads: true
+      });
+      </script>
+    <?php endif; ?>
   <?php endif; ?>
 </head>
 
