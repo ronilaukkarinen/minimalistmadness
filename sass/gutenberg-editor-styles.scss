@@ -41,6 +41,30 @@
 @import 'jeet/scss/index';
 @import 'views/single';
 
+// List fix
+.editor-styles-wrapper div[data-title="Klassinen"] ul > li {
+  padding-left: 2.2rem !important;
+}
+
+.editor-styles-wrapper ul {
+  padding-left: 0 !important;
+}
+
+.editor-styles-wrapper ul > li {
+  padding-left: 2.2rem !important;
+}
+
+// Editor default list font size fix
+.editor-styles-wrapper ol > li,
+.editor-styles-wrapper ul > li {
+  font-size: var(--font-size-19);
+}
+
+// Editor default font size fix
+.editor-styles-wrapper p {
+  font-size: var(--font-size-19);
+}
+
 // Editor exceptions below
 // These styles are NO USE to front-end
 .editor-styles-wrapper {
