@@ -49,7 +49,7 @@ del {
   max-width: 100%;
 }
 
-.editor-styles,
+.editor-styles-wrapper,
 .container.container-article article,
 .container.container-article .article {
   padding-bottom: 0;
@@ -161,12 +161,73 @@ del {
     margin-bottom: 0;
   }
 
+  // Lists in general
   ul,
   ol {
     padding-left: 2.2rem;
 
     @media (max-width: $article-max-width + 40px) {
       padding-left: 4.2rem;
+    }
+  }
+
+  // Ordered list style
+  ol {
+    counter-reset: ol-li-counter;
+    list-style: none;
+    padding-left: 0;
+
+    > li {
+      counter-increment: ol-li-counter;
+    }
+
+    > li::before {
+      color: var(--color-science-blue);
+      content: counter(ol-li-counter) ". ";
+      font-family: $font-alt;
+      font-weight: var(--font-weight-semibold);
+      margin-right: .2rem;
+    }
+
+    @media (max-width: $article-max-width + 40px) {
+      padding-left: 2.2rem;
+    }
+  }
+
+  // Bullet style
+  ul {
+    padding-left: 0;
+
+    @media (max-width: $article-max-width + 40px) {
+      padding-left: 2.2rem;
+    }
+  }
+
+  ul > li {
+    list-style: none;
+    padding-left: 2.2rem;
+    position: relative;
+
+    &::before {
+      border: 5px solid transparent;
+      border-bottom-color: var(--color-science-blue);
+      content: "";
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: 5px;
+      width: 0;
+    }
+
+    &::after {
+      border: 5px solid transparent;
+      border-top-color: var(--color-science-blue);
+      content: "";
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: 15px;
+      width: 0;
     }
   }
 
