@@ -35,26 +35,39 @@ a {
   }
 }
 
+.gradient-text {
+  /* stylelint-disable-next-line */
+  animation: rainbow 2s ease-in-out infinite;
+  /* stylelint-disable-next-line */
+  background: linear-gradient(to right, rgb(179, 20, 52), rgb(182, 104, 117), rgba(12, 131, 71, 1));
+  background-clip: text;
+  background-size: 200% 200%;
+  color: rgba(0, 0, 0, 1);
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: left;
+  }
+
+  50% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: left;
+  }
+}
+
 @mixin link() {
+  @extend .gradient-text;
   border-bottom: .1px solid var(--color-science-blue);
   color: var(--color-science-blue);
+  font-family: $font-alt;
+  font-weight: var(--font-weight-semibold);
   position: relative;
   text-decoration: none;
   transition: all .18s cubic-bezier(.33, .66, .66, 1);
-
-  &::before {
-    background-color: $color-white;
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: scale(1);
-    transition: all .18s cubic-bezier(.33, .66, .66, 1);
-    width: 100%;
-    z-index: -1;
-  }
 
   &.global-link:hover::before,
   &.global-link::before,
@@ -64,18 +77,8 @@ a {
 
   &:hover,
   &:focus {
-    // Fallback
-    background-color: var(--color-science-blue);
-    color: var(--color-white);
-
-    &::after {
-      background-image: url('../../svg/external-link-white.svg');
-    }
-
-    &::before {
-      background-color: var(--color-science-blue);
-      transform: scaleX(1.1) scaleY(1.5);
-    }
+    border-color: transparent;
+    color: rgba(0, 0, 0, 0);
   }
 }
 

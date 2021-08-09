@@ -62,9 +62,9 @@ del {
   }
 
   a:not(.button):not(.post-edit-link):not(.author-link) {
+    @extend %link;
     position: relative;
     text-decoration: none;
-    @extend %link;
   }
 
   .minikuvateksti,
@@ -213,10 +213,14 @@ del {
       border-bottom-color: var(--color-science-blue);
       content: "";
       height: 0;
-      left: 0;
+      left: 2px;
       position: absolute;
-      top: 5px;
+      top: 8px;
       width: 0;
+
+      @media (max-width: $article-max-width + 40px) {
+        top: 5px;
+      }
     }
 
     &::after {
@@ -224,10 +228,14 @@ del {
       border-top-color: var(--color-science-blue);
       content: "";
       height: 0;
-      left: 0;
+      left: 2px;
       position: absolute;
-      top: 15px;
+      top: 18px;
       width: 0;
+
+      @media (max-width: $article-max-width + 40px) {
+        top: 15px;
+      }
     }
   }
 
@@ -632,6 +640,7 @@ ul.tags {
 }
 
 .comments-link {
+  @extend %small;
   display: block;
   text-align: right;
 
@@ -654,7 +663,6 @@ ul.tags {
       fill: #111;
     }
   }
-  @extend %small;
 }
 
 .entry-footer {

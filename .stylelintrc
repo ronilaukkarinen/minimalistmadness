@@ -16,6 +16,24 @@
         "content/themes/minimalistmadness/css/dev/global.css"
       ]
     }],
+    "order/order": [
+      {
+        "type": "at-rule",
+        "name": "include"
+      },
+      {
+        "type": "at-rule",
+        "name": "extend"
+      },
+      'custom-properties',
+      'dollar-variables',
+      'declarations',
+      'rules',
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+		],
     "custom-property-empty-line-before": "never",
     "block-closing-brace-empty-line-before": "never",
     "property-case": "lower",
