@@ -3,9 +3,16 @@
 .is-style-no-bullets,
 .wp-block-column .is-style-no-bullets {
   list-style: none !important;
-  padding-left: 0 !important;
 
-  li {
+  @media (min-width: $article-max-width + 40px) {
     padding-left: 0 !important;
+
+    li {
+      padding-left: 0 !important;
+    }
+  }
+
+  @media (max-width: $article-max-width + 40px) {
+    padding-left: 2.2rem !important;
   }
 }
