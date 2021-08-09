@@ -15,22 +15,30 @@ blockquote.wp-block-quote {
   margin-top: 4rem;
   max-width: 920px;
   padding: 4rem 6rem;
-  width: calc(100% - 12rem);
 
   cite {
     text-align: left;
+
+    a:not(.button):not(.post-edit-link):not(.author-link) {
+      font-weight: var(--font-weight-regular);
+    }
   }
 
   * {
     line-height: 1.77;
   }
 
-  @media (max-width: $container-mobile) {
-    padding: 4rem 2rem;
-  }
-
   p {
     font-size: var(--font-size-21);
+  }
+
+  > p {
+    color: var(--color-blockquote);
+    line-height: var(--line-height-paragraphs-blog);
+  }
+
+  @media (max-width: $container-mobile) {
+    padding: 4rem 2rem;
   }
 
   @media (max-width: $width-max-article + 40px) {
@@ -40,11 +48,6 @@ blockquote.wp-block-quote {
 
   @media (max-width: $container-mobile) {
     padding: 4rem 4rem 4rem 2rem;
-  }
-
-  > p {
-    color: var(--color-blockquote);
-    line-height: var(--line-height-paragraphs-blog);
   }
 }
 

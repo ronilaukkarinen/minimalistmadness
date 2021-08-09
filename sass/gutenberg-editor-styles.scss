@@ -54,6 +54,15 @@
   padding-left: 2.2rem !important;
 }
 
+// Blockquote fix for desktop
+.editor-styles-wrapper blockquote,
+.editor-styles-wrapper blockquote.wp-block-quote {
+  left: -60px;
+  max-width: 920px !important;
+  min-width: 920px;
+  width: 100% !important;
+}
+
 // Editor default list font size fix
 .editor-styles-wrapper ol > li,
 .editor-styles-wrapper ul > li {

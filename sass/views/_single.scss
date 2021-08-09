@@ -172,7 +172,7 @@ del {
   }
 
   // Ordered list style
-  ol {
+  ol:not(.is-style-no-bullets) {
     counter-reset: ol-li-counter;
     list-style: none;
     padding-left: 0;
@@ -195,7 +195,7 @@ del {
   }
 
   // Bullet style
-  ul {
+  ul:not(.is-style-no-bullets) {
     padding-left: 0;
 
     @media (max-width: $article-max-width + 40px) {
@@ -203,7 +203,7 @@ del {
     }
   }
 
-  ul > li {
+  ul:not(.is-style-no-bullets) > li {
     list-style: none;
     padding-left: 2.2rem;
     position: relative;
