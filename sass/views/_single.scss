@@ -47,6 +47,11 @@ del {
 .container.container-article article,
 .container.container-article .article {
   max-width: 100%;
+}
+
+.editor-styles,
+.container.container-article article,
+.container.container-article .article {
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -57,9 +62,9 @@ del {
   }
 
   a:not(.button):not(.post-edit-link):not(.author-link) {
-    @extend %link;
     position: relative;
     text-decoration: none;
+    @extend %link;
   }
 
   .minikuvateksti,
@@ -143,12 +148,12 @@ del {
       line-height: 1.77;
     }
 
-    @media (max-width: $container-mobile) {
-      padding: 4rem 2rem;
-    }
-
     p {
       @include responsive-font($font-min-size, 22px);
+    }
+
+    @media (max-width: $container-mobile) {
+      padding: 4rem 2rem;
     }
   }
 
@@ -202,11 +207,6 @@ del {
       }
     }
 
-    @media (max-width: $article-max-width + 40px) {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-
     &.wp-block-image {
       margin-bottom: 4rem;
       margin-top: 4rem;
@@ -249,12 +249,12 @@ del {
       max-width: 1000px;
       text-align: center;
 
-      @media (max-width: 600px) {
-        margin-top: 0;
-      }
-
       svg {
         margin-left: 5px;
+      }
+
+      @media (max-width: 600px) {
+        margin-top: 0;
       }
     }
 
@@ -262,10 +262,6 @@ del {
       margin-bottom: 9rem;
       max-width: 800px;
       text-align: center;
-
-      @media (max-width: $container-mobile) {
-        margin-bottom: 8rem;
-      }
 
       p {
         @include responsive-font(16px, 19px);
@@ -275,6 +271,10 @@ del {
         @media (max-width: $container-mobile) {
           font-size: 15px;
         }
+      }
+
+      @media (max-width: $container-mobile) {
+        margin-bottom: 8rem;
       }
 
       @media (max-width: $container-mobile) {
@@ -334,6 +334,11 @@ del {
         border-radius: 0;
       }
     }
+
+    @media (max-width: $article-max-width + 40px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 
   @media (min-width: 1170px) {
@@ -378,10 +383,6 @@ del {
 .wp-caption {
   max-width: 100%;
 
-  @media (max-width: $article-max-width + 40px) {
-    width: 100% !important;
-  }
-
   img[class*="wp-image-"] {
     display: block;
     margin: 0 auto;
@@ -392,6 +393,10 @@ del {
     margin-bottom: 20px;
     padding: 1rem 0;
     text-align: left;
+  }
+
+  @media (max-width: $article-max-width + 40px) {
+    width: 100% !important;
   }
 }
 
@@ -566,7 +571,6 @@ ul.tags {
 }
 
 .comments-link {
-  @extend %small;
   display: block;
   text-align: right;
 
@@ -589,6 +593,7 @@ ul.tags {
       fill: #111;
     }
   }
+  @extend %small;
 }
 
 .entry-footer {
@@ -664,10 +669,6 @@ ul.tags {
   overflow: hidden;
   padding-top: 30px;
 
-  @media (max-width: $container-mobile) {
-    text-align: center;
-  }
-
   a.button {
     background-color: transparent;
     border: 1px solid $color-body;
@@ -687,15 +688,6 @@ ul.tags {
 
   .author-col-avatar {
     @include column(1/6);
-
-    @media (max-width: 600px) {
-      @include column(1.2/6);
-    }
-
-    @media (max-width: $container-mobile) {
-      @include stack();
-      margin-bottom: 30px;
-    }
 
     img {
       border-radius: 50%;
@@ -717,6 +709,15 @@ ul.tags {
         min-width: 100px;
         width: 100px;
       }
+    }
+
+    @media (max-width: 600px) {
+      @include column(1.2/6);
+    }
+
+    @media (max-width: $container-mobile) {
+      @include stack();
+      margin-bottom: 30px;
     }
   }
 
@@ -760,6 +761,10 @@ ul.tags {
       margin-bottom: 0;
     }
   }
+
+  @media (max-width: $container-mobile) {
+    text-align: center;
+  }
 }
 
 .notification-box.old,
@@ -772,12 +777,6 @@ ul.tags {
   margin-bottom: 6rem;
   padding: 3rem;
   text-align: center;
-
-  @media (max-width: $article-max-width + 40px) {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    width: calc(100% - 4rem);
-  }
 
   svg {
     height: auto;
@@ -800,5 +799,11 @@ ul.tags {
   p {
     color: darken($color-blog-links, 5%);
     font-family: $font-old;
+  }
+
+  @media (max-width: $article-max-width + 40px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: calc(100% - 4rem);
   }
 }
