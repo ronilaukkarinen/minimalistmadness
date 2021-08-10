@@ -49,6 +49,12 @@ get_header();
           ) );
           ?>
 
+          <p>
+            <a class="button button-bmc no-external-link-indicator" href="https://www.buymeacoffee.com/Fd140aV"><?php include get_theme_file_path( '/svg/bmc.svg' ); ?>
+              <span>Piditkö tekstistä? Tarjoa kahvit!</span>
+            </a>
+          </p>
+
           <?php if ( get_edit_post_link() ) { ?>
             <footer class="entry-footer">
               <?php edit_post_link(
