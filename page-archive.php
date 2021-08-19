@@ -35,7 +35,7 @@ get_header(); ?>
               echo count( $tags ); ?>. Alla käytetyimmät.</h4>
 
               <div class="tag-cloud">
-                <ul>
+                <ul class="is-style-no-bullets">
                   <?php
                   foreach ( $tags as $key => $tag ) :
                     if ( 'twitter-tilapäivitys' !== $tag->name ) :
