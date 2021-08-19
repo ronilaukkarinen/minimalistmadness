@@ -60,7 +60,7 @@ get_header(); ?>
 
           // The Loop
           if ( $query->have_posts() ) { ?>
-          <ul class="post-feed-simplified">
+          <ul class="post-feed-simplified is-style-no-bullets">
 			      <?php while ( $query->have_posts() ) {
 				      $query->the_post(); ?>
 			          <li>
