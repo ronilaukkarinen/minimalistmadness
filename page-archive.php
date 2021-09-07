@@ -99,7 +99,7 @@ get_header(); ?>
 
             <h2>Täydellinen blogiarkisto</h2>
 
-            <p>Rollemaa sisältää yhteensä <?php echo esc_attr( wp_count_posts()->publish ); ?> kirjoitusta, joka pitää sisällään yhteensä <?php echo esc_attr( post_word_count_by_author() ); ?> sanaa. Voit selata listausta <a href="<?php echo esc_url( get_page_link( 8609 ) ); ?>">omalta sivultaan</a>, mutta älä sano etten varoittanut!</p>
+            <p>Rollemaa sisältää yhteensä <?php echo esc_attr( wp_count_posts()->publish ); ?> kirjoitusta, joka pitää sisällään yhteensä <?php echo esc_attr( get_word_count_from_posts() ); ?> sanaa. Voit selata listausta <a href="<?php echo esc_url( get_page_link( 8609 ) ); ?>">omalta sivultaan</a>, mutta älä sano etten varoittanut!</p>
 
           <?php if ( get_edit_post_link() ) { ?>
           <footer class="entry-footer">
