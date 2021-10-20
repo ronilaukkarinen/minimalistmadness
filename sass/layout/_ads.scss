@@ -16,9 +16,14 @@
 
 /* stylelint-disable a11y/no-display-none */
 .advertisement {
+  @extend .container;
   padding-bottom: 0;
   padding-top: 0;
-  @extend .container;
+}
+
+// Hide ads on top of the page
+.site-head + .google-auto-placed {
+  display: none !important;
 }
 
 .ad-top {
@@ -40,9 +45,9 @@
   }
 
   a {
+    @extend %link;
     border-color: #888;
     color: #888;
-    @extend %link;
   }
 }
 

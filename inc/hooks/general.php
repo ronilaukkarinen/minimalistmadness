@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-07-27 12:29:52
+ * @Last Modified time: 2021-09-07 13:34:24
  */
 
 namespace Air_Light;
@@ -30,34 +30,22 @@ function widgets_init() {
 
 /**
  * Count all words
- *
- * @param author $author Author.
  */
-function post_word_count_by_author( $author = false ) {
-  global $wpdb;
-  $now = gmdate( 'Y-m-d H:i:s', time() );
+function get_word_count_from_posts() {
 
-  if ( $author ) {
-    $query = "SELECT post_content FROM $wpdb->posts WHERE post_author = '$author' AND post_status= 'publish' AND post_date < '$now'";
-  } else {
-    $query = "SELECT post_content FROM $wpdb->posts WHERE post_status = 'publish' AND post_date < '$now'";
-  }
+	$count = 0;
+	$posts = get_posts( array(
+			'numberposts' => -1,
+			'post_type' => 'any',
+	));
 
-  $words = $wpdb->get_results( $query ); // phpcs:ignore
-  if ( $words ) {
-    foreach ( $words as $word ) {
-      $post = strip_tags( $word->post_content ); // phpcs:ignore
-      $post = explode( ' ', $post );
-      $count = count( $post );
-      $oldcount = null;
-      $totalcount = $count + $oldcount;
-      $oldcount = $totalcount;
-    }
-  } else {
-    $totalcount = 0;
-  }
+	foreach ( $posts as $post ) {
+		$count += str_word_count( strip_tags( get_post_field( 'post_content', $post->ID ) ) ); // phpcs:ignore
+	}
 
-  return str_replace( ',', ' ', number_format( $totalcount ) );
+	$num = number_format_i18n( $count );
+
+	return $num;
 }
 
 /**

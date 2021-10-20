@@ -33,8 +33,15 @@
   padding-left: 0;
 
   .blocks-gallery-item {
+    list-style: none;
     margin: 0;
+    padding-left: 0 !important;
     width: 100%;
+
+    &::before,
+    &::after {
+      display: none !important;
+    }
   }
 }
 
