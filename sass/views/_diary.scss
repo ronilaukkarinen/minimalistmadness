@@ -32,12 +32,20 @@ body.single-diary {
   }
 
   .diary-title {
+    font-weight: 600;
     line-height: 1.2;
     margin: 0 auto 2rem;
   }
 
-  .prefix {
-    color: rgb(0 0 0 / .45);
+  .prefix,
+  .container-article.advertisement .article p.prefix,
+  .container-article.advertisement .entry-content p.prefix,
+  .container-article.advertisement article p.prefix,
+  .container.container-article .article p.prefix,
+  .container.container-article .entry-content p.prefix,
+  .container.container-article article p.prefix,
+  .editor-styles-wrapper p.prefix {
+    color: rgb(0 0 0 / .55);
     font-size: var(--diary-font-size-prefix);
     margin: 2rem auto 1rem;
   }

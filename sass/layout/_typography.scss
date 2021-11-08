@@ -60,30 +60,20 @@ a {
 }
 
 @mixin link() {
-  @extend .gradient-text;
-  border-bottom: .1px solid var(--color-accent);
   color: var(--color-accent);
-  font-family: $font-alt;
-  font-weight: var(--font-weight-semibold);
-  position: relative;
-  text-decoration: none;
-  transition: all .18s cubic-bezier(.33, .66, .66, 1);
+  display: inline !important;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  transition: all .18s ease-in-out;
 
-  &.global-link:hover::before,
-  &.global-link::before,
-  &.global-link:focus::before {
-    display: none !important;
+  &:focus,
+  &:hover {
+    color: #1cb050;
+    text-decoration-color: #1cb050;
   }
-
-  &:hover,
-  &:focus {
-    border-color: transparent;
-    color: rgba(0, 0, 0, 0);
-  }
-}
-
-%link {
-  @include link();
 }
 
 // Preset for small fonts

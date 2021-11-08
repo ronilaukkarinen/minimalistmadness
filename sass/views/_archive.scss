@@ -78,7 +78,7 @@ body .site-content .custom-pagination {
   .entry-stack-details {
     p {
       a {
-        @extend %link;
+        @include link();
         color: #757575;
       }
     }
@@ -94,13 +94,13 @@ body .site-content .custom-pagination {
       margin: 0;
       padding: 7px 0;
 
-      @media (max-width: $container-mobile) {
-        padding: 3px 0;
+      a {
+        @include link();
+        color: #757575;
       }
 
-      a {
-        @extend %link;
-        color: #757575;
+      @media (max-width: $container-mobile) {
+        padding: 3px 0;
       }
     }
   }

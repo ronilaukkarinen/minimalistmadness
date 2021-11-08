@@ -32,10 +32,6 @@ button.search-trigger:focus {
 body .overlay-search {
   background-color: rgba($color-white, .8);
 
-  @media (max-width: $responsivenav) {
-    background-color: rgba($color-white, .95);
-  }
-
   ul,
   li {
     list-style: none;
@@ -58,10 +54,6 @@ body .overlay-search {
     display: flex;
     flex-wrap: wrap;
 
-    @media (max-width: 500px) {
-      justify-content: space-between;
-    }
-
     .search-icon {
       width: 40px;
     }
@@ -78,6 +70,10 @@ body .overlay-search {
       @media (max-width: 322px) {
         font-size: 17px;
       }
+    }
+
+    @media (max-width: 500px) {
+      justify-content: space-between;
     }
   }
 
@@ -113,6 +109,10 @@ body .overlay-search {
     position: relative;
     top: -3px;
   }
+
+  @media (max-width: $responsivenav) {
+    background-color: rgba($color-white, .95);
+  }
 }
 
 // Overlay buttons
@@ -127,12 +127,6 @@ body .overlay-search {
   display: flex;
   position: relative;
   z-index: 99;
-
-  @media (max-width: 500px) {
-    span {
-      display: none;
-    }
-  }
 
   svg {
     fill: $color-black;
@@ -152,6 +146,12 @@ body .overlay-search {
       fill: $color-black;
     }
   }
+
+  @media (max-width: 500px) {
+    span {
+      display: none;
+    }
+  }
 }
 
 .overlay.overlay-search .button.button-close,
@@ -163,13 +163,13 @@ body .overlay-search {
   color: $color-black;
   width: 99px;
 
-  @media (max-width: 500px) {
-    width: 60px;
-  }
-
   svg {
     fill: $color-black;
     left: 0;
+  }
+
+  @media (max-width: 500px) {
+    width: 60px;
   }
 }
 
@@ -385,7 +385,7 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
     margin: 0;
 
     a {
-      @extend %link;
+      @include link();
       align-items: center;
       border: 0;
       box-shadow: none;
@@ -399,7 +399,7 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
 
   ul a,
   li a {
-    @extend %link;
+    @include link();
     padding-left: 0;
     padding-right: 0;
 
@@ -441,11 +441,6 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
     animation: fadeIn .2s ease-in both;
     padding-bottom: 1rem;
     padding-top: 1rem;
-
-    @media (max-width: $container-ipad) {
-      padding-bottom: 1rem;
-      padding-top: 1rem;
-    }
 
     &:nth-child(2) {
       animation-delay: .2s;
@@ -541,6 +536,11 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
 
     &:nth-child(25) {
       animation-delay: 4.8s;
+    }
+
+    @media (max-width: $container-ipad) {
+      padding-bottom: 1rem;
+      padding-top: 1rem;
     }
   }
 }

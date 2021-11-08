@@ -45,7 +45,7 @@
   }
 
   a {
-    @extend %link;
+    @include link();
     border-color: #888;
     color: #888;
   }

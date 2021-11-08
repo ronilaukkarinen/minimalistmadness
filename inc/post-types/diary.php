@@ -54,7 +54,7 @@ class Diary extends Post_Type {
       'label'                 => __( 'Päiväkirja', 'minimalistmadness' ),
       'description'           => __( 'merkinnät', 'minimalistmadness' ),
       'labels'                => $generated_labels,
-      'supports'              => array( 'title', 'editor', 'author', 'revisions', 'post-formats' ),
+      'supports'              => array( 'title', 'editor', 'author', 'revisions', 'post-formats', 'thumbnail' ),
       'hierarchical'          => false,
       'public'                => true,
       'show_ui'               => true,

@@ -64,9 +64,7 @@ del {
   }
 
   a:not(.button):not(.post-edit-link):not(.author-link) {
-    @extend %link;
-    position: relative;
-    text-decoration: none;
+    @include link();
   }
 
   .minikuvateksti,
