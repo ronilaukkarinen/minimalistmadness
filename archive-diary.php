@@ -16,25 +16,19 @@ get_header(); ?>
 <div class="content-area">
 	<main role="main" id="main" class="site-main block block-page">
 
-    <div class="container container-archive container-article">
-      <div class="article">
+    <?php if ( have_posts() ) :
+      $count = 0; ?>
 
-      <?php if ( have_posts() ) :
-        $count = 0; ?>
+      <?php while ( have_posts() ) :
+        the_post();
+        get_template_part( 'template-parts/content-diary' );
+      endwhile;
 
-          <?php while ( have_posts() ) :
-            the_post();
-            get_template_part( 'template-parts/content-diary' );
-            endwhile;
+      khonsu_pagination();
 
-            khonsu_pagination();
-
-            else :
-              get_template_part( 'template-parts/content', 'none' );
-            endif; ?>
-
-        </div>
-    </div><!-- .container -->
+    else :
+      get_template_part( 'template-parts/content', 'none' );
+    endif; ?>
 
   </main><!-- #main -->
 </div><!-- #primary -->
