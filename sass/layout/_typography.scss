@@ -61,8 +61,8 @@ a {
 
 @mixin link() {
   @extend .gradient-text;
-  border-bottom: .1px solid var(--color-science-blue);
-  color: var(--color-science-blue);
+  border-bottom: .1px solid var(--color-accent);
+  color: var(--color-accent);
   font-family: $font-alt;
   font-weight: var(--font-weight-semibold);
   position: relative;
