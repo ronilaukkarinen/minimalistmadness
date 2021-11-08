@@ -41,6 +41,9 @@
 @import 'jeet/scss/index';
 @import 'views/single';
 
+// Diary styles
+@import 'views/diary';
+
 // List fix
 .editor-styles-wrapper div[data-title="Klassinen"] ul > li {
   padding-left: 2.2rem !important;

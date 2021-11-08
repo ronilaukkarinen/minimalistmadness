@@ -77,7 +77,7 @@ $theme_settings = [
   // TODO Instructions how to add post types
 
   'post_types' => [
-    // 'your-post-type' => 'Your_Post_Type',
+    'diary' => 'Diary',
   ],
 
   /**
@@ -85,7 +85,7 @@ $theme_settings = [
    */
 
   // If you want to use classic editor somewhere, define it here
-  'use_classic_editor' => [ '' ],
+  'use_classic_editor' => [],
 
   // Don't restrict blocks
   'allowed_blocks' => 'all',
