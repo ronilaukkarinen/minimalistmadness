@@ -3,6 +3,10 @@
   padding-left: var(--padding-container-horizontal);
   padding-right: var(--padding-container-horizontal);
 
+  &:hover {
+    test: test;
+  }
+
   p {
     line-height: var(--line-height-core-heading);
   }

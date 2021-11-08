@@ -44,12 +44,14 @@ del {
   }
 }
 
+.container.container-article .entry-content,
 .container.container-article article,
 .container.container-article .article {
   max-width: 100%;
 }
 
 .editor-styles-wrapper,
+.container.container-article .entry-content,
 .container.container-article article,
 .container.container-article .article {
   padding-bottom: 0;
@@ -74,7 +76,7 @@ del {
   cite,
   small {
     border: 0;
-    color: rgba(#4b4b5a, .9);
+    color: rgb(75 75 90 / .9);
     font-size: 15px;
     font-style: normal;
     margin-bottom: 6rem;
@@ -443,7 +445,7 @@ del {
 
 // Required post author comment
 .comments-area .comment-list li.bypostauthor {
-  background-color: rgba(#fff6e8, .4);
+  background-color: rgb(255 246 232 / .4);
   border-color: #e3dac5;
   padding: 3rem;
 }
@@ -540,7 +542,7 @@ kbd {
   background-color: #f7f7f7;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px #fff inset;
+  box-shadow: 0 1px 0 rgb(0 0 0 / .2), 0 0 0 2px #fff inset;
   color: #333;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
@@ -732,6 +734,8 @@ ul.tags {
   padding: 0 22px 8px 19px;
 }
 
+body.post-type-archive-diary .container.container-article .entry-content .author-info,
+.single .container.container-article .entry-content .author-info,
 .single .container.container-article article .author-info {
   border-top: 1px solid #f2f2f2;
   margin-top: 60px;
@@ -889,7 +893,7 @@ ul.tags {
 .button.button-bmc {
   background-color: #f27634;
   border: 1px solid transparent;
-  box-shadow: 0 1px 2px rgba(190, 190, 190, .5);
+  box-shadow: 0 1px 2px rgb(190 190 190 / .5);
   box-sizing: border-box;
   color: var(--color-white);
   display: inline-flex;
@@ -906,7 +910,7 @@ ul.tags {
 .button.button-bmc:hover,
 .button.button-bmc:active,
 .button.button-bmc:focus {
-  box-shadow: 0 4px 20px rgba($color-black, .5);
+  box-shadow: 0 4px 20px rgb(0 0 0 / .5);
   color: var(--color-white);
   text-decoration: none;
   transform: scale(1.1);

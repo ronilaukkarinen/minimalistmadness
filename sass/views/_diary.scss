@@ -1,3 +1,54 @@
+// stylelint-disable selector-max-class
+:root {
+  // stylelint-disable-next-line
+  --diary-font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "San Francisco", Inter, "Sofia Pro", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --diary-font-size-main-heading: 32px;
+  --diary-font-size: 17px;
+  --diary-font-size-prefix: 14px;
+  --diary-container-width: 600px;
+
+  @media (max-width: 840px) {
+    --diary-font-size-main-heading: 26px;
+  }
+}
+
+body.post-type-archive-diary,
 body.post-type-diary,
 body.single-diary {
+  &.single .site-head {
+    display: block;
+  }
+
+  .prefix,
+  .diary-title {
+    font-family: var(--diary-font-family-heading);
+    font-size: var(--diary-font-size-main-heading);
+    max-width: var(--diary-container-width);
+
+    @media (max-width: 840px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .diary-title {
+    line-height: 1.2;
+    margin: 0 auto 2rem;
+  }
+
+  .prefix {
+    color: rgb(0 0 0 / .45);
+    font-size: var(--diary-font-size-prefix);
+    margin: 2rem auto 1rem;
+  }
+
+  .container.container-article {
+    padding-top: 0;
+  }
+
+  .container.container-article .entry-content > *,
+  .editor-styles-wrapper > * {
+    font-size: var(--diary-font-size);
+    max-width: var(--diary-container-width);
+  }
 }
