@@ -24,13 +24,14 @@ import styleExternalLinks from './modules/external-link';
 
 // GitHub-styled charts
 // WordPress post data for heatmaps
-const heatmapDataPoints = heatmapdata;
-console.log(heatmapDataPoints);
+const heatmapDataPoints = parseInt(heatmapdata);
+// console.log(typeof heatmapDataPoints);
+// console.log(heatmapDataPoints);
 
 // Construct chart
 const data = {
   dataPoints: {
-    heatmapDataPoints,
+    // heatmapDataPoints,
     // 1636489905: 153,
     // 1636397501: 490,
   },
