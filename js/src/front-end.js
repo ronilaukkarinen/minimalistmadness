@@ -9,7 +9,9 @@ require('./modules/fitvids');
 require('./modules/lazyload');
 require('./modules/prism');
 
-// Import modules (comment to disable)
+// Import modules
+import { Chart } from 'frappe-charts';
+import * as moment from 'moment';
 import './modules/skip-link-focus-fix';
 import 'what-input';
 import MoveTo from 'moveto';
@@ -19,6 +21,31 @@ import SwupBodyClassPlugin from '@swup/body-class-plugin';
 import SwupGaPlugin from '@swup/ga-plugin';
 import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
+
+// GitHub-styled charts
+moment.locale('fi');
+const getDate = new Date();
+const startDate = getDate.setFullYear(getDate.getFullYear() - 1);
+const endDate = getDate.setUTCHours(23, 59, 59, 999);
+
+const data = {
+  dataPoints: {
+    1636234983: 20,
+    1636407783: 113,
+    1636321383: 680,
+    1636494183: 57,
+    // ...
+  },
+  start: new Date(moment().subtract(1, 'year').toDate()),
+  end: new Date(moment().toDate()),
+};
+
+const chart = new Chart('#heatmap', { // or a DOM element,
+  type: 'heatmap',
+  discreteDomains: 0,
+  radius: 1,
+  data,
+});
 
 // Get Vue.js
 const Vue = require('vue/dist/vue.min');
@@ -217,7 +244,7 @@ swup.on('contentReplaced', () => {
       }
     }
 
-    console.log(window.localStorage.getItem('hide_dude_ad'));
+    // console.log(window.localStorage.getItem('hide_dude_ad'));
 
     // Click event for hide forever -button
     document.addEventListener('click', (e) => {

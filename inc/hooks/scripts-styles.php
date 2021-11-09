@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-07-10 18:44:27
+ * @Last Modified time: 2021-11-09 23:39:25
  */
 
 namespace Air_Light;
@@ -99,6 +99,7 @@ function enqueue_theme_scripts() {
  * @return string file and path of the asset file
  */
 function get_asset_file( $filename ) {
+
   $env = 'development' === wp_get_environment_type() && ! isset( $_GET['load_production_builds'] ) ? 'dev' : 'prod'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
   $filetype = pathinfo( $filename )['extension'];

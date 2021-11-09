@@ -7,26 +7,100 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./content/themes/minimalistmadness/js/src/gutenberg-editor.js":
 /*!*********************************************************************!*\
   !*** ./content/themes/minimalistmadness/js/src/gutenberg-editor.js ***!
   \*********************************************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: Cannot find module '@babel/core'\\nRequire stack:\\n- C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js\\n- C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\node_modules\\\\loader-runner\\\\lib\\\\loadLoader.js\\n- C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\node_modules\\\\loader-runner\\\\lib\\\\LoaderRunner.js\\n- C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\node_modules\\\\webpack\\\\lib\\\\NormalModuleFactory.js\\n- C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\node_modules\\\\webpack\\\\lib\\\\Compiler.js\\n- C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\node_modules\\\\webpack\\\\lib\\\\ProgressPlugin.js\\n- C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\node_modules\\\\webpack-stream\\\\index.js\\n- C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\gulp\\\\tasks\\\\js.js\\n- C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\gulpfile.js\\n- C:\\\\Users\\\\Rolle\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\gulp\\\\node_modules\\\\gulp-cli\\\\lib\\\\shared\\\\require-or-import.js\\n- C:\\\\Users\\\\Rolle\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\gulp\\\\node_modules\\\\gulp-cli\\\\lib\\\\versioned\\\\^4.0.0\\\\index.js\\n- C:\\\\Users\\\\Rolle\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\gulp\\\\node_modules\\\\gulp-cli\\\\index.js\\n- C:\\\\Users\\\\Rolle\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\gulp\\\\bin\\\\gulp.js\\n babel-loader@8 requires Babel 7.x (the package '@babel/core'). If you'd like to use Babel 6.x ('babel-core'), you should install 'babel-loader@7'.\\n    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:924:15)\\n    at Function.Module._load (node:internal/modules/cjs/loader:769:27)\\n    at Module.require (node:internal/modules/cjs/loader:996:19)\\n    at require (node:internal/modules/cjs/helpers:92:18)\\n    at Object.<anonymous> (C:\\\\Users\\\\Rolle\\\\Projects\\\\rollemaa\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:10:11)\\n    at Module._compile (node:internal/modules/cjs/loader:1092:14)\\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1121:10)\\n    at Module.load (node:internal/modules/cjs/loader:972:32)\\n    at Function.Module._load (node:internal/modules/cjs/loader:813:14)\\n    at Module.require (node:internal/modules/cjs/loader:996:19)\");\n\n//# sourceURL=webpack://rollemaa/./content/themes/minimalistmadness/js/src/gutenberg-editor.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_gutenberg_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/gutenberg-helpers */ \"./content/themes/minimalistmadness/js/src/modules/gutenberg-helpers.js\");\n/* eslint-disable camelcase, prefer-arrow-callback, no-unused-vars, no-undef, vars-on-top, no-var, func-names, max-len, import/no-unresolved */\n // Declare the block you'd like to style.\n\nwp.blocks.registerBlockStyle('core/paragraph', {\n  name: 'boxed',\n  label: 'Laatikko'\n}); // Declare the block you'd like to style.\n\nwp.blocks.registerBlockStyle('core/list', {\n  name: 'no-bullets',\n  label: 'Ilman listamerkkejä'\n}); // var air_light_LazyLoad = new LazyLoad({\n//  callback_loaded: setLazyLoadedFigureWidth,\n// });\n// When document is ready as in when blocks are fully loaded\n\nwindow.addEventListener('load', function () {\n  /**\n   * initializeBlock\n   *\n   * Adds custom JavaScript to the block HTML.\n   *\n   * @date    15/4/19\n   * @since   1.0.0\n   *\n   * @param   object $block The block jQuery element.\n   * @param   object attributes The block attributes (only available when editing).\n   * @return  void\n   *\n   * @source https://www.advancedcustomfields.com/resources/acf_register_block_type/\n   */\n  var initializeBlock = function initializeBlock($block) {// air_light_LazyLoad.update();\n  }; // Initialize each block on page load (front end).\n  // air_light_LazyLoad.update();\n  // Initialize dynamic block preview (editor).\n\n\n  if (window.acf) {\n    window.acf.addAction('render_block_preview', initializeBlock);\n  }\n});\n\n//# sourceURL=webpack://rollemaa/./content/themes/minimalistmadness/js/src/gutenberg-editor.js?");
+
+/***/ }),
+
+/***/ "./content/themes/minimalistmadness/js/src/modules/gutenberg-helpers.js":
+/*!******************************************************************************!*\
+  !*** ./content/themes/minimalistmadness/js/src/modules/gutenberg-helpers.js ***!
+  \******************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"setFigureWidths\": function() { return /* binding */ setFigureWidths; },\n/* harmony export */   \"setLazyLoadedFigureWidth\": function() { return /* binding */ setLazyLoadedFigureWidth; }\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/typeof */ \"./content/themes/minimalistmadness/node_modules/@babel/runtime/helpers/esm/typeof.js\");\n\n\nvar setFigureWidth = function setFigureWidth(figure) {\n  var img = figure.querySelector('img');\n\n  if (!img || (0,_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(img) !== 'object' || !('clientWidth' in img)) {\n    return;\n  }\n\n  figure.style.setProperty('--child-img-width', \"\".concat(img.clientWidth, \"px\"));\n};\n\nvar setFigureWidths = function setFigureWidths(figures) {\n  // Gutengerg magic for alignright and alignleft images\n  figures.forEach(function (figure) {\n    setFigureWidth(figure);\n  });\n};\n\nvar setLazyLoadedFigureWidth = function setLazyLoadedFigureWidth(image) {\n  if (image.parentElement.tagName === 'figure') {\n    setFigureWidth(image.parentElement);\n  }\n};\n\n\n\n//# sourceURL=webpack://rollemaa/./content/themes/minimalistmadness/js/src/modules/gutenberg-helpers.js?");
+
+/***/ }),
+
+/***/ "./content/themes/minimalistmadness/node_modules/@babel/runtime/helpers/esm/typeof.js":
+/*!********************************************************************************************!*\
+  !*** ./content/themes/minimalistmadness/node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \********************************************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ _typeof; }\n/* harmony export */ });\nfunction _typeof(obj) {\n  \"@babel/helpers - typeof\";\n\n  if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") {\n    _typeof = function _typeof(obj) {\n      return typeof obj;\n    };\n  } else {\n    _typeof = function _typeof(obj) {\n      return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj;\n    };\n  }\n\n  return _typeof(obj);\n}\n\n//# sourceURL=webpack://rollemaa/./content/themes/minimalistmadness/node_modules/@babel/runtime/helpers/esm/typeof.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./content/themes/minimalistmadness/js/src/gutenberg-editor.js"]();
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./content/themes/minimalistmadness/js/src/gutenberg-editor.js");
 /******/ 	
 /******/ })()
 ;
