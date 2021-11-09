@@ -1,0 +1,141 @@
+:root {
+  --main-color: #06c;
+}
+
+body {
+  font: 10px sans-serif;
+  shape-rendering: crispEdges;
+}
+
+.day {
+  fill: #eee;
+  stroke: #fff;
+  stroke-width: 3px;
+}
+
+.color0 {
+  fill: #d6e685;
+}
+
+.color1 {
+  fill: #44a340;
+}
+
+.color2 {
+  fill: #28752d;
+}
+
+.color3 {
+  fill: #1e6823;
+}
+
+.color4 {
+  fill: #365e2f;
+}
+
+.color5 {
+  fill: #144e12;
+}
+
+.hidden {
+  display: none;
+}
+
+.custom-title {
+  margin-top: 200px;
+}
+
+.custom-input-group {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+}
+
+.results {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 800px;
+}
+
+.center {
+  display: inherit;
+  text-align: center;
+}
+
+.checkbox {
+  margin-top: 5px;
+}
+
+/* Loading spinner */
+.loader {
+  animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  background: var(--main-color);
+  background: linear-gradient(left, var(--main-color) 10%, rgb(255 255 255 / 0) 42%);
+  background: linear-gradient(left, var(--main-color) 10%, rgb(255 255 255 / 0) 42%);
+  background: linear-gradient(left, var(--main-color) 10%, rgb(255 255 255 / 0) 42%);
+  background: linear-gradient(left, var(--main-color) 10%, rgb(255 255 255 / 0) 42%);
+  background: linear-gradient(to right, var(--main-color) 10%, rgb(255 255 255 / 0) 42%);
+  border-radius: 50%;
+  font-size: 10px;
+  height: 20px;
+  margin: 50px auto;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  transform: translateZ(0);
+  transform: translateZ(0);
+  width: 20px;
+}
+
+.loader::before {
+  background: var(--main-color);
+  border-radius: 100% 0 0;
+  content: '';
+  height: 50%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+
+.loader::after {
+  background: #fff;
+  border-radius: 50%;
+  bottom: 0;
+  content: '';
+  height: 75%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 75%;
+}
+
+@keyframes load3 {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load3 {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -16,6 +16,8 @@ get_header(); ?>
 <div class="content-area">
 	<main role="main" id="main" class="site-main block block-page">
 
+    <?php get_template_part( 'template-parts/heatmap' ); ?>
+
     <?php if ( have_posts() ) :
       $count = 0; ?>
 
