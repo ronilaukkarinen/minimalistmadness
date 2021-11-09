@@ -6,11 +6,48 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-09 23:39:25
+ * @Last Modified time: 2021-11-10 01:20:36
  */
 
 namespace Air_Light;
 
+/**
+ * Heatmap stuff
+ */
+function heatmap_data() {
+
+  global $post;
+
+  $heatmap_args = array(
+    'post_type' => 'diary',
+    'posts_per_page' => 1000, // phpcs:ignore
+    'no_found_rows' => true,
+    'post_status' => 'publish',
+  );
+
+  $heatmap_query = new \WP_Query( $heatmap_args );
+
+  while ( $heatmap_query->have_posts() ) {
+    $heatmap_query->the_post();
+
+    // Word count
+    $post_id = get_the_ID();
+    $post_object = get_post( $post_id );
+    $content = $post_object->post_content;
+    $word_count = post_word_count( $content );
+
+    // Unix timestamp
+    $unix_timestamp = get_post_timestamp();
+
+    $array[] = [
+      $unix_timestamp => $word_count,
+    ];
+
+    $output .= wp_json_encode( $array );
+  }
+
+  return $array;
+}
 /**
  * Enqueue scripts and styles.
  */
@@ -52,7 +89,9 @@ function enqueue_theme_scripts() {
     'collapse' => esc_html__( 'Close child menu', 'minimalistmadness' ),
   ) );
 
-  wp_localize_script( 'scripts', 'air_light_screenReaderText', [
+  wp_localize_script( 'scripts', 'heatmapdata', heatmap_data() );
+
+  wp_localize_script( 'scripts', 'minimalistmadness_screenReaderText', [
     'expand'          => get_default_localization( 'Open child menu' ),
     'collapse'        => get_default_localization( 'Close child menu' ),
     'expand_for'      => get_default_localization( 'Open child menu for' ),
@@ -64,7 +103,7 @@ function enqueue_theme_scripts() {
   ] );
 
   // Add domains/hosts to disable external link indicators
-    wp_localize_script( 'scripts', 'air_light_externalLinkDomains', [
+    wp_localize_script( 'scripts', 'minimalistmadness_externalLinkDomains', [
       'localhost:3000',
       'rollemaa.test',
       'rollemaa.fi',

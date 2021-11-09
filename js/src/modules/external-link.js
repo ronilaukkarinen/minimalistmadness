@@ -44,8 +44,8 @@
      window.location.host,
    ];
 
-   if (typeof window.air_light_externalLinkDomains !== 'undefined') {
-     localDomains = localDomains.concat(window.air_light_externalLinkDomains);
+   if (typeof window.minimalistmadness_externalLinkDomains !== 'undefined') {
+     localDomains = localDomains.concat(window.minimalistmadness_externalLinkDomains);
    }
 
    const links = document.querySelectorAll('a');

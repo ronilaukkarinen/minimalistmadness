@@ -23,18 +23,16 @@ import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
 
 // GitHub-styled charts
-moment.locale('fi');
-const getDate = new Date();
-const startDate = getDate.setFullYear(getDate.getFullYear() - 1);
-const endDate = getDate.setUTCHours(23, 59, 59, 999);
+// WordPress post data for heatmaps
+const heatmapDataPoints = heatmapdata;
+console.log(heatmapDataPoints);
 
+// Construct chart
 const data = {
   dataPoints: {
-    1636234983: 20,
-    1636407783: 113,
-    1636321383: 680,
-    1636494183: 57,
-    // ...
+    heatmapDataPoints,
+    // 1636489905: 153,
+    // 1636397501: 490,
   },
   start: new Date(moment().subtract(1, 'year').toDate()),
   end: new Date(moment().toDate()),
@@ -44,6 +42,7 @@ const chart = new Chart('#heatmap', { // or a DOM element,
   type: 'heatmap',
   discreteDomains: 0,
   radius: 1,
+  colors: ['#ebedf0', '#c0ddf9', '#73b3f3', '#3886e1', '#17459e'],
   data,
 });
 
