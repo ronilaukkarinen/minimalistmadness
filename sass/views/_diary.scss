@@ -35,6 +35,12 @@ body.single-diary {
     font-weight: 600;
     line-height: 1.2;
     margin: 0 auto 2rem;
+
+    .time {
+      // stylelint-disable-next-line
+      font-size: 66%;
+      opacity: .8;
+    }
   }
 
   .type-diary p,

@@ -14,7 +14,7 @@ namespace Air_Light;
   <p class="prefix"><?php the_title(); ?></p>
   <h1 class="diary-title">
     <?php if ( ! is_singular( 'diary' ) ) echo '<a href="' . esc_url( get_the_permalink() ) . '">'; ?>
-      <time datetime="<?php the_time( 'c' ); ?>"><?php echo esc_html( ucfirst( get_the_time( 'l' ) ) ); ?>na, <?php the_time( 'j.' ) ?> <?php the_time( 'F' ) ?>ta <?php the_time( 'Y' ) ?></time>
+      <time datetime="<?php the_time( 'c' ); ?>"><?php echo esc_html( ucfirst( get_the_time( 'l' ) ) ); ?>na, <?php the_time( 'j.' ) ?> <?php the_time( 'F' ) ?>ta <?php the_time( 'Y' ) ?><br><span class="time">Kello on <?php the_time( 'H:i' ) ?></span></time>
       <?php if ( ! is_singular( 'diary' ) ) echo '</a>'; ?>
   </h1>
   <div class="container container-article">
