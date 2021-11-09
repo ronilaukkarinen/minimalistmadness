@@ -31,6 +31,15 @@ namespace Air_Light;
       ) );
       ?>
 
+      <?php
+      $post_id = get_the_ID();
+      $post_object = get_post( $post_id );
+      $content = $post_object->post_content;
+      $word_count = post_word_count( $content );
+      ?>
+
+      <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> sanaa.</p>
+
       <?php if ( get_edit_post_link() ) { ?>
         <footer class="entry-footer">
           <?php edit_post_link(

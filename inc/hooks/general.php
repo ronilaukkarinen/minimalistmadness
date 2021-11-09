@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-09-07 13:34:24
+ * @Last Modified time: 2021-11-09 08:11:47
  */
 
 namespace Air_Light;
@@ -46,6 +46,19 @@ function get_word_count_from_posts() {
 	$num = number_format_i18n( $count );
 
 	return $num;
+}
+
+/**
+ * Count the number of words in post content
+ * @param string $content The post content
+ * @return integer $count Number of words in the content
+ */
+function post_word_count( $content ) {
+  $decode_content = html_entity_decode( $content );
+  $filter_shortcode = do_shortcode( $decode_content );
+  $strip_tags = wp_strip_all_tags( $filter_shortcode, true );
+  $count = str_word_count( $strip_tags );
+  return $count;
 }
 
 /**

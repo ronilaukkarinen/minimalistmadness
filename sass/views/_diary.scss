@@ -37,17 +37,20 @@ body.single-diary {
     margin: 0 auto 2rem;
   }
 
-  .prefix,
-  .container-article.advertisement .article p.prefix,
-  .container-article.advertisement .entry-content p.prefix,
-  .container-article.advertisement article p.prefix,
-  .container.container-article .article p.prefix,
-  .container.container-article .entry-content p.prefix,
-  .container.container-article article p.prefix,
-  .editor-styles-wrapper p.prefix {
-    color: rgb(0 0 0 / .55);
-    font-size: var(--diary-font-size-prefix);
-    margin: 2rem auto 1rem;
+  .type-diary p,
+  .container.container-article .entry-content p,
+  .container.container-article article p,
+  .editor-styles-wrapper p {
+    &.prefix {
+      color: rgb(0 0 0 / .55);
+      font-size: var(--diary-font-size-prefix);
+      margin: 2rem auto 1rem;
+    }
+
+    &.word-count {
+      font-family: $font-alt;
+      font-size: var(--diary-font-size-prefix);
+    }
   }
 
   .container.container-article {
