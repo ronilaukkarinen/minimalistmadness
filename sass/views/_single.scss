@@ -42,6 +42,10 @@ del {
     margin-top: 2.4rem;
     padding-left: 0;
   }
+
+  @media (max-width: 1200px) {
+    padding-top: 9rem;
+  }
 }
 
 .container.container-article .entry-content,

@@ -22,6 +22,18 @@
   }
 }
 
+.single-post .dark-mode-controls {
+  top: calc(100vh + 4rem);
+
+  @media (max-width: 1200px) {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    right: unset;
+    top: 100vh;
+    width: 100%;
+  }
+}
+
 .toggle-checkbox {
   cursor: pointer;
   height: 0;
