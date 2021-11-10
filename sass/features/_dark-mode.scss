@@ -1,0 +1,99 @@
+// stylelint-disable scale-unlimited/declaration-strict-value
+.dark-mode-controls {
+  position: absolute;
+  right: -10rem;
+  top: 4rem;
+  transform: scale(.2);
+  z-index: 2222;
+
+  @media (max-width: $responsivenav) {
+    top: -3.5rem;
+  }
+}
+
+.toggle-checkbox {
+  cursor: pointer;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  transform: scale(2);
+  width: 0;
+  z-index: 10;
+}
+
+.toggle-slot {
+  background-color: #fff;
+  border: 2px solid #e4e7ec;
+  border-radius: 10em;
+  box-shadow: 0 10px 25px #e4e7ec;
+  height: 10em;
+  position: relative;
+  transition: background-color 250ms;
+  width: 20em;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: #374151;
+}
+
+.toggle-button {
+  background-color: #ffeccf;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 .55em #ffbb52;
+  height: 6.5em;
+  position: absolute;
+  transform: translate(11.75em, 1.75em);
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+  width: 6.5em;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #485367;
+  box-shadow: inset 0 0 0 .55em #fff;
+  transform: translate(1.75em, 1.75em);
+}
+
+.sun-icon {
+  color: #ffbb52;
+  height: 6em;
+  position: absolute;
+  width: 6em;
+}
+
+.sun-icon-wrapper {
+  height: 6em;
+  opacity: 1;
+  position: absolute;
+  transform: translate(2em, 2em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+  width: 6em;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(3em, 2em) rotate(0deg);
+}
+
+.moon-icon {
+  color: #fff;
+  height: 6em;
+  position: absolute;
+  width: 6em;
+}
+
+.moon-icon-wrapper {
+  height: 6em;
+  opacity: 0;
+  position: absolute;
+  top: -.5rem;
+  transform: translate(11em, 2em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2.5, .46, .71);
+  width: 6em;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(12em, 2em) rotate(-15deg);
+}
