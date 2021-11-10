@@ -35,6 +35,8 @@
         "name": "media"
       }
     ],
+    "scss/comment-no-empty": null,
+    "max-line-length": 300,
     "order/properties-alphabetical-order": true,
     "a11y/no-outline-none": true,
     "a11y/selector-pseudo-class-focus": true,
@@ -92,7 +94,7 @@
     "font-family-name-quotes": "always-where-required",
     "at-rule-no-unknown": null,
     "no-invalid-position-at-import-rule": null,
-    "declaration-no-important": true,
+    "declaration-no-important": null,
     "comment-empty-line-before": null,
     "at-rule-name-newline-after": null,
     "at-rule-semicolon-newline-after": null,
@@ -130,14 +132,7 @@
         ]
       }
     ],
-    "csstools/value-no-unknown-custom-properties": [
-      true,
-      {
-        "importFrom": [
-          "css/dev/global.css"
-        ]
-      }
-    ],
+    "csstools/value-no-unknown-custom-properties": null,
     "rule-empty-line-before": [
       "always-multi-line",
       {
@@ -163,12 +158,7 @@
         ]
       }
     ],
-    "no-descending-specificity": [
-      true,
-      {
-        "severity": "warning"
-      }
-    ],
+    "no-descending-specificity": null,
     "max-nesting-depth": [
       3,
       {
