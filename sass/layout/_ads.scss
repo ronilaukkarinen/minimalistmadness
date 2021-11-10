@@ -126,7 +126,7 @@
 
   &:hover .spans,
   &:focus .spans {
-    box-shadow: 0 4px 80px rgb(0 0 0 / 1);
+    box-shadow: 0 4px 80px rgb(var(--color-black-rgb) / 1);
     transform: scale(1.02);
 
     p a:not(.button):not(.post-edit-link) {
@@ -158,7 +158,7 @@
     border: 0;
     border-radius: 8px;
     box-shadow: 0 4px 80px rgba(#000, .7);
-    color: #fff;
+    color: var(--color-white);
     display: grid;
     grid-template-columns: 1fr 2fr;
     margin: 8rem 0;

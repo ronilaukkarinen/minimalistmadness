@@ -26,7 +26,7 @@
 
       svg {
         bottom: -2px;
-        fill: rgba(#fff, .3);
+        fill: rgb(var(--color-white-rgb) / .3);
         height: 60px;
         position: relative;
         transition: .66s all;
@@ -35,7 +35,7 @@
 
       a:hover svg,
       a:focus svg {
-        fill: rgba(#fff, 1);
+        fill: rgb(var(--color-white-rgb) / 1);
       }
     }
   }
@@ -56,7 +56,7 @@
 
     h1 {
       @include responsive-font(30px, 70px);
-      color: #fff;
+      color: var(--color-white);
       font-family: ColfaxAI, sans-serif !important;
       font-weight: 600;
       line-height: 1.1;
@@ -80,23 +80,23 @@
   }
 
   .article-description {
-    color: #fff;
+    color: var(--color-white);
     font-size: 18px;
 
     a {
-      box-shadow: inset 0 -1px 0 0 rgba(#fff, .5), inset 0 -2px 0 0 rgba(#000, 0);
-      color: #fff;
+      box-shadow: inset 0 -1px 0 0 rgb(var(--color-white-rgb) / .5), inset 0 -2px 0 0 rgba(#000, 0);
+      color: var(--color-white);
       text-transform: lowercase;
       transition: .55s all;
 
       &:hover,
       &:focus {
-        box-shadow: inset 0 -1px 0 0 rgba(#fff, .8), inset 0 -2px 0 0 rgba(#000, 0);
+        box-shadow: inset 0 -1px 0 0 rgb(var(--color-white-rgb) / .8), inset 0 -2px 0 0 rgba(#000, 0);
       }
     }
 
     &::before {
-      background-color: #fff;
+      background-color: var(--color-white);
       content: '';
       display: block;
       height: 2px;
@@ -175,7 +175,7 @@
 
       &.current-menu-item a,
       &.current_page_item a {
-        border-top: 1px solid #fff;
+        border-top: 1px solid var(--color-white);
         margin-top: -1px;
         opacity: 1;
       }
@@ -234,7 +234,7 @@
 
     svg {
       bottom: -60px;
-      fill: #fff;
+      fill: var(--color-white);
       height: 65px;
       left: -10px;
       position: relative;
@@ -256,7 +256,7 @@
 .animated-mouse {
   @include horizontal-align();
   background-color: transparent;
-  border: 2px solid #fff;
+  border: 2px solid var(--color-white);
   border-radius: 14px;
   bottom: 5px;
   height: 47px;
@@ -280,7 +280,7 @@
     /* stylelint-disable-next-line */
     animation-name: mousePointer;
     animation-timing-function: linear;
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: 100%;
     height: 6px;
     left: 49%;

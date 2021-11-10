@@ -102,7 +102,7 @@
 
   .mfp-iframe-holder .mfp-content .mfp-iframe-scaler {
     .mfp-close {
-      color: #fff;
+      color: var(--color-white);
       margin-right: 5px;
       margin-top: 40px;
     }
@@ -116,7 +116,7 @@
       background-color: #000;
       border: 2px solid transparent;
       border-radius: 0;
-      color: #fff;
+      color: var(--color-white);
       font-size: 40px;
       height: 70px;
       line-height: 38px;

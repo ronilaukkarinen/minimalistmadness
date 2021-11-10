@@ -107,7 +107,7 @@ input[type="search"] {
   transition: background .55s;
 
   &::placeholder {
-    color: #434343;
+    color: var(--color-darkgrey);
     opacity: .4;
   }
 

@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-07-10 12:46:54
+ * @Last Modified time: 2021-11-10 22:26:54
  *
  * @package minimalistmadness
  */
@@ -131,7 +131,7 @@ function block_editor_title_input_styles() {
     border-bottom: 1px solid #23282e;
     position: relative;
     z-index: 3;
-    color: #fff;
+    color: var(--color-white);
   }
   .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
     /* content: "(näkyy mm. valikossa, selainikkunan nimessä ja murupolussa)"; */
@@ -183,7 +183,7 @@ function block_editor_title_input_styles() {
   .block-editor .editor-styles-wrapper .editor-post-title .editor-post-title__input:focus {
     background-color: #000;
     border-color: #000;
-    color: #fff;
+    color: var(--color-white);
   }
   ';
   wp_add_inline_style( 'block-editor-styles',  $styles );

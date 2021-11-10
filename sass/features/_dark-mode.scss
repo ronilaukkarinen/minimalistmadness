@@ -33,7 +33,7 @@
 }
 
 .toggle-slot {
-  background-color: #fff;
+  background-color: var(--color-white);
   border: 2px solid #e4e7ec;
   border-radius: 10em;
   // box-shadow: 0 10px 25px #e4e7ec;
@@ -61,7 +61,7 @@
 
 .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
   background-color: #485367;
-  box-shadow: inset 0 0 0 .55em #fff;
+  box-shadow: inset 0 0 0 .55em var(--color-white);
   transform: translate(1.75em, 1.75em);
 }
 
@@ -88,7 +88,7 @@
 }
 
 .moon-icon {
-  color: #fff;
+  color: var(--color-white);
   height: 6em;
   position: absolute;
   width: 6em;
@@ -112,8 +112,8 @@
 
 // Dark mode colors
 .theme-dark {
-  --color-white-two: #131922;
-  --color-white: #131922;
+  --color-white-two: #14171d;
+  --color-white: #14171d;
   --color-black: #f2f2f2;
   --color-hover: #fafafa;
   --color-white-three: #222;
@@ -124,12 +124,20 @@
   --color-light-blue: rgb(255 255 255 / .4);
   --color-white-rgb: 19 25 34;
   --color-black-rgb: 255 255 255;
+  --color-light-grey: rgb(255 255 255 / .1);
+  --color-darkgrey: rgb(255 255 255 / .4);
 
+  // Frappe charts
   rect[fill="#ebedf0"] {
     fill: rgb(55 55 55 / .3);
   }
 
   [fill="#555b51"] {
     fill: rgb(255 255 255 / .2);
+  }
+
+  // Exceptions
+  .hero-single .article-title-area {
+    --color-white: #fff;
   }
 }

@@ -284,7 +284,7 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
   }
 
   &::after {
-    background-color: #fff;
+    background-color: var(--color-white);
     border: $tcon-search-glass-border-width solid $tcon-search-glass-color;
     border-radius: 50%;
     height: $tcon-search-glass-radius;

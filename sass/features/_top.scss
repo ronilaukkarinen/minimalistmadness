@@ -40,7 +40,7 @@
   }
 
   svg {
-    fill: #fff;
+    fill: var(--color-white);
     height: 20px;
     margin: 0;
     opacity: .8;
@@ -60,7 +60,7 @@
     background: var(--color-links);
 
     svg {
-      fill: #fff;
+      fill: var(--color-white);
       margin-top: -35%;
     }
   }

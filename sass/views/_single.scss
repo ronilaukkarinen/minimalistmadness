@@ -480,13 +480,13 @@ kbd {
   background-color: #f7f7f7;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: 0 1px 0 rgb(0 0 0 / .2), 0 0 0 2px #fff inset;
+  box-shadow: 0 1px 0 rgb(var(--color-black-rgb) / .2), 0 0 0 2px var(--color-white) inset;
   color: #333;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
   line-height: var(--line-height);
   padding: 0 .5rem;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 var(--color-white);
   white-space: nowrap;
 }
 
@@ -573,7 +573,7 @@ ul.tags {
     a:hover,
     a:focus {
       background-color: #aaa;
-      color: #fff;
+      color: var(--color-white);
       opacity: 1;
     }
   }
@@ -833,7 +833,7 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 .button.button-bmc:hover,
 .button.button-bmc:active,
 .button.button-bmc:focus {
-  box-shadow: 0 4px 20px rgb(0 0 0 / .5);
+  box-shadow: 0 4px 20px rgb(var(--color-black-rgb) / .5);
   color: var(--color-white);
   text-decoration: none;
   transform: scale(1.1);
