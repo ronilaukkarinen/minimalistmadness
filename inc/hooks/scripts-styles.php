@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-10 19:41:02
+ * @Last Modified time: 2021-11-10 19:51:19
  */
 
 namespace Air_Light;
@@ -104,7 +104,7 @@ function enqueue_theme_scripts() {
   ] );
 
   // Add domains/hosts to disable external link indicators
-    wp_localize_script( 'scripts', 'minimalistmadness_externalLinkDomains', [
+  wp_localize_script( 'scripts', 'minimalistmadness_externalLinkDomains', [
       'localhost:3000',
       'rollemaa.test',
       'rollemaa.fi',
