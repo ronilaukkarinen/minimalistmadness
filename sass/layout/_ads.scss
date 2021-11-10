@@ -157,7 +157,7 @@
     background-color: #1f1f1f;
     border: 0;
     border-radius: 8px;
-    box-shadow: 0 4px 80px rgba(#000, .7);
+    box-shadow: 0 4px 80px rgb(var(--color-black-rgb) / .7);
     color: var(--color-white);
     display: grid;
     grid-template-columns: 1fr 2fr;
