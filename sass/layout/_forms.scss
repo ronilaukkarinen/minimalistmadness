@@ -143,7 +143,7 @@ select {
 
   &:hover,
   &:focus {
-    border-color: #222;
+    border-color: var(--color-black-two);
   }
 }
 

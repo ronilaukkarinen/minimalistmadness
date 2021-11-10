@@ -1,4 +1,4 @@
-/* stylelint-disable a11y/no-display-none */
+// stylelint-disable a11y/no-display-none, scss/no-global-function-names, a11y/font-size-is-readable
 .cat-links,
 .tags-links {
   display: block;
@@ -306,9 +306,9 @@ del {
       color: var(--color-white);
       overflow: hidden;
 
+      // stylelint-disable-next-line
       figcaption {
         color: var(--color-white);
-        // stylelint-disable-next-line
         font-size: 14px;
         line-height: 1.55;
         padding: 2rem;
@@ -566,9 +566,9 @@ ul.tags {
     padding-left: 0;
 
     a {
-      background-color: #f0f0f0;
+      background-color: var(--color-white-two);
       border-radius: 4px;
-      color: #333;
+      color: var(--color-black-three);
       display: inline;
       font-size: 1.2rem;
       opacity: .8;
@@ -577,7 +577,7 @@ ul.tags {
 
     a:hover,
     a:focus {
-      background-color: #aaa;
+      background-color: var(--color-grey-alt);
       color: var(--color-white);
       opacity: 1;
     }
@@ -598,14 +598,14 @@ ul.tags {
 
   &:hover,
   &:focus {
-    color: #111;
+    color: var(--color-black);
 
     a,
     a:link,
     a:visited,
     svg {
-      color: #111;
-      fill: #111;
+      color: var(--color-black);
+      fill: var(--color-black);
     }
   }
 }

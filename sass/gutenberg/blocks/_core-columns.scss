@@ -12,12 +12,11 @@
     border-color: var(--color-black) !important;
     color: var(--color-black) !important;
 
+    // stylelint-disable-next-line
     &::before {
       display: none !important;
     }
 
-    &.is-external-link:hover::after,
-    &.is-external-link::after,
     &.is-external-link:focus::after,
     &.is-external-link::after {
       background-image: url('../../svg/external-link-black.svg') !important;

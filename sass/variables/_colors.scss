@@ -1,6 +1,8 @@
 // Colors
 :root {
   --color-black: #141414;
+  --color-black-two: #222;
+  --color-black-three: #333;
   --color-black-rgb: 0 0 0;
   --color-darkgrey: #4f5964;
   --color-grey: #666;
@@ -20,8 +22,10 @@
   --color-alt: #4d5787;
   --color-accent: #e2127a;
   --color-accent-hover: #aa105d;
-  --color-code-old: #c7254e --color-code-background-old: #f9f2f4;
+  --color-code-old: #c7254e;
+  --color-code-background-old: #f9f2f4;
   --color-code: var(--color-accent);
-  --color-code-background-old: #f5f2f9;
+  --color-code-background: #f5f2f9;
   --color-light-grey: #e8e8e8;
+  --color-grey-alt: #a0a0a0;
 }

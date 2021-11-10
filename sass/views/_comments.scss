@@ -1,4 +1,4 @@
-/* stylelint-disable no-unknown-animations, property-disallowed-list, a11y/no-display-none */
+// stylelint-disable no-unknown-animations, property-disallowed-list, a11y/no-display-none, selector-max-specificity, scss/no-global-function-names
 .comment-reply-title,
 .comment-reply-title > small {
   display: none !important;
@@ -11,7 +11,7 @@
   label {
     &.cnns-label,
     &#cnns-label {
-      color: #a0a0a0;
+      color: var(--color-grey-alt);
       font-size: 16px;
       margin: 0;
 
@@ -40,13 +40,13 @@
     }
 
     &.form-submit input {
-      border-color: #7a7a7a;
-      color: #7a7a7a;
+      border-color: var(--color-grey);
+      color: var(--color-grey);
 
       &:hover,
       &:focus {
-        background-color: #7a7a7a;
-        border-color: #7a7a7a;
+        background-color: var(--color-grey);
+        border-color: var(--color-grey);
         color: var(--color-white);
       }
 
@@ -63,22 +63,22 @@
 
       &:hover label,
       &:focus label {
-        color: darken(#a0a0a0, 15%);
+        filter: brightness(85%);
       }
 
       &:hover,
       &:focus {
-        color: darken(#a0a0a0, 15%);
+        filter: brightness(85%);
       }
 
       &:hover input[type="checkbox"] + label::before,
       &:focus input[type="checkbox"] + label::before {
-        border: 2px solid darken(#a0a0a0, 15%);
+        filter: brightness(85%);
       }
 
       &:hover input[type="checkbox"]:checked + label::before,
       &:focus input[type="checkbox"]:checked + label::before {
-        background-color: darken(#a0a0a0, 15%);
+        filter: brightness(85%);
       }
 
       input[type="checkbox"] {
@@ -95,7 +95,7 @@
         // Box.
         + label::before {
           background-color: var(--color-white);
-          border: 2px solid #a0a0a0;
+          border: 2px solid var(--color-grey-alt);
           border-radius: 3px;
           content: '';
           display: inline-block;
@@ -114,7 +114,7 @@
 
         // Box hover
         &:hover + label::before {
-          background-color: #a0a0a0;
+          background-color: var(--color-grey-alt);
         }
 
         // Box focus
@@ -124,12 +124,12 @@
 
         // Box checked
         &:checked + label::before {
-          background-color: #a0a0a0;
+          background-color: var(--color-grey-alt);
         }
 
         // Disabled state label.
         &:disabled + label {
-          color: #b8b8b8;
+          color: var(--color-grey-alt);
           cursor: auto;
         }
 
@@ -161,7 +161,7 @@
   }
 
   .comment-reply-title {
-    color: #777;
+    color: var(--color-grey);
     display: block;
     font-size: 16px;
     font-weight: 500;
@@ -243,8 +243,9 @@ body {
         margin-top: 0;
         opacity: .8;
 
+        // stylelint-disable-next-line a11y/font-size-is-readable
         a.comment-edit-link {
-          color: #222;
+          color: var(--color-black-two);
           font-size: 13px;
           opacity: .5;
         }
@@ -288,6 +289,7 @@ body {
         }
       }
 
+      // stylelint-disable-next-line a11y/font-size-is-readable
       .comment-time {
         font-size: 14px;
         margin-bottom: 20px;
@@ -317,6 +319,7 @@ body {
   }
 }
 
+// stylelint-disable
 .comments-area .comment-list li p.comments-no-comments-text,
 .comments-no-comments-text {
   background-color: var(--color-white);

@@ -45,7 +45,7 @@
 .template-arkisto {
   h2 {
     @include responsive-font(20px, 24px);
-    color: #222;
+    color: var(--color-black-two);
     margin-bottom: 20px;
 
     &.title-grouped {
@@ -54,7 +54,7 @@
   }
 
   h4 {
-    color: #777;
+    color: var(--color-grey);
     font-size: 19px;
     font-weight: 400;
     margin-bottom: 20px;
