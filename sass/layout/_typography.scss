@@ -71,8 +71,8 @@ a {
 
   &:focus,
   &:hover {
-    color: #1cb050;
-    text-decoration-color: #1cb050;
+    color: var(--color-accent-hover);
+    text-decoration-color: var(--color-accent-hover);
   }
 }
 
@@ -290,9 +290,9 @@ samp {
 
 // Code block.
 code {
-  background-color: #f9f2f4;
+  background-color: var(--color-code-background);
   border-radius: .3rem;
-  color: #c7254e;
+  color: var(--color-code);
   font-family: $font-monospace;
   font-size: inherit; // normalize.css sets this as 1em by default
   line-height: 1;

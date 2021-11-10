@@ -4,7 +4,6 @@
 // All the other pages of the site, without any
 // particular layout.
 // ------------------------------------------------
-
 .block.block-page {
   .container.container-archive.container-article {
     max-width: $article-max-width;
@@ -106,4 +105,8 @@
       padding-right: 2rem;
     }
   }
+}
+
+.tag-cloud a {
+  text-decoration: none !important;
 }
