@@ -4,15 +4,14 @@
 // https://github.com/digitoimistodude/air
 //
 // Import this file after magnific-popup/dist/magnific-popup
-
 .mfp-bg {
-  background-color: rgba(#000, .8);
+  background-color: rgb(#000 .8);
   opacity: 1;
   z-index: 99999 !important;
 }
 
 .mfp-title {
-  color: $color-body;
+  color: var(--color-black);
   font-family: $font-base;
   font-size: 1.5rem;
   margin-left: 1.5rem;
@@ -131,7 +130,7 @@
 
       &:hover,
       &:focus {
-        background: $color-links;
+        background: var(--color-links);
       }
     }
   }

@@ -126,7 +126,7 @@
 
   &:hover .spans,
   &:focus .spans {
-    box-shadow: 0 4px 80px rgba($color-black, 1);
+    box-shadow: 0 4px 80px rgb(0 0 0 / 1);
     transform: scale(1.02);
 
     p a:not(.button):not(.post-edit-link) {
@@ -136,8 +136,8 @@
       animation-name: shake;
       animation-timing-function: linear;
       background-color: transparent;
-      border-color: lighten($color-blog-links, 35%);
-      color: lighten($color-blog-links, 35%);
+      border-color: lighten(#414663, 35%);
+      color: lighten(#414663, 35%);
       transform-origin: 50% 50%;
     }
   }
@@ -202,7 +202,7 @@
     }
 
     a:not(.button):not(.post-edit-link) {
-      color: lighten($color-blog-links, 25%);
+      color: lighten(#414663, 25%);
       display: inline-block;
     }
 

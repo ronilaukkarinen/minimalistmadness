@@ -30,7 +30,7 @@ button.search-trigger:focus {
 }
 
 body .overlay-search {
-  background-color: rgba($color-white, .8);
+  background-color: rgba(255 255 255 / .8);
 
   ul,
   li {
@@ -91,15 +91,15 @@ body .overlay-search {
   .search:focus {
     @include responsive-font(22px, 42px);
     background-color: transparent;
-    border-bottom: 2px solid $color-black;
-    color: $color-black;
+    border-bottom: 2px solid var(--color-black);
+    color: var(--color-black);
     padding-bottom: 2rem;
     padding-left: 5.5rem;
     padding-right: 2.5rem;
     padding-top: 2rem;
 
     &::placeholder {
-      color: $color-black;
+      color: var(--color-black);
       opacity: 1;
     }
   }
@@ -111,7 +111,7 @@ body .overlay-search {
   }
 
   @media (max-width: $responsivenav) {
-    background-color: rgba($color-white, .95);
+    background-color: rgb(255 255 255 / .95);
   }
 }
 
@@ -123,13 +123,13 @@ body .overlay-search {
   align-items: center;
   background-color: transparent;
   border: 0;
-  color: $color-black;
+  color: var(--color-black);
   display: flex;
   position: relative;
   z-index: 99;
 
   svg {
-    fill: $color-black;
+    fill: var(--color-black);
     height: 4rem;
     margin-right: 1rem;
     width: 4rem;
@@ -138,12 +138,12 @@ body .overlay-search {
   &:hover,
   &:focus {
     background-color: transparent;
-    color: $color-black;
+    color: var(--color-black);
     cursor: pointer;
     opacity: .6;
 
     svg {
-      fill: $color-black;
+      fill: var(--color-black);
     }
   }
 
@@ -160,11 +160,11 @@ body .overlay-search {
 .main-navigation .button.button-close,
 .main-navigation .button.button-close:hover,
 .main-navigation .button.button-close:focus {
-  color: $color-black;
+  color: var(--color-black);
   width: 99px;
 
   svg {
-    fill: $color-black;
+    fill: var(--color-black);
     left: 0;
   }
 
@@ -181,7 +181,7 @@ body .overlay-search {
   z-index: 10000;
 
   .logo-text {
-    fill: $color-black;
+    fill: var(--color-black);
   }
 }
 
@@ -189,7 +189,7 @@ body .overlay-search {
   z-index: 10000;
 
   .logo-text {
-    fill: $color-black;
+    fill: var(--color-black);
   }
 }
 
@@ -212,8 +212,8 @@ $tcon-transition: .3s !default;
 $tcon-jstransform: 'tcon-transform' !default;
 $tcon-search-size: ($tcon-size * .75) !default;
 $tcon-search-radius: ($tcon-size / 14) !default;
-$tcon-search-color: $color-black !default;
-$tcon-search-glass-color: $color-black !default;
+$tcon-search-color: #000 !default;
+$tcon-search-glass-color: #000 !default;
 $tcon-search-handle-width: ($tcon-size / 10) !default;
 $tcon-search-glass-radius: ($tcon-size / 2.2) !default;
 $tcon-search-glass-border-width: ($tcon-size / 20) !default;
@@ -350,7 +350,7 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
 }
 
 .search-mobile {
-  background-color: $color-black;
+  background-color: var(--color-black);
   position: relative;
   z-index: 10;
 }
@@ -373,14 +373,14 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
   width: 100%;
 
   .tagline {
-    color: $color-white;
+    color: var(--color-white);
     font-weight: 700;
     margin-bottom: 1rem;
   }
 
   h2 {
     @extend %h4;
-    color: $color-black;
+    color: var(--color-black);
     display: inline-block;
     margin: 0;
 
@@ -389,7 +389,7 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
       align-items: center;
       border: 0;
       box-shadow: none;
-      color: $color-black;
+      color: var(--color-black);
       display: flex;
       flex-wrap: wrap;
       margin: 0;
@@ -410,7 +410,7 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
 
   .underlined-hover a {
     &::after {
-      background-color: $color-white;
+      background-color: var(--color-white);
     }
 
     &:hover::after,
@@ -426,13 +426,13 @@ $tcon-search-glass-border-width: ($tcon-size / 20) !default;
   }
 
   a {
-    color: $color-white;
+    color: var(--color-white);
   }
 
   p,
   p a {
     @extend %default;
-    color: $color-white;
+    color: var(--color-white);
     margin: 0;
   }
 

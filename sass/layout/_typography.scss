@@ -14,7 +14,7 @@
 body {
   @extend %default;
   background-color: #fafafa;
-  color: $color-body;
+  color: var(--color-black);
   font-family: $font-base;
   font-weight: $body-weight;
   text-rendering: geometricPrecision;
@@ -25,13 +25,13 @@ body {
 
 // Links
 a {
-  color: $color-links;
+  color: var(--color-links);
   text-decoration: none;
   transition: .4s ease;
 
   &:hover,
   &:focus {
-    color: $color-hover;
+    color: var(--color-hover);
   }
 }
 
@@ -106,7 +106,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color-headings;
+  color: var(--color-black);
   font-family: $font-headings;
   font-weight: $headings-weight;
   margin-bottom: 2.7rem;

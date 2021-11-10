@@ -10,7 +10,7 @@
 
   .cols {
     @include grid(3, $gutter_x: 30px, $gutter_y: 0);
-    border-top: 1px solid $color-border-light;
+    border-top: 1px solid var(--color-border-light);
     padding-top: 5rem;
 
     @media (max-width: 1000px) {
@@ -24,12 +24,6 @@
     @media (max-width: 400px) {
       display: flex;
       flex-wrap: wrap;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    p {
-      font-size: 17px;
     }
   }
 
@@ -61,23 +55,6 @@
     }
   }
 
-  @media (max-width: 900px) {
-    .cols .col.col-content {
-      grid-column: 1 / -1;
-      grid-row: 2;
-      padding-top: 12px;
-      width: 100%;
-
-      a {
-        margin-top: 37px;
-      }
-
-      @media (max-width: 400px) {
-        order: 2;
-      }
-    }
-  }
-
   .instagram {
     @include background-cover();
     border-radius: 4px;
@@ -106,16 +83,6 @@
     }
   }
 
-  @media (max-width: 400px) {
-    .col.col-images {
-      display: block;
-      height: 215px;
-      margin-bottom: 2rem;
-      order: 1;
-      width: 100%;
-    }
-  }
-
   .col.col-images-multiple {
     @include grid(2, $gutter_x: 30px, $gutter_y: 30px);
 
@@ -125,6 +92,39 @@
 
     @media (max-width: 400px) {
       display: none;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    p {
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .cols .col.col-content {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      padding-top: 12px;
+      width: 100%;
+
+      a {
+        margin-top: 37px;
+      }
+
+      @media (max-width: 400px) {
+        order: 2;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .col.col-images {
+      display: block;
+      height: 215px;
+      margin-bottom: 2rem;
+      order: 1;
+      width: 100%;
     }
   }
 }

@@ -45,16 +45,16 @@
       border-color: #7a7a7a;
       color: #7a7a7a;
 
-      @media (max-width: $article-max-width + 40px) {
-        margin-left: 2rem;
-        margin-right: 2rem;
-      }
-
       &:hover,
       &:focus {
         background-color: #7a7a7a;
         border-color: #7a7a7a;
-        color: $color-white;
+        color: var(--color-white);
+      }
+
+      @media (max-width: $article-max-width + 40px) {
+        margin-left: 2rem;
+        margin-right: 2rem;
       }
     }
 
@@ -62,11 +62,6 @@
     &.cnns-comment-subscription {
       margin-bottom: 20px;
       margin-top: 20px;
-
-      @media (max-width: $article-max-width + 40px) {
-        margin-left: 2rem;
-        margin-right: 2rem;
-      }
 
       &:hover label,
       &:focus label {
@@ -126,7 +121,7 @@
 
         // Box focus
         &:focus + label::before {
-          box-shadow: 0 0 0 3px rgba(#000, .12);
+          box-shadow: 0 0 0 3px rgb(0 0 0 / .12);
         }
 
         // Box checked
@@ -159,12 +154,12 @@
           width: 2px;
         }
       }
-    }
-  }
 
-  @media (max-width: 700px) {
-    padding-left: $container-default-pad-x / 2;
-    padding-right: $container-default-pad-x / 2;
+      @media (max-width: $article-max-width + 40px) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+    }
   }
 
   .comment-reply-title {
@@ -188,6 +183,11 @@
     overflow: hidden;
     transition: 1s all;
 
+    &.show {
+      height: 158px;
+      opacity: 1;
+    }
+
     @media (max-width: $article-max-width + 40px) {
       margin-left: 0;
       margin-right: 0;
@@ -197,11 +197,11 @@
         padding-right: 0;
       }
     }
+  }
 
-    &.show {
-      height: 158px;
-      opacity: 1;
-    }
+  @media (max-width: 700px) {
+    padding-left: $container-default-pad-x / 2;
+    padding-right: $container-default-pad-x / 2;
   }
 }
 
@@ -239,7 +239,7 @@ body {
       padding: 30px;
 
       p {
-        color: $color-body;
+        color: var(--color-black);
         font-size: 17px;
         line-height: 1.65;
         margin-top: 0;
@@ -258,7 +258,7 @@ body {
       }
 
       .comment-author {
-        color: $color-body;
+        color: var(--color-black);
         font-size: 16px;
         font-weight: 500;
         margin-bottom: 3px;
@@ -277,7 +277,7 @@ body {
       }
 
       .comment-author a {
-        color: $color-body;
+        color: var(--color-black);
 
         &.is-external-link:hover::after,
         &.is-external-link:focus::after,
@@ -299,7 +299,7 @@ body {
       }
 
       .comment-time svg {
-        fill: $color-darkgrey;
+        fill: var(--color-darkgrey);
         height: 12px;
         margin-right: 3px;
         position: relative;
@@ -308,7 +308,7 @@ body {
       }
 
       .comment-time a {
-        color: $color-darkgrey;
+        color: var(--color-darkgrey);
       }
 
       .comment-time:hover,

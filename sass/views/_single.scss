@@ -96,7 +96,7 @@ del {
   }
 
   p {
-    color: $color-black;
+    color: var(--color-black);
     font-weight: $body-weight;
   }
 
@@ -131,7 +131,7 @@ del {
   }
 
   blockquote {
-    border-left: 2px solid $color-black;
+    border-left: 2px solid var(--color-black);
     line-height: 1.77;
     margin-bottom: 4rem;
     margin-left: auto;
@@ -299,11 +299,11 @@ del {
     }
 
     &.wp-block-gallery {
-      color: $color-white;
+      color: var(--color-white);
       overflow: hidden;
 
       figcaption {
-        color: $color-white;
+        color: var(--color-white);
         font-size: 14px;
         line-height: 1.55;
         padding: 2rem;
@@ -520,11 +520,11 @@ pre {
     margin-bottom: .1em;
 
     a {
-      color: $color-links;
+      color: var(--color-links);
 
       &:hover,
       &:focus {
-        color: $color-hover;
+        color: var(--color-hover);
       }
     }
   }
@@ -534,7 +534,7 @@ pre {
   margin-bottom: 1em;
 
   * {
-    color: $color-darkgrey;
+    color: var(--color-darkgrey);
   }
 }
 
@@ -611,11 +611,11 @@ ul.tags {
   margin-top: 0;
 
   a {
-    color: $color-darkgrey;
+    color: var(--color-darkgrey);
 
     &:hover,
     &:focus {
-      color: $color-links;
+      color: var(--color-links);
       text-decoration: none;
     }
   }
@@ -683,18 +683,18 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 
   a.button {
     background-color: transparent;
-    border: 1px solid $color-body;
+    border: 1px solid var(--color-black);
     border-radius: 50px;
-    color: $color-body;
+    color: var(--color-black);
     font-size: 13px;
     opacity: .7;
     padding: 5px 25px;
 
     &:hover,
     &:focus {
-      background-color: $color-body;
-      border-color: $color-body;
-      color: $color-white;
+      background-color: var(--color-black);
+      border-color: var(--color-black);
+      color: var(--color-white);
     }
   }
 
@@ -781,10 +781,10 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 
 .notification-box.old,
 .container.container-article article .notification-box.old {
-  background-color: $color-white;
-  border: 1px dashed darken($color-blog-links, 5%);
-  box-shadow: 0 0 0 3px #f8f8f8, 0 0 0 5px darken($color-blog-links, 5%), 0 0 0 10px #f8f8f8, 0 0 2px 10px #eee;
-  color: darken($color-blog-links, 5%);
+  background-color: var(--color-white);
+  border: 1px dashed darken(#414663, 5%);
+  box-shadow: 0 0 0 3px #f8f8f8, 0 0 0 5px darken(#414663, 5%), 0 0 0 10px #f8f8f8, 0 0 2px 10px #eee;
+  color: darken(#414663, 5%);
   font-family: $font-old;
   margin-bottom: 6rem;
   padding: 3rem;
@@ -809,7 +809,7 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 
   h2,
   p {
-    color: darken($color-blog-links, 5%);
+    color: darken(#414663, 5%);
     font-family: $font-old;
   }
 

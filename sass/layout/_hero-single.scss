@@ -54,6 +54,14 @@
     width: 100%;
     z-index: 5;
 
+    h1 {
+      @include responsive-font(30px, 70px);
+      color: #fff;
+      font-family: ColfaxAI, sans-serif !important;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
     @media (max-width: $container-ipad) {
       padding-left: $padding-general-content-box-ipad;
       padding-right: $padding-general-content-box-ipad;
@@ -69,23 +77,11 @@
       padding-left: 2rem;
       right: 0;
     }
-
-    h1 {
-      @include responsive-font(30px, 70px);
-      color: #fff;
-      font-family: ColfaxAI, sans-serif !important;
-      font-weight: 600;
-      line-height: 1.1;
-    }
   }
 
   .article-description {
     color: #fff;
     font-size: 18px;
-
-    @media (max-width: $container-mobile) {
-      font-size: 16px;
-    }
 
     a {
       box-shadow: inset 0 -1px 0 0 rgba(#fff, .5), inset 0 -2px 0 0 rgba(#000, 0);
@@ -111,11 +107,15 @@
         margin: 20px 0;
       }
     }
+
+    @media (max-width: $container-mobile) {
+      font-size: 16px;
+    }
   }
 }
 
 .nav-article-wrapper {
-  border-bottom: 1px solid $color-border-light;
+  border-bottom: 1px solid var(--color-border-light);
 
   .container.container-nav-article {
     margin-bottom: 0;
@@ -125,14 +125,14 @@
     padding-top: 0;
 
     #nav.nav-article ul li a {
-      color: $color-body;
+      color: var(--color-black);
       font-family: $font-alt;
       font-weight: 400;
     }
 
     #nav.nav-article ul li.current-menu-item a,
     #nav.nav-article ul li.current_page_item a {
-      border-bottom: 1px solid $color-body;
+      border-bottom: 1px solid var(--color-black);
       margin-bottom: -1px;
       margin-top: 0;
       opacity: 1;
@@ -271,10 +271,6 @@
     width: 100%;
   }
 
-  @media (max-width: $container-mobile) {
-    display: none;
-  }
-
   .animated-mouse-pointer {
     animation-delay: .5s;
     animation-direction: normal;
@@ -292,5 +288,9 @@
     top: 70%;
     transform: translate(-50%, 0);
     width: 6px;
+  }
+
+  @media (max-width: $container-mobile) {
+    display: none;
   }
 }

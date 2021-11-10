@@ -1,5 +1,4 @@
 // Core/blockquote block
-
 blockquote + cite,
 blockquote + p > cite {
   margin-bottom: 4rem;
@@ -7,7 +6,7 @@ blockquote + p > cite {
 
 blockquote,
 blockquote.wp-block-quote {
-  border-left: 2px solid $color-black;
+  border-left: 2px solid var(--color-black);
   line-height: 1.77;
   margin-bottom: 4rem;
   margin-left: auto;

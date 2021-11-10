@@ -48,7 +48,7 @@
 
 .site-head-left a,
 .site-head-right a {
-  color: $color-base;
+  color: var(--color-black);
   display: block;
   font-weight: 600;
   margin: 0;
@@ -72,7 +72,7 @@
 
 .site-head-logo {
   align-items: center;
-  color: $color-base;
+  color: var(--color-black);
   display: inline-flex;
   flex-shrink: 0;
   font-family: Muli, $font-headings;
@@ -96,7 +96,7 @@
   text-decoration: none;
 
   svg {
-    color: $color-rain;
+    color: var(--color-rain);
     transform: rotate(-8deg);
     transform-origin: left;
   }
@@ -123,7 +123,7 @@
     background-color: transparent;
     border: 0;
     border-radius: 0;
-    color: $color-body;
+    color: var(--color-black);
     display: inline-block;
     font-size: 1.5rem;
     font-weight: 600;
@@ -193,9 +193,9 @@
 }
 
 .subscribe-button {
-  border: $color-base 1px solid;
+  border: var(--color-black) 1px solid;
   border-radius: 10px;
-  color: $color-base;
+  color: var(--color-black);
   display: block;
   font-size: 1.2rem;
   line-height: 1em;
@@ -219,7 +219,7 @@
 }
 
 .rss-button svg {
-  fill: $color-base;
+  fill: var(--color-black);
   height: 2.1rem;
   margin-bottom: 1px;
 }
@@ -351,7 +351,7 @@
   }
 
   .site-head-open .nav-current a {
-    border-bottom: $color-base 2px solid;
+    border-bottom: var(--color-black) 2px solid;
   }
 
   .site-head-open .site-head-right a {
@@ -405,7 +405,7 @@
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-  background-color: rgba($color-base, .8);
+  background-color: rgba(0 0 0 / .8);
   border-radius: 4px;
   height: 2px;
   position: absolute;
@@ -450,7 +450,7 @@
 .site-head-open .hamburger-inner,
 .site-head-open .hamburger-inner::before,
 .site-head-open .hamburger-inner::after {
-  background-color: $color-base;
+  background-color: var(--color-black);
 }
 
 .site-head-open .hamburger-inner {

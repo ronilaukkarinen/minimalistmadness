@@ -4,16 +4,11 @@
   overflow: visible;
   padding-bottom: 0;
 
-  @media (max-width: 450px) {
-    padding-bottom: 4rem;
-    padding-top: 4rem;
-  }
-
   .global-tag {
     align-items: center;
-    background-color: $color-headings;
+    background-color: var(--color-black);
     border-radius: 20px;
-    color: $color-white;
+    color: var(--color-white);
     display: inline-flex;
     font-family: $font-alt;
     font-size: 11px;
@@ -53,8 +48,16 @@
   }
 
   .post-card-information {
-    background-color: $color-white;
+    background-color: var(--color-white);
     padding: 4rem;
+
+    p {
+      font-size: 18px;
+
+      @media (max-width: 480px) {
+        font-size: 16px;
+      }
+    }
 
     @media (min-width: 590px) {
       border-bottom-left-radius: 4px;
@@ -70,14 +73,6 @@
 
     @media (max-width: 400px) {
       padding: 4rem 3rem;
-    }
-
-    p {
-      font-size: 18px;
-
-      @media (max-width: 480px) {
-        font-size: 16px;
-      }
     }
   }
 
@@ -190,5 +185,10 @@
         }
       }
     }
+  }
+
+  @media (max-width: 450px) {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 }

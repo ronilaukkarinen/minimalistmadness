@@ -2,7 +2,6 @@
 // Built to work with:
 // https://fi.wordpress.org/plugins/breadcrumb-trail/
 // https://github.com/digitoimistodude/air
-
 .breadcrumbs {
   line-height: 1;
   margin-bottom: 0;
@@ -19,7 +18,7 @@
 
   .trail-items li {
     background-color: transparent;
-    color: $color-links;
+    color: var(--color-links);
     font-family: $font-base;
     font-size: 15px;
     font-weight: $body-weight;
@@ -37,16 +36,16 @@
     margin-right: 1.5rem;
 
     &.trail-end {
-      color: $color-links;
+      color: var(--color-links);
       margin-right: 0;
+
+      span {
+        color: var(--color-links);
+      }
 
       @media (max-width: $container-mobile) {
         position: relative;
         top: 1px;
-      }
-
-      span {
-        color: $color-links;
       }
     }
   }
@@ -61,11 +60,11 @@
   }
 
   a {
-    color: $color-links;
+    color: var(--color-links);
 
     &:hover,
     &:focus {
-      color: $color-links;
+      color: var(--color-links);
     }
   }
 
@@ -75,7 +74,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 9px 9px;
-    color: $color-links;
+    color: var(--color-links);
     display: inline-block;
     font-size: 15px;
     height: 9px;

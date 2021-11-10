@@ -1,8 +1,8 @@
-/* stylelint-disable no-unknown-animations, property-disallowed-list, a11y/no-display-none */
+// stylelint-disable no-unknown-animations, property-disallowed-list, a11y/no-display-none, no-descending-specificity
 .top {
   /* autoprefixer: off */
   align-items: center;
-  background: $color_body;
+  background: var(--color-black);
   bottom: 20px;
   display: flex;
   height: 40px;
@@ -14,11 +14,6 @@
   transition: opacity .3s 0s, visibility 0s .3s;
   width: 40px;
   z-index: 9999;
-
-  @media (max-width: $container-mobile) {
-    height: 30px;
-    width: 30px;
-  }
 
   .no-touch &:hover,
   &.is-visible,
@@ -62,11 +57,16 @@
   &:hover,
   &:focus,
   &:active {
-    background: $color_links;
+    background: var(--color-links);
 
     svg {
       fill: #fff;
       margin-top: -35%;
     }
+  }
+
+  @media (max-width: $container-mobile) {
+    height: 30px;
+    width: 30px;
   }
 }
