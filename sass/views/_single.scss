@@ -524,7 +524,7 @@ pre {
     margin-bottom: .1em;
 
     a {
-      color: var(--color-links);
+      color: var(--color-black);
 
       &:hover,
       &:focus {
@@ -619,7 +619,7 @@ ul.tags {
 
     &:hover,
     &:focus {
-      color: var(--color-links);
+      color: var(--color-black);
       text-decoration: none;
     }
   }

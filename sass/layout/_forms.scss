@@ -33,13 +33,13 @@
 
     &.button-ghost {
       background-color: transparent;
-      border: 1px solid var(--color-links);
-      color: var(--color-links);
+      border: 1px solid var(--color-black);
+      color: var(--color-black);
     }
 
     &.button-ghost:hover,
     &.button-ghost:focus {
-      background-color: var(--color-links);
+      background-color: var(--color-black);
       color: var(--color-white);
     }
 

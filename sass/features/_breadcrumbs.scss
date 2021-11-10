@@ -18,7 +18,7 @@
 
   .trail-items li {
     background-color: transparent;
-    color: var(--color-links);
+    color: var(--color-black);
     font-family: $font-base;
     font-size: 15px;
     font-weight: $body-weight;
@@ -36,11 +36,11 @@
     margin-right: 1.5rem;
 
     &.trail-end {
-      color: var(--color-links);
+      color: var(--color-black);
       margin-right: 0;
 
       span {
-        color: var(--color-links);
+        color: var(--color-black);
       }
 
       @media (max-width: $container-mobile) {
@@ -60,11 +60,11 @@
   }
 
   a {
-    color: var(--color-links);
+    color: var(--color-black);
 
     &:hover,
     &:focus {
-      color: var(--color-links);
+      color: var(--color-black);
     }
   }
 
@@ -74,7 +74,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 9px 9px;
-    color: var(--color-links);
+    color: var(--color-black);
     display: inline-block;
     font-size: 15px;
     height: 9px;
