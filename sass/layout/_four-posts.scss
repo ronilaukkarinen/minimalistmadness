@@ -206,7 +206,7 @@
   }
 
   &::before {
-    background: linear-gradient(270deg, rgb(255 255 255 / 0) 0%, rgb(0 0 0 / 1) 58%);
+    background: linear-gradient(270deg, rgb(var(--color-white-rgb) / 0) 0%, rgb(0 0 0 / 1) 58%);
     content: '';
     height: 1px;
     left: 4px;

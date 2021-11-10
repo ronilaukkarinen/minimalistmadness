@@ -23,7 +23,7 @@
 }
 
 del {
-  color: #666;
+  color: var(--color-grey);
   text-decoration: line-through;
 }
 
@@ -675,7 +675,7 @@ ul.tags {
 body.post-type-archive-diary .container.container-article .entry-content .author-info,
 .single .container.container-article .entry-content .author-info,
 .single .container.container-article article .author-info {
-  border-top: 1px solid #f2f2f2;
+  border-top: 1px solid var(--color-white-three);
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 5fr;
@@ -732,7 +732,7 @@ body.post-type-archive-diary .container.container-article .entry-content .author
   }
 
   p {
-    color: #666;
+    color: var(--color-grey);
     font-size: 14px;
 
     &.description {

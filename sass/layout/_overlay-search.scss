@@ -30,7 +30,7 @@ button.search-trigger:focus {
 }
 
 body .overlay-search {
-  background-color: rgba(255 255 255 / .8);
+  background-color: rgba(var(--color-white-rgb) / .8);
 
   ul,
   li {
@@ -55,6 +55,7 @@ body .overlay-search {
     flex-wrap: wrap;
 
     .search-icon {
+      color: var(--color-black);
       width: 40px;
     }
 
@@ -111,7 +112,7 @@ body .overlay-search {
   }
 
   @media (max-width: $responsivenav) {
-    background-color: rgb(255 255 255 / .95);
+    background-color: rgb(var(--color-white-rgb) / .95);
   }
 }
 

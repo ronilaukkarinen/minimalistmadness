@@ -45,6 +45,7 @@
 
 .toggle-checkbox:checked ~ .toggle-slot {
   background-color: #374151;
+  border-color: #374151;
 }
 
 .toggle-button {
@@ -111,8 +112,24 @@
 
 // Dark mode colors
 .theme-dark {
-  --color-white-two: #0d1117;
-  --color-white: #0d1117;
+  --color-white-two: #131922;
+  --color-white: #131922;
   --color-black: #f2f2f2;
   --color-hover: #fafafa;
+  --color-white-three: #222;
+  --color-rain: #7187e7;
+  --color-alt: #7988d6;
+  --color-grey: rgb(255 255 255 / .6);
+  --color-border-light: rgb(255 255 255 / .1);
+  --color-light-blue: rgb(255 255 255 / .4);
+  --color-white-rgb: 19 25 34;
+  --color-black-rgb: 255 255 255;
+
+  rect[fill="#ebedf0"] {
+    fill: rgb(55 55 55 / .3);
+  }
+
+  [fill="#555b51"] {
+    fill: rgb(255 255 255 / .2);
+  }
 }
