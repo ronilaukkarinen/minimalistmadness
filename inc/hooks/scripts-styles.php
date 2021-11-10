@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-10 08:36:13
+ * @Last Modified time: 2021-11-10 08:40:42
  */
 
 namespace Air_Light;
@@ -38,10 +38,10 @@ function heatmap_data() {
     $word_count = post_word_count( $content );
 
     // Unix timestamp
-    $unix_timestamp = get_post_timestamp();
+    $timestamp = get_the_time( 'Y-m-d' );
 
     $heatmap_post_array[] = array(
-      $unix_timestamp => $word_count,
+      $timestamp => $word_count,
     );
   }
 
