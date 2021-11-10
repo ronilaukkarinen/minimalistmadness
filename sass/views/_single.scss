@@ -451,7 +451,6 @@ th {
   padding: 1rem;
 
   @media (max-width: 600px) {
-    @include stack();
     display: inline-block;
     height: auto;
     padding: 10px 0;
@@ -677,6 +676,9 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 .single .container.container-article .entry-content .author-info,
 .single .container.container-article article .author-info {
   border-top: 1px solid #f2f2f2;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 5fr;
   margin-top: 60px;
   overflow: hidden;
   padding-top: 30px;
@@ -699,8 +701,6 @@ body.post-type-archive-diary .container.container-article .entry-content .author
   }
 
   .author-col-avatar {
-    @include column(1/6);
-
     img {
       border-radius: 50%;
       height: 80px;
@@ -721,27 +721,6 @@ body.post-type-archive-diary .container.container-article .entry-content .author
         min-width: 100px;
         width: 100px;
       }
-    }
-
-    @media (max-width: 600px) {
-      @include column(1.2/6);
-    }
-
-    @media (max-width: $container-mobile) {
-      @include stack();
-      margin-bottom: 30px;
-    }
-  }
-
-  .author-col-info {
-    @include column(5/6);
-
-    @media (max-width: 600px) {
-      @include column(4.8/6);
-    }
-
-    @media (max-width: $container-mobile) {
-      @include stack();
     }
   }
 
@@ -772,6 +751,11 @@ body.post-type-archive-diary .container.container-article .entry-content .author
     &:last-of-type {
       margin-bottom: 0;
     }
+  }
+
+  @media (max-width: $container-mobile) {
+    gap: 2rem;
+    grid-template-columns: 1fr;
   }
 
   @media (max-width: $container-mobile) {

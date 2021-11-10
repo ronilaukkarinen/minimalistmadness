@@ -27,26 +27,29 @@ import styleExternalLinks from './modules/external-link';
 const dataPointsArray = heatmapdata;
 console.log(dataPointsArray);
 
+const chartElement = document.getElementById('heatmap') || false;
+if (chartElement) {
 // Construct chart
-const data = {
-  dataPoints: dataPointsArray,
-  // dataPoints: {
-  //   1636489905: 153,
-  //   1636397501: 490,
-  // },
-  start: new Date(moment().subtract(1, 'year').toDate()),
-  end: new Date(moment().toDate()),
-};
+  const data = {
+    dataPoints: dataPointsArray,
+    // dataPoints: {
+    //   1636489905: 153,
+    //   1636397501: 490,
+    // },
+    start: new Date(moment().subtract(1, 'year').toDate()),
+    end: new Date(moment().toDate()),
+  };
 
-const chart = new Chart('#heatmap', { // or a DOM element,
-  type: 'heatmap',
-  discreteDomains: 0,
-  radius: 1,
-  colors: ['#ebedf0', '#c0ddf9', '#73b3f3', '#3886e1', '#17459e'],
-  data,
-});
+  const chart = new Chart('#heatmap', { // or a DOM element,
+    type: 'heatmap',
+    discreteDomains: 0,
+    radius: 1,
+    colors: ['#ebedf0', '#c0ddf9', '#73b3f3', '#3886e1', '#17459e'],
+    data,
+  });
 
-console.log(chart);
+  console.log(chart);
+}
 
 // Get Vue.js
 const Vue = require('vue/dist/vue.min');
