@@ -112,7 +112,7 @@ input[type="search"] {
   }
 
   &:focus {
-    background-color: #fafafa;
+    background-color: var(--color-white-two);
     /* stylelint-disable-next-line */
     outline: 0;
 

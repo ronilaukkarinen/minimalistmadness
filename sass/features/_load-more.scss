@@ -11,7 +11,7 @@
 }
 
 .load-more-container {
-  background: linear-gradient(hsl(0deg 0% 100% / 0), #fafafa);
+  background: linear-gradient(hsl(0deg 0% 100% / 0), var(--color-white-two));
   height: 320px;
   margin-top: -280px;
   order: 4;

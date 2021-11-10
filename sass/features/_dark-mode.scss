@@ -110,6 +110,9 @@
 }
 
 // Dark mode colors
-.theme-dark body {
-  // background-color: #0d1117;
+.theme-dark {
+  --color-white-two: #0d1117;
+  --color-white: #0d1117;
+  --color-black: #f2f2f2;
+  --color-hover: #fafafa;
 }

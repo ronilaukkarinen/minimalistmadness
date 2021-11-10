@@ -13,7 +13,7 @@
 // Start typography settings
 body {
   @extend %default;
-  background-color: #fafafa;
+  background-color: var(--color-white-two);
   color: var(--color-black);
   font-family: $font-base;
   font-weight: $body-weight;
