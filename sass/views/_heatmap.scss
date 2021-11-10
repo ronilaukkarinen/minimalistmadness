@@ -1,3 +1,29 @@
+#heatmap {
+  @media (min-width: $container-ipad) {
+    margin: 2rem 0 6rem;
+  }
+}
+
 .chart-container {
   margin: 0 auto 4rem;
+
+  @media (max-width: 500px) {
+    margin-left: -30%;
+    transform: scale(.63);
+  }
+
+  @media (max-width: 450px) {
+    margin-left: -30%;
+    transform: scale(.61);
+  }
+
+  @media (max-width: 420px) {
+    margin-left: -40%;
+    transform: scale(.55);
+  }
+
+  @media (max-width: 390px) {
+    margin-left: -48%;
+    transform: scale(.5);
+  }
 }
