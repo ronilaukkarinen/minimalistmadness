@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-10 01:23:22
+ * @Last Modified time: 2021-11-10 08:36:13
  */
 
 namespace Air_Light;
@@ -25,14 +25,14 @@ function heatmap_data() {
     'post_status' => 'publish',
   );
 
-  $heatmap_query = new \WP_Query( $heatmap_args );
+  $heatmap_query = get_posts( $heatmap_args );
+  $heatmap_array = array();
 
-  $count = 1;
-  while ( $heatmap_query->have_posts() ) {
-    $heatmap_query->the_post();
+  foreach ( $heatmap_query as $heatmap_post ) {
+    setup_postdata( $heatmap_post );
 
     // Word count
-    $post_id = get_the_ID();
+    $post_id = $heatmap_post->ID;
     $post_object = get_post( $post_id );
     $content = $post_object->post_content;
     $word_count = post_word_count( $content );
@@ -40,16 +40,13 @@ function heatmap_data() {
     // Unix timestamp
     $unix_timestamp = get_post_timestamp();
 
-    if ( $count !== $heatmap_query->post_count ) {
-      $output .= $unix_timestamp . ': ' . $word_count . ',' . "\n";
-    } else {
-      $output .= $unix_timestamp . ': ' . $word_count;
-    }
-
-    $count++;
+    $heatmap_post_array[] = array(
+      $unix_timestamp => $word_count,
+    );
   }
 
-  return $output;
+  return $heatmap_post_array;
+
 }
 /**
  * Enqueue scripts and styles.

@@ -24,17 +24,16 @@ import styleExternalLinks from './modules/external-link';
 
 // GitHub-styled charts
 // WordPress post data for heatmaps
-const heatmapDataPoints = parseInt(heatmapdata);
-// console.log(typeof heatmapDataPoints);
-// console.log(heatmapDataPoints);
+const dataPoints = heatmapdata;
+console.log(dataPoints);
 
 // Construct chart
 const data = {
-  dataPoints: {
-    // heatmapDataPoints,
-    // 1636489905: 153,
-    // 1636397501: 490,
-  },
+  dataPoints,
+  // dataPoints: {
+  //   1636489905: 153,
+  //   1636397501: 490,
+  // },
   start: new Date(moment().subtract(1, 'year').toDate()),
   end: new Date(moment().toDate()),
 };
@@ -46,6 +45,8 @@ const chart = new Chart('#heatmap', { // or a DOM element,
   colors: ['#ebedf0', '#c0ddf9', '#73b3f3', '#3886e1', '#17459e'],
   data,
 });
+
+console.log(chart);
 
 // Get Vue.js
 const Vue = require('vue/dist/vue.min');
