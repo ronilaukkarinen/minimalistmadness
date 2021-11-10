@@ -90,11 +90,11 @@ a.is-external-link {
 
   &:hover::after,
   &:focus::after {
-    background-image: url('../../svg/external-link-accent-hover.svg');
+    background-image: url('../../svg/external-link-accent-hover-2.svg');
   }
 
   &::after {
-    background-image: url('../../svg/external-link-accent.svg');
+    background-image: url('../../svg/external-link-accent-2.svg');
     background-position: right center;
     background-repeat: no-repeat;
     background-size: 12px 12px;
