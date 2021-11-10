@@ -74,7 +74,6 @@ function debounce(func, wait, immediate) {
 // Initiate Swup transitions
 const swup = new Swup({
   plugins: [
-    new SwupHeadPlugin(),
     new SwupScriptsPlugin({
       head: true,
       body: true,
