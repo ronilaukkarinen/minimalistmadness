@@ -308,6 +308,7 @@ del {
 
       figcaption {
         color: var(--color-white);
+        // stylelint-disable-next-line
         font-size: 14px;
         line-height: 1.55;
         padding: 2rem;
