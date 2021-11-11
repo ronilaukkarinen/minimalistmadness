@@ -389,8 +389,8 @@ del {
 
 // Required post author comment
 .comments-area .comment-list li.bypostauthor {
-  background-color: rgb(255 246 232 / .4);
-  border-color: #e3dac5;
+  background-color: rgb(var(--color-post-author-background-rgb) / .4);
+  border-color: var(--color-post-author-border);
   padding: 3rem;
 }
 
@@ -806,6 +806,11 @@ body.post-type-archive-diary .container.container-article .entry-content .author
     margin-right: 2rem;
     width: calc(100% - 4rem);
   }
+}
+
+.theme-dark .container.container-article article .notification-box.old {
+  border: 2px solid rgb(255 255 255 / .1);
+  box-shadow: none;
 }
 
 .button.button-bmc svg {

@@ -138,7 +138,7 @@
   --color-white-rgb: 19 25 34;
   --color-black-rgb: 255 255 255;
   --color-light-grey: rgb(255 255 255 / .1);
-  --color-darkgrey: rgb(255 255 255 / .4);
+  --color-darkgrey: rgb(255 255 255 / .5);
   --color-black-two: rgb(255 255 255 / .6);
   --color-black-three: rgb(255 255 255 / .8);
   --color-grey-alt: rgb(255 255 255 / .6);
@@ -147,6 +147,8 @@
   --color-screechin-white: rgb(255 255 255 / .6);
   --color-pickled-bluewood: rgb(255 255 255 / .8);
   --color-figcaptions-rgb: 155 155 155;
+  --color-post-author-background-rgb: 18 20 26;
+  --color-post-author-border: #69634e;
 
   // Frappe charts
   rect[fill="#ebedf0"] {
