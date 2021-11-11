@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-11 20:07:26
+ * @Last Modified time: 2021-11-11 20:59:15
  *
  * @package minimalistmadness
  */
@@ -49,10 +49,12 @@ function heatmap_data() {
     // Form an array
     $heatmap_post_array[ $timestamp ] = $word_count;
 
-    if ( array_key_exists( $timestamp, $heatmap_post_array ) ) {
-      $heatmap_post_array[ $timestamp ] = $heatmap_post_array[ $timestamp ] + $word_count;
+    // If same day has multiple posts, combine word counts and show total count for one day
+    $post_date = strtotime( get_the_time( 'Y-m-d 00:00:00', $post_id ) );
+    if ( array_key_exists( $post_date, $heatmap_post_array ) ) {
+      $heatmap_post_array[ $post_date ] = $heatmap_post_array[ $post_date ] + $word_count;
     } else {
-      $heatmap_post_array[ $timestamp ] += $word_count;
+      $heatmap_post_array[ $post_date ] = $word_count;
     }
   }
 
