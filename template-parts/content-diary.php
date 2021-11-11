@@ -1,10 +1,17 @@
 <?php
 /**
- * Template part for displaying posts.
+ * The template for content-diary
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Description of the file called
+ * content-diary.
+ *
+ * @Author:		Roni Laukkarinen
+ * @Date:   		2021-11-11 08:59:06
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-11-11 12:59:35
  *
  * @package minimalistmadness
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 namespace Air_Light;

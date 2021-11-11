@@ -2,11 +2,12 @@
 /**
  * Enqueue and localize theme scripts and styles
  *
- * @package minimalistmadness
- * @Author: Niku Hietanen
+ * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-10 22:37:09
+ * @Last Modified time: 2021-11-11 13:24:58
+ *
+ * @package minimalistmadness
  */
 
 namespace Air_Light;
@@ -28,7 +29,7 @@ function heatmap_data() {
   $heatmap_query = get_posts( $heatmap_args );
   $heatmap_array = array();
 
-  foreach ( $heatmap_query as $heatmap_post ) {
+  foreach ( $heatmap_query as $key => $heatmap_post ) {
     setup_postdata( $heatmap_post );
 
     // Word count
@@ -38,9 +39,14 @@ function heatmap_data() {
     $word_count = post_word_count( $content );
 
     // Unix timestamp
-    // $timestamp = get_the_time( 'Y-m-d' );
+    $timestamp = get_the_time( 'Y-m-d', $post_id );
+    $day = get_the_time( 'd', $post_id );
     $unix_timestamp = get_post_timestamp( $heatmap_post );
 
+    // Combine amounts for same day
+    // $sum += $word_count;
+
+    // Form an array
     $heatmap_post_array[ $unix_timestamp ] = $word_count;
   }
 
