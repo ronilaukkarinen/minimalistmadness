@@ -78,7 +78,7 @@ del {
   cite,
   small {
     border: 0;
-    color: rgb(75 75 90 / .9);
+    color: rgb(var(--color-figcaptions-rgb) / .9);
     font-size: 15px;
     font-style: normal;
     margin-bottom: 6rem;
