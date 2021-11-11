@@ -132,14 +132,7 @@
         ]
       }
     ],
-    "csstools/value-no-unknown-custom-properties": [
-      true,
-      {
-        "importFrom": [
-          "/var/www/rollemaa/content/themes/minimalistmadness/css/dev/global.css"
-        ]
-      }
-    ],
+    "csstools/value-no-unknown-custom-properties": true,
     "rule-empty-line-before": [
       "always-multi-line",
       {
