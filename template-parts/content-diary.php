@@ -45,7 +45,9 @@ namespace Air_Light;
       $word_count = post_word_count( $content );
       ?>
 
-      <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> sanaa.</p>
+      <?php if ( is_singular() ) : ?>
+        <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> sanaa.</p>
+      <?php endif; ?>
 
       <?php if ( get_edit_post_link() ) { ?>
         <footer class="entry-footer">
