@@ -83,6 +83,29 @@ $theme_settings = [
   /**
    * Gutenberg -related settings
    */
+    // Register custom ACF Blocks
+    'acf_blocks' => [
+       // Add SVG file to: svg/block-icons/hero-image.svg
+       'name'  => 'frappe-graph',
+       'title' => 'Statsit graafissa',
+       'post_types' => [
+         'page',
+       ],
+    ],
+
+    // Custom ACF block default settings
+    'acf_block_defaults' => [
+      'category'          => 'air-light',
+      'mode'              => 'auto',
+      'align'             => 'full',
+      'post_types'        => [
+        'page',
+      ],
+      'supports'          => [
+        'align' => false,
+      ],
+      'render_callback'   => __NAMESPACE__ . '\render_acf_block',
+    ],
 
   // If you want to use classic editor somewhere, define it here
   'use_classic_editor' => [],
