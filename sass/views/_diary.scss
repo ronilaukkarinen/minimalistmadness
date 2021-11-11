@@ -69,10 +69,16 @@ body.single-diary {
       font-weight: var(--font-weight-regular);
       margin: 2rem auto 1rem;
     }
+  }
 
+  .type-diary p,
+  .container.container-article .entry-content p,
+  .container.container-article article p,
+  .editor-styles-wrapper p {
     &.word-count {
       font-family: $font-alt;
       font-size: var(--diary-font-size-prefix);
+      opacity: .8;
     }
   }
 
@@ -80,8 +86,7 @@ body.single-diary {
     padding-top: 0;
   }
 
-  .container.container-article .entry-content > *,
-  .editor-styles-wrapper > * {
+  .container.container-article .entry-content > * {
     font-size: var(--diary-font-size);
     max-width: var(--diary-container-width);
   }

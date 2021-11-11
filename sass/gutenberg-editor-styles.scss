@@ -44,18 +44,6 @@
 @import 'views/diary';
 
 // List fix
-.editor-styles-wrapper div[data-title="Klassinen"] ul > li {
-  padding-left: 2.2rem !important;
-}
-
-.editor-styles-wrapper ul {
-  padding-left: 0 !important;
-}
-
-.editor-styles-wrapper ul > li {
-  padding-left: 2.2rem !important;
-}
-
 // Blockquote fix for desktop
 .editor-styles-wrapper blockquote,
 .editor-styles-wrapper blockquote.wp-block-quote {
@@ -106,12 +94,24 @@
   &[data-align="full"] {
     max-width: $width-full;
     width: 100%;
+
+    figure,
+    .size-full {
+      max-width: $width-full;
+      width: 100%;
+    }
   }
 
   // Wide width block
   &[data-align="wide"] {
     max-width: $width-wide;
     width: 100%;
+
+    figure,
+    .size-full {
+      max-width: $width-full;
+      width: 100%;
+    }
 
     @media (min-width: 870px) {
       padding-left: 0;
@@ -126,6 +126,14 @@
   max-width: 100%;
 }
 
+.editor-styles-wrapper .is-root-container {
+  ul,
+  ol {
+    list-style: unset;
+    padding-left: 5rem;
+  }
+}
+
 // Reset admin lists
 .edit-post-layout__metaboxes ul,
 .edit-post-layout__metaboxes ol,
@@ -133,4 +141,22 @@
 .wp-admin .edit-post-sidebar ol {
   list-style: none;
   padding-left: 0;
+}
+
+// Diary styles
+body.block-editor-page.post-type-diary {
+  .wp-block,
+  .wp-block li,
+  .wp-block li,
+  .editor-styles-wrapper .is-root-container > * {
+    font-size: var(--diary-font-size);
+    max-width: var(--diary-container-width);
+  }
+
+  .editor-post-title__input {
+    color: rgb(var(--color-black-rgb) / .55);
+    font-size: var(--diary-font-size-prefix);
+    font-weight: var(--font-weight-regular);
+    margin: 2rem auto 1rem;
+  }
 }

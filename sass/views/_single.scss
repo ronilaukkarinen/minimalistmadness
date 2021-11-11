@@ -54,7 +54,7 @@ del {
   max-width: 100%;
 }
 
-.editor-styles-wrapper,
+.editor-styles-wrapper .is-root-container,
 .container.container-article .entry-content,
 .container.container-article article,
 .container.container-article .article {
@@ -808,6 +808,7 @@ body.post-type-archive-diary .container.container-article .entry-content .author
   }
 }
 
+.theme-dark .container.container-archive .notification-box.old,
 .theme-dark .container.container-article article .notification-box.old {
   border: 2px solid rgb(255 255 255 / .1);
   box-shadow: none;
