@@ -24,10 +24,42 @@ body.single-diary {
     display: block;
   }
 
+  .back-to-link,
   .custom-pagination {
     margin: 0 auto;
   }
 
+  .back-to-link {
+    display: none;
+    margin-bottom: 5rem;
+  }
+
+  .back-to-link a {
+    align-items: center;
+    display: flex;
+    font-size: var(--font-size-14);
+    gap: 1rem;
+    justify-content: flex-start;
+    opacity: .7;
+
+    svg {
+      height: auto;
+      transition: all 100ms;
+      width: 16px;
+    }
+
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus svg,
+    &:hover svg {
+      transform: translateX(-1rem);
+    }
+  }
+
+  .back-to-link,
   .prefix,
   h1.prefix,
   .diary-title,
