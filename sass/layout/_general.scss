@@ -130,22 +130,18 @@
   width: 100%;
 
   a {
-    background-color: transparent;
-    border: 2px dashed #999;
-    clear: both;
-    color: #999;
-    display: block;
+    font-size: var(--font-size-14);
     margin: 0;
-    padding: 2rem;
-    text-align: center;
+    opacity: .4;
+    padding: 0;
+    text-align: left;
     text-decoration: none;
     transition: all .22s;
   }
 
   a:hover,
   a:focus {
-    background-color: #efefef;
-    color: #999;
+    opacity: 1;
   }
 }
 
