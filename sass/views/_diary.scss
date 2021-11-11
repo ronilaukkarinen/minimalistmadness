@@ -24,16 +24,25 @@ body.single-diary {
     display: block;
   }
 
+  .custom-pagination {
+    margin: 0 auto;
+  }
+
   .prefix,
-  .diary-title {
-    font-family: var(--diary-font-family-heading);
-    font-size: var(--diary-font-size-main-heading);
+  .diary-title,
+  .custom-pagination {
     max-width: var(--diary-container-width);
 
     @media (max-width: 840px) {
       padding-left: 2rem;
       padding-right: 2rem;
     }
+  }
+
+  .prefix,
+  .diary-title {
+    font-family: var(--diary-font-family-heading);
+    font-size: var(--diary-font-size-main-heading);
   }
 
   .diary-title {
