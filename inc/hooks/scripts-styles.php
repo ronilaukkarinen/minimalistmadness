@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-11 13:24:58
+ * @Last Modified time: 2021-11-11 20:07:26
  *
  * @package minimalistmadness
  */
@@ -47,8 +47,18 @@ function heatmap_data() {
     // $sum += $word_count;
 
     // Form an array
-    $heatmap_post_array[ $unix_timestamp ] = $word_count;
+    $heatmap_post_array[ $timestamp ] = $word_count;
+
+    if ( array_key_exists( $timestamp, $heatmap_post_array ) ) {
+      $heatmap_post_array[ $timestamp ] = $heatmap_post_array[ $timestamp ] + $word_count;
+    } else {
+      $heatmap_post_array[ $timestamp ] += $word_count;
+    }
   }
+
+  // echo '<pre>';
+  // var_dump( $heatmap_post_array );
+  // echo '<pre>';
 
   return $heatmap_post_array;
 
