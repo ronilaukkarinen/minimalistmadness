@@ -1,3 +1,4 @@
+@use 'sass:math';
 // ---------------------------------------------------------
 // Helpers
 //
@@ -49,5 +50,5 @@
 // Viewport sized typography with minimum and maximum values
 // Based on an example here: https://css-tricks.com/snippets/css/fluid-typography/
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, $value * 0 + 1);
 }

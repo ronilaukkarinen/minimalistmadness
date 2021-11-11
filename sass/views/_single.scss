@@ -590,7 +590,7 @@ ul.tags {
   text-align: right;
 
   svg {
-    fill: #777;
+    fill: var(--color-grey-two);
     margin-right: 2px;
     position: relative;
     top: 1px;
@@ -629,7 +629,6 @@ ul.tags {
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-  @include clearfix;
   margin: 1.5em 0;
   overflow: hidden;
 }
@@ -771,9 +770,9 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 .notification-box.old,
 .container.container-article article .notification-box.old {
   background-color: var(--color-white);
-  border: 1px dashed darken(#414663, 5%);
-  box-shadow: 0 0 0 3px #f8f8f8, 0 0 0 5px darken(#414663, 5%), 0 0 0 10px #f8f8f8, 0 0 2px 10px #eee;
-  color: darken(#414663, 5%);
+  border: 1px dashed var(--color-pickled-bluewood);
+  box-shadow: 0 0 0 3px var(--color-lighter-grey), 0 0 0 5px darken(#414663, 5%), 0 0 0 10px var(--color-lighter-grey), 0 0 2px 10px var(--color-screechin-white);
+  color: var(--color-pickled-bluewood);
   font-family: $font-old;
   margin-bottom: 6rem;
   padding: 3rem;
@@ -798,7 +797,7 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 
   h2,
   p {
-    color: darken(#414663, 5%);
+    color: var(--color-pickled-bluewood);
     font-family: $font-old;
   }
 

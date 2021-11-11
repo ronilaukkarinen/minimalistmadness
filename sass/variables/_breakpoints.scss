@@ -14,6 +14,7 @@ $container-desktop: 1200px;
 
 // Where navigation transforms into responsive - scale your window width down to test
 $responsivenav: 960px;
+$width-max-mobile: $responsivenav;
 
 // New
 $width-max-article: $article-max-width;

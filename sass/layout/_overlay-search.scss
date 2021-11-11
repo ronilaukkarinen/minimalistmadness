@@ -1,4 +1,6 @@
-/* stylelint-disable a11y/no-display-none, a11y/no-outline-none */
+@use 'sass:math';
+
+// stylelint-disable a11y/no-display-none, a11y/no-outline-none
 body.overlay-open {
   overflow: hidden;
   top: 0;
@@ -212,12 +214,12 @@ $tcon-size: 6rem !default;
 $tcon-transition: .3s !default;
 $tcon-jstransform: 'tcon-transform' !default;
 $tcon-search-size: ($tcon-size * .75) !default;
-$tcon-search-radius: ($tcon-size / 14) !default;
+$tcon-search-radius: math.div($tcon-size, 14) !default;
 $tcon-search-color: #000 !default;
 $tcon-search-glass-color: #000 !default;
-$tcon-search-handle-width: ($tcon-size / 10) !default;
-$tcon-search-glass-radius: ($tcon-size / 2.2) !default;
-$tcon-search-glass-border-width: ($tcon-size / 20) !default;
+$tcon-search-handle-width: math.div($tcon-size, 10) !default;
+$tcon-search-glass-radius: math.div($tcon-size, 2.2) !default;
+$tcon-search-glass-border-width: math.div($tcon-size, 20) !default;
 
 .tcon {
   align-items: center;
