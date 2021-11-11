@@ -18,12 +18,12 @@ namespace Air_Light;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <p class="prefix"><?php the_title(); ?></p>
-  <h1 class="diary-title">
+  <h1 class="prefix"><?php the_title(); ?></h1>
+  <p class="diary-title">
     <?php if ( ! is_singular( 'diary' ) ) echo '<a href="' . esc_url( get_the_permalink() ) . '">'; ?>
       <time datetime="<?php the_time( 'c' ); ?>"><?php echo esc_html( ucfirst( get_the_time( 'l' ) ) ); ?>na, <?php the_time( 'j.' ) ?> <?php the_time( 'F' ) ?>ta <?php the_time( 'Y' ) ?><br><span class="time">Kello on <?php the_time( 'H:i' ) ?></span></time>
       <?php if ( ! is_singular( 'diary' ) ) echo '</a>'; ?>
-  </h1>
+  </p>
   <div class="container container-article">
     <div class="entry-content">
       <?php

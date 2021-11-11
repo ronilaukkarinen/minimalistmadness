@@ -29,6 +29,7 @@ body.single-diary {
   }
 
   .prefix,
+  h1.prefix,
   .diary-title,
   .custom-pagination {
     max-width: var(--diary-container-width);
@@ -40,6 +41,7 @@ body.single-diary {
   }
 
   .prefix,
+  h1.prefix,
   .diary-title {
     font-family: var(--diary-font-family-heading);
     font-size: var(--diary-font-size-main-heading);
@@ -57,13 +59,14 @@ body.single-diary {
     }
   }
 
-  .type-diary p,
-  .container.container-article .entry-content p,
-  .container.container-article article p,
-  .editor-styles-wrapper p {
+  .type-diary h1,
+  .container.container-article .entry-content h1,
+  .container.container-article article h1,
+  .editor-styles-wrapper h1 {
     &.prefix {
       color: rgb(var(--color-black-rgb) / .55);
       font-size: var(--diary-font-size-prefix);
+      font-weight: var(--font-weight-regular);
       margin: 2rem auto 1rem;
     }
 
