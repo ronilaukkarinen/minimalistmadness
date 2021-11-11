@@ -26,11 +26,13 @@
   top: calc(100vh + 4rem);
 
   @media (max-width: 1200px) {
-    margin-left: 1rem;
-    margin-top: 1rem;
     right: unset;
     top: 100vh;
     width: 100%;
+  }
+
+  @media (max-width: 760px) {
+    margin-top: 1rem;
   }
 }
 
@@ -50,6 +52,7 @@
   border-radius: 10em;
   // box-shadow: 0 10px 25px #e4e7ec;
   height: 10em;
+  margin: 0 auto;
   position: relative;
   transition: background-color 250ms;
   width: 20em;
