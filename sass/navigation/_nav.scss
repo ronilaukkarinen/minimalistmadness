@@ -246,7 +246,7 @@
     flex-direction: column;
     height: 40px;
     justify-content: flex-start;
-    overflow: hidden;
+    overflow: visible;
     transition: all .4s ease-out;
     z-index: -1;
   }
