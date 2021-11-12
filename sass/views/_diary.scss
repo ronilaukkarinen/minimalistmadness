@@ -13,8 +13,10 @@
 }
 
 // Active diary link
-.single-diary .menu-item-26435 a {
-  opacity: 1;
+@media (min-width: $responsivenav) {
+  .single-diary .menu-item-26435 a {
+    opacity: 1;
+  }
 }
 
 body.post-type-archive-diary,
