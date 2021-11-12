@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-11 21:05:58
+ * @Last Modified time: 2021-11-12 09:27:56
  *
  * @package minimalistmadness
  */
@@ -42,9 +42,6 @@ function heatmap_data() {
     $timestamp = get_the_time( 'Y-m-d', $post_id );
     $day = get_the_time( 'd', $post_id );
     $unix_timestamp = get_post_timestamp( $heatmap_post );
-
-    // Combine amounts for same day
-    // $sum += $word_count;
 
     // Form an array
     $heatmap_post_array[ $timestamp ] = $word_count;

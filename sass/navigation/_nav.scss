@@ -230,7 +230,7 @@
 .nav-burger {
   display: none;
   left: 0;
-  padding: 12px 12px 12px 0;
+  padding: 0;
   position: absolute;
   z-index: 9999;
 }
@@ -371,6 +371,7 @@
 // Hamburger
 /* https://github.com/jonsuh/hamburgers */
 .hamburger {
+  align-items: center;
   background-color: transparent;
   border: 0;
   color: inherit;
@@ -378,6 +379,7 @@
   display: flex;
   /* stylelint-disable-next-line */
   font: inherit;
+  height: 40px;
   margin: 0;
   overflow: visible;
   padding: 2px 4rem;

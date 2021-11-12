@@ -128,7 +128,9 @@
       {
         "ignoreValues": [
           "transparent",
-          "currentColor"
+          "currentColor",
+          "unset",
+          "inherit"
         ]
       }
     ],
