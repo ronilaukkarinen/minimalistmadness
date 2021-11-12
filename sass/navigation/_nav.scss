@@ -56,12 +56,14 @@
   padding: 10px 12px;
 }
 
-.site-head a:hover,
-.current-menu-item a,
-.site-head a:focus,
-.active a {
-  opacity: 1;
-  text-decoration: none;
+@media (min-width: $responsivenav) {
+  .site-head a:hover,
+  .current-menu-item a,
+  .site-head a:focus,
+  .active a {
+    opacity: 1;
+    text-decoration: none;
+  }
 }
 
 .site-head-center {
