@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-12 09:27:56
+ * @Last Modified time: 2021-11-13 12:58:19
  *
  * @package minimalistmadness
  */
@@ -20,7 +20,7 @@ function heatmap_data() {
   global $post;
 
   $heatmap_args = array(
-    'post_type' => [ 'post', 'diary' ],
+    'post_type' => 'any',
     'posts_per_page' => 380, // phpcs:ignore
     'no_found_rows' => true,
     'post_status' => 'publish',
