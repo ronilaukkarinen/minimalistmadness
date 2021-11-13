@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-13 19:48:45
+ * @Last Modified time: 2021-11-13 20:11:36
  *
  * @package minimalistmadness
  */
@@ -27,7 +27,6 @@ function heatmap_data() {
   );
 
   $heatmap_query = get_posts( $heatmap_args );
-  $heatmap_array = array();
 
   // Get words from Rollekino
 	// First check if data exists
@@ -47,6 +46,7 @@ function heatmap_data() {
 		set_transient( 'rollekino_words_response', $rollekino_post_array, 24 * 60 * 60 );
 	}
 
+  $heatmap_post_array = array();
   foreach ( $heatmap_query as $heatmap_post ) {
 		setup_postdata( $heatmap_post );
 
@@ -71,17 +71,16 @@ function heatmap_data() {
 		}
   }
 
-  // echo '<pre>';
-  // var_dump( $response_body );
-  // echo '<pre>';
-	// die();
+  echo '<pre>';
+  var_dump( $heatmap_post_array );
+  echo '<pre>';
+	die();
 
   // Rollemaa data
   return $heatmap_post_array;
 
   // Rollekino data (works)
   // return $rollekino_post_array;
-
 }
 /**
  * Enqueue scripts and styles.
