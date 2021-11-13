@@ -28,7 +28,7 @@ const dataPointsArray = heatmapdata;
 
 const chartElement = document.getElementById('heatmap') || false;
 if (chartElement) {
-// Construct chart
+  // Construct chart
   const data = {
     dataPoints: dataPointsArray,
     // dataPoints: {

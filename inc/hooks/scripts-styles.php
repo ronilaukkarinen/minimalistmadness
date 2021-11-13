@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-13 12:58:19
+ * @Last Modified time: 2021-11-13 19:40:26
  *
  * @package minimalistmadness
  */
@@ -16,9 +16,9 @@ namespace Air_Light;
  * Heatmap stuff
  */
 function heatmap_data() {
-
   global $post;
 
+  // Start local array settings
   $heatmap_args = array(
     'post_type' => 'any',
     'posts_per_page' => 380, // phpcs:ignore
@@ -29,37 +29,58 @@ function heatmap_data() {
   $heatmap_query = get_posts( $heatmap_args );
   $heatmap_array = array();
 
+  // Get words from Rollekino
+	// First check if data exists
+	$response_body = get_transient( 'rollekino_words_response' );
+
+	if ( false === $response_body ) {
+		$response = wp_remote_get( 'https://www.rollekino.fi/wp-json/words/v1/getposts' );
+
+		if ( 200 !== wp_remote_retrieve_response_code( $response ) ) {
+			return;
+		}
+
+		// Get body of the response
+		$response_body = json_decode( wp_remote_retrieve_body( $response ), true );
+
+		// Put the results in a transient. Expire after 24 hours.
+		set_transient( 'rollekino_words_response', $response_body, 24 * 60 * 60 );
+	}
+
   foreach ( $heatmap_query as $key => $heatmap_post ) {
-    setup_postdata( $heatmap_post );
+		setup_postdata( $heatmap_post );
 
-    // Word count
-    $post_id = $heatmap_post->ID;
-    $post_object = get_post( $post_id );
-    $content = $post_object->post_content;
-    $word_count = post_word_count( $content );
+		// Word count
+		$post_id = $heatmap_post->ID;
+		$post_object = get_post( $post_id );
+		$content = $post_object->post_content;
+		$word_count = post_word_count( $content );
 
-    // Unix timestamp
-    $timestamp = get_the_time( 'Y-m-d', $post_id );
-    $day = get_the_time( 'd', $post_id );
-    $unix_timestamp = get_post_timestamp( $heatmap_post );
+		// Unix timestamp
+		$unix_timestamp = get_post_timestamp( $heatmap_post );
 
-    // Form an array
-    $heatmap_post_array[ $timestamp ] = $word_count;
+		// Form an array from local posts
+		$heatmap_post_array[ $unix_timestamp ] = $word_count;
 
-    // If same day has multiple posts, combine word counts and show total count for one day
-    $post_date = strtotime( get_the_time( 'Y-m-d 00:00:00', $post_id ) );
-    if ( array_key_exists( $post_date, $heatmap_post_array ) ) {
-      $heatmap_post_array[ $post_date ] = $heatmap_post_array[ $post_date ] + $word_count;
-    } else {
-      $heatmap_post_array[ $post_date ] = $word_count;
-    }
+		// If same day has multiple posts, combine word counts and show total count for one day
+		$post_date = strtotime( get_the_time( 'Y-m-d 00:00:00', $post_id ) );
+		if ( array_key_exists( $post_date, $heatmap_post_array ) ) {
+		  $heatmap_post_array[ $post_date ] = $heatmap_post_array[ $post_date ] + $word_count;
+		} else {
+		  $heatmap_post_array[ $post_date ] = $word_count;
+		}
   }
 
   // echo '<pre>';
-  // var_dump( $heatmap_post_array );
+  // var_dump( $response_body );
   // echo '<pre>';
+	// die();
 
+  // Rollemaa data
   return $heatmap_post_array;
+
+  // Rollekino data (works)
+  // return $response_body;
 
 }
 /**
@@ -67,9 +88,9 @@ function heatmap_data() {
  */
 function enqueue_theme_scripts() {
   if ( 'development' === getenv( 'WP_ENV' ) ) {
-    $minimalistmadness_template = 'global';
+		$minimalistmadness_template = 'global';
   } else {
-    $minimalistmadness_template = 'global.min';
+		$minimalistmadness_template = 'global.min';
   }
 
   // Disable jQuery (included in all.js and normally on wp-admin)
@@ -95,7 +116,7 @@ function enqueue_theme_scripts() {
 
   // Required comment-reply script
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-    wp_enqueue_script( 'comment-reply' );
+		wp_enqueue_script( 'comment-reply' );
   }
 
   wp_localize_script( 'scripts', 'minimalistmadness_screenReaderText', array(
