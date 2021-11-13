@@ -124,6 +124,45 @@ body.single-diary {
     font-size: var(--diary-font-size);
     max-width: var(--diary-container-width);
   }
+
+  .editor-styles-wrapper .is-root-container,
+  .container.container-article .entry-content {
+    ol.is-style-todo-list,
+    ul.is-style-todo-list {
+      list-style: none;
+      padding-left: 0;
+
+      li::before {
+        border: 1px solid var(--color-darkgrey);
+        border-radius: 50%;
+        content: '';
+        display: inline-block;
+        height: 16px;
+        margin-right: 8px;
+        overflow: hidden;
+        position: relative;
+        top: 2px;
+        width: 16px;
+      }
+
+      li.checked {
+        text-decoration: line-through;
+      }
+
+      li.checked::before {
+        background-color: var(--color-darkgrey);
+        background-image: url('../../svg/checked-white.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+      }
+
+      @media (max-width: 840px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+  }
 }
 
 .type-diary + .type-diary {
