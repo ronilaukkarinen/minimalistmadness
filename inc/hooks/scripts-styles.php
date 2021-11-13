@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-13 21:09:03
+ * @Last Modified time: 2021-11-13 21:35:02
  *
  * @package minimalistmadness
  */
@@ -30,9 +30,9 @@ function heatmap_data() {
 
   // Get words from Rollekino
 	// First check if data exists
-  $rollekino_post_array = get_transient( 'rollekino_words_response' );
+  $rollekino_query = get_transient( 'rollekino_query' );
 
-	if ( false === $rollekino_post_array ) {
+	if ( false === $rollekino_query ) {
 		$response = wp_remote_get( 'https://www.rollekino.fi/wp-json/words/v1/getposts' );
 
 		if ( 200 !== wp_remote_retrieve_response_code( $response ) ) {
@@ -40,14 +40,14 @@ function heatmap_data() {
 		}
 
 		// Get body of the response
-		$rollekino_post_array = json_decode( wp_remote_retrieve_body( $response ), true );
+		$rollekino_query = json_decode( wp_remote_retrieve_body( $response ), true );
 
 		// Put the results in a transient. Expire after 24 hours.
-		set_transient( 'rollekino_words_response', $rollekino_post_array, 24 * 60 * 60 );
+		set_transient( 'rollekino_words_response', $rollekino_query, 24 * 60 * 60 );
 	}
 
-  // $rollekino_post_array = [];
-  foreach ( $rollekino_post_array as $key => $rollekino_post ) {
+  // $rollekino_post_array = array();
+  foreach ( $rollekino_query as $key => $rollekino_post ) {
 
     // Word count
 		$word_count = post_word_count( $rollekino_post['post_content'] );
@@ -62,20 +62,17 @@ function heatmap_data() {
 		$post_date = $rollekino_post['post_date_gmt'];
 
     // Form an array from external posts
-		$rollekino_post_array2[ $unix_timestamp ] = $word_count;
+		$rollekino_post_array[ $unix_timestamp ] = $word_count;
 
 		// If same day has multiple posts, combine word counts and show total count for one day
-		if ( array_key_exists( $post_date, $rollekino_post_array2 ) ) {
-		  $rollekino_post_array2[ $unix_timestamp ] = $rollekino_post_array2[ $post_date ] + $word_count;
+		if ( array_key_exists( $post_date, $rollekino_post_array ) ) {
+		  $rollekino_post_array[ $unix_timestamp ] = $rollekino_post_array[ $post_date ] + $word_count;
 		} else {
-		  $rollekino_post_array2[ $unix_timestamp ] = $word_count;
+		  $rollekino_post_array[ $unix_timestamp ] = $word_count;
 		}
   }
 
-  // var_dump( $rollekino_post_array2 );
-  // die();
-
-  // $heatmap_post_array = [];
+  // $heatmap_post_array = array();
   foreach ( $heatmap_query as $key => $heatmap_post ) {
 		setup_postdata( $heatmap_post );
 
@@ -87,6 +84,8 @@ function heatmap_data() {
 
     // Post date
     $post_date = strtotime( get_the_time( 'Y-m-d 00:00:00', $post_id ) );
+
+    $array2 = $rollekino_query[ $key ];
 
 		// Unix timestamp
 		$unix_timestamp = get_post_timestamp( $heatmap_post );
@@ -102,6 +101,8 @@ function heatmap_data() {
 		}
   }
 
+  // Combine arrays
+  $heatmap_post_array = $heatmap_post_array + $rollekino_post_array;
   // echo '<pre>';
   // var_dump( $rollekino_post_array );
   // echo '<pre>';
