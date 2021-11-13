@@ -157,5 +157,10 @@ body.block-editor-page.post-type-diary {
     font-size: var(--diary-font-size-prefix);
     font-weight: var(--font-weight-regular);
     margin: 2rem auto 1rem;
+
+    @media (max-width: 840px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 }
