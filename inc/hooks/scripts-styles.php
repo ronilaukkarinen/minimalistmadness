@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-13 21:35:02
+ * @Last Modified time: 2021-11-14 00:33:28
  *
  * @package minimalistmadness
  */
@@ -46,73 +46,64 @@ function heatmap_data() {
 		set_transient( 'rollekino_words_response', $rollekino_query, 24 * 60 * 60 );
 	}
 
-  // $rollekino_post_array = array();
-  foreach ( $rollekino_query as $key => $rollekino_post ) {
+  // Get words from Dude
+	// First check if data exists
+  $dude_query = get_transient( 'dude_query' );
 
-    // Word count
-		$word_count = post_word_count( $rollekino_post['post_content'] );
+	if ( false === $dude_query ) {
+		$response_dude = wp_remote_get( 'https://www.dude.fi/wp-json/words/v1/getposts' );
 
-    // Post date
-    $post_date = $rollekino_post['post_date_gmt'];
-
-    // Unix timestamp
-		$unix_timestamp = strtotime( $post_date );
-
-    // If same day has multiple posts, combine word counts and show total count for one day
-		$post_date = $rollekino_post['post_date_gmt'];
-
-    // Form an array from external posts
-		$rollekino_post_array[ $unix_timestamp ] = $word_count;
-
-		// If same day has multiple posts, combine word counts and show total count for one day
-		if ( array_key_exists( $post_date, $rollekino_post_array ) ) {
-		  $rollekino_post_array[ $unix_timestamp ] = $rollekino_post_array[ $post_date ] + $word_count;
-		} else {
-		  $rollekino_post_array[ $unix_timestamp ] = $word_count;
+		if ( 200 !== wp_remote_retrieve_response_code( $response_dude ) ) {
+			return;
 		}
-  }
+
+		// Get body of the response
+		$dude_query = json_decode( wp_remote_retrieve_body( $response_dude ), true );
+
+		// Put the results in a transient. Expire after 24 hours.
+		set_transient( 'dude_words_response', $dude_query, 24 * 60 * 60 );
+	}
+
+  $merged = array_merge( $heatmap_query, $rollekino_query, $dude_query );
 
   // $heatmap_post_array = array();
-  foreach ( $heatmap_query as $key => $heatmap_post ) {
+  foreach ( $merged as $key => $heatmap_post ) {
 		setup_postdata( $heatmap_post );
 
 		// Word count
-		$post_id = $heatmap_post->ID;
-		$post_object = get_post( $post_id );
-		$content = $post_object->post_content;
-		$word_count = post_word_count( $content );
+    if ( null !== $heatmap_post->ID ) {
+      $post_id = $heatmap_post->ID;
+      $post_object = get_post( $post_id );
+      $content = $post_object->post_content;
+      $word_count = post_word_count( $content );
+    } else {
+      $word_count = post_word_count( $heatmap_post['post_content'] );
+    }
 
-    // Post date
-    $post_date = strtotime( get_the_time( 'Y-m-d 00:00:00', $post_id ) );
+    // Timestamps
+    if ( null !== $heatmap_post->ID ) {
+      $unix_timestamp = get_post_timestamp( $heatmap_post );
+      $day = get_the_time( 'Y-m-d', $post_id );
+      $day_in_unix_format = strtotime( get_the_time( 'Y-m-d', $post_id ) );
+    } else {
+      $unix_timestamp = strtotime( $heatmap_post['post_date_gmt'] );
+      $day = gmdate( 'Y-m-d', strtotime( $heatmap_post['post_date_gmt'] ) );
+      $day_in_unix_format = strtotime( gmdate( 'Y-m-d', strtotime( $heatmap_post['post_date_gmt'] ) ) );
+    }
 
-    $array2 = $rollekino_query[ $key ];
+    // Form an array
+    $heatmap_post_array[ $day ] = $word_count;
 
-		// Unix timestamp
-		$unix_timestamp = get_post_timestamp( $heatmap_post );
-
-		// Form an array from local posts
-		$heatmap_post_array[ $unix_timestamp ] = $word_count;
-
-		// If same day has multiple posts, combine word counts and show total count for one day
-		if ( array_key_exists( $post_date, $heatmap_post_array ) ) {
-		  $heatmap_post_array[ $unix_timestamp ] = $heatmap_post_array[ $post_date ] + $word_count;
-		} else {
-		  $heatmap_post_array[ $unix_timestamp ] = $word_count;
-		}
+    // If same day has multiple posts, combine word counts and show total count for one day
+    if ( array_key_exists( $day, $heatmap_post_array ) ) {
+      $heatmap_post_array[ $day_in_unix_format ] = $heatmap_post_array[ $day_in_unix_format ] + $word_count;
+    } else {
+      $heatmap_post_array[ $day_in_unix_format ] = $word_count;
+    }
   }
-
-  // Combine arrays
-  $heatmap_post_array = $heatmap_post_array + $rollekino_post_array;
-  // echo '<pre>';
-  // var_dump( $rollekino_post_array );
-  // echo '<pre>';
-	// die();
 
   // Rollemaa data
   return $heatmap_post_array;
-
-  // Rollekino data (works)
-  // return $rollekino_post_array;
 }
 /**
  * Enqueue scripts and styles.
