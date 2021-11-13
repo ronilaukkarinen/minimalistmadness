@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-13 19:40:26
+ * @Last Modified time: 2021-11-13 19:48:45
  *
  * @package minimalistmadness
  */
@@ -31,9 +31,9 @@ function heatmap_data() {
 
   // Get words from Rollekino
 	// First check if data exists
-	$response_body = get_transient( 'rollekino_words_response' );
+	$rollekino_post_array = get_transient( 'rollekino_words_response' );
 
-	if ( false === $response_body ) {
+	if ( false === $rollekino_post_array ) {
 		$response = wp_remote_get( 'https://www.rollekino.fi/wp-json/words/v1/getposts' );
 
 		if ( 200 !== wp_remote_retrieve_response_code( $response ) ) {
@@ -41,13 +41,13 @@ function heatmap_data() {
 		}
 
 		// Get body of the response
-		$response_body = json_decode( wp_remote_retrieve_body( $response ), true );
+		$rollekino_post_array = json_decode( wp_remote_retrieve_body( $response ), true );
 
 		// Put the results in a transient. Expire after 24 hours.
-		set_transient( 'rollekino_words_response', $response_body, 24 * 60 * 60 );
+		set_transient( 'rollekino_words_response', $rollekino_post_array, 24 * 60 * 60 );
 	}
 
-  foreach ( $heatmap_query as $key => $heatmap_post ) {
+  foreach ( $heatmap_query as $heatmap_post ) {
 		setup_postdata( $heatmap_post );
 
 		// Word count
@@ -80,7 +80,7 @@ function heatmap_data() {
   return $heatmap_post_array;
 
   // Rollekino data (works)
-  // return $response_body;
+  // return $rollekino_post_array;
 
 }
 /**
