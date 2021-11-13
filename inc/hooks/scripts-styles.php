@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-14 00:33:28
+ * @Last Modified time: 2021-11-14 00:41:38
  *
  * @package minimalistmadness
  */
@@ -64,7 +64,25 @@ function heatmap_data() {
 		set_transient( 'dude_words_response', $dude_query, 24 * 60 * 60 );
 	}
 
-  $merged = array_merge( $heatmap_query, $rollekino_query, $dude_query );
+  // Get words from Rolle.design
+	// First check if data exists
+  $rolledesign_query = get_transient( 'rolledesign_query' );
+
+	if ( false === $rolledesign_query ) {
+		$response_rolledesign = wp_remote_get( 'https://rolle.design/wp-json/words/v1/getposts' );
+
+		if ( 200 !== wp_remote_retrieve_response_code( $response_rolledesign ) ) {
+			return;
+		}
+
+		// Get body of the response
+		$rolledesign_query = json_decode( wp_remote_retrieve_body( $response_rolledesign ), true );
+
+		// Put the results in a transient. Expire after 24 hours.
+		set_transient( 'dude_words_response', $rolledesign_query, 24 * 60 * 60 );
+	}
+
+  $merged = array_merge( $heatmap_query, $rollekino_query, $dude_query, $rolledesign_query );
 
   // $heatmap_post_array = array();
   foreach ( $merged as $key => $heatmap_post ) {
