@@ -13,6 +13,11 @@ wp.blocks.registerBlockStyle('core/list', {
   label: 'Ilman listamerkkejä',
 });
 
+wp.blocks.registerBlockStyle('core/list', {
+  name: 'todo-list',
+  label: 'ToDo-lista',
+});
+
 // var air_light_LazyLoad = new LazyLoad({
 //  callback_loaded: setLazyLoadedFigureWidth,
 // });
