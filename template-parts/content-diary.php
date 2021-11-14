@@ -65,21 +65,21 @@ $drink_text = get_field( 'drink_text' );
           <?php if ( ! empty( $device ) ) : ?>
             <li>
               <?php include get_theme_file_path( "/svg/{$device['value']}.svg" ); ?>
-              Kirjoitettu laitteella: <?php echo esc_html( $device['label'] ); ?>
+              <?php echo esc_html( $device['label'] ); ?>
             </li>
           <?php endif; ?>
 
           <?php if ( ! empty( $weather_text ) ) : ?>
             <li>
               <?php include get_theme_file_path( "/svg/{$weather_icon}.svg" ); ?>
-              Sää: <?php echo esc_html( $temperature ); ?> &deg; C, <?php echo esc_html( $weather_text ); ?>
+              <?php echo esc_html( $temperature ); ?> &deg; C, <?php echo esc_html( $weather_text ); ?>
             </li>
           <?php endif; ?>
 
           <?php if ( ! empty( $location ) ) : ?>
             <li>
               <?php include get_theme_file_path( '/svg/location.svg' ); ?>
-              Sijainti: <?php echo esc_html( $location ); ?>
+              <?php echo esc_html( $location ); ?>
             </li>
           <?php endif; ?>
           <?php if ( ! empty( $highlight ) ) : ?>
