@@ -1,23 +1,24 @@
 body .site-content .custom-pagination {
+  display: flex;
+  gap: .5rem;
   opacity: .4;
   transition: all .55s;
 
   a:not(.button):not(.post-edit-link) {
     border: 0 !important;
     box-shadow: none !important;
-    color: #444;
-    margin-left: 5px;
-    margin-right: 5px;
+    color: var(--color-midnight-gray);
+    margin: 0;
     text-decoration: none;
     transition: all .22s;
 
     &.current {
-      color: #333;
+      color: var(--color-black-three);
     }
 
     &:hover,
     &:focus {
-      color: lighten(#141414, 15%);
+      filter: brightness(15%);
     }
   }
 
@@ -57,7 +58,7 @@ body .site-content .custom-pagination {
   }
 
   p {
-    color: #444;
+    color: var(--color-midnight-gray);
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
