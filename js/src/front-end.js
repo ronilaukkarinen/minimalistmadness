@@ -255,8 +255,9 @@ swup.on('contentReplaced', () => {
         $('.block-loadable .no-posts').hide();
 
         const button_container = $('.block-loadable button.load-more').closest('.load-more-container');
-        const query_name = $('.block-loadable .load-more-container').attr('data-use-query');
-        const query = window[query_name];
+        // const query_name = $('.block-loadable .load-more-container').attr('data-use-query');
+        // const query = window[query_name];
+        const query = paged_query.posts_query;
 
         // Where the page is currently:
         const firstPost = jQuery('.items-vue .post:first');
@@ -575,8 +576,9 @@ swup.on('contentReplaced', () => {
       $('.block-loadable .no-posts').hide();
 
       const button_container = $('.block-loadable button.load-more').closest('.load-more-container');
-      const query_name = $('.block-loadable .load-more-container').attr('data-use-query');
-      const query = window[query_name];
+      // const query_name = $('.block-loadable .load-more-container').attr('data-use-query');
+      // const query = window[query_name];
+      const query = paged_query.posts_query;
 
       // Where the page is currently:
       const firstPost = jQuery('.items-vue .post:first');

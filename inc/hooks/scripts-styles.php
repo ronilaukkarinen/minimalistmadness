@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-14 00:41:38
+ * @Last Modified time: 2021-11-14 16:45:20
  *
  * @package minimalistmadness
  */
@@ -123,6 +123,44 @@ function heatmap_data() {
   // Rollemaa data
   return $heatmap_post_array;
 }
+
+/**
+ * Vue feed queries for Swup.
+ */
+function paged_query_for_swup() {
+  global $post;
+
+  // Query for SWUP for each page
+  $selected_posts = get_field( 'selected_posts', 'option', false, false );
+  $args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 2, // NB! When you change this, change also posts_per_page option
+    'cache_results' => true,
+    'update_post_term_cache' => true,
+    'update_post_meta_cache' => true,
+    'no_found_rows' => true,
+    'post_status' => 'publish',
+    'post__not_in' => $selected_posts,
+  );
+
+  $query = new \WP_Query( $args );
+
+  // Check if we should event show load more button
+  // in the first place and save query to js variable for later use.
+  if ( $query->found_posts !== $query->post_count ) {
+    $query->query['paged'] = 1;
+    $posts_query_original = $query->query; // phpcs:ignore
+    $posts_query = $query->query; // phpcs:ignore
+
+    $queries = array(
+      'posts_query_original' => $posts_query_original,
+      'posts_query' => $posts_query,
+    );
+
+    return $queries;
+  }
+}
+
 /**
  * Enqueue scripts and styles.
  */
@@ -165,6 +203,7 @@ function enqueue_theme_scripts() {
   ) );
 
   wp_localize_script( 'scripts', 'heatmapdata', heatmap_data() );
+  wp_localize_script( 'scripts', 'paged_query', paged_query_for_swup() );
 
   wp_localize_script( 'scripts', 'minimalistmadness_screenReaderText', [
     'expand'          => get_default_localization( 'Open child menu' ),

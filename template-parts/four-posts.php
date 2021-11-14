@@ -7,7 +7,7 @@
 
 namespace Air_Light;
 
-  $featured_posts = get_field( 'selected_posts', 'option', false, false );
+$selected_posts = get_field( 'selected_posts', 'option', false, false );
   $args = array(
     'post_type' => 'post',
     'posts_per_page' => 2, // NB! When you change this, change also posts_per_page option
@@ -142,7 +142,7 @@ namespace Air_Light;
           $query->query['paged'] = 1;
         ?>
 
-      <script data-swup-ignore-script data-swup-reload-script>
+      <script data-swup-ignore-script>
         var posts_query_original = <?php echo json_encode( $query->query ) // phpcs:ignore ?>;
         var posts_query = <?php echo json_encode( $query->query ) // phpcs:ignore ?>;
       </script>
