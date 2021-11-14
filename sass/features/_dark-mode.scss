@@ -153,6 +153,10 @@
   --color-post-author-background-rgb: 18 20 26;
   --color-post-author-border: #69634e;
 
+  .container.container-article .entry-content ul.metadata a:not(.button):not(.post-edit-link):not(.author-link).is-external-link::after {
+    background-image: url('../../svg/external-link-d0d1d2.svg') !important;
+  }
+
   // Frappe charts
   rect[fill="#ebedf0"] {
     fill: rgb(55 55 55 / .3);

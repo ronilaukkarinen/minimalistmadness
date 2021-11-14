@@ -16,7 +16,19 @@
 
 namespace Air_Light;
 
+// Fields
+$location = get_field( 'location' );
+$highlight = get_field( 'highlight' );
+$np = get_field( 'np' );
+$np_link = get_field( 'np_link' );
+$temperature = get_field( 'temperature' );
+$weather_text = get_field( 'weather_text' );
+$weather_icon = get_field( 'weather_icon' );
+$device = get_field( 'device' );
+$drink_icon = get_field( 'drink_icon' );
+$drink_text = get_field( 'drink_text' );
 ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <h1 class="prefix"><?php the_title(); ?></h1>
   <p class="diary-title">
@@ -37,6 +49,59 @@ namespace Air_Light;
         'after'  => '</div>',
       ) );
       ?>
+
+      <?php if ( ! empty( $location ) && ! empty( $highlight ) && ! empty( $temperature ) && ! empty( $weather_text ) && ! empty( $device ) && ! empty( $drink_text ) ) : ?>
+        <ul class="metadata">
+
+          <?php if ( ! empty( $device ) ) : ?>
+            <li>
+              <?php include get_theme_file_path( "/svg/{$device['value']}.svg" ); ?>
+              Kirjoitettu laitteella: <?php echo esc_html( $device['label'] ); ?>
+            </li>
+          <?php endif; ?>
+
+          <?php if ( ! empty( $temperature ) ) : ?>
+            <li>
+              <?php include get_theme_file_path( "/svg/{$weather_icon}.svg" ); ?>
+              Sää: <?php echo esc_html( $temperature ); ?> &deg; C, <?php echo esc_html( $weather_text ); ?>
+            </li>
+          <?php endif; ?>
+
+          <?php if ( ! empty( $location ) ) : ?>
+            <li>
+              <?php include get_theme_file_path( '/svg/location.svg' ); ?>
+              Sijainti: <?php echo esc_html( $location ); ?>
+            </li>
+          <?php endif; ?>
+          <?php if ( ! empty( $highlight ) ) : ?>
+            <li>
+              <?php include get_theme_file_path( '/svg/highlight.svg' ); ?>
+              Päivän kohokohta: <?php echo esc_html( $highlight ); ?>
+            </li>
+          <?php endif; ?>
+
+          <?php if ( ! empty( $drink_text ) ) : ?>
+            <li>
+              <?php include get_theme_file_path( "/svg/{$drink_icon}.svg" ); ?>
+              <?php echo esc_html( $drink_text ); ?>
+            </li>
+          <?php endif; ?>
+
+          <?php if ( ! empty( $np ) ) : ?>
+            <li>
+              <?php include get_theme_file_path( '/svg/np.svg' ); ?>
+              <?php if ( ! empty( $np_link ) ) : ?>
+                <a href="<?php echo esc_url( $np_link ); ?>">
+              <?php endif; ?>
+                Nyt soi <?php echo esc_html( $np ); ?>
+              <?php if ( ! empty( $np_link ) ) : ?>
+                </a>
+              <?php endif; ?>
+            </li>
+          <?php endif; ?>
+
+        </ul>
+      <?php endif; ?>
 
       <?php
       $post_id = get_the_ID();

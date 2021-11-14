@@ -1,0 +1,235 @@
+{
+    "key": "group_61912843d7520",
+    "title": "Metatiedot",
+    "fields": [
+        {
+            "key": "field_61912f64f7ab6",
+            "label": "Laite, jolla kirjoitettu",
+            "name": "device",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "pc": "Pöytäkone",
+                "macbook": "MacBook Pro",
+                "mobile": "OnePlus 8T -älypuhelin"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "array",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6191284b06087",
+            "label": "Sijainti",
+            "name": "location",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Kotona",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61912bc6f92c5",
+            "label": "Lämpötila",
+            "name": "temperature",
+            "type": "text",
+            "instructions": "Katso tämänhetkinen lämpötila <a target=\"_blank\" href=\"https:\/\/grafana.peikko.us\">Grafanasta<\/a> tai <a target=\"_blank\" href=\"http:\/\/weather.jyu.fi\/\">Mattilanniemen D-rakennuksen -sääasemasta<\/a>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61912c52f92c6",
+            "label": "Sää tekstinä",
+            "name": "weather_text",
+            "type": "text",
+            "instructions": "Katso teksti <a target=\"_blank\" href=\"https:\/\/darksky.net\/forecast\/62.2396,25.7454\/si12\/en\">Dark Skystä<\/a>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61912c64f92c7",
+            "label": "Sään kuvake",
+            "name": "weather_icon",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "sun": "Aurinkoista",
+                "cloud": "Pilvistä",
+                "rain": "Sataa kaatamalla",
+                "drizzle": "Tihkusadetta",
+                "snow": "Lumisadetta",
+                "lightning": "Ukkostaa"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61912ac78a561",
+            "label": "Päivän kohokohta",
+            "name": "highlight",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Onnistuminen töissä",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61912b8555512",
+            "label": "Nyt soi",
+            "name": "np",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61912b8955513",
+            "label": "Nyt soivan biisin linkki",
+            "name": "np_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61913193d2892",
+            "label": "Juoman kuvake",
+            "name": "drink_icon",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "coffee": "Kahvi",
+                "can": "Tölkki",
+                "droplet": "Tippa"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6191320bd2893",
+            "label": "Juoman teksti",
+            "name": "drink_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Tölkissä Mountain Dewiä tai esim. Mukissa Paahtimo Papun tuoreista pavuista jauhettau kahvia",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "diary"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1636907266
+}
