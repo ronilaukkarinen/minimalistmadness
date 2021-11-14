@@ -137,12 +137,12 @@ del {
   blockquote {
     border-left: 2px solid var(--color-black);
     line-height: 1.77;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 4rem;
+    margin-top: 6rem;
     max-width: 920px;
-    padding: 4rem 6rem;
+    padding: 0 6rem;
 
     cite {
       text-align: left;
@@ -153,7 +153,7 @@ del {
     }
 
     p {
-      @include responsive-font($font-min-size, 22px);
+      font-size: var(--font-size-16);
     }
 
     @media (max-width: $container-mobile) {
