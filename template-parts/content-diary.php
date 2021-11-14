@@ -91,7 +91,7 @@ $drink_text = get_field( 'drink_text' );
 
           <?php if ( ! empty( $drink_text ) ) : ?>
             <li>
-              <?php include get_theme_file_path( "/svg/{$drink_icon}.svg" ); ?>
+              Juuri nyt juon <?php include get_theme_file_path( "/svg/{$drink_icon}.svg" ); ?>
               <?php echo esc_html( $drink_text ); ?>
             </li>
           <?php endif; ?>
