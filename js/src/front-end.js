@@ -94,11 +94,6 @@ function debounce(func, wait, immediate) {
 const swup = new Swup({
   plugins: [
     new SwupBodyClassPlugin(),
-    new SwupScriptsPlugin({
-      head: true,
-      body: true,
-      optin: false,
-    }),
   ],
 });
 
@@ -116,8 +111,14 @@ lazyload(images, {
   threshold: 0,
 });
 
+// Front page load more helper
+const query = paged_query.posts_query;
+
 // Swup starts
 swup.on('contentReplaced', () => {
+  // Front page load more helper
+  const query = paged_query.posts_query;
+
   // Embeds
   // Load Instagram API script
   const loadInstagramAPI = () => {
@@ -296,7 +297,7 @@ swup.on('contentReplaced', () => {
         },
       });
 
-      function air_do_ajax_load() {
+      function air_do_ajax_load_for_swup() {
         $('.block-loadable .load-more-spinner').show();
         $('.block-loadable .no-posts').hide();
 
@@ -317,12 +318,16 @@ swup.on('contentReplaced', () => {
         jQuery.ajax({
           url: `${air.baseurl}wp_query/args/?${jQuery.param(query)}`,
         }).done((response) => {
-        // Offset to previous first message minus original offset/scroll
+          // Offset to previous first message minus original offset/scroll
           $(document).scrollTop(firstPost.offset().top - curOffset);
 
           if (response.length !== 0 && response !== false) {
             $.each(response, function () {
               const self = this;
+
+              // console.log(blog.posts);
+              // console.log('Works');
+
               blog.posts.push(this);
               $('.block-loadable .load-more-spinner').hide();
             });
@@ -342,7 +347,7 @@ swup.on('contentReplaced', () => {
       // Load more ajax call
       $('.block-loadable button.load-more').on('click', (e) => {
         e.preventDefault();
-        air_do_ajax_load();
+        air_do_ajax_load_for_swup();
       });
 
       // Window scroll
@@ -635,6 +640,9 @@ swup.on('contentReplaced', () => {
             const self = this;
             blog.posts.push(this);
             $('.block-loadable .load-more-spinner').hide();
+
+            // console.log(this);
+            // console.log('Really');
           });
 
           if (response.length < air.posts_per_page) {
