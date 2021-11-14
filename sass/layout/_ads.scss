@@ -89,7 +89,9 @@
   .hide-forever {
     border: 0;
     border-radius: 30px;
-    color: var(--color-white);
+    // This needs to be fixed color so it won't affect by dark theme
+    // stylelint-disable-next-line
+    color: #fff;
     display: block;
     font-size: 14px;
     margin-bottom: 0;
@@ -126,7 +128,9 @@
 
   &:hover .spans,
   &:focus .spans {
-    box-shadow: 0 4px 80px rgb(var(--color-black-rgb) / 1);
+    // This needs to be fixed color so it won't affect by dark theme
+    // stylelint-disable-next-line
+    box-shadow: 0 4px 80px rgb(0 0 0 / 1);
     transform: scale(1.02);
 
     p a:not(.button):not(.post-edit-link) {
@@ -157,7 +161,9 @@
     background-color: #1f1f1f;
     border: 0;
     border-radius: 8px;
-    box-shadow: 0 4px 80px rgb(var(--color-black-rgb) / .7);
+    // This needs to be fixed color so it won't affect by dark theme
+    // stylelint-disable-next-line
+    box-shadow: 0 4px 80px rgb(0 0 0 / .7);
     color: var(--color-white);
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -195,6 +201,9 @@
     place-items: center;
 
     p {
+      // This needs to be fixed color so it won't affect by dark theme
+      // stylelint-disable-next-line
+      color: #fff;
       font-family: $font-alt;
       font-size: 16px;
       line-height: 1.44;

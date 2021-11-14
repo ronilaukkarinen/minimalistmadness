@@ -75,6 +75,10 @@ function debounce(func, wait, immediate) {
 const swup = new Swup({
   plugins: [
     new SwupBodyClassPlugin(),
+    new SwupScriptsPlugin({
+      head: true,
+      body: true,
+    }),
   ],
 });
 
@@ -438,17 +442,6 @@ swup.on('contentReplaced', () => {
       }, 250));
     });
   }(jQuery));
-
-  // Load Instagram API script
-  const loadInstagramAPI = () => {
-    const tag = document.createElement('script');
-    tag.src = 'https://www.instagram.com/embed.js';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    window.isInstagramIframeAPILoaded = true;
-  };
-
-  loadInstagramAPI();
 });
 // Swup ends
 

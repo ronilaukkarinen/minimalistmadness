@@ -46,6 +46,9 @@ namespace Air_Light;
 
 </div><!-- #page -->
 
+<script data-swup-reload-script async src="//www.instagram.com/embed.js"></script>
+<script data-swup-reload-script async src="//platform.twitter.com/widgets.js"></script>
+
 <?php wp_footer(); ?>
 
 </body>
