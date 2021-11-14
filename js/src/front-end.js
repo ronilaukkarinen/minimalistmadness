@@ -35,11 +35,12 @@ const loadInstagramAPI = () => {
 loadInstagramAPI();
 
 // Twitter
-function twit(d, s, id) {
-  var js,
-    fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = '//platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); }
+$.getScript('https://platform.twitter.com/widgets.js');
+if (typeof (twttr) !== 'undefined') {
+  twttr.widgets.load();
+} else {
+  $.getScript('https://platform.twitter.com/widgets.js');
 }
-twit(document, 'script', 'twitter-wjs');
 
 // GitHub-styled charts
 // WordPress post data for heatmaps
@@ -135,11 +136,12 @@ swup.on('contentReplaced', () => {
   window.instgrm.Embeds.process();
 
   // Twitter
-  function twit(d, s, id) {
-    var js,
-      fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = '//platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); }
+  $.getScript('https://platform.twitter.com/widgets.js');
+  if (typeof (twttr) !== 'undefined') {
+    twttr.widgets.load();
+  } else {
+    $.getScript('https://platform.twitter.com/widgets.js');
   }
-  twit(document, 'script', 'twitter-wjs');
 
   // Always move scroll position to up when clicking a link
   const moveTo = new MoveTo({
