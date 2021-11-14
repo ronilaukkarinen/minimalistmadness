@@ -131,6 +131,7 @@ body.single-diary {
     ul.metadata {
       border: 1px solid rgb(var(--color-black-rgb) / .2);
       list-style: none;
+      margin-top: 4rem;
       padding: 2.2rem;
 
       a:not(.button):not(.post-edit-link):not(.author-link) {

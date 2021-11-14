@@ -50,7 +50,16 @@ $drink_text = get_field( 'drink_text' );
       ) );
       ?>
 
-      <?php if ( ! empty( $location ) && ! empty( $highlight ) && ! empty( $temperature ) && ! empty( $weather_text ) && ! empty( $device ) && ! empty( $drink_text ) ) : ?>
+      <?php if ( is_singular() ) :
+        $post_id = get_the_ID();
+        $post_object = get_post( $post_id );
+        $content = $post_object->post_content;
+        $word_count = post_word_count( $content );
+      ?>
+        <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> sanaa.</p>
+      <?php endif; ?>
+
+      <?php if ( ! empty( $location ) || ! empty( $highlight ) || ! empty( $temperature ) || ! empty( $weather_text ) || ! empty( $device ) || ! empty( $drink_text ) ) : ?>
         <ul class="metadata">
 
           <?php if ( ! empty( $device ) ) : ?>
@@ -60,7 +69,7 @@ $drink_text = get_field( 'drink_text' );
             </li>
           <?php endif; ?>
 
-          <?php if ( ! empty( $temperature ) ) : ?>
+          <?php if ( ! empty( $weather_text ) ) : ?>
             <li>
               <?php include get_theme_file_path( "/svg/{$weather_icon}.svg" ); ?>
               Sää: <?php echo esc_html( $temperature ); ?> &deg; C, <?php echo esc_html( $weather_text ); ?>
@@ -101,17 +110,6 @@ $drink_text = get_field( 'drink_text' );
           <?php endif; ?>
 
         </ul>
-      <?php endif; ?>
-
-      <?php
-      $post_id = get_the_ID();
-      $post_object = get_post( $post_id );
-      $content = $post_object->post_content;
-      $word_count = post_word_count( $content );
-      ?>
-
-      <?php if ( is_singular() ) : ?>
-        <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> sanaa.</p>
       <?php endif; ?>
 
       <?php if ( get_edit_post_link() ) { ?>
