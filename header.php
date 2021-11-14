@@ -25,8 +25,8 @@ namespace Air_Light;
 
   <?php if ( ! is_user_logged_in() ) : ?>
     <?php if ( is_singular() && ! has_tag( 'raha' ) ) : ?>
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <script>
+      <script data-swup-ignore-script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script data-swup-ignore-script>
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-8523880252818258",
         enable_page_level_ads: true

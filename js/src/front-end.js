@@ -22,6 +22,25 @@ import SwupGaPlugin from '@swup/ga-plugin';
 import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
 
+// Embeds
+// Load Instagram API script
+const loadInstagramAPI = () => {
+  const tag = document.createElement('script');
+  tag.src = 'https://instagram.com/static/bundles/es6/EmbedSDK.js/47c7ec92d91e.js';
+  const firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  window.isInstagramIframeAPILoaded = true;
+};
+
+loadInstagramAPI();
+
+// Twitter
+function twit(d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = '//platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); }
+}
+twit(document, 'script', 'twitter-wjs');
+
 // GitHub-styled charts
 // WordPress post data for heatmaps
 const dataPointsArray = heatmapdata;
@@ -78,6 +97,7 @@ const swup = new Swup({
     new SwupScriptsPlugin({
       head: true,
       body: true,
+      optin: false,
     }),
   ],
 });
@@ -98,6 +118,28 @@ lazyload(images, {
 
 // Swup starts
 swup.on('contentReplaced', () => {
+  // Embeds
+  // Load Instagram API script
+  const loadInstagramAPI = () => {
+    const tag = document.createElement('script');
+    tag.src = 'https://instagram.com/static/bundles/es6/EmbedSDK.js/47c7ec92d91e.js';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    window.isInstagramIframeAPILoaded = true;
+  };
+
+  loadInstagramAPI();
+
+  // Important: This generates the images
+  window.instgrm.Embeds.process();
+
+  // Twitter
+  function twit(d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = '//platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); }
+  }
+  twit(document, 'script', 'twitter-wjs');
+
   // Always move scroll position to up when clicking a link
   const moveTo = new MoveTo({
     tolerance: 0,
