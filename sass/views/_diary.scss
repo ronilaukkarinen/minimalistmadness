@@ -13,7 +13,10 @@
 }
 
 // Active diary link
+// Active diary link
 @media (min-width: $responsivenav) {
+  .archive.tag .menu-item-26560,
+  .home .menu-item-26560,
   .single-diary .menu-item-26435 a {
     opacity: 1;
   }
