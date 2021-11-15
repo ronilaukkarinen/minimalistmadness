@@ -30,7 +30,11 @@ $drink_text = get_field( 'drink_text' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <h1 class="prefix"><?php the_title(); ?></h1>
+  <?php if ( is_singular() ) : ?>
+    <h1 class="prefix"><?php the_title(); ?></h1>
+  <?php else : ?>
+    <h2 class="prefix"><?php the_title(); ?></h2>
+  <?php endif; ?>
   <p class="diary-title">
     <?php if ( ! is_singular( 'diary' ) ) echo '<a href="' . esc_url( get_the_permalink() ) . '">'; ?>
       <time datetime="<?php the_time( 'c' ); ?>"><?php echo esc_html( ucfirst( get_the_time( 'l' ) ) ); ?>na, <?php the_time( 'j.' ) ?> <?php the_time( 'F' ) ?>ta <?php the_time( 'Y' ) ?><br><span class="time">Kello on <?php the_time( 'H:i' ) ?></span></time>
@@ -62,6 +66,19 @@ $drink_text = get_field( 'drink_text' );
       <?php if ( ! empty( $location ) || ! empty( $highlight ) || ! empty( $temperature ) || ! empty( $weather_text ) || ! empty( $device ) || ! empty( $drink_text ) ) : ?>
         <ul class="metadata">
 
+          <?php if ( ! empty( $np ) ) : ?>
+            <li>
+              <?php include get_theme_file_path( '/svg/np.svg' ); ?>
+              <?php if ( ! empty( $np_link ) ) : ?>
+                <a href="<?php echo esc_url( $np_link ); ?>">
+              <?php endif; ?>
+                Nyt soi <?php echo esc_html( $np ); ?>
+              <?php if ( ! empty( $np_link ) ) : ?>
+                </a>
+              <?php endif; ?>
+            </li>
+          <?php endif; ?>
+
           <?php if ( ! empty( $device ) ) : ?>
             <li>
               <?php include get_theme_file_path( "/svg/{$device['value']}.svg" ); ?>
@@ -91,21 +108,8 @@ $drink_text = get_field( 'drink_text' );
 
           <?php if ( ! empty( $drink_text ) ) : ?>
             <li>
-              Juuri nyt juon <?php include get_theme_file_path( "/svg/{$drink_icon}.svg" ); ?>
+              <?php include get_theme_file_path( "/svg/{$drink_icon}.svg" ); ?>
               <?php echo esc_html( $drink_text ); ?>
-            </li>
-          <?php endif; ?>
-
-          <?php if ( ! empty( $np ) ) : ?>
-            <li>
-              <?php include get_theme_file_path( '/svg/np.svg' ); ?>
-              <?php if ( ! empty( $np_link ) ) : ?>
-                <a href="<?php echo esc_url( $np_link ); ?>">
-              <?php endif; ?>
-                Nyt soi <?php echo esc_html( $np ); ?>
-              <?php if ( ! empty( $np_link ) ) : ?>
-                </a>
-              <?php endif; ?>
             </li>
           <?php endif; ?>
 

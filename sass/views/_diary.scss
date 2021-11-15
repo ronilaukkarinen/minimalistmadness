@@ -68,6 +68,7 @@ body.single-diary {
   .back-to-link,
   .prefix,
   h1.prefix,
+  h2.prefix,
   .diary-title,
   .custom-pagination {
     max-width: var(--diary-container-width);
@@ -80,6 +81,7 @@ body.single-diary {
 
   .prefix,
   h1.prefix,
+  h2.prefix,
   .diary-title {
     font-family: var(--diary-font-family-heading);
     font-size: var(--diary-font-size-main-heading);
@@ -97,16 +99,12 @@ body.single-diary {
     }
   }
 
-  .type-diary h1,
-  .container.container-article .entry-content h1,
-  .container.container-article article h1,
-  .editor-styles-wrapper h1 {
-    &.prefix {
-      color: rgb(var(--color-black-rgb) / .55);
-      font-size: var(--diary-font-size-prefix);
-      font-weight: var(--font-weight-regular);
-      margin: 2rem auto 1rem;
-    }
+  .type-diary > h1.prefix,
+  .type-diary > h2.prefix {
+    color: rgb(var(--color-black-rgb) / .55);
+    font-size: var(--diary-font-size-prefix);
+    font-weight: var(--font-weight-regular);
+    margin: 2rem auto 1rem;
   }
 
   .type-diary p,
