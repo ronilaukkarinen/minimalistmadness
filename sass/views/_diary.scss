@@ -167,6 +167,11 @@ body.single-diary {
         height: 20px;
         width: 16px;
       }
+
+      @media (max-width: 640px) {
+        max-width: calc(100% - 4rem);
+        padding: 1rem 2rem;
+      }
     }
 
     ol.is-style-todo-list,
