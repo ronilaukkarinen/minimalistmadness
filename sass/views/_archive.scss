@@ -33,11 +33,12 @@ body .site-content .custom-pagination {
   margin-right: 10px;
 
   img {
-    border-radius: 50%;
+    // stylelint-disable-next-line
+    border-radius: 50% !important;
   }
 }
 
-.entry-stack {
+.site-content .content-area .container .article .entry-stack {
   border-bottom: 1px solid #ebebeb;
   margin-bottom: 40px;
   padding-bottom: 40px;
@@ -80,8 +81,14 @@ body .site-content .custom-pagination {
     p {
       a {
         @include link();
-        color: #757575;
+        color: var(--color-grey-two);
+        text-decoration-color: var(--color-grey-two);
       }
+    }
+
+    h2 a {
+      color: var(--color-black);
+      text-decoration: none;
     }
   }
 
@@ -90,14 +97,15 @@ body .site-content .custom-pagination {
     overflow: hidden;
 
     p {
-      color: #757575;
+      color: var(--color-grey-two);
       font-size: 14px;
       margin: 0;
       padding: 7px 0;
 
       a {
         @include link();
-        color: #757575;
+        color: var(--color-grey-two);
+        text-decoration-color: var(--color-grey-two);
       }
 
       @media (max-width: $container-mobile) {
