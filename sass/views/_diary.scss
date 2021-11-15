@@ -29,9 +29,34 @@ body.single-diary {
     display: block;
   }
 
+  .log-header,
   .back-to-link,
   .custom-pagination {
     margin: 0 auto;
+  }
+
+  // Header
+  .log-header {
+    h1 {
+      font-size: 24px;
+      margin: 0 0 1.2rem;
+    }
+
+    p {
+      font-size: var(--font-size-14);
+      margin: 0;
+    }
+
+    a,
+    p {
+      color: var(--color-darkgrey);
+    }
+
+    a {
+      @include link();
+      color: var(--color-darkgrey);
+      text-decoration-color: var(--color-darkgrey);
+    }
   }
 
   // stylelint-disable-next-line
@@ -65,6 +90,7 @@ body.single-diary {
     }
   }
 
+  .log-header,
   .back-to-link,
   .prefix,
   h1.prefix,
