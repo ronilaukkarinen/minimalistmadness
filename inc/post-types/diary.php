@@ -16,12 +16,12 @@ class Diary extends Post_Type {
 
     // Modify all the i18ized strings here.
     $generated_labels = [
-      'name'                  => _x( 'Päiväkirja', 'Post Type General Name', 'minimalistmadness' ),
-      'singular_name'         => _x( 'Päiväkirja', 'Post Type Singular Name', 'minimalistmadness' ),
-      'menu_name'             => __( 'Päiväkirja', 'minimalistmadness' ),
-      'name_admin_bar'        => __( 'Päiväkirja', 'minimalistmadness' ),
-      'archives'              => __( 'Päiväkirja', 'minimalistmadness' ),
-      'attributes'            => __( 'Päiväkirjan attribuutit', 'minimalistmadness' ),
+      'name'                  => _x( 'Lokikirja', 'Post Type General Name', 'minimalistmadness' ),
+      'singular_name'         => _x( 'Lokikirja', 'Post Type Singular Name', 'minimalistmadness' ),
+      'menu_name'             => __( 'Lokikirja', 'minimalistmadness' ),
+      'name_admin_bar'        => __( 'Lokikirja', 'minimalistmadness' ),
+      'archives'              => __( 'Lokikirja', 'minimalistmadness' ),
+      'attributes'            => __( 'Lokikirjan attribuutit', 'minimalistmadness' ),
       'parent_item_colon'     => __( 'Pääasiallinen merkintä:', 'minimalistmadness' ),
       'all_items'             => __( 'Kaikki merkinnät', 'minimalistmadness' ),
       'add_new_item'          => __( 'Lisää merkintä', 'minimalistmadness' ),
@@ -30,8 +30,8 @@ class Diary extends Post_Type {
       'edit_item'             => __( 'Muokkaa merkintää', 'minimalistmadness' ),
       'update_item'           => __( 'Päivitä merkintää', 'minimalistmadness' ),
       'view_item'             => __( 'Katso merkintä', 'minimalistmadness' ),
-      'view_items'            => __( 'Katso päiväkirjamerkintöjä', 'minimalistmadness' ),
-      'search_items'          => __( 'Etsi päiväkirjamerkintöjä', 'minimalistmadness' ),
+      'view_items'            => __( 'Katso lokikirjamerkintöjä', 'minimalistmadness' ),
+      'search_items'          => __( 'Etsi lokikirjamerkintöjä', 'minimalistmadness' ),
       'not_found'             => __( 'Merkintöjä ei löytynyt.', 'minimalistmadness' ),
       'not_found_in_trash'    => __( 'Merkintöjä ei löytynyt.', 'minimalistmadness' ),
       'featured_image'        => __( 'Artikkelikuva', 'minimalistmadness' ),
@@ -49,10 +49,10 @@ class Diary extends Post_Type {
     // http://codex.wordpress.org/Function_Reference/register_post_type
     $args = [
       'rewrite' => [
-        'slug' => 'paivakirja',
+        'slug' => 'lokikirja',
       ],
-      'label'                 => __( 'Päiväkirja', 'minimalistmadness' ),
-      'description'           => __( 'merkinnät', 'minimalistmadness' ),
+      'label'                 => __( 'Lokikirja', 'minimalistmadness' ),
+      'description'           => __( 'Merkinnät', 'minimalistmadness' ),
       'labels'                => $generated_labels,
       'supports'              => array( 'title', 'editor', 'author', 'revisions', 'post-formats', 'thumbnail' ),
       'hierarchical'          => false,

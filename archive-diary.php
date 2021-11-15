@@ -18,7 +18,7 @@ get_header(); ?>
 
     <header class="log-header">
       <h1>Kapteenin lokikirja</h1>
-      <p>Laiva jatkaa kulkuaan Rollemaan elämän vesillä. Kapteenin lokikirja on päivittäinen päiväkirja, jossa painopiste kirjoittamisen säännöllisyydessä ja raportoinnissa, ei niinkään asiapitoisuudessa. <a href="<?php echo esc_url( get_the_permalink( 26429 ) ); ?>">Ensimmäinen sivu</a> avattu 2021/11/08. Alla merkinnät graafissa.</p>
+      <p>Laiva jatkaa kulkuaan Rollemaan vesillä. Kapteenin lokikirja on päivittäinen päiväkirja, jossa painopiste kirjoittamisen säännöllisyydessä ja raportoinnissa, ei niinkään asiapitoisuudessa. <a href="<?php echo esc_url( get_the_permalink( 26429 ) ); ?>">Ensimmäinen sivu</a> avattu 2021/11/08. Alla merkinnät graafissa.</p>
     </header>
 
     <?php get_template_part( 'template-parts/heatmap' ); ?>
