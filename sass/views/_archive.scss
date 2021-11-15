@@ -4,16 +4,21 @@ body .site-content .custom-pagination {
   opacity: .4;
   transition: all .55s;
 
+  span,
+  a:not(.button):not(.post-edit-link) {
+    font-size: var(--font-size-16);
+  }
+
   a:not(.button):not(.post-edit-link) {
     border: 0 !important;
     box-shadow: none !important;
-    color: var(--color-midnight-gray);
+    color: var(--color-midnight-gray) !important;
     margin: 0;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: all .22s;
 
     &.current {
-      color: var(--color-black-three);
+      color: var(--color-black-three) !important;
     }
 
     &:hover,
