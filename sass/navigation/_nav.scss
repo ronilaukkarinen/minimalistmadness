@@ -299,6 +299,7 @@
   .site-head-left {
     margin: 0;
     order: 2;
+    pointer-events: none;
     width: 100%;
   }
 
@@ -339,6 +340,7 @@
   .site-head-open .site-head-left,
   .site-head-open .site-head-right {
     height: auto;
+    pointer-events: unset;
     transition: height .2s cubic-bezier(.4, .01, .165, .99);
     z-index: 9999;
   }
