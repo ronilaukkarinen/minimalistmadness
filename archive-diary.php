@@ -14,7 +14,7 @@ namespace Air_Light;
 get_header(); ?>
 
 <div class="content-area">
-	<main role="main" id="main" class="site-main block block-page">
+	<main role="main" id="main" class="site-main block block-page transition-fade">
 
     <header class="log-header">
       <h1>Kapteenin lokikirja</h1>
