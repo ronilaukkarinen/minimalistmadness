@@ -57,6 +57,10 @@ body.single-diary {
       color: var(--color-darkgrey);
       text-decoration-color: var(--color-darkgrey);
     }
+
+    @media (max-width: 720px) {
+      margin-top: 4rem;
+    }
   }
 
   // stylelint-disable-next-line
