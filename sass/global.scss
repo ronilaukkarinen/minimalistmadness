@@ -19,11 +19,13 @@
 @import 'variables/font-family';
 @import 'variables/font-sizes';
 @import 'variables/spacings';
+@import 'variables/forms';
 
 // Navigation
 @import 'navigation/nav';
 
 // Global features
+@import 'features/gravity-forms';
 @import 'features/top';
 @import 'features/lazyload';
 @import 'features/rain';
