@@ -127,6 +127,7 @@
 
 // Dark mode colors
 .theme-dark {
+  --color-paragraph: #f2f2f2;
   --color-white-two: #14171d;
   --color-white: #12141a;
   --color-black: #f2f2f2;
@@ -153,6 +154,23 @@
   --color-post-author-background-rgb: 18 20 26;
   --color-post-author-border: #69634e;
   --color-midnight-gray: #bbb;
+
+  // Forms
+  --color-background-input-field: #000;
+  --color-form-text: #f2f2f2;
+  --color-form-label-text: #f2f2f2;
+  --color-required-label-text: #f2f2f2;
+  --color-border-forms: #f2f2f2;
+  --color-border-forms-focus: #f2f2f2;
+  --color-button: #000;
+  --color-button-hover: #000;
+  --color-button-background: #f2f2f2;
+  --color-button-background-hover: #ccc;
+  --color-checkbox: #f2f2f2;
+  --color-checkbox-outline: 0 0 0 3px rgb(84 87 115 / .2);
+  --color-checkbox-border-hover: color.adjust(#545773, 15%);
+  --color-placeholder: #f2f2f2;
+  --color-placeholder-focus: #f2f2f2;
 
   .container.container-article .entry-content ul.metadata a:not(.button):not(.post-edit-link):not(.author-link).is-external-link::after {
     background-image: url('../../svg/external-link-d0d1d2.svg') !important;
