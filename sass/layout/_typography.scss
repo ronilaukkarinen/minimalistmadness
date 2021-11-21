@@ -27,9 +27,6 @@ dt,
 figcaption,
 hr,
 small,
-ol,
-ul,
-li,
 blockquote,
 kbd,
 pre,
@@ -43,6 +40,13 @@ tr,
   font-size: var(--font-size-paragraphs);
   letter-spacing: -.003em;
   line-height: var(--line-height-paragraphs);
+}
+
+ol:not([style]),
+ul:not([style]),
+ol:not([style]) li,
+ul:not([style]) li {
+  font-size: var(--font-size-paragraphs);
 }
 
 // Heading defaults
