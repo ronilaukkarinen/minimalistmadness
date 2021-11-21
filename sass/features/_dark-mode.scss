@@ -23,11 +23,11 @@
 }
 
 .single-post .dark-mode-controls {
-  top: calc(100vh + 4rem);
+  top: calc(calc(var(--vh, 1vh) * 100) + 4rem);
 
   @media (max-width: 1200px) {
     right: unset;
-    top: 100vh;
+    top: calc(var(--vh, 1vh) * 100);
     width: 100%;
   }
 
