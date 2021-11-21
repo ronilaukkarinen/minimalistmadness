@@ -48,7 +48,16 @@
 // Need to be right after general, because after typography comes block styles
 .editor-styles-wrapper {
   @import 'layout/typography';
+
+  // Prevent horizontal scrolling
   overflow-x: hidden;
+
+  // Use ACF defined font styles in ACF fields
+  .acf-fields *[class^='acf-'],
+  .acf-fields [class^='acf-'] * {
+    font-family: inherit;
+    font-size: unset;
+  }
 }
 
 // Global features needed by editor
