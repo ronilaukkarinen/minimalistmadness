@@ -16,7 +16,7 @@ get_header(); ?>
 <div  class="content-area">
 	<main role="main" id="main" class="site-main">
 
-    <section class="block block-page">
+    <section class="block block-page block-not-found">
 
       <div class="container container-article">
         <div class="transition-fade">
