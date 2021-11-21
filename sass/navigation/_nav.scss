@@ -336,7 +336,7 @@
 
   .site-head-open {
     background-color: rgb(var(--color-white-rgb) / 1);
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     overflow: hidden;
     transition: background .5s ease-out;
     transition-delay: .25;

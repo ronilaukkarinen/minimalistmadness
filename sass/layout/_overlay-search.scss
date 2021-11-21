@@ -360,7 +360,7 @@ $tcon-search-glass-border-width: math.div($tcon-size, 20) !default;
 
 ul.search-results-mobile > div,
 .search-mobile.has-results {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: auto;
 }
 
