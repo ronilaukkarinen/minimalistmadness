@@ -93,7 +93,7 @@
     @extend %default;
     color: var(--color-heading);
     flex: 0 0 75%;
-    font-size: 18px;
+    font-size: var(--font-size-18);
     font-weight: 400;
     line-height: 1.55;
     margin: 0;
