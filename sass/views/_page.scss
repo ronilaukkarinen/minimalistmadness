@@ -70,8 +70,6 @@
   .tag-cloud {
     margin-bottom: 60px;
     max-width: 100%;
-    padding-left: 8rem;
-    padding-right: 8rem;
 
     ul {
       line-height: 1;
@@ -104,9 +102,14 @@
       }
     }
 
+    @media (min-width: $article-max-width + 40px) {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
     @media (max-width: $article-max-width + 40px) {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
