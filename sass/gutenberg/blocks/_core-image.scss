@@ -1,4 +1,8 @@
 // Image block
+.wp-block-image:not(.is-style-rounded) img {
+  border-radius: 4px;
+}
+
 .wp-block-image {
   display: block;
   margin-bottom: var(--margin-wp-block-image);

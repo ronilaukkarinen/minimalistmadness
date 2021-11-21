@@ -490,6 +490,18 @@ body.post-type-archive-diary .container.container-article .entry-content .author
   overflow: hidden;
   padding-top: 30px;
 
+  .author-col a:not(.button) {
+    @include link();
+    color: var(--color-black);
+    text-decoration-color: rgb(var(--color-black-rgb) / .3);
+
+    &:hover,
+    &:focus {
+      color: var(--color-accent-hover);
+      text-decoration-color: rgb(23 69 158 / .2);
+    }
+  }
+
   a.button {
     background-color: transparent;
     border: 1px solid var(--color-black);
