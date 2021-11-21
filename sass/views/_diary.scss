@@ -283,7 +283,7 @@ body.single-diary {
 }
 
 // Diary styles
-body.block-editor-page.post-type-diary {
+body.post-type-diary {
   .wp-block,
   .wp-block li,
   .editor-styles-wrapper .is-root-container > * {
@@ -294,7 +294,21 @@ body.block-editor-page.post-type-diary {
     font-size: var(--diary-font-size);
   }
 
-  .editor-post-title__input {
+  // Use ACF defined font styles in ACF fields
+  .acf-field p.description,
+  .acf-fields *[class^='acf-'],
+  .acf-fields [class^='acf-'] * {
+    font-family: inherit;
+    font-size: unset;
+  }
+
+  .editor-styles-wrapper {
+
+    // Prevent horizontal scrolling
+    overflow-x: hidden;
+  }
+
+  .wp-block.editor-post-title .editor-post-title__input {
     color: rgb(var(--color-black-rgb) / .55);
     font-size: var(--diary-font-size-prefix);
     font-weight: var(--font-weight-regular);
