@@ -123,9 +123,14 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 // We listen to the resize event
 window.addEventListener('resize', () => {
+  if (
+    window.innerWidth > window.innerHeight
+    || Math.abs(this.lastHeight - window.innerHeight) > 100
+  ) {
   // We execute the same script as before
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
 });
 
 // Swup starts
@@ -138,9 +143,14 @@ swup.on('contentReplaced', () => {
 
   // We listen to the resize event
   window.addEventListener('resize', () => {
-  // We execute the same script as before
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    if (
+      window.innerWidth > window.innerHeight
+    || Math.abs(this.lastHeight - window.innerHeight) > 100
+    ) {
+      // We execute the same script as before
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
   });
 
   // Front page load more helper
