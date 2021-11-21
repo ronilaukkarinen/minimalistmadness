@@ -196,8 +196,8 @@ body.single-diary {
   }
 
   .editor-styles-wrapper .is-root-container,
-  .container.container-article .entry-content {
-    ul.metadata {
+  .article-content.entry-content {
+    ul.metadata:not(.alignwide):not(.alignfull) {
       border: 1px solid rgb(var(--color-black-rgb) / .2);
       list-style: none;
       margin-top: 4rem;
