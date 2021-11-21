@@ -2,6 +2,12 @@
 .wp-block-text-columns.alignfull {
   padding-left: var(--padding-container-horizontal);
   padding-right: var(--padding-container-horizontal);
+  width: 100%;
+}
+
+.wp-block-columns .wp-block-column p:only-of-type,
+.wp-block-text-columns .wp-block-column p:only-of-type {
+  margin-top: 0;
 }
 
 // Loops to enumerate the classes for columns.
@@ -9,7 +15,7 @@
   .wp-block-text-columns.columns-#{$i}.alignfull {
     padding-left: var(--padding-container-horizontal);
     padding-right: var(--padding-container-horizontal);
-    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+    width: 100%;
   }
 
   .wp-block-text-columns.columns-#{$i} {
@@ -17,7 +23,7 @@
       display: grid;
       grid-gap: 1em;
       grid-template-columns: repeat(2, 1fr);
-      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+      width: 100%;
 
       .wp-block-column {
         margin: 0;

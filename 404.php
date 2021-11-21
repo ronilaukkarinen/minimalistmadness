@@ -21,12 +21,9 @@ get_header(); ?>
       <div class="container container-article">
         <div class="transition-fade">
 
-          <div class="container container-article">
-
-            <article>
-              <h1 id="content">Sivua ei löydy</h1>
-              <p>Vaikuttaisi siltä, että sivu on siirretty tai poistettu. <a href="<?php echo esc_url( get_home_url() ); ?>">Tästä takaisin etusivulle</a>.</p>
-            </article>
+          <div class="container container-article article-content">
+            <h1 id="content">Sivua ei löydy</h1>
+            <p>Vaikuttaisi siltä, että sivu on siirretty tai poistettu. <a href="<?php echo esc_url( get_home_url() ); ?>">Tästä takaisin etusivulle</a>.</p>
           </div>
 
         </div>

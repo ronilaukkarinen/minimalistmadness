@@ -6,7 +6,6 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--font-heading);
   line-height: var(--line-height-core-heading);
 }
 
@@ -19,16 +18,5 @@ h5,
 h6 {
   &:first-child {
     margin-top: 0;
-  }
-}
-
-.editor-post-title .editor-post-title__input {
-  font-family: var(--font-heading);
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 1.1;
-
-  @media (max-width: 600px) {
-    font-size: 42px;
   }
 }

@@ -103,6 +103,15 @@ body.single-diary {
   .custom-pagination {
     max-width: var(--diary-container-width);
 
+    a {
+      color: var(--color-heading);
+    }
+
+    a:focus,
+    a:hover {
+      color: var(--color-accent-hover);
+    }
+
     @media (max-width: 840px) {
       padding-left: 2rem;
       padding-right: 2rem;
@@ -138,6 +147,7 @@ body.single-diary {
   }
 
   .type-diary p,
+  .article-content p,
   .container.container-article .entry-content p,
   .container.container-article article p,
   .editor-styles-wrapper p {

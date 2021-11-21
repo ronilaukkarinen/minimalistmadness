@@ -154,6 +154,7 @@
   --color-post-author-background-rgb: 18 20 26;
   --color-post-author-border: #69634e;
   --color-midnight-gray: #bbb;
+  --color-shark: #000;
 
   // Forms
   --color-background-input-field: #000;
@@ -172,7 +173,7 @@
   --color-placeholder: #f2f2f2;
   --color-placeholder-focus: #f2f2f2;
 
-  .container.container-article .entry-content ul.metadata a:not(.button):not(.post-edit-link):not(.author-link).is-external-link::after {
+  .entry-content ul.metadata a:not(.button):not(.post-edit-link):not(.author-link).is-external-link::after {
     background-image: url('../../svg/external-link-d0d1d2.svg') !important;
   }
 

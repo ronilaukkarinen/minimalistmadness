@@ -1,6 +1,14 @@
 // Colors
 :root {
   --color-black: #141414;
+  --color-black-rock: #2b303c;
+  --color-blue-chalk: #ece6f2;
+  --color-east-bay: #545773;
+  --color-pattens-blue: #eaf1f8;
+  --color-science-blue: #0049d1;
+  --color-scropion: #5f5f5f;
+  --color-valhalla: #2a2d3e;
+  --color-white: #fff;
   --color-black-two: #222;
   --color-black-three: #333;
   --color-black-rgb: 0 0 0;
@@ -12,7 +20,7 @@
   --color-hover: #141414;
   --color-outline-overlay-items: #ff848a;
   --color-paragraph: #141414;
-  --color-white: #fff;
+  --color-shark: #232830;
   --color-white-two: #fafafa;
   --color-white-three: #f2f2f2;
   --color-white-rgb: 255 255 255;
@@ -38,4 +46,40 @@
   --color-figcaptions-rgb: 75 75 90;
   --color-post-author-background-rgb: 255 246 232;
   --color-post-author-border: #e3dac5;
+
+  // Element colors
+  --color-background-code-block: var(--color-black-rock);
+  --color-background-code-inline: #f9f2f4;
+  --color-background-default: #f0f0f0;
+  --color-background-shade: #03061b;
+  --color-background-table-cell-odd: var(--color-white);
+  --color-background-table-cell-even: #f3f3f3;
+  --color-background-tag: var(--color-pattens-blue);
+  --color-blockquote: var(--color-science-blue);
+  --color-comment-text: var(--color-east-bay);
+  --color-comment-author-text: var(--color-east-bay);
+  --color-tag-border: rgb(6 22 41 / .1);
+  --color-tag-border-hover: rgb(6 22 41 / .4);
+  --color-tag-text: var(--color-black);
+  --color-category-border: #cdcfd4;
+  --color-category-text: var(--color-black);
+  --color-caption: #5c5c6a;
+  --color-code-block: #c7254e;
+  --color-code-text: #f5f5f5;
+  --color-error: #cc2e2e;
+  --color-kbd-border: #ccc;
+  --color-kbd-background: var(--color-pattens-blue);
+  --color-pagination-text: var(--color-valhalla);
+  --color-pagination-background-hover: var(--color-valhalla);
+  --color-pagination-border-hover: var(--color-valhalla);
+  --color-pagination-text-hover: var(--color-white);
+  --color-pagination-background-current: var(--color-valhalla);
+  --color-pagination-border-current: var(--color-valhalla);
+  --color-pagination-text-current: var(--color-white);
+  --color-success: #8ed185;
+  --color-top-arrow-dark: var(--color-black);
+  --color-top-arrow-light: var(--color-white);
+  --color-warning: #f4aa71;
+  --color-error-block-border: #adb2ad; // Color picked from ACF
+  --color-error-block-background: #f9f9f9; // Color picked from ACF
 }

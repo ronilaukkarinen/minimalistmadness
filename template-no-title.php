@@ -4,62 +4,36 @@
  *
  * Template Name: Ei otsikkoa
  *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-01-12 16:10:58
+ *
  * @package minimalistmadness
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
 namespace Air_Light;
 
 the_post();
-
 get_header(); ?>
 
-<div class="content-area">
-  <main role="main" id="main" class="site-main">
+<main class="site-main">
 
-    <section class="block block-page">
-    <div class="container container-article">
-      <div class="transition-fade">
+  <section class="block block-page has-light-bg">
 
-      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="article-content transition-fade">
 
-        <header class="entry-header screen-reader-text">
-          <?php the_title( '<h1 class="entry-title" id="content">', '</h1>' ); ?>
-        </header><!-- .entry-header -->
+      <h1 id="content" class="screen-reader-text entry-header"><?php the_title(); ?></h1>
+      <?php wp_reset_postdata(); the_content(); ?>
 
-          <?php the_content(); ?>
+      <?php if ( get_edit_post_link() ) {
+        edit_post_link( sprintf( wp_kses( __( 'Muokkaa <span class="screen-reader-text">%s</span>', 'minimalistmadness' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
+      } ?>
 
-          <?php wp_link_pages( [
-            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'minimalistmadness' ),
-            'after'  => '</div>',
-          ] ); ?>
+    </div>
 
-        <?php if ( get_edit_post_link() ) : ?>
-          <footer class="entry-footer">
-            <?php edit_post_link(
-              sprintf(
-                /* translators: %s: Name of current post. Only visible to screen readers */
-                wp_kses(
-                  __( 'Muokkaa <span class="screen-reader-text">%s</span>', 'minimalistmadness' ),
-                  [
-                    'span' => [
-                      'class' => [],
-                    ],
-                  ]
-                ),
-                get_the_title()
-              ),
-              '<p class="edit-link">',
-              '</p>'
-            ); ?>
-          </footer><!-- .entry-footer -->
-        <?php endif; ?>
+  </section>
 
-      </div>
-      </article><!-- #post-## -->
-    </div><!-- .container -->
-    </section>
-
-  </main><!-- #main -->
-</div><!-- #primary -->
+</main>
 
 <?php get_footer();

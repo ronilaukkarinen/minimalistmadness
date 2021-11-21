@@ -1,6 +1,6 @@
 // Gutenberg content
 .editor-styles-wrapper,
-.gutenberg-content {
+.article-content {
   max-width: 100%;
   padding-bottom: var(--padding-block);
   padding-left: 0;
@@ -9,7 +9,7 @@
 }
 
 // Gutenberg core magic
-.gutenberg-content > * {
+.article-content > * {
   line-height: var(--line-height-paragraphs-blog);
   margin-left: auto;
   margin-right: auto;
@@ -21,7 +21,6 @@
   @media (max-width: $width-max-article + 40px) {
     padding-left: var(--padding-container-horizontal);
     padding-right: var(--padding-container-horizontal);
-    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
 
     &.alignfull {
       padding-left: var(--padding-container-horizontal);

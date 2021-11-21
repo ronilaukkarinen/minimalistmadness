@@ -5,8 +5,13 @@
 // from "Gutenberg blocks" also to the main
 // global.scss to see them on front end side.
 
+// Set root size for rems
+:root {
+  /* stylelint-disable-next-line */
+  font-size: 62.5%;
+}
+
 // Helpers
-@import 'helpers/background';
 @import 'helpers/animations';
 @import 'helpers/typography';
 @import 'helpers/grid';
@@ -16,6 +21,7 @@
 @import 'variables/breakpoints';
 @import 'variables/font-family';
 @import 'variables/font-sizes';
+@import 'variables/forms';
 @import 'variables/spacings';
 
 // Gutenberg editor specific webfonts
@@ -24,12 +30,23 @@
 // Components needed by gutenberg
 @import 'components/components';
 
+// Gutenberg layout outside blocks
+@import 'gutenberg/layout/content';
+@import 'gutenberg/layout/button';
+
 // Gutenberg blocks
 @import 'gutenberg/blocks';
 
 // Apply general styles from site front-end
 @import 'layout/general';
-@import 'layout/typography';
+
+// Editor exceptions below
+// These styles are NO USE to front-end
+// Need to be right after general, because after typography comes block styles
+.editor-styles-wrapper {
+  @import 'layout/typography';
+  overflow-x: hidden;
+}
 
 // Gutenberg formatting
 @import 'gutenberg/formatting';
@@ -42,32 +59,6 @@
 
 // Diary styles
 @import 'views/diary';
-
-// List fix
-// Blockquote fix for desktop
-.editor-styles-wrapper blockquote,
-.editor-styles-wrapper blockquote.wp-block-quote {
-  max-width: 920px !important;
-  min-width: 920px;
-  width: 100% !important;
-}
-
-// Editor default list font size fix
-.editor-styles-wrapper ol > li,
-.editor-styles-wrapper ul > li {
-  font-size: var(--font-size-19);
-}
-
-// Editor default font size fix
-.editor-styles-wrapper p {
-  font-size: var(--font-size-19);
-}
-
-// Editor exceptions below
-// These styles are NO USE to front-end
-.editor-styles-wrapper {
-  overflow-x: hidden;
-}
 
 // Fix alignleft and alignright figcaption width
 // Hack for achieving the same than in gutenberg-helpers.js
@@ -83,6 +74,15 @@
   /* stylelint-enable */
 }
 
+// List fix
+// Blockquote fix for desktop
+.editor-styles-wrapper blockquote,
+.editor-styles-wrapper blockquote.wp-block-quote {
+  max-width: 920px !important;
+  min-width: 920px;
+  width: 100% !important;
+}
+// Default editor blocks
 .wp-block {
   font-family: var(--font-paragraph);
 
@@ -93,24 +93,12 @@
   &[data-align="full"] {
     max-width: $width-full;
     width: 100%;
-
-    figure,
-    .size-full {
-      max-width: $width-full;
-      width: 100%;
-    }
   }
 
   // Wide width block
   &[data-align="wide"] {
     max-width: $width-wide;
     width: 100%;
-
-    figure,
-    .size-full {
-      max-width: $width-full;
-      width: 100%;
-    }
 
     @media (min-width: 870px) {
       padding-left: 0;
@@ -125,13 +113,6 @@
   max-width: 100%;
 }
 
-.editor-styles-wrapper .is-root-container {
-  ul,
-  ol {
-    padding-left: 5rem;
-  }
-}
-
 // Reset admin lists
 .edit-post-layout__metaboxes ul,
 .edit-post-layout__metaboxes ol,
@@ -139,27 +120,4 @@
 .wp-admin .edit-post-sidebar ol {
   list-style: none;
   padding-left: 0;
-}
-
-// Diary styles
-body.block-editor-page.post-type-diary {
-  .wp-block,
-  .wp-block li,
-  .wp-block li,
-  .editor-styles-wrapper .is-root-container > * {
-    font-size: var(--diary-font-size);
-    max-width: var(--diary-container-width);
-  }
-
-  .editor-post-title__input {
-    color: rgb(var(--color-black-rgb) / .55);
-    font-size: var(--diary-font-size-prefix);
-    font-weight: var(--font-weight-regular);
-    margin: 2rem auto 1rem;
-
-    @media (max-width: 840px) {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
 }

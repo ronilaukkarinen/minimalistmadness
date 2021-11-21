@@ -13,12 +13,7 @@ a {
 
 // Links within content
 .editor-styles-wrapper,
-.gutenberg-content {
-  // Style choice not to have external link indicators in a list
-  li > a::after {
-    display: none;
-  }
-
+.article-content {
   [data-type="core/paragraph"] > a,
   li > a,
   p > strong > a,

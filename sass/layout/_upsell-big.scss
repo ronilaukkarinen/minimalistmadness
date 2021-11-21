@@ -161,7 +161,8 @@
     }
 
     .post-card-image .img {
-      @include background-cover();
+      background-repeat: no-repeat;
+      background-size: cover;
       border-radius: 4px;
       height: auto;
       min-height: 300px;

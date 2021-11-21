@@ -4,7 +4,8 @@
 }
 
 .hero-single {
-  @include background-cover();
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   max-height: 1300px;
   position: relative;

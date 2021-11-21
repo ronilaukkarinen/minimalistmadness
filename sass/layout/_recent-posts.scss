@@ -14,6 +14,24 @@
     width: 100%;
   }
 
+  .post-card-title a,
+  .post-card-title {
+    color: var(--color-shark);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .post-card-details,
+  .post-card-details time {
+    font-weight: var(--font-weight-regular);
+  }
+
+  li:hover .post-card-title,
+  li:focus .post-card-title,
+  li:hover .post-card-title a,
+  li:focus .post-card-title a {
+    color: var(--color-accent-hover) !important;
+  }
+
   > .post-feed-simplified {
     margin-bottom: 4rem;
     margin-left: 0;

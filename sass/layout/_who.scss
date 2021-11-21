@@ -56,7 +56,8 @@
   }
 
   .instagram {
-    @include background-cover();
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 4px;
     position: relative;
     transition: all .88s;

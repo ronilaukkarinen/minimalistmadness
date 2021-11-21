@@ -59,23 +59,6 @@ a {
   }
 }
 
-@mixin link() {
-  color: var(--color-accent);
-  display: inline !important;
-  font-weight: 500;
-  text-decoration: underline;
-  text-decoration-color: var(--color-accent);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
-  transition: all .18s ease-in-out;
-
-  &:focus,
-  &:hover {
-    color: var(--color-accent-hover);
-    text-decoration-color: var(--color-accent-hover);
-  }
-}
-
 // Preset for small fonts
 %small {
   @include responsive-font(14px, 17px);
@@ -267,19 +250,6 @@ figcaption {
   font-style: normal;
   font-weight: $body-weight;
   margin-top: 0;
-}
-
-// Horizontal rule.
-hr {
-  background-image: linear-gradient(to bottom, rgb(var(--color-black-rgb) / 0) 50%, rgb(var(--color-black-rgb) / .3) 50%);
-  background-position: 0 50%;
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  border: 0;
-  height: 0;
-  margin: 0;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
 }
 
 kbd,

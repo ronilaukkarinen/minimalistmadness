@@ -41,7 +41,7 @@ $drink_text = get_field( 'drink_text' );
       <?php if ( ! is_singular( 'diary' ) ) echo '</a>'; ?>
   </p>
   <div class="container container-article">
-    <div class="entry-content">
+    <div class="entry-content article-content">
       <?php
       the_content( sprintf(
         wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'minimalistmadness' ), array( 'span' => array( 'class' => array() ) ) ),

@@ -18,10 +18,8 @@ get_header(); ?>
   <main role="main" id="main" class="site-main">
 
     <section class="block block-page">
-    <div class="container container-article">
-      <div class="transition-fade">
+      <div class="transition-fade article-content">
 
-      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <header class="entry-header">
             <h1 class="entry-title">Arkisto</h1>
           </header><!-- .entry-header -->
@@ -114,10 +112,8 @@ get_header(); ?>
               ); ?>
             </footer><!-- .entry-footer -->
             <?php } ?>
-          </article><!-- #post-## -->
         </div>
 
-    </div><!-- .container -->
     </section>
 
   </main><!-- #main -->

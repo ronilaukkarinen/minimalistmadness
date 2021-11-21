@@ -7,7 +7,6 @@
 // Helpers
 @import 'helpers/animations';
 @import 'helpers/general';
-@import 'helpers/background';
 @import 'helpers/grid';
 @import 'helpers/typography';
 @import 'base/accessibility';
@@ -20,6 +19,9 @@
 @import 'variables/font-sizes';
 @import 'variables/spacings';
 @import 'variables/forms';
+
+// Style components
+@import 'components/components';
 
 // Navigation
 @import 'navigation/nav';
@@ -57,10 +59,14 @@
 @import 'views/single';
 @import 'views/comments';
 @import 'views/archive';
+@import 'views/diary';
+@import 'views/heatmap';
+
+// Gutenberg layout outside blocks
+@import 'gutenberg/layout/content';
 
 // Gutenberg blocks
 @import 'gutenberg/blocks';
 
-// The rest
-@import 'views/diary';
-@import 'views/heatmap';
+// Gutenberg formatting
+@import 'gutenberg/formatting';
