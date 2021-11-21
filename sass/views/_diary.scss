@@ -159,8 +159,15 @@ body.single-diary {
     margin: 2rem auto 1rem;
   }
 
+  .article-content {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .type-diary li,
   .type-diary p,
   .article-content p,
+  .article-content li,
   .container.container-article .entry-content p,
   .container.container-article article p,
   .editor-styles-wrapper p {
