@@ -29,7 +29,7 @@ $headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty 
 
   // Element font sizes
   --font-size-default: var(--font-size-17);
-  --font-size-paragraphs: var(--font-size-18);
+  --font-size-paragraphs: var(--font-size-20);
   --font-size-nav-toggle-label: 15px;
   --font-size-captions: 15px;
 
@@ -67,7 +67,7 @@ $headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty 
   // Element font sizes in mobile
   @media (max-width: $container-mobile) {
     --font-size-19: 16px;
-    --font-size-paragraphs: 16px;
+    --font-size-paragraphs: 18px;
     --font-size-default: 16px;
   }
 

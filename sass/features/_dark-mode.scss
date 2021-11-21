@@ -2,7 +2,7 @@
 .dark-mode-controls {
   cursor: pointer;
   position: absolute;
-  right: -10rem;
+  right: -7.4rem;
   top: 4rem;
   transform: scale(.2);
   z-index: 2222;
@@ -13,12 +13,12 @@
   }
 
   @media (max-width: $responsivenav) {
-    top: -3.5rem;
+    top: -3rem;
   }
 
   @media (max-width: $container-mobile) {
     right: -11rem;
-    top: -4rem;
+    top: -3.5rem;
   }
 }
 
@@ -155,6 +155,7 @@
   --color-post-author-border: #69634e;
   --color-midnight-gray: #bbb;
   --color-shark: #000;
+  --color-background-default: var(--color-white-two);
 
   // Forms
   --color-background-input-field: #000;

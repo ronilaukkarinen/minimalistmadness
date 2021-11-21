@@ -2,7 +2,9 @@
 // Default links everywhere
 a {
   color: var(--color-link-text);
+  letter-spacing: -.003em;
   text-decoration: none;
+  transition: .4s;
 
   &:hover,
   &:focus {
@@ -24,7 +26,7 @@ a {
   p.has-text-align-right > a,
   p.has-small-font-size > a,
   figcaption > a,
-  p:not([class]) > a.is-external-link {
+  p:not([class]) > a.is-external-link:not(.button) {
     @include link();
   }
 }

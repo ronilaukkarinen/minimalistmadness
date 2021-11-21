@@ -51,6 +51,7 @@
   }
 }
 
+.block .article-content .ownad-unblockable,
 .container.container-article .ownad-unblockable {
   max-width: 1100px;
   padding-left: 4rem;
@@ -87,6 +88,7 @@
   }
 
   .hide-forever {
+    background-color: transparent;
     border: 0;
     border-radius: 30px;
     // This needs to be fixed color so it won't affect by dark theme
@@ -140,8 +142,6 @@
       animation-name: shake;
       animation-timing-function: linear;
       background-color: transparent;
-      border-color: lighten(#414663, 35%);
-      color: lighten(#414663, 35%);
       transform-origin: 50% 50%;
     }
   }
@@ -210,9 +210,23 @@
       margin: 0;
     }
 
+    // Need be because of the dark-mode
+    // stylelint-disable-next-line
     a:not(.button):not(.post-edit-link) {
-      color: lighten(#414663, 25%);
+      // stylelint-disable-next-line
+      color: #fff;
       display: inline-block;
+      // stylelint-disable-next-line
+      text-decoration-color: #fff;
+
+      // stylelint-disable-next-line
+      &:hover,
+      &:focus {
+        // stylelint-disable-next-line
+        color: #fff;
+        // stylelint-disable-next-line
+        text-decoration-color: #fff;
+      }
     }
 
     @media (max-width: 1080px) {

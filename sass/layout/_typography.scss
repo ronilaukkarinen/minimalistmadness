@@ -10,6 +10,7 @@
 
 // Start typography settings
 body {
+  background-color: var(--color-white-two);
   color: var(--color-paragraph);
   font-family: var(--font-paragraph);
   font-size: var(--font-size-default);
@@ -40,6 +41,7 @@ table,
 tr,
 %default {
   font-size: var(--font-size-paragraphs);
+  letter-spacing: -.003em;
   line-height: var(--line-height-paragraphs);
 }
 

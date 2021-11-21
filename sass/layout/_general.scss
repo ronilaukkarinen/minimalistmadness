@@ -32,7 +32,7 @@
 
 // Default shade on top of blocks
 .shade {
-  background-color: #333;
+  background-color: var(--color-black-three);
   height: 100%;
   left: 0;
   opacity: .15;
@@ -131,6 +131,7 @@
   width: 100%;
 
   a {
+    color: var(--color-black);
     font-size: var(--font-size-14);
     margin: 0;
     opacity: .4;

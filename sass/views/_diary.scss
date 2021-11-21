@@ -177,8 +177,15 @@ body.single-diary {
     padding-top: 0;
   }
 
+  .editor-styles-wrapper .is-root-container > *:not(.alignwide):not(.alignfull),
+  .article-content > *:not(.alignwide):not(.alignfull),
   .container.container-article .entry-content > *:not(.alignwide):not(.alignfull) {
     max-width: var(--diary-container-width);
+
+    @media (max-width: 840px) {
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+    }
   }
 
   .editor-styles-wrapper .is-root-container,
@@ -266,4 +273,30 @@ body.single-diary {
 
 .type-diary + .type-diary {
   margin-top: 4rem;
+}
+
+// Diary styles
+body.block-editor-page.post-type-diary {
+  .wp-block,
+  .wp-block li,
+  .wp-block li,
+  .editor-styles-wrapper .is-root-container > * {
+    max-width: var(--diary-container-width);
+  }
+
+  p {
+    font-size: var(--diary-font-size);
+  }
+
+  .editor-post-title__input {
+    color: rgb(var(--color-black-rgb) / .55);
+    font-size: var(--diary-font-size-prefix);
+    font-weight: var(--font-weight-regular);
+    margin: 2rem auto 1rem;
+
+    @media (max-width: 840px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
 }

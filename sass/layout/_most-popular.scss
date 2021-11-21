@@ -27,6 +27,12 @@
   }
 
   .post-card-title {
+    color: var(--color-heading);
+
+    a {
+      color: var(--color-heading);
+    }
+
     @media (max-width: 450px) {
       height: auto;
     }

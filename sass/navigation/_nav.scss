@@ -54,6 +54,10 @@
   margin: 0;
   opacity: .4;
   padding: 10px 12px;
+
+  @media (min-width: $responsivenav) {
+    font-size: var(--font-size-14);
+  }
 }
 
 @media (min-width: $responsivenav) {
@@ -61,6 +65,7 @@
   .current-menu-item a,
   .site-head a:focus,
   .active a {
+    color: var(--color-black);
     opacity: 1;
     text-decoration: none;
   }
@@ -84,6 +89,12 @@
   line-height: 1em;
   padding: 10px;
   text-transform: uppercase;
+
+  a,
+  a:hover,
+  a:focus {
+    color: var(--color-black);
+  }
 
   svg {
     margin-right: 3px;
