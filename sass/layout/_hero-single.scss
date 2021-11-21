@@ -4,9 +4,11 @@
 }
 
 .hero-single {
+  align-items: flex-end;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
   height: 100vh;
   max-height: 1300px;
   position: relative;
@@ -43,16 +45,13 @@
   }
 
   .article-title-area {
-    bottom: 12%;
     display: block;
-    left: 6%;
     margin-left: auto;
     margin-right: auto;
     max-width: $article-max-width;
+    padding-bottom: 12rem;
     padding-left: $padding-general-content-box;
     padding-right: $padding-general-content-box;
-    position: absolute;
-    right: 6%;
     width: 100%;
     z-index: 5;
 
@@ -64,6 +63,10 @@
       line-height: 1.1;
     }
 
+    @media (max-width: 600px) {
+      padding-bottom: 6rem;
+    }
+
     @media (max-width: $container-ipad) {
       padding-left: $padding-general-content-box-ipad;
       padding-right: $padding-general-content-box-ipad;
@@ -72,12 +75,6 @@
     @media (max-width: $container-mobile) {
       padding-left: $padding-default-cols-mobile;
       padding-right: $padding-default-cols-mobile;
-    }
-
-    @media (max-width: 600px) {
-      left: 0;
-      padding-left: 2rem;
-      right: 0;
     }
   }
 
