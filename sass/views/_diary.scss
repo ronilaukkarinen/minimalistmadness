@@ -29,6 +29,17 @@ body.single-diary {
     display: block;
   }
 
+  // Embeds
+  .wp-video,
+  .twitter-tweet,
+  .instagram-media,
+  .is-provider-instagram,
+  .is-provider-twitter,
+  .is-provider-facebook {
+    max-width: var(--diary-container-width) !important;
+    width: 100% !important;
+  }
+
   .log-header,
   .back-to-link,
   .custom-pagination {
@@ -99,7 +110,7 @@ body.single-diary {
   .prefix,
   h1.prefix,
   h2.prefix,
-  .diary-title,
+  .type-diary p.diary-title,
   .custom-pagination {
     max-width: var(--diary-container-width);
 
@@ -121,11 +132,13 @@ body.single-diary {
   .prefix,
   h1.prefix,
   h2.prefix,
+  .type-diary p.diary-title,
   .diary-title {
     font-family: var(--diary-font-family-heading);
     font-size: var(--diary-font-size-main-heading);
   }
 
+  .type-diary p.diary-title,
   .diary-title {
     font-weight: 600;
     line-height: 1.2;
@@ -151,6 +164,8 @@ body.single-diary {
   .container.container-article .entry-content p,
   .container.container-article article p,
   .editor-styles-wrapper p {
+    font-size: var(--diary-font-size);
+
     &.word-count {
       font-family: $font-alt;
       font-size: var(--diary-font-size-prefix);
@@ -162,8 +177,7 @@ body.single-diary {
     padding-top: 0;
   }
 
-  .container.container-article .entry-content > * {
-    font-size: var(--diary-font-size);
+  .container.container-article .entry-content > *:not(.alignwide):not(.alignfull) {
     max-width: var(--diary-container-width);
   }
 

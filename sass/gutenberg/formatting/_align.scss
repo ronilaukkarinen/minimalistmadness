@@ -30,11 +30,10 @@
   }
 
   .alignwide {
-    padding-left: 0;
-    padding-right: 0;
-
     @media (min-width: $width-max-article + 40px) {
       max-width: $width-wide;
+      padding-left: 0;
+      padding-right: 0;
       width: 100%;
     }
   }

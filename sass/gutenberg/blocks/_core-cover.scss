@@ -4,6 +4,8 @@
   padding-right: var(--padding-container-horizontal);
 
   p {
+    // stylelint-disable-next-line
+    color: #fff !important;
     line-height: var(--line-height-core-heading);
   }
 }

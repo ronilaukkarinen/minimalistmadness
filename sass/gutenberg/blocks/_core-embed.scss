@@ -31,14 +31,4 @@
   margin-right: auto !important;
   max-width: $article-max-width !important;
   width: 100% !important;
-
-  @media (max-width: 800px) {
-    padding-left: 4rem !important;
-    padding-right: 4rem !important;
-  }
-
-  @media (max-width: 480px) {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
 }
