@@ -121,6 +121,10 @@ del {
       font-size: var(--font-size-16);
     }
 
+    @media (max-width: $width-grid-base + 40px) {
+      padding: 0 4rem;
+    }
+
     @media (max-width: $container-mobile) {
       padding: 4rem 2rem;
     }

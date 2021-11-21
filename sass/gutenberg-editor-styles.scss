@@ -37,6 +37,9 @@
 // Gutenberg blocks
 @import 'gutenberg/blocks';
 
+// Gutenberg formatting
+@import 'gutenberg/formatting';
+
 // Apply general styles from site front-end
 @import 'layout/general';
 
@@ -47,9 +50,6 @@
   @import 'layout/typography';
   overflow-x: hidden;
 }
-
-// Gutenberg formatting
-@import 'gutenberg/formatting';
 
 // Global features needed by editor
 @import 'features/lazyload';
@@ -74,14 +74,6 @@
   /* stylelint-enable */
 }
 
-// List fix
-// Blockquote fix for desktop
-.editor-styles-wrapper blockquote,
-.editor-styles-wrapper blockquote.wp-block-quote {
-  max-width: 920px !important;
-  min-width: 920px;
-  width: 100% !important;
-}
 // Default editor blocks
 .wp-block {
   font-family: var(--font-paragraph);
