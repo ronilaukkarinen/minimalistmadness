@@ -113,3 +113,17 @@
   list-style: none;
   padding-left: 0;
 }
+
+.wp-block.editor-post-title .editor-post-title__input {
+  color: var(--color-black);
+  font-family: $font-alt;
+  font-size: 64px;
+  font-weight: var(--font-weight-semibold);
+  margin: 2rem auto 1rem;
+
+  @media (max-width: 840px) {
+    font-size: 32px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
