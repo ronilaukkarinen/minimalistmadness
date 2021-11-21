@@ -387,8 +387,8 @@ ul.tags {
 }
 
 .comments-link {
-  @extend %small;
   display: block;
+  font-size: var(--font-size-14);
   text-align: right;
 
   svg {

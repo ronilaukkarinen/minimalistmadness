@@ -358,13 +358,13 @@ $tcon-search-glass-border-width: math.div($tcon-size, 20) !default;
   z-index: 10;
 }
 
-.search-results-mobile > div,
+ul.search-results-mobile > div,
 .search-mobile.has-results {
   height: 100vh;
   overflow: auto;
 }
 
-.search-results .search-results {
+ul.search-results ul.search-results {
   margin-top: 2rem;
 
   @media (max-width: $container-ipad) {
@@ -372,7 +372,7 @@ $tcon-search-glass-border-width: math.div($tcon-size, 20) !default;
   }
 }
 
-.search-results {
+ul.search-results {
   width: 100%;
 
   .tagline {

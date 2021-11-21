@@ -265,7 +265,7 @@ swup.on('contentReplaced', () => {
       $('body').removeClass('search-open');
 
       // Empty search on close
-      $('.search-results > div').remove();
+      $('ul.search-results > div').remove();
       jQuery('.search-mobile input').val(null);
       jQuery('.overlay-search input').val(null);
 
@@ -448,7 +448,7 @@ swup.on('contentReplaced', () => {
         $('body').removeClass('search-open');
 
         // Empty search on close
-        $('.search-results > div').remove();
+        $('ul.search-results > div').remove();
         jQuery('.search-mobile input').val(null);
         jQuery('.overlay-search input').val(null);
       });
@@ -462,7 +462,7 @@ swup.on('contentReplaced', () => {
           $('body').removeClass('search-open');
 
           // Empty search on close
-          $('.search-results > div').remove();
+          $('ul.search-results > div').remove();
           jQuery('.search-mobile input').val(null);
           jQuery('.overlay-search input').val(null);
         }
@@ -473,18 +473,18 @@ swup.on('contentReplaced', () => {
         const search = $('.search-form input').val();
 
         if (!search.trim()) {
-          $('.search-results').empty();
+          $('ul.search-results').empty();
           return;
         }
 
         $.getJSON(`${air.baseurl}rollemaa/v1/search?s=${search}`, (results) => {
-          $('.search-results').empty();
+          $('ul.search-results').empty();
 
           if (results.length === 0) {
-            $('.search-results').append('<li class="no-results"><h2>Ei hakutuloksia.</h2></li>');
+            $('ul.search-results').append('<li class="no-results"><h2>Ei hakutuloksia.</h2></li>');
           } else {
             $.each(results, (i, result) => {
-              $('.search-results').append(`<li><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2></li>`);
+              $('ul.search-results').append(`<li><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2></li>`);
             });
           }
         });
@@ -579,7 +579,7 @@ swup.on('contentReplaced', () => {
     $('body').removeClass('search-open');
 
     // Empty search on close
-    $('.search-results > div').remove();
+    $('ul.search-results > div').remove();
     jQuery('.search-mobile input').val(null);
     jQuery('.overlay-search input').val(null);
 
@@ -761,7 +761,7 @@ swup.on('contentReplaced', () => {
       $('body').removeClass('search-open');
 
       // Empty search on close
-      $('.search-results > div').remove();
+      $('ul.search-results > div').remove();
       jQuery('.search-mobile input').val(null);
       jQuery('.overlay-search input').val(null);
     });
@@ -775,7 +775,7 @@ swup.on('contentReplaced', () => {
         $('body').removeClass('search-open');
 
         // Empty search on close
-        $('.search-results > div').remove();
+        $('ul.search-results > div').remove();
         jQuery('.search-mobile input').val(null);
         jQuery('.overlay-search input').val(null);
       }
@@ -786,18 +786,18 @@ swup.on('contentReplaced', () => {
       const search = $('.search-form input').val();
 
       if (!search.trim()) {
-        $('.search-results').empty();
+        $('ul.search-results').empty();
         return;
       }
 
       $.getJSON(`${air.baseurl}rollemaa/v1/search?s=${search}`, (results) => {
-        $('.search-results').empty();
+        $('ul.search-results').empty();
 
         if (results.length === 0) {
-          $('.search-results').append('<li class="no-results"><h2>Ei hakutuloksia.</h2></li>');
+          $('ul.search-results').append('<li class="no-results"><h2>Ei hakutuloksia.</h2></li>');
         } else {
           $.each(results, (i, result) => {
-            $('.search-results').append(`<li><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2></li>`);
+            $('ul.search-results').append(`<li><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2></li>`);
           });
         }
       });

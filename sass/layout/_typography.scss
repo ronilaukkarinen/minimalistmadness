@@ -1,85 +1,46 @@
-/* stylelint-disable a11y/no-display-none, declaration-property-unit-allowed-list */
+// stylelint-disable declaration-property-unit-allowed-list, no-descending-specificity
+// Everything around fonts, font size definitions and typeset
+// presets. No modular scale, but a sophisticated viewport
+// based responsive mixin can be found in _helpers.scss
+
+// Set root size for rems
 :root {
   font-size: 62.5%;
 }
 
-// Defaults
-%default {
-  @include responsive-font($font-min-size, $font-max-size);
-  letter-spacing: -.003em;
-  line-height: $line-height;
-}
-
 // Start typography settings
 body {
-  @extend %default;
-  background-color: var(--color-white-two);
-  color: var(--color-black);
-  font-family: $font-base;
-  font-weight: $body-weight;
+  color: var(--color-paragraph);
+  font-family: var(--font-paragraph);
+  font-size: var(--font-size-default);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: var(--font-weight-paragraphs);
   text-rendering: geometricPrecision;
-
-  // Font smoothing options
-  text-size-adjust: none;
 }
 
-// Links
-a {
-  color: var(--color-black);
-  text-decoration: none;
-  transition: .4s ease;
-
-  &:hover,
-  &:focus {
-    color: var(--color-hover);
-  }
-}
-
-.gradient-text {
-  /* stylelint-disable-next-line */
-  animation: rainbow 2s ease-in-out infinite;
-  /* stylelint-disable-next-line */
-  background: linear-gradient(to right, rgb(179, 20, 52), rgb(182, 104, 117), rgba(12, 131, 71, 1));
-  background-clip: text;
-  background-size: 200% 200%;
-  color: rgba(0, 0, 0, 1);
-}
-
-@keyframes rainbow {
-  0% {
-    background-position: left;
-  }
-
-  50% {
-    background-position: right;
-  }
-
-  100% {
-    background-position: left;
-  }
-}
-
-// Preset for small fonts
-%small {
-  @include responsive-font(14px, 17px);
-}
-
-%extrasmall {
-  @include responsive-font(12px, 14px);
-}
-
-p {
-  line-height: var(--line-height);
-  margin-bottom: 2.9rem;
-  margin-top: 2.9rem;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+// Defaults
+p,
+dd,
+dt,
+figcaption,
+hr,
+small,
+ol,
+ul,
+li,
+blockquote,
+kbd,
+pre,
+samp,
+code,
+th,
+td,
+table,
+tr,
+%default {
+  font-size: var(--font-size-paragraphs);
+  line-height: var(--line-height-paragraphs);
 }
 
 // Heading defaults
@@ -89,109 +50,60 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-black);
-  font-family: $font-headings;
-  font-weight: $headings-weight;
-  margin-bottom: 2.7rem;
-  margin-top: 2.7rem;
-  text-rendering: optimizeLegibility;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-headings);
+  margin-bottom: var(--margin-between-paragraphs);
+  margin-top: var(--margin-between-paragraphs);
+}
 
-  &:first-child {
-    margin-top: 0;
-  }
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--line-height-headings);
 }
 
 // Define heading scales
 // Current: Perfect fourth: https://type-scale.com/
-$heading_typescale: medium;
-
-// Defaults are null
-$h1_min: null;
-$h1_max: null;
-$h2_min: null;
-$h2_max: null;
-$h3_min: null;
-$h3_max: null;
-$h4_min: null;
-$h4_max: null;
-$h5_min: null;
-$h5_max: null;
-$h6_min: null;
-$h6_max: null;
-
-@if $heading_typescale == 'large' {
-  $h1_min: 32px;
-  $h1_max: 67px;
-  $h2_min: 24px;
-  $h2_max: 51px;
-  $h3_min: 21px;
-  $h3_max: 38px;
-  $h4_min: 18px;
-  $h4_max: 28px;
-  $h5_min: 14px;
-  $h5_max: 28px;
-  $h6_min: 14px;
-  $h6_max: 21px;
+%h1,
+h1 {
+  font-size: var(--font-size-h1);
 }
 
-@if $heading_typescale == 'medium' {
-  $h1_min: 32px;
-  $h1_max: 51px;
-  $h2_min: 24px;
-  $h2_max: 38px;
-  $h3_min: 21px;
-  $h3_max: 28px;
-  $h4_min: 18px;
-  $h4_max: 21px;
-  $h5_min: 14px;
-  $h5_max: 17px;
-  $h6_min: 14px;
-  $h6_max: 12px;
+%h2,
+h2 {
+  font-size: var(--font-size-h2);
 }
 
-@if $heading_typescale == 'small' {
-  $h1_min: 38px;
-  $h1_max: 28px;
-  $h2_min: 21px;
-  $h2_max: 28px;
-  $h3_min: 20px;
-  $h3_max: 21px;
-  $h4_min: 16px;
-  $h4_max: 18px;
-  $h5_min: 16px;
-  $h5_max: 18px;
-  $h6_min: 14px;
-  $h6_max: 16px;
+%h3,
+h3 {
+  font-size: var(--font-size-h3);
 }
 
-h1,
-%h1 {
-  @include responsive-font($h1_min, $h1_max);
+%h4,
+h4 {
+  font-size: var(--font-size-h4);
 }
 
-h2,
-%h2 {
-  @include responsive-font($h2_min, $h2_max);
+%h5,
+h5 {
+  font-size: var(--font-size-h5);
 }
 
-h3,
-%h3 {
-  @include responsive-font($h3_min, $h3_max);
+%h6,
+h6 {
+  font-size: var(--font-size-h6);
 }
 
-h4,
-%h4 {
-  @include responsive-font($h4_min, $h4_max);
-}
-
-h5,
-%h5 {
-  @include responsive-font($h5_min, $h5_max);
-}
-
-h6,
-%h6 {
-  @include responsive-font($h6_min, $h6_max);
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
 }
 
 // Lists
@@ -208,68 +120,24 @@ ol {
   padding-left: 1.9rem;
 }
 
-// Bold.
+// Bold
 b,
 strong {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
-// Italic.
+// Italic
 em,
 i {
   font-style: italic;
 }
 
-// Inline small text.
-small {
-  font-size: 14px;
+// Default paragraphs
+p {
+  margin-bottom: 2.9rem;
+  margin-top: 2.9rem;
 }
 
-// images
-img {
-  height: auto;
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-// Figures and captions
-figure {
-  margin-bottom: 1rem;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  position: relative;
-
-  > img {
-    width: 100%;
-  }
-}
-
-// Figcaption.
-figcaption {
-  font-style: normal;
-  font-weight: $body-weight;
-  margin-top: 0;
-}
-
-kbd,
-pre,
-samp {
-  font-family: $font-monospace;
-}
-
-// Code block.
-code {
-  background-color: var(--color-code-background);
-  border-radius: .3rem;
-  color: var(--color-code);
-  font-family: $font-monospace;
-  font-size: inherit; // normalize.css sets this as 1em by default
-  line-height: 1;
-  padding: .375rem .5rem;
-
-  pre & {
-    display: inline-block;
-    padding: 1.15rem 1rem .85rem;
-  }
+p:last-child {
+  margin-bottom: 0;
 }
