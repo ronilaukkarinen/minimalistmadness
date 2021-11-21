@@ -438,7 +438,7 @@ swup.on('contentReplaced', () => {
         $('body').addClass('search-open');
 
         // Move focus to search-input
-        $('.search-input').focus();
+        document.getElementById('search-input').focus();
       });
 
       $('.button-close, .article--link').on('click', function () {
@@ -751,7 +751,7 @@ swup.on('contentReplaced', () => {
       $('body').addClass('search-open');
 
       // Move focus to search-input
-      $('.search-input').focus();
+      document.getElementById('search-input').focus();
     });
 
     $('.button-close, .article--link').on('click', function () {

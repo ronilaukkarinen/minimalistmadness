@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <span class="tcon-visuallyhidden">Toggle search</span>
         </button>
 
-        <input aria-label="Hae kirjoituksia" type="search" name="search" class="search search-input" placeholder="Hae kirjoituksia">
+        <input id="search-input" aria-label="Hae kirjoituksia" type="search" name="search" class="search search-input" placeholder="Hae kirjoituksia">
 
         <button class="button button-close"><?php include get_theme_file_path( '/svg/window-close.svg' ); // phpcs:ignore ?> <span>Sulje</span></button>
       </div>
