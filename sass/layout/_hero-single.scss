@@ -233,7 +233,9 @@
 
     svg {
       bottom: -60px;
-      fill: var(--color-white);
+      // Because of the dark background this always needs to be white regardless of color theme
+      // stylelint-disable-next-line
+      fill: #fff;
       height: 65px;
       left: -10px;
       position: relative;
@@ -255,7 +257,9 @@
 .animated-mouse {
   @include horizontal-align();
   background-color: transparent;
-  border: 2px solid var(--color-white);
+  // Because of the dark background this always needs to be white regardless of color theme
+  // stylelint-disable-next-line
+  border: 2px solid #fff;
   border-radius: 14px;
   bottom: 5px;
   height: 47px;
@@ -279,7 +283,9 @@
     /* stylelint-disable-next-line */
     animation-name: mousePointer;
     animation-timing-function: linear;
-    background-color: var(--color-white);
+    // Because of the dark background this always needs to be white regardless of color theme
+    // stylelint-disable-next-line
+    background-color: #fff;
     border-radius: 100%;
     height: 6px;
     left: 49%;
