@@ -279,7 +279,8 @@ body.single-diary {
 
   // Blockquotes
   @media (min-width: 1015px) {
-    .wp-block-quote {
+    .container.container-article .article-content blockquote.wp-block-quote {
+      margin: 4rem auto;
       padding-right: 0;
       transform: translateX(-6rem);
 

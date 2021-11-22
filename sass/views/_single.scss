@@ -100,7 +100,7 @@ del {
   }
 
   blockquote {
-    border-left: 2px solid var(--color-black);
+    border-left: 2px solid var(--color-shark);
     margin-bottom: 6rem;
     margin-left: auto;
     margin-right: auto;
@@ -108,8 +108,30 @@ del {
     max-width: 920px;
     padding: 0 6rem;
 
+    * {
+      color: var(--color-shark);
+    }
+
     cite {
+      opacity: .8;
       text-align: left;
+      transition: all 22s;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+
+      * {
+        font-size: var(--font-size-14) !important;
+
+        &.is-external-link::after {
+          background-image: url('../../svg/external-link-shark.svg');
+          background-size: 12px 12px;
+          height: 12px;
+          width: 12px;
+        }
+      }
     }
 
     p {
