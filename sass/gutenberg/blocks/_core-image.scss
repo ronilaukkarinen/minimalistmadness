@@ -15,7 +15,12 @@
 
   .alignwide img,
   .alignfull img {
+    height: auto !important;
     width: 100%;
+  }
+
+  img[height] {
+    height: auto !important;
   }
 
   // No border radius on full width image and wide on small screens
