@@ -123,7 +123,7 @@ del {
       }
 
       * {
-        font-size: var(--font-size-14) !important;
+        font-size: var(--font-size-16) !important;
 
         &.is-external-link::after {
           background-image: url('../../svg/external-link-shark.svg');
@@ -135,7 +135,7 @@ del {
     }
 
     p {
-      font-size: var(--font-size-16);
+      font-size: var(--font-size-22);
     }
 
     @media (max-width: $width-grid-base + 40px) {
