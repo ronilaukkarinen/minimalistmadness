@@ -276,6 +276,18 @@ body.single-diary {
       }
     }
   }
+
+  // Blockquotes
+  @media (min-width: 1015px) {
+    .wp-block-quote {
+      padding-right: 0;
+      transform: translateX(-6rem);
+
+      > * {
+        width: calc(100% + 12rem);
+      }
+    }
+  }
 }
 
 .type-diary + .type-diary {

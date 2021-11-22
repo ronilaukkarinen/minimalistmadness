@@ -101,7 +101,6 @@ del {
 
   blockquote {
     border-left: 2px solid var(--color-black);
-    line-height: 1.77;
     margin-bottom: 6rem;
     margin-left: auto;
     margin-right: auto;
@@ -113,10 +112,6 @@ del {
       text-align: left;
     }
 
-    * {
-      line-height: 1.77;
-    }
-
     p {
       font-size: var(--font-size-16);
     }
@@ -126,7 +121,7 @@ del {
     }
 
     @media (max-width: $container-mobile) {
-      padding: 4rem 2rem;
+      padding: 0 2rem;
     }
   }
 
