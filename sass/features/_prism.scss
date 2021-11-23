@@ -2,10 +2,8 @@ code[class*="language-"] {
   background-color: transparent;
   border: 0;
   color: #f8f8f2;
-  font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   hyphens: none;
   line-height: 1.5;
-  padding: 0;
   tab-size: 4;
   text-align: left;
   text-shadow: 0 1px rgb(var(--color-black-rgb) / .3);
@@ -20,12 +18,9 @@ pre[class*="language-"] {
   border: 0;
   border-radius: 4px;
   color: #f8f8f2;
-  font-family: Inconsolata, Monaco, Consolas, Andale Mono, Bitstream Vera Sans Mono, Courier New, Courier, monospace;
   hyphens: none;
   line-height: 1.5;
-  margin: .5em -10rem;
   overflow: auto;
-  padding: 10px 20px;
   tab-size: 4;
   text-align: left;
   text-shadow: 0 1px rgb(var(--color-black-rgb) / .3);
@@ -36,7 +31,6 @@ pre[class*="language-"] {
 
   code {
     border-radius: 4px;
-    font-size: 13px;
   }
 
   @media (max-width: 1111px) {
@@ -51,7 +45,6 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"] {
   border-radius: 0;
-  padding: .1em;
   white-space: normal;
 }
 
