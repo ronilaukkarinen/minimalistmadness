@@ -634,9 +634,10 @@ body.post-type-archive-diary .container.container-article .entry-content .author
     font-family: $font-old;
   }
 
-  @media (max-width: $article-max-width + 40px) {
+  @media (max-width: $article-max-width + 42px) {
     margin-left: 2rem;
     margin-right: 2rem;
+    margin-top: 2.9rem;
     width: calc(100% - 4rem);
   }
 }

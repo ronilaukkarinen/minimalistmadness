@@ -25,13 +25,14 @@
 .single-post .dark-mode-controls {
   top: calc(calc(var(--vh, 1vh) * 100) + 4rem);
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1199px) {
+    margin-top: -.5rem;
     right: unset;
     top: calc(var(--vh, 1vh) * 100);
     width: 100%;
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 843px) {
     margin-top: 1rem;
   }
 }
