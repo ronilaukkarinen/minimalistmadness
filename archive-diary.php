@@ -4,7 +4,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-25 10:20:01
+ * @Last Modified time: 2021-11-25 10:29:05
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -16,7 +16,6 @@ get_header(); ?>
 <div class="content-area">
 	<main role="main" id="main" class="site-main block block-page transition-fade">
 
-    <?php get_template_part( 'template-parts/log-header' ); ?>
     <?php get_template_part( 'template-parts/heatmap' ); ?>
 
     <?php if ( have_posts() ) :
