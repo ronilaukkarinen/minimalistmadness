@@ -20,6 +20,7 @@
   align-items: center;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
+  position: relative;
 }
 
 .site-head-left {
@@ -242,16 +243,19 @@
 /* ---------------------------------------------------------- */
 
 .nav-burger {
+  align-items: center;
   display: none;
+  height: 40px;
   left: 0;
-  padding: 0;
+  padding: 2rem 0;
   position: absolute;
+  top: 0;
   z-index: 9999;
 }
 
 @media (max-width: $responsivenav) {
   .nav-burger {
-    display: block;
+    display: flex;
   }
 
   .site-head-container {
@@ -395,16 +399,12 @@
   display: flex;
   /* stylelint-disable-next-line */
   font: inherit;
-  height: 40px;
+  height: auto;
   margin: 0;
   overflow: visible;
-  padding: 2px 4rem;
+  padding: 0;
   text-transform: none;
   transition: opacity .15s linear, filter .15s linear;
-
-  @media (max-width: $container-mobile) {
-    padding: 2px 2rem;
-  }
 }
 
 .hamburger-box {
