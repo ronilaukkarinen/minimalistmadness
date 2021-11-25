@@ -4,7 +4,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-30 08:33:36
+ * @Last Modified time: 2021-11-25 10:20:01
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -16,11 +16,7 @@ get_header(); ?>
 <div class="content-area">
 	<main role="main" id="main" class="site-main block block-page transition-fade">
 
-    <header class="log-header">
-      <h1>Kapteenin lokikirja</h1>
-      <p>Laiva jatkaa kulkuaan Rollemaan vesillä. Kapteenin lokikirja on päivittäinen päiväkirja, jossa painopiste kirjoittamisen säännöllisyydessä ja raportoinnissa, ei niinkään asiapitoisuudessa. <a href="<?php echo esc_url( get_the_permalink( 26429 ) ); ?>">Ensimmäinen sivu</a> avattu 2021/11/08. Alla merkinnät graafissa.</p>
-    </header>
-
+    <?php get_template_part( 'template-parts/log-header' ); ?>
     <?php get_template_part( 'template-parts/heatmap' ); ?>
 
     <?php if ( have_posts() ) :

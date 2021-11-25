@@ -1,10 +1,16 @@
 <?php
 /**
- * The template for displaying all single posts
+ * Single diary
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * A template for single post.
+ *
+ * @Author:		Roni Laukkarinen
+ * @Date:   		2021-11-16 09:38:48
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-11-25 10:24:09
  *
  * @package minimalistmadness
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 namespace Air_Light;
@@ -21,6 +27,8 @@ get_header();
         Takaisin päiväkirjamerkintöihin
       </a>
     </p>
+
+    <?php get_template_part( 'template-parts/log-header' ); ?>
 
     <?php while ( have_posts() ) :
     the_post();
