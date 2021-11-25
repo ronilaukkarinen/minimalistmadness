@@ -1,3 +1,9 @@
+/**
+ * @Author: Roni Laukkarinen
+ * @Date:   2021-11-22 11:38:12
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-11-22 18:38:30
+ */
 /* eslint-disable radix, no-underscore-dangle, no-use-before-define, no-shadow, func-names, no-var, one-var, prefer-rest-params, no-undef, import/first, import/no-extraneous-dependencies, max-len, no-unused-vars, camelcase, no-plusplus, vars-on-top, no-continue */
 /**
  * Air theme JavaScript.
