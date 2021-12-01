@@ -30,7 +30,7 @@
   }
 
   .alignwide {
-    @media (min-width: $width-max-article + 40px) {
+    @media (min-width: $width-wide + 40px) {
       max-width: $width-wide;
       padding-left: 0;
       padding-right: 0;
