@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-11-22 11:38:12
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-22 18:38:30
+ * @Last Modified time: 2021-12-02 18:13:07
  */
 /* eslint-disable radix, no-underscore-dangle, no-use-before-define, no-shadow, func-names, no-var, one-var, prefer-rest-params, no-undef, import/first, import/no-extraneous-dependencies, max-len, no-unused-vars, camelcase, no-plusplus, vars-on-top, no-continue */
 /**
@@ -24,7 +24,7 @@ import MoveTo from 'moveto';
 import Swup from 'swup';
 import SwupScriptsPlugin from '@swup/scripts-plugin';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
-import SwupGaPlugin from '@swup/ga-plugin';
+import SwupPreloadPlugin from '@swup/preload-plugin';
 import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
 
@@ -101,6 +101,7 @@ function debounce(func, wait, immediate) {
 const swup = new Swup({
   plugins: [
     new SwupBodyClassPlugin(),
+    new SwupPreloadPlugin(),
   ],
 });
 

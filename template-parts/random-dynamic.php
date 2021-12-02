@@ -46,7 +46,7 @@ if ( $query->have_posts() ) : ?>
 
     <article class="entry post-card post">
       <div class="post-card-content">
-        <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="global-link" aria-hidden="true" tabindex="-1"><span class="screen-reader-text"><?php echo esc_attr( get_the_title() ); ?></span></a>
+        <a data-swup-preload href="<?php echo esc_url( get_the_permalink() ); ?>" class="global-link" aria-hidden="true" tabindex="-1"><span class="screen-reader-text"><?php echo esc_attr( get_the_title() ); ?></span></a>
 
         <h2 class="post-card-title"><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_attr( get_the_title() ); ?></a></h2>
         <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo khonsu_estimated_reading_time(); // phpcs:ignore ?></p><?php if ( has_post_thumbnail() ) { image_lazyload_div( get_post_thumbnail_id( $post->ID, 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>

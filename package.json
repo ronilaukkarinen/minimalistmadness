@@ -52,6 +52,7 @@
   "dependencies": {
     "@swup/body-class-plugin": "^1.0.2",
     "@swup/ga-plugin": "^1.0.1",
+    "@swup/preload-plugin": "^1.0.3",
     "@swup/scripts-plugin": "^1.1.0",
     "font-awesome": "^4.7.0",
     "frappe-charts": "^1.6.2",

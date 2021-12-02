@@ -291,7 +291,7 @@ function air_helper_get_image_lazyload_dimensions( $image_id = 0, $sizes = [] ) 
 
           <article class="entry post-card post">
             <div class="post-card-content">
-              <a href="<?php echo esc_url( get_permalink( $related_post_id ) ); ?>" class="global-link" aria-hidden="true" tabindex="-1"><span class="screen-reader-text"><?php echo esc_attr( get_the_title( $related_post_id ) ); ?></span></a>
+              <a data-swup-preload href="<?php echo esc_url( get_permalink( $related_post_id ) ); ?>" class="global-link" aria-hidden="true" tabindex="-1"><span class="screen-reader-text"><?php echo esc_attr( get_the_title( $related_post_id ) ); ?></span></a>
 
             <h2 class="post-card-title"><a href="<?php echo esc_url( get_permalink( $related_post_id ) ); ?>"><?php echo esc_attr( get_the_title( $related_post_id ) ); ?></a></h2>
             <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php echo esc_attr( get_the_time( 'c' ) ); ?>"><?php echo esc_attr( get_the_time( 'j.', $related_post_id ) ); ?> <?php echo esc_attr( get_the_time( 'F', $related_post_id ) ); ?>ta <?php echo esc_attr( get_the_time( 'Y', $related_post_id ) ); ?></time></p><?php if ( has_post_thumbnail( $related_post_id ) ) { image_lazyload_div( get_post_thumbnail_id( $related_post_id, 'large' ) ); } else { image_lazyload_div( khonsu_get_random_image_id() ); } ?></div></div>

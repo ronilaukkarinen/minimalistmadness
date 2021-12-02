@@ -41,7 +41,7 @@ $query = new \WP_Query(array(
 
       <article class="entry post-card post no-animation">
         <div class="post-card-content">
-          <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="global-link" aria-hidden="true" tabindex="-1"></a>
+          <a data-swup-preload href="<?php echo esc_url( get_the_permalink() ); ?>" class="global-link" aria-hidden="true" tabindex="-1"></a>
 
           <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo khonsu_estimated_reading_time(); // phpcs:ignore ?></p><?php if ( has_post_thumbnail() ) { image_lazyload_div( get_post_thumbnail_id( $post->ID, 'large' ) ); } ?></div></div>
 
