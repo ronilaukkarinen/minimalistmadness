@@ -479,16 +479,6 @@ ul.tags {
   content: ' →';
 }
 
-// Legacy
-.photoblog,
-.size-large,
-.kuva2,
-.size-full {
-  height: auto;
-  max-width: $article-max-width;
-  width: 100%;
-}
-
 .oikealle {
   border-radius: 4px;
   float: right;

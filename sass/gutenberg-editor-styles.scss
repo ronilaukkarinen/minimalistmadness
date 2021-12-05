@@ -94,12 +94,24 @@
   &[data-align="full"] {
     max-width: $width-full;
     width: 100%;
+
+    .wp-block-image,
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
   // Wide width block
   &[data-align="wide"] {
     max-width: $width-wide;
     width: 100%;
+
+    .wp-block-image,
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
 
     @media (min-width: 870px) {
       padding-left: 0;
