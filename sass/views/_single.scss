@@ -641,6 +641,16 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 }
 
 .article-content {
+  // Legacy
+  img.photoblog,
+  img.size-large,
+  img.kuva2,
+  img.size-full {
+    height: auto;
+    max-width: $article-max-width;
+    width: 100%;
+  }
+
   p > .button.button-bmc svg {
     border: none;
     box-shadow: none;
