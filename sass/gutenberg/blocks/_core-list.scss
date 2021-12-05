@@ -1,4 +1,7 @@
 // List block
+body.wp-admin .editor-styles-wrapper .is-root-container > .wp-block-list,
+body.wp-admin .editor-styles-wrapper .is-root-container > ol:not([class]),
+body.wp-admin .editor-styles-wrapper .is-root-container > ul:not([class]),
 .wp-block-list,
 .wp-block-categories-list,
 ul.is-style-default,
@@ -8,8 +11,16 @@ ul:not([class]) {
   padding-left: var(--padding-container-horizontal);
   width: calc((100% - calc(var(--padding-container-horizontal) * 2)));
 
+  li {
+    font-size: var(--font-size-paragraphs);
+  }
+
   li::marker {
     color: var(--color-link-text);
     font-size: var(--font-size-18);
+  }
+
+  @media (min-width: $width-grid-base + 40px) {
+    padding-left: 4rem !important;
   }
 }
