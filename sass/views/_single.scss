@@ -642,10 +642,10 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 
 .article-content {
   // Legacy
-  img.photoblog,
-  img.size-large,
-  img.kuva2,
-  img.size-full {
+  p:not([class]) > img.photoblog,
+  p:not([class]) > img.size-large,
+  p:not([class]) > img.kuva2,
+  p:not([class]) > img.size-full {
     height: auto;
     max-width: $article-max-width;
     width: 100%;
