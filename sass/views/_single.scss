@@ -642,6 +642,9 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 
 .article-content {
   // Legacy
+  .is-external-link > img[loading="lazy"],
+  a > img[sizes],
+  p:not([class]) > img[sizes],
   p:not([class]) > img.photoblog,
   p:not([class]) > img.size-large,
   p:not([class]) > img.kuva2,
