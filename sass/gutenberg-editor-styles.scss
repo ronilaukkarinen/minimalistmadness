@@ -92,7 +92,7 @@
 
   // Full width block
   &[data-align="full"] {
-    max-width: $width-full;
+    max-width: $width-full !important;
     width: 100%;
 
     .wp-block-image,
@@ -104,7 +104,7 @@
 
   // Wide width block
   &[data-align="wide"] {
-    max-width: $width-wide;
+    max-width: $width-wide !important;
     width: 100%;
 
     .wp-block-image,
