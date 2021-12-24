@@ -90,6 +90,8 @@ $theme_settings = [
        'title' => 'Statsit graafissa',
        'post_types' => [
          'page',
+         'post',
+         'diary',
        ],
     ],
 
