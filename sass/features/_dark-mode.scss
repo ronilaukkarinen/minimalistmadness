@@ -199,6 +199,12 @@ html.wp-toolbar:root,
 
 // Gutenberg editor dark theme
 // stylelint-disable
+.media-modal-content .media-frame-title,
+.media-modal-content .media-frame-content,
+.media-toolbar,
+.block-editor-post-preview__button-toggle,
+.editor-post-featured-image__toggle,
+.editor-post-featured-image__toggle:hover,
 #titlediv #title,
 .wp-admin input[type=text],
 .wp-admin input[type=search],
@@ -426,12 +432,33 @@ html.wp-toolbar:root .postbox-header,
 .editor-styles-wrapper,
 .interface-complementary-area,
 .interface-interface-skeleton__secondary-sidebar,
+.media-frame-router,
+.components-button.is-secondary:disabled,
+.components-button.is-secondary[aria-disabled=true],
+.components-button.is-secondary[aria-disabled=true]:hover,
+.components-button.is-tertiary:disabled,
+.components-button.is-tertiary[aria-disabled=true],
+.components-button.is-tertiary[aria-disabled=true]:hover,
+.components-popover.block-editor-block-switcher__popover .components-popover__content > div,
+.components-toolbar,
+.provider-nav,
+.provider-nav--btn.active,
+.provider-nav--btn.active:hover,
+.provider-nav--btn,
+.block-editor-block-inspector__no-blocks,
+.block-editor-inserter__search,
+.instant-img-container .load-more-wrap,
+.instant-img-container .control-nav li.search-field input,
+.block-editor-inserter__tabs .components-tab-panel__tabs,
 .interface-interface-skeleton__sidebar {
-  background: #14171d !important;
+  background-color: #14171d !important;
   border-color: rgb(255 255 255 / .1) !important;
   color: #f2f2f2 !important;
 }
 
+.block-editor-block-card__title,
+.block-editor-block-types-list__item-icon,
+.media-router .media-menu-item,
 .components-button {
   color: #f2f2f2 !important;
 }
