@@ -450,10 +450,15 @@ html.wp-toolbar:root .postbox-header,
 .instant-img-container .load-more-wrap,
 .instant-img-container .control-nav li.search-field input,
 .block-editor-inserter__tabs .components-tab-panel__tabs,
+.interface-interface-skeleton__footer .block-editor-block-breadcrumb,
 .interface-interface-skeleton__sidebar {
   background-color: #14171d !important;
   border-color: rgb(255 255 255 / .1) !important;
   color: #f2f2f2 !important;
+}
+
+.wp-block.editor-post-title .editor-post-title__input {
+  color: rgb(255 255 255 / .55) !important;
 }
 
 .block-editor-block-card__title,
