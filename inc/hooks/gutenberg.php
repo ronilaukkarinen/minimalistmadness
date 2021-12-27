@@ -5,9 +5,9 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-10 22:26:54
+ * @Last Modified time: 2021-12-27 20:22:17
  *
- * @package minimalistmadness
+ * @package air-light
  */
 
 namespace Air_Light;
@@ -119,20 +119,24 @@ function block_editor_title_input_styles() {
   .edit-post-visual-editor__post-title-wrapper + .is-root-container > .wp-block:first-child {
     margin-top: 0;
   }
+
   /* Remove white border from top */
   .interface-interface-skeleton__header {
     border-bottom: 0;
   }
+
   .block-editor .editor-styles-wrapper {
     padding-top: 0;
   }
+
   .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     background-color: #23282e;
     border-bottom: 1px solid #23282e;
     position: relative;
     z-index: 3;
-    color: var(--color-white);
+    color: #fff;
   }
+
   .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
     /* content: "(näkyy mm. valikossa, selainikkunan nimessä ja murupolussa)"; */
     content: "(is shown for example in navigation, browser window name and in breadcrumbs)";
@@ -140,10 +144,12 @@ function block_editor_title_input_styles() {
     display: inline;
     margin-left: 5px;
   }
+
   .block-editor .editor-styles-wrapper .editor-post-title {
     padding: 4rem 2rem;
     margin: 0 auto;
   }
+
   .block-editor .editor-styles-wrapper .editor-post-title .components-visually-hidden {
     border: initial;
     clip: initial;
@@ -161,6 +167,7 @@ function block_editor_title_input_styles() {
     width: initial;
     word-wrap: initial;
   }
+
   .block-editor .editor-styles-wrapper .editor-post-title .editor-post-title__input {
     line-height: 1.3;
     background-color: #2e3338;
@@ -180,10 +187,11 @@ function block_editor_title_input_styles() {
     text-decoration: none;
     transition: all 0.55s;
   }
+
   .block-editor .editor-styles-wrapper .editor-post-title .editor-post-title__input:focus {
     background-color: #000;
     border-color: #000;
-    color: var(--color-white);
+    color: #fff;
   }
   ';
   wp_add_inline_style( 'block-editor-styles',  $styles );
