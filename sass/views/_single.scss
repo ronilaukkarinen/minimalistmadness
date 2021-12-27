@@ -43,6 +43,18 @@ del {
 .container.container-article .entry-content,
 .container.container-article article,
 .container.container-article .article {
+  figure.wp-caption.alignnone[style] {
+    max-width: $article-max-width;
+    // stylelint-disable-next-line scss/no-important
+    width: 100% !important;
+  }
+
+  figure.wp-caption.alignnone > img {
+    height: auto;
+    max-width: $article-max-width;
+    width: 100%;
+  }
+
   .minikuvateksti,
   .kuvateksti,
   .kuvateksti-horizontal,
