@@ -100,9 +100,29 @@ add_action( 'after_setup_theme', function() {
     // Register custom ACF Blocks
     'acf_blocks' => [
       [
-        // Add SVG file to: svg/block-icons/hero-image.svg
         'name'  => 'goals',
-        'title' => 'Tämän päivän tavoitteet',
+        'title' => 'Päivän tavoitteet',
+        'post_types' => [
+          'diary',
+        ],
+      ],
+      [
+        'name'  => 'memory',
+        'title' => 'Päivän paras muisto',
+        'post_types' => [
+          'diary',
+        ],
+      ],
+      [
+        'name'  => 'trophy',
+        'title' => 'Päivän saavutukset',
+        'post_types' => [
+          'diary',
+        ],
+      ],
+      [
+        'name'  => 'rotate-back',
+        'title' => 'Mikä olisi voinut mennä paremmin?',
         'post_types' => [
           'diary',
         ],

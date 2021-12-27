@@ -1,9 +1,9 @@
 {
-    "key": "group_61c9d7fd8a696",
-    "title": "Päivän tavoitteet",
+    "key": "group_61ca09464a1cb",
+    "title": "Päivän paras muisto",
     "fields": [
         {
-            "key": "field_61ca063b4053b",
+            "key": "field_61ca094664e5c",
             "label": "Viesti",
             "name": "",
             "type": "message",
@@ -25,7 +25,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/goals"
+                "value": "acf\/memory"
             }
         ]
     ],
@@ -38,5 +38,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640630607
+    "modified": 1640630615
 }

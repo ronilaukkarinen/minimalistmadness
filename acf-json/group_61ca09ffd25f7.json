@@ -1,9 +1,9 @@
 {
-    "key": "group_61c9d7fd8a696",
-    "title": "Päivän tavoitteet",
+    "key": "group_61ca09ffd25f7",
+    "title": "Päivän saavutukset",
     "fields": [
         {
-            "key": "field_61ca063b4053b",
+            "key": "field_61ca09ffeea5d",
             "label": "Viesti",
             "name": "",
             "type": "message",
@@ -25,7 +25,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/goals"
+                "value": "acf\/trophy"
             }
         ]
     ],
@@ -38,5 +38,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640630607
+    "modified": 1640630817
 }
