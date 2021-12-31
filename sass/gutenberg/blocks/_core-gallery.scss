@@ -24,7 +24,7 @@ figure.wp-block-gallery[data-block] {
   width: calc(100% - calc(var(--padding-container-horizontal) * 2));
 
   figcaption {
-    color: var(--color-white);
+    color: var(--color-caption);
     font-size: var(--font-size-16);
     line-height: 1.55;
     width: 100%;
@@ -35,6 +35,7 @@ figure.wp-block-gallery[data-block] {
   }
 
   &.alignwide {
+    justify-content: center;
     padding-left: 0;
     padding-right: 0;
     width: calc(100% - calc(var(--padding-container-horizontal) * 2));

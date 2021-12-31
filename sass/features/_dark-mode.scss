@@ -458,6 +458,10 @@ html.wp-toolbar:root .postbox-header,
   color: #f2f2f2 !important;
 }
 
+.wp-block-quote cite {
+  color: var(--color-caption);
+}
+
 .wp-block.editor-post-title .editor-post-title__input {
   color: rgb(255 255 255 / .55) !important;
 }
