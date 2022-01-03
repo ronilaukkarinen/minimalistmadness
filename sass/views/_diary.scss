@@ -309,6 +309,7 @@ body.single-diary {
           max-width: calc(var(--diary-container-width) - 48px);
           opacity: 0;
           overflow: hidden;
+          padding-left: .4rem;
           padding-right: .8rem;
           pointer-events: none;
           position: absolute;
