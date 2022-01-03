@@ -127,6 +127,20 @@ add_action( 'after_setup_theme', function() {
           'diary',
         ],
       ],
+      [
+        'name'  => 'liked',
+        'title' => 'Tällä hetkellä mielekkäimmät tekemiset',
+        'post_types' => [
+          'diary',
+        ],
+      ],
+      [
+        'name'  => 'on-hold',
+        'title' => 'Tekemiset, jotka ovat toistaiseksi tauolla',
+        'post_types' => [
+          'diary',
+        ],
+      ],
     ],
 
     // Custom ACF block default settings

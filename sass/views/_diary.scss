@@ -251,6 +251,8 @@ body.single-diary {
 
     ol.is-style-green-shades,
     ul.is-style-green-shades {
+      list-style: none;
+      padding-left: 0;
     }
 
     ol.is-style-todo-list,
