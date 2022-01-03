@@ -396,6 +396,16 @@ body.single-diary {
       padding-left: 0;
       width: auto;
 
+      li:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      li:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
       li {
         color: var(--color-paragraph);
         font-size: var(--font-size-16);
@@ -450,6 +460,16 @@ body.single-diary {
       overflow: hidden;
       padding-left: 0;
       width: auto;
+
+      li:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      li:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
 
       li {
         color: var(--color-paragraph);
