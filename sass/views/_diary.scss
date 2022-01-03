@@ -244,6 +244,15 @@ body.single-diary {
       }
     }
 
+    ul[data-type="core/list"],
+    ol[data-type="core/list"] {
+      padding-left: 4.2rem;
+    }
+
+    ol.is-style-green-shades,
+    ul.is-style-green-shades {
+    }
+
     ol.is-style-todo-list,
     ul.is-style-todo-list {
       list-style: none;
