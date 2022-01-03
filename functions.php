@@ -184,3 +184,14 @@ require get_theme_file_path( '/inc/template-tags.php' );
 // Run theme setup
 add_action( 'init', __NAMESPACE__ . '\theme_setup' );
 add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );
+
+/**
+ * Add custom post types to main RSS feed
+ **/
+function add_to_rss_request( $qv ) {
+  if ( isset( $qv['feed'] ) && ! isset( $qv['post_type'] ) )
+
+  $qv['post_type'] = array( 'post', 'diary' );
+    return $qv;
+}
+add_filter( 'request', __NAMESPACE__ . '\add_to_rss_request' );
