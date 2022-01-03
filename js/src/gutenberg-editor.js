@@ -23,6 +23,11 @@ wp.blocks.registerBlockStyle('core/list', {
   label: 'Vihreät tasot',
 });
 
+wp.blocks.registerBlockStyle('core/list', {
+  name: 'red-shades',
+  label: 'Punaiset tasot',
+});
+
 // var air_light_LazyLoad = new LazyLoad({
 //  callback_loaded: setLazyLoadedFigureWidth,
 // });

@@ -136,7 +136,7 @@ add_action( 'after_setup_theme', function() {
       ],
       [
         'name'  => 'on-hold',
-        'title' => 'Tekemiset, jotka ovat toistaiseksi tauolla',
+        'title' => 'Tekemiset, jotka ovat toistaiseksi vähemmällä huomiolla',
         'post_types' => [
           'diary',
         ],

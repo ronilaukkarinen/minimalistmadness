@@ -3,7 +3,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2021-12-27 19:51:07
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-03 18:24:38
+ * @Last Modified time: 2022-01-03 18:46:38
  *
  * @package minimalistmadness
  */
@@ -32,6 +32,6 @@ namespace Air_Light;
   </span>
 
   <span class="sub-title">
-    Tekemiset, jotka ovat toistaiseksi tauolla
+    Tekemiset, jotka ovat toistaiseksi vähemmällä huomiolla
   </span>
 </h2>

@@ -251,8 +251,104 @@ body.single-diary {
 
     ol.is-style-green-shades,
     ul.is-style-green-shades {
+      border-radius: 5px;
       list-style: none;
+      overflow: hidden;
       padding-left: 0;
+      width: auto;
+
+      li {
+        color: var(--color-paragraph);
+        font-size: var(--font-size-16);
+        padding: .5rem 1.2rem;
+      }
+
+      li:nth-child(1) {
+        background-color: rgb(85 139 47 / .7);
+      }
+
+      li:nth-child(2) {
+        background-color: rgb(85 139 47 / .5);
+      }
+
+      li:nth-child(3) {
+        background-color: rgb(85 139 47 / .3);
+      }
+
+      li:nth-child(4) {
+        background-color: rgb(85 139 47 / .2);
+      }
+
+      li:nth-child(5) {
+        background-color: rgb(85 139 47 / .1);
+      }
+
+      li:nth-child(6) {
+        background-color: rgb(85 139 47 / .072);
+      }
+
+      li:nth-child(7) {
+        background-color: rgb(85 139 47 / .057);
+      }
+
+      li:nth-child(8) {
+        background-color: rgb(85 139 47 / .037);
+      }
+
+      li:nth-child(9) {
+        background-color: rgb(85 139 47 / .022);
+      }
+
+      li:nth-child(10) {
+        background-color: rgb(85 139 47 / .012);
+      }
+    }
+
+    ol.is-style-red-shades,
+    ul.is-style-red-shades {
+      border-radius: 5px;
+      list-style: none;
+      overflow: hidden;
+      padding-left: 0;
+      width: auto;
+
+      li {
+        color: var(--color-paragraph);
+        font-size: var(--font-size-16);
+        padding: .5rem 1.2rem;
+      }
+
+      li:nth-child(8) {
+        background-color: rgba(139 47 47 / .62);
+      }
+
+      li:nth-child(7) {
+        background-color: rgb(139 47 47 / .42);
+      }
+
+      li:nth-child(6) {
+        background-color: rgb(139 47 47 / .32);
+      }
+
+      li:nth-child(5) {
+        background-color: rgb(139 47 47 / .18);
+      }
+
+      li:nth-child(4) {
+        background-color: rgb(139 47 47 / .1);
+      }
+
+      li:nth-child(3) {
+        background-color: rgb(139 47 47 / .072);
+      }
+
+      li:nth-child(2) {
+        background-color: rgb(139 47 47 / .057);
+      }
+
+      li:nth-child(1) {
+        background-color: rgb(139 47 47 / .037);
+      }
     }
 
     ol.is-style-todo-list,
