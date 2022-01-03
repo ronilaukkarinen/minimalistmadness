@@ -29,7 +29,8 @@
                 "inventory": "Inventaario",
                 "clothes": "Vaatteet viikattu",
                 "books": "Vähintään 15 minuuttia kirjan lukemista",
-                "journal": "Päivittäinen kirjoittaminen"
+                "journal": "Päivittäinen kirjoittaminen",
+                "wallet": "Päivittäinen budjetointi"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -306,5 +307,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641238184
+    "modified": 1641248886
 }
