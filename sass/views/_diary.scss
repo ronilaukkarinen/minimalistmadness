@@ -244,6 +244,29 @@ body.single-diary {
       }
     }
 
+    .metadata .mood svg {
+      stroke-width: 1.5;
+    }
+
+    // .metadata .mood svg {
+    //   height: 28px !important;
+    //   top: 0 !important;
+    //   width: 28px !important;
+    // }
+
+    // .metadata .mood {
+    //   align-items: center !important;
+    //   background-color: rgb(var(--color-black-rgb) / .035);
+    //   border-radius: 5px;
+    //   font-size: var(--font-size-18) !important;
+    //   font-weight: var(--font-weight-semibold);
+    //   gap: 1.5rem !important;
+    //   line-height: auto;
+    //   margin-bottom: 1rem;
+    //   padding: 1rem;
+    //   width: unset !important;
+    // }
+
     ul[data-type="core/list"],
     ol[data-type="core/list"] {
       padding-left: 4.2rem;

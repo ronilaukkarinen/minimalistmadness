@@ -27,6 +27,7 @@ $weather_icon = get_field( 'weather_icon' );
 $device = get_field( 'device' );
 $drink_icon = get_field( 'drink_icon' );
 $drink_text = get_field( 'drink_text' );
+$mood = get_field( 'mood' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -65,6 +66,12 @@ $drink_text = get_field( 'drink_text' );
 
       <?php if ( ! empty( $location ) || ! empty( $highlight ) || ! empty( $temperature ) || ! empty( $weather_text ) || ! empty( $device ) || ! empty( $drink_text ) ) : ?>
         <ul class="metadata">
+
+          <?php if ( ! empty( $mood ) ) : ?>
+            <li class="mood">
+              <?php include get_theme_file_path( "/svg/{$mood['value']}.svg" ); ?> <?php echo esc_html( $mood['label'] ); ?>
+            </li>
+          <?php endif; ?>
 
           <?php if ( ! empty( $np ) ) : ?>
             <li>

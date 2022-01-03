@@ -3,6 +3,43 @@
     "title": "Metatiedot",
     "fields": [
         {
+            "key": "field_61d31d5c34168",
+            "label": "Päivän saavutukset tähän mennessä",
+            "name": "habits",
+            "type": "checkbox",
+            "instructions": "Ruksaa tähän mennessä onnistuneet. Kirjoita myös ehkä jotain niistä mitä et ruksannut, esimerkiksi jos feilasit.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "water": "Puhdasta vettä vähintään 1,2 litraa",
+                "journal": "Päivittäinen kirjoittaminen",
+                "sleep": "Viime yönä unimäärä vähintään 7 tuntia",
+                "clean": "Talon yleissiisteys hoidettu",
+                "kitchen": "Keittiön yleissiisteys hoidettu",
+                "inventory": "Inventaario kunnossa",
+                "roomba": "Talo imuroitu tai Robotti-imurin annettu imuroida",
+                "clothes": "Vaatteet viikattu paikalleen",
+                "run": "Juoksulenkki tehty",
+                "walk": "Kävelylenkki tehty",
+                "ade": "AD₃E-vitamiinit, Omega-3 ja sinkki otettu",
+                "breakfast": "Aamupala syöty",
+                "weighin": "Aamupaino punnitettu",
+                "books": "Kirjaa luettu vähintään 15 minuuttia",
+                "combhair": "Hiukset kammattu"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
             "key": "field_61d31e8534169",
             "label": "Mieliala kirjoittamishetkellä",
             "name": "mood",
@@ -16,16 +53,29 @@
                 "id": ""
             },
             "choices": {
-                "terrible": "Kauhea",
                 "bad": "Huono",
                 "okay": "Ihan OK",
                 "good": "Hyvä",
-                "excellent": "Mahtava"
+                "excellent": "Mahtava",
+                "tired": "Väsynyt",
+                "shiny": "Loistava",
+                "noseblow": "Kipeänä",
+                "headpatch": "Päätä särkee",
+                "scared": "Jännittää",
+                "cowboy": "Cowboy",
+                "sadcrying": "Surullinen",
+                "explosion": "Mind blown",
+                "disappointed": "Pettynyt",
+                "crazy": "Sekaisin",
+                "eyesonly": "Ei oikein mikään fiilis",
+                "fever": "Kuumeessa",
+                "smirk": "\"Dealing with it\"",
+                "indifferent": "Mikään ei oikein nappaa"
             },
             "allow_null": 0,
-            "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value"
+            "default_value": "good",
+            "layout": "vertical",
+            "return_format": "array"
         },
         {
             "key": "field_61912f64f7ab6",
@@ -237,43 +287,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_61d31d5c34168",
-            "label": "Päivän tavat saavutettu",
-            "name": "habits",
-            "type": "checkbox",
-            "instructions": "Ruksaa tähän mennessä onnistuneet. Kirjoita myös ehkä jotain niistä mitä et ruksannut, esimerkiksi jos feilasit.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "water": "Puhdasta vettä vähintään 1,2 litraa",
-                "journal": "Päivittäinen kirjoittaminen",
-                "sleep": "Viime yönä unimäärä vähintään 7 tuntia",
-                "clean": "Talon yleissiisteys hoidettu",
-                "kitchen": "Keittiön yleissiisteys hoidettu",
-                "inventory": "Inventaario kunnossa",
-                "roomba": "Talo imuroitu tai Robotti-imurin annettu imuroida",
-                "clothes": "Vaatteet viikattu paikalleen",
-                "run": "Juoksulenkki tehty",
-                "walk": "Kävelylenkki tehty",
-                "ade": "AD₃E-vitamiinit, Omega-3 ja sinkki otettu",
-                "breakfast": "Aamupala syöty",
-                "weighin": "Aamupaino punnitettu",
-                "books": "Kirjaa luettu vähintään 15 minuuttia",
-                "combhair": "Hiukset kammattu"
-            },
-            "allow_custom": 0,
-            "default_value": [],
-            "layout": "vertical",
-            "toggle": 0,
-            "return_format": "value",
-            "save_custom": 0
         }
     ],
     "location": [
@@ -294,5 +307,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641225934
+    "modified": 1641231561
 }
