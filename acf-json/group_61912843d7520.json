@@ -17,26 +17,25 @@
             },
             "choices": {
                 "water": "Puhdasta vettä vähintään 1,2 litraa",
-                "journal": "Päivittäinen kirjoittaminen",
-                "sleep": "Viime yönä unimäärä vähintään 7 tuntia",
-                "clean": "Talon yleissiisteys hoidettu",
-                "kitchen": "Keittiön yleissiisteys hoidettu",
-                "inventory": "Inventaario kunnossa",
-                "roomba": "Talo imuroitu tai Robotti-imurin annettu imuroida",
-                "clothes": "Vaatteet viikattu paikalleen",
-                "run": "Juoksulenkki tehty",
-                "walk": "Kävelylenkki tehty",
-                "ade": "AD₃E-vitamiinit, Omega-3 ja sinkki otettu",
-                "breakfast": "Aamupala syöty",
-                "weighin": "Aamupaino punnitettu",
-                "books": "Kirjaa luettu vähintään 15 minuuttia",
-                "combhair": "Hiukset kammattu"
+                "breakfast": "Aamupala",
+                "sleep": "Unta alla vähintään 7 tuntia",
+                "run": "Juoksulenkki",
+                "walk": "Kävelylenkki",
+                "workout": "Lihaskuntotreeni",
+                "ade": "AD₃E-vitamiinit, Omega-3 ja sinkki",
+                "clean": "Talon yleissiisteys",
+                "kitchen": "Keittiön yleissiisteys",
+                "roomba": "Imurointi",
+                "inventory": "Inventaario",
+                "clothes": "Vaatteet viikattu",
+                "books": "Vähintään 15 minuuttia kirjan lukemista",
+                "journal": "Päivittäinen kirjoittaminen"
             },
             "allow_custom": 0,
             "default_value": [],
             "layout": "vertical",
             "toggle": 0,
-            "return_format": "value",
+            "return_format": "array",
             "save_custom": 0
         },
         {
@@ -307,5 +306,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641231561
+    "modified": 1641238184
 }

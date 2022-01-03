@@ -18,6 +18,7 @@ namespace Air_Light;
 
 // Fields
 $location = get_field( 'location' );
+$habits = get_field( 'habits' );
 $highlight = get_field( 'highlight' );
 $np = get_field( 'np' );
 $np_link = get_field( 'np_link' );
@@ -64,9 +65,31 @@ $mood = get_field( 'mood' );
         <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> sanaa.</p>
       <?php endif; ?>
 
+      <?php if ( $habits ) : ?>
+
+        <h2 class="title-with-icon">
+          <span class="icon" aria-hidden="true">
+            <?php require get_theme_file_path( '/svg/trophy.svg' ); ?>
+          </span>
+
+          <span class="sub-title">
+            Päivän saavutukset kirjoittamishetkeen (<?php the_time( 'H:i' ) ?>) mennessä
+          </span>
+        </h2>
+
+        <ul class="habits">
+          <?php foreach ( $habits as $habit ) : ?>
+            <li class="habit <?php echo esc_html( $habit['value'] ); ?>">
+              <?php include get_theme_file_path( "/svg/{$habit['value']}.svg" ); ?>
+              <span class="label"><?php echo esc_html( $habit['label'] ); ?></span>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+
+      <?php endif; ?>
+
       <?php if ( ! empty( $location ) || ! empty( $highlight ) || ! empty( $temperature ) || ! empty( $weather_text ) || ! empty( $device ) || ! empty( $drink_text ) ) : ?>
         <ul class="metadata">
-
           <?php if ( ! empty( $mood ) ) : ?>
             <li class="mood">
               <?php include get_theme_file_path( "/svg/{$mood['value']}.svg" ); ?> <?php echo esc_html( $mood['label'] ); ?>
