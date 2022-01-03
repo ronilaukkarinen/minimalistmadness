@@ -196,6 +196,57 @@ html.wp-toolbar:root,
   .hero-single .article-title-area {
     --color-white: #fff;
   }
+
+  ul.habits,
+  ol.habits {
+
+    // Habits: Health
+    li.sleep,
+    li.workout,
+    li.breakfast,
+    li.weighin,
+    li.ade,
+    li.run,
+    li.walk,
+    li.water {
+      &:hover,
+      &:focus,
+      &:hover .label,
+      &:focus .label {
+        // stylelint-disable-next-line
+        background-color: #132720 !important;
+      }
+    }
+
+    // Habits: Self-improvement
+    li.combhair,
+    li.books,
+    li.wallet,
+    li.journal {
+      &:hover,
+      &:focus,
+      &:hover .label,
+      &:focus .label {
+        // stylelint-disable-next-line
+        background-color: #24211b !important;
+      }
+    }
+
+    // Habits: Clean
+    li.kitchen,
+    li.inventory,
+    li.clothes,
+    li.clean,
+    li.roomba {
+      &:hover,
+      &:focus,
+      &:hover .label,
+      &:focus .label {
+        // stylelint-disable-next-line
+        background-color: #1f162c !important;
+      }
+    }
+  }
 }
 
 // Gutenberg editor dark theme
