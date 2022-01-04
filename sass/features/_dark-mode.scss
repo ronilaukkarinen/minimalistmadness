@@ -548,3 +548,8 @@ html.wp-toolbar:root .postbox-header,
 #wpfooter .theme-location-set {
   color: var(--color-paragraph) !important;
 }
+
+.theme-light .show-in-dark-mode,
+.theme-dark .hide-in-dark-mode {
+  display: none !important;
+}
