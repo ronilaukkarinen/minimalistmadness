@@ -269,7 +269,8 @@ body.single-diary {
 
     ul[data-type="core/list"]:not(.is-style-green-shades):not(.is-style-red-shades):not(.is-style-no-bullets):not(.is-style-todo-list),
     ol[data-type="core/list"]:not(.is-style-green-shades):not(.is-style-red-shades):not(.is-style-no-bullets):not(.is-style-todo-list) {
-      padding-left: 4.2rem !important;
+      list-style: inside decimal;
+      padding-left: 0;
     }
 
     ol.habits,
