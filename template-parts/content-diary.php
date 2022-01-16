@@ -65,6 +65,7 @@ $mood = get_field( 'mood' );
         <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> sanaa.</p>
       <?php endif; ?>
 
+      <?php if ( is_singular() ) : ?>
       <?php if ( $habits ) : ?>
 
         <h2 class="title-with-icon">
@@ -144,6 +145,7 @@ $mood = get_field( 'mood' );
           <?php endif; ?>
 
         </ul>
+      <?php endif; ?>
       <?php endif; ?>
 
       <?php if ( get_edit_post_link() ) { ?>
