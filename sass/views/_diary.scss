@@ -193,10 +193,10 @@ body.single-diary {
   .container.container-article .entry-content > *:not(.alignwide):not(.alignfull) {
     max-width: var(--diary-container-width);
 
-    @media (max-width: 840px) {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
-    }
+    // @media (max-width: 840px) {
+    //   padding-left: var(--padding-container-horizontal);
+    //   padding-right: var(--padding-container-horizontal);
+    // }
   }
 
   .editor-styles-wrapper .is-root-container,
@@ -248,29 +248,13 @@ body.single-diary {
       stroke-width: 1.5;
     }
 
-    // .metadata .mood svg {
-    //   height: 28px !important;
-    //   top: 0 !important;
-    //   width: 28px !important;
-    // }
-
-    // .metadata .mood {
-    //   align-items: center !important;
-    //   background-color: rgb(var(--color-black-rgb) / .035);
-    //   border-radius: 5px;
-    //   font-size: var(--font-size-18) !important;
-    //   font-weight: var(--font-weight-semibold);
-    //   gap: 1.5rem !important;
-    //   line-height: auto;
-    //   margin-bottom: 1rem;
-    //   padding: 1rem;
-    //   width: unset !important;
-    // }
-
     ul[data-type="core/list"]:not(.is-style-green-shades):not(.is-style-red-shades):not(.is-style-no-bullets):not(.is-style-todo-list),
     ol[data-type="core/list"]:not(.is-style-green-shades):not(.is-style-red-shades):not(.is-style-no-bullets):not(.is-style-todo-list) {
       list-style: inside decimal;
-      padding-left: 0;
+
+      @media (max-width: 640px) {
+        padding-left: 2rem !important;
+      }
     }
 
     ol.habits,
@@ -547,6 +531,15 @@ body.single-diary {
       @media (max-width: 840px) {
         padding-left: 2rem;
         padding-right: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      ul.is-style-default,
+      ol.is-style-default,
+      ol:not([class]),
+      ul:not([class]) {
+        padding-left: 0 !important;
       }
     }
   }
