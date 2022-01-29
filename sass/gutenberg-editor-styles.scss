@@ -83,6 +83,13 @@
   /* stylelint-enable */
 }
 
+// Fixes for official gutenberg editor styles
+// load-styles.php adds unnecessary -8px margin for full width blocks
+html :where(.editor-styles-wrapper) .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 // Default editor blocks
 .wp-block {
   font-family: var(--font-paragraph);
