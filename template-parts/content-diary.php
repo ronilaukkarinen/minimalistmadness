@@ -68,7 +68,7 @@ $mood = get_field( 'mood' );
       <?php if ( is_singular() ) : ?>
       <?php if ( $habits ) : ?>
 
-        <h2 class="title-with-icon">
+        <h2 class="title-with-icon" style="display: none;">
           <span class="icon" aria-hidden="true">
             <?php require get_theme_file_path( '/svg/trophy.svg' ); ?>
           </span>
