@@ -5,7 +5,7 @@ ul.is-style-default,
 ol.is-style-default,
 ol:not([class]),
 ul:not([class]) {
-  padding-left: var(--padding-container-horizontal);
+  list-style: inside decimal;
   width: calc((100% - calc(var(--padding-container-horizontal) * 2)));
 
   li {
@@ -16,12 +16,18 @@ ul:not([class]) {
     color: var(--color-link-text);
     font-size: var(--font-size-18);
   }
+
+  @media (max-width: var(--padding-container-horizontal)) {
+    padding-left: 0;
+  }
 }
 
 body.wp-admin .editor-styles-wrapper .is-root-container > .wp-block-list,
 body.wp-admin .editor-styles-wrapper .is-root-container > ol:not([class]),
 body.wp-admin .editor-styles-wrapper .is-root-container > ul:not([class]) {
-  @media (min-width: $width-grid-base + 40px) {
-    padding-left: 4rem !important;
+  list-style: inside decimal;
+
+  @media (max-width: 640px) {
+    padding-left: 2rem !important;
   }
 }

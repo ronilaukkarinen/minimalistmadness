@@ -5,9 +5,9 @@
  * hooks and functions - please split those to their
  * own files under /inc and just require here.
  *
- * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-04-21 09:21:04
+ * @Date: 2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-05-20 18:19:49
  *
  * @package minimalistmadness
  */
@@ -19,87 +19,137 @@ namespace Air_Light;
  */
 define( 'AIR_LIGHT_VERSION', '5.0.7' );
 
+// We need to have some defaults as comments or empties so let's allow this:
+// phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
+
 /**
  * Theme settings
  */
-
-$theme_settings = [
-  /**
-   * Image and content sizes
-   */
-  'image_sizes' => [
-    'small'  => 300,
-    'medium' => 700,
-    'large'  => 1200,
-  ],
-  'content_width' => 800,
-
-  /**
-   * Logo and featured image
-   */
-  'default_featured_image' => get_theme_file_uri( 'images/default.jpg' ),
-
-  'logo' => '/svg/logo.svg',
-
-  /**
-   * Theme textdomain
-   */
-  'textdomain' => 'minimalistmadness',
-
-  /**
-   * Menu locations
-   */
-  'menu_locations' => [
-    'primary' => __( 'Primary Menu', 'minimalistmadness' ),
-  ],
-
-  /**
-   * Taxonomies
-   *
-   * See the instructions:
-   * https://github.com/digitoimistodude/minimalistmadness#custom-taxonomies
-   */
-  'taxonomies' => [
+add_action( 'after_setup_theme', function() {
+  $theme_settings = [
     /**
-    'your-taxonomy' => [
-      'name'       => 'Your_Taxonomy',
-      'post_types' => [ 'post', 'page' ],
+     * Theme textdomain
+     */
+    'textdomain' => 'minimalistmadness',
+
+    /**
+     * Image and content sizes
+     */
+    'image_sizes' => [
+      'small'   => 300,
+      'medium'  => 700,
+      'large'   => 1200,
     ],
-    */
+    'content_width' => 800,
+
+    /**
+     * Logo and featured image
+     */
+    'default_featured_image'  => null,
+    'logo'                    => '/svg/logo.svg',
+
+    /**
+     * Custom setting group post ids when using Air Helper's custom setting
+     * feature and settings CPT. On multilingual sites using Polylang,
+     * translations are handled automatically.
+     */
+    'custom_settings_post_ids' => [
+      // 'setting-group' => 0,
     ],
 
-  /**
-   * Post types
-   *
-   * See the instructions:
-   * https://github.com/digitoimistodude/minimalistmadness#custom-post-types
-   */
-  // TODO Instructions how to add post types
+    'social_media_accounts'  => [
+      // 'twitter' => [
+      //   'title' => 'Twitter',
+      //   'url'   => 'https://twitter.com/digitoimistodude',
+      // ],
+    ],
 
-  'post_types' => [
-    'diary' => 'Diary',
-  ],
+    /**
+     * Menu locations
+     */
+    'menu_locations' => [
+      'primary' => __( 'Primary Menu', 'minimalistmadness' ),
+    ],
 
-  /**
-   * Gutenberg -related settings
-   */
+    /**
+     * Taxonomies
+     *
+     * See the instructions:
+     * https://github.com/digitoimistodude/air-light#custom-taxonomies
+     */
+    'taxonomies' => [
+      // 'example' => [
+      //    'name' => 'Example',
+      //    'post_types' => [ 'diary' ],
+      // ],
+    ],
+
+    /**
+     * Post types
+     *
+     * See the instructions:
+     * https://github.com/digitoimistodude/air-light#custom-post-types
+     */
+    'post_types' => [
+      'diary' => 'Diary',
+    ],
+
+    /**
+     * Gutenberg -related settings
+     */
     // Register custom ACF Blocks
     'acf_blocks' => [
-       // Add SVG file to: svg/block-icons/hero-image.svg
-       'name'  => 'frappe-graph',
-       'title' => 'Statsit graafissa',
-       'post_types' => [
-         'page',
-       ],
+      [
+        'name'  => 'goals',
+        'title' => 'Päivän tavoitteet',
+        'post_types' => [
+          'diary',
+        ],
+      ],
+      [
+        'name'  => 'memory',
+        'title' => 'Päivän paras muisto',
+        'post_types' => [
+          'diary',
+        ],
+      ],
+      [
+        'name'  => 'trophy',
+        'title' => 'Päivän saavutukset',
+        'post_types' => [
+          'diary',
+        ],
+      ],
+      [
+        'name'  => 'rotate-back',
+        'title' => 'Mikä olisi voinut mennä paremmin?',
+        'post_types' => [
+          'diary',
+        ],
+      ],
+      [
+        'name'  => 'liked',
+        'title' => 'Tällä hetkellä mielekkäimmät tekemiset',
+        'post_types' => [
+          'diary',
+        ],
+      ],
+      [
+        'name'  => 'on-hold',
+        'title' => 'Tekemiset, jotka ovat toistaiseksi vähemmällä huomiolla',
+        'post_types' => [
+          'diary',
+        ],
+      ],
     ],
 
     // Custom ACF block default settings
     'acf_block_defaults' => [
-      'category'          => 'air-light',
+      'category'          => 'minimalistmadness',
       'mode'              => 'auto',
       'align'             => 'full',
       'post_types'        => [
-        'page',
+        // 'page',
       ],
       'supports'          => [
         'align' => false,
@@ -107,22 +157,21 @@ $theme_settings = [
       'render_callback'   => __NAMESPACE__ . '\render_acf_block',
     ],
 
-  // If you want to use classic editor somewhere, define it here
-  'use_classic_editor' => [],
+    // Restrict to only selected blocks
+    // Set the value to 'all' to allow all blocks everywhere
+    'allowed_blocks' => 'all',
 
-  // Don't restrict blocks
-  'allowed_blocks' => 'all',
+    // If you want to use classic editor somewhere, define it here
+    'use_classic_editor' => [],
 
-  // Module caching
-  'enable_module_caching' => false,
+    // Add your own settings and use them wherever you need, for example THEME_SETTINGS['my_custom_setting']
+    'my_custom_setting' => true,
+  ];
 
-  // Add your own settings and use them wherever you need, for example THEME_SETTINGS['my_custom_setting']
-  'my_custom_setting' => true,
-];
+  $theme_settings = apply_filters( 'minimalistmadness_theme_settings', $theme_settings );
 
-$theme_settings = apply_filters( 'air_helper_theme_settings', $theme_settings );
-
-define( 'THEME_SETTINGS', $theme_settings );
+  define( 'THEME_SETTINGS', $theme_settings );
+} ); // end action after_setup_theme
 
 /**
  * Required files
@@ -135,3 +184,14 @@ require get_theme_file_path( '/inc/template-tags.php' );
 // Run theme setup
 add_action( 'init', __NAMESPACE__ . '\theme_setup' );
 add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );
+
+/**
+ * Add custom post types to main RSS feed
+ **/
+function add_to_rss_request( $qv ) {
+  if ( isset( $qv['feed'] ) && ! isset( $qv['post_type'] ) )
+
+  $qv['post_type'] = array( 'post', 'diary' );
+    return $qv;
+}
+add_filter( 'request', __NAMESPACE__ . '\add_to_rss_request' );

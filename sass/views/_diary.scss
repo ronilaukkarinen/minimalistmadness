@@ -193,10 +193,10 @@ body.single-diary {
   .container.container-article .entry-content > *:not(.alignwide):not(.alignfull) {
     max-width: var(--diary-container-width);
 
-    @media (max-width: 840px) {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
-    }
+    // @media (max-width: 840px) {
+    //   padding-left: var(--padding-container-horizontal);
+    //   padding-right: var(--padding-container-horizontal);
+    // }
   }
 
   .editor-styles-wrapper .is-root-container,
@@ -244,6 +244,274 @@ body.single-diary {
       }
     }
 
+    .metadata .mood svg {
+      stroke-width: 1.5;
+    }
+
+    ul[data-type="core/list"]:not(.is-style-green-shades):not(.is-style-red-shades):not(.is-style-no-bullets):not(.is-style-todo-list),
+    ol[data-type="core/list"]:not(.is-style-green-shades):not(.is-style-red-shades):not(.is-style-no-bullets):not(.is-style-todo-list) {
+      list-style: inside decimal;
+
+      @media (max-width: 640px) {
+        padding-left: 2rem !important;
+      }
+    }
+
+    ol.habits,
+    ul.habits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      list-style: none;
+      transition: opacity 500ms;
+
+      .habit svg {
+        height: 24px;
+        min-width: 24px;
+        width: 24px;
+      }
+
+      &:focus li,
+      &:hover li {
+        opacity: .2;
+
+        &:focus,
+        &:hover {
+          filter: unset;
+          opacity: 1;
+        }
+      }
+
+      li {
+        align-items: center;
+        background-color: rgb(47 87 139 / .5);
+        border-radius: 50%;
+        color: rgb(255 255 255 / 1);
+        display: inline-flex;
+        filter: grayscale(1);
+        font-size: var(--font-size-14);
+        gap: 1rem;
+        height: 40px;
+        overflow: hidden;
+        padding: .8rem;
+        transition: opacity 500ms;
+        width: 40px;
+
+        .label {
+          align-items: center;
+          background-color: inherit;
+          border-bottom-right-radius: 8px;
+          border-top-right-radius: 8px;
+          display: flex;
+          height: 40px;
+          margin-left: 32px;
+          max-width: calc(var(--diary-container-width) - 48px);
+          opacity: 0;
+          overflow: hidden;
+          padding-left: .4rem;
+          padding-right: .8rem;
+          pointer-events: none;
+          position: absolute;
+          white-space: nowrap;
+        }
+
+        &:hover,
+        &:focus {
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 0;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 0;
+        }
+
+        &:focus > .label,
+        &:hover > .label {
+          opacity: 1;
+        }
+      }
+
+      // Habits: Health
+      li.sleep,
+      li.workout,
+      li.breakfast,
+      li.weighin,
+      li.ade,
+      li.run,
+      li.walk,
+      li.water {
+        background-color: rgb(16 158 58 / .12);
+        color: rgb(23 192 73);
+
+        &:hover,
+        &:focus,
+        &:hover .label,
+        &:focus .label {
+          // stylelint-disable-next-line
+          background-color: #ddeee2;
+        }
+      }
+
+      // Habits: Self-improvement
+      li.combhair,
+      li.books,
+      li.wallet,
+      li.journal {
+        background-color: rgba(158 108 16 / .12);
+        color: rgb(255 105 0);
+
+        &:hover,
+        &:focus,
+        &:hover .label,
+        &:focus .label {
+          // stylelint-disable-next-line
+          background-color: #eee8dd;
+        }
+      }
+
+      // Habits: Clean
+      li.kitchen,
+      li.inventory,
+      li.clothes,
+      li.clean,
+      li.roomba {
+        background-color: rgba(118 16 158 / .12);
+        color: rgb(226 71 240);
+
+        &:hover,
+        &:focus,
+        &:hover .label,
+        &:focus .label {
+          // stylelint-disable-next-line
+          background-color: #e9ddee;
+        }
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    ol.is-style-green-shades,
+    ul.is-style-green-shades {
+      border-radius: 5px;
+      list-style: none;
+      overflow: hidden;
+      padding-left: 0;
+      width: auto;
+
+      li:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      li:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      li {
+        color: var(--color-paragraph);
+        font-size: var(--font-size-16);
+        padding: .5rem 1.2rem;
+      }
+
+      li:nth-child(1) {
+        background-color: rgb(85 139 47 / .7);
+      }
+
+      li:nth-child(2) {
+        background-color: rgb(85 139 47 / .5);
+      }
+
+      li:nth-child(3) {
+        background-color: rgb(85 139 47 / .3);
+      }
+
+      li:nth-child(4) {
+        background-color: rgb(85 139 47 / .2);
+      }
+
+      li:nth-child(5) {
+        background-color: rgb(85 139 47 / .1);
+      }
+
+      li:nth-child(6) {
+        background-color: rgb(85 139 47 / .072);
+      }
+
+      li:nth-child(7) {
+        background-color: rgb(85 139 47 / .057);
+      }
+
+      li:nth-child(8) {
+        background-color: rgb(85 139 47 / .037);
+      }
+
+      li:nth-child(9) {
+        background-color: rgb(85 139 47 / .022);
+      }
+
+      li:nth-child(10) {
+        background-color: rgb(85 139 47 / .012);
+      }
+    }
+
+    ol.is-style-red-shades,
+    ul.is-style-red-shades {
+      border-radius: 5px;
+      list-style: none;
+      overflow: hidden;
+      padding-left: 0;
+      width: auto;
+
+      li:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      li:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      li {
+        color: var(--color-paragraph);
+        font-size: var(--font-size-16);
+        padding: .5rem 1.2rem;
+      }
+
+      li:nth-child(8) {
+        background-color: rgba(139 47 47 / .62);
+      }
+
+      li:nth-child(7) {
+        background-color: rgb(139 47 47 / .42);
+      }
+
+      li:nth-child(6) {
+        background-color: rgb(139 47 47 / .32);
+      }
+
+      li:nth-child(5) {
+        background-color: rgb(139 47 47 / .18);
+      }
+
+      li:nth-child(4) {
+        background-color: rgb(139 47 47 / .1);
+      }
+
+      li:nth-child(3) {
+        background-color: rgb(139 47 47 / .072);
+      }
+
+      li:nth-child(2) {
+        background-color: rgb(139 47 47 / .057);
+      }
+
+      li:nth-child(1) {
+        background-color: rgb(139 47 47 / .037);
+      }
+    }
+
     ol.is-style-todo-list,
     ul.is-style-todo-list {
       list-style: none;
@@ -277,6 +545,15 @@ body.single-diary {
       @media (max-width: 840px) {
         padding-left: 2rem;
         padding-right: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      ul.is-style-default,
+      ol.is-style-default,
+      ol:not([class]),
+      ul:not([class]) {
+        padding-left: 0 !important;
       }
     }
   }

@@ -23,7 +23,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_theme_scripts' );
  * Gutenberg associated hooks
  */
 require get_theme_file_path( 'inc/hooks/gutenberg.php' );
-add_filter( 'allowed_block_types', __NAMESPACE__ . '\allowed_block_types', 10, 2 );
+add_filter( 'allowed_block_types_all', __NAMESPACE__ . '\allowed_block_types', 10, 2 );
 add_filter( 'use_block_editor_for_post_type', __NAMESPACE__ . '\use_block_editor_for_post_type', 10, 2 );
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\register_block_editor_assets' );
 add_filter( 'block_editor_settings', __NAMESPACE__ . '\remove_gutenberg_inline_styles', 10, 2 );
@@ -68,3 +68,10 @@ function form_submit_button( $button, $form ) {
 * @link https://docs.gravityforms.com/gform_confirmation_anchor/
 */
 add_filter( 'gform_confirmation_anchor', '__return_true' );
+
+/**
+ * ACF blocks
+ */
+require get_theme_file_path( 'inc/hooks/acf-blocks.php' );
+add_filter( 'block_categories_all', __NAMESPACE__ . '\acf_blocks_add_category_in_gutenberg', 10, 2 );
+add_action( 'acf/init', __NAMESPACE__ . '\acf_blocks_init' );

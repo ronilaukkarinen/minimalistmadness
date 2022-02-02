@@ -15,7 +15,17 @@ wp.blocks.registerBlockStyle('core/list', {
 
 wp.blocks.registerBlockStyle('core/list', {
   name: 'todo-list',
-  label: 'ToDo-lista',
+  label: 'Todo-lista',
+});
+
+wp.blocks.registerBlockStyle('core/list', {
+  name: 'green-shades',
+  label: 'Vihreät tasot',
+});
+
+wp.blocks.registerBlockStyle('core/list', {
+  name: 'red-shades',
+  label: 'Punaiset tasot',
 });
 
 // var air_light_LazyLoad = new LazyLoad({

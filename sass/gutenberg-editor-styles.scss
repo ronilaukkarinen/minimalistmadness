@@ -83,6 +83,13 @@
   /* stylelint-enable */
 }
 
+// Fixes for official gutenberg editor styles
+// load-styles.php adds unnecessary -8px margin for full width blocks
+html :where(.editor-styles-wrapper) .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 // Default editor blocks
 .wp-block {
   font-family: var(--font-paragraph);
@@ -92,7 +99,7 @@
 
   // Full width block
   &[data-align="full"] {
-    max-width: $width-full;
+    max-width: $width-full !important;
     width: 100%;
 
     .wp-block-image,
@@ -104,7 +111,7 @@
 
   // Wide width block
   &[data-align="wide"] {
-    max-width: $width-wide;
+    max-width: $width-wide !important;
     width: 100%;
 
     .wp-block-image,
@@ -149,3 +156,6 @@
     padding-right: 2rem;
   }
 }
+
+// Admin dark mode
+@import 'features/dark-mode';

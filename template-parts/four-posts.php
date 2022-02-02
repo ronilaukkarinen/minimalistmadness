@@ -10,7 +10,7 @@ namespace Air_Light;
 $selected_posts = get_field( 'selected_posts', 'option', false, false );
   $args = array(
     'post_type' => 'post',
-    'posts_per_page' => 2, // NB! When you change this, change also posts_per_page option
+    'posts_per_page' => 6, // NB! When you change this, change also posts_per_page option
     'cache_results' => true,
     'update_post_term_cache' => true,
     'update_post_meta_cache' => true,

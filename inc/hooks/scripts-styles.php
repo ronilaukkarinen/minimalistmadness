@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-14 16:45:20
+ * @Last Modified time: 2022-01-03 07:37:12
  *
  * @package minimalistmadness
  */
@@ -134,7 +134,7 @@ function paged_query_for_swup() {
   $selected_posts = get_field( 'selected_posts', 'option', false, false );
   $args = array(
     'post_type' => 'post',
-    'posts_per_page' => 2, // NB! When you change this, change also posts_per_page option
+    'posts_per_page' => 6, // NB! When you change this, change also posts_per_page option
     'cache_results' => true,
     'update_post_term_cache' => true,
     'update_post_meta_cache' => true,
@@ -228,7 +228,7 @@ function enqueue_theme_scripts() {
 
   wp_localize_script( 'scripts', 'air', array(
     'nonce'           => wp_create_nonce( 'wp_rest' ),
-    'posts_per_page'  => 2,
+    'posts_per_page'  => 6,
     'baseurl'         => get_rest_url(),
   ) );
 
