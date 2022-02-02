@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-04-23 12:14:13
+ * @Last Modified time: 2022-02-02 12:43:24
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -20,6 +20,7 @@ namespace Air_Light;
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
+  <script data-swup-ignore-script data-domain="rollemaa.fi" src="https://plausible.peikko.us/js/plausible.js"></script>
 
   <?php wp_head(); ?>
 
