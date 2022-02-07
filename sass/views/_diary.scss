@@ -606,15 +606,11 @@ body.post-type-diary {
     overflow-x: hidden;
   }
 
-  .wp-block.editor-post-title .editor-post-title__input {
+  .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .wp-block.wp-block-post-title.editor-post-title__input,
+  .editor-styles-wrapper .wp-block.editor-post-title .editor-post-title__input,
+  .editor-styles-wrapper .wp-block.wp-block-post-title.editor-post-title__input {
     color: rgb(var(--color-black-rgb) / .55);
     font-size: var(--diary-font-size-prefix);
     font-weight: var(--font-weight-regular);
-    margin: 2rem auto 1rem;
-
-    @media (max-width: 840px) {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
   }
 }
