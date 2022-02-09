@@ -395,7 +395,6 @@ body.single-diary {
       border-radius: 5px;
       list-style: none;
       overflow: hidden;
-      padding-left: 0;
       width: auto;
 
       li:first-child {
@@ -452,6 +451,10 @@ body.single-diary {
 
       li:nth-child(10) {
         background-color: rgb(85 139 47 / .012);
+      }
+
+      @media (min-width: 640px) {
+        padding-left: 0;
       }
     }
 
@@ -510,12 +513,15 @@ body.single-diary {
       li:nth-child(1) {
         background-color: rgb(139 47 47 / .037);
       }
+
+      @media (max-width: 640px) {
+        padding-left: 2rem !important;
+      }
     }
 
     ol.is-style-todo-list,
     ul.is-style-todo-list {
       list-style: none;
-      padding-left: 0;
 
       li::before {
         border: 1px solid var(--color-darkgrey);
@@ -540,6 +546,10 @@ body.single-diary {
         background-position: center;
         background-repeat: no-repeat;
         background-size: 20px 20px;
+      }
+
+      @media (min-width: 640px) {
+        padding-left: 0;
       }
 
       @media (max-width: 840px) {
