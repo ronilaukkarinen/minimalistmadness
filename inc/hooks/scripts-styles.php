@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-03 07:37:12
+ * @Last Modified time: 2022-02-09 11:04:24
  *
  * @package minimalistmadness
  */
@@ -165,12 +165,6 @@ function paged_query_for_swup() {
  * Enqueue scripts and styles.
  */
 function enqueue_theme_scripts() {
-  if ( 'development' === getenv( 'WP_ENV' ) ) {
-		$minimalistmadness_template = 'global';
-  } else {
-		$minimalistmadness_template = 'global.min';
-  }
-
   // Disable jQuery (included in all.js and normally on wp-admin)
   if ( ! is_admin() ) wp_deregister_script( 'jquery' );
   if ( ! is_admin() ) wp_deregister_script( 'jquery-core' );
