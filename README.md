@@ -22,7 +22,7 @@ The website is in Finnish, since it's my personal blog and playground, and I'm f
 
 - WordPress configuration is based on [dudestack](https://github.com/digitoimistodude/dudestack) which is based on [bedrock by Roots](https://github.com/roots/bedrock). Not releasing the whole rollemaa-stack here, because the repository is about a gig and contains legacy code and stuff behind 10 years... (don't worry, been patching the security)
 - Theme based on [air WordPress starter theme](https://github.com/digitoimistodude/air)
-- New logo! Old one looked like [this](https://www.rollemaa.fi/content/themes/newera/images/logo.png) (2014) and [this](https://www.rollemaa.fi/content/themes/khonsu/svg/logo.svg) (2017). New one looks like [this](https://dsh.re/ac794)
+- New logo! Old one looked like [this](https://www.rollemaa.fi/content/themes/newera/images/logo.png) (2014) and [this](https://www.rollemaa.fi/content/themes/khonsu/svg/logo.svg) (2017). New one looks like [this](https://files.servepics.com/V1i6Q.png)
 - No bootstrap or other bloated CSS
 - CC0-photos, random fog/scenery photo for old posts that do not have a featured image
 - SVG icons
