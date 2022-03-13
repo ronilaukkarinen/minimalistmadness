@@ -1,33 +1,55 @@
 // List block
+> ul:not([class]),
+> ol:not([class]),
 .wp-block-list,
 .wp-block-categories-list,
 ul.is-style-default,
 ol.is-style-default,
 ol:not([class]),
-ul:not([class]) {
-  list-style: inside decimal;
+ul:not([class]) .article-content > ul.is-style-default {
+  list-style: none;
+  padding-left: 0;
   width: calc((100% - calc(var(--padding-container-horizontal) * 2)));
 
   li {
-    font-size: var(--font-size-paragraphs);
+    display: table-row;
+    padding: 0;
   }
 
+  li::before {
+    display: table-cell;
+  }
+
+  li::before,
   li::marker {
     color: var(--color-link-text);
-    font-size: var(--font-size-18);
-  }
-
-  @media (max-width: var(--padding-container-horizontal)) {
-    padding-left: 0;
   }
 }
 
-body.wp-admin .editor-styles-wrapper .is-root-container > .wp-block-list,
-body.wp-admin .editor-styles-wrapper .is-root-container > ol:not([class]),
-body.wp-admin .editor-styles-wrapper .is-root-container > ul:not([class]) {
-  list-style: inside decimal;
+// Custom list styles to auto-indent multi-line list blocks because
+// list-style-position: inside; produces extra padding between ::marker and text (a browser bug?)
+> ul:not([class]),
+> ol:not([class]),
+ul.is-style-default,
+ul:not([class]) {
+  li::before {
+    content: '\2022';
+    padding-right: .8rem;
+  }
+}
 
-  @media (max-width: 640px) {
-    padding-left: 2rem !important;
+// Custom list to auto-indent multi-line ordered lists
+> ol:not([class]),
+ol.is-style-default,
+ol:not([class]) {
+  counter-reset: ol;
+
+  li {
+    counter-increment: ol;
+  }
+
+  li::before {
+    content: counter(ol) '.';
+    padding-right: .3rem;
   }
 }
