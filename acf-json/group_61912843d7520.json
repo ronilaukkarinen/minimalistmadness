@@ -127,7 +127,7 @@
             "label": "Lämpötila",
             "name": "temperature",
             "type": "text",
-            "instructions": "Katso tämänhetkinen lämpötila <a target=\"_blank\" href=\"https:\/\/grafana.peikko.us\">Grafanasta<\/a> tai <a target=\"_blank\" href=\"http:\/\/weather.jyu.fi\/\">Mattilanniemen D-rakennuksen -sääasemasta<\/a>.",
+            "instructions": "Katso tämänhetkinen lämpötila <a target=\"_blank\" href=\"https:\/\/c.peikko.us\">Ruuvista<\/a> tai <a target=\"_blank\" href=\"http:\/\/weather.jyu.fi\/\">Mattilanniemen D-rakennuksen -sääasemasta<\/a>.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -307,5 +307,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641248886
+    "modified": 1647790664
 }
