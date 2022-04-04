@@ -1,5 +1,6 @@
 // List of all blocks: https://wordpress.org/support/article/blocks/
 // Core blocks only meant for article content
+body.post-type-post .editor-styles-wrapper,
 .editor-styles-wrapper,
 .article-content {
   @import 'gutenberg/blocks/core-blockquote';

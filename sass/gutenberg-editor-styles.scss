@@ -46,6 +46,7 @@
 // Editor exceptions below
 // These styles are NO USE to front-end
 // Need to be right after general, because after typography comes block styles
+body.post-type-post .editor-styles-wrapper,
 .editor-styles-wrapper {
   @import 'layout/typography';
 

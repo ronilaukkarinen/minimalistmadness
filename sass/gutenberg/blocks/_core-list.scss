@@ -1,8 +1,8 @@
 // List block
 > ul:not([class]),
 > ol:not([class]),
-.wp-block-list,
 .wp-block-categories-list,
+.wp-block-list,
 ul.is-style-default,
 ol.is-style-default,
 ol:not([class]),
@@ -29,7 +29,7 @@ ul:not([class]) .article-content > ul.is-style-default {
 // Custom list styles to auto-indent multi-line list blocks because
 // list-style-position: inside; produces extra padding between ::marker and text (a browser bug?)
 > ul:not([class]),
-> ol:not([class]),
+ul.wp-block-list,
 ul.is-style-default,
 ul:not([class]) {
   li::before {
@@ -40,6 +40,7 @@ ul:not([class]) {
 
 // Custom list to auto-indent multi-line ordered lists
 > ol:not([class]),
+ol.wp-block-list,
 ol.is-style-default,
 ol:not([class]) {
   counter-reset: ol;
