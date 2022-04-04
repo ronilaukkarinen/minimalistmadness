@@ -93,6 +93,7 @@ html :where(.editor-styles-wrapper) .block-editor-block-list__layout.is-root-con
 // Default editor blocks
 .wp-block {
   font-family: var(--font-paragraph);
+  font-size: var(--font-size-paragraphs);
 
   // Let's use maximum article width on article content
   max-width: $width-max-article;
