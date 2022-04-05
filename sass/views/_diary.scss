@@ -1,6 +1,6 @@
 @import '../layout/log-header';
 
-// stylelint-disable selector-max-class
+// stylelint-disable selector-max-class, a11y/no-display-none
 :root {
   // stylelint-disable-next-line
   --diary-font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "San Francisco", Inter, "Sofia Pro", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -250,8 +250,6 @@ body.single-diary {
 
     ul[data-type="core/list"]:not(.is-style-green-shades):not(.is-style-red-shades):not(.is-style-no-bullets):not(.is-style-todo-list),
     ol[data-type="core/list"]:not(.is-style-green-shades):not(.is-style-red-shades):not(.is-style-no-bullets):not(.is-style-todo-list) {
-      list-style: inside decimal;
-
       @media (max-width: 640px) {
         padding-left: 2rem !important;
       }
@@ -409,8 +407,14 @@ body.single-diary {
 
       li {
         color: var(--color-paragraph);
+        display: block;
         font-size: var(--font-size-16);
         padding: .5rem 1.2rem;
+
+        &::before,
+        &::after {
+          display: none;
+        }
       }
 
       li:nth-child(1) {
@@ -478,8 +482,14 @@ body.single-diary {
 
       li {
         color: var(--color-paragraph);
+        display: block;
         font-size: var(--font-size-16);
         padding: .5rem 1.2rem;
+
+        &::before,
+        &::after {
+          display: none;
+        }
       }
 
       li:nth-child(8) {
