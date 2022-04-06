@@ -1,11 +1,19 @@
 <?php
 /**
+ * Ads
+ *
  * Ads for the middle section of the page
  *
- * @package khonsu
+ * @Author:		Roni Laukkarinen
+ * @Date:   		2021-08-10 09:32:58
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-04-06 16:19:42
+ *
+ * @package minimalistmadness
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
-if ( is_home() && ! is_paged() && ! is_user_logged_in() ) : ?>
+if ( is_home() && ! is_paged() || is_front_page() && ! is_paged() ) : ?>
 
 <div id="placement">
 <?php $args = array(
