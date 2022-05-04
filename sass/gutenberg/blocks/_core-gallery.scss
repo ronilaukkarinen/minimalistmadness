@@ -1,15 +1,4 @@
 // Core/gallery block
-.is-grid,
-.blocks-gallery-grid {
-  display: grid;
-  padding-left: 0;
-
-  .blocks-gallery-item {
-    margin: 0;
-    width: 100%;
-  }
-}
-
 // Editor fix
 figure.wp-block-gallery[data-block] {
   margin-left: auto;
