@@ -2,6 +2,7 @@
 /* stylelint-disable selector-max-combinators, selector-max-compound-selectors */
 .editor-styles-wrapper,
 .article-content {
+  figcaption[aria-label="Kuvateksti"],
   figcaption,
   cite,
   small {
