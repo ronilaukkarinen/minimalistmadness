@@ -16,7 +16,6 @@ button.search-trigger:focus {
   position: fixed;
   top: -100vh;
   transition: all $transition-duration;
-  visibility: hidden;
   width: 100%;
 
   &.overlay-open {
@@ -26,7 +25,6 @@ button.search-trigger:focus {
     overflow-y: auto;
     position: fixed;
     top: 0;
-    visibility: visible;
     z-index: 10000;
   }
 }

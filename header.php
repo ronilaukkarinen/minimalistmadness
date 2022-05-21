@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <a class="site-head-logo" href="<?php echo esc_url( get_home_url() ); ?>"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="umbrella"><rect width="24" height="24" opacity="0"/><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12a1 1 0 0 0 1 1h8v6a3 3 0 0 0 6 0 1 1 0 0 0-2 0 1 1 0 0 1-2 0v-6h8a1 1 0 0 0 1-1A10 10 0 0 0 12 2zm-7.94 9a8 8 0 0 1 15.88 0z"/></g></g></svg>Rollemaa</a>
         </div>
         <div class="site-head-right">
-          <button class="search-trigger"><?php include get_theme_file_path( 'svg/search.svg' ); // phpcs:ignore ?><span>Haku</span></button>
+          <button class="search-trigger" type="button"><?php include get_theme_file_path( 'svg/search.svg' ); // phpcs:ignore ?><span>Haku</span></button>
         </div>
       </div>
     </header>

@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-11-22 11:38:12
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-05-22 00:08:12
+ * @Last Modified time: 2022-05-22 00:21:00
  */
 /* eslint-disable radix, no-underscore-dangle, no-use-before-define, no-shadow, func-names, no-var, one-var, prefer-rest-params, no-undef, import/first, import/no-extraneous-dependencies, max-len, no-unused-vars, camelcase, no-plusplus, vars-on-top, no-continue */
 /**
@@ -481,6 +481,7 @@ swup.on('contentReplaced', () => {
         $('.main-navigation').removeClass('is-open');
         $('.overlay-search, body').addClass('overlay-open');
         $('body').addClass('search-open');
+        $('.search-input').focus();
       });
 
       $('.button-close, .article--link').on('click', function () {
@@ -791,6 +792,7 @@ swup.on('contentReplaced', () => {
       $('.main-navigation').removeClass('is-open');
       $('.overlay-search, body').addClass('overlay-open');
       $('body').addClass('search-open');
+      $('.search-input').focus();
     });
 
     $('.button-close, .article--link').on('click', function () {
