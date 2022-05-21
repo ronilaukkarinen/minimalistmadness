@@ -1,8 +1,14 @@
-// no-bullets block style
+// stylelint-disable a11y/no-display-none a11y/declaration-no-important, no-descending-specificity
+// No-bullets block style
 .wp-block.is-style-no-bullets,
 .is-style-no-bullets,
 .wp-block-column .is-style-no-bullets {
   list-style: none !important;
+
+  // stylelint-disable-next-line
+  li::before {
+    display: none !important;
+  }
 
   @media (min-width: $article-max-width + 40px) {
     padding-left: 0 !important;
