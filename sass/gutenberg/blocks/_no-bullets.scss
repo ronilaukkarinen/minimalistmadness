@@ -4,7 +4,7 @@
 .is-style-no-bullets,
 .wp-block-column .is-style-no-bullets {
   list-style: none !important;
-  margin: 0 !important;
+  margin: 0 0 2.2rem !important;
 
   .thumbs-svg {
     margin-right: 2px;
@@ -24,6 +24,6 @@
   }
 
   @media (max-width: $article-max-width + 40px) {
-    padding-left: 2.2rem !important;
+    padding-left: 0 !important;
   }
 }
