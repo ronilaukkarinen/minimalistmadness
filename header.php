@@ -38,6 +38,8 @@ namespace Air_Light;
 </head>
 
 <body <?php body_class( 'no-js' ); ?>>
+<div class="loading-animation" aria-hidden="true"><div class="ripple" aria-hidden="true"></div></div>
+
 <script data-swup-ignore-script>
 function setTheme(themeName) {
   localStorage.setItem('theme', themeName);
