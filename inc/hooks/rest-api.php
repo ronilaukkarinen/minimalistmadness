@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-29 00:15:00
+ * @Last Modified time: 2022-05-22 11:32:10
  */
 
 /**
@@ -141,6 +141,7 @@ function rollemaa_rest_api_search( $request ) {
     'cache_results'           => true,
     'update_post_term_cache'  => false,
     'posts_per_page'          => 15,
+    'relevanssi'              => true,
   );
 
   $query = new WP_Query( $args );

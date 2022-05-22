@@ -356,6 +356,19 @@ $tcon-search-glass-border-width: math.div($tcon-size, 20) !default;
   z-index: 10;
 }
 
+.search-excerpt strong {
+  background-color: var(--color-alt);
+  -webkit-box-decoration-break: clone;
+  box-shadow: -4px 0 0 var(--color-alt);
+  color: var(--color-white);
+  display: inline;
+  font-weight: var(--font-weight-medium);
+  line-height: 24px;
+  padding: 2px 4px;
+  padding-left: 0;
+  white-space: pre-wrap;
+}
+
 ul.search-results-mobile > div,
 .search-mobile.has-results {
   height: 100vh;
@@ -373,6 +386,10 @@ ul.search-results ul.search-results {
 ul.search-results {
   width: 100%;
 
+  a.article--link {
+    color: var(--color-black);
+  }
+
   .tagline {
     color: var(--color-white);
     font-weight: 700;
@@ -384,29 +401,6 @@ ul.search-results {
     color: var(--color-black);
     display: inline-block;
     margin: 0;
-
-    a {
-      @include link();
-      align-items: center;
-      border: 0;
-      box-shadow: none;
-      color: var(--color-black);
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  ul a,
-  li a {
-    @include link();
-    padding-left: 0;
-    padding-right: 0;
-
-    @media (max-width: 600px) {
-      font-size: 16px;
-    }
   }
 
   .underlined-hover a {
@@ -426,22 +420,28 @@ ul.search-results {
     padding: 0;
   }
 
-  a {
-    color: var(--color-white);
-  }
-
-  p,
-  p a {
-    @extend %default;
-    color: var(--color-white);
-    margin: 0;
+  a,
+  h2,
+  div {
+    transition: 200ms all;
   }
 
   li {
     /* stylelint-disable-next-line */
     animation: fadeIn .2s ease-in both;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    position: relative;
+
+    &:focus,
+    &:hover {
+      a,
+      h2,
+      div {
+        color: var(--color-alt);
+        opacity: .7;
+      }
+    }
 
     &:nth-child(2) {
       animation-delay: .2s;
