@@ -7,7 +7,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2021-11-25 10:05:52
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-25 10:20:16
+ * @Last Modified time: 2022-05-28 12:07:15
  *
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials

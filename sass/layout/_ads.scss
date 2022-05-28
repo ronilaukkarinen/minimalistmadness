@@ -3,7 +3,7 @@
 .closing {
   // The time needs to be the same than in js: ownAd.classList.add('closing');
   animation-duration: 400ms;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
   /* stylelint-disable-next-line */
   animation-name: swashOut;
   animation-timing-function: linear;
@@ -88,47 +88,6 @@
       height: 1px;
       margin: 2rem;
       width: 30px;
-    }
-  }
-
-  .hide-forever {
-    background-color: transparent;
-    border: 0;
-    border-radius: 30px;
-    // This needs to be fixed color so it won't affect by dark theme
-    // stylelint-disable-next-line
-    color: #fff;
-    display: block;
-    font-size: 14px;
-    margin-bottom: 0;
-    margin-top: 3rem;
-    padding: 0;
-    position: relative;
-    text-align: center;
-    transition: all .18s;
-    z-index: 10;
-
-    svg {
-      height: 13px;
-      margin-right: 8px;
-      position: relative;
-      top: -1px;
-      width: 13px;
-    }
-
-    &:hover {
-      background-color: transparent;
-      color: var(--color-red-brighter);
-    }
-
-    &:focus {
-      background-color: transparent;
-      color: var(--color-red-brighter);
-      outline-color: var(--color-red-brighter);
-      outline-offset: 5px;
-      outline-style: solid;
-      outline-width: 2px;
-      transition: outline-offset .25s ease;
     }
   }
 
@@ -255,5 +214,48 @@
   @media (max-width: 400px) {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+.block .article-content .ownad-unblockable .hide-forever,
+.container.container-article .ownad-unblockable .hide-forever,
+body button.hide-forever {
+  background-color: transparent;
+  border: 0;
+  border-radius: 30px;
+  // This needs to be fixed color so it won't affect by dark theme
+  // stylelint-disable-next-line
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-top: 3rem;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  transition: all .18s;
+  z-index: 10;
+
+  svg {
+    height: 13px;
+    margin-right: 8px;
+    position: relative;
+    top: -1px;
+    width: 13px;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: var(--color-red-brighter);
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: var(--color-red-brighter);
+    outline-color: var(--color-red-brighter);
+    outline-offset: 5px;
+    outline-style: solid;
+    outline-width: 2px;
+    transition: outline-offset .25s ease;
   }
 }

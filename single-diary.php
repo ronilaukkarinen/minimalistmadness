@@ -7,7 +7,7 @@
  * @Author:		Roni Laukkarinen
  * @Date:   		2021-11-16 09:38:48
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-25 10:24:09
+ * @Last Modified time: 2022-05-28 12:08:43
  *
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
@@ -29,6 +29,7 @@ get_header();
     </p>
 
     <?php get_template_part( 'template-parts/log-header' ); ?>
+    <?php get_template_part( 'template-parts/telegram-group' ); ?>
 
     <?php while ( have_posts() ) :
     the_post();

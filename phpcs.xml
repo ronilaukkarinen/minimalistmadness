@@ -101,6 +101,7 @@
         <exclude name="Squiz.PHP.CommentedOutCode.Found" />
         <exclude name="WordPress.Arrays.MultipleStatementAlignment" />
         <exclude name="Generic.Formatting.MultipleStatementAlignment" />
+        <exclude name="PEAR.Files.IncludingFile" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.
