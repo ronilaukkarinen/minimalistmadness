@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-11-22 11:38:12
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-05-28 12:27:37
+ * @Last Modified time: 2022-06-23 19:08:10
  */
 /* eslint-disable radix, no-underscore-dangle, no-use-before-define, no-shadow, func-names, no-var, one-var, prefer-rest-params, no-undef, import/first, import/no-extraneous-dependencies, max-len, no-unused-vars, camelcase, no-plusplus, vars-on-top, no-continue */
 /**
@@ -543,7 +543,7 @@ swup.on('contentReplaced', () => {
             $('ul.search-results').append('<li class="no-results"><h2>Ei hakutuloksia.</h2></li>');
           } else {
             $.each(results, (i, result) => {
-              $('ul.search-results').append(`<li><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2></li>`);
+              $('ul.search-results').append(`<li><a href="${result.link}" class="global-link" aria-hidden="true" tabindex="-1"></a><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2><div class="search-excerpt">${result.post_excerpt}</div></li>`);
             });
           }
         });
