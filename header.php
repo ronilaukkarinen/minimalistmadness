@@ -57,6 +57,10 @@ function toggleTheme() {
 document.addEventListener('DOMContentLoaded', function() {
   checkBox = document.getElementById('toggle-dark-mode');
 
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('theme') !== 'theme-light') {
+    setTheme('theme-dark');
+  }
+
   if (localStorage.getItem('theme') === 'theme-dark') {
     setTheme('theme-dark');
     checkBox.checked = true;
