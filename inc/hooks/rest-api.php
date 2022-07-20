@@ -151,7 +151,27 @@ function rollemaa_rest_api_search( $request ) {
       $query->the_post();
 
       $item = $rest_controller->prepare_response_for_collection( $query->post );
+
+      // Add custom "link" endpoint for permalink
       $item->link = get_the_permalink( $item->ID );
+
+      // Create post type name label
+      if ( 'post' === get_post_type( $item->ID ) ) {
+        $post_type_name = 'Artikkeli';
+      } elseif ( 'diary' === get_post_type( $item->ID ) ) {
+        $post_type_name = 'Lokikirja';
+      }
+
+      // Add custom "post_type_name" endpoint for readable post type names
+      if ( ! empty( $post_type_name ) ) $item->post_type_name = $post_type_name;
+
+      // Create readable date
+      $post_date_readable = 'Kirjoitettu ' . get_the_time( 'l', $item->ID ) . 'na, ' . get_the_time( 'j.', $item->ID ) . ' ' . get_the_time( 'F', $item->ID ) . 'ta ' . get_the_time( 'Y', $item->ID );
+
+      // Add "post_date_readable" endpoint
+      if ( ! empty( $post_date_readable ) ) $item->post_date_readable = $post_date_readable;
+
+      // Wrap up data array for items
       $data[] = $item;
     }
   }

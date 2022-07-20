@@ -543,7 +543,7 @@ swup.on('contentReplaced', () => {
             $('ul.search-results').append('<li class="no-results"><h2>Ei hakutuloksia.</h2></li>');
           } else {
             $.each(results, (i, result) => {
-              $('ul.search-results').append(`<li><a href="${result.link}" class="global-link" aria-hidden="true" tabindex="-1"></a><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2><div class="search-excerpt">${result.post_excerpt}</div></li>`);
+              $('ul.search-results').append(`<li><a href="${result.link}" class="global-link" aria-hidden="true" tabindex="-1"></a><span class="search-post-type">${result.post_type_name} &middot; <span class="search-post-date">${result.post_date_readable}</span></span><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2><div class="search-excerpt">${result.post_excerpt}</div></li>`);
             });
           }
         });
@@ -881,7 +881,7 @@ swup.on('contentReplaced', () => {
           $('ul.search-results').append('<li class="no-results"><h2>Ei hakutuloksia.</h2></li>');
         } else {
           $.each(results, (i, result) => {
-            $('ul.search-results').append(`<li><a href="${result.link}" class="global-link" aria-hidden="true" tabindex="-1"></a><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2><div class="search-excerpt">${result.post_excerpt}</div></li>`);
+            $('ul.search-results').append(`<li><a href="${result.link}" class="global-link" aria-hidden="true" tabindex="-1"></a><span class="search-post-type">${result.post_type_name} &middot; <span class="search-post-date">${result.post_date_readable}</span></span><h2><a class="article--link" href="${result.link}">${result.post_title}</a></h2><div class="search-excerpt">${result.post_excerpt}</div></li>`);
           });
         }
       });
