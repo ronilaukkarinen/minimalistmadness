@@ -26,6 +26,7 @@ import SwupScriptsPlugin from '@swup/scripts-plugin';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
 import SwupPreloadPlugin from '@swup/preload-plugin';
 import SwupA11yPlugin from '@swup/a11y-plugin';
+import SwupScrollPlugin from '@swup/scroll-plugin';
 import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
 
@@ -100,10 +101,14 @@ function debounce(func, wait, immediate) {
 
 // Initiate Swup transitions
 const swup = new Swup({
+  animateHistoryBrowsing: true,
   plugins: [
     new SwupBodyClassPlugin(),
     new SwupPreloadPlugin(),
     new SwupA11yPlugin(),
+    new SwupScrollPlugin({
+      animateScroll: false
+    })
   ],
 });
 
@@ -140,6 +145,20 @@ window.addEventListener('resize', () => {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
+});
+
+// Remember scroll position but scroll on top when clicking a link
+let scrollValues = {};
+
+// When clicking a link
+swup.on('clickLink', () => {
+  scrollValues[window.location.href] = window.scrollY;
+});
+
+swup.on('popState', () => {
+  setTimeout(function() {
+      window.scrollTo(0, scrollValues[window.location.href]);
+  }, 100);
 });
 
 // Swup starts

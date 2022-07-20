@@ -55,6 +55,7 @@
     "@swup/ga-plugin": "^1.0.1",
     "@swup/preload-plugin": "^1.0.3",
     "@swup/scripts-plugin": "^1.1.0",
+    "@swup/scroll-plugin": "^1.1.1",
     "font-awesome": "^4.7.0",
     "frappe-charts": "^1.6.2",
     "hamburgers": "^1.1.3",
