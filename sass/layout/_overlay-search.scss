@@ -366,8 +366,6 @@ $tcon-search-glass-border-width: math.div($tcon-size, 20) !default;
 
 .search-excerpt strong {
   background-color: var(--color-alt);
-  -webkit-box-decoration-break: clone;
-  box-shadow: -4px 0 0 var(--color-alt);
   color: var(--color-white);
   display: inline;
   font-weight: var(--font-weight-medium);
