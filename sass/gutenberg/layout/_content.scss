@@ -35,3 +35,9 @@
     }
   }
 }
+
+body.post-type-diary .is-root-container > * {
+  @media (max-width: $width-max-article + 40px) {
+    width: calc(100% - (var(--padding-container-horizontal) * 2));
+  }
+}
