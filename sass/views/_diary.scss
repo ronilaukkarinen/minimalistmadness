@@ -636,3 +636,107 @@ body.post-type-diary {
     font-weight: var(--font-weight-regular);
   }
 }
+
+// Widgets
+// stylelint-disable a11y/font-size-is-readable
+.widget.widget_calendar {
+  margin: 7rem auto 0;
+  max-width: var(--diary-container-width);
+
+  .calendar_wrap {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .widget-title {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .wp-calendar.wp-calendar-table {
+    width: 100%;
+  }
+
+  .wp-calendar * {
+    font-size: var(--font-size-14);
+    text-align: left;
+  }
+
+  caption {
+    color: rgb(var(--color-black-rgb) / .4);
+    font-size: var(--font-size-14);
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+  }
+
+  .wp-calendar-nav-prev,
+  .wp-calendar-nav-next {
+    display: inline-block;
+    font-size: var(--font-size-14);
+    margin-top: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 45px;
+
+    a {
+      color: rgb(var(--color-black-rgb) / .4);
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--color-black);
+    }
+  }
+
+  .wp-calendar-nav-prev {
+    text-indent: -1rem;
+  }
+
+  .wp-calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 460px;
+  }
+
+  thead,
+  tbody {
+    transform: translateX(-.5rem);
+  }
+
+  td,
+  th {
+    color: rgb(var(--color-black-rgb) / .4);
+    height: unset;
+    margin: .5rem 0;
+    padding: .6rem .8rem;
+
+    > a {
+      align-items: center;
+      border-radius: 4px;
+      box-shadow: none;
+      color: var(--color-rain);
+      display: inline-flex;
+      font-size: var(--font-size-14);
+      height: 35px;
+      justify-content: center;
+      margin-left: -10px;
+      text-align: center;
+      text-decoration: none;
+      transition: .22s;
+      width: 35px;
+    }
+
+    > a:focus,
+    > a:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+  }
+}

@@ -32,6 +32,8 @@ get_header(); ?>
       get_template_part( 'template-parts/content', 'none' );
     endif; ?>
 
+    <?php dynamic_sidebar(); ?>
+
   </main><!-- #main -->
 </div><!-- #primary -->
 

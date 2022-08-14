@@ -195,3 +195,43 @@ function add_to_rss_request( $qv ) {
     return $qv;
 }
 add_filter( 'request', __NAMESPACE__ . '\add_to_rss_request' );
+
+
+/**
+ * Custom post type date archives
+ */
+add_permastruct(
+  'diary',
+  '/lokikirja/%year%/%monthnum%/%day%/%pg_review%/',
+  array( 'with_front' => false )
+);
+
+add_rewrite_rule(
+  '^lokikirja/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$',
+  'index.php?post_type=diary&year=$matches[1]&monthnum=$matches[2]&day=$matches[3]',
+  'top'
+);
+
+add_rewrite_rule(
+  '^lokikirja/([0-9]{4})/([0-9]{1,2})/?$',
+  'index.php?post_type=diary&year=$matches[1]&monthnum=$matches[2]',
+  'top'
+);
+
+add_rewrite_rule(
+  '^lokikirja/([0-9]{4})/?$',
+  'index.php?post_type=diary&year=$matches[1]',
+  'top'
+);
+
+function review_permalinks( $url, $post ) {
+  if ( 'diary' === get_post_type( $post ) ) {
+      $url = str_replace( '%year%', get_the_date( 'Y' ), $url );
+      $url = str_replace( '%monthnum%', get_the_date( 'm' ), $url );
+      $url = str_replace( '%day%', get_the_date( 'd' ), $url );
+  }
+
+  return $url;
+}
+
+add_filter( 'post_type_link', __NAMESPACE__ . '\review_permalinks', 10, 2 );
