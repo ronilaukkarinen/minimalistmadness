@@ -639,6 +639,14 @@ body.post-type-diary {
 
 // Widgets
 // stylelint-disable a11y/font-size-is-readable
+
+@media (max-width: 840px) {
+  .widget {
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+  }
+}
+
 .widget.widget_calendar {
   margin: 7rem auto 0;
   max-width: var(--diary-container-width);
@@ -713,7 +721,8 @@ body.post-type-diary {
   td,
   th {
     color: rgb(var(--color-black-rgb) / .4);
-    height: unset;
+    display: table-cell;
+    height: 47px;
     margin: .5rem 0;
     padding: .6rem .8rem;
 
