@@ -68,7 +68,7 @@ $mood = get_field( 'mood' );
 
       <?php if ( is_singular() ) : ?>
 
-      <?php if ( $gratitude ) : ?>
+      <?php if ( ! empty( $gratitude ) ) : ?>
         <div class="metadata metadata-gratitude">
           <p class="meta-prefix">Tänään olen kiitollinen</p>
           <div class="gratitude-reasons">
@@ -142,29 +142,37 @@ $mood = get_field( 'mood' );
         ?>
 
         <div class="metadata metadata-progress">
-          <div class="progress">
-            <div class="progress-bar is-<?php echo esc_html( $habit_progress_class ); ?>" style="width: <?php echo esc_html( $habits_completion_percent ); ?>%;">
-              <span>Päivätavoitteet: <?php echo esc_html( $habits_completion_percent ); ?>%</span>
+          <?php if ( ! empty( $habits_completion_percent ) ) : ?>
+            <div class="progress">
+              <div class="progress-bar is-<?php echo esc_html( $habit_progress_class ); ?>" style="width: <?php echo esc_html( $habits_completion_percent ); ?>%;">
+                <span>Päivätavoitteet: <?php echo esc_html( $habits_completion_percent ); ?>%</span>
+              </div>
             </div>
-          </div>
+          <?php endif; ?>
 
-          <div class="progress">
-            <div class="progress-bar is-<?php echo esc_html( $mood_class ); ?>" style="width: <?php echo esc_html( $mood_scale ); ?>%;">
-              <span>Mieliala: <?php echo esc_html( $mood_scale ); ?>%</span>
+          <?php if ( ! empty( $mood_scale ) ) : ?>
+            <div class="progress">
+              <div class="progress-bar is-<?php echo esc_html( $mood_class ); ?>" style="width: <?php echo esc_html( $mood_scale ); ?>%;">
+                <span>Mieliala: <?php echo esc_html( $mood_scale ); ?>%</span>
+              </div>
             </div>
-          </div>
+          <?php endif; ?>
 
-          <div class="progress">
-            <div class="progress-bar is-<?php echo esc_html( $energy_class ); ?>" style="width: <?php echo esc_html( $energy_scale ); ?>%;">
-              <span>Energia: <?php echo esc_html( $energy_scale ); ?>%</span>
+          <?php if ( ! empty( $energy_scale ) ) : ?>
+            <div class="progress">
+              <div class="progress-bar is-<?php echo esc_html( $energy_class ); ?>" style="width: <?php echo esc_html( $energy_scale ); ?>%;">
+                <span>Energia: <?php echo esc_html( $energy_scale ); ?>%</span>
+              </div>
             </div>
-          </div>
+          <?php endif; ?>
 
-          <div class="progress">
-            <div class="progress-bar is-<?php echo esc_html( $anxiety_class ); ?>" style="width: <?php echo esc_html( $anxiety_scale ); ?>%;">
-              <span>Ahdistuksen taso: <?php echo esc_html( $anxiety_scale ); ?>%</span>
+          <?php if ( ! empty( $anxiety_scale ) ) : ?>
+            <div class="progress">
+              <div class="progress-bar is-<?php echo esc_html( $anxiety_class ); ?>" style="width: <?php echo esc_html( $anxiety_scale ); ?>%;">
+                <span>Ahdistuksen taso: <?php echo esc_html( $anxiety_scale ); ?>%</span>
+              </div>
             </div>
-          </div>
+          <?php endif; ?>
         </div>
 
         <ul class="habits" style="display: none;">
