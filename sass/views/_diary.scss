@@ -209,7 +209,9 @@ body.single-diary {
       border-radius: 4px;
       list-style: none;
       margin-top: 4rem;
+      overflow: hidden;
       padding: 2.2rem;
+      position: relative;
 
       a:not(.button):not(.post-edit-link):not(.author-link) {
         color: rgb(var(--color-black-rgb) / .8);
@@ -246,6 +248,7 @@ body.single-diary {
         max-width: calc(100% - 4rem);
         padding: 1rem 2rem;
 
+        &.metadata-gratitude,
         &.metadata-progress {
           padding: 2rem;
         }
@@ -260,6 +263,32 @@ body.single-diary {
     ol[data-type="core/list"]:not(.is-style-green-shades):not(.is-style-red-shades):not(.is-style-no-bullets):not(.is-style-todo-list) {
       @media (max-width: 640px) {
         padding-left: 2rem !important;
+      }
+    }
+
+    div.metadata:not(.alignwide):not(.alignfull).metadata-gratitude .meta-prefix {
+      font-size: 12px;
+      margin: 0;
+      opacity: .5;
+    }
+
+    div.metadata:not(.alignwide):not(.alignfull).metadata-gratitude .gratitude-reasons {
+      font-size: 16px;
+    }
+
+    div.metadata:not(.alignwide):not(.alignfull).metadata-gratitude > svg {
+      fill: rgb(var(--color-black-rgb) / .2);
+      height: 500px;
+      pointer-events: none;
+      position: absolute;
+      right: -20vw;
+      top: -70px;
+      width: 55vw;
+
+      @media (max-width: 890px) {
+        min-width: 400px;
+        top: -110px;
+        width: 55vw;
       }
     }
 
