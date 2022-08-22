@@ -245,6 +245,10 @@ body.single-diary {
       @media (max-width: 640px) {
         max-width: calc(100% - 4rem);
         padding: 1rem 2rem;
+
+        &.metadata-progress {
+          padding: 2rem;
+        }
       }
     }
 
@@ -261,7 +265,12 @@ body.single-diary {
 
     .progress {
       line-height: 1;
+      margin-bottom: 1.4rem;
       position: relative;
+    }
+
+    .progress:last-child {
+      margin-bottom: 0;
     }
 
     .progress-bar {
@@ -286,12 +295,24 @@ body.single-diary {
     }
 
     .progress-bar::after {
-      background-color: var(--color-mood-okay);
       z-index: 1;
+    }
+
+    .progress-bar.is-bad::after {
+      background-color: var(--color-mood-bad);
+    }
+
+    .progress-bar.is-okay::after {
+      background-color: var(--color-mood-okay);
+    }
+
+    .progress-bar.is-good::after {
+      background-color: var(--color-mood-good);
     }
 
     .progress span {
       font-size: var(--font-size-15);
+      opacity: .8;
       white-space: nowrap;
     }
 

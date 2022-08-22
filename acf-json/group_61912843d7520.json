@@ -3,6 +3,25 @@
     "title": "Metatiedot",
     "fields": [
         {
+            "key": "field_6303be322e09d",
+            "label": "Kiitollisuus",
+            "name": "gratitude",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Kolme asiaa, josta olen kiitollinen tänään (ihmiset,  tekemiset, tunteet)...",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_61d31d5c34168",
             "label": "Päivittäiset tavoitteet",
             "name": "habits",
@@ -38,6 +57,26 @@
             "key": "field_6303baaef0b67",
             "label": "Energiataso prosentteina",
             "name": "energy_scale",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 100,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6303c665085c8",
+            "label": "Ahdistus prosentteina",
+            "name": "anxiety_scale",
             "type": "range",
             "instructions": "",
             "required": 0,
@@ -342,5 +381,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661188808
+    "modified": 1661192822
 }

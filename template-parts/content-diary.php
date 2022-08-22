@@ -78,26 +78,78 @@ $mood = get_field( 'mood' );
           </span>
         </h2>
 
-
         <?php
         // Progress bars
+        // Habits
         $habits_checked = count( $habits );
         $habits_total = 10;
         $habits_completion_percent = ( $habits_checked / $habits_total ) * 100;
 
-        if ( $habits_completion_percent >= 0 && $habits_completion_percent <= 50 ) {
+        if ( $habits_completion_percent >= 0 && $habits_completion_percent <= 40 ) {
           $habit_progress_class = 'bad';
-        } elseif ( $habits_completion_percent >= 51 && $habits_completion_percent <= 60 ) {
+        } elseif ( $habits_completion_percent >= 41 && $habits_completion_percent <= 60 ) {
           $habit_progress_class = 'okay';
         } else {
           $habit_progress_class = 'good';
         }
+
+        // Mood
+        $total = 100;
+        $mood_scale = get_field( 'mood_scale' );
+
+        if ( $mood_scale >= 0 && $mood_scale <= 40 ) {
+          $mood_class = 'bad';
+        } elseif ( $mood_scale >= 41 && $mood_scale <= 60 ) {
+          $mood_class = 'okay';
+        } else {
+          $mood_class = 'good';
+        }
+
+        // Energy
+        $energy_scale = get_field( 'energy_scale' );
+
+        if ( $energy_scale >= 0 && $energy_scale <= 40 ) {
+          $energy_class = 'bad';
+        } elseif ( $energy_scale >= 41 && $energy_scale <= 60 ) {
+          $energy_class = 'okay';
+        } else {
+          $energy_class = 'good';
+        }
+
+        // Anxiety
+        $anxiety_scale = get_field( 'anxiety_scale' );
+
+        if ( $anxiety_scale >= 0 && $anxiety_scale <= 40 ) {
+          $anxiety_class = 'good';
+        } elseif ( $anxiety_scale >= 41 && $anxiety_scale <= 60 ) {
+          $anxiety_class = 'okay';
+        } else {
+          $anxiety_class = 'bad';
+        }
         ?>
 
-        <div class="metadata">
+        <div class="metadata metadata-progress">
           <div class="progress">
             <div class="progress-bar is-<?php echo esc_html( $habit_progress_class ); ?>" style="width: <?php echo esc_html( $habits_completion_percent ); ?>%;">
-              <span><?php echo esc_html( $habits_checked ); ?> / <?php echo esc_html( $habits_total ); ?> päivittäisistä tavoitteista suoritettu</span>
+              <span>Päivätavoitteet: <?php echo esc_html( $habits_completion_percent ); ?>%</span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar is-<?php echo esc_html( $mood_class ); ?>" style="width: <?php echo esc_html( $mood_scale ); ?>%;">
+              <span>Mieliala: <?php echo esc_html( $mood_scale ); ?>%</span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar is-<?php echo esc_html( $energy_class ); ?>" style="width: <?php echo esc_html( $energy_scale ); ?>%;">
+              <span>Energia: <?php echo esc_html( $energy_scale ); ?>%</span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar is-<?php echo esc_html( $anxiety_class ); ?>" style="width: <?php echo esc_html( $anxiety_scale ); ?>%;">
+              <span>Ahdistuksen taso: <?php echo esc_html( $anxiety_scale ); ?>%</span>
             </div>
           </div>
         </div>
