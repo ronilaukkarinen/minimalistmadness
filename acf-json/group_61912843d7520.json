@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_61d31d5c34168",
-            "label": "Päivän saavutukset tähän mennessä",
+            "label": "Päivittäiset tavoitteet",
             "name": "habits",
             "type": "checkbox",
             "instructions": "Ruksaa tähän mennessä onnistuneet. Kirjoita myös ehkä jotain niistä mitä et ruksannut, esimerkiksi jos feilasit.",
@@ -19,15 +19,10 @@
                 "water": "Puhdasta vettä vähintään 1,2 litraa",
                 "breakfast": "Aamupala",
                 "sleep": "Unta alla vähintään 7 tuntia",
-                "run": "Juoksulenkki",
-                "walk": "Kävelylenkki",
-                "workout": "Lihaskuntotreeni",
+                "run": "Kävely- tai juoksulenkki",
                 "ade": "AD₃E-vitamiinit, Omega-3 ja sinkki",
                 "clean": "Talon yleissiisteys",
                 "kitchen": "Keittiön yleissiisteys",
-                "roomba": "Imurointi",
-                "inventory": "Inventaario",
-                "clothes": "Vaatteet viikattu",
                 "books": "Vähintään 15 minuuttia kirjan lukemista",
                 "journal": "Päivittäinen kirjoittaminen",
                 "wallet": "Päivittäinen budjetointi"
@@ -38,6 +33,46 @@
             "toggle": 0,
             "return_format": "array",
             "save_custom": 0
+        },
+        {
+            "key": "field_6303baaef0b67",
+            "label": "Energiataso prosentteina",
+            "name": "energy_scale",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 100,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6303ba6bf0b66",
+            "label": "Mieliala prosentteina",
+            "name": "mood_scale",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 100,
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_61d31e8534169",
@@ -127,7 +162,7 @@
             "label": "Lämpötila",
             "name": "temperature",
             "type": "text",
-            "instructions": "Katso tämänhetkinen lämpötila <a target=\"_blank\" href=\"https:\/\/c.peikko.us\">Ruuvista<\/a> tai <a target=\"_blank\" href=\"http:\/\/weather.jyu.fi\/\">Mattilanniemen D-rakennuksen -sääasemasta<\/a>.",
+            "instructions": "Katso tämänhetkinen lämpötila <a target=\"_blank\" href=\"https:\/\/c.rolle.wtf\">Ruuvista<\/a> tai <a target=\"_blank\" href=\"http:\/\/weather.jyu.fi\/\">Mattilanniemen D-rakennuksen -sääasemasta<\/a>.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -307,5 +342,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1647790664
+    "modified": 1661188808
 }

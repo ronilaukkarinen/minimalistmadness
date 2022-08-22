@@ -78,7 +78,31 @@ $mood = get_field( 'mood' );
           </span>
         </h2>
 
-        <ul class="habits">
+
+        <?php
+        // Progress bars
+        $habits_checked = count( $habits );
+        $habits_total = 10;
+        $habits_completion_percent = ( $habits_checked / $habits_total ) * 100;
+
+        if ( $habits_completion_percent >= 0 && $habits_completion_percent <= 50 ) {
+          $habit_progress_class = 'bad';
+        } elseif ( $habits_completion_percent >= 51 && $habits_completion_percent <= 60 ) {
+          $habit_progress_class = 'okay';
+        } else {
+          $habit_progress_class = 'good';
+        }
+        ?>
+
+        <div class="metadata">
+          <div class="progress">
+            <div class="progress-bar is-<?php echo esc_html( $habit_progress_class ); ?>" style="width: <?php echo esc_html( $habits_completion_percent ); ?>%;">
+              <span><?php echo esc_html( $habits_checked ); ?> / <?php echo esc_html( $habits_total ); ?> päivittäisistä tavoitteista suoritettu</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="habits" style="display: none;">
           <?php foreach ( $habits as $habit ) : ?>
             <li class="habit <?php echo esc_html( $habit['value'] ); ?>">
               <?php include get_theme_file_path( "/svg/{$habit['value']}.svg" ); ?>

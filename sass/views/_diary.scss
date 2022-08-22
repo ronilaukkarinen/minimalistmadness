@@ -203,8 +203,10 @@ body.single-diary {
 
   .editor-styles-wrapper .is-root-container,
   .article-content.entry-content {
+    div.metadata:not(.alignwide):not(.alignfull),
     ul.metadata:not(.alignwide):not(.alignfull) {
       border: 1px solid rgb(var(--color-black-rgb) / .2);
+      border-radius: 4px;
       list-style: none;
       margin-top: 4rem;
       padding: 2.2rem;
@@ -255,6 +257,42 @@ body.single-diary {
       @media (max-width: 640px) {
         padding-left: 2rem !important;
       }
+    }
+
+    .progress {
+      line-height: 1;
+      position: relative;
+    }
+
+    .progress-bar {
+      padding-bottom: 10px;
+      position: relative;
+    }
+
+    .progress::after,
+    .progress-bar::after {
+      border-radius: 3px;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 2px;
+      position: absolute;
+      width: 100%;
+    }
+
+    .progress::after {
+      background-color: var(--color-white-faded);
+      z-index: 0;
+    }
+
+    .progress-bar::after {
+      background-color: var(--color-mood-okay);
+      z-index: 1;
+    }
+
+    .progress span {
+      font-size: var(--font-size-15);
+      white-space: nowrap;
     }
 
     ol.habits,
