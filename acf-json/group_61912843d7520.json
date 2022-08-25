@@ -114,6 +114,26 @@
             "append": ""
         },
         {
+            "key": "field_6307b5fd06576",
+            "label": "Tuottavuusprosentti",
+            "name": "productivity_scale",
+            "type": "range",
+            "instructions": "Tarkista prosentti <a href=\"https:\/\/www.rescuetime.com\/dashboard\" target=\"_blank\">RescueTimestä<\/a>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 100,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_61d31e8534169",
             "label": "Mieliala kirjoittamishetkellä",
             "name": "mood",
@@ -381,5 +401,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661192822
+    "modified": 1661450157
 }

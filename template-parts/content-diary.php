@@ -118,6 +118,18 @@ $mood = get_field( 'mood' );
           $mood_class = 'good';
         }
 
+        // Productivity
+        $total = 100;
+        $productivity_scale = get_field( 'productivity_scale' );
+
+        if ( $productivity_scale >= 0 && $productivity_scale <= 40 ) {
+          $productivity_class = 'bad';
+        } elseif ( $productivity_scale >= 41 && $productivity_scale <= 60 ) {
+          $productivity_class = 'okay';
+        } else {
+          $productivity_class = 'good';
+        }
+
         // Energy
         $energy_scale = get_field( 'energy_scale' );
 
@@ -146,6 +158,14 @@ $mood = get_field( 'mood' );
             <div class="progress">
               <div class="progress-bar is-<?php echo esc_html( $habit_progress_class ); ?>" style="width: <?php echo esc_html( $habits_completion_percent ); ?>%;">
                 <span>Päivätavoitteet: <?php echo esc_html( $habits_completion_percent ); ?>%</span>
+              </div>
+            </div>
+          <?php endif; ?>
+
+          <?php if ( ! empty( $productivity_scale ) ) : ?>
+            <div class="progress">
+              <div class="progress-bar is-<?php echo esc_html( $productivity_class ); ?>" style="width: <?php echo esc_html( $productivity_scale ); ?>%;">
+                <span>Tuottavuusprosentti: <?php echo esc_html( $productivity_scale ); ?>%</span>
               </div>
             </div>
           <?php endif; ?>
