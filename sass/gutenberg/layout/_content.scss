@@ -24,6 +24,19 @@
   padding-right: 0;
   width: 100%;
 
+  // Legacy embeds
+  &.instagram-media.instagram-media-rendered,
+  &.wp-video,
+  &.twitter-tweet,
+  &.instagram-media,
+  &.is-provider-instagram,
+  &.is-provider-twitter,
+  &.is-provider-facebook {
+    margin: 0 auto !important;
+    max-width: $width-max-article !important;
+    width: 100% !important;
+  }
+
   @media (max-width: $width-max-article + 40px) {
     padding-left: var(--padding-container-horizontal);
     padding-right: var(--padding-container-horizontal);
