@@ -166,7 +166,7 @@
                 "smirk": "\"Dealing with it\"",
                 "indifferent": "Mikään ei oikein nappaa"
             },
-            "allow_null": 0,
+            "allow_null": 1,
             "default_value": "good",
             "layout": "vertical",
             "return_format": "array"
@@ -190,7 +190,7 @@
                 "mobile": "OnePlus 8T -älypuhelin"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "array",
@@ -401,5 +401,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661450157
+    "modified": 1662481399
 }
