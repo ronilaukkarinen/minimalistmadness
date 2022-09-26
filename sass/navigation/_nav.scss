@@ -8,6 +8,7 @@
 
   @media (max-width: $responsivenav) {
     padding: 4rem;
+    z-index: 0;
   }
 
   @media (max-width: $container-mobile) {
