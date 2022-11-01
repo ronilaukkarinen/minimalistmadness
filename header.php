@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-02-02 17:46:35
+ * @Last Modified time: 2022-11-01 11:18:20
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -23,18 +23,6 @@ namespace Air_Light;
   <script data-swup-ignore-script data-domain="rollemaa.fi" src="https://analytics.dude.fi/js/plausible.js"></script>
 
   <?php wp_head(); ?>
-
-  <?php if ( ! is_user_logged_in() ) : ?>
-    <?php if ( is_singular() && ! has_tag( 'raha' ) ) : ?>
-      <script data-swup-ignore-script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <script data-swup-ignore-script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-8523880252818258",
-        enable_page_level_ads: true
-      });
-      </script>
-    <?php endif; ?>
-  <?php endif; ?>
 </head>
 
 <body <?php body_class( 'no-js' ); ?>>
