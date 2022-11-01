@@ -6,10 +6,15 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-09 08:11:47
+ * @Last Modified time: 2022-11-01 11:29:39
  */
 
 namespace Air_Light;
+
+/**
+ * Enable all views
+ */
+remove_action( 'template_redirect', __NAMESPACE__ . '\air_helper_disable_views' );
 
 /**
  * Register widget area.
