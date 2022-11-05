@@ -1,8 +1,16 @@
 <?php
 /**
+ * Hooks
+ *
  * All hooks that are run in the theme are listed here
  *
+ * @Author:		Roni Laukkarinen
+ * @Date:   		2022-09-19 11:07:30
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-11-01 11:21:48
+ *
  * @package minimalistmadness
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 namespace Air_Light;
