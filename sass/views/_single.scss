@@ -294,26 +294,6 @@ del {
   }
 }
 
-// Tables, codes and pres
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  font-family: $font-base;
-  height: 3rem;
-  padding: 1rem;
-
-  @media (max-width: 600px) {
-    display: inline-block;
-    height: auto;
-    padding: 10px 0;
-    text-align: center;
-  }
-}
-
 // Table heading cells
 th {
   font-weight: 700;
