@@ -49,8 +49,12 @@ class Diary extends Post_Type {
     // http://codex.wordpress.org/Function_Reference/register_post_type
     $args = [
       'rewrite' => [
-        'slug' => 'lokikirja',
+        'slug'       => 'lokikirja',
+        'with_front' => false,
+        'pages'      => true,
+        'feeds'      => true,
       ],
+      'paged'                 => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
       'label'                 => __( 'Lokikirja', 'minimalistmadness' ),
       'description'           => __( 'Merkinnät', 'minimalistmadness' ),
       'labels'                => $generated_labels,

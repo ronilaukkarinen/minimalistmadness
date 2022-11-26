@@ -202,25 +202,28 @@ add_filter( 'request', __NAMESPACE__ . '\add_to_rss_request' );
  */
 add_permastruct(
   'diary',
-  '/lokikirja/%year%/%monthnum%/%day%/%pg_review%/',
-  array( 'with_front' => false )
+  '/lokikirja/%year%/%monthnum%/%day%/page/%paged%',
+  [
+    'with_front' => false,
+    'paged' => true,
+  ]
 );
 
 add_rewrite_rule(
-  '^lokikirja/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$',
-  'index.php?post_type=diary&year=$matches[1]&monthnum=$matches[2]&day=$matches[3]',
+  '^lokikirja/(.+?)/(.+?)/(.+?)/page/?([0-9]{1,})/?$',
+  'index.php?post_type=diary&year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&paged=$matches[4]',
   'top'
 );
 
 add_rewrite_rule(
   '^lokikirja/([0-9]{4})/([0-9]{1,2})/?$',
-  'index.php?post_type=diary&year=$matches[1]&monthnum=$matches[2]',
+  'index.php?post_type=diary&year=$matches[1]&monthnum=$matches[2]&paged=$matches[3]',
   'top'
 );
 
 add_rewrite_rule(
   '^lokikirja/([0-9]{4})/?$',
-  'index.php?post_type=diary&year=$matches[1]',
+  'index.php?post_type=diary&year=$matches[1]&paged=$matches[2]',
   'top'
 );
 
