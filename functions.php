@@ -210,6 +210,24 @@ add_permastruct(
 );
 
 add_rewrite_rule(
+  '^lokikirja/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$',
+  'index.php?post_type=diary&year=$matches[1]&monthnum=$matches[2]&day=$matches[3]',
+  'top'
+);
+
+add_rewrite_rule(
+  '^lokikirja/([0-9]{4})/([0-9]{1,2})/?$',
+  'index.php?post_type=diary&year=$matches[1]&monthnum=$matches[2]',
+  'top'
+);
+
+add_rewrite_rule(
+  '^lokikirja/([0-9]{4})/?$',
+  'index.php?post_type=diary&year=$matches[1]',
+  'top'
+);
+
+add_rewrite_rule(
   '^lokikirja/(.+?)/(.+?)/(.+?)/page/([0-9])+$',
   'index.php?post_type=diary&year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&paged=$matches[4]',
   'top'
