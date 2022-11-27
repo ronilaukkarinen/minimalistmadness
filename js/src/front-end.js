@@ -42,6 +42,17 @@ const loadInstagramAPI = () => {
 
 loadInstagramAPI();
 
+// Load Mastodon embed script
+const loadMastodonAPI = () => {
+  const tagMastodon = document.createElement('script');
+  tagMastodon.src = 'https://mementomori.social/embed.js';
+  const firstScriptTagMastodon = document.getElementsByTagName('script')[0];
+  firstScriptTagMastodon.parentNode.insertBefore(tagMastodon, firstScriptTagMastodon);
+  window.isMastodonIframeAPILoaded = true;
+};
+
+loadMastodonAPI();
+
 // Twitter
 $.getScript('https://platform.twitter.com/widgets.js');
 if (typeof (twttr) !== 'undefined') {
@@ -107,8 +118,8 @@ const swup = new Swup({
     new SwupPreloadPlugin(),
     new SwupA11yPlugin(),
     new SwupScrollPlugin({
-      animateScroll: false
-    })
+      animateScroll: false,
+    }),
   ],
 });
 
@@ -148,7 +159,7 @@ window.addEventListener('resize', () => {
 });
 
 // Remember scroll position but scroll on top when clicking a link
-let scrollValues = {};
+const scrollValues = {};
 
 // When clicking a link
 swup.on('clickLink', () => {
@@ -156,8 +167,8 @@ swup.on('clickLink', () => {
 });
 
 swup.on('popState', () => {
-  setTimeout(function() {
-      window.scrollTo(0, scrollValues[window.location.href]);
+  setTimeout(() => {
+    window.scrollTo(0, scrollValues[window.location.href]);
   }, 100);
 });
 
@@ -198,6 +209,17 @@ swup.on('contentReplaced', () => {
 
   // Important: This generates the images
   window.instgrm.Embeds.process();
+
+  // Load Mastodon embed script
+  const loadMastodonAPI = () => {
+    const tagMastodon = document.createElement('script');
+    tagMastodon.src = 'https://mementomori.social/embed.js';
+    const firstScriptTagMastodon = document.getElementsByTagName('script')[0];
+    firstScriptTagMastodon.parentNode.insertBefore(tagMastodon, firstScriptTagMastodon);
+    window.isMastodonIframeAPILoaded = true;
+  };
+
+  loadMastodonAPI();
 
   // Twitter
   $.getScript('https://platform.twitter.com/widgets.js');
