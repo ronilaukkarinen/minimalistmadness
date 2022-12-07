@@ -133,6 +133,7 @@ body.single-diary {
     }
   }
 
+  .post-past .diary-title,
   .prefix,
   h1.prefix,
   h2.prefix,
@@ -203,6 +204,7 @@ body.single-diary {
 
   .editor-styles-wrapper .is-root-container,
   .article-content.entry-content {
+    .post-past.post.diary.type-diary.metadata,
     div.metadata:not(.alignwide):not(.alignfull),
     ul.metadata:not(.alignwide):not(.alignfull) {
       border: 1px solid rgb(var(--color-black-rgb) / .2);
@@ -212,6 +214,41 @@ body.single-diary {
       overflow: hidden;
       padding: 2.2rem;
       position: relative;
+
+      .post-past__inner {
+        .meta-prefix {
+          font-size: 12px;
+          font-weight: var(--font-weight-regular);
+          margin: 0;
+          margin-bottom: 2rem;
+          margin-left: 0;
+          opacity: .5;
+          padding-left: 0;
+        }
+
+        .post-past__content-title.prefix {
+          color: rgb(var(--color-black-rgb) / .55);
+          font-size: var(--diary-font-size-prefix);
+          font-weight: var(--font-weight-regular);
+          margin: 2rem auto;
+          padding: 0;
+        }
+
+        .diary-title {
+          font-family: var(--diary-font-family-heading);
+          font-size: 22px;
+          margin-left: 0;
+          padding-left: 0;
+
+          @media (max-width: 800px) {
+            font-size: 18px;
+          }
+        }
+
+        .post-past__content-excerpt p {
+          font-size: 15px;
+        }
+      }
 
       a:not(.button):not(.post-edit-link):not(.author-link) {
         color: rgb(var(--color-black-rgb) / .8);
@@ -270,6 +307,10 @@ body.single-diary {
       font-size: 12px;
       margin: 0;
       opacity: .5;
+    }
+
+    .post-past__content-excerpt * {
+      font-size: 14px;
     }
 
     div.metadata:not(.alignwide):not(.alignfull).metadata-gratitude .gratitude-reasons {

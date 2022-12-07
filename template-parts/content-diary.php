@@ -208,7 +208,7 @@ $mood = get_field( 'mood' );
 
       <?php if ( ! empty( $location ) || ! empty( $highlight ) || ! empty( $temperature ) || ! empty( $weather_text ) || ! empty( $device ) || ! empty( $drink_text ) ) : ?>
         <ul class="metadata">
-          <?php if ( ! empty( $mood ) ) : ?>
+          <?php if ( ! empty( $mood ) && ! empty( $mood['label'] ) ) : ?>
             <li class="mood">
               <?php include get_theme_file_path( "/svg/{$mood['value']}.svg" ); ?> <?php echo esc_html( $mood['label'] ); ?>
             </li>
@@ -287,6 +287,7 @@ $mood = get_field( 'mood' );
       <?php } ?>
 
       <?php if ( is_singular( 'diary' ) ) : ?>
+        <?php get_template_part( 'template-parts/year-since-now' ); ?>
         <div class="author-info">
           <div class="author-col author-col-avatar">
             <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/author-info.jpg" alt="Kuva Roni Laukkarisesta" />
