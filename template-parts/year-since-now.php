@@ -7,7 +7,7 @@
  * @Author:		Roni Laukkarinen
  * @Date:   		2021-11-11 12:59:35
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-07 18:57:25
+ * @Last Modified time: 2022-12-07 19:09:09
  *
  * @package minimalistmadness
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
@@ -16,8 +16,6 @@
 namespace Air_Light;
 
 ?>
-
-<article class="post-past post diary type-diary metadata">
 
   <?php
   wp_reset_postdata();
@@ -28,17 +26,19 @@ namespace Air_Light;
     'post_status'    => 'publish',
     'date_query'     => array(
       array(
-        'year'  => gmdate( 'Y' ) - 1,
-        'month' => gmdate( 'm' ),
-        'day'   => gmdate( 'd' ),
+        'year'  => get_the_time( 'Y' ) - 1,
+        'month' => get_the_time( 'm' ),
+        'day'   => get_the_time( 'd' ),
       ),
     ),
   );
 
-  $year_since_now = new \WP_Query( $args );
+  $year_since_now = new \WP_Query( $args ); ?>
 
-  if ( $year_since_now->have_posts() ) :
-    while ( $year_since_now->have_posts() ) :
+  <?php if ( $year_since_now->have_posts() ) : ?>
+
+    <article class="post-past post diary type-diary metadata">
+      <?php while ( $year_since_now->have_posts() ) :
       $year_since_now->the_post();
       ?>
 
@@ -65,8 +65,7 @@ namespace Air_Light;
       </div>
 
       <?php
-    endwhile;
-  endif;
-  ?>
+    endwhile; ?>
 
-</article>
+    </article>
+  <?php endif;
