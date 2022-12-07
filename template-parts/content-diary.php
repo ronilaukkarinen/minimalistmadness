@@ -265,6 +265,21 @@ $mood = get_field( 'mood' );
       <?php endif; ?>
       <?php endif; ?>
 
+      <?php if ( is_singular( 'diary' ) ) : ?>
+        <?php get_template_part( 'template-parts/year-since-now' ); ?>
+        <div class="author-info">
+          <div class="author-col author-col-avatar">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/author-info.jpg" alt="Kuva Roni Laukkarisesta" />
+          </div>
+
+          <div class="author-col author-col-info">
+            <h3>Roni Laukkarinen</h3>
+            <p class="description">Kirjoittaja on <?php echo esc_attr( khonsu_calculate_age( '1988/11/01' ) ); ?>-vuotias elämäntapanörtti, ammatiltaan yrittäjä ja teknologiajohtaja perustamassaan <a href="https://www.dude.fi" class="author-link no-external-link-indicator">digitoimistossa</a>, verkkosivujen tekijä, koukussa kirjoittamiseen 5-vuotiaasta. Päivät kuluu <a href="https://twitter.com/streetlazer" class="author-link no-external-link-indicator">monipuolisen</a> <a href="https://www.last.fm/user/rolle-" class="author-link no-external-link-indicator">musiikkiharrastuksen</a>, retropelien ja koodaamisen parissa, mutta arkea piristyttää myös vaimo ja kaksi lasta. <a href="http://twitter.com/rolle" target="_blank" class="author-link no-external-link-indicator">Twitter</a> ja <a href="https://www.rollekino.fi" class="author-link no-external-link-indicator">leffat</a> lähellä sydäntä.</p>
+            <p class="button-paragraph"><a class="button" href="<?php echo esc_url( get_page_link( 2768 ) ); ?>">Lue Rollesta lisää</a></p>
+          </div>
+        </div>
+      <?php endif; ?>
+
       <?php if ( get_edit_post_link() ) { ?>
         <footer class="entry-footer">
           <?php edit_post_link(
@@ -285,21 +300,6 @@ $mood = get_field( 'mood' );
           ); ?>
         </footer><!-- .entry-footer -->
       <?php } ?>
-
-      <?php if ( is_singular( 'diary' ) ) : ?>
-        <?php get_template_part( 'template-parts/year-since-now' ); ?>
-        <div class="author-info">
-          <div class="author-col author-col-avatar">
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/author-info.jpg" alt="Kuva Roni Laukkarisesta" />
-          </div>
-
-          <div class="author-col author-col-info">
-            <h3>Roni Laukkarinen</h3>
-            <p class="description">Kirjoittaja on <?php echo esc_attr( khonsu_calculate_age( '1988/11/01' ) ); ?>-vuotias elämäntapanörtti, ammatiltaan yrittäjä ja teknologiajohtaja perustamassaan <a href="https://www.dude.fi" class="author-link no-external-link-indicator">digitoimistossa</a>, verkkosivujen tekijä, koukussa kirjoittamiseen 5-vuotiaasta. Päivät kuluu <a href="https://twitter.com/streetlazer" class="author-link no-external-link-indicator">monipuolisen</a> <a href="https://www.last.fm/user/rolle-" class="author-link no-external-link-indicator">musiikkiharrastuksen</a>, retropelien ja koodaamisen parissa, mutta arkea piristyttää myös vaimo ja kaksi lasta. <a href="http://twitter.com/rolle" target="_blank" class="author-link no-external-link-indicator">Twitter</a> ja <a href="https://www.rollekino.fi" class="author-link no-external-link-indicator">leffat</a> lähellä sydäntä.</p>
-            <p class="button-paragraph"><a class="button" href="<?php echo esc_url( get_page_link( 2768 ) ); ?>">Lue Rollesta lisää</a></p>
-          </div>
-        </div>
-      <?php endif; ?>
     </div><!-- .entry-content -->
   </div><!-- .container-article -->
 
