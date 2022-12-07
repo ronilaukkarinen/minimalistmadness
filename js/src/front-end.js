@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-11-22 11:38:12
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-09-19 11:09:19
+ * @Last Modified time: 2022-12-07 19:22:24
  */
 /* eslint-disable radix, no-underscore-dangle, no-use-before-define, no-shadow, func-names, no-var, one-var, prefer-rest-params, no-undef, import/first, import/no-extraneous-dependencies, max-len, no-unused-vars, camelcase, no-plusplus, vars-on-top, no-continue */
 /**
@@ -28,7 +28,7 @@ import SwupPreloadPlugin from '@swup/preload-plugin';
 import SwupA11yPlugin from '@swup/a11y-plugin';
 import SwupScrollPlugin from '@swup/scroll-plugin';
 import getLocalization from './modules/localization';
-import styleExternalLinks from './modules/external-link';
+import { styleExternalLinks, initExternalLinkLabels } from './modules/external-link';
 
 // Embeds
 // Load Instagram API script
@@ -92,6 +92,7 @@ const Vue = require('vue/dist/vue.min');
 
 // Style external links
 styleExternalLinks();
+initExternalLinkLabels();
 
 // Debounce
 function debounce(func, wait, immediate) {

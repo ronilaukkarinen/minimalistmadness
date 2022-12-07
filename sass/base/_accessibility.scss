@@ -141,3 +141,14 @@ a.is-external-link.no-external-link-indicator::after {
     transition: outline-offset .25s ease;
   }
 }
+
+.external-link-icon {
+  height: 1.2rem !important;
+  margin-left: .4rem !important;
+  margin-right: .4rem !important;
+  width: 1.2rem !important;
+
+  @media (max-width: 480px) {
+    margin-left: .4rem !important;
+  }
+}
