@@ -1,8 +1,16 @@
 <?php
 /**
- * Movie page footer
+ * Footer for movies
  *
- * @package khonsu
+ * Footer.
+ *
+ * @Author:		Roni Laukkarinen
+ * @Date:   		2022-09-19 11:07:30
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-12-09 10:46:47
+ *
+ * @package minimalistmadness
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 ?>
@@ -17,24 +25,24 @@
 		<div class="footer-extra">
 			<ul class="sosiaaliset-mediat">
 				<li><a class="imdblista" href="http://www.imdb.com/mymovies/list?l=27761618" title="Rollen leffalista IMDb:ssä"><span>Rollen leffalista IMDb:ssä</span></a></li>
-				<li><a target="_blank" class="facebook" href="http://www.facebook.com/rollenleffat" title="Rollen leffasivu Facebookissa"><span>Rollen leffasivu Facebookissa</span></a></li>
-				<li><a target="_blank" class="listal" href="http://rolle.listal.com/" title="Profiilini Listalissa"><span>Profiilini Listalissa</span></a></li>
-				<li><a target="_blank" class="flixster" href="http://www.flixster.com/user/804926173/" title="Profiilini Flixsterissä"><span>Profiilini Flixsterissä</span></a></li>
-				<li><a target="_blank" class="letterboxd" href="http://letterboxd.com/rolle/" title="Profiilini Letterboxd:ssä"><span>Profiilini Letterboxd:ssä</span></a></li>
-				<li><a target="_blank" class="goodfilms" href="http://goodfil.ms/rolle/" title="Profiilini Goodfilmsissä"><span>Profiilini Goodfilmsissä</span></a></li>
-				<li><a target="_blank" class="leffatykki" href="http://www.leffatykki.com/profiili/Rolle/julkinen" title="Profiilini Leffatykissä"><span>Profiilini Leffatykissä</span></a></li>
-				<li><a target="_blank" class="trakt" href="http://trakt.tv/user/rolle" title="Profiilini Trakt.tv:ssä"><span>Profiilini Trakt.tv:ssä</span></a></li>
-				<li><a target="_blank" class="netflix" href="http://www.netflix.fi" title="Käytän Netflixiä!"><span>Käytän Netflixiä!</span></a></li>
-				<li><a target="_blank" class="rottentomatoes" href="http://www.rottentomatoes.com/user/id/804926173/" title="Rotten Tomatoes -profiilini!"><span>Rotten Tomatoes -profiilini!</span></a></li>
-				<li><a target="_blank" class="leanflix" href="http://www.leanflix.com/" title="Leanflix"><span>Leanflix</span></a></li>
-				<li><a target="_blank" class="movielens" href="https://movielens.org/" title="Movielens"><span>Movielens</span></a></li>
-				<li><a target="_blank" class="criticker" href="http://www.criticker.com/profile/rolle/" title="Criticker"><span>Criticker</span></a></li>
-				<li><a target="_blank" class="bestmoviesbyfarr" href="http://www.bestmoviesbyfarr.com/" title="Best Movies by Farr"><span>Best Movies by Farr</span></a></li>
-				<li><a target="_blank" class="movieo" href="https://movieo.me/users/rolle-rdvhg?lists_sort=trending&amp;item_type=lists" title="Movieo"><span>Movieo</span></a></li>
-				<li><a target="_blank" class="nextqueue" href="https://nextqueue.com/u/rolle/" title="NextQueue"><span>NextQueue</span></a></li>
-				<li><a target="_blank" class="tmdb" href="https://www.themoviedb.org/u/rolle" title="The Movie Database"><span>The Movie Database</span></a></li>
-				<li><a target="_blank" class="tasteio" href="https://www.taste.io/users/rolle" title="Taste.io"><span>Taste.io</span></a></li>
-				<li><a target="_blank" class="movix" href="https://movix.ai" title="Movix.ai"><span>Movix.ai</span></a></li>
+				<li><a class="facebook" href="http://www.facebook.com/rollenleffat" title="Rollen leffasivu Facebookissa"><span>Rollen leffasivu Facebookissa</span></a></li>
+				<li><a class="listal" href="http://rolle.listal.com/" title="Profiilini Listalissa"><span>Profiilini Listalissa</span></a></li>
+				<li><a class="flixster" href="http://www.flixster.com/user/804926173/" title="Profiilini Flixsterissä"><span>Profiilini Flixsterissä</span></a></li>
+				<li><a class="letterboxd" href="http://letterboxd.com/rolle/" title="Profiilini Letterboxd:ssä"><span>Profiilini Letterboxd:ssä</span></a></li>
+				<li><a class="goodfilms" href="http://goodfil.ms/rolle/" title="Profiilini Goodfilmsissä"><span>Profiilini Goodfilmsissä</span></a></li>
+				<li><a class="leffatykki" href="http://www.leffatykki.com/profiili/Rolle/julkinen" title="Profiilini Leffatykissä"><span>Profiilini Leffatykissä</span></a></li>
+				<li><a class="trakt" href="http://trakt.tv/user/rolle" title="Profiilini Trakt.tv:ssä"><span>Profiilini Trakt.tv:ssä</span></a></li>
+				<li><a class="netflix" href="http://www.netflix.fi" title="Käytän Netflixiä!"><span>Käytän Netflixiä!</span></a></li>
+				<li><a class="rottentomatoes" href="http://www.rottentomatoes.com/user/id/804926173/" title="Rotten Tomatoes -profiilini!"><span>Rotten Tomatoes -profiilini!</span></a></li>
+				<li><a class="leanflix" href="http://www.leanflix.com/" title="Leanflix"><span>Leanflix</span></a></li>
+				<li><a class="movielens" href="https://movielens.org/" title="Movielens"><span>Movielens</span></a></li>
+				<li><a class="criticker" href="http://www.criticker.com/profile/rolle/" title="Criticker"><span>Criticker</span></a></li>
+				<li><a class="bestmoviesbyfarr" href="http://www.bestmoviesbyfarr.com/" title="Best Movies by Farr"><span>Best Movies by Farr</span></a></li>
+				<li><a class="movieo" href="https://movieo.me/users/rolle-rdvhg?lists_sort=trending&amp;item_type=lists" title="Movieo"><span>Movieo</span></a></li>
+				<li><a class="nextqueue" href="https://nextqueue.com/u/rolle/" title="NextQueue"><span>NextQueue</span></a></li>
+				<li><a class="tmdb" href="https://www.themoviedb.org/u/rolle" title="The Movie Database"><span>The Movie Database</span></a></li>
+				<li><a class="tasteio" href="https://www.taste.io/users/rolle" title="Taste.io"><span>Taste.io</span></a></li>
+				<li><a class="movix" href="https://movix.ai" title="Movix.ai"><span>Movix.ai</span></a></li>
 			</ul>
 		</div>
 
