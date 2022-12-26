@@ -10,6 +10,12 @@
   background-color: transparent;
   overflow: hidden;
 
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    color: var(--color-grey);
+  }
+
   label {
     &.cnns-label,
     &#cnns-label {
@@ -31,6 +37,7 @@
       margin-bottom: 0;
 
       textarea {
+        color: var(--color-grey);
         padding-left: 0;
         padding-right: 0;
 
