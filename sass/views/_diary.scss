@@ -285,6 +285,10 @@ body.single-diary {
         max-width: calc(100% - 4rem);
         padding: 1rem 2rem;
 
+        &.post-past {
+          padding: 2rem;
+        }
+
         &.metadata-gratitude,
         &.metadata-progress {
           padding: 2rem;
