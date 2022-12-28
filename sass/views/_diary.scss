@@ -248,6 +248,11 @@ body.single-diary {
         .post-past__content-excerpt p {
           font-size: 15px;
         }
+
+        .post-past__content-excerpt blockquote {
+          margin: 2rem auto;
+          padding: 0 2rem;
+        }
       }
 
       a:not(.button):not(.post-edit-link):not(.author-link) {
