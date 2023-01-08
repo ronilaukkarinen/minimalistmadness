@@ -134,7 +134,7 @@
         ]
       }
     ],
-    "csstools/value-no-unknown-custom-properties": false,
+    "csstools/value-no-unknown-custom-properties": null,
     "rule-empty-line-before": [
       "always-multi-line",
       {

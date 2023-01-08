@@ -14,4 +14,8 @@
   li::before {
     display: none !important;
   }
+
+  @media (max-width: $container-mobile) {
+    padding-left: 2rem !important;
+  }
 }
