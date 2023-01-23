@@ -280,7 +280,9 @@ $mood = get_field( 'mood' );
         </div>
       <?php endif; ?>
 
-      <?php if ( get_edit_post_link() ) { ?>
+      <?php if ( get_edit_post_link() ) {
+        wp_reset_postdata();
+        ?>
         <footer class="entry-footer">
           <?php edit_post_link(
             sprintf(
@@ -302,5 +304,13 @@ $mood = get_field( 'mood' );
       <?php } ?>
     </div><!-- .entry-content -->
   </div><!-- .container-article -->
-
 </article><!-- #post-## -->
+
+<?php if ( is_singular( 'diary' ) ) : ?>
+  <nav class="post-prev-next-navigation">
+    <ul>
+      <li class="prev hide-label"><?php previous_post_link( '%link' ); ?></li>
+      <li class="next hide-label"><?php next_post_link( '%link' ); ?></li>
+    </ul>
+  </nav>
+<?php endif;
