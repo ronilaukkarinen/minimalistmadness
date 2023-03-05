@@ -195,11 +195,6 @@ body.single-diary {
   .article-content > *:not(.alignwide):not(.alignfull),
   .container.container-article .entry-content > *:not(.alignwide):not(.alignfull) {
     max-width: var(--diary-container-width);
-
-    // @media (max-width: 840px) {
-    //   padding-left: var(--padding-container-horizontal);
-    //   padding-right: var(--padding-container-horizontal);
-    // }
   }
 
   .editor-styles-wrapper .is-root-container,
@@ -309,6 +304,10 @@ body.single-diary {
       @media (max-width: 640px) {
         padding-left: 2rem !important;
       }
+    }
+
+    .metadata li {
+      align-items: center !important;
     }
 
     div.metadata:not(.alignwide):not(.alignfull).metadata-gratitude .meta-prefix {
