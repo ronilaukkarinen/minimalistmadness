@@ -244,6 +244,15 @@ body.single-diary {
           font-size: 15px;
         }
 
+        .post-past__content-excerpt ol,
+        .post-past__content-excerpt ul {
+          padding-left: 0;
+
+          li {
+            gap: 0;
+          }
+        }
+
         .post-past__content-excerpt blockquote {
           margin: 2rem auto;
           padding: 0 2rem;
