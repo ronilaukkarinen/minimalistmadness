@@ -195,6 +195,8 @@ body.single-diary {
   .article-content > *:not(.alignwide):not(.alignfull),
   .container.container-article .entry-content > *:not(.alignwide):not(.alignfull) {
     max-width: var(--diary-container-width);
+    position: relative;
+    z-index: 2;
   }
 
   .editor-styles-wrapper .is-root-container,
