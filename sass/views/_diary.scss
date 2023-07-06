@@ -242,9 +242,21 @@ body.single-diary {
           }
         }
 
-        .post-past__content-excerpt ul li,
-        .post-past__content-excerpt ol li {
-          display: table-row;
+        // Please God forgive me for this
+        .post-past__content-excerpt {
+          > ul.bandinfo,
+          > ul:not([class]),
+          > ol:not([class]),
+          .wp-block-categories-list,
+          .wp-block-list,
+          ul.is-style-default,
+          ol.is-style-default,
+          ol:not([class]),
+          ul:not([class]) .article-content > ul.is-style-default {
+            li {
+              display: table-row;
+            }
+          }
         }
 
         .post-past__content-excerpt p {
