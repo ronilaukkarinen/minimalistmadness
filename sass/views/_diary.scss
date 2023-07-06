@@ -242,6 +242,11 @@ body.single-diary {
           }
         }
 
+        .post-past__content-excerpt ul li,
+        .post-past__content-excerpt ol li {
+          display: table-row;
+        }
+
         .post-past__content-excerpt p {
           font-size: 15px;
         }
