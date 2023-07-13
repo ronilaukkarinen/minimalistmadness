@@ -18,6 +18,11 @@ wp.blocks.registerBlockStyle('core/list', {
   label: 'Todo-lista',
 });
 
+wp.blocks.registerBlockStyle('core/list-item', {
+  name: 'checked',
+  label: 'Tehty tehtävä',
+});
+
 wp.blocks.registerBlockStyle('core/list', {
   name: 'green-shades',
   label: 'Vihreät tasot',
