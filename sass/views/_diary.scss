@@ -195,6 +195,8 @@ body.single-diary {
   .article-content > *:not(.alignwide):not(.alignfull),
   .container.container-article .entry-content > *:not(.alignwide):not(.alignfull) {
     max-width: var(--diary-container-width);
+    position: relative;
+    z-index: 2;
   }
 
   .editor-styles-wrapper .is-root-container,
@@ -240,8 +242,34 @@ body.single-diary {
           }
         }
 
+        // Please God forgive me for this
+        .post-past__content-excerpt {
+          > ul.bandinfo,
+          > ul:not([class]),
+          > ol:not([class]),
+          .wp-block-categories-list,
+          .wp-block-list,
+          ul.is-style-default,
+          ol.is-style-default,
+          ol:not([class]),
+          ul:not([class]) .article-content > ul.is-style-default {
+            li {
+              display: table-row;
+            }
+          }
+        }
+
         .post-past__content-excerpt p {
           font-size: 15px;
+        }
+
+        .post-past__content-excerpt ol,
+        .post-past__content-excerpt ul {
+          padding-left: 0;
+
+          li {
+            gap: 0;
+          }
         }
 
         .post-past__content-excerpt blockquote {
