@@ -169,6 +169,16 @@ body.single-diary {
     padding-top: 0;
   }
 
+  .article-content h2.wp-block-heading {
+    font-size: var(--font-size-h3);
+    font-weight: 500;
+  }
+
+  .article-content h3.wp-block-heading {
+    font-size: var(--font-size-h4);
+    font-weight: 500;
+  }
+
   .wp-block p,
   .wp-block li,
   .type-diary li,
