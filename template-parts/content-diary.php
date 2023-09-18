@@ -19,6 +19,7 @@ namespace Air_Light;
 // Fields
 $location = get_field( 'location' );
 $habits = get_field( 'habits' );
+$habits_percent = get_field( 'habits_percent' );
 $highlight = get_field( 'highlight' );
 $np = get_field( 'np' );
 $np_link = get_field( 'np_link' );
@@ -79,7 +80,7 @@ $mood = get_field( 'mood' );
         </div>
       <?php endif; ?>
 
-      <?php if ( $habits ) : ?>
+      <?php if ( $habits || $habits_percent ) : ?>
 
         <h2 class="title-with-icon" style="display: none;">
           <span class="icon" aria-hidden="true">
@@ -92,12 +93,18 @@ $mood = get_field( 'mood' );
         </h2>
 
         <?php
-        // Progress bars
         // Habits
-        $habits_checked = count( $habits );
-        $habits_total = 10;
-        $habits_completion_percent = ( $habits_checked / $habits_total ) * 100;
+        if ( $habits_percent ) {
+          $habits_completion_percent = $habits_percent;
+        } elseif ( $habits ) {
+          $habits_checked = count( $habits );
+          $habits_total = 10;
+          $habits_completion_percent = ( $habits_checked / $habits_total ) * 100;
+        } else {
+          $habits_completion_percent = 0;
+        }
 
+        // Progress bars
         if ( $habits_completion_percent >= 0 && $habits_completion_percent <= 40 ) {
           $habit_progress_class = 'bad';
         } elseif ( $habits_completion_percent >= 41 && $habits_completion_percent <= 60 ) {

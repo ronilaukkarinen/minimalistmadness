@@ -23,12 +23,12 @@
             "maxlength": ""
         },
         {
-            "key": "field_61d31d5c34168",
-            "label": "Päivittäiset tavoitteet",
-            "name": "habits",
+            "key": "field_650879c446dc9",
+            "label": "Päivittäiset tavoitteet prosentteina",
+            "name": "habits_percent",
             "aria-label": "",
-            "type": "checkbox",
-            "instructions": "Ruksaa tähän mennessä onnistuneet. Kirjoita myös ehkä jotain niistä mitä et ruksannut, esimerkiksi jos feilasit.",
+            "type": "range",
+            "instructions": "iPhonen Awesome Habits: Habit Trackerin prosentti.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,25 +36,13 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "water": "Puhdasta vettä vähintään 1,2 litraa",
-                "breakfast": "Aamupala",
-                "sleep": "Unta alla vähintään 7 tuntia",
-                "run": "Kävely- tai juoksulenkki",
-                "ade": "AD₃E-vitamiinit, Omega-3 ja sinkki",
-                "clean": "Talon yleissiisteys",
-                "kitchen": "Keittiön yleissiisteys",
-                "books": "Vähintään 15 minuuttia kirjan lukemista",
-                "journal": "Päivittäinen kirjoittaminen",
-                "wallet": "Päivittäinen budjetointi"
-            },
-            "allow_custom": 0,
-            "default_value": [],
-            "layout": "vertical",
-            "toggle": 0,
-            "return_format": "array",
-            "save_custom": 0,
-            "custom_choice_button_text": "Add new choice"
+            "relevanssi_exclude": 0,
+            "default_value": 0,
+            "min": "",
+            "max": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_6303baaef0b67",
@@ -422,5 +410,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692032846
+    "modified": 1695054348
 }
