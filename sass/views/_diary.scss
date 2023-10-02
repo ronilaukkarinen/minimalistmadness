@@ -778,7 +778,17 @@ body.single-diary {
       }
     }
   }
+
+  .container.container-article .article-content blockquote.wp-block-quote ol,
+  .container.container-article .article-content blockquote.wp-block-quote ul {
+    padding-left: 1.9rem !important;
+  }
+
+  .container.container-article .article-content blockquote.wp-block-quote li::before {
+    display: none !important;
+  }
 }
+
 
 .type-diary + .type-diary {
   margin-top: 4rem;
