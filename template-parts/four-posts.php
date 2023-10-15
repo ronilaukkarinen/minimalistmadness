@@ -94,7 +94,7 @@ $selected_posts = get_field( 'selected_posts', 'option', false, false );
         <div class="post-card-content">
           <a data-swup-preload href="<?php echo esc_url( $post['permalink'] ); ?>" class="global-link" aria-hidden="true" tabindex="-1"><span class="screen-reader-text"><?php echo esc_attr( $post['title'] ); ?></span></a>
 
-          <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo $post['post_time'];  // phpcs:ignore ?><br /><?php echo $post['post_reading_time'];  // phpcs:ignore ?></p><div class="image image-background image-background-layer"><?php if ( has_post_thumbnail( $post['id'] ) ) { native_lazyload_tag( get_post_thumbnail_id( $post['id'], 'large' ), [ 'sizes' => [ 'big' => 'large' ] ] ); } else { native_lazyload_tag( khonsu_get_random_image_id() ); } ?></div></div></div>
+          <div class="post-card-image no-bottom-radius"><div class="img"><p class="post-card-details"><?php echo $post['post_time'];  // phpcs:ignore ?><br /><?php echo $post['post_reading_time'];  // phpcs:ignore ?></p><div class="image image-background image-background-layer"><?php if ( has_post_thumbnail( $post['id'] ) ) { native_lazyload_tag( get_post_thumbnail_id( $post['id'], 'large' ), [ 'sizes' => [ 'big' => 'medium' ] ] ); } else { native_lazyload_tag( khonsu_get_random_image_id() ); } ?></div></div></div>
 
           <div class="post-card-information">
             <h2 class="post-card-title-large"><a href="<?php echo esc_url( $post['permalink'] ); ?>"><?php echo esc_attr( $post['title'] ); ?></a></h2>

@@ -34,7 +34,7 @@ if ( ! empty( $query ) ) :
 
             <h2 class="post-card-title"><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_attr( get_the_title() ); ?></a></h2>
             <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo khonsu_estimated_reading_time(); // phpcs:ignore ?></p>
-            <div class="image image-background image-background-layer"><?php if ( has_post_thumbnail( $post->ID ) ) { native_lazyload_tag( get_post_thumbnail_id( $post->ID, 'large' ), [ 'sizes' => [ 'big' => 'large' ] ] ); } else { native_lazyload_tag( khonsu_get_random_image_id() ); } ?></div></div></div>
+            <div class="image image-background image-background-layer"><?php if ( has_post_thumbnail( $post->ID ) ) { native_lazyload_tag( get_post_thumbnail_id( $post->ID ), [ 'sizes' => [ 'big' => 'medium' ] ] ); } else { native_lazyload_tag( khonsu_get_random_image_id() ); } ?></div></div></div>
             </div>
           </article>
 
