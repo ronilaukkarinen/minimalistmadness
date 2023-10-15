@@ -46,7 +46,7 @@ $selected_posts = get_field( 'selected_posts', 'option' );
 
               <h2 class="post-card-title"><a href="<?php echo esc_url( get_the_permalink( $selected_post->ID ) ); ?>"><?php echo esc_attr( get_the_title( $selected_post->ID ) ); ?></a></h2>
 
-              <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo esc_html( $reading_time ); ?></p><?php if ( has_post_thumbnail() ) { image_lazyload_div( get_post_thumbnail_id( $selected_post->ID, 'large' ) ); } ?></div></div>
+              <div class="post-card-image"><div class="img"><p class="post-card-details"><time datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j.' ); ?> <?php the_time( 'F' ); ?>ta <?php the_time( 'Y' ); ?></time><br /><?php echo esc_html( $reading_time ); ?></p><div class="image image-background image-background-layer"><?php if ( has_post_thumbnail( $selected_post->ID ) ) { native_lazyload_tag( get_post_thumbnail_id( $selected_post->ID, 'large' ), [ 'sizes' => [ 'big' => 'large' ] ] ); } ?></div></div></div>
             </div>
           </article>
         <?php endforeach; ?>

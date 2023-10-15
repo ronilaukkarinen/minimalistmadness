@@ -9,7 +9,11 @@ namespace Air_Light;
 
 ?>
 
-<header class="hero-single" itemscope itemtype="http://schema.org/WPHeader" style="background-image:url('<?php if ( has_post_thumbnail() ) : echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) ); else : echo esc_url( khonsu_get_random_image_url() ); endif; ?>');"><div class="shade"></div>
+<header class="hero-single" itemscope itemtype="http://schema.org/WPHeader">
+
+  <div class="image image-background image-background-layer"><?php if ( has_post_thumbnail() ) { native_lazyload_tag( get_post_thumbnail_id( $post->ID, 'large' ), [ 'sizes' => [ 'big' => 'large' ] ] ); } ?></div>
+
+  <div class="shade" aria-hidden="true"></div>
 
   <div class="site-branding screen-reader-text">
     <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span></a></p>

@@ -32,3 +32,6 @@ if ( file_exists( get_theme_file_path( '/inc/includes/post-type.php' ) ) ) {
 
 // Shortcodes etc.
 require get_theme_file_path( '/inc/includes/rollemaa-legacy.php' );
+
+// From Air-helper
+require get_theme_file_path( '/inc/hooks/image-lazyload-native.php' );
