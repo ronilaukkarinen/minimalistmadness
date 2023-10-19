@@ -15,7 +15,6 @@
 }
 
 // Active diary link
-// Active diary link
 @media (min-width: $responsivenav) {
   .archive.tag .menu-item-26560 a,
   .home .menu-item-26560 a,
@@ -762,6 +761,15 @@ body.single-diary {
     }
   }
 
+  .container.container-article .article-content blockquote.wp-block-quote ol,
+  .container.container-article .article-content blockquote.wp-block-quote ul {
+    padding-left: 1.9rem !important;
+  }
+
+  .container.container-article .article-content blockquote.wp-block-quote li::before {
+    display: none !important;
+  }
+
   // Blockquotes
   @media (min-width: 1015px) {
     .container.container-article .article-content blockquote.wp-block-quote {
@@ -778,17 +786,7 @@ body.single-diary {
       }
     }
   }
-
-  .container.container-article .article-content blockquote.wp-block-quote ol,
-  .container.container-article .article-content blockquote.wp-block-quote ul {
-    padding-left: 1.9rem !important;
-  }
-
-  .container.container-article .article-content blockquote.wp-block-quote li::before {
-    display: none !important;
-  }
 }
-
 
 .type-diary + .type-diary {
   margin-top: 4rem;
@@ -1021,5 +1019,19 @@ body.post-type-diary {
 
   @media (min-width: 890px) {
     position: absolute;
+  }
+}
+
+.post-past__content-excerpt .wp-block-image,
+.post-past__content-excerpt .align-full {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media (min-width: $width-max-article + 40px) {
+  .post-past__content-excerpt .wp-block-image,
+  .post-past__content-excerpt .align-full {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
   }
 }

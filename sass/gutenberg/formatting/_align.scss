@@ -55,4 +55,18 @@
       width: $width-full;
     }
   }
+
+  .post-past__content-excerpt .wp-block-image,
+  .post-past__content-excerpt .align-full {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  @media (min-width: $width-max-article + 40px) {
+    .post-past__content-excerpt .wp-block-image,
+    .post-past__content-excerpt .align-full {
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
 }
