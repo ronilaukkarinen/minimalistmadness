@@ -149,6 +149,11 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 // We listen to the resize event
 window.addEventListener('resize', () => {
+  // Check for lastHeight
+  if (typeof this.lastHeight === 'undefined') {
+    this.lastHeight = window.innerHeight;
+  }
+
   if (
     window.innerWidth > window.innerHeight
     || Math.abs(this.lastHeight - window.innerHeight) > 100
@@ -183,6 +188,11 @@ swup.on('contentReplaced', () => {
 
   // We listen to the resize event
   window.addEventListener('resize', () => {
+    // Check for lastHeight
+    if (typeof this.lastHeight === 'undefined') {
+      this.lastHeight = window.innerHeight;
+    }
+
     if (
       window.innerWidth > window.innerHeight
     || Math.abs(this.lastHeight - window.innerHeight) > 100
