@@ -11,7 +11,10 @@ namespace Air_Light;
 
 <header class="hero-single" itemscope itemtype="http://schema.org/WPHeader">
 
-  <div class="image image-background image-background-layer"><?php if ( has_post_thumbnail() ) { native_lazyload_tag( get_post_thumbnail_id( $post->ID, 'large' ), [ 'sizes' => [ 'big' => 'large' ] ] ); } ?></div>
+  <div class="image image-background image-background-layer">
+    <?php if ( has_post_thumbnail() ) { ?>
+      <img src="<?php echo get_the_post_thumbnail_url( $post->ID, 'full' ); ?>" alt="<?php echo esc_attr( get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true ) ); ?>" loading="eager" />
+    <?php } ?></div>
 
   <div class="shade" aria-hidden="true"></div>
 
