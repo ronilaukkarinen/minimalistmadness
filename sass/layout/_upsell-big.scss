@@ -79,7 +79,7 @@
   .post-card-title-large {
     color: var(--color-heading);
     font-size: 27px;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     margin-top: 0;
 
     a {
@@ -121,7 +121,7 @@
       display: flex;
       font-family: $font-alt;
       font-size: 17px;
-      font-weight: 500;
+      font-weight: var(--font-weight-500);
       height: 50px;
       margin: 0 0 20px;
       overflow: visible;

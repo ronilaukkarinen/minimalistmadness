@@ -43,7 +43,7 @@
       display: inline-block;
       font-family: $font-alt;
       font-size: .6666666667em;
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       letter-spacing: .2em;
       opacity: .6;
       text-decoration: none;

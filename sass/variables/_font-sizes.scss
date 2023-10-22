@@ -43,6 +43,7 @@ $headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty 
   // Font weights
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-500: var(--font-weight-medium);
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-paragraphs: var(--font-weight-regular);

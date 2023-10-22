@@ -143,7 +143,7 @@ function block_editor_title_input_styles() {
   .block-editor .editor-styles-wrapper .editor-post-title {
     color: #fff;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     margin: 0 auto;
     padding: 4rem 2rem;
   }
@@ -151,7 +151,7 @@ function block_editor_title_input_styles() {
     color: rgb(255 255 255 / .5);
     display: block;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: var(--font-weight-500);
     margin-bottom: 1rem;
     position: relative;
   }

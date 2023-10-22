@@ -144,7 +144,7 @@ body.single-diary {
 
   .type-diary p.diary-title,
   .diary-title {
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     line-height: 1.2;
     margin: 0 auto 2rem;
 
@@ -170,12 +170,12 @@ body.single-diary {
 
   .article-content h2.wp-block-heading {
     font-size: var(--font-size-h3);
-    font-weight: 500;
+    font-weight: var(--font-weight-500);
   }
 
   .article-content h3.wp-block-heading {
     font-size: var(--font-size-h4);
-    font-weight: 500;
+    font-weight: var(--font-weight-500);
   }
 
   .wp-block p,

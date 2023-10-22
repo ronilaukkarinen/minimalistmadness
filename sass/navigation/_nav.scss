@@ -52,7 +52,7 @@
 .site-head-right a {
   color: var(--color-black);
   display: block;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   margin: 0;
   opacity: .4;
   padding: 10px 12px;
@@ -86,7 +86,7 @@
   flex-shrink: 0;
   font-family: Muli, $font-headings;
   font-size: 2.1rem;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: 1px;
   line-height: 1em;
   padding: 10px;
@@ -142,7 +142,7 @@
     color: var(--color-black);
     display: inline-block;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     margin: 0;
     opacity: .5;
     padding: 10px 12px;
@@ -283,7 +283,7 @@
   .site-head-left a,
   .site-head-right a {
     font-size: 2.6rem;
-    font-weight: 200;
+    font-weight: var(--font-weight-300);
     line-height: 1.15em;
     margin: 8px 0;
     opacity: 0;

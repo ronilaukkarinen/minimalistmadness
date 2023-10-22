@@ -20,7 +20,7 @@
   h2 {
     color: var(--color-black);
     font-size: 24px;
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     margin-bottom: 10px;
 
     a {
@@ -95,7 +95,7 @@
   h3 {
     color: var(--color-darkgrey);
     font-size: 22px;
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     margin-bottom: 10px;
     margin-top: 0;
   }

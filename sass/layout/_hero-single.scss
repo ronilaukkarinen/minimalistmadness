@@ -9,9 +9,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  height: calc(var(--vh, 1vh) * 100);
   max-height: 1300px;
   position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
 
   .shade {
     /* stylelint-disable-next-line */
@@ -57,7 +58,7 @@
       @include responsive-font(30px, 70px);
       color: var(--color-white);
       font-family: var(--font-heading);
-      font-weight: 600;
+      font-weight: var(--font-weight-semibold);
       line-height: 1.1;
     }
 
@@ -181,7 +182,7 @@
         display: block;
         font-family: $font-headings;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--font-weight-500);
         opacity: .7;
         padding: 9px;
         text-decoration: none;

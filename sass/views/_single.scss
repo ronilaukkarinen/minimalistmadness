@@ -296,7 +296,7 @@ del {
 
 // Table heading cells
 th {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 abbr[title] {
@@ -305,7 +305,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 dfn {
@@ -540,7 +540,7 @@ body.post-type-archive-diary .container.container-article .entry-content .author
 
   h3 {
     font-size: var(--font-size-18);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     margin-bottom: 1.5rem;
     margin-top: 0;
   }

@@ -1,6 +1,6 @@
-// Font family settings for Gutenberg
 @include fontFace('Inter', '../../../../../content/themes/minimalistmadness/fonts/Inter-Regular', 400);
 @include fontFace('Inter', '../../../../../content/themes/minimalistmadness/fonts/Inter-Italic', 400, italic);
 @include fontFace('Inter', '../../../../../content/themes/minimalistmadness/fonts/Inter-Bold', 700);
-@include fontFace('ColfaxAI', '../../../../../content/themes/minimalistmadness/fonts/92bb7bd0146566b09c54412871582ebf', 400);
-@include fontFace('ColfaxAI', '../../../../../content/themes/minimalistmadness/fonts/9424443aac1c01fb1e08e022d614620e', 500);
+@include fontFace('Inter', '../../../../../content/themes/minimalistmadness/fonts/Inter-Medium', 500);
+@include fontFace('Inter', '../../../../../content/themes/minimalistmadness/fonts/Inter-SemiBold', 600);
+@include fontFace('Inter', '../../../../../content/themes/minimalistmadness/fonts/Inter-Bold', 700);
