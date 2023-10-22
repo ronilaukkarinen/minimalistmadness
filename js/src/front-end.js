@@ -22,7 +22,6 @@ import './modules/skip-link-focus-fix';
 import 'what-input';
 import MoveTo from 'moveto';
 import Swup from 'swup';
-import SwupScriptsPlugin from '@swup/scripts-plugin';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
 import SwupPreloadPlugin from '@swup/preload-plugin';
 import SwupA11yPlugin from '@swup/a11y-plugin';
@@ -113,13 +112,18 @@ function debounce(func, wait, immediate) {
 
 // Initiate Swup transitions
 const swup = new Swup({
-  animateHistoryBrowsing: true,
+  animateHistoryBrowsing: false,
+  cache: true,
   plugins: [
     new SwupBodyClassPlugin(),
     new SwupPreloadPlugin(),
     new SwupA11yPlugin(),
     new SwupScrollPlugin({
-      animateScroll: false,
+      animateScroll: {
+        betweenPages: true,
+        samePageWithHash: true,
+        samePage: true,
+      },
     }),
   ],
 });
@@ -145,18 +149,12 @@ const query = paged_query.posts_query;
 const scrollValues = {};
 
 // When clicking a link
-swup.on('clickLink', () => {
+swup.hooks.on('link:click', () => {
   scrollValues[window.location.href] = window.scrollY;
 });
 
-swup.on('popState', () => {
-  setTimeout(() => {
-    window.scrollTo(0, scrollValues[window.location.href]);
-  }, 100);
-});
-
 // Swup starts
-swup.on('contentReplaced', () => {
+swup.hooks.on('content:replace', () => {
   // Front page load more helper
   const query = paged_query.posts_query;
 
