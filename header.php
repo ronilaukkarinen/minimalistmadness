@@ -28,7 +28,7 @@ namespace Air_Light;
 <body <?php body_class( 'no-js' ); ?>>
 <div class="loading-animation" aria-hidden="true"><div class="ripple" aria-hidden="true"></div></div>
 
-<script data-swup-ignore-script>
+<script data-swup-ignore-script data-swup-reload-script>
 function setTheme(themeName) {
   localStorage.setItem('theme', themeName);
   document.documentElement.className = themeName;
@@ -42,8 +42,7 @@ function toggleTheme() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-
+function themeSetup() {
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('theme') !== 'theme-light') {
     setTheme('theme-dark');
   }
@@ -77,7 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+}
 
+document.addEventListener('DOMContentLoaded', function() {
+  themeSetup();
+});
+
+document.addEventListener('swup:contentReplaced', function() {
+  themeSetup();
 });
 </script>
 
