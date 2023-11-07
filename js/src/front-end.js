@@ -29,6 +29,56 @@ import SwupScrollPlugin from '@swup/scroll-plugin';
 import getLocalization from './modules/localization';
 import { styleExternalLinks, initExternalLinkLabels } from './modules/external-link';
 
+function setTheme(themeName) {
+  localStorage.setItem('theme', themeName);
+  document.documentElement.className = themeName;
+}
+
+function toggleTheme() {
+  if (localStorage.getItem('theme') === 'theme-dark') {
+    setTheme('theme-light');
+  } else {
+    setTheme('theme-dark');
+  }
+}
+
+function themeSetup() {
+
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('theme') !== 'theme-light') {
+    setTheme('theme-dark');
+  }
+
+  if (localStorage.getItem('theme') === 'theme-dark') {
+    setTheme('theme-dark');
+    document.getElementById('color-scheme-toggle-dark').checked = true;
+    document.getElementById('color-scheme-toggle-light').checked = false;
+    document.getElementById('color-scheme-toggle-auto').checked = false;
+  } else {
+    setTheme('theme-light');
+    document.getElementById('color-scheme-toggle-dark').checked = false;
+    document.getElementById('color-scheme-toggle-light').checked = true;
+    document.getElementById('color-scheme-toggle-auto').checked = false;
+  }
+
+  document.querySelectorAll('#dark-mode-footer-toggle input').forEach(function(el) {
+    el.addEventListener('change', function () {
+      if (this.value === 'light') {
+        setTheme('theme-light');
+      } else if (this.value === 'dark') {
+        setTheme('theme-dark');
+      } else {
+        localStorage.removeItem('theme');
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          setTheme('theme-dark');
+        } else {
+          setTheme('theme-light');
+        }
+      }
+    });
+  });
+}
+
 // Embeds
 // Load Instagram API script
 const loadInstagramAPI = () => {
@@ -155,6 +205,9 @@ swup.hooks.on('link:click', () => {
 
 // Swup starts
 swup.hooks.on('content:replace', () => {
+  // Check theme
+  themeSetup();
+
   // Front page load more helper
   const query = paged_query.posts_query;
 
