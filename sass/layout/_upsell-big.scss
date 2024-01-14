@@ -51,8 +51,13 @@
     background-color: var(--color-white);
     padding: 4rem;
 
+    h2 {
+      margin-bottom: 1rem;
+    }
+
     p {
       font-size: var(--font-size-16);
+      margin-top: 0;
 
       @media (max-width: 480px) {
         font-size: 16px;
