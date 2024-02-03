@@ -17,6 +17,16 @@ namespace Air_Light;
 remove_action( 'template_redirect', __NAMESPACE__ . '\air_helper_disable_views' );
 
 /**
+ * Enable author view for ActivityPub
+ */
+// add_filter( 'air_helper_disable_views_author', '__return_false' );
+
+/**
+ * Enable users endpoint view for ActivityPub
+ */
+remove_filter( 'rest_endpoints', __NAMESPACE__ . '\air_helper_disable_rest_endpoints' );
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
