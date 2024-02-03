@@ -29,7 +29,7 @@ get_header();
     </p>
 
     <?php get_template_part( 'template-parts/log-header' ); ?>
-    <?php get_template_part( 'template-parts/telegram-group' ); ?>
+    <?php // get_template_part( 'template-parts/telegram-group' ); ?>
 
     <?php while ( have_posts() ) :
     the_post();
