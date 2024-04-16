@@ -201,16 +201,6 @@ $mood = get_field( 'mood' );
             </div>
           <?php endif; ?>
         </div>
-
-        <ul class="habits" style="display: none;">
-          <?php foreach ( $habits as $habit ) : ?>
-            <li class="habit <?php echo esc_html( $habit['value'] ); ?>">
-              <?php include get_theme_file_path( "/svg/{$habit['value']}.svg" ); ?>
-              <span class="label"><?php echo esc_html( $habit['label'] ); ?></span>
-            </li>
-          <?php endforeach; ?>
-        </ul>
-
       <?php endif; ?>
 
       <?php if ( ! empty( $location ) || ! empty( $highlight ) || ! empty( $temperature ) || ! empty( $weather_text ) || ! empty( $device ) || ! empty( $drink_text ) ) : ?>
