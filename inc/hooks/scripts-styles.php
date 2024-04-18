@@ -82,7 +82,11 @@ function heatmap_data() {
 		set_transient( 'dude_words_response', $rolledesign_query, 24 * 60 * 60 );
 	}
 
-  $merged = array_merge( $heatmap_query, $rollekino_query, $dude_query, $rolledesign_query );
+  if ( is_array( $heatmap_query ) && is_array( $rollekino_query ) && is_array( $dude_query ) && is_array( $rolledesign_query ) ) {
+    $merged = array_merge( $heatmap_query, $rollekino_query, $dude_query, $rolledesign_query );
+  } else {
+    $merged = $heatmap_query;
+  }
 
   // $heatmap_post_array = array();
   foreach ( $merged as $key => $heatmap_post ) {
