@@ -705,7 +705,7 @@ body.single-diary {
       }
 
       @media (max-width: 640px) {
-        padding-left: 2rem !important;
+        padding-left: 0 !important;
       }
     }
 
@@ -742,12 +742,16 @@ body.single-diary {
       }
 
       @media (min-width: 640px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      @media (max-width: 640px) {
         padding-left: 0;
       }
 
-      @media (max-width: 840px) {
-        padding-left: 2rem;
-        padding-right: 2rem;
+      @media (min-width: 840px) {
+        padding-left: 0 !important;
       }
     }
 
