@@ -24,7 +24,7 @@
     margin: 5px;
 
     &:focus {
-      color: currentColor;
+      color: currentcolor;
     }
   }
 
@@ -75,7 +75,7 @@
 
   // A bit better focus for large elements
   a.global-link:focus {
-    outline-color: currentColor;
+    outline-color: currentcolor;
     outline-offset: 5px;
     outline-style: solid;
     outline-width: 4px;
@@ -151,4 +151,8 @@ a.is-external-link.no-external-link-indicator::after {
   @media (max-width: 480px) {
     margin-left: .4rem !important;
   }
+}
+
+img + .external-link-icon {
+  display: none;
 }
