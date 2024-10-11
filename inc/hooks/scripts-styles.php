@@ -10,6 +10,9 @@
  * @package minimalistmadness
  */
 
+// Turn off all error reporting for this file
+error_reporting(0);
+
 namespace Air_Light;
 
 /**
