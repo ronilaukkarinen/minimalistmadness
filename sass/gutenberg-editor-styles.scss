@@ -49,7 +49,6 @@
 // Need to be right after general, because after typography comes block styles
 body.post-type-post .editor-styles-wrapper,
 .editor-styles-wrapper {
-  @import 'layout/typography';
 
   // Prevent horizontal scrolling
   overflow-x: hidden;
@@ -60,6 +59,7 @@ body.post-type-post .editor-styles-wrapper,
     font-family: inherit;
     font-size: unset;
   }
+  @import 'layout/typography';
 }
 
 // Global features needed by editor
