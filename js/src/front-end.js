@@ -43,6 +43,7 @@ function toggleTheme() {
 }
 
 function themeSetup() {
+
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('theme') !== 'theme-light') {
     setTheme('theme-dark');
   }
@@ -59,7 +60,7 @@ function themeSetup() {
     document.getElementById('color-scheme-toggle-auto').checked = false;
   }
 
-  document.querySelectorAll('#dark-mode-footer-toggle input').forEach((el) => {
+  document.querySelectorAll('#dark-mode-footer-toggle input').forEach(function(el) {
     el.addEventListener('change', function () {
       if (this.value === 'light') {
         setTheme('theme-light');
@@ -100,6 +101,14 @@ const loadMastodonAPI = () => {
 };
 
 loadMastodonAPI();
+
+// Twitter
+$.getScript('https://platform.twitter.com/widgets.js');
+if (typeof (twttr) !== 'undefined') {
+  twttr.widgets.load();
+} else {
+  $.getScript('https://platform.twitter.com/widgets.js');
+}
 
 // GitHub-styled charts
 // WordPress post data for heatmaps
@@ -227,6 +236,14 @@ swup.hooks.on('content:replace', () => {
   };
 
   loadMastodonAPI();
+
+  // Twitter
+  $.getScript('https://platform.twitter.com/widgets.js');
+  if (typeof (twttr) !== 'undefined') {
+    twttr.widgets.load();
+  } else {
+    $.getScript('https://platform.twitter.com/widgets.js');
+  }
 
   // Always move scroll position to up when clicking a link
   const moveTo = new MoveTo({
