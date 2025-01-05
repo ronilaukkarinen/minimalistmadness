@@ -82,7 +82,7 @@ $mood = get_field( 'mood' );
 
       <?php if ( $habits || $habits_percent ) : ?>
 
-        <h2 class="title-with-icon" style="display: none;">
+        <h2 class="title-with-icon screen-reader-text">
           <span class="icon" aria-hidden="true">
             <?php require get_theme_file_path( '/svg/trophy.svg' ); ?>
           </span>
