@@ -160,47 +160,47 @@ $mood = get_field( 'mood' );
         }
         ?>
 
-        <div class="metadata metadata-progress">
+        <ul class="metadata metadata-progress">
           <?php if ( ! empty( $habits_completion_percent ) ) : ?>
-            <div class="progress">
+            <li class="progress">
               <div class="progress-bar is-<?php echo esc_html( $habit_progress_class ); ?>" style="width: <?php echo esc_html( $habits_completion_percent ); ?>%;">
                 <span>Päivätavoitteet: <?php echo esc_html( $habits_completion_percent ); ?>%</span>
               </div>
-            </div>
+            </li>
           <?php endif; ?>
 
           <?php if ( ! empty( $productivity_scale ) ) : ?>
-            <div class="progress">
+            <li class="progress">
               <div class="progress-bar is-<?php echo esc_html( $productivity_class ); ?>" style="width: <?php echo esc_html( $productivity_scale ); ?>%;">
                 <span>Tuottavuusprosentti: <?php echo esc_html( $productivity_scale ); ?>%</span>
               </div>
-            </div>
+            </li>
           <?php endif; ?>
 
           <?php if ( ! empty( $mood_scale ) ) : ?>
-            <div class="progress">
+            <li class="progress">
               <div class="progress-bar is-<?php echo esc_html( $mood_class ); ?>" style="width: <?php echo esc_html( $mood_scale ); ?>%;">
                 <span>Mieliala: <?php echo esc_html( $mood_scale ); ?>%</span>
               </div>
-            </div>
+            </li>
           <?php endif; ?>
 
           <?php if ( ! empty( $energy_scale ) ) : ?>
-            <div class="progress">
+            <li class="progress">
               <div class="progress-bar is-<?php echo esc_html( $energy_class ); ?>" style="width: <?php echo esc_html( $energy_scale ); ?>%;">
                 <span>Energia: <?php echo esc_html( $energy_scale ); ?>%</span>
               </div>
-            </div>
+            </li>
           <?php endif; ?>
 
           <?php if ( ! empty( $anxiety_scale ) ) : ?>
-            <div class="progress">
+            <li class="progress">
               <div class="progress-bar is-<?php echo esc_html( $anxiety_class ); ?>" style="width: <?php echo esc_html( $anxiety_scale ); ?>%;">
                 <span>Ahdistuksen taso: <?php echo esc_html( $anxiety_scale ); ?>%</span>
               </div>
-            </div>
+            </li>
           <?php endif; ?>
-        </div>
+        </ul>
       <?php endif; ?>
 
       <?php if ( ! empty( $location ) || ! empty( $highlight ) || ! empty( $temperature ) || ! empty( $weather_text ) || ! empty( $device ) || ! empty( $drink_text ) ) : ?>
