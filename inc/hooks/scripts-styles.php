@@ -10,9 +10,6 @@
  * @package minimalistmadness
  */
 
-// Turn off all error reporting for this file
-error_reporting(0);
-
 namespace Air_Light;
 
 /**
@@ -96,31 +93,32 @@ function heatmap_data() {
 		setup_postdata( $heatmap_post );
 
 		// Word count
-    if ( null !== $heatmap_post->ID ) {
+    if ( is_object( $heatmap_post ) && isset( $heatmap_post->ID ) ) {
       $post_id = $heatmap_post->ID;
       $post_object = get_post( $post_id );
       $content = $post_object->post_content;
       $word_count = post_word_count( $content );
-    } else {
+    } elseif ( is_array( $heatmap_post ) && isset( $heatmap_post['post_content'] ) ) {
       $word_count = post_word_count( $heatmap_post['post_content'] );
+    } else {
+      continue;
     }
 
     // Timestamps
-    if ( null !== $heatmap_post->ID ) {
+    if ( is_object( $heatmap_post ) && isset( $heatmap_post->ID ) ) {
       $unix_timestamp = get_post_timestamp( $heatmap_post );
       $day = get_the_time( 'Y-m-d', $post_id );
       $day_in_unix_format = strtotime( get_the_time( 'Y-m-d', $post_id ) );
-    } else {
+    } elseif ( is_array( $heatmap_post ) && isset( $heatmap_post['post_date_gmt'] ) ) {
       $unix_timestamp = strtotime( $heatmap_post['post_date_gmt'] );
       $day = gmdate( 'Y-m-d', strtotime( $heatmap_post['post_date_gmt'] ) );
       $day_in_unix_format = strtotime( gmdate( 'Y-m-d', strtotime( $heatmap_post['post_date_gmt'] ) ) );
+    } else {
+      continue;
     }
 
-    // Form an array
-    $heatmap_post_array[ $day ] = $word_count;
-
     // If same day has multiple posts, combine word counts and show total count for one day
-    if ( array_key_exists( $day, $heatmap_post_array ) ) {
+    if ( isset( $heatmap_post_array[ $day_in_unix_format ] ) ) {
       $heatmap_post_array[ $day_in_unix_format ] = $heatmap_post_array[ $day_in_unix_format ] + $word_count;
     } else {
       $heatmap_post_array[ $day_in_unix_format ] = $word_count;
