@@ -64,7 +64,7 @@ $mood = get_field( 'mood' );
         $word_count = post_word_count( $content );
         $gratitude = get_field( 'gratitude' );
       ?>
-        <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> sanaa.</p>
+        <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> <?php echo ( $word_count === 1 ) ? 'sana' : 'sanaa'; ?>.</p>
       <?php endif; ?>
 
       <?php if ( is_singular() ) : ?>
