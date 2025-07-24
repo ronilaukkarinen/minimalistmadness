@@ -64,8 +64,12 @@ $mood = get_field( 'mood' );
         $word_count = post_word_count( $content );
         $gratitude = get_field( 'gratitude' );
       ?>
-        <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> <?php echo ( $word_count === 1 ) ? 'sana' : 'sanaa'; ?>.</p>
+        <p class="word-count">Tässä kirjoituksessa on <?php echo esc_html( $word_count ); ?> <?php echo ( $word_count === 1 ) ? 'sana' : 'sanaa'; ?>. Blogi on osa <a style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;" href="https://jointhefediverse.net/?lang=fi">Fediversumia</a>, voit tykätä ja kommentoida seuraamalla blogia <a style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;" href="https://joinmastodon.org/fi">Mastodonissa</a>.</p>
       <?php endif; ?>
+
+      <?php if ( function_exists( 'do_blocks' ) ) {
+        echo do_blocks('<!-- wp:activitypub/reactions /-->');
+      } ?>
 
       <?php if ( is_singular() ) : ?>
 

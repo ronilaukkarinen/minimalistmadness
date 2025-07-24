@@ -57,11 +57,9 @@ get_header();
           ) );
           ?>
 
-          <p>
-            <a class="button button-bmc no-external-link-indicator" href="https://www.buymeacoffee.com/Fd140aV"><?php include get_theme_file_path( '/svg/bmc.svg' ); ?>
-              <span>Piditkö tekstistä? Tarjoa kahvit!</span>
-            </a>
-          </p>
+          <?php if ( is_singular( 'post' ) && function_exists( 'do_blocks' ) ) {
+            echo do_blocks('<!-- wp:activitypub/reactions /-->');
+          } ?>
 
           <?php if ( get_edit_post_link() ) { ?>
             <footer class="entry-footer">
