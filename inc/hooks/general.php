@@ -406,6 +406,41 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 }
 
 /**
+ * Fix ActivityPub avatar caching.
+ *
+ * Clear stale avatar URL meta entries that point to remote URLs,
+ * so the ActivityPub plugin re-downloads and caches them locally.
+ * Runs daily via wp_cron.
+ */
+function rollemaa_refresh_activitypub_avatars() {
+  global $wpdb;
+
+  // Get site URL to identify locally cached avatars
+  $site_url = home_url();
+
+  // Delete avatar URL meta entries pointing to remote (non-local) URLs
+  // These are stale and will be re-fetched and cached locally on next access
+  $wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+    $wpdb->prepare(
+      "DELETE FROM {$wpdb->postmeta} WHERE meta_key = '_activitypub_avatar_url' AND meta_value NOT LIKE %s",
+      $wpdb->esc_like( $site_url ) . '%'
+    )
+  );
+}
+
+// Schedule daily avatar refresh
+add_action( 'rollemaa_refresh_avatars', __NAMESPACE__ . '\rollemaa_refresh_activitypub_avatars' );
+
+if ( ! wp_next_scheduled( 'rollemaa_refresh_avatars' ) ) {
+  wp_schedule_event( time(), 'daily', 'rollemaa_refresh_avatars' );
+}
+
+// Also clear stale avatar meta when an actor is updated, to force re-cache
+add_action( 'save_post_ap_actor', function( $post_id ) {
+  delete_post_meta( $post_id, '_activitypub_avatar_url' );
+}, 5 );
+
+/**
  * Calculate age function
  *
  * @param birthdate $birthdate Birthdate.
