@@ -80,17 +80,6 @@ function themeSetup() {
 }
 
 // Embeds
-// Load Instagram API script
-const loadInstagramAPI = () => {
-  const tag = document.createElement('script');
-  tag.src = 'https://instagram.com/static/bundles/es6/EmbedSDK.js/47c7ec92d91e.js';
-  const firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  window.isInstagramIframeAPILoaded = true;
-};
-
-loadInstagramAPI();
-
 // Load Mastodon embed script
 const loadMastodonAPI = () => {
   const tagMastodon = document.createElement('script');
@@ -101,14 +90,6 @@ const loadMastodonAPI = () => {
 };
 
 loadMastodonAPI();
-
-// Twitter
-$.getScript('https://platform.twitter.com/widgets.js');
-if (typeof (twttr) !== 'undefined') {
-  twttr.widgets.load();
-} else {
-  $.getScript('https://platform.twitter.com/widgets.js');
-}
 
 // GitHub-styled charts
 // WordPress post data for heatmaps
@@ -212,20 +193,6 @@ swup.hooks.on('content:replace', () => {
   const query = paged_query.posts_query;
 
   // Embeds
-  // Load Instagram API script
-  const loadInstagramAPI = () => {
-    const tag = document.createElement('script');
-    tag.src = 'https://instagram.com/static/bundles/es6/EmbedSDK.js/47c7ec92d91e.js';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    window.isInstagramIframeAPILoaded = true;
-  };
-
-  loadInstagramAPI();
-
-  // Important: This generates the images
-  window.instgrm.Embeds.process();
-
   // Load Mastodon embed script
   const loadMastodonAPI = () => {
     const tagMastodon = document.createElement('script');
@@ -236,14 +203,6 @@ swup.hooks.on('content:replace', () => {
   };
 
   loadMastodonAPI();
-
-  // Twitter
-  $.getScript('https://platform.twitter.com/widgets.js');
-  if (typeof (twttr) !== 'undefined') {
-    twttr.widgets.load();
-  } else {
-    $.getScript('https://platform.twitter.com/widgets.js');
-  }
 
   // Always move scroll position to up when clicking a link
   const moveTo = new MoveTo({
