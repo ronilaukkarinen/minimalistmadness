@@ -17,7 +17,7 @@ namespace Air_Light;
       <div class="col col-content">
         <div>
           <h3>Kuka Rolle?</h3>
-          <p>Roni "Rolle" Laukkarinen on paljasjalkainen jyväskyläläinen, nörtti, yrittäjä ja perheenisä, joka on blogannut vuodesta 1999.</p>
+          <p>Rolle Laukkarinen on paljasjalkainen jyväskyläläinen, nörtti, yrittäjä ja perheenisä, joka on blogannut vuodesta 1999.</p>
         </div>
 
         <div>
