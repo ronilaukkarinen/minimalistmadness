@@ -42,7 +42,7 @@ namespace Air_Light;
         </div>
 
         <div class="footer-credits">
-          <p>Oikeudet omistaa Roni Laukkarinen, 1999-<?php echo esc_attr( date( 'Y' ) ); ?>.</p>
+          <p>Oikeudet omistaa Rolle Laukkarinen, 1999-<?php echo esc_attr( date( 'Y' ) ); ?>.</p>
 
           <div role="radiogroup" aria-label="Valitse väriteema" id="dark-mode-footer-toggle" class="dark-mode-footer-toggle">
 
